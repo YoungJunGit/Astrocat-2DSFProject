@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f2077c7062c7cc3866ddfef7ee4ac77944fb08df17154b9f434ae80ffeee5766
-size 231
+# 2D 게임 제작 프로젝트
+
+---
+
+구성원 - 전세혁, 제동우, 권여진, 음영준, 김단아, 최승우
+
+
+
+PM - 전세혁
+
+기획 - 제동우, 권여진
+
+프로그래밍 - 음영준, 김단아
+
+그래픽 - 최승우
