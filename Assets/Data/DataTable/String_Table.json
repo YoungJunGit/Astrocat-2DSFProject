@@ -1,0 +1,130 @@
+﻿[
+    {
+        "String_ID": "Char_Name_1001",
+        "Korean": "\uC18C\uCD1D\uBCD1"
+    },
+    {
+        "String_ID": "Char_Name_1002",
+        "Korean": "\uC2A4\uB098\uC774\uD37C\uBCD1"
+    },
+    {
+        "String_ID": "Char_Name_1003",
+        "Korean": "\uD654\uC5FC\uBC29\uC0AC\uBCD1"
+    },
+    {
+        "String_ID": "Char_Name_1004",
+        "Korean": "\uCE74\uBBF8\uC0AC\uB974"
+    },
+    {
+        "String_ID": "Char_Name_1005",
+        "Korean": "\uB300\uC804\uCC28\uBCD1"
+    },
+    {
+        "String_ID": "Skill_NAME_2001",
+        "Korean": "3\uC5F0\uC0AC \uC0AC\uACA9",
+        "English": "Triple Burst Shot"
+    },
+    {
+        "String_ID": "Skill_NAME_2002",
+        "Korean": "\uC0F7\uAC74 \uBC1C\uC0AC",
+        "English": "Shotgun Blast"
+    },
+    {
+        "String_ID": "Skill_NAME_2003",
+        "Korean": "\uADA4\uB3C4 \uC5F0\uBC1C \uD3EC\uACA9",
+        "English": "Orbital Barrage"
+    },
+    {
+        "String_ID": "Skill_NAME_2004",
+        "Korean": "\uC9D1\uC911 \uC0AC\uACA9",
+        "English": "Precision Shot"
+    },
+    {
+        "String_ID": "Skill_NAME_2005",
+        "Korean": "\uD654\uC5FC \uAC15\uD654",
+        "English": "Flame Enhancement"
+    },
+    {
+        "String_ID": "Skill_NAME_2006",
+        "Korean": "\uC18C\uC774 \uC218\uB958\uD0C4",
+        "English": "Incendiary Grenade"
+    },
+    {
+        "String_ID": "Skill_NAME_2007",
+        "Korean": "\uBA85\uC608\uC758 \uAE43\uBC1C",
+        "English": "Banner of Honor"
+    },
+    {
+        "String_ID": "Skill_NAME_2008",
+        "Korean": "\uD654\uC5FC \uCDA9\uC804 \uC0AC\uACA9",
+        "English": "Flame-Charged Shot"
+    },
+    {
+        "String_ID": "Skill_NAME_2009",
+        "Korean": "3\uD68C \uC5F0\uC18D \uB79C\uB364 \uD0C0\uACA9",
+        "English": "Triple Random Strike"
+    },
+    {
+        "String_ID": "Skill_NAME_2010",
+        "Korean": "\uAC15\uD654 \uD0C4\uB450 \uBC1C\uC0AC",
+        "English": "Enhanced Warhead Launch"
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3001",
+        "Korean": "\uB2E8\uC77C \uC801\uC744 \uB300\uC0C1\uC73C\uB85C 50% \uACC4\uC218\uC758 3\uD68C \uC5F0\uC18D \uC0AC\uACA9\uC744 \uAC00\uD558\uC5EC \uB204\uC801 \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4.(\uCD1D 150% \uB300\uBBF8\uC9C0)"
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3002",
+        "Korean": "\uC804\uCCB4 \uC801\uC744 \uB300\uC0C1\uC73C\uB85C 100% \uD53C\uD574\uB97C \uAC00\uD558\uB294 \uAD11\uC5ED \uACF5\uACA9\uC785\uB2C8\uB2E4."
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3003",
+        "Korean": "2\uCD08 \uD6C4 \uADA4\uB3C4\uC5D0\uC11C \uC801 \uC804\uCCB4\uC5D0\uAC8C 150% \uD53C\uD574\uB97C \uC8FC\uB294 \uD3ED\uACA9\uC744 \uAC00\uD569\uB2C8\uB2E4."
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3004",
+        "Korean": "\uB2E8\uC77C \uC801\uC5D0\uAC8C 200% \uD53C\uD574\uB97C \uC8FC\uB294 \uACE0\uC815 \uC800\uACA9 \uC2A4\uD0AC\uC785\uB2C8\uB2E4."
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3005",
+        "Korean": "\uC790\uC2E0\uC5D0\uAC8C 3\uD134 \uB3D9\uC548 \uD654\uC5FC \uC18D\uC131 \uACF5\uACA9\uB825\uC774 50% \uC99D\uAC00\uD558\uB294 \uBC84\uD504\uB97C \uBD80\uC5EC\uD569\uB2C8\uB2E4."
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3006",
+        "Korean": "\uB2E8\uC77C \uC801\uC5D0\uAC8C 30% \uACF5\uACA9\uB825 \uAE30\uBC18 \uD654\uC5FC \uC7A5\uD310\uC744 \uC0DD\uC131\uD558\uACE0, 3\uD134\uAC04 70%\uC758 \uD654\uC0C1 \uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4."
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3007",
+        "Korean": "\uC544\uAD70 \uC804\uCCB4\uC5D0\uAC8C 1\uD134\uAC04 \uACF5\uACA9\uB825 30% \uC99D\uAC00 \uBC0F \uC544\uAD70 \uB2E8\uC77C\uC5D0\uAC8C \uC0C1\uD0DC\uC774\uC0C1 \uD574\uC81C \uD6A8\uACFC\uB97C \uBD80\uC5EC\uD569\uB2C8\uB2E4."
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3008",
+        "Korean": "\uB2E8\uC77C \uC801\uC5D0\uAC8C 110% \uD654\uC5FC \uD53C\uD574\uB97C \uAC00\uD558\uACE0, 3\uD134\uAC04 70% \uD655\uB960\uB85C \uD654\uC0C1 \uC0C1\uD0DC\uB97C \uBD80\uC5EC\uD569\uB2C8\uB2E4."
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3009",
+        "Korean": "\uB79C\uB364 \uC801 3\uBA85(\uAC1D\uCCB4)\uC5D0\uAC8C 150% \uACC4\uC218\uC758 \uC5F0\uC18D \uD53C\uD574\uB97C \uC8FC\uB294 \uBCC0\uCE59\uC801\uC778 \uACE0\uC704\uB825 \uC2A4\uD0AC\uC785\uB2C8\uB2E4."
+    },
+    {
+        "String_ID": "Skill_EFFECT_DESCE_3010",
+        "Korean": "\uB2E8\uC77C \uC801\uC5D0\uAC8C \uBC29\uC5B4\uB825\uC744 50% \uAC10\uC18C\uC2DC\uD0A4\uACE0, 150% \uD53C\uD574\uB97C \uC8FC\uB294 \uAE30\uC220\uC785\uB2C8\uB2E4."
+    },
+    {
+        "String_ID": "Mob_Name_1001",
+        "Korean": "\uC18C\uCD1D\uC218 \uD3AD\uADC4"
+    },
+    {
+        "String_ID": "Mob_Name_1002",
+        "Korean": "\uC800\uACA9\uC218 \uD3AD\uADC4"
+    },
+    {
+        "String_ID": "Mob_Name_1003",
+        "Korean": "\uC9C0\uD718\uAD00 \uD3AD\uADC4"
+    },
+    {
+        "String_ID": "Mob_Name_1004"
+    },
+    {
+        "String_ID": "Mob_Name_1005"
+    }
+]

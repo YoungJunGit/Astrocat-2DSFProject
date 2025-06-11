@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfcc47ec06486bf42b0b44352cbbe3d8, type: 3}
+  m_Name: CharacterData
+  m_EditorClassIdentifier: 
+  json: {fileID: 4900000, guid: 733741d58f97d19488766e2e009f7649, type: 3}
+  decryptToggle: 0
+  data:
+  - Character_ID: 10010001
+    Char_Name: Char_Name_001
+    Char_Default_HP: 100
+    Char_Default_Attack: 40
+    Char_Default_AP: 3
+    Char_Default_Speed: 10
+    Skill1_ID: 20010001
+    Skill2_ID: 20010002
+    Skill3_ID: 
+    Weak_Type: 3
+    Resist_Type: 2
+  - Character_ID: 10010002
+    Char_Name: Char_Name_002
+    Char_Default_HP: 100
+    Char_Default_Attack: 40
+    Char_Default_AP: 3
+    Char_Default_Speed: 10
+    Skill1_ID: 20020001
+    Skill2_ID: 20020002
+    Skill3_ID: 
+    Weak_Type: 3
+    Resist_Type: 2
+  - Character_ID: 10010003
+    Char_Name: Char_Name_003
+    Char_Default_HP: 100
+    Char_Default_Attack: 40
+    Char_Default_AP: 3
+    Char_Default_Speed: 10
+    Skill1_ID: 20030001
+    Skill2_ID: 20030002
+    Skill3_ID: 
+    Weak_Type: 3
+    Resist_Type: 2
+  - Character_ID: 10010004
+    Char_Name: Char_Name_004
+    Char_Default_HP: 100
+    Char_Default_Attack: 40
+    Char_Default_AP: 3
+    Char_Default_Speed: 10
+    Skill1_ID: 20040001
+    Skill2_ID: 20040002
+    Skill3_ID: 
+    Weak_Type: 3
+    Resist_Type: 2
+  - Character_ID: 10010005
+    Char_Name: Char_Name_005
+    Char_Default_HP: 100
+    Char_Default_Attack: 40
+    Char_Default_AP: 3
+    Char_Default_Speed: 10
+    Skill1_ID: 20050001
+    Skill2_ID: 20050002
+    Skill3_ID: 
+    Weak_Type: 3
+    Resist_Type: 2

@@ -1,0 +1,62 @@
+﻿[
+    {
+        "Character_ID": "10010001",
+        "Char_Name": "Char_Name_001",
+        "Char_Default_HP": 100.0,
+        "Char_Default_Attack": 40.0,
+        "Char_Default_AP": 3,
+        "Char_Default_Speed": 10.0,
+        "Skill1_ID": "20010001",
+        "Skill2_ID": "20010002",
+        "Weak_Type": 3,
+        "Resist_Type": 2
+    },
+    {
+        "Character_ID": "10010002",
+        "Char_Name": "Char_Name_002",
+        "Char_Default_HP": 100.0,
+        "Char_Default_Attack": 40.0,
+        "Char_Default_AP": 3,
+        "Char_Default_Speed": 10.0,
+        "Skill1_ID": "20020001",
+        "Skill2_ID": "20020002",
+        "Weak_Type": 3,
+        "Resist_Type": 2
+    },
+    {
+        "Character_ID": "10010003",
+        "Char_Name": "Char_Name_003",
+        "Char_Default_HP": 100.0,
+        "Char_Default_Attack": 40.0,
+        "Char_Default_AP": 3,
+        "Char_Default_Speed": 10.0,
+        "Skill1_ID": "20030001",
+        "Skill2_ID": "20030002",
+        "Weak_Type": 3,
+        "Resist_Type": 2
+    },
+    {
+        "Character_ID": "10010004",
+        "Char_Name": "Char_Name_004",
+        "Char_Default_HP": 100.0,
+        "Char_Default_Attack": 40.0,
+        "Char_Default_AP": 3,
+        "Char_Default_Speed": 10.0,
+        "Skill1_ID": "20040001",
+        "Skill2_ID": "20040002",
+        "Weak_Type": 3,
+        "Resist_Type": 2
+    },
+    {
+        "Character_ID": "10010005",
+        "Char_Name": "Char_Name_005",
+        "Char_Default_HP": 100.0,
+        "Char_Default_Attack": 40.0,
+        "Char_Default_AP": 3,
+        "Char_Default_Speed": 10.0,
+        "Skill1_ID": "20050001",
+        "Skill2_ID": "20050002",
+        "Weak_Type": 3,
+        "Resist_Type": 2
+    }
+]

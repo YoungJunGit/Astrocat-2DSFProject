@@ -1,0 +1,32 @@
+﻿[
+    {
+        "Mob_ID": "3001001",
+        "Mob_Name": "Mob_Name_1001",
+        "Mob_Default_HP": 100.0,
+        "Mob_Default_Attack": 40.0,
+        "Mob_Default_AP": 3,
+        "Mob_Default_Speed": 10.0,
+        "Weak_Type": 1,
+        "Resist_Type": 3
+    },
+    {
+        "Mob_ID": "3001002",
+        "Mob_Name": "Mob_Name_1002",
+        "Mob_Default_HP": 100.0,
+        "Mob_Default_Attack": 40.0,
+        "Mob_Default_AP": 3,
+        "Mob_Default_Speed": 10.0,
+        "Weak_Type": 1,
+        "Resist_Type": 3
+    },
+    {
+        "Mob_ID": "3001003",
+        "Mob_Name": "Mob_Name_1003",
+        "Mob_Default_HP": 100.0,
+        "Mob_Default_Attack": 40.0,
+        "Mob_Default_AP": 3,
+        "Mob_Default_Speed": 10.0,
+        "Weak_Type": 1,
+        "Resist_Type": 3
+    }
+]
