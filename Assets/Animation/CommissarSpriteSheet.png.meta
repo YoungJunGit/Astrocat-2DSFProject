@@ -1,0 +1,426 @@
+fileFormatVersion: 2
+guid: fa21e591f87f73a4395e1df63bf72b01
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1193672475119972524
+    second: CommissarSpriteSheet_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 796
+        width: 260
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245bae7ba6eb73a41a069b8743dbb83f
+      internalID: -494253527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 797
+        width: 260
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb90d6975024fe4a8980ea0febe34d9
+      internalID: 155568862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 796
+        width: 260
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97b9e8155d19cc4f8e34c3cd1545be7
+      internalID: -1836776566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 797
+        width: 260
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c171fd98e3baa2c4f878b5e0d8cac1a3
+      internalID: 1024949868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 798
+        width: 260
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83476592746b12409f938b31d32a597
+      internalID: 1752013656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 417
+        width: 260
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc09934f55c4dbf47b0b3f52d6079092
+      internalID: 1145505996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 416
+        width: 260
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0278ed2915fff94ab88f1f8b283c245
+      internalID: -1399452242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 417
+        width: 260
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0fe5b205331d04a970cd5abce0bd38
+      internalID: 1999573331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 414
+        width: 260
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9dc5c345dcfbc4cb0e282706aac382
+      internalID: 1898202194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 417
+        width: 260
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b4ec7cc6fa2064da5b8c2a41cd2373
+      internalID: -218887335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 35
+        width: 260
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907d74407af1dba4097b1f398ebe3254
+      internalID: -638049638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CommissarSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 37
+        width: 260
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e8c82243bd7844194b1d8a3efbedb7
+      internalID: -1893382539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c20493b27a060c74a8c535e5d5684474
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":260.0,"y":380.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      CommissarSpriteSheet_0: -494253527
+      CommissarSpriteSheet_1: 114693634
+      CommissarSpriteSheet_10: 1384557698
+      CommissarSpriteSheet_11: -1399452242
+      CommissarSpriteSheet_12: -210153548
+      CommissarSpriteSheet_13: 1999573331
+      CommissarSpriteSheet_14: -1874082143
+      CommissarSpriteSheet_15: 1898202194
+      CommissarSpriteSheet_16: -1181349608
+      CommissarSpriteSheet_17: -218887335
+      CommissarSpriteSheet_18: -638049638
+      CommissarSpriteSheet_19: 2038491753
+      CommissarSpriteSheet_2: 155568862
+      CommissarSpriteSheet_20: -1893382539
+      CommissarSpriteSheet_21: 1128389380
+      CommissarSpriteSheet_22: -62153555
+      CommissarSpriteSheet_23: -1592973777
+      CommissarSpriteSheet_24: -1229718806
+      CommissarSpriteSheet_25: -347656963
+      CommissarSpriteSheet_26: 2011747048
+      CommissarSpriteSheet_3: -1615564683
+      CommissarSpriteSheet_4: -1836776566
+      CommissarSpriteSheet_5: 552216612
+      CommissarSpriteSheet_6: 1024949868
+      CommissarSpriteSheet_7: 561687013
+      CommissarSpriteSheet_8: 1752013656
+      CommissarSpriteSheet_9: 1145505996
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
