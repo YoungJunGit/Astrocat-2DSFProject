@@ -1,33 +1,70 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class AllUnit : MonoBehaviour
 {
+    public GameObject selectionBarPrefab;
+    private Canvas canvas;
     private Color defaultColor;
+    private string[] unitNames = { "RifleMan", "Sniper", "Commissar" };
+    private int currentUnitIndex = 0;
 
     void Start()
     {
-        // 첫 번째 유닛의 자식에서 초기 색상 한 번만 가져오기
+        canvas = Object.FindFirstObjectByType<Canvas>();
         defaultColor = transform.Find("RifleMan").GetComponentInChildren<Renderer>().material.color;
-        StartCoroutine(SetAllUnitsColor());
+        ShowCurrentUnitUI();
     }
 
-    IEnumerator SetAllUnitsColor()
+    void ShowCurrentUnitUI()
     {
-        string[] unitNames = { "RifleMan", "Sniper", "Commissar", "Enemy1", "Enemy2", "Enemy3" };
-
-        foreach (string currentUnitName in unitNames)
+        foreach (Transform child in canvas.transform)
         {
-            foreach (string unitName in unitNames)
+            if (child.name.StartsWith("SelectionBar_"))
+                Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < unitNames.Length; i++)
+        {
+            string unitName = unitNames[i];
+            Transform unit = transform.Find(unitName);
+            Renderer renderer = unit.GetChild(0).GetComponent<Renderer>();
+
+            if (renderer != null)
+                renderer.material.color = (i == currentUnitIndex) ? Color.black : defaultColor;
+
+            if (i == currentUnitIndex)
             {
-                Transform unit = transform.Find(unitName);
-                Renderer renderer = unit.GetChild(0).GetComponent<Renderer>();
-                if (renderer != null){
-                    renderer.material.color = (unitName == currentUnitName) ? Color.black : defaultColor;
+                Vector3 worldPos = unit.position + new Vector3(2f, 0, 0);
+                Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+
+                GameObject bar = Instantiate(selectionBarPrefab, canvas.transform);
+                bar.name = "SelectionBar_" + unitName;
+
+                RectTransform rect = bar.GetComponent<RectTransform>();
+                rect.position = screenPos;
+
+                // 콜백 등록
+                SelectionScript selectionBox = bar.GetComponent<SelectionScript>();
+                if (selectionBox != null)
+                {
+                    selectionBox.Initialize(OnActionSelected);
                 }
             }
-
-            yield return new WaitForSeconds(1f);
         }
+    }
+
+    // 버튼 클릭 시 SelectionBox로부터 받는 콜백
+    void OnActionSelected(string actionType)
+    {
+        Debug.Log($"{actionType} 버튼이 눌렸습니다.");
+        NextTurn();
+    }
+
+    void NextTurn()
+    {
+        currentUnitIndex = (currentUnitIndex + 1) % unitNames.Length;
+        ShowCurrentUnitUI();
     }
 }
