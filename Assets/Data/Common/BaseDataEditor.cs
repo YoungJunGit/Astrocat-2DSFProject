@@ -25,7 +25,7 @@ public class BaseDataEditor<T> : Editor
             if (GUILayout.Button("TextDataLoad") == true)
             {
                 Debug.Log("Load");
-                Load(_target.json.text);
+                Load(_target.Json.text);
             }
 
             EditorGUILayout.EndHorizontal();
@@ -39,7 +39,7 @@ public class BaseDataEditor<T> : Editor
 
         string decryptedData = data;
 
-        if (_target.decryptToggle)
+        if (_target.DecryptToggle)
             decryptedData = Security.AESDecrypt256(data);
 
         _target.data.Clear();

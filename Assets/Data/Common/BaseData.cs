@@ -7,7 +7,21 @@ using System.Collections.Generic;
 /// <typeparam name="T"></typeparam>
 public class BaseData<T> : ScriptableObject
 {
-    public TextAsset json;
-    public bool decryptToggle = false;
+    [SerializeField]
+    private TextAsset json;
+
+    [SerializeField]
+    private bool decryptToggle;
+
+    public TextAsset Json
+    {
+        get { return json; }
+    }
+
+    public bool DecryptToggle
+    {
+        get {  return decryptToggle; }
+    }
+
     public List<T> data;
 }
