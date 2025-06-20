@@ -27,7 +27,7 @@ public class EntityData
     public ELEMENT_TYPE Resist_Type = ELEMENT_TYPE.NONE;
 }
 
-public class UI_TurnTimelineSystem : MonoBehaviour
+public class TurnTimelineSystem : MonoBehaviour
 {
     public GameObject BannerPrefab;
     public GameObject ArrowObject;
@@ -40,7 +40,8 @@ public class UI_TurnTimelineSystem : MonoBehaviour
     [SerializeField] // 테스트 후 삭제 예정
     private List<MonsterDataEntity> EnemyData;
 
-    private List<UI_Banner> BannerList = new List<UI_Banner>();
+    private List<EntityBanner> TimelineList = new List<EntityBanner>();
+    private List<EntityBannerInfo> EntityInfoList = new List<EntityBannerInfo>();
 
     private EntityData CreateEntityData(CharacterDataEntity playerData)
     {
@@ -60,7 +61,7 @@ public class UI_TurnTimelineSystem : MonoBehaviour
         entityData.Resist_Type = playerData.Resist_Type;
 
         return entityData;
-    }
+    }    // 테스트 후 삭제 예정
 
     private EntityData CreateEntityData(MonsterDataEntity enemyData)
     {
@@ -80,79 +81,124 @@ public class UI_TurnTimelineSystem : MonoBehaviour
         entityData.Resist_Type = enemyData.Resist_Type;
 
         return entityData;
-    }
+    }       // 테스트 후 삭제 예정
 
-    private int currentRound = 0;
+    private int round = 0;
+    private int index = 0;
 
     private void Awake()
     {
         PlayerData.Clear();
         EnemyData.Clear();
 
-        for(int i = 0; i < 1; i++) // 임시
+        for (int i = 0; i < 2; i++) // 임시
         {
             PlayerData.Add(CharacterDataList.data[i]);
+        }
+
+        for (int i = 0; i < 1; i++) // 임시
+        {
             EnemyData.Add(MonsterDataList.data[i]);
         }
     }
 
     private void Start()
     {
-        CreateTimeline();
         ArrowObject.SetActive(true);
+        InitTimelineSystem();
+    }
+
+    private void InitTimelineSystem()
+    {
+        for (int i = 0; i < PlayerData.Count; i++)
+        {
+            EntityData entityInfo = CreateEntityData(PlayerData[i]);
+            EntityBannerInfo myBannerInfo = new EntityBannerInfo();
+            myBannerInfo.InitBannerInfo(entityInfo, i);
+            EntityInfoList.Add(myBannerInfo);
+        }
+        for (int i = 0; i < EnemyData.Count; i++)
+        {
+            EntityData entityInfo = CreateEntityData(EnemyData[i]);
+            EntityBannerInfo myBannerInfo = new EntityBannerInfo();
+            myBannerInfo.InitBannerInfo(entityInfo, i);
+            EntityInfoList.Add(myBannerInfo);
+        }
+
+        SortBannerList();
+
+        CreateTimeline();
+
+        InitLocateBanner();
     }
 
     private void CreateTimeline()
     {
-        while(BannerList.Count < 7)
+        while (round < 7)
         {
-            for (int i = 0; i < PlayerData.Count; i++)
+            foreach (EntityBannerInfo info in EntityInfoList)
             {
-                if (BannerList.Count >= 7)
-                    break;
                 GameObject gameObject = Instantiate(BannerPrefab);
-                EntityData entityInfo = CreateEntityData(PlayerData[i]);
-                UI_Banner myBanner = gameObject.GetComponent<UI_Banner>();
-                myBanner.InitBanner(entityInfo, i, currentRound);
-                BannerList.Add(myBanner);
-            }
-            for (int i = 0; i < EnemyData.Count; i++)
-            {
-                if (BannerList.Count >= 7)
-                    break;
-                GameObject gameObject = Instantiate(BannerPrefab);
-                EntityData entityInfo = CreateEntityData(EnemyData[i]);
-                UI_Banner myBanner = gameObject.GetComponent<UI_Banner>();
-                myBanner.InitBanner(entityInfo, i, currentRound);
-                BannerList.Add(myBanner);
-            }
-            currentRound++;
-        }
+                EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
+                gameObject.name = "Banner:" + index;
 
-        SortBanner();
+                if (index >= 7)
+                    gameObject.SetActive(false);
+
+                myBanner.InitBanner(info, index);
+                TimelineList.Add(myBanner);
+
+                index++;
+            }
+            round++;
+        }
+    }
+
+    public void AddTimeline()
+    {
+        foreach(EntityBannerInfo info in EntityInfoList)
+        {
+            GameObject gameObject = Instantiate(BannerPrefab);
+            EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
+            gameObject.name = "Banner:" + index;
+            myBanner.InitBanner(info, index);
+            TimelineList.Add(myBanner);
+
+            index++;
+        }
+        round++;
         InitLocateBanner();
     }
 
-    private void SortBanner()
+    public void OnEndTurn()
     {
-        BannerList.Sort((UI_Banner a, UI_Banner b) => a.CompareTo(b));
+        foreach(EntityBannerInfo entityInfo in EntityInfoList)
+        {
+            entityInfo.stack--;
+        }
+
+        foreach(EntityBanner banner in TimelineList)
+        {
+            banner.SetDestination();
+        }
+    }
+
+    private void SortBannerList()
+    {
+        EntityInfoList.Sort((EntityBannerInfo a, EntityBannerInfo b) => a.CompareTo(b));
     }
 
     private void CreateLastBanner()
     {
-        GameObject gameObject = Instantiate(BannerPrefab);
-        EntityData entityInfo = BannerList[0].EntityData;
-        UI_Banner myBanner = gameObject.GetComponent<UI_Banner>();
-        myBanner.InitBanner(entityInfo, 0, currentRound);           // 추후 캐릭터 배치 시스템 구현되면 변경되어야 함
-        BannerList.Add(myBanner);
+        
     }
 
     private void InitLocateBanner()
     {
-        for (int i = 0; i < BannerList.Count; i++)
+        for (int i = 0; i < TimelineList.Count; i++)
         {
-            BannerList[i].transform.SetParent(GameObject.Find("Turn-Timeline").transform);
-            BannerList[i].SetTransformByOrder(i);
+            TimelineList[i].transform.SetParent(GameObject.Find("Turn-Timeline").transform);
+            TimelineList[i].SetTransformByOrder(i);
         }
     }
 }
