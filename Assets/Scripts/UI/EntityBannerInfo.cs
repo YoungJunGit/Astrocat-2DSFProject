@@ -16,9 +16,12 @@ public class EntityBannerInfo
 
     [SerializeField]
     private double speed = 0.0f;
+    public double Speed { get { return speed; } set { speed = value; } }
 
     [SerializeField]
     private int priority = 0;
+    public int Priority { get { return priority; } }
+
     public int stack = 0;
     public bool bDie = false;
 

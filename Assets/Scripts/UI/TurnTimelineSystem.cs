@@ -3,7 +3,7 @@ using DataEnum;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public enum SIDE
 {
@@ -41,6 +41,8 @@ public class TurnTimelineSystem : MonoBehaviour
     private List<MonsterDataEntity> EnemyData;
 
     private List<EntityBanner> TimelineList = new List<EntityBanner>();
+
+    [SerializeField]
     private List<EntityBannerInfo> EntityInfoList = new List<EntityBannerInfo>();
 
     private EntityData CreateEntityData(CharacterDataEntity playerData)
@@ -83,23 +85,31 @@ public class TurnTimelineSystem : MonoBehaviour
         return entityData;
     }       // 테스트 후 삭제 예정
 
+    public static int MaxShowRound = 7;
     private int round = 0;
-    private int index = 0;
+
+    [Header("테스트용")]
+    public Button AddSpeedBtn;                                              // 테스트 후 삭제 예정
+    [Range(1, 3)]
+    public int buffCharacterNumber;
+    public double addSpeedValue;
 
     private void Awake()
     {
         PlayerData.Clear();
         EnemyData.Clear();
 
-        for (int i = 0; i < 2; i++) // 임시
+        for (int i = 0; i < 3; i++) // 임시
         {
             PlayerData.Add(CharacterDataList.data[i]);
         }
 
-        for (int i = 0; i < 1; i++) // 임시
+        for (int i = 0; i < 3; i++) // 임시
         {
             EnemyData.Add(MonsterDataList.data[i]);
         }
+
+        AddSpeedBtn.onClick.AddListener(() => OnBuff(buffCharacterNumber, addSpeedValue));      // 임시
     }
 
     private void Start()
@@ -126,29 +136,25 @@ public class TurnTimelineSystem : MonoBehaviour
         }
 
         SortBannerList();
-
         CreateTimeline();
-
-        InitLocateBanner();
     }
 
     private void CreateTimeline()
     {
-        while (round < 7)
+        while (round < TurnTimelineSystem.MaxShowRound + 1)
         {
             foreach (EntityBannerInfo info in EntityInfoList)
             {
+                int index = TimelineList.Count;
                 GameObject gameObject = Instantiate(BannerPrefab);
                 EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
                 gameObject.name = "Banner:" + index;
+                myBanner.InitBanner(info, index);
 
-                if (index >= 7)
+                if (index >= TurnTimelineSystem.MaxShowRound)
                     gameObject.SetActive(false);
 
-                myBanner.InitBanner(info, index);
                 TimelineList.Add(myBanner);
-
-                index++;
             }
             round++;
         }
@@ -156,49 +162,78 @@ public class TurnTimelineSystem : MonoBehaviour
 
     public void AddTimeline()
     {
-        foreach(EntityBannerInfo info in EntityInfoList)
+        foreach (EntityBannerInfo info in EntityInfoList)
         {
+            int index = TimelineList.Count;
             GameObject gameObject = Instantiate(BannerPrefab);
             EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
             gameObject.name = "Banner:" + index;
             myBanner.InitBanner(info, index);
             TimelineList.Add(myBanner);
 
-            index++;
+            if(index >= TurnTimelineSystem.MaxShowRound)
+                gameObject.SetActive(false);
         }
         round++;
-        InitLocateBanner();
     }
 
     public void OnEndTurn()
     {
-        foreach(EntityBannerInfo entityInfo in EntityInfoList)
+        if (TimelineList.Count % EntityInfoList.Count == 1)
+            AddTimeline();
+
+        Destroy(TimelineList[0].gameObject);
+        TimelineList.RemoveAt(0);
+
+        foreach (EntityBanner banner in TimelineList)
         {
-            entityInfo.stack--;
+            banner.SetDestination(-1);
+        }
+    }
+
+    public void OnBuff(int number, double speedValue)
+    {
+        if (EntityInfoList.Count < number)
+        {
+            Debug.Log("버프할 캐릭터 설정 실패");
+            return;
         }
 
-        foreach(EntityBanner banner in TimelineList)
+        List<EntityBannerInfo> tmpList = new List<EntityBannerInfo>();
+
+        foreach (EntityBannerInfo info in EntityInfoList)
+            tmpList.Add(info);
+
+        foreach(EntityBannerInfo info in EntityInfoList)
         {
-            banner.SetDestination();
+            if(info.Side == SIDE.PLAYER && info.Priority == (number - 1))
+            {
+                info.Speed += speedValue;
+            }
+        }
+
+        SortBannerList();
+
+        foreach(EntityBannerInfo info in EntityInfoList)
+        {
+            int sortListIndex = EntityInfoList.IndexOf(info);
+            int unsortListIndex = tmpList.IndexOf(info);
+            int depth = sortListIndex - unsortListIndex;
+            foreach (EntityBanner banner in TimelineList)
+            {
+                if (banner.MyBannerInfo == info && banner.BannerIndex > 0)
+                {
+                    if (banner.BannerIndex + depth > 0)
+                        banner.SetDestination(depth);
+                    else
+                        banner.SetDestination(depth + 1);
+                }
+            }
         }
     }
 
     private void SortBannerList()
     {
         EntityInfoList.Sort((EntityBannerInfo a, EntityBannerInfo b) => a.CompareTo(b));
-    }
-
-    private void CreateLastBanner()
-    {
-        
-    }
-
-    private void InitLocateBanner()
-    {
-        for (int i = 0; i < TimelineList.Count; i++)
-        {
-            TimelineList[i].transform.SetParent(GameObject.Find("Turn-Timeline").transform);
-            TimelineList[i].SetTransformByOrder(i);
-        }
     }
 }
