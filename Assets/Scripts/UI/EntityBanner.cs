@@ -70,7 +70,7 @@ public class EntityBanner : MonoBehaviour
 
         gameObject.name = "Banner:" + bannerIndex;
 
-        if (bannerIndex < TurnTimelineSystem.MaxShowRound)
+        if (bannerIndex < 7)
         {
             gameObject.SetActive(true);
         }

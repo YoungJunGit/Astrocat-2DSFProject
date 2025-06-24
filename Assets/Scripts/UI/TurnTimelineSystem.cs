@@ -85,7 +85,7 @@ public class TurnTimelineSystem : MonoBehaviour
         return entityData;
     }       // 테스트 후 삭제 예정
 
-    public static int MaxShowRound = 7;
+    public static int MaxShowRound = 2;
     private int round = 0;
 
     [Header("테스트용")]
@@ -141,7 +141,7 @@ public class TurnTimelineSystem : MonoBehaviour
 
     private void CreateTimeline()
     {
-        while (round < TurnTimelineSystem.MaxShowRound + 1)
+        while (round < TurnTimelineSystem.MaxShowRound)
         {
             foreach (EntityBannerInfo info in EntityInfoList)
             {
@@ -151,7 +151,7 @@ public class TurnTimelineSystem : MonoBehaviour
                 gameObject.name = "Banner:" + index;
                 myBanner.InitBanner(info, index);
 
-                if (index >= TurnTimelineSystem.MaxShowRound)
+                if (index >= 7)
                     gameObject.SetActive(false);
 
                 TimelineList.Add(myBanner);
@@ -171,7 +171,7 @@ public class TurnTimelineSystem : MonoBehaviour
             myBanner.InitBanner(info, index);
             TimelineList.Add(myBanner);
 
-            if(index >= TurnTimelineSystem.MaxShowRound)
+            if(index >= 7)
                 gameObject.SetActive(false);
         }
         round++;
@@ -182,8 +182,10 @@ public class TurnTimelineSystem : MonoBehaviour
         if (TimelineList.Count % EntityInfoList.Count == 1)
             AddTimeline();
 
-        Destroy(TimelineList[0].gameObject);
-        TimelineList.RemoveAt(0);
+        int destroyTargetindex = TimelineList.FindIndex(x => x.BannerIndex == 0);
+
+        Destroy(TimelineList[destroyTargetindex].gameObject);
+        TimelineList.RemoveAt(destroyTargetindex);
 
         foreach (EntityBanner banner in TimelineList)
         {
