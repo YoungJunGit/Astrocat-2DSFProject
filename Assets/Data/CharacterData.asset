@@ -16,7 +16,7 @@ MonoBehaviour:
   decryptToggle: 0
   data:
   - Character_ID: 10010001
-    Char_Name: Char_Name_001
+    Char_Name: A
     Char_Default_HP: 100
     Char_Default_Attack: 40
     Char_Default_AP: 3
@@ -27,22 +27,22 @@ MonoBehaviour:
     Weak_Type: 3
     Resist_Type: 2
   - Character_ID: 10010002
-    Char_Name: Char_Name_002
+    Char_Name: B
     Char_Default_HP: 100
     Char_Default_Attack: 40
     Char_Default_AP: 3
-    Char_Default_Speed: 10
+    Char_Default_Speed: 8
     Skill1_ID: 20020001
     Skill2_ID: 20020002
     Skill3_ID: 
     Weak_Type: 3
     Resist_Type: 2
   - Character_ID: 10010003
-    Char_Name: Char_Name_003
+    Char_Name: C
     Char_Default_HP: 100
     Char_Default_Attack: 40
     Char_Default_AP: 3
-    Char_Default_Speed: 10
+    Char_Default_Speed: 1
     Skill1_ID: 20030001
     Skill2_ID: 20030002
     Skill3_ID: 

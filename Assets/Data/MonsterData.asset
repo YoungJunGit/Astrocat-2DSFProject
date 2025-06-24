@@ -16,33 +16,33 @@ MonoBehaviour:
   decryptToggle: 0
   data:
   - Mob_ID: 3001001
-    Mob_Name: Mob_Name_1001
+    Mob_Name: A
     Mob_Default_HP: 100
     Mob_Default_Attack: 40
     Mob_Default_AP: 3
-    Mob_Default_Speed: 10
+    Mob_Default_Speed: 6
     Skill1_ID: 
     Skill2_ID: 
     Skill3_ID: 
     Weak_Type: 1
     Resist_Type: 3
   - Mob_ID: 3001002
-    Mob_Name: Mob_Name_1002
+    Mob_Name: B
     Mob_Default_HP: 100
     Mob_Default_Attack: 40
     Mob_Default_AP: 3
-    Mob_Default_Speed: 10
+    Mob_Default_Speed: 7
     Skill1_ID: 
     Skill2_ID: 
     Skill3_ID: 
     Weak_Type: 1
     Resist_Type: 3
   - Mob_ID: 3001003
-    Mob_Name: Mob_Name_1003
+    Mob_Name: C
     Mob_Default_HP: 100
     Mob_Default_Attack: 40
     Mob_Default_AP: 3
-    Mob_Default_Speed: 10
+    Mob_Default_Speed: 7
     Skill1_ID: 
     Skill2_ID: 
     Skill3_ID: 
