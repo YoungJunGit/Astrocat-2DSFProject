@@ -5,10 +5,17 @@ public class ProgressBar : MonoBehaviour
 {
     public GameObject StartButton;
     public Text ProgressIndicator;
+    public Image LoadingBarYellow;
     public Image LoadingBar;
     public Image Center;
     public Text resultIndicator;
     public float duration = 1f;
+
+    public float highlightMin = 0.45f;
+    public float highlightMax = 0.55f;
+    float highlightRange;
+    float highlightStart;
+    float highlightEnd;
 
     float remainingTime = 0f;
     float currentValue = 0f;
@@ -21,8 +28,18 @@ public class ProgressBar : MonoBehaviour
     {
         ProgressIndicator.gameObject.SetActive(false);
         LoadingBar.gameObject.SetActive(false);
+        LoadingBarYellow.gameObject.SetActive(false);
         Center.gameObject.SetActive(false);
         resultIndicator.gameObject.SetActive(false);
+
+        highlightStart = duration * highlightMin;
+        highlightEnd = duration * highlightMax;
+        highlightRange = highlightMax - highlightMin;
+
+        LoadingBarYellow.fillOrigin = 2;
+        float startAngle = highlightMin * 360f;
+        LoadingBarYellow.fillAmount = highlightRange;
+        LoadingBarYellow.rectTransform.localRotation = Quaternion.Euler(0, 0, startAngle);
     }
 
     /// <summary>
@@ -48,15 +65,22 @@ public class ProgressBar : MonoBehaviour
             ProgressIndicator.text = currentValue.ToString("F2") + "s";
             LoadingBar.fillAmount = Mathf.Clamp01(remainingTime / duration);
 
+            if (currentValue >= highlightStart && currentValue <= highlightEnd)
+                UpdateYellowBar();
+
+            else if (currentValue > duration * highlightMax)
+                LoadingBarYellow.gameObject.SetActive(false);
+
             if (Input.GetKeyDown(KeyCode.A))
             {
                 isPressed = true;
                 LoadingBar.fillAmount = 1f;
+                LoadingBarYellow.gameObject.SetActive(false);
                 SetAlphaScale(0.3f);
 
-                if (currentValue >= 0.45f && currentValue <= 0.55f)
+                if (currentValue >= 0.45f * duration && currentValue <= 0.55f * duration)
                 {
-                    resultIndicator.text = "Perfect Success";
+                    resultIndicator.text = "Exellent";
                 }
                 else
                 {
@@ -70,6 +94,7 @@ public class ProgressBar : MonoBehaviour
             ProgressIndicator.text = "Done";
             LoadingBar.fillAmount = 1f;
             resultIndicator.text = "Fail";
+            SetAlphaScale(0.3f);
         }
     }
 
@@ -83,6 +108,7 @@ public class ProgressBar : MonoBehaviour
         LoadingBar.gameObject.SetActive(true);
         Center.gameObject.SetActive(true);
         resultIndicator.gameObject.SetActive(true);
+        LoadingBarYellow.gameObject.SetActive(true);
 
         currentValue = 0f;
         isFailed = false;
@@ -123,5 +149,23 @@ public class ProgressBar : MonoBehaviour
         LoadingBar.transform.localScale = new Vector2(3f, 3f);
         Center.transform.localScale = new Vector2(2.7f, 2.7f);
         resultIndicator.transform.localScale = new Vector2(1f, 1f);
+
+        LoadingBarYellow.fillOrigin = 2;
+        float startAngle = highlightMin * 360f;
+        LoadingBarYellow.fillAmount = highlightRange;
+        LoadingBarYellow.rectTransform.localRotation = Quaternion.Euler(0, 0, startAngle);
+    }
+
+    private void UpdateYellowBar()
+    {
+        // 전체 경과 비율 (duration 기준)
+        float t = currentValue / duration;
+
+        // 노란 바가 나타나는 시점 ~ 사라지는 시점 사이의 진행률 (0~1)
+        float highlightProgress = (t - highlightMin) / highlightRange;
+        highlightProgress = Mathf.Clamp01(highlightProgress);
+
+        // 줄어드는 형태: 1 → 0으로 선형 감소
+        LoadingBarYellow.fillAmount = Mathf.Lerp(highlightRange, 0f, highlightProgress);
     }
 }
