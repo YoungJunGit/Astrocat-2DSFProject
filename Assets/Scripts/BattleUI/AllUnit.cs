@@ -5,8 +5,12 @@ using System.Collections;
 public class AllUnit : MonoBehaviour
 {
     public GameObject selectionBarPrefab;
+    public GameObject handIconInstance;
     private Canvas canvas;
     private Color defaultColor;
+    public bool targetselection;
+    public string selectedActionType;
+
     private string[] unitNames = { "RifleMan", "Sniper", "Commissar" };
     private int currentUnitIndex = 0;
 
@@ -14,6 +18,7 @@ public class AllUnit : MonoBehaviour
     {
         canvas = Object.FindFirstObjectByType<Canvas>();
         defaultColor = transform.Find("RifleMan").GetComponentInChildren<Renderer>().material.color;
+        targetselection = false;
         ShowCurrentUnitUI();
     }
 
@@ -36,7 +41,7 @@ public class AllUnit : MonoBehaviour
 
             if (i == currentUnitIndex)
             {
-                Vector3 worldPos = unit.position + new Vector3(2f, 0, 0);
+                Vector3 worldPos = unit.position + new Vector3(2.5f, 0.5f, 0);
                 Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
 
                 GameObject bar = Instantiate(selectionBarPrefab, canvas.transform);
@@ -58,13 +63,16 @@ public class AllUnit : MonoBehaviour
     // 버튼 클릭 시 SelectionBox로부터 받는 콜백
     void OnActionSelected(string actionType)
     {
+        selectedActionType = actionType;
+        targetselection = true;
         Debug.Log($"{actionType} 버튼이 눌렸습니다.");
-        NextTurn();
     }
 
-    void NextTurn()
+    public void NextTurn()
     {
         currentUnitIndex = (currentUnitIndex + 1) % unitNames.Length;
+        targetselection = false;
+        handIconInstance.SetActive(false);
         ShowCurrentUnitUI();
     }
 }

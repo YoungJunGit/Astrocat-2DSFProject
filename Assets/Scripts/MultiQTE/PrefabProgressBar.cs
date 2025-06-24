@@ -5,10 +5,17 @@ using System;
 public class PrefabProgressBar : MonoBehaviour
 {
     public Image LoadingBar;
+    public Image LoadingBarYellow;
     public Image Center;
     public Text resultIndicator;
 
     public float duration = 1f;
+    public float highlightMin = 0.15f;
+    public float highlightMax = 0.55f;
+    float highlightRange;
+    float highlightStart;
+    float highlightEnd;
+
     float remainingTime = 0f;
     float currentValue = 0f;
     bool isFailed = false;
@@ -21,20 +28,25 @@ public class PrefabProgressBar : MonoBehaviour
     public static int currentActiveIndex = 0;
     private static bool isWaitingForRelease = false;
 
+    void Start()
+    {
+        highlightStart = duration * highlightMin;
+        highlightEnd = duration * highlightMax;
+        highlightRange = highlightMax - highlightMin;
+
+        LoadingBarYellow.fillOrigin = 2;
+        float startAngle = highlightMin * 360f;
+        LoadingBarYellow.fillAmount = highlightRange;
+        LoadingBarYellow.rectTransform.localRotation = Quaternion.Euler(0, 0, startAngle);
+        LoadingBarYellow.gameObject.SetActive(true);
+    }
+
     public void Initialize(int idx, Action<int, string> callback)
     {
         index = idx;
         resultCallback = callback;
     }
-    /// <summary>
-    /// currentValue += Time.deltaTime; -> 시간 흐름에 따라 증가
-    /// remainingTime은 전체 시간에서 남은 시간 계산 -> ex) remainingTime = 1 - 0.3 = 0.7
-    /// fillAmount는 남은 시간 비율로 설정, 남은 시간이 줄어들수록 fillAmount는 점점 0에 가까워짐 
-    /// → 즉, Progress Bar가 점점 줄어드는 것처럼 보이는 것
-    /// 
-    /// 그냥 남는 시간만큼 fillamout가 되고, 굳이 duration으로 나누는 이유는 후에 초가 늘어날 수 있는 상황 대비
-    /// currentValue가 0.3인 기준으로 보면, remainingTime = 1 - 0.3 = 0.7. 0.7/1은 0.7이니까 결국 fillamout는 0.7이 들어간다.
-    /// </summary>
+
     void Update()
     {
         if (index != currentActiveIndex)
@@ -45,6 +57,12 @@ public class PrefabProgressBar : MonoBehaviour
             currentValue += Time.deltaTime;
             remainingTime = Mathf.Clamp(duration - currentValue, 0f, duration);
             LoadingBar.fillAmount = Mathf.Clamp01(remainingTime / duration);
+
+            if (currentValue >= highlightStart && currentValue <= highlightEnd)
+                UpdateYellowBar();
+
+            else if (currentValue > duration * highlightMax)
+                LoadingBarYellow.gameObject.SetActive(false);
 
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -69,6 +87,7 @@ public class PrefabProgressBar : MonoBehaviour
 
     private void HandlePress()
     {
+        LoadingBarYellow.gameObject.SetActive(false);
         LoadingBar.fillAmount = 1f;
         SetAlpha(0.3f);
 
@@ -76,10 +95,10 @@ public class PrefabProgressBar : MonoBehaviour
         Center.transform.localScale = new Vector2(scale, scale);
         resultIndicator.transform.localScale = new Vector2(scale / 2, scale / 2);
 
-        if (currentValue >= 0.45f && currentValue <= 0.55f)
+        if (currentValue >= 0.45f*duration && currentValue <= 0.55f*duration)
         {
-            resultIndicator.text = "Perfect\n Success";
-            resultCallback?.Invoke(index, "Perfect\n Success");
+            resultIndicator.text = "Excellent";
+            resultCallback?.Invoke(index, "Excellent");
         }
         else
         {
@@ -110,5 +129,18 @@ public class PrefabProgressBar : MonoBehaviour
         Color centerColor = Center.color;
         centerColor.a = alpha;
         Center.color = centerColor;
+    }
+
+    private void UpdateYellowBar()
+    {
+        // 전체 경과 비율 (duration 기준)
+        float t = currentValue / duration;
+
+        // 노란 바가 나타나는 시점 ~ 사라지는 시점 사이의 진행률 (0~1)
+        float highlightProgress = (t - highlightMin) / highlightRange;
+        highlightProgress = Mathf.Clamp01(highlightProgress);
+
+        // 줄어드는 형태: 1 → 0으로 선형 감소
+        LoadingBarYellow.fillAmount = Mathf.Lerp(highlightRange, 0f, highlightProgress);
     }
 }
