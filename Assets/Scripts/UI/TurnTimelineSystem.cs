@@ -25,6 +25,7 @@ public class EntityData
     public string Skill3_ID;
     public ELEMENT_TYPE Weak_Type = ELEMENT_TYPE.NONE;
     public ELEMENT_TYPE Resist_Type = ELEMENT_TYPE.NONE;
+    public string Asset_File;
 }
 
 public class TurnTimelineSystem : MonoBehaviour
@@ -61,6 +62,7 @@ public class TurnTimelineSystem : MonoBehaviour
         entityData.Skill3_ID = playerData.Skill3_ID;
         entityData.Weak_Type = playerData.Weak_Type;
         entityData.Resist_Type = playerData.Resist_Type;
+        entityData.Asset_File = playerData.Asset_File;
 
         return entityData;
     }    // 테스트 후 삭제 예정
@@ -81,6 +83,7 @@ public class TurnTimelineSystem : MonoBehaviour
         entityData.Skill3_ID = enemyData.Skill3_ID;
         entityData.Weak_Type = enemyData.Weak_Type;
         entityData.Resist_Type = enemyData.Resist_Type;
+        entityData.Asset_File = enemyData.Asset_File;
 
         return entityData;
     }       // 테스트 후 삭제 예정

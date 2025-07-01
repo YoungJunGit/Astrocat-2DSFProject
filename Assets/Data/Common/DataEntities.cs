@@ -17,6 +17,7 @@ namespace DataEntity
         public string       Skill3_ID;
         public ELEMENT_TYPE Weak_Type               = ELEMENT_TYPE.NONE;
         public ELEMENT_TYPE Resist_Type             = ELEMENT_TYPE.NONE;
+        public string       Asset_File;
     }
 
     [Serializable]
@@ -33,6 +34,7 @@ namespace DataEntity
         public string       Skill3_ID;
         public ELEMENT_TYPE Weak_Type               = ELEMENT_TYPE.NONE;
         public ELEMENT_TYPE Resist_Type             = ELEMENT_TYPE.NONE;
+        public string       Asset_File;
     }
 
     [Serializable]

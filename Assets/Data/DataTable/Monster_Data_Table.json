@@ -7,7 +7,8 @@
         "Mob_Default_AP": 3,
         "Mob_Default_Speed": 10.0,
         "Weak_Type": 1,
-        "Resist_Type": 3
+        "Resist_Type": 3,
+        "Asset_File": "penguin_Rfleman"
     },
     {
         "Mob_ID": "3001002",
@@ -17,7 +18,8 @@
         "Mob_Default_AP": 3,
         "Mob_Default_Speed": 10.0,
         "Weak_Type": 1,
-        "Resist_Type": 3
+        "Resist_Type": 3,
+        "Asset_File": "penguin_Sniper"
     },
     {
         "Mob_ID": "3001003",
@@ -27,6 +29,18 @@
         "Mob_Default_AP": 3,
         "Mob_Default_Speed": 10.0,
         "Weak_Type": 1,
-        "Resist_Type": 3
+        "Resist_Type": 3,
+        "Asset_File": "penguin_Commander"
+    },
+    {
+        "Mob_ID": "3001004",
+        "Mob_Name": "Mob_Name_1004",
+        "Mob_Default_HP": 100.0,
+        "Mob_Default_Attack": 40.0,
+        "Mob_Default_AP": 3,
+        "Mob_Default_Speed": 10.0,
+        "Weak_Type": 1,
+        "Resist_Type": 3,
+        "Asset_File": "penguin_Berserker"
     }
 ]

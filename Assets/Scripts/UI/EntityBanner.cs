@@ -34,7 +34,8 @@ public class EntityBanner : MonoBehaviour
     public int Turn { get { return turn; } }
 
     private Coroutine MoveCoroutine;
-    private string TmpAssetPath = "05_UI_UX/Banner/";
+    private string ImageAssetPath = "05_UI_UX/Banner/Images/";
+    private string AnimAssetPath = "05_UI_UX/Banner/Animations/";
 
     public int CompareTo(EntityBanner other)
     {
@@ -75,7 +76,7 @@ public class EntityBanner : MonoBehaviour
         if (index == 0)
         {
             destination = new Vector2(initialPos.x, initialPos.y);
-            myAnimator.SetTrigger("PenguinBerserker");
+            myAnimator.SetTrigger("Move");
         }
 
         float curTime = 0.0f;
@@ -109,11 +110,14 @@ public class EntityBanner : MonoBehaviour
             rectTransform.anchoredPosition = new Vector2((initialPos.x * 2) + 80.0f * 7, initialPos.y);
     }
 
-    public void InitBanner(EntityBannerInfo entityBattleInfo, int index, int round)
+    public void InitBanner(EntityBannerInfo entityBannerInfo, int index, int round)
     {
         gameObject.name = "Banner:" + index;
-        myBannerInfo = entityBattleInfo;
+        myBannerInfo = entityBannerInfo;
         turn = round;
+
+        LoadImgAsset();
+        LoadAnimAsset();
 
         if (index == 0)
             myAnimator.SetTrigger("Skip");
@@ -123,7 +127,6 @@ public class EntityBanner : MonoBehaviour
         else
             PriorityImg.sprite = prioritySprites[myBannerInfo.Priority + 3];
 
-        LoadAsset();
         BannerImg.sprite = mySprites[0];
 
         transform.SetParent(GameObject.Find("Turn-Timeline").transform);
@@ -150,12 +153,20 @@ public class EntityBanner : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void LoadAsset()
+    private void LoadImgAsset()
     {
-        mySprites = Resources.LoadAll<Sprite>(TmpAssetPath + "player_Commissar");
+        mySprites = Resources.LoadAll<Sprite>(ImageAssetPath + myBannerInfo.EntityInfo.Asset_File);
 
         if (mySprites.Length <= 0)
             Debug.Log("배너 이미지의 경로 설정 오류!");
+    }
+
+    private void LoadAnimAsset()
+    {
+        myAnimator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(AnimAssetPath + myBannerInfo.EntityInfo.Asset_File + "_BannerAnimator");
+
+        if (myAnimator.runtimeAnimatorController == null)
+            Debug.Log("배너 애니메이션의 경로 설정 오류!!");
     }
 
     public bool Compare(EntityBanner b)

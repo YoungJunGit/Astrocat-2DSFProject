@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ae6498dcd4df14489c2ce3c847a5565, type: 3}
-  m_Name: MonsterData
+  m_Name: MonsterDataTest
   m_EditorClassIdentifier: 
   json: {fileID: 4900000, guid: 7067c08197a49be4eb8ed56a6332f831, type: 3}
   decryptToggle: 0
@@ -20,7 +20,7 @@ MonoBehaviour:
     Mob_Default_HP: 100
     Mob_Default_Attack: 40
     Mob_Default_AP: 3
-    Mob_Default_Speed: 10
+    Mob_Default_Speed: 6
     Skill1_ID: 
     Skill2_ID: 
     Skill3_ID: 
@@ -32,19 +32,19 @@ MonoBehaviour:
     Mob_Default_HP: 100
     Mob_Default_Attack: 40
     Mob_Default_AP: 3
-    Mob_Default_Speed: 10
+    Mob_Default_Speed: 7
     Skill1_ID: 
     Skill2_ID: 
     Skill3_ID: 
     Weak_Type: 1
     Resist_Type: 3
-    Asset_File: penguin_Sniper
+    Asset_File: penguin_Berserker
   - Mob_ID: 3001003
     Mob_Name: Mob_Name_1003
     Mob_Default_HP: 100
     Mob_Default_Attack: 40
     Mob_Default_AP: 3
-    Mob_Default_Speed: 10
+    Mob_Default_Speed: 7
     Skill1_ID: 
     Skill2_ID: 
     Skill3_ID: 

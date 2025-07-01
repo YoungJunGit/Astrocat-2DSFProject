@@ -276,8 +276,8 @@ Camera:
   m_GameObject: {fileID: 213709471}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.17176929, g: 0.17834537, b: 0.18867922, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1023,8 +1023,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BannerPrefab: {fileID: 7230901669617324391, guid: 8d64bddc02f99ca45b7ff69eb6ef8f69, type: 3}
   ArrowObject: {fileID: 444667112}
-  CharacterDataList: {fileID: 11400000, guid: e2a437b626ae06e4c8c4ffe08bc31b77, type: 2}
-  MonsterDataList: {fileID: 11400000, guid: 491833a49b175d14f8813de0d7da9dd7, type: 2}
+  CharacterDataList: {fileID: 11400000, guid: 281f73f30af37154d8c8f716a7a537cf, type: 2}
+  MonsterDataList: {fileID: 11400000, guid: 26e94df8f0d3675409559c5003f162ad, type: 2}
   PlayerData: []
   EnemyData: []
   EntityInfoList: []
