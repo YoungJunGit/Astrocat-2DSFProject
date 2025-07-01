@@ -22,20 +22,19 @@ public class EntityBannerInfo
     private int priority = 0;
     public int Priority { get { return priority; } }
 
-    public int stack = 0;
     public bool bDie = false;
 
-    public int CompareTo(EntityBannerInfo obj)
+    public int CompareTo(EntityBannerInfo other)
     {
-        if (this.speed > obj.speed) { return -1; }
-        else if (this.speed < obj.speed) { return 1; }
+        if (this.speed > other.speed) { return -1; }
+        else if (this.speed < other.speed) { return 1; }
         else
         {
-            if (this.side < obj.side) { return -1; }
-            else if (this.side > obj.side) { return 1; }
+            if (this.side < other.side) { return -1; }
+            else if (this.side > other.side) { return 1; }
             else
             {
-                if (this.priority < obj.priority) { return -1; }
+                if (this.priority < other.priority) { return -1; }
                 else return 1;
             }
         }

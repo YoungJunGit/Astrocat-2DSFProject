@@ -1,7 +1,7 @@
 using DataEntity;
 using DataEnum;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -85,14 +85,22 @@ public class TurnTimelineSystem : MonoBehaviour
         return entityData;
     }       // 테스트 후 삭제 예정
 
-    public static int MaxShowRound = 2;
-    private int round = 0;
+    private EntityBanner curBanner;
+
+    private int roundDepth = 0;
+    private int curRound = 1;
 
     [Header("테스트용")]
     public Button AddSpeedBtn;                                              // 테스트 후 삭제 예정
+    public Button DieBtn;
     [Range(1, 3)]
     public int buffCharacterNumber;
+    [Range(1, 10)]
+    public int durationRound;
     public double addSpeedValue;
+    [Range(1, 3)]
+    public int dieCharacterNumber;
+    public SIDE characterSide;
 
     private void Awake()
     {
@@ -109,7 +117,8 @@ public class TurnTimelineSystem : MonoBehaviour
             EnemyData.Add(MonsterDataList.data[i]);
         }
 
-        AddSpeedBtn.onClick.AddListener(() => OnBuff(buffCharacterNumber, addSpeedValue));      // 임시
+        AddSpeedBtn.onClick.AddListener(() => OnStartBuff(buffCharacterNumber, addSpeedValue));      // 임시
+        DieBtn.onClick.AddListener(() => OnCharacterDie(dieCharacterNumber, characterSide));
     }
 
     private void Start()
@@ -135,76 +144,71 @@ public class TurnTimelineSystem : MonoBehaviour
             EntityInfoList.Add(myBannerInfo);
         }
 
-        SortBannerList();
+        EntityInfoList.Sort((EntityBannerInfo a, EntityBannerInfo b) => a.CompareTo(b));
+
         CreateTimeline();
+        Debug.Log("전투 시작\n 현재 라운드: " + curRound);
     }
 
     private void CreateTimeline()
     {
-        while (round < TurnTimelineSystem.MaxShowRound)
+        while (TimelineList.Count < 7)
         {
+            roundDepth++;
             foreach (EntityBannerInfo info in EntityInfoList)
             {
                 int index = TimelineList.Count;
                 GameObject gameObject = Instantiate(BannerPrefab);
                 EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
-                gameObject.name = "Banner:" + index;
-                myBanner.InitBanner(info, index);
+                myBanner.InitBanner(info, index, roundDepth);
+                myBanner.SetTransformByIndex(index);
 
                 if (index >= 7)
                     gameObject.SetActive(false);
 
                 TimelineList.Add(myBanner);
             }
-            round++;
         }
+
+        curBanner = TimelineList[0];
+        TimelineList.RemoveAt(0);
     }
 
-    public void AddTimeline()
+    private void AddTimeline()
     {
-        foreach (EntityBannerInfo info in EntityInfoList)
+        while (TimelineList.Count < 7)
         {
-            int index = TimelineList.Count;
-            GameObject gameObject = Instantiate(BannerPrefab);
-            EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
-            gameObject.name = "Banner:" + index;
-            myBanner.InitBanner(info, index);
-            TimelineList.Add(myBanner);
+            roundDepth++;
+            foreach (EntityBannerInfo info in EntityInfoList)
+            {
+                int index = TimelineList.Count;
+                GameObject gameObject = Instantiate(BannerPrefab);
+                EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
+                myBanner.InitBanner(info, index, roundDepth);
+                myBanner.SetTransformByIndex(index + 2);
+                TimelineList.Add(myBanner);
 
-            if(index >= 7)
-                gameObject.SetActive(false);
+                if (index >= 7)
+                    gameObject.SetActive(false);
+            }
         }
-        round++;
     }
 
     public void OnEndTurn()
     {
-        if (TimelineList.Count % EntityInfoList.Count == 1)
-            AddTimeline();
+        curBanner.DestroyBanner();
+        Pop();
 
-        int destroyTargetindex = TimelineList.FindIndex(x => x.BannerIndex == 0);
-
-        Destroy(TimelineList[destroyTargetindex].gameObject);
-        TimelineList.RemoveAt(destroyTargetindex);
-
-        foreach (EntityBanner banner in TimelineList)
-        {
-            banner.SetDestination(-1);
-        }
+        ArrangeBanner();
     }
 
-    public void OnBuff(int number, double speedValue)
+    public void OnStartBuff(int number, double speedValue)
     {
         if (EntityInfoList.Count < number)
         {
             Debug.Log("버프할 캐릭터 설정 실패");
             return;
         }
-
-        List<EntityBannerInfo> tmpList = new List<EntityBannerInfo>();
-
-        foreach (EntityBannerInfo info in EntityInfoList)
-            tmpList.Add(info);
 
         foreach(EntityBannerInfo info in EntityInfoList)
         {
@@ -214,28 +218,65 @@ public class TurnTimelineSystem : MonoBehaviour
             }
         }
 
-        SortBannerList();
+        ArrangeBanner();
+    }
 
-        foreach(EntityBannerInfo info in EntityInfoList)
+    public void OnEndBuff()
+    {
+
+    }
+
+    public void OnCharacterDie(int number, SIDE side)
+    {
+        number -= 1;
+        EntityInfoList.Remove(EntityInfoList.Find(x => x.Side == side && x.Priority == number));
+
+        List<EntityBanner> deleteBannerList = new List<EntityBanner>();
+        foreach (EntityBanner banner in TimelineList)
         {
-            int sortListIndex = EntityInfoList.IndexOf(info);
-            int unsortListIndex = tmpList.IndexOf(info);
-            int depth = sortListIndex - unsortListIndex;
-            foreach (EntityBanner banner in TimelineList)
+            if (banner.MyBannerInfo.Side == side && banner.MyBannerInfo.Priority == number)
             {
-                if (banner.MyBannerInfo == info && banner.BannerIndex > 0)
-                {
-                    if (banner.BannerIndex + depth > 0)
-                        banner.SetDestination(depth);
-                    else
-                        banner.SetDestination(depth + 1);
-                }
+                deleteBannerList.Add(banner);
             }
+        }
+
+        int count = TimelineList.RemoveAll(x => x.MyBannerInfo.Side == side && x.MyBannerInfo.Priority == number);
+
+        foreach (EntityBanner banner in deleteBannerList)
+        {
+            banner.DestroyBanner();
+        }
+
+        if(curBanner.MyBannerInfo.Side == side && curBanner.MyBannerInfo.Priority == number)
+        {
+            curBanner.DestroyBanner();
+            Pop();
+        }
+
+        ArrangeBanner();
+    }
+
+    private void Pop()
+    {
+        curBanner = TimelineList[0];
+        TimelineList.RemoveAt(0);
+        curBanner.SetDestination(0);
+
+        if (curBanner.Turn > curRound)
+        {
+            curRound++;
+            Debug.Log("다음 라운드 시작!\n 현재 라운드: " + curRound);
         }
     }
 
-    private void SortBannerList()
+    private void ArrangeBanner()
     {
-        EntityInfoList.Sort((EntityBannerInfo a, EntityBannerInfo b) => a.CompareTo(b));
+        AddTimeline();
+        TimelineList.Sort((EntityBanner a, EntityBanner b) => a.CompareTo(b));
+
+        foreach (var banner in TimelineList.Select((value, index) => (value, index)))
+        {
+            banner.value.SetDestination(banner.index + 1);
+        }
     }
 }

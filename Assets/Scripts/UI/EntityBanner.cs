@@ -30,10 +30,33 @@ public class EntityBanner : MonoBehaviour
     [SerializeField]
     private Vector2 initialPos = Vector2.zero;
 
-    private int bannerIndex = 0;
-    public int BannerIndex {  get { return bannerIndex; } }
+    private int turn = 0;
+    public int Turn { get { return turn; } }
 
+    private Coroutine MoveCoroutine;
     private string TmpAssetPath = "05_UI_UX/Banner/";
+
+    public int CompareTo(EntityBanner other)
+    {
+
+        if (this.turn < other.turn) { return -1; }
+        else if (this.turn > other.turn)  { return 1; }
+        else
+        {
+            if (this.myBannerInfo.Speed > other.myBannerInfo.Speed) { return -1; }
+            else if (this.myBannerInfo.Speed < other.myBannerInfo.Speed) { return 1; }
+            else
+            {
+                if (this.myBannerInfo.Side < other.myBannerInfo.Side) { return -1; }
+                else if (this.myBannerInfo.Side > other.myBannerInfo.Side) { return 1; }
+                else
+                {
+                    if (this.myBannerInfo.Priority < other.myBannerInfo.Priority) { return -1; }
+                    else return 1;
+                }
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -44,12 +67,12 @@ public class EntityBanner : MonoBehaviour
         myAnimator = GetComponent<Animator>();
     }
 
-    private IEnumerator MoveBanner()
+    private IEnumerator MoveBanner(int index)
     {
         Vector2 start = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
-        Vector2 destination = new Vector2((initialPos.x * 2) + 80.0f * bannerIndex, initialPos.y);
+        Vector2 destination = new Vector2((initialPos.x * 2) + 80.0f * index, initialPos.y);
 
-        if (bannerIndex == 0)
+        if (index == 0)
         {
             destination = new Vector2(initialPos.x, initialPos.y);
             myAnimator.SetTrigger("PenguinBerserker");
@@ -64,13 +87,11 @@ public class EntityBanner : MonoBehaviour
         }
     }
 
-    public void SetDestination(int stack)
+    public void SetDestination(int index)
     {
-        bannerIndex += stack;
+        gameObject.name = "Banner:" + index;
 
-        gameObject.name = "Banner:" + bannerIndex;
-
-        if (bannerIndex < 7)
+        if (index < 7)
         {
             gameObject.SetActive(true);
         }
@@ -79,18 +100,22 @@ public class EntityBanner : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if(gameObject.activeSelf)
-            StartCoroutine("MoveBanner");
+        if (MoveCoroutine != null)
+            StopCoroutine(MoveCoroutine);
+
+        if (gameObject.activeSelf)
+            MoveCoroutine = StartCoroutine(MoveBanner(index));
         else
-            rectTransform.anchoredPosition = new Vector2((initialPos.x * 2) + 80.0f * bannerIndex, initialPos.y);
+            rectTransform.anchoredPosition = new Vector2((initialPos.x * 2) + 80.0f * 7, initialPos.y);
     }
 
-    public void InitBanner(EntityBannerInfo entityBattleInfo, int index)
+    public void InitBanner(EntityBannerInfo entityBattleInfo, int index, int round)
     {
+        gameObject.name = "Banner:" + index;
         myBannerInfo = entityBattleInfo;
-        bannerIndex = index;
+        turn = round;
 
-        if (bannerIndex == 0)
+        if (index == 0)
             myAnimator.SetTrigger("Skip");
 
         if (myBannerInfo.Side == SIDE.PLAYER)
@@ -102,21 +127,13 @@ public class EntityBanner : MonoBehaviour
         BannerImg.sprite = mySprites[0];
 
         transform.SetParent(GameObject.Find("Turn-Timeline").transform);
-        SetTransformByIndex();
     }
 
-    private void LoadAsset()
+    public void SetTransformByIndex(int index)
     {
-        mySprites = Resources.LoadAll<Sprite>(TmpAssetPath + "player_Commissar");
-
-        if (mySprites.Length <= 0)
-            Debug.Log("배너 이미지의 경로 설정 오류!");
-    }
-
-    public void SetTransformByIndex()
-    {
-        Vector2 pos = new Vector2((initialPos.x * 2) + 80.0f * bannerIndex, initialPos.y);
-        if (bannerIndex == 0)
+        int clampedIndex = Mathf.Clamp(index, 0, 7);
+        Vector2 pos = new Vector2((initialPos.x * 2) + 80.0f * index, initialPos.y);
+        if (index == 0)
         {
             pos.x = initialPos.x;
             priorityRectTransform.anchorMax = new Vector2(0.31f, 0.29f);
@@ -126,6 +143,19 @@ public class EntityBanner : MonoBehaviour
 
         rectTransform.anchoredPosition = pos;
         rectTransform.localScale = Vector3.one;
+    }
+
+    public void DestroyBanner()
+    {
+        Destroy(gameObject);
+    }
+
+    private void LoadAsset()
+    {
+        mySprites = Resources.LoadAll<Sprite>(TmpAssetPath + "player_Commissar");
+
+        if (mySprites.Length <= 0)
+            Debug.Log("배너 이미지의 경로 설정 오류!");
     }
 
     public bool Compare(EntityBanner b)
