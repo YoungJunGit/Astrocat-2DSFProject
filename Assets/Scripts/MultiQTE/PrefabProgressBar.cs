@@ -11,11 +11,8 @@ public class PrefabProgressBar : MonoBehaviour
     public Text resultIndicator;
 
     public float duration = 1f;
-    public float highlightMin = 0.15f;
-    public float highlightMax = 0.55f;
-    float highlightRange;
-    float highlightStart;
-    float highlightEnd;
+
+    public static float highlightRange = 0.1f;  // static으로 변경
 
     float remainingTime = 0f;
     float currentValue = 0f;
@@ -33,19 +30,27 @@ public class PrefabProgressBar : MonoBehaviour
 
     void Start()
     {
-        highlightStart = duration * highlightMin;
-        highlightEnd = duration * highlightMax;
-        highlightRange = highlightMax - highlightMin;
-
         LoadingBarYellow.fillOrigin = 2;
         LoadingBarYellow.fillAmount = highlightRange;
         yellowStartTime = duration * (1f - highlightRange);
+        currentValue = 0;
     }
+
+    public void UpdateHighlightRange()
+    {
+        if (isFailed) return;
+
+        yellowStartTime = duration * (1f - highlightRange);
+        LoadingBarYellow.fillAmount = highlightRange;
+        Debug.Log($"[UpdateHighlightRange] index:{index}, fill:{highlightRange}, called from: {new System.Diagnostics.StackTrace()}");
+    }
+
 
     public void Initialize(int idx, Action<int, string> callback)
     {
         index = idx;
         resultCallback = callback;
+        LoadingBarYellow.fillAmount = highlightRange;
     }
 
     void Update()
@@ -59,7 +64,7 @@ public class PrefabProgressBar : MonoBehaviour
             remainingTime = Mathf.Clamp(duration - currentValue, 0f, duration);
             LoadingBar.fillAmount = Mathf.Clamp01(remainingTime / duration);
 
-            if (currentValue >= yellowStartTime)
+            if (currentValue >= yellowStartTime && !isFailed)
                 UpdateYellowBar();
 
             if (Input.GetKeyDown(KeyCode.A))
@@ -131,11 +136,11 @@ public class PrefabProgressBar : MonoBehaviour
 
     private void UpdateYellowBar()
     {
-        float elapsed = currentValue - yellowStartTime;
+        if (isFailed) return;
 
+        float elapsed = currentValue - yellowStartTime;
         float progress = Mathf.Clamp01(elapsed / (highlightRange*duration));   // 0 ~ 1
 
-        // 노란 바: highlightRange → 0 으로 줄어듦
         LoadingBarYellow.fillAmount = Mathf.Lerp(highlightRange, 0f, progress);
     }
 

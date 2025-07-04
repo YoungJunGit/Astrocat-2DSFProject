@@ -9,9 +9,16 @@ public class ProgressBarSpawner : MonoBehaviour
     public int count = 5;
     Vector2 startPos = new Vector2(-700, 0);
     public GameObject StartButton;
+    public Slider highlightSlider;
 
     private List<GameObject> instances = new List<GameObject>();
     private Dictionary<int, string> resultMap = new Dictionary<int, string>();
+
+    void Start()
+    {
+        highlightSlider.onValueChanged.AddListener(OnHighlightRangeChanged);
+        highlightSlider.value = PrefabProgressBar.highlightRange;
+    }
 
     public void OnStartButton()
     {
@@ -68,6 +75,17 @@ public class ProgressBarSpawner : MonoBehaviour
 
             instances.Add(pb);
             yield return new WaitForSeconds(0.5f);
+        }
+    }
+    public void OnHighlightRangeChanged(float value)
+    {
+        PrefabProgressBar.highlightRange = value;
+        Debug.Log($"[슬라이더 변경] 호출됨! 값: {value}, 호출 시점: {Time.time}");    
+
+        foreach (GameObject pb in instances)
+        {
+            var bar = pb.GetComponentInChildren<PrefabProgressBar>();
+            bar.UpdateHighlightRange();
         }
     }
 
