@@ -17,12 +17,12 @@ public class EntityBannerInfo
     public EntityData EntityInfo { get { return entityInfo; } }
 
     private double speed = 0.0f;
-    public double Speed { get { return speed; } set { speed = value; } }
+    public double Speed { get { return speed; } }
 
     private int priority = 0;
     public int Priority { get { return priority; } }
 
-    public bool bDie = false;
+    //private bool isDie = false;
 
     public int CompareTo(EntityBannerInfo other)
     {

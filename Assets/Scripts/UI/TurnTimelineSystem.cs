@@ -239,8 +239,7 @@ public class TurnTimelineSystem : MonoBehaviour
             }
         }
 
-        int count = TimelineList.RemoveAll(x => x.MyBannerInfo.Side == side && x.MyBannerInfo.Priority == number);
-
+        TimelineList.RemoveAll(x => x.MyBannerInfo.Side == side && x.MyBannerInfo.Priority == number);
         foreach (EntityBanner banner in deleteBannerList)
         {
             banner.DestroyBanner();

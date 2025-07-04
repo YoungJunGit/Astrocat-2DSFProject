@@ -16,15 +16,13 @@ public class EntityBanner : MonoBehaviour
 
     [SerializeField]
     private Sprite[] prioritySprites;
+    [SerializeField]
+    private float bannerSpeed = 1.0f;
+    [SerializeField]
+    private Vector2 initialPos = Vector2.zero;
 
     private EntityBannerInfo myBannerInfo;
     public EntityBannerInfo MyBannerInfo { get { return myBannerInfo; } }
-
-    [SerializeField]
-    private float bannerSpeed = 1.0f;
-
-    [SerializeField]
-    private Vector2 initialPos = Vector2.zero;
 
     private int turn = 0;
     public int Turn { get { return turn; } }
@@ -35,7 +33,6 @@ public class EntityBanner : MonoBehaviour
 
     public int CompareTo(EntityBanner other)
     {
-
         if (this.turn < other.turn) { return -1; }
         else if (this.turn > other.turn)  { return 1; }
         else
@@ -163,15 +160,5 @@ public class EntityBanner : MonoBehaviour
 
         if (myAnimator.runtimeAnimatorController == null)
             Debug.Log("배너 애니메이션의 경로 설정 오류!!");
-    }
-
-    public bool Compare(EntityBanner b)
-    {
-        if (myBannerInfo.EntityInfo.ID == b.MyBannerInfo.EntityInfo.ID)
-        {
-            return true;
-        }
-
-        return false;
     }
 }
