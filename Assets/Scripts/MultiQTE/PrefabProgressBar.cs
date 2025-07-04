@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 
 public class PrefabProgressBar : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PrefabProgressBar : MonoBehaviour
 
     float remainingTime = 0f;
     float currentValue = 0f;
+    float yellowStartTime;
     bool isFailed = false;
     bool isPressed = false;
     float scale = 2.5f;
@@ -28,6 +30,7 @@ public class PrefabProgressBar : MonoBehaviour
     public static int currentActiveIndex = 0;
     private static bool isWaitingForRelease = false;
 
+
     void Start()
     {
         highlightStart = duration * highlightMin;
@@ -35,10 +38,8 @@ public class PrefabProgressBar : MonoBehaviour
         highlightRange = highlightMax - highlightMin;
 
         LoadingBarYellow.fillOrigin = 2;
-        float startAngle = highlightMin * 360f;
         LoadingBarYellow.fillAmount = highlightRange;
-        LoadingBarYellow.rectTransform.localRotation = Quaternion.Euler(0, 0, startAngle);
-        LoadingBarYellow.gameObject.SetActive(true);
+        yellowStartTime = duration * (1f - highlightRange);
     }
 
     public void Initialize(int idx, Action<int, string> callback)
@@ -58,11 +59,8 @@ public class PrefabProgressBar : MonoBehaviour
             remainingTime = Mathf.Clamp(duration - currentValue, 0f, duration);
             LoadingBar.fillAmount = Mathf.Clamp01(remainingTime / duration);
 
-            if (currentValue >= highlightStart && currentValue <= highlightEnd)
+            if (currentValue >= yellowStartTime)
                 UpdateYellowBar();
-
-            else if (currentValue > duration * highlightMax)
-                LoadingBarYellow.gameObject.SetActive(false);
 
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -95,7 +93,7 @@ public class PrefabProgressBar : MonoBehaviour
         Center.transform.localScale = new Vector2(scale, scale);
         resultIndicator.transform.localScale = new Vector2(scale / 2, scale / 2);
 
-        if (currentValue >= 0.45f*duration && currentValue <= 0.55f*duration)
+        if (currentValue >= yellowStartTime)
         {
             resultIndicator.text = "Excellent";
             resultCallback?.Invoke(index, "Excellent");
@@ -133,14 +131,12 @@ public class PrefabProgressBar : MonoBehaviour
 
     private void UpdateYellowBar()
     {
-        // 전체 경과 비율 (duration 기준)
-        float t = currentValue / duration;
+        float elapsed = currentValue - yellowStartTime;
 
-        // 노란 바가 나타나는 시점 ~ 사라지는 시점 사이의 진행률 (0~1)
-        float highlightProgress = (t - highlightMin) / highlightRange;
-        highlightProgress = Mathf.Clamp01(highlightProgress);
+        float progress = Mathf.Clamp01(elapsed / (highlightRange*duration));   // 0 ~ 1
 
-        // 줄어드는 형태: 1 → 0으로 선형 감소
-        LoadingBarYellow.fillAmount = Mathf.Lerp(highlightRange, 0f, highlightProgress);
+        // 노란 바: highlightRange → 0 으로 줄어듦
+        LoadingBarYellow.fillAmount = Mathf.Lerp(highlightRange, 0f, progress);
     }
+
 }

@@ -19,6 +19,7 @@ public class ProgressBar : MonoBehaviour
 
     float remainingTime = 0f;
     float currentValue = 0f;
+    float yellowStartTime;
     float scale = 2.5f;
     bool isFailed = false;
     bool isPressed = false;
@@ -37,9 +38,8 @@ public class ProgressBar : MonoBehaviour
         highlightRange = highlightMax - highlightMin;
 
         LoadingBarYellow.fillOrigin = 2;
-        float startAngle = highlightMin * 360f;
         LoadingBarYellow.fillAmount = highlightRange;
-        LoadingBarYellow.rectTransform.localRotation = Quaternion.Euler(0, 0, startAngle);
+        yellowStartTime = duration * (1f - highlightRange);
     }
 
     /// <summary>
@@ -65,11 +65,8 @@ public class ProgressBar : MonoBehaviour
             ProgressIndicator.text = currentValue.ToString("F2") + "s";
             LoadingBar.fillAmount = Mathf.Clamp01(remainingTime / duration);
 
-            if (currentValue >= highlightStart && currentValue <= highlightEnd)
+            if (currentValue >= yellowStartTime)
                 UpdateYellowBar();
-
-            else if (currentValue > duration * highlightMax)
-                LoadingBarYellow.gameObject.SetActive(false);
 
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -78,7 +75,7 @@ public class ProgressBar : MonoBehaviour
                 LoadingBarYellow.gameObject.SetActive(false);
                 SetAlphaScale(0.3f);
 
-                if (currentValue >= 0.45f * duration && currentValue <= 0.55f * duration)
+                if (currentValue >= yellowStartTime)
                 {
                     resultIndicator.text = "Exellent";
                 }
@@ -151,21 +148,17 @@ public class ProgressBar : MonoBehaviour
         resultIndicator.transform.localScale = new Vector2(1f, 1f);
 
         LoadingBarYellow.fillOrigin = 2;
-        float startAngle = highlightMin * 360f;
         LoadingBarYellow.fillAmount = highlightRange;
-        LoadingBarYellow.rectTransform.localRotation = Quaternion.Euler(0, 0, startAngle);
+        yellowStartTime = duration * (1f - highlightRange);
     }
 
     private void UpdateYellowBar()
     {
-        // 전체 경과 비율 (duration 기준)
-        float t = currentValue / duration;
+        float elapsed = currentValue - yellowStartTime;
 
-        // 노란 바가 나타나는 시점 ~ 사라지는 시점 사이의 진행률 (0~1)
-        float highlightProgress = (t - highlightMin) / highlightRange;
-        highlightProgress = Mathf.Clamp01(highlightProgress);
+        float progress = Mathf.Clamp01(elapsed / (highlightRange * duration));   // 0 ~ 1
 
-        // 줄어드는 형태: 1 → 0으로 선형 감소
-        LoadingBarYellow.fillAmount = Mathf.Lerp(highlightRange, 0f, highlightProgress);
+        // 노란 바: highlightRange → 0 으로 줄어듦
+        LoadingBarYellow.fillAmount = Mathf.Lerp(highlightRange, 0f, progress);
     }
 }

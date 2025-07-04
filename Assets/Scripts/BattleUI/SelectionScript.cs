@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System;
 
 public class SelectionScript : MonoBehaviour
@@ -9,9 +8,25 @@ public class SelectionScript : MonoBehaviour
     public void Initialize(Action<string> callback)
     {
         onSelection = callback;
+    }
 
-        transform.Find("BasicAttack")?.GetComponent<Button>()?.onClick.AddListener(() => onSelection?.Invoke("BasicAttack"));
-        transform.Find("Skill")?.GetComponent<Button>()?.onClick.AddListener(() => onSelection?.Invoke("Skill"));
-        transform.Find("UseItem")?.GetComponent<Button>()?.onClick.AddListener(() => onSelection?.Invoke("UseItem"));
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            onSelection?.Invoke("BasicAttack");
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            onSelection?.Invoke("Skill");
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            onSelection?.Invoke("UseItem");
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            onSelection?.Invoke("Signature Move");
+        }
     }
 }

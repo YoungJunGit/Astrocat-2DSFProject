@@ -727,7 +727,7 @@ MonoBehaviour:
   Center: {fileID: 4114928217806007411}
   resultIndicator: {fileID: 4395242253723625068}
   duration: 3
-  highlightMin: 0.45
+  highlightMin: 0.15
   highlightMax: 0.55
 --- !u!1 &5318079185881864667
 GameObject:

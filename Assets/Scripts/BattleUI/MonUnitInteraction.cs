@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class UnitInteraction : MonoBehaviour
+public class MonUnitInteraction : MonoBehaviour
 {
     public GameObject handIconInstance;
     public AllUnit allUnit;  // AllUnit.cs 참조 필요
@@ -17,17 +17,17 @@ public class UnitInteraction : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (!CompareTag("Player")) return;
+        if (!CompareTag("Enemy")) return;
         if (!allUnit.targetselection) return;
 
-        Vector3 worldPos = transform.position + new Vector3(-1.5f, 0, 0);
+        Vector3 worldPos = transform.position + new Vector3(1.5f, 0, 0);
         handIconInstance.transform.position = worldPos;
         handIconInstance.SetActive(true);
     }
 
     void OnMouseDown()
     {
-        if (!CompareTag("Player")) return;
+        if (!CompareTag("Enemy")) return;
         if (!allUnit.targetselection) return;
 
         SpriteRenderer sr = handIconInstance.GetComponent<SpriteRenderer>();
@@ -45,32 +45,28 @@ public class UnitInteraction : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        Debug.Log($"[{gameObject.name}] 유닛이 [{allUnit.selectedActionType}] 액션을 받았습니다.");
+        targetName = "MonStateBox_" + gameObject.name;
 
-        targetName = "stateBox_" + allUnit.selectingUnitName;
-        StateUnit matchedPlayer = allUnit.stateBoxs.Find(p => p.name == targetName);
-
-
-        if (matchedPlayer != null)
-        {
-            monHp = (int)matchedPlayer.currentHP;
-            Debug.Log($"[{gameObject.name}] 의 HP는 {monHp}입니다.");
-        }
-
-        // 선택된 몬스터 유닛의 공격력 가져오기
-        attackerName = "MonStateBox_" + gameObject.name;
-        MonsterState matchedMonster = allUnit.MonStateBoxs.Find(m => m.name == attackerName);
-
+        MonsterState matchedMonster = allUnit.MonStateBoxs.Find(m => m.name == targetName);
 
         if (matchedMonster != null)
         {
-            attack = matchedMonster.basicDamage;
+            monHp = (int)matchedMonster.currentHP;
+        }
+
+        // 선택된 아군 유닛의 공격력 가져오기
+        attackerName = "stateBox_" + allUnit.selectingUnitName;
+
+        StateUnit attackerData = allUnit.stateBoxs.Find(p => p.name == attackerName);
+
+        if (attackerData != null)
+        {
+            attack = attackerData.basicDamage;
             Debug.Log($"[{attackerName}] 의 기본 공격력은 {attack}입니다.");
         }
 
-        if (allUnit.selectedActionType == "BasicAttack")
-        {
-            monDead = matchedPlayer.TakeDamage(attack);
+        if (allUnit.selectedActionType == "BasicAttack") {
+            monDead = matchedMonster.TakeDamage(attack);
             if (!monDead);
             else Debug.Log($"[{allUnit.selectingUnitName}]가 {gameObject.name}을 죽였습니다.");
         }
