@@ -1025,16 +1025,13 @@ MonoBehaviour:
   ArrowObject: {fileID: 444667112}
   CharacterDataList: {fileID: 11400000, guid: 281f73f30af37154d8c8f716a7a537cf, type: 2}
   MonsterDataList: {fileID: 11400000, guid: 26e94df8f0d3675409559c5003f162ad, type: 2}
-  PlayerData: []
-  EnemyData: []
-  EntityInfoList: []
   AddSpeedBtn: {fileID: 1734981445}
   DieBtn: {fileID: 175501301}
-  buffCharacterNumber: 3
-  durationRound: 1
-  addSpeedValue: 7
+  selectCharacterSide: 2
+  buffCharacterNumber: 2
+  durationRound: 2
+  addSpeedValue: 2
   dieCharacterNumber: 2
-  characterSide: 2
 --- !u!1 &1734981443
 GameObject:
   m_ObjectHideFlags: 0

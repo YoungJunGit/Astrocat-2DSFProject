@@ -12,16 +12,12 @@ public class EntityBanner : MonoBehaviour
     private Animator myAnimator;
     private Image BannerImg;
     private Image PriorityImg;
-
-    [SerializeField]
     private Sprite[] mySprites;
 
     [SerializeField]
     private Sprite[] prioritySprites;
 
-    [SerializeField]
     private EntityBannerInfo myBannerInfo;
-
     public EntityBannerInfo MyBannerInfo { get { return myBannerInfo; } }
 
     [SerializeField]

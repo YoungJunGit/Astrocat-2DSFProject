@@ -3,6 +3,7 @@ using DataEnum;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 
 public enum SIDE
@@ -27,6 +28,25 @@ public class EntityData
     public ELEMENT_TYPE Resist_Type = ELEMENT_TYPE.NONE;
     public string Asset_File;
 }
+public class Buff
+{
+    public string Buff_Name;
+    public int Buff_Duration = 0;
+    public double HP_Value = 0.0f;
+    public double Attack_Value = 0.0f;
+    public int AP_Value = 0;
+    public double Speed_Value = 0.0f;
+
+    public Buff(string buff_Name, int buff_Duration, double hp_Value, double attack_Value, int ap_Value, double speed_Value)
+    {
+        Buff_Name = buff_Name;
+        Buff_Duration = buff_Duration;
+        HP_Value = hp_Value;
+        Attack_Value = attack_Value;
+        AP_Value = ap_Value;
+        Speed_Value = speed_Value;
+    }
+}
 
 public class TurnTimelineSystem : MonoBehaviour
 {
@@ -34,17 +54,17 @@ public class TurnTimelineSystem : MonoBehaviour
     public GameObject ArrowObject;
     public CharacterData CharacterDataList;
     public MonsterData MonsterDataList;
-
-    [SerializeField] // 테스트 후 삭제 예정
-    private List<CharacterDataEntity> PlayerData;
-
-    [SerializeField] // 테스트 후 삭제 예정
-    private List<MonsterDataEntity> EnemyData;
-
+    private List<CharacterDataEntity> PlayerData = new List<CharacterDataEntity>();
+    private List<MonsterDataEntity> EnemyData = new List<MonsterDataEntity>();
     private List<EntityBanner> TimelineList = new List<EntityBanner>();
-
-    [SerializeField]
     private List<EntityBannerInfo> EntityInfoList = new List<EntityBannerInfo>();
+
+    private EntityBanner curBanner;
+    private int roundDepth = 0;
+    private int curRound = 1;
+
+    delegate void EndRoundHandler();
+    EndRoundHandler mEndRound;
 
     private EntityData CreateEntityData(CharacterDataEntity playerData)
     {
@@ -66,7 +86,6 @@ public class TurnTimelineSystem : MonoBehaviour
 
         return entityData;
     }    // 테스트 후 삭제 예정
-
     private EntityData CreateEntityData(MonsterDataEntity enemyData)
     {
         EntityData entityData = new EntityData();
@@ -88,14 +107,10 @@ public class TurnTimelineSystem : MonoBehaviour
         return entityData;
     }       // 테스트 후 삭제 예정
 
-    private EntityBanner curBanner;
-
-    private int roundDepth = 0;
-    private int curRound = 1;
-
     [Header("테스트용")]
-    public Button AddSpeedBtn;                                              // 테스트 후 삭제 예정
+    public Button AddSpeedBtn;
     public Button DieBtn;
+    public SIDE selectCharacterSide;
     [Range(1, 3)]
     public int buffCharacterNumber;
     [Range(1, 10)]
@@ -103,7 +118,6 @@ public class TurnTimelineSystem : MonoBehaviour
     public double addSpeedValue;
     [Range(1, 3)]
     public int dieCharacterNumber;
-    public SIDE characterSide;
 
     private void Awake()
     {
@@ -121,13 +135,15 @@ public class TurnTimelineSystem : MonoBehaviour
         }
 
         AddSpeedBtn.onClick.AddListener(() => OnStartBuff(buffCharacterNumber, addSpeedValue));      // 임시
-        DieBtn.onClick.AddListener(() => OnCharacterDie(dieCharacterNumber, characterSide));
+        DieBtn.onClick.AddListener(() => OnCharacterDie(dieCharacterNumber, selectCharacterSide));
     }
 
     private void Start()
     {
         ArrowObject.SetActive(true);
         InitTimelineSystem();
+        CreateTimeline();
+        Debug.Log("전투 시작\n 현재 라운드: " + curRound);
     }
 
     private void InitTimelineSystem()
@@ -137,6 +153,7 @@ public class TurnTimelineSystem : MonoBehaviour
             EntityData entityInfo = CreateEntityData(PlayerData[i]);
             EntityBannerInfo myBannerInfo = new EntityBannerInfo();
             myBannerInfo.InitBannerInfo(entityInfo, i);
+            mEndRound += new EndRoundHandler(myBannerInfo.OnEndRound);
             EntityInfoList.Add(myBannerInfo);
         }
         for (int i = 0; i < EnemyData.Count; i++)
@@ -144,13 +161,11 @@ public class TurnTimelineSystem : MonoBehaviour
             EntityData entityInfo = CreateEntityData(EnemyData[i]);
             EntityBannerInfo myBannerInfo = new EntityBannerInfo();
             myBannerInfo.InitBannerInfo(entityInfo, i);
+            mEndRound += new EndRoundHandler(myBannerInfo.OnEndRound);
             EntityInfoList.Add(myBannerInfo);
         }
 
         EntityInfoList.Sort((EntityBannerInfo a, EntityBannerInfo b) => a.CompareTo(b));
-
-        CreateTimeline();
-        Debug.Log("전투 시작\n 현재 라운드: " + curRound);
     }
 
     private void CreateTimeline()
@@ -177,26 +192,6 @@ public class TurnTimelineSystem : MonoBehaviour
         TimelineList.RemoveAt(0);
     }
 
-    private void AddTimeline()
-    {
-        while (TimelineList.Count < 7)
-        {
-            roundDepth++;
-            foreach (EntityBannerInfo info in EntityInfoList)
-            {
-                int index = TimelineList.Count;
-                GameObject gameObject = Instantiate(BannerPrefab);
-                EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
-                myBanner.InitBanner(info, index, roundDepth);
-                myBanner.SetTransformByIndex(index + 2);
-                TimelineList.Add(myBanner);
-
-                if (index >= 7)
-                    gameObject.SetActive(false);
-            }
-        }
-    }
-
     public void OnEndTurn()
     {
         curBanner.DestroyBanner();
@@ -213,20 +208,21 @@ public class TurnTimelineSystem : MonoBehaviour
             return;
         }
 
+        int duration = TimelineList.Exists(element => element.MyBannerInfo.Side == selectCharacterSide && 
+                                                      element.MyBannerInfo.Priority == (number - 1) &&
+                                                      element.Turn == curRound) ? durationRound : durationRound + 1;
+
+        Buff buff = new Buff("Speed Buff", duration, 0, 0, 0, addSpeedValue);
+
         foreach(EntityBannerInfo info in EntityInfoList)
         {
-            if(info.Side == SIDE.PLAYER && info.Priority == (number - 1))
+            if(info.Side == selectCharacterSide && info.Priority == (number - 1))
             {
-                info.Speed += speedValue;
+                info.AddBuff(buff);
             }
         }
 
         ArrangeBanner();
-    }
-
-    public void OnEndBuff()
-    {
-
     }
 
     public void OnCharacterDie(int number, SIDE side)
@@ -268,6 +264,7 @@ public class TurnTimelineSystem : MonoBehaviour
         if (curBanner.Turn > curRound)
         {
             curRound++;
+            mEndRound();
             Debug.Log("다음 라운드 시작!\n 현재 라운드: " + curRound);
         }
     }
@@ -280,6 +277,26 @@ public class TurnTimelineSystem : MonoBehaviour
         foreach (var banner in TimelineList.Select((value, index) => (value, index)))
         {
             banner.value.SetDestination(banner.index + 1);
+        }
+    }
+
+    private void AddTimeline()
+    {
+        while (TimelineList.Count < 7)
+        {
+            roundDepth++;
+            foreach (EntityBannerInfo info in EntityInfoList)
+            {
+                int index = TimelineList.Count;
+                GameObject gameObject = Instantiate(BannerPrefab);
+                EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
+                myBanner.InitBanner(info, index, roundDepth);
+                myBanner.SetTransformByIndex(index + 2);
+                TimelineList.Add(myBanner);
+
+                if (index >= 7)
+                    gameObject.SetActive(false);
+            }
         }
     }
 }
