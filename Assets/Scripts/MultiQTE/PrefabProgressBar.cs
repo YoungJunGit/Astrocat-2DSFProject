@@ -12,7 +12,7 @@ public class PrefabProgressBar : MonoBehaviour
 
     public float duration = 1f;
 
-    public static float highlightRange = 0.1f;  // static으로 변경
+    public static float highlightRange = 0.1f;
 
     float remainingTime = 0f;
     float currentValue = 0f;
@@ -42,7 +42,6 @@ public class PrefabProgressBar : MonoBehaviour
 
         yellowStartTime = duration * (1f - highlightRange);
         LoadingBarYellow.fillAmount = highlightRange;
-        Debug.Log($"[UpdateHighlightRange] index:{index}, fill:{highlightRange}, called from: {new System.Diagnostics.StackTrace()}");
     }
 
 
@@ -139,7 +138,7 @@ public class PrefabProgressBar : MonoBehaviour
         if (isFailed) return;
 
         float elapsed = currentValue - yellowStartTime;
-        float progress = Mathf.Clamp01(elapsed / (highlightRange*duration));   // 0 ~ 1
+        float progress = Mathf.Clamp01(elapsed / (highlightRange * duration));   // 0 ~ 1
 
         LoadingBarYellow.fillAmount = Mathf.Lerp(highlightRange, 0f, progress);
     }

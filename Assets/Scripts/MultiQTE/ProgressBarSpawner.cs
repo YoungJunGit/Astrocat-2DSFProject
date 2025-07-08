@@ -16,13 +16,15 @@ public class ProgressBarSpawner : MonoBehaviour
 
     void Start()
     {
+        highlightSlider.navigation = new Navigation { mode = Navigation.Mode.None };
         highlightSlider.onValueChanged.AddListener(OnHighlightRangeChanged);
         highlightSlider.value = PrefabProgressBar.highlightRange;
     }
 
     public void OnStartButton()
     {
-        PrefabProgressBar.currentActiveIndex = 0; // ← 여기 추가
+        PrefabProgressBar.currentActiveIndex = 0;
+        PrefabProgressBar.highlightRange = 0.1f;
 
         foreach (GameObject instance in instances)
         {
@@ -80,7 +82,6 @@ public class ProgressBarSpawner : MonoBehaviour
     public void OnHighlightRangeChanged(float value)
     {
         PrefabProgressBar.highlightRange = value;
-        Debug.Log($"[슬라이더 변경] 호출됨! 값: {value}, 호출 시점: {Time.time}");    
 
         foreach (GameObject pb in instances)
         {
@@ -91,7 +92,7 @@ public class ProgressBarSpawner : MonoBehaviour
 
     private void LogResult(int index, string result)
     {
-        Debug.Log("[Index" + index +"]"+ "결과:" + result);
+        Debug.Log("[Index" + index + "]" + "결과:" + result);
 
         resultMap[index] = result;
 
