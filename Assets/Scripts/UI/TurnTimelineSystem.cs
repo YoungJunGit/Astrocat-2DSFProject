@@ -12,22 +12,6 @@ public enum SIDE
     PLAYER,
     ENEMY
 }
-public class EntityData
-{
-    public SIDE Side = SIDE.NONE;
-    public string ID;
-    public string Name;
-    public double Default_HP = 0.0f;
-    public double Default_Attack = 0.0f;
-    public int Default_AP = 0;
-    public double Default_Speed = 0.0f;
-    public string Skill1_ID;
-    public string Skill2_ID;
-    public string Skill3_ID;
-    public ELEMENT_TYPE Weak_Type = ELEMENT_TYPE.NONE;
-    public ELEMENT_TYPE Resist_Type = ELEMENT_TYPE.NONE;
-    public string Asset_File;
-}
 public class Buff
 {
     public string Buff_Name;
@@ -66,56 +50,17 @@ public class TurnTimelineSystem : MonoBehaviour
     delegate void EndRoundHandler();
     EndRoundHandler mEndRound;
 
-    private EntityData CreateEntityData(CharacterDataEntity playerData)
-    {
-        EntityData entityData = new EntityData();
-
-        entityData.Side = SIDE.PLAYER;
-        entityData.ID = playerData.Character_ID;
-        entityData.Name = playerData.Char_Name;
-        entityData.Default_HP = playerData.Char_Default_HP;
-        entityData.Default_Attack = playerData.Char_Default_Attack;
-        entityData.Default_AP = playerData.Char_Default_AP;
-        entityData.Default_Speed = playerData.Char_Default_Speed;
-        entityData.Skill1_ID = playerData.Skill1_ID;
-        entityData.Skill2_ID = playerData.Skill2_ID;
-        entityData.Skill3_ID = playerData.Skill3_ID;
-        entityData.Weak_Type = playerData.Weak_Type;
-        entityData.Resist_Type = playerData.Resist_Type;
-        entityData.Asset_File = playerData.Asset_File;
-
-        return entityData;
-    }    // 테스트 후 삭제 예정
-    private EntityData CreateEntityData(MonsterDataEntity enemyData)
-    {
-        EntityData entityData = new EntityData();
-
-        entityData.Side = SIDE.ENEMY;
-        entityData.ID = enemyData.Mob_ID;
-        entityData.Name = enemyData.Mob_Name;
-        entityData.Default_HP = enemyData.Mob_Default_HP;
-        entityData.Default_Attack = enemyData.Mob_Default_Attack;
-        entityData.Default_AP = enemyData.Mob_Default_AP;
-        entityData.Default_Speed = enemyData.Mob_Default_Speed;
-        entityData.Skill1_ID = enemyData.Skill1_ID;
-        entityData.Skill2_ID = enemyData.Skill2_ID;
-        entityData.Skill3_ID = enemyData.Skill3_ID;
-        entityData.Weak_Type = enemyData.Weak_Type;
-        entityData.Resist_Type = enemyData.Resist_Type;
-        entityData.Asset_File = enemyData.Asset_File;
-
-        return entityData;
-    }       // 테스트 후 삭제 예정
-
     [Header("테스트용")]
     public Button AddSpeedBtn;
     public Button DieBtn;
     public SIDE selectCharacterSide;
+    [Space(10f)]
     [Range(1, 3)]
     public int buffCharacterNumber;
     [Range(1, 10)]
     public int durationRound;
     public double addSpeedValue;
+    [Space(10f)]
     [Range(1, 3)]
     public int dieCharacterNumber;
 
@@ -138,29 +83,30 @@ public class TurnTimelineSystem : MonoBehaviour
         DieBtn.onClick.AddListener(() => OnCharacterDie(dieCharacterNumber, selectCharacterSide));
     }
 
-    private void Start()
+    public void OnCombatStart(List<EntityData> entityDataList)
     {
         ArrowObject.SetActive(true);
-        InitTimelineSystem();
+        InitTimelineSystem(entityDataList);
         CreateTimeline();
         Debug.Log("전투 시작\n 현재 라운드: " + curRound);
     }
 
-    private void InitTimelineSystem()
+    private void InitTimelineSystem(List<EntityData> entityDataList)
     {
-        for (int i = 0; i < PlayerData.Count; i++)
+        int playerStack = 0, enemyStack = 0;
+        foreach (var entity in entityDataList.Select((value, index)=>(value, index)))
         {
-            EntityData entityInfo = CreateEntityData(PlayerData[i]);
             EntityBannerInfo myBannerInfo = new EntityBannerInfo();
-            myBannerInfo.InitBannerInfo(entityInfo, i);
-            mEndRound += new EndRoundHandler(myBannerInfo.OnEndRound);
-            EntityInfoList.Add(myBannerInfo);
-        }
-        for (int i = 0; i < EnemyData.Count; i++)
-        {
-            EntityData entityInfo = CreateEntityData(EnemyData[i]);
-            EntityBannerInfo myBannerInfo = new EntityBannerInfo();
-            myBannerInfo.InitBannerInfo(entityInfo, i);
+            if (entity.value.Side == SIDE.PLAYER)
+            {
+                myBannerInfo.InitBannerInfo(entityDataList[entity.index], playerStack);
+                playerStack++;
+            }
+            else if(entity.value.Side == SIDE.ENEMY)
+            {
+                myBannerInfo.InitBannerInfo(entityDataList[entity.index], enemyStack);
+                enemyStack++;
+            }
             mEndRound += new EndRoundHandler(myBannerInfo.OnEndRound);
             EntityInfoList.Add(myBannerInfo);
         }

@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: c4931a737dd05394f87dda787b54e00f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2127307086198774155
+    second: rifleman_attack_0
+  - first:
+      213: -8377480398780717641
+    second: rifleman_attack_1
+  - first:
+      213: -3231598767381415328
+    second: rifleman_attack_2
+  - first:
+      213: -3217054489959525775
+    second: rifleman_attack_3
+  - first:
+      213: 4608233520771313664
+    second: rifleman_attack_4
+  - first:
+      213: 4705649537376098702
+    second: rifleman_attack_5
+  - first:
+      213: 8622600950766249061
+    second: rifleman_attack_6
+  - first:
+      213: 6410173194161093380
+    second: rifleman_attack_7
+  - first:
+      213: -8466938464767756436
+    second: rifleman_attack_8
+  - first:
+      213: 5614582470428058936
+    second: rifleman_attack_9
+  - first:
+      213: 4519609962985448663
+    second: rifleman_attack_10
+  - first:
+      213: 2080549142768538399
+    second: rifleman_attack_11
+  - first:
+      213: 543594789393214996
+    second: rifleman_attack_12
+  - first:
+      213: -212915913516491500
+    second: rifleman_attack_13
+  - first:
+      213: -5755329252297997220
+    second: rifleman_attack_14
+  - first:
+      213: -4260423200437523893
+    second: rifleman_attack_15
+  - first:
+      213: 5077683870840790791
+    second: rifleman_attack_16
+  - first:
+      213: -6417362005824009206
+    second: rifleman_attack_17
+  - first:
+      213: -4142129920406411658
+    second: rifleman_attack_18
+  - first:
+      213: 4099164337777287761
+    second: rifleman_attack_19
+  - first:
+      213: -3504640602252991830
+    second: rifleman_attack_20
+  - first:
+      213: 4962524477584556153
+    second: rifleman_attack_21
+  - first:
+      213: 7864957618898498332
+    second: rifleman_attack_22
+  - first:
+      213: -8293485245854080486
+    second: rifleman_attack_23
+  - first:
+      213: -7193551070796181400
+    second: rifleman_attack_24
+  - first:
+      213: -5064025927051582987
+    second: rifleman_attack_25
+  - first:
+      213: 648229143729219454
+    second: rifleman_attack_26
+  - first:
+      213: -5616707937923411344
+    second: rifleman_attack_27
+  - first:
+      213: 2797503698753809768
+    second: rifleman_attack_28
+  - first:
+      213: -4210158504715889105
+    second: rifleman_attack_29
+  - first:
+      213: -7954191773165615740
+    second: rifleman_attack_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rifleman_attack_0
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 0
+        width: 161
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b899c012686b58d10800000000000000
+      internalID: 2127307086198774155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 161
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5a0ed86f53dbb80800000000000000
+      internalID: -8377480398780717641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_2
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 0
+        width: 191
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06af3a5fa0e0723d0800000000000000
+      internalID: -3231598767381415328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_3
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 80
+        width: 17
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17213ee6cf9ba53d0800000000000000
+      internalID: -3217054489959525775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_4
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 0
+        width: 152
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0003f9fb8fbb3ff30800000000000000
+      internalID: 4608233520771313664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_5
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 125
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8998c89253dd4140800000000000000
+      internalID: 4705649537376098702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_6
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 83
+        width: 11
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5642e5651e1a9a770800000000000000
+      internalID: 8622600950766249061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_7
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 119
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40bf3babe8285f850800000000000000
+      internalID: 6410173194161093380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_8
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 0
+        width: 155
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c673d6873546f7a80800000000000000
+      internalID: -8466938464767756436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_9
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 101
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835efff62010bed40800000000000000
+      internalID: 5614582470428058936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_10
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 0
+        width: 158
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4601fb051e8be30800000000000000
+      internalID: 4519609962985448663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_11
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 98
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1356701c689fdc10800000000000000
+      internalID: 2080549142768538399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_12
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 0
+        width: 167
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e2983b49c3b8700800000000000000
+      internalID: 543594789393214996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_13
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 50
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d52dfca129b0df0800000000000000
+      internalID: -212915913516491500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_14
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c540d5fb986f020b0800000000000000
+      internalID: -5755329252297997220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_15
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 41
+        width: 14
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4aa6110cafefd4c0800000000000000
+      internalID: -4260423200437523893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_16
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 86
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f123be39e877640800000000000000
+      internalID: 5077683870840790791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_17
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 80
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c85cf9143f0f6a0800000000000000
+      internalID: -6417362005824009206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_18
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 68
+        width: 71
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676a8a888c23486c0800000000000000
+      internalID: -4142129920406411658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_19
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 68
+        width: 62
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1522a253f3823e830800000000000000
+      internalID: 4099164337777287761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_20
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 65
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2ac4dc0f30d5fc0800000000000000
+      internalID: -3504640602252991830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_21
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 65
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970cb9348bd6ed440800000000000000
+      internalID: 4962524477584556153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_22
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 65
+        width: 38
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1372f7b841f52d60800000000000000
+      internalID: 7864957618898498332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_23
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 65
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12ace21c1f97ec80800000000000000
+      internalID: -8293485245854080486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_24
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 8
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86010970a6f5b2c90800000000000000
+      internalID: -7193551070796181400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_25
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 5
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1e8bcef37f8b9b0800000000000000
+      internalID: -5064025927051582987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_26
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 38
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e772905c8f8fef800800000000000000
+      internalID: 648229143729219454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_27
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 32
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07255f893e17d02b0800000000000000
+      internalID: -5616707937923411344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_28
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 32
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86def0ecacab2d620800000000000000
+      internalID: 2797503698753809768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_29
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 17
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f26d15675238295c0800000000000000
+      internalID: -4210158504715889105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_attack_30
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 14
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4850125b9b80d9190800000000000000
+      internalID: -7954191773165615740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rifleman_attack_0: 2127307086198774155
+      rifleman_attack_1: -8377480398780717641
+      rifleman_attack_10: 4519609962985448663
+      rifleman_attack_11: 2080549142768538399
+      rifleman_attack_12: 543594789393214996
+      rifleman_attack_13: -212915913516491500
+      rifleman_attack_14: -5755329252297997220
+      rifleman_attack_15: -4260423200437523893
+      rifleman_attack_16: 5077683870840790791
+      rifleman_attack_17: -6417362005824009206
+      rifleman_attack_18: -4142129920406411658
+      rifleman_attack_19: 4099164337777287761
+      rifleman_attack_2: -3231598767381415328
+      rifleman_attack_20: -3504640602252991830
+      rifleman_attack_21: 4962524477584556153
+      rifleman_attack_22: 7864957618898498332
+      rifleman_attack_23: -8293485245854080486
+      rifleman_attack_24: -7193551070796181400
+      rifleman_attack_25: -5064025927051582987
+      rifleman_attack_26: 648229143729219454
+      rifleman_attack_27: -5616707937923411344
+      rifleman_attack_28: 2797503698753809768
+      rifleman_attack_29: -4210158504715889105
+      rifleman_attack_3: -3217054489959525775
+      rifleman_attack_30: -7954191773165615740
+      rifleman_attack_4: 4608233520771313664
+      rifleman_attack_5: 4705649537376098702
+      rifleman_attack_6: 8622600950766249061
+      rifleman_attack_7: 6410173194161093380
+      rifleman_attack_8: -8466938464767756436
+      rifleman_attack_9: 5614582470428058936
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

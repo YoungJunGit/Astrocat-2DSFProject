@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 9082b2bbc95c9314197c4ef8e43ead39
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4752782877153149524
+    second: penguin_commander_explosion_0
+  - first:
+      213: -5191634403141003048
+    second: penguin_commander_explosion_1
+  - first:
+      213: 5152042962972685320
+    second: penguin_commander_explosion_2
+  - first:
+      213: 6494858329994136525
+    second: penguin_commander_explosion_3
+  - first:
+      213: -5969939132085987727
+    second: penguin_commander_explosion_4
+  - first:
+      213: -2411657201742942421
+    second: penguin_commander_explosion_5
+  - first:
+      213: 8960558791231780744
+    second: penguin_commander_explosion_6
+  - first:
+      213: -1109769081441215536
+    second: penguin_commander_explosion_7
+  - first:
+      213: -5954561008622345587
+    second: penguin_commander_explosion_8
+  - first:
+      213: 4158147606520544712
+    second: penguin_commander_explosion_9
+  - first:
+      213: -8529973999509828660
+    second: penguin_commander_explosion_10
+  - first:
+      213: 1995996837930671538
+    second: penguin_commander_explosion_11
+  - first:
+      213: -4909225429274943928
+    second: penguin_commander_explosion_12
+  - first:
+      213: -4149023654193707332
+    second: penguin_commander_explosion_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: penguin_commander_explosion_0
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 452c54f68d645f140800000000000000
+      internalID: 4752782877153149524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_1
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 65
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d8551d440c93f7b0800000000000000
+      internalID: -5191634403141003048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_2
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 74
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804b98337cbbf7740800000000000000
+      internalID: 5152042962972685320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 77
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb89c96d3f522a50800000000000000
+      internalID: 6494858329994136525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_4
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 26
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1769f4d4df3862da0800000000000000
+      internalID: -5969939132085987727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_5
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 50
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f69127d82188ed0800000000000000
+      internalID: -2411657201742942421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_6
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887bf5cdebc4a5c70800000000000000
+      internalID: 8960558791231780744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_7
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 62
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db1cf576ee4990f0800000000000000
+      internalID: -1109769081441215536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_8
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 50
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d826cafaf462d5da0800000000000000
+      internalID: -5954561008622345587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_9
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 50
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd3c42a735b4b930800000000000000
+      internalID: 4158147606520544712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_10
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 56
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb06e757d17f9980800000000000000
+      internalID: -8529973999509828660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_11
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 35
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd19a18c8433bb10800000000000000
+      internalID: 1995996837930671538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_12
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 47
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e90c57b7deedbb0800000000000000
+      internalID: -4909225429274943928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: penguin_commander_explosion_13
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 11
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6471f08f4bb66c0800000000000000
+      internalID: -4149023654193707332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      penguin_commander_explosion_0: 4752782877153149524
+      penguin_commander_explosion_1: -5191634403141003048
+      penguin_commander_explosion_10: -8529973999509828660
+      penguin_commander_explosion_11: 1995996837930671538
+      penguin_commander_explosion_12: -4909225429274943928
+      penguin_commander_explosion_13: -4149023654193707332
+      penguin_commander_explosion_2: 5152042962972685320
+      penguin_commander_explosion_3: 6494858329994136525
+      penguin_commander_explosion_4: -5969939132085987727
+      penguin_commander_explosion_5: -2411657201742942421
+      penguin_commander_explosion_6: 8960558791231780744
+      penguin_commander_explosion_7: -1109769081441215536
+      penguin_commander_explosion_8: -5954561008622345587
+      penguin_commander_explosion_9: 4158147606520544712
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
