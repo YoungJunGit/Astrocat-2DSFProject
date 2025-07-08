@@ -28,8 +28,6 @@ public class EntityBanner : MonoBehaviour
     public int Turn { get { return turn; } }
 
     private Coroutine MoveCoroutine;
-    private string ImageAssetPath = "05_UI_UX/Banner/Images/";
-    private string AnimAssetPath = "05_UI_UX/Banner/Animations/";
 
     public int CompareTo(EntityBanner other)
     {
@@ -109,8 +107,8 @@ public class EntityBanner : MonoBehaviour
         myBannerInfo = entityBannerInfo;
         turn = round;
 
-        LoadImgAsset();
-        LoadAnimAsset();
+        mySprites = AssetLoader.LoadImgAsset(myBannerInfo.EntityInfo.Asset_File);
+        myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(myBannerInfo.EntityInfo.Asset_File);
 
         if (index == 0)
             myAnimator.SetTrigger("Skip");
@@ -144,21 +142,5 @@ public class EntityBanner : MonoBehaviour
     public void DestroyBanner()
     {
         Destroy(gameObject);
-    }
-
-    private void LoadImgAsset()
-    {
-        mySprites = Resources.LoadAll<Sprite>(ImageAssetPath + myBannerInfo.EntityInfo.Asset_File);
-
-        if (mySprites.Length <= 0)
-            Debug.Log("배너 이미지의 경로 설정 오류!");
-    }
-
-    private void LoadAnimAsset()
-    {
-        myAnimator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(AnimAssetPath + myBannerInfo.EntityInfo.Asset_File + "_BannerAnimator");
-
-        if (myAnimator.runtimeAnimatorController == null)
-            Debug.Log("배너 애니메이션의 경로 설정 오류!!");
     }
 }
