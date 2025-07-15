@@ -133,10 +133,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 126
-        height: 156
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 123
+        height: 153
+      alignment: 9
+      pivot: {x: 0.07317073, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: penguin_commander_idle_1
       rect:
         serializedVersion: 2
-        x: 126
+        x: 123
         y: 0
-        width: 126
-        height: 156
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 123
+        height: 153
+      alignment: 9
+      pivot: {x: 0.07317073, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: penguin_commander_idle_2
       rect:
         serializedVersion: 2
-        x: 252
+        x: 246
         y: 0
-        width: 126
-        height: 156
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 123
+        height: 153
+      alignment: 9
+      pivot: {x: 0.07317073, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: penguin_commander_idle_3
       rect:
         serializedVersion: 2
-        x: 378
+        x: 369
         y: 0
-        width: 126
-        height: 156
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 123
+        height: 153
+      alignment: 9
+      pivot: {x: 0.07317073, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: penguin_commander_idle_4
       rect:
         serializedVersion: 2
-        x: 504
+        x: 492
         y: 0
-        width: 126
-        height: 156
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 123
+        height: 153
+      alignment: 9
+      pivot: {x: 0.07317073, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: penguin_commander_idle_5
       rect:
         serializedVersion: 2
-        x: 630
+        x: 615
         y: 0
-        width: 126
-        height: 156
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 123
+        height: 153
+      alignment: 9
+      pivot: {x: 0.07317073, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -273,7 +273,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":126.0,"y":156.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":6,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":123.0,"y":153.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       penguin_commander_idle_0: -1781648886
       penguin_commander_idle_1: 225690711

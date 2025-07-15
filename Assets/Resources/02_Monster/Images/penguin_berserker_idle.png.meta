@@ -133,10 +133,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 123
-        height: 147
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 117
+        height: 144
+      alignment: 9
+      pivot: {x: 0.23076925, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: penguin_berserker_idle_1
       rect:
         serializedVersion: 2
-        x: 123
+        x: 117
         y: 0
-        width: 123
-        height: 147
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 117
+        height: 144
+      alignment: 9
+      pivot: {x: 0.23076923, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: penguin_berserker_idle_2
       rect:
         serializedVersion: 2
-        x: 246
+        x: 234
         y: 0
-        width: 123
-        height: 147
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 117
+        height: 144
+      alignment: 9
+      pivot: {x: 0.23076923, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: penguin_berserker_idle_3
       rect:
         serializedVersion: 2
-        x: 369
+        x: 351
         y: 0
-        width: 123
-        height: 147
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 117
+        height: 144
+      alignment: 9
+      pivot: {x: 0.23076923, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: penguin_berserker_idle_4
       rect:
         serializedVersion: 2
-        x: 492
+        x: 468
         y: 0
-        width: 123
-        height: 147
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 117
+        height: 144
+      alignment: 9
+      pivot: {x: 0.23076923, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: penguin_berserker_idle_5
       rect:
         serializedVersion: 2
-        x: 615
+        x: 585
         y: 0
-        width: 123
-        height: 147
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        width: 117
+        height: 144
+      alignment: 9
+      pivot: {x: 0.23076923, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -273,7 +273,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":123.0,"y":147.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":6,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":117.0,"y":144.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       penguin_berserker_idle_0: -835485020
       penguin_berserker_idle_1: 566601402

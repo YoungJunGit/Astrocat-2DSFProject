@@ -1,17 +1,8 @@
-using DataEntity;
-using DataEnum;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 
-public enum SIDE
-{
-    NONE = 0,
-    PLAYER,
-    ENEMY
-}
 public class Buff
 {
     public string Buff_Name;
@@ -36,10 +27,6 @@ public class TurnTimelineSystem : MonoBehaviour
 {
     public GameObject BannerPrefab;
     public GameObject ArrowObject;
-    public CharacterData CharacterDataList;
-    public MonsterData MonsterDataList;
-    private List<CharacterDataEntity> PlayerData = new List<CharacterDataEntity>();
-    private List<MonsterDataEntity> EnemyData = new List<MonsterDataEntity>();
     private List<EntityBanner> TimelineList = new List<EntityBanner>();
     private List<EntityBannerInfo> EntityInfoList = new List<EntityBannerInfo>();
 
@@ -66,19 +53,6 @@ public class TurnTimelineSystem : MonoBehaviour
 
     private void Awake()
     {
-        PlayerData.Clear();
-        EnemyData.Clear();
-
-        for (int i = 0; i < 3; i++) // 임시
-        {
-            PlayerData.Add(CharacterDataList.data[i]);
-        }
-
-        for (int i = 0; i < 3; i++) // 임시
-        {
-            EnemyData.Add(MonsterDataList.data[i]);
-        }
-
         AddSpeedBtn.onClick.AddListener(() => OnStartBuff(buffCharacterNumber, addSpeedValue));      // 임시
         DieBtn.onClick.AddListener(() => OnCharacterDie(dieCharacterNumber, selectCharacterSide));
     }

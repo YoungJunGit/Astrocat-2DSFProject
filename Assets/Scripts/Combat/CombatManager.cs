@@ -16,11 +16,17 @@ public class CombatManager : MonoBehaviour
     [SerializeField]
     private List<string> enemyCharacterID = new List<string>();
 
+    /// <summary>
+    /// 변수 할당 과정
+    /// </summary>
     private void Awake()
     {
         entityDataCreator = transform.GetComponent<EntityDataCreator>();
     }
 
+    /// <summary>
+    /// 전투 시스템의 시작이 이루어짐
+    /// </summary>
     private void Start()
     {
         entityDataList = entityDataCreator.CreateEntityDataWithID(playerCharacterID, enemyCharacterID);
@@ -29,9 +35,7 @@ public class CombatManager : MonoBehaviour
         List<EntityData> playerCharacterDataList = entityDataList.FindAll(element => element.Side == SIDE.PLAYER);
         List<EntityData> enemyCharacterDataList = entityDataList.FindAll(element => element.Side == SIDE.ENEMY);
 
-        playerCharacterSpawner.CreateEntity(playerCharacterDataList);
-        enemyCharacterSpawner.CreateEntity(enemyCharacterDataList);
-
-        Debug.Log("게임 시작");
+        playerCharacterSpawner.CreateUnit(playerCharacterDataList);
+        enemyCharacterSpawner.CreateUnit(enemyCharacterDataList);
     }
 }

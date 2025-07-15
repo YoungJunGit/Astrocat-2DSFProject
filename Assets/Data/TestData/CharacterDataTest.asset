@@ -16,10 +16,10 @@ MonoBehaviour:
   decryptToggle: 0
   data:
   - Character_ID: 10010001
-    Char_Name: Char_Name_001
-    Char_Default_HP: 100
+    Char_Name: "\uB77C\uC774\uD50C\uB9E8"
+    Char_Default_HP: 200
     Char_Default_Attack: 40
-    Char_Default_AP: 3
+    Char_Default_AP: 5
     Char_Default_Speed: 10
     Skill1_ID: 20010001
     Skill2_ID: 20010002
@@ -28,8 +28,8 @@ MonoBehaviour:
     Resist_Type: 2
     Asset_File: player_Rifleman
   - Character_ID: 10010002
-    Char_Name: Char_Name_002
-    Char_Default_HP: 100
+    Char_Name: "\uC2A4\uB098\uC774\uD37C"
+    Char_Default_HP: 150
     Char_Default_Attack: 40
     Char_Default_AP: 3
     Char_Default_Speed: 8
@@ -40,10 +40,10 @@ MonoBehaviour:
     Resist_Type: 2
     Asset_File: player_Sniper
   - Character_ID: 10010003
-    Char_Name: Char_Name_003
+    Char_Name: "\uCEE4\uBBF8\uC0AC\uB974"
     Char_Default_HP: 100
     Char_Default_Attack: 40
-    Char_Default_AP: 3
+    Char_Default_AP: 7
     Char_Default_Speed: 1
     Skill1_ID: 20030001
     Skill2_ID: 20030002

@@ -160,10 +160,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,12 +180,12 @@ TextureImporter:
       name: penguin_rifleman_attack_1
       rect:
         serializedVersion: 2
-        x: 282
+        x: 288
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: penguin_rifleman_attack_2
       rect:
         serializedVersion: 2
-        x: 564
+        x: 576
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: penguin_rifleman_attack_3
       rect:
         serializedVersion: 2
-        x: 846
+        x: 864
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: penguin_rifleman_attack_4
       rect:
         serializedVersion: 2
-        x: 1128
+        x: 1152
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -268,12 +268,12 @@ TextureImporter:
       name: penguin_rifleman_attack_5
       rect:
         serializedVersion: 2
-        x: 1410
+        x: 1440
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -290,12 +290,12 @@ TextureImporter:
       name: penguin_rifleman_attack_6
       rect:
         serializedVersion: 2
-        x: 1692
+        x: 1728
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -312,12 +312,12 @@ TextureImporter:
       name: penguin_rifleman_attack_7
       rect:
         serializedVersion: 2
-        x: 1974
+        x: 2016
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,12 +334,12 @@ TextureImporter:
       name: penguin_rifleman_attack_8
       rect:
         serializedVersion: 2
-        x: 2256
+        x: 2304
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -356,12 +356,12 @@ TextureImporter:
       name: penguin_rifleman_attack_9
       rect:
         serializedVersion: 2
-        x: 2538
+        x: 2592
         y: 0
-        width: 282
-        height: 144
+        width: 288
+        height: 141
       alignment: 9
-      pivot: {x: 0.107, y: 0.0215}
+      pivot: {x: 0.14583333, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -388,7 +388,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":1.0},"gridSpriteSize":{"x":282.0,"y":144.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.10700000077486038,"y":0.0215000007301569},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":1.0},"gridSpriteSize":{"x":288.0,"y":141.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       penguin_rifleman_attack_0: 2812535852611787272
       penguin_rifleman_attack_1: 9088131625744583340
