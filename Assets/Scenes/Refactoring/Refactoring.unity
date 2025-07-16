@@ -155,8 +155,8 @@ MonoBehaviour:
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
   playerSpawner: {fileID: 2661958047807828068, guid: 2673da0bf854f3a4d96cb1c832d7e747, type: 3}
   enemySpawner: {fileID: 1630559219677181037, guid: 4335e1b41ffa82447be372b9444db5ed, type: 3}
-  CharacterDataList: {fileID: 11400000, guid: e2a437b626ae06e4c8c4ffe08bc31b77, type: 2}
-  MonsterDataList: {fileID: 11400000, guid: 491833a49b175d14f8813de0d7da9dd7, type: 2}
+  CharacterDataList: {fileID: 11400000, guid: 18de617c5aa922d4baee756e9b2d3e78, type: 2}
+  MonsterDataList: {fileID: 11400000, guid: 77e9c76324547a84e8ab6cda19ad43a5, type: 2}
 --- !u!4 &592558791
 Transform:
   m_ObjectHideFlags: 0

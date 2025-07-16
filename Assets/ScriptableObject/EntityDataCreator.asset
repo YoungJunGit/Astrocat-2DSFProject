@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b292a8af42819d043b9ed79c6f645dc7, type: 3}
   m_Name: EntityDataCreator
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: e2a437b626ae06e4c8c4ffe08bc31b77, type: 2}
-  enemyData: {fileID: 11400000, guid: 491833a49b175d14f8813de0d7da9dd7, type: 2}
+  playerData: {fileID: 11400000, guid: 18de617c5aa922d4baee756e9b2d3e78, type: 2}
+  enemyData: {fileID: 11400000, guid: 77e9c76324547a84e8ab6cda19ad43a5, type: 2}
