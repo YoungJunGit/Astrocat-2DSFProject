@@ -36,10 +36,8 @@ public class TurnTimelineSystem : MonoBehaviour
 {
     public GameObject BannerPrefab;
     public GameObject ArrowObject;
-    public CharacterData CharacterDataList;
-    public MonsterData MonsterDataList;
-    private List<CharacterDataEntity> PlayerData = new List<CharacterDataEntity>();
-    private List<MonsterDataEntity> EnemyData = new List<MonsterDataEntity>();
+    private List<CharacterDataEntity> PlayerData;
+    private List<MonsterDataEntity> EnemyData;
     private List<EntityBanner> TimelineList = new List<EntityBanner>();
     private List<EntityBannerInfo> EntityInfoList = new List<EntityBannerInfo>();
 
@@ -50,7 +48,7 @@ public class TurnTimelineSystem : MonoBehaviour
     delegate void EndRoundHandler();
     EndRoundHandler mEndRound;
 
-    [Header("Å×½ºÆ®¿ë")]
+    [Header("ï¿½×½ï¿½Æ®ï¿½ï¿½")]
     public Button AddSpeedBtn;
     public Button DieBtn;
     public SIDE selectCharacterSide;
@@ -66,21 +64,14 @@ public class TurnTimelineSystem : MonoBehaviour
 
     private void Awake()
     {
-        PlayerData.Clear();
-        EnemyData.Clear();
-
-        for (int i = 0; i < 3; i++) // ÀÓ½Ã
-        {
-            PlayerData.Add(CharacterDataList.data[i]);
-        }
-
-        for (int i = 0; i < 3; i++) // ÀÓ½Ã
-        {
-            EnemyData.Add(MonsterDataList.data[i]);
-        }
-
-        AddSpeedBtn.onClick.AddListener(() => OnStartBuff(buffCharacterNumber, addSpeedValue));      // ÀÓ½Ã
+        AddSpeedBtn.onClick.AddListener(() => OnStartBuff(buffCharacterNumber, addSpeedValue));      // ï¿½Ó½ï¿½
         DieBtn.onClick.AddListener(() => OnCharacterDie(dieCharacterNumber, selectCharacterSide));
+    }
+
+    public void Init(List<CharacterDataEntity> playerData, List<MonsterDataEntity> enemyData)
+    {
+        PlayerData = playerData;
+        EnemyData = enemyData;
     }
 
     public void OnCombatStart(List<EntityData> entityDataList)
@@ -88,7 +79,7 @@ public class TurnTimelineSystem : MonoBehaviour
         ArrowObject.SetActive(true);
         InitTimelineSystem(entityDataList);
         CreateTimeline();
-        Debug.Log("ÀüÅõ ½ÃÀÛ\n ÇöÀç ¶ó¿îµå: " + curRound);
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½\n ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " + curRound);
     }
 
     private void InitTimelineSystem(List<EntityData> entityDataList)
@@ -150,7 +141,7 @@ public class TurnTimelineSystem : MonoBehaviour
     {
         if (EntityInfoList.Count < number)
         {
-            Debug.Log("¹öÇÁÇÒ Ä³¸¯ÅÍ ¼³Á¤ ½ÇÆÐ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
             return;
         }
 
@@ -210,7 +201,7 @@ public class TurnTimelineSystem : MonoBehaviour
         {
             curRound++;
             mEndRound();
-            Debug.Log("´ÙÀ½ ¶ó¿îµå ½ÃÀÛ!\n ÇöÀç ¶ó¿îµå: " + curRound);
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!\n ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " + curRound);
         }
     }
 

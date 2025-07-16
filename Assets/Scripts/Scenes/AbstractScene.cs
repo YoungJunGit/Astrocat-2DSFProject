@@ -1,11 +1,12 @@
 using Cysharp.Threading.Tasks;
+using Obvious.Soap;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public abstract class AbstractScene : MonoBehaviour
 {
-    [SerializeField]
-    protected abstract int SceneIdx { get; }
+    [SerializeField] protected abstract int SceneIdx { get; }
+    [SerializeField] protected BoolVariable debugMode;
 
     private async void Start()
     {
