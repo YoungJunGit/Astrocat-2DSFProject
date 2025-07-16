@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfcc47ec06486bf42b0b44352cbbe3d8, type: 3}
-  m_Name: CharacterDataTest
+  m_Name: CharacterDataTmp
   m_EditorClassIdentifier: 
   json: {fileID: 4900000, guid: 733741d58f97d19488766e2e009f7649, type: 3}
   decryptToggle: 0
   data:
   - Character_ID: 10010001
-    Char_Name: "\uB77C\uC774\uD50C\uB9E8"
-    Char_Default_HP: 500
+    Char_Name: Char_Name_001
+    Char_Default_HP: 100
     Char_Default_Attack: 40
-    Char_Default_AP: 1
+    Char_Default_AP: 3
     Char_Default_Speed: 10
     Skill1_ID: 20010001
     Skill2_ID: 20010002
@@ -28,11 +28,11 @@ MonoBehaviour:
     Resist_Type: 2
     Asset_File: player_Rifleman
   - Character_ID: 10010002
-    Char_Name: "\uC2A4\uB098\uC774\uD37C"
-    Char_Default_HP: 200
+    Char_Name: Char_Name_002
+    Char_Default_HP: 100
     Char_Default_Attack: 40
-    Char_Default_AP: 2
-    Char_Default_Speed: 8
+    Char_Default_AP: 3
+    Char_Default_Speed: 10
     Skill1_ID: 20020001
     Skill2_ID: 20020002
     Skill3_ID: 
@@ -40,17 +40,17 @@ MonoBehaviour:
     Resist_Type: 2
     Asset_File: player_Sniper
   - Character_ID: 10010003
-    Char_Name: "\uCEE4\uBBF8\uC0AC\uB974"
-    Char_Default_HP: 2000
+    Char_Name: Char_Name_003
+    Char_Default_HP: 100
     Char_Default_Attack: 40
-    Char_Default_AP: 0
-    Char_Default_Speed: 1
+    Char_Default_AP: 3
+    Char_Default_Speed: 10
     Skill1_ID: 20030001
     Skill2_ID: 20030002
     Skill3_ID: 
     Weak_Type: 3
     Resist_Type: 2
-    Asset_File: player_Commissar
+    Asset_File: player_Firebat
   - Character_ID: 10010004
     Char_Name: Char_Name_004
     Char_Default_HP: 100
