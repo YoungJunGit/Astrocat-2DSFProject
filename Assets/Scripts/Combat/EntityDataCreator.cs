@@ -20,7 +20,8 @@ public class EntityData
     public string Asset_File;
 }
 
-public class EntityDataCreator : MonoBehaviour
+[CreateAssetMenu(fileName = "EntityDataCreator", menuName = "EntityDataCreator", order = 1)]
+public class EntityDataCreator : ScriptableObject
 {
     public CharacterData playerData;
     public MonsterData enemyData;

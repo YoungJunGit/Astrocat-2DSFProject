@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatManager : MonoBehaviour
+[CreateAssetMenu(fileName = "CombatManager", menuName = "CombatManager", order = 1)]
+public class CombatManager : ScriptableObject
 {
     public TurnTimelineSystem timelineSystem;
     public EntitySpawner playerCharacterSpawner;
     public EntitySpawner enemyCharacterSpawner;
-    private EntityDataCreator entityDataCreator;
+    [SerializeField] private EntityDataCreator entityDataCreator;
 
     private List<EntityData> entityDataList;
 
@@ -16,13 +17,10 @@ public class CombatManager : MonoBehaviour
     [SerializeField]
     private List<string> enemyCharacterID = new List<string>();
 
-    private void Awake()
+    public void Init(TurnTimelineSystem timelineSystem)
     {
-        entityDataCreator = transform.GetComponent<EntityDataCreator>();
-    }
-
-    private void Start()
-    {
+        this.timelineSystem = timelineSystem;
+        
         entityDataList = entityDataCreator.CreateEntityDataWithID(playerCharacterID, enemyCharacterID);
         timelineSystem.OnCombatStart(entityDataList);
 
@@ -32,6 +30,6 @@ public class CombatManager : MonoBehaviour
         playerCharacterSpawner.CreateEntity(playerCharacterDataList);
         enemyCharacterSpawner.CreateEntity(enemyCharacterDataList);
 
-        Debug.Log("°ÔÀÓ ½ÃÀÛ");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
     }
 }

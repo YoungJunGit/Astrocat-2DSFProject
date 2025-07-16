@@ -49,8 +49,6 @@ public class TurnTimelineSystem : MonoBehaviour
     EndRoundHandler mEndRound;
 
     [Header("�׽�Ʈ��")]
-    public Button AddSpeedBtn;
-    public Button DieBtn;
     public SIDE selectCharacterSide;
     [Space(10f)]
     [Range(1, 3)]
@@ -61,12 +59,6 @@ public class TurnTimelineSystem : MonoBehaviour
     [Space(10f)]
     [Range(1, 3)]
     public int dieCharacterNumber;
-
-    private void Awake()
-    {
-        AddSpeedBtn.onClick.AddListener(() => OnStartBuff(buffCharacterNumber, addSpeedValue));      // �ӽ�
-        DieBtn.onClick.AddListener(() => OnCharacterDie(dieCharacterNumber, selectCharacterSide));
-    }
 
     public void Init(List<CharacterDataEntity> playerData, List<MonsterDataEntity> enemyData)
     {
