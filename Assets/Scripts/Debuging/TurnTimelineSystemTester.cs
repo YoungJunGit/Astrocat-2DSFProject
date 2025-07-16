@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class TurnTimelineSystemTester : MonoBehaviour
 {
-    public Button AddSpeedBtn;
-    public Button DieBtn;
+    [SerializeField] private Button AddSpeedBtn;
+    [SerializeField] private Button DieBtn;
+    [SerializeField] private Button AddTurnBtn;
     public SIDE selectCharacterSide;
     [Space(10f)]
     [Range(1, 3)]
@@ -23,5 +24,6 @@ public class TurnTimelineSystemTester : MonoBehaviour
         
         AddSpeedBtn.onClick.AddListener(() => timelineSystem.OnStartBuff(buffCharacterNumber, addSpeedValue));      // �ӽ�
         DieBtn.onClick.AddListener(() => timelineSystem.OnCharacterDie(dieCharacterNumber, selectCharacterSide));
+        AddTurnBtn.onClick.AddListener(() => timelineSystem.OnEndTurn());
     }
 }

@@ -676,6 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AddSpeedBtn: {fileID: 352124793}
   DieBtn: {fileID: 1294160201}
+  AddTurnBtn: {fileID: 451343575}
   selectCharacterSide: 0
   buffCharacterNumber: 2
   durationRound: 2
@@ -912,8 +913,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1294160200}
-  - {fileID: 451343574}
   - {fileID: 352124792}
+  - {fileID: 451343574}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

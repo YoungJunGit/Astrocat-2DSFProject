@@ -27,6 +27,10 @@ public class RefactoringScene : AbstractScene
     {
         get => 1;
     }
+    
+    /// <summary>
+    /// Instantiate
+    /// </summary>
     protected override void BindObjects()
     {
         camera = Instantiate(camera);
