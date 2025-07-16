@@ -17,9 +17,12 @@ public class CombatManager : ScriptableObject
     [SerializeField]
     private List<string> enemyCharacterID = new List<string>();
 
-    public void Init(TurnTimelineSystem timelineSystem)
+    public void Init(TurnTimelineSystem timelineSystem, EntitySpawner playerCharacterSpawner, EntitySpawner enemyCharacterSpawner)
     {
         this.timelineSystem = timelineSystem;
+        
+        this.playerCharacterSpawner = playerCharacterSpawner;
+        this.enemyCharacterSpawner = enemyCharacterSpawner;
         
         entityDataList = entityDataCreator.CreateEntityDataWithID(playerCharacterID, enemyCharacterID);
         timelineSystem.OnCombatStart(entityDataList);
@@ -27,8 +30,8 @@ public class CombatManager : ScriptableObject
         List<EntityData> playerCharacterDataList = entityDataList.FindAll(element => element.Side == SIDE.PLAYER);
         List<EntityData> enemyCharacterDataList = entityDataList.FindAll(element => element.Side == SIDE.ENEMY);
 
-        playerCharacterSpawner.CreateEntity(playerCharacterDataList);
-        enemyCharacterSpawner.CreateEntity(enemyCharacterDataList);
+        this.playerCharacterSpawner.CreateEntity(playerCharacterDataList);
+        this.enemyCharacterSpawner.CreateEntity(enemyCharacterDataList);
 
         Debug.Log("���� ����");
     }

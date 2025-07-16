@@ -103,7 +103,7 @@ public class EntityBanner : MonoBehaviour
 
     public void InitBanner(EntityBannerInfo entityBannerInfo, int index, int round)
     {
-        gameObject.name = "Banner:" + index;
+        gameObject.name = $"Banner: {index}";
         myBannerInfo = entityBannerInfo;
         turn = round;
 

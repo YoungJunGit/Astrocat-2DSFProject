@@ -7,11 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class RefactoringScene : AbstractScene
 {
+    [Header("Base Objects")]
     [SerializeField] private Camera camera;
     [SerializeField] private EventSystem eventSystem;
+    
+    [Header("Game Logic")]
     [SerializeField] private TimeLine timeLine;
     [SerializeField] private CombatManager combatManager;
+
+    [Header("Spawners")]
+    [SerializeField] private EntitySpawner playerSpawner;
+    [SerializeField] private EntitySpawner enemySpawner;
     
+    [Header("Data")]
     [SerializeField] private CharacterData CharacterDataList;
     [SerializeField] private MonsterData MonsterDataList;
     
@@ -24,6 +32,9 @@ public class RefactoringScene : AbstractScene
         camera = Instantiate(camera);
         eventSystem = Instantiate(eventSystem);
         timeLine = Instantiate(timeLine);
+        
+        playerSpawner = Instantiate(playerSpawner);
+        enemySpawner = Instantiate(enemySpawner);
     }
 
     /// <summary>
@@ -46,7 +57,7 @@ public class RefactoringScene : AbstractScene
         var timelineSystem = timeLine.GetTimeLineSystem();
         timelineSystem.Init(playerData, enemyData);
         
-        combatManager.Init(timelineSystem);
+        combatManager.Init(timelineSystem, playerSpawner, enemySpawner);
     }
 
     /// <summary>
