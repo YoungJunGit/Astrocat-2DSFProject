@@ -32,7 +32,5 @@ public class CombatManager : ScriptableObject
 
         this.playerCharacterSpawner.CreateEntity(playerCharacterDataList);
         this.enemyCharacterSpawner.CreateEntity(enemyCharacterDataList);
-
-        Debug.Log("���� ����");
     }
 }

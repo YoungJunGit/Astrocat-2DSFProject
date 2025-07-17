@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AssetLoader : MonoBehaviour
+public class AssetLoader
 {
     private static string ImageAssetPath = "05_UI_UX/Banner/Images/";
     private static string AnimAssetPath = "05_UI_UX/Banner/Animations/";

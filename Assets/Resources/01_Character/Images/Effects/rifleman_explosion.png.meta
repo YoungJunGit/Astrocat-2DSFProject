@@ -1,0 +1,358 @@
+fileFormatVersion: 2
+guid: 8dd61d8097fb54e49ad7d54fba9f6bb4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6750761209497837986
+    second: rifleman_explosion_0
+  - first:
+      213: 3782186986929287865
+    second: rifleman_explosion_1
+  - first:
+      213: 7586219763000261764
+    second: rifleman_explosion_2
+  - first:
+      213: -5445492423202219486
+    second: rifleman_explosion_3
+  - first:
+      213: -3825284990749136325
+    second: rifleman_explosion_4
+  - first:
+      213: 4302269460313822558
+    second: rifleman_explosion_5
+  - first:
+      213: -3122359610387412721
+    second: rifleman_explosion_6
+  - first:
+      213: 4164453551171168198
+    second: rifleman_explosion_7
+  - first:
+      213: 385537232563154632
+    second: rifleman_explosion_8
+  - first:
+      213: 5341509847259760072
+    second: rifleman_explosion_9
+  - first:
+      213: 5145935326065249936
+    second: rifleman_explosion_10
+  - first:
+      213: -1253890093303581115
+    second: rifleman_explosion_11
+  - first:
+      213: 6370219009214336965
+    second: rifleman_explosion_12
+  - first:
+      213: -2912773399010161221
+    second: rifleman_explosion_13
+  - first:
+      213: 4498426389734702211
+    second: rifleman_explosion_14
+  - first:
+      213: 4873589799448738830
+    second: rifleman_explosion_15
+  - first:
+      213: -2308738072377389680
+    second: rifleman_explosion_16
+  - first:
+      213: -2672743271555557336
+    second: rifleman_explosion_17
+  - first:
+      213: -5769351306811229905
+    second: rifleman_explosion_18
+  - first:
+      213: -4723387487303630761
+    second: rifleman_explosion_19
+  - first:
+      213: -5230117894240267949
+    second: rifleman_explosion_20
+  - first:
+      213: 4232833256515374115
+    second: rifleman_explosion_21
+  - first:
+      213: 2579314988952228925
+    second: rifleman_explosion_22
+  - first:
+      213: 3510573009445558914
+    second: rifleman_explosion_23
+  - first:
+      213: 386482787187040207
+    second: rifleman_explosion_24
+  - first:
+      213: -4606677603929912763
+    second: rifleman_explosion_25
+  - first:
+      213: -2685313607256793108
+    second: rifleman_explosion_26
+  - first:
+      213: -3238920296591950735
+    second: rifleman_explosion_27
+  - first:
+      213: 8953256751532485666
+    second: rifleman_explosion_28
+  - first:
+      213: -7237333343930599216
+    second: rifleman_explosion_29
+  - first:
+      213: -1292636528559065726
+    second: rifleman_explosion_30
+  - first:
+      213: -1983855835371793523
+    second: rifleman_explosion_31
+  - first:
+      213: -3549192172057186705
+    second: rifleman_explosion_32
+  - first:
+      213: -3237004901280423842
+    second: rifleman_explosion_33
+  - first:
+      213: 905831116055811012
+    second: rifleman_explosion_34
+  - first:
+      213: -7355582161919898926
+    second: rifleman_explosion_35
+  - first:
+      213: 7411011387288594226
+    second: rifleman_explosion_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rifleman_explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 189
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7263d88a066e84241a9095e04bf97c25
+      internalID: 1524052178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 189
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d171e549dc8c03a4cb530fd67cbd1850
+      internalID: -469280513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_2
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 189
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a880963b9957a44b471fad5c7b6b12
+      internalID: -452086733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_3
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 0
+        width: 189
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98ad44082c8ec94281fcc64c372ec5c
+      internalID: -352471835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_4
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 0
+        width: 189
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1817f21381c924fa9cc717585cabf7
+      internalID: 1059336458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: eb17fad4ee2aab6428b78deb0488fa7a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":189.0,"y":189.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      rifleman_explosion_0: 1524052178
+      rifleman_explosion_1: -469280513
+      rifleman_explosion_2: -452086733
+      rifleman_explosion_3: -352471835
+      rifleman_explosion_4: 1059336458
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,17 +1,8 @@
-using DataEntity;
-using DataEnum;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 
-public enum SIDE
-{
-    NONE = 0,
-    PLAYER,
-    ENEMY
-}
 public class Buff
 {
     public string Buff_Name;
@@ -36,8 +27,7 @@ public class TurnTimelineSystem : MonoBehaviour
 {
     public GameObject BannerPrefab;
     public GameObject ArrowObject;
-    private List<CharacterDataEntity> PlayerData;
-    private List<MonsterDataEntity> EnemyData;
+
     private List<EntityBanner> TimelineList = new List<EntityBanner>();
     private List<EntityBannerInfo> EntityInfoList = new List<EntityBannerInfo>();
 
@@ -48,7 +38,7 @@ public class TurnTimelineSystem : MonoBehaviour
     delegate void EndRoundHandler();
     EndRoundHandler mEndRound;
 
-    [Header("О©╫в╫О©╫ф╝О©╫О©╫")]
+    [Header("ев╫╨ф╝©К")]
     public SIDE selectCharacterSide;
     [Space(10f)]
     [Range(1, 3)]
@@ -62,8 +52,7 @@ public class TurnTimelineSystem : MonoBehaviour
 
     public void Init(List<CharacterDataEntity> playerData, List<MonsterDataEntity> enemyData)
     {
-        PlayerData = playerData;
-        EnemyData = enemyData;
+        
     }
 
     public void OnCombatStart(List<EntityData> entityDataList)
@@ -71,7 +60,6 @@ public class TurnTimelineSystem : MonoBehaviour
         ArrowObject.SetActive(true);
         InitTimelineSystem(entityDataList);
         CreateTimeline();
-        Debug.Log("О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫\n О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫: " + curRound);
     }
 
     private void InitTimelineSystem(List<EntityData> entityDataList)
@@ -133,7 +121,6 @@ public class TurnTimelineSystem : MonoBehaviour
     {
         if (EntityInfoList.Count < number)
         {
-            Debug.Log("О©╫О©╫О©╫О©╫О©╫О©╫ дЁО©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫");
             return;
         }
 
@@ -193,7 +180,6 @@ public class TurnTimelineSystem : MonoBehaviour
         {
             curRound++;
             mEndRound();
-            Debug.Log("О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫!\n О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫: " + curRound);
         }
     }
 

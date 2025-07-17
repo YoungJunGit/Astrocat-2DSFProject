@@ -1,9 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Runtime.CompilerServices;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class EntityBanner : MonoBehaviour
 {

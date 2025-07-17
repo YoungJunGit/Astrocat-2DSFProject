@@ -1,0 +1,382 @@
+fileFormatVersion: 2
+guid: 748f23d372a8d0543b6137bcd0fafbe2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6261138371020115135
+    second: sniper_idle_explosion_0
+  - first:
+      213: -5713006501624034289
+    second: sniper_idle_explosion_1
+  - first:
+      213: -7661907812515765112
+    second: sniper_idle_explosion_2
+  - first:
+      213: 8091354107083989637
+    second: sniper_idle_explosion_3
+  - first:
+      213: 926895050273097045
+    second: sniper_idle_explosion_4
+  - first:
+      213: -2548451678763589892
+    second: sniper_idle_explosion_5
+  - first:
+      213: -7561475436073624082
+    second: sniper_idle_explosion_6
+  - first:
+      213: -4916589742635136300
+    second: sniper_idle_explosion_7
+  - first:
+      213: 1693548780485077261
+    second: sniper_idle_explosion_8
+  - first:
+      213: 3614301614332171355
+    second: sniper_idle_explosion_9
+  - first:
+      213: -7253809812202738765
+    second: sniper_idle_explosion_10
+  - first:
+      213: 271691999646127401
+    second: sniper_idle_explosion_11
+  - first:
+      213: -2154702364004730814
+    second: sniper_idle_explosion_12
+  - first:
+      213: -1872411058467191929
+    second: sniper_idle_explosion_13
+  - first:
+      213: -5341079354911151618
+    second: sniper_idle_explosion_14
+  - first:
+      213: -4376794115226702905
+    second: sniper_idle_explosion_15
+  - first:
+      213: -930878749816905013
+    second: sniper_idle_explosion_16
+  - first:
+      213: 1811185868594843059
+    second: sniper_idle_explosion_17
+  - first:
+      213: -3185321601548001116
+    second: sniper_idle_explosion_18
+  - first:
+      213: 1459108692291908366
+    second: sniper_idle_explosion_19
+  - first:
+      213: 4142052489136844742
+    second: sniper_idle_explosion_20
+  - first:
+      213: -1097759217202439538
+    second: sniper_idle_explosion_21
+  - first:
+      213: -6988906261945542627
+    second: sniper_idle_explosion_22
+  - first:
+      213: 6274096376468469758
+    second: sniper_idle_explosion_23
+  - first:
+      213: 1511248172018673942
+    second: sniper_idle_explosion_24
+  - first:
+      213: 7670223817708977943
+    second: sniper_idle_explosion_25
+  - first:
+      213: -6133557991286955051
+    second: sniper_idle_explosion_26
+  - first:
+      213: -8053036734104219343
+    second: sniper_idle_explosion_27
+  - first:
+      213: 2451006583046084458
+    second: sniper_idle_explosion_28
+  - first:
+      213: 2398203177547388574
+    second: sniper_idle_explosion_29
+  - first:
+      213: -2319035853767959426
+    second: sniper_idle_explosion_30
+  - first:
+      213: 2008156751679927751
+    second: sniper_idle_explosion_31
+  - first:
+      213: 8130303445506001786
+    second: sniper_idle_explosion_32
+  - first:
+      213: 2561221744246723109
+    second: sniper_idle_explosion_33
+  - first:
+      213: -8705736161933138774
+    second: sniper_idle_explosion_34
+  - first:
+      213: -5724550050944907352
+    second: sniper_idle_explosion_35
+  - first:
+      213: 8287178478340560759
+    second: sniper_idle_explosion_36
+  - first:
+      213: -5317097886723456764
+    second: sniper_idle_explosion_37
+  - first:
+      213: 3175454213852708425
+    second: sniper_idle_explosion_38
+  - first:
+      213: -6148992004932741560
+    second: sniper_idle_explosion_39
+  - first:
+      213: -7146554029766171296
+    second: sniper_idle_explosion_40
+  - first:
+      213: -8111573049750852010
+    second: sniper_idle_explosion_41
+  - first:
+      213: 1181760928679457357
+    second: sniper_idle_explosion_42
+  - first:
+      213: 8456204256028970604
+    second: sniper_idle_explosion_43
+  - first:
+      213: -2932768153665606198
+    second: sniper_idle_explosion_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniper_idle_explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae76c7ec78c5ebd4ca7aab329b458892
+      internalID: -376334704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_idle_explosion_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8139a27070a074a82be7c95e73662f
+      internalID: -844401932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_idle_explosion_2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff298db350b8ff147b7580f717adae91
+      internalID: -1976690108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_idle_explosion_3
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db04baca673bbab42a9b0928840d90a5
+      internalID: -377876667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_idle_explosion_4
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c7985ae9ce1f640bbdaf5aa358a193
+      internalID: -546895166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 09d2e1ef1bdd5a1478a95c5d635d812e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":168.0,"y":180.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      sniper_idle_explosion_0: -376334704
+      sniper_idle_explosion_1: -844401932
+      sniper_idle_explosion_2: -1976690108
+      sniper_idle_explosion_3: -377876667
+      sniper_idle_explosion_4: -546895166
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

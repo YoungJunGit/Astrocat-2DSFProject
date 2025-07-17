@@ -1,0 +1,382 @@
+fileFormatVersion: 2
+guid: 5d2aff93fe53ce34987f04f2659e7067
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8312093379356705146
+    second: sniper_explosion_0
+  - first:
+      213: -1540825860271950949
+    second: sniper_explosion_1
+  - first:
+      213: 4903230927165138155
+    second: sniper_explosion_2
+  - first:
+      213: 6147471339944995448
+    second: sniper_explosion_3
+  - first:
+      213: 1350312540730873806
+    second: sniper_explosion_4
+  - first:
+      213: -4783969178569852111
+    second: sniper_explosion_5
+  - first:
+      213: 943899784086532
+    second: sniper_explosion_6
+  - first:
+      213: 8629186961071740661
+    second: sniper_explosion_7
+  - first:
+      213: 6948074825389258364
+    second: sniper_explosion_8
+  - first:
+      213: -5023256509619931400
+    second: sniper_explosion_9
+  - first:
+      213: -5934590164813842662
+    second: sniper_explosion_10
+  - first:
+      213: -2629909945298270213
+    second: sniper_explosion_11
+  - first:
+      213: 2735316249419764277
+    second: sniper_explosion_12
+  - first:
+      213: -5039108040656654014
+    second: sniper_explosion_13
+  - first:
+      213: -6922438647631298371
+    second: sniper_explosion_14
+  - first:
+      213: -3687531473357412846
+    second: sniper_explosion_15
+  - first:
+      213: -1165832153024272834
+    second: sniper_explosion_16
+  - first:
+      213: -644235218337622990
+    second: sniper_explosion_17
+  - first:
+      213: 5513705031731214643
+    second: sniper_explosion_18
+  - first:
+      213: -4152548284767581488
+    second: sniper_explosion_19
+  - first:
+      213: -1223921222413259016
+    second: sniper_explosion_20
+  - first:
+      213: 5183709269155502031
+    second: sniper_explosion_21
+  - first:
+      213: -3213181686645680336
+    second: sniper_explosion_22
+  - first:
+      213: 4448932128063568335
+    second: sniper_explosion_23
+  - first:
+      213: 7528914076776306861
+    second: sniper_explosion_24
+  - first:
+      213: -545676589618073233
+    second: sniper_explosion_25
+  - first:
+      213: -5124053094919277198
+    second: sniper_explosion_26
+  - first:
+      213: 8562921469237814474
+    second: sniper_explosion_27
+  - first:
+      213: 7980072300012708151
+    second: sniper_explosion_28
+  - first:
+      213: -4779198149835861127
+    second: sniper_explosion_29
+  - first:
+      213: -6208432909727021961
+    second: sniper_explosion_30
+  - first:
+      213: 7782659882334595983
+    second: sniper_explosion_31
+  - first:
+      213: 7802646195009269435
+    second: sniper_explosion_32
+  - first:
+      213: 6750040103835666579
+    second: sniper_explosion_33
+  - first:
+      213: -5360102169543275713
+    second: sniper_explosion_34
+  - first:
+      213: -7589464932893531390
+    second: sniper_explosion_35
+  - first:
+      213: -5350358572723248286
+    second: sniper_explosion_36
+  - first:
+      213: 1256662517859617818
+    second: sniper_explosion_37
+  - first:
+      213: -2481848831740891695
+    second: sniper_explosion_38
+  - first:
+      213: 2098142822663374124
+    second: sniper_explosion_39
+  - first:
+      213: -3673089921794121989
+    second: sniper_explosion_40
+  - first:
+      213: -6814183544118818496
+    second: sniper_explosion_41
+  - first:
+      213: -8896865341957566351
+    second: sniper_explosion_42
+  - first:
+      213: 6252781092136513574
+    second: sniper_explosion_43
+  - first:
+      213: -8667849519395018090
+    second: sniper_explosion_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniper_explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b088d7e139ee894eb715e0fdccc78e8
+      internalID: -1345984210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_explosion_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b287919c73da7944ca0a2116617dd522
+      internalID: -435443182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_explosion_2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda7ffcfd96ff6e4c8afb6cc2ae0d59a
+      internalID: 331722965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_explosion_3
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0264e39e01a7541b75aadf1142e7d2
+      internalID: -485044573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_explosion_4
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 168
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1c5e9a43ab32c46958cb9400995b3c
+      internalID: 1389073038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3f7d3db332f957146bb7f92774b5dba8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":168.0,"y":180.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      sniper_explosion_0: -1345984210
+      sniper_explosion_1: -435443182
+      sniper_explosion_2: 331722965
+      sniper_explosion_3: -485044573
+      sniper_explosion_4: 1389073038
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

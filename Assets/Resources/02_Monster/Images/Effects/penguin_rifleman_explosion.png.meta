@@ -155,12 +155,12 @@ TextureImporter:
       name: penguin_rifleman_explosion_0
       rect:
         serializedVersion: 2
-        x: 101
-        y: 80
-        width: 8
-        height: 8
+        x: 0
+        y: 0
+        width: 84
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,12 +177,12 @@ TextureImporter:
       name: penguin_rifleman_explosion_1
       rect:
         serializedVersion: 2
-        x: 305
-        y: 65
-        width: 17
-        height: 23
+        x: 84
+        y: 0
+        width: 84
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: penguin_rifleman_explosion_2
       rect:
         serializedVersion: 2
-        x: 392
-        y: 74
-        width: 11
-        height: 16
+        x: 168
+        y: 0
+        width: 84
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,12 +221,12 @@ TextureImporter:
       name: penguin_rifleman_explosion_3
       rect:
         serializedVersion: 2
-        x: 32
+        x: 252
         y: 0
-        width: 77
-        height: 70
+        width: 84
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,12 +243,12 @@ TextureImporter:
       name: penguin_rifleman_explosion_4
       rect:
         serializedVersion: 2
-        x: 122
-        y: 26
-        width: 47
-        height: 50
+        x: 336
+        y: 0
+        width: 84
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -261,209 +261,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: penguin_rifleman_explosion_5
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 50
-        width: 20
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 393291e5172871760800000000000000
-      internalID: 7428549533792543635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_rifleman_explosion_6
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 32
-        width: 23
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a09bbaa7a147376c0800000000000000
-      internalID: -4146843174802048758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_rifleman_explosion_7
-      rect:
-        serializedVersion: 2
-        x: 287
-        y: 62
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f5639f2ba831a3de0800000000000000
-      internalID: -1352747251642321313
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_rifleman_explosion_8
-      rect:
-        serializedVersion: 2
-        x: 317
-        y: 50
-        width: 11
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7838cb4ec9954dce0800000000000000
-      internalID: -1381380655308569721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_rifleman_explosion_9
-      rect:
-        serializedVersion: 2
-        x: 374
-        y: 50
-        width: 14
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c8d9b20435e189670800000000000000
-      internalID: 8545613635843235212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_rifleman_explosion_10
-      rect:
-        serializedVersion: 2
-        x: 407
-        y: 56
-        width: 8
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 104be69d70c417b60800000000000000
-      internalID: 7742052831022986241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_rifleman_explosion_11
-      rect:
-        serializedVersion: 2
-        x: 209
-        y: 35
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5b23337af04059e0800000000000000
-      internalID: -1634735220316755107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_rifleman_explosion_12
-      rect:
-        serializedVersion: 2
-        x: 293
-        y: 47
-        width: 11
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 81d5f67c0bb1090e0800000000000000
-      internalID: -2265280166493201128
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: penguin_rifleman_explosion_13
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 11
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1c19bcc125a5c500800000000000000
-      internalID: 415920105188826140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5dd99024c55a23c4ca7e276e06d5f42f
     internalID: 0
     vertices: []
     indices: 
@@ -471,22 +273,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":84.0,"y":90.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       penguin_rifleman_explosion_0: -8656007557395942604
       penguin_rifleman_explosion_1: 3077908104945965559
-      penguin_rifleman_explosion_10: 7742052831022986241
-      penguin_rifleman_explosion_11: -1634735220316755107
-      penguin_rifleman_explosion_12: -2265280166493201128
-      penguin_rifleman_explosion_13: 415920105188826140
       penguin_rifleman_explosion_2: 8232547779324453325
       penguin_rifleman_explosion_3: -6930505835874267903
       penguin_rifleman_explosion_4: 6652874170975185560
-      penguin_rifleman_explosion_5: 7428549533792543635
-      penguin_rifleman_explosion_6: -4146843174802048758
-      penguin_rifleman_explosion_7: -1352747251642321313
-      penguin_rifleman_explosion_8: -1381380655308569721
-      penguin_rifleman_explosion_9: 8545613635843235212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

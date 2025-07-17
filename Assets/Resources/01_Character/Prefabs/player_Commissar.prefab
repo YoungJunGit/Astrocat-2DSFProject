@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8720075959855435944}
   - component: {fileID: 214975663935637467}
   - component: {fileID: 5921753302476476349}
+  - component: {fileID: 3329066558384909300}
   m_Layer: 0
   m_Name: player_Commissar
   m_TagString: Untagged
@@ -110,3 +111,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3329066558384909300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665324066904224055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c0092ab530cdb43a081377eea667b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StatusBox: {fileID: 5910435644277118687, guid: 6b1112911265df241a1e6a37a1911361, type: 3}

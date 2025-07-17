@@ -1,10 +1,5 @@
-using DataEnum;
-using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EntityBannerInfo
 {
@@ -62,15 +57,20 @@ public class EntityBannerInfo
 
     public void AddBuff(Buff newBuff)
     {
-        if (!buffList.Exists(element => element.Buff_Name == newBuff.Buff_Name))
+        Buff buff = buffList.Find(element => element.Buff_Name == newBuff.Buff_Name);
+
+        if(buff == null)
         {
             buffList.Add(newBuff);
-
             EntityInfo.Default_HP += newBuff.HP_Value;
             EntityInfo.Default_Attack += newBuff.Attack_Value;
             EntityInfo.Default_AP += newBuff.AP_Value;
             EntityInfo.Default_Speed += newBuff.Speed_Value;
             speed += newBuff.Speed_Value;
+        }
+        else
+        {
+            buffList[buffList.IndexOf(buff)] = newBuff;
         }
     }
 

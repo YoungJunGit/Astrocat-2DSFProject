@@ -1,0 +1,880 @@
+fileFormatVersion: 2
+guid: 78a6b3566ca0c0145ab80864dbbcbda8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1591470123856912270
+    second: enemy_select_arrow_0
+  - first:
+      213: -4813225378327749418
+    second: enemy_select_arrow_1
+  - first:
+      213: -2856946701804838206
+    second: enemy_select_arrow_2
+  - first:
+      213: 6977264365802005669
+    second: enemy_select_arrow_3
+  - first:
+      213: 2642014038575877277
+    second: enemy_select_arrow_4
+  - first:
+      213: -573898752165891475
+    second: enemy_select_arrow_5
+  - first:
+      213: 2542392001583070020
+    second: enemy_select_arrow_6
+  - first:
+      213: -7870596423802539050
+    second: enemy_select_arrow_7
+  - first:
+      213: -3583357902529043718
+    second: enemy_select_arrow_8
+  - first:
+      213: 191596821783134294
+    second: enemy_select_arrow_9
+  - first:
+      213: -8668798892119741151
+    second: enemy_select_arrow_10
+  - first:
+      213: -8397810492353447677
+    second: enemy_select_arrow_11
+  - first:
+      213: -7178973355610595678
+    second: enemy_select_arrow_12
+  - first:
+      213: 7455178385650669861
+    second: enemy_select_arrow_13
+  - first:
+      213: -3534779620559274951
+    second: enemy_select_arrow_14
+  - first:
+      213: 174819843994651461
+    second: enemy_select_arrow_15
+  - first:
+      213: -1437455690926634349
+    second: enemy_select_arrow_16
+  - first:
+      213: 14357983810524595
+    second: enemy_select_arrow_17
+  - first:
+      213: 4957977146224048400
+    second: enemy_select_arrow_18
+  - first:
+      213: 550068623923359179
+    second: enemy_select_arrow_19
+  - first:
+      213: -398354179491897406
+    second: enemy_select_arrow_20
+  - first:
+      213: 5922919068320658149
+    second: enemy_select_arrow_21
+  - first:
+      213: 7751513405358602278
+    second: enemy_select_arrow_22
+  - first:
+      213: -2931505581023075168
+    second: enemy_select_arrow_23
+  - first:
+      213: 8396363377984658114
+    second: enemy_select_arrow_24
+  - first:
+      213: -102456993081814534
+    second: enemy_select_arrow_25
+  - first:
+      213: 2514927947418580986
+    second: enemy_select_arrow_26
+  - first:
+      213: 6873233151250985664
+    second: enemy_select_arrow_27
+  - first:
+      213: -6499770728625589718
+    second: enemy_select_arrow_28
+  - first:
+      213: -1347915831651539433
+    second: enemy_select_arrow_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemy_select_arrow_0
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 218
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 270acd4ba56f9e9e0800000000000000
+      internalID: -1591470123856912270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_1
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 218
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc11ec150df33db0800000000000000
+      internalID: -4813225378327749418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_2
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 215
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c2e2b88c161a58d0800000000000000
+      internalID: -2856946701804838206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_3
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 215
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4ae9b39f834d060800000000000000
+      internalID: 6977264365802005669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_4
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 212
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c09e425c15aa420800000000000000
+      internalID: 2642014038575877277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_5
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 212
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d62bc14202a1908f0800000000000000
+      internalID: -573898752165891475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_6
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 209
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b37262e04684320800000000000000
+      internalID: 2542392001583070020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_7
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 209
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d33ac4b04606c290800000000000000
+      internalID: -7870596423802539050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_8
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 212
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2eaac19fa554ec0800000000000000
+      internalID: -3583357902529043718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_9
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 212
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6504a765b40b8a200800000000000000
+      internalID: 191596821783134294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_10
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 215
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d27ed365d32b780800000000000000
+      internalID: -8668798892119741151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_11
+      rect:
+        serializedVersion: 2
+        x: 2282
+        y: 215
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3097938c9dbf47b80800000000000000
+      internalID: -8397810492353447677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_12
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 170
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ae16d6d4c92f5c90800000000000000
+      internalID: -7178973355610595678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_13
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 170
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 529d0e51e3d167760800000000000000
+      internalID: 7455178385650669861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_14
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 170
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c3645c9a0f1fec0800000000000000
+      internalID: -3534779620559274951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_15
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 131
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b8dfcc8b51d6200800000000000000
+      internalID: 174819843994651461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_16
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 131
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a44f14aa12d0ce0800000000000000
+      internalID: -1437455690926634349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_17
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 170
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b597bc9282033000800000000000000
+      internalID: 14357983810524595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_18
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 170
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 019703d22f54ec440800000000000000
+      internalID: 4957977146224048400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_19
+      rect:
+        serializedVersion: 2
+        x: 2348
+        y: 170
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd2a03cf7c32a700800000000000000
+      internalID: 550068623923359179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_20
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 122
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cfd79cfbf2c87af0800000000000000
+      internalID: -398354179491897406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_21
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 122
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e2f3acf28f623250800000000000000
+      internalID: 5922919068320658149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_22
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 125
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 628f3167f58e29b60800000000000000
+      internalID: 7751513405358602278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_23
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 125
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a46b02b4333157d0800000000000000
+      internalID: -2931505581023075168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_24
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 128
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cadfd5a100e58470800000000000000
+      internalID: 8396363377984658114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_25
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 128
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af19a9a58eff39ef0800000000000000
+      internalID: -102456993081814534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_26
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 128
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af7369db4a1d6e220800000000000000
+      internalID: 2514927947418580986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_27
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 128
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c2f0c69221a26f50800000000000000
+      internalID: 6873233151250985664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_28
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 125
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a223ac6a5fc2cc5a0800000000000000
+      internalID: -6499770728625589718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_select_arrow_29
+      rect:
+        serializedVersion: 2
+        x: 2282
+        y: 125
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 716e84351bd3b4de0800000000000000
+      internalID: -1347915831651539433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

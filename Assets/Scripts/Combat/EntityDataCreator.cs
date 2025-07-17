@@ -3,6 +3,12 @@ using DataEnum;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SIDE
+{
+    NONE = 0,
+    PLAYER,
+    ENEMY
+}
 public class EntityData
 {
     public SIDE Side = SIDE.NONE;
