@@ -7,7 +7,7 @@ public abstract class AbstractScene : MonoBehaviour
 {
     [SerializeField] protected abstract int SceneIdx { get; }
     [SerializeField] protected BoolVariable debugMode;
-
+    
     private async void Start()
     {
         if (!SceneManager.GetSceneByBuildIndex(0).isLoaded)
@@ -19,7 +19,6 @@ public abstract class AbstractScene : MonoBehaviour
         await InitializeObjects();
         await CreateObjects();
         PrepareGame();
-
         await BeginGame();
     }
 

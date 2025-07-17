@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class RefactoringScene : AbstractScene
+public class ChungbongScene : AbstractScene
 {
     [Header("Base Objects")]
     [SerializeField] private Camera camera;

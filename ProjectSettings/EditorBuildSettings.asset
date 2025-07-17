@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/0. Base.unity
     guid: a20df5d2d458a8243b697a703b33349a
   - enabled: 1
-    path: Assets/Scenes/Refactoring/Refactoring.unity
+    path: Assets/Scenes/Refactoring/RefactoringChungbong.unity
     guid: e86a23b42dfd49e48a0074bfedbfd22d
   - enabled: 1
     path: Assets/Scenes/Refactoring/DebugingUI.unity
