@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using DataEntity;
+using DataEnum;
 
 public class EntityBanner : MonoBehaviour
 {

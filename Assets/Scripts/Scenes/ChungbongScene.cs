@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DataEntity;
+using Obvious.Soap;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -12,7 +13,9 @@ public class ChungbongScene : AbstractScene
     [SerializeField] private EventSystem eventSystem;
     
     [Header("Game Logic")]
-    [SerializeField] private TimeLine timeLine;
+    [SerializeField] private C_TimeLine timeLine;
+    [SerializeField] private C_Status status;
+    [SerializeField] private HUDManager hudManger;
     [SerializeField] private CombatManager combatManager;
 
     [Header("Spawners")]
@@ -20,9 +23,10 @@ public class ChungbongScene : AbstractScene
     [SerializeField] private EntitySpawner enemySpawner;
     
     [Header("Data")]
-    [SerializeField] private CharacterData CharacterDataList;
-    [SerializeField] private MonsterData MonsterDataList;
-    
+    [SerializeField] private EntityDataCreator entityDataCreator;
+    [SerializeField] private PlayerParty playerParty;
+    [SerializeField] private List<string> enemyCharacterID = new List<string>();
+
     protected override int SceneIdx
     {
         get => 1;
@@ -36,6 +40,7 @@ public class ChungbongScene : AbstractScene
         camera = Instantiate(camera);
         eventSystem = Instantiate(eventSystem);
         timeLine = Instantiate(timeLine);
+        status = Instantiate(status);
         
         playerSpawner = Instantiate(playerSpawner);
         enemySpawner = Instantiate(enemySpawner);
@@ -45,23 +50,13 @@ public class ChungbongScene : AbstractScene
     /// Call Init(); func
     /// </summary>
     protected override async UniTask InitializeObjects()
-    {
-        List<CharacterDataEntity> playerData = new();
-        foreach (var characterDataEntity in CharacterDataList.data)
-        {
-            playerData.Add(characterDataEntity);
-        }
-
-        List<MonsterDataEntity> enemyData = new();
-        foreach (var monsterDataEntity in MonsterDataList.data)
-        {
-            enemyData.Add(monsterDataEntity);
-        }
-        
+    {  
         var timelineSystem = timeLine.GetTimeLineSystem();
-        timelineSystem.Init(playerData, enemyData);
         
-        combatManager.Init(timelineSystem, playerSpawner, enemySpawner);
+        List<EntityData> entityDataList = entityDataCreator.CreateEntityDataWithID(playerParty.GetPlayerParty(), enemyCharacterID);
+
+        combatManager.Initialize(entityDataList ,timelineSystem, playerSpawner, enemySpawner, hudManger);
+        hudManger.Initialize();
     }
 
     /// <summary>

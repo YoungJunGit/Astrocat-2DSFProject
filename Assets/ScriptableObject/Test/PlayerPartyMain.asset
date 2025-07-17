@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a0696b4be107f4bbc6f11e6702e9da, type: 3}
-  m_Name: CombatManager
+  m_Script: {fileID: 11500000, guid: 3328cf57a988750499ec53f242092896, type: 3}
+  m_Name: PlayerPartyMain
   m_EditorClassIdentifier: 
-  unit_HUD_Dic: {fileID: 11400000, guid: 315cbd388b2fa9345a9aa4d557645ea7, type: 2}
+  playerCharacterID:
+  - 10010001

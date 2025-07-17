@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 592558791}
   - component: {fileID: 592558790}
   m_Layer: 0
-  m_Name: RefactoringScene
+  m_Name: ChunBongScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,11 +152,17 @@ MonoBehaviour:
   camera: {fileID: 4824807915384137517, guid: 89a24d4d307c063438e18ed7dfac6052, type: 3}
   eventSystem: {fileID: 2950124702827498561, guid: 64cc4daed2a76274fa6b6b1102824a4d, type: 3}
   timeLine: {fileID: 2105443901608710495, guid: 47409dc05f91f744f85a3615484a1675, type: 3}
+  status: {fileID: 6645648761260094638, guid: a7996abc53e8d7a4e9cd0184f713534a, type: 3}
+  hudManger: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
   playerSpawner: {fileID: 2661958047807828068, guid: 2673da0bf854f3a4d96cb1c832d7e747, type: 3}
   enemySpawner: {fileID: 1630559219677181037, guid: 4335e1b41ffa82447be372b9444db5ed, type: 3}
-  CharacterDataList: {fileID: 11400000, guid: 18de617c5aa922d4baee756e9b2d3e78, type: 2}
-  MonsterDataList: {fileID: 11400000, guid: 77e9c76324547a84e8ab6cda19ad43a5, type: 2}
+  entityDataCreator: {fileID: 11400000, guid: 14c099d250c80944a88340265862554b, type: 2}
+  playerParty: {fileID: 11400000, guid: 6f6687ae843882140bde4de4defcac46, type: 2}
+  enemyCharacterID:
+  - 3001001
+  - 3001002
+  - 3001003
 --- !u!4 &592558791
 Transform:
   m_ObjectHideFlags: 0

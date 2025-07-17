@@ -1,14 +1,11 @@
 using UnityEngine;
+using DataEntity;
+using DataEnum;
 
 public class EnemyUnit : BaseUnit
 {
-    [Space(10f)]
-    [SerializeField]
-    private Vector3 spawnOffset;
-
-    public override void Init(EntityData data)
+    protected override void CreateHUD()
     {
-        spawnTransform = GameObject.Find("EnemyStatus").transform;
-        base.Init(data);
+        hudManager.CreateEnemyHUD(this);
     }
 }

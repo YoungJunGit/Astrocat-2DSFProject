@@ -3,6 +3,7 @@ using System;
 
 namespace DataEntity
 {
+    #region[DT 관련]
     [Serializable]
     public class CharacterDataEntity
     {
@@ -63,5 +64,28 @@ namespace DataEntity
         public string Korean;
         public string English;
     }
+
     /*추가*/
+    #endregion
+
+    #region[기본]
+    public class EntityData
+    {
+        public SIDE Side = SIDE.NONE;
+        public string ID;
+        public string Name;
+        public double Default_HP = 0.0f;
+        public double Default_Attack = 0.0f;
+        public int Default_AP = 0;
+        public double Default_Speed = 0.0f;
+        public string Skill1_ID;
+        public string Skill2_ID;
+        public string Skill3_ID;
+        public ELEMENT_TYPE Weak_Type = ELEMENT_TYPE.NONE;
+        public ELEMENT_TYPE Resist_Type = ELEMENT_TYPE.NONE;
+        public string Asset_File;
+    }
+
+    /*추가*/
+    #endregion
 }

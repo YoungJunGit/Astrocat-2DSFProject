@@ -1244,8 +1244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab85c5b9ef8ef71419a046ba7db1c93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpText: {fileID: 3208227924969673857}
-  hpSlider: {fileID: 1758533310238802850}
+  hp_Text: {fileID: 3208227924969673857}
+  hp_Slider: {fileID: 1758533310238802850}
   apText: {fileID: 7145379005701788039}
   AP_Panel: {fileID: 5711746057151147264}
   ActivateColor: {r: 0.2117647, g: 0.56158066, b: 1, a: 1}

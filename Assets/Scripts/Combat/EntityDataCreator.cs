@@ -1,32 +1,9 @@
-using DataEntity;
-using DataEnum;
 using System.Collections.Generic;
 using UnityEngine;
+using DataEntity;
+using DataEnum;
 
-public enum SIDE
-{
-    NONE = 0,
-    PLAYER,
-    ENEMY
-}
-public class EntityData
-{
-    public SIDE Side = SIDE.NONE;
-    public string ID;
-    public string Name;
-    public double Default_HP = 0.0f;
-    public double Default_Attack = 0.0f;
-    public int Default_AP = 0;
-    public double Default_Speed = 0.0f;
-    public string Skill1_ID;
-    public string Skill2_ID;
-    public string Skill3_ID;
-    public ELEMENT_TYPE Weak_Type = ELEMENT_TYPE.NONE;
-    public ELEMENT_TYPE Resist_Type = ELEMENT_TYPE.NONE;
-    public string Asset_File;
-}
-
-[CreateAssetMenu(fileName = "EntityDataCreator", menuName = "EntityDataCreator", order = 1)]
+[CreateAssetMenu(fileName = "EntityDataCreator", menuName = "EntityDataCreator", order = 4)]
 public class EntityDataCreator : ScriptableObject
 {
     public CharacterData playerData;
@@ -35,6 +12,7 @@ public class EntityDataCreator : ScriptableObject
     public List<EntityData> CreateEntityDataWithID(List<string> playerCharacterID, List<string> enemyCharacterID)
     {
         List<EntityData> entityData = new List<EntityData>();
+        // 플레이어 엔티티 생성
         foreach (string id in playerCharacterID)
         {
             CharacterDataEntity entity = playerData.data.Find(element => element.Character_ID == id);
@@ -44,6 +22,7 @@ public class EntityDataCreator : ScriptableObject
             }
         }
 
+        // 적 엔티티 생성
         foreach (string id in enemyCharacterID)
         {
             MonsterDataEntity entity = enemyData.data.Find(element => element.Mob_ID == id);

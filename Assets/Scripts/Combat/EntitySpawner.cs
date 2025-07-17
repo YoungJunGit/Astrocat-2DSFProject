@@ -1,29 +1,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using DataEntity;
+using DataEnum;
+using Unity.VisualScripting;
 
 public class EntitySpawner : MonoBehaviour
 {
     public bool isPlayerSide;
     public List<GameObject> spawnPos;
 
-    public void CreateUnit(List<EntityData> entityDataList)
+    public BaseUnit CreateUnit(EntityData entityData, HUDManager hudManager, int index)
     {
         GameObject prefab;
-        foreach (var entityData in entityDataList.Select((value, index) => (value, index)))
+        prefab = isPlayerSide == true ? AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File) : AssetLoader.LoadMonsterPrefabAsset(entityData.Asset_File);
+        BaseUnit unit = Instantiate(prefab, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
+        unit.transform.SetParent(spawnPos[index].transform, false);
+
+        if (unit != null)
         {
-            prefab = isPlayerSide == true ? AssetLoader.LoadCharacterPrefabAsset(entityData.value.Asset_File) : AssetLoader.LoadMonsterPrefabAsset(entityData.value.Asset_File);
-            GameObject unitObj = Instantiate(prefab, Vector2.zero, Quaternion.identity);
-            unitObj.transform.SetParent(spawnPos[entityData.index].transform, false);
-            BaseUnit unit = unitObj.GetComponent<BaseUnit>();
-            if (unit != null)
-            {
-                unitObj.GetComponent<BaseUnit>().Init(entityData.value);
-            }
-            else
-            {
-                Debug.LogWarning("유닛에 스크립트 할당이 되어있는지 확인하십시오!!!");
-            }
+            unit.Initialize(entityData, hudManager);
         }
+        else
+        {
+            Debug.LogWarning("유닛에 스크립트 할당이 되어있는지 확인하십시오!!!");
+        }
+
+        return unit;
     }
 }

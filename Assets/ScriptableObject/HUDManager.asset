@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a0696b4be107f4bbc6f11e6702e9da, type: 3}
-  m_Name: CombatManager
+  m_Script: {fileID: 11500000, guid: f25d4344aba9dd44680eac8c7e09bac8, type: 3}
+  m_Name: HUDManager
   m_EditorClassIdentifier: 
+  playerHUDPrefab: {fileID: 370319284158185370, guid: 6b1112911265df241a1e6a37a1911361, type: 3}
+  enemyHUDPrefab: {fileID: 2044870650616042443, guid: 713bc7122de375e45a093101ed57a3d2, type: 3}
   unit_HUD_Dic: {fileID: 11400000, guid: 315cbd388b2fa9345a9aa4d557645ea7, type: 2}

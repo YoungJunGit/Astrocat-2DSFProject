@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using DataEntity;
+using DataEnum;
 
 public class Buff
 {
@@ -38,24 +40,7 @@ public class TurnTimelineSystem : MonoBehaviour
     delegate void EndRoundHandler();
     EndRoundHandler mEndRound;
 
-    [Header("테스트용")]
-    public SIDE selectCharacterSide;
-    [Space(10f)]
-    [Range(1, 3)]
-    public int buffCharacterNumber;
-    [Range(1, 10)]
-    public int durationRound;
-    public double addSpeedValue;
-    [Space(10f)]
-    [Range(1, 3)]
-    public int dieCharacterNumber;
-
-    public void Init(List<CharacterDataEntity> playerData, List<MonsterDataEntity> enemyData)
-    {
-        
-    }
-
-    public void OnCombatStart(List<EntityData> entityDataList)
+    public void Initialize(List<EntityData> entityDataList)
     {
         ArrowObject.SetActive(true);
         InitTimelineSystem(entityDataList);
@@ -117,22 +102,22 @@ public class TurnTimelineSystem : MonoBehaviour
         ArrangeBanner();
     }
 
-    public void OnStartBuff(int number, double speedValue)
+    public void OnStartBuff(int number, int durationRound, double speedValue, SIDE side)
     {
         if (EntityInfoList.Count < number)
         {
             return;
         }
 
-        int duration = TimelineList.Exists(element => element.MyBannerInfo.Side == selectCharacterSide && 
+        int duration = TimelineList.Exists(element => element.MyBannerInfo.Side == side && 
                                                       element.MyBannerInfo.Priority == (number - 1) &&
                                                       element.Turn == curRound) ? durationRound : durationRound + 1;
 
-        Buff buff = new Buff("Speed Buff", duration, 0, 0, 0, addSpeedValue);
+        Buff buff = new Buff("Speed Buff", duration, 0, 0, 0, speedValue);
 
         foreach(EntityBannerInfo info in EntityInfoList)
         {
-            if(info.Side == selectCharacterSide && info.Priority == (number - 1))
+            if(info.Side == side && info.Priority == (number - 1))
             {
                 info.AddBuff(buff);
             }

@@ -1,68 +1,28 @@
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using DataEntity;
+using DataEnum;
 
 public class BaseUnit : MonoBehaviour
 {
-    private EntityData myData;
-    public EntityData MyData 
-    {  
-        get { return myData; } 
-    }
+    private UnitStat stat = new UnitStat();
+    protected HUDManager hudManager;
 
-    public GameObject StatusBox;
-    protected BaseStatusBox myStatusBox;
-    protected Transform spawnTransform;
-
-    private float maxHP;
-    public float MaxHP 
-    { 
-        get { return maxHP; } 
-    }
-
-    private float curHP;
-    public float CurHP
+    public virtual void Initialize(EntityData data, HUDManager hudManager)
     {
-        get { return curHP; }
-        set
-        {
-            curHP = Mathf.Clamp(value, 0f, maxHP);
-            myStatusBox.hpSlider.value = curHP / maxHP;
-        }
+        stat.IntializeStat(data);
+        this.hudManager = hudManager;
+        CreateHUD();
+        stat.OnIntializeHUD();
     }
 
-    private int maxAP;
-    public int MaxAP 
-    { 
-        get { return maxAP; } 
-    }
-
-    private int curAP;
-    public int CurAP
-    {
-        get { return curAP; }
-        set
-        {
-            curAP = Mathf.Clamp(value, 0, maxAP);
-            myStatusBox.OnAPChanged();
-        }
-    }
-
-    public virtual void Init(EntityData data)
-    {
-        myData = data;
-
-        myStatusBox = Instantiate(StatusBox, spawnTransform, false).GetComponent<BaseStatusBox>();
-        myStatusBox.Initialize(this);
-
-        maxHP = (float)data.Default_HP;
-        maxAP = 9;
-        CurHP = maxHP;
-        CurAP = data.Default_AP;
-    }
+    protected virtual void CreateHUD() {}
 
     protected virtual void Attack()
     {
-        /* 공격 메서드 작성 */
+        stat.OnNormalAttack();
+
+        /* 공격 메서드 작성*/
     }
 
     protected virtual void Move()
@@ -71,4 +31,6 @@ public class BaseUnit : MonoBehaviour
 
         Attack();
     }
+
+    public UnitStat GetStat() { return stat; }
 }

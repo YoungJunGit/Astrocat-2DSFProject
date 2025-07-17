@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using DataEnum;
 
 public class TurnTimelineSystemTester : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class TurnTimelineSystemTester : MonoBehaviour
     {
         var timelineSystem = GameObject.FindAnyObjectByType<TurnTimelineSystem>();
         
-        AddSpeedBtn.onClick.AddListener(() => timelineSystem.OnStartBuff(buffCharacterNumber, addSpeedValue));      // �ӽ�
+        AddSpeedBtn.onClick.AddListener(() => timelineSystem.OnStartBuff(buffCharacterNumber, durationRound, addSpeedValue, selectCharacterSide));
         DieBtn.onClick.AddListener(() => timelineSystem.OnCharacterDie(dieCharacterNumber, selectCharacterSide));
         AddTurnBtn.onClick.AddListener(() => timelineSystem.OnEndTurn());
     }

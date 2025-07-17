@@ -1,6 +1,6 @@
 namespace DataEnum
 {
-    #region[전투 관련]
+    #region[DT 관련]
     public enum ELEMENT_TYPE
     {
         NONE = 0,
@@ -29,7 +29,18 @@ namespace DataEnum
         DEFENSIVE_POWER,
         CLEANSE
     }
-    #endregion
 
     /*추가*/
+    #endregion
+
+    #region[기본]
+    public enum SIDE
+    {
+        NONE = 0,
+        PLAYER,
+        ENEMY
+    }
+
+    /*추가*/
+    #endregion
 }

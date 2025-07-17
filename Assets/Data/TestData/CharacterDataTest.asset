@@ -19,7 +19,7 @@ MonoBehaviour:
     Char_Name: "\uB77C\uC774\uD50C\uB9E8"
     Char_Default_HP: 500
     Char_Default_Attack: 40
-    Char_Default_AP: 1
+    Char_Default_AP: 7
     Char_Default_Speed: 10
     Skill1_ID: 20010001
     Skill2_ID: 20010002
@@ -31,7 +31,7 @@ MonoBehaviour:
     Char_Name: "\uC2A4\uB098\uC774\uD37C"
     Char_Default_HP: 200
     Char_Default_Attack: 40
-    Char_Default_AP: 2
+    Char_Default_AP: 5
     Char_Default_Speed: 8
     Skill1_ID: 20020001
     Skill2_ID: 20020002
@@ -43,7 +43,7 @@ MonoBehaviour:
     Char_Name: "\uCEE4\uBBF8\uC0AC\uB974"
     Char_Default_HP: 2000
     Char_Default_Attack: 40
-    Char_Default_AP: 0
+    Char_Default_AP: 3
     Char_Default_Speed: 1
     Skill1_ID: 20030001
     Skill2_ID: 20030002

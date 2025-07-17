@@ -452,8 +452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2608ab29ade044f43ab6dff82650722c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpText: {fileID: 1022801073456684004}
-  hpSlider: {fileID: 3319606366621633704}
+  hp_Text: {fileID: 1022801073456684004}
+  hp_Slider: {fileID: 3319606366621633704}
   spawnOffset: {x: 0, y: 0.7, z: 0}
 --- !u!1 &5040532298731431401
 GameObject:

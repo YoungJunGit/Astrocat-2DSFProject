@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 1700975811136903811}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -159,6 +159,10 @@ PrefabInstance:
     - target: {fileID: 1080599516558338195, guid: 4ea4569431b11fd4c8a510da0e3adc50, type: 3}
       propertyPath: m_Name
       value: penguin_rifleman
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080599516558338195, guid: 4ea4569431b11fd4c8a510da0e3adc50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4519482904633768566, guid: 4ea4569431b11fd4c8a510da0e3adc50, type: 3}
       propertyPath: m_LocalPosition.x
@@ -262,6 +266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: penguin_commander
       objectReference: {fileID: 0}
+    - target: {fileID: 8791005897072304568, guid: a99b314876c12884c816420f554f1868, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -283,6 +291,10 @@ PrefabInstance:
     - target: {fileID: 6107449881377857228, guid: e535a2adee860aa458568b63c3c3972b, type: 3}
       propertyPath: m_Name
       value: penguin_berserker
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107449881377857228, guid: e535a2adee860aa458568b63c3c3972b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6969334797089717582, guid: e535a2adee860aa458568b63c3c3972b, type: 3}
       propertyPath: m_LocalPosition.x

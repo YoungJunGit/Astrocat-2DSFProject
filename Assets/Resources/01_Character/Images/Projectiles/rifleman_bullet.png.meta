@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rifleman_bullet_0: 6588111875569489607
+      rifleman_bullet_1: -364603440020690390
+      rifleman_bullet_2: 4403547507639030375
+      rifleman_bullet_3: 8427187125634147087
+      rifleman_bullet_4: 6138896008621725998
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

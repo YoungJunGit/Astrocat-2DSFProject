@@ -1,10 +1,11 @@
 using UnityEngine;
+using DataEntity;
+using DataEnum;
 
 public class PlayerUnit : BaseUnit
 {
-    public override void Init(EntityData data)
+    protected override void CreateHUD()
     {
-        spawnTransform = GameObject.Find("PlayerStatus/StatusPanel").transform;
-        base.Init(data);
+        hudManager.CreatePlayerHUD(this);
     }
 }

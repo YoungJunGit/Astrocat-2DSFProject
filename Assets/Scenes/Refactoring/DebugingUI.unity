@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140.37036, y: -24.213928}
-  m_SizeDelta: {x: 241.2, y: 108.18005}
+  m_AnchoredPosition: {x: -756.641, y: -60}
+  m_SizeDelta: {x: 659.83, y: 295.939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352124793
 MonoBehaviour:
@@ -276,8 +276,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47.024048, y: -24.213928}
-  m_SizeDelta: {x: 241.2, y: 108.18005}
+  m_AnchoredPosition: {x: -501.281, y: -60}
+  m_SizeDelta: {x: 659.83, y: 295.939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &451343575
 MonoBehaviour:
@@ -435,11 +435,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -529,11 +529,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -623,11 +623,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -677,11 +677,11 @@ MonoBehaviour:
   AddSpeedBtn: {fileID: 352124793}
   DieBtn: {fileID: 1294160201}
   AddTurnBtn: {fileID: 451343575}
-  selectCharacterSide: 0
-  buffCharacterNumber: 2
+  selectCharacterSide: 1
+  buffCharacterNumber: 3
   durationRound: 2
-  addSpeedValue: 0
-  dieCharacterNumber: 1
+  addSpeedValue: 7
+  dieCharacterNumber: 2
 --- !u!4 &1150178804
 Transform:
   m_ObjectHideFlags: 0
@@ -733,8 +733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -233.71667, y: -24.213928}
-  m_SizeDelta: {x: 241.2, y: 108.18005}
+  m_AnchoredPosition: {x: -1012, y: -60}
+  m_SizeDelta: {x: 659.83, y: 295.939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294160201
 MonoBehaviour:
@@ -866,10 +866,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

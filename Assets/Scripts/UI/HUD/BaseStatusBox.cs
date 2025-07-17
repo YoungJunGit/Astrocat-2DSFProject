@@ -31,7 +31,5 @@ public class BaseStatusBox : MonoBehaviour
     {
         if (value <= 0f)
             OnDied();
-
-        hpText.text = ControlledUnit.CurHP + " / " + ControlledUnit.MaxHP;
     }
 }

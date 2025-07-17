@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f25d4344aba9dd44680eac8c7e09bac8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerHUD: {fileID: 370319284158185370, guid: 6b1112911265df241a1e6a37a1911361, type: 3}
+  - enemyHUD: {fileID: 2044870650616042443, guid: 713bc7122de375e45a093101ed57a3d2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

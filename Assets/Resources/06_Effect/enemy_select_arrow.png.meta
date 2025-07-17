@@ -872,7 +872,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      enemy_select_arrow_0: -1591470123856912270
+      enemy_select_arrow_1: -4813225378327749418
+      enemy_select_arrow_10: -8668798892119741151
+      enemy_select_arrow_11: -8397810492353447677
+      enemy_select_arrow_12: -7178973355610595678
+      enemy_select_arrow_13: 7455178385650669861
+      enemy_select_arrow_14: -3534779620559274951
+      enemy_select_arrow_15: 174819843994651461
+      enemy_select_arrow_16: -1437455690926634349
+      enemy_select_arrow_17: 14357983810524595
+      enemy_select_arrow_18: 4957977146224048400
+      enemy_select_arrow_19: 550068623923359179
+      enemy_select_arrow_2: -2856946701804838206
+      enemy_select_arrow_20: -398354179491897406
+      enemy_select_arrow_21: 5922919068320658149
+      enemy_select_arrow_22: 7751513405358602278
+      enemy_select_arrow_23: -2931505581023075168
+      enemy_select_arrow_24: 8396363377984658114
+      enemy_select_arrow_25: -102456993081814534
+      enemy_select_arrow_26: 2514927947418580986
+      enemy_select_arrow_27: 6873233151250985664
+      enemy_select_arrow_28: -6499770728625589718
+      enemy_select_arrow_29: -1347915831651539433
+      enemy_select_arrow_3: 6977264365802005669
+      enemy_select_arrow_4: 2642014038575877277
+      enemy_select_arrow_5: -573898752165891475
+      enemy_select_arrow_6: 2542392001583070020
+      enemy_select_arrow_7: -7870596423802539050
+      enemy_select_arrow_8: -3583357902529043718
+      enemy_select_arrow_9: 191596821783134294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

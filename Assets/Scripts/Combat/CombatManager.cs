@@ -1,36 +1,34 @@
+using DataEntity;
+using DataEnum;
+using Obvious.Soap;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CombatManager", menuName = "CombatManager", order = 1)]
 public class CombatManager : ScriptableObject
 {
-    public TurnTimelineSystem timelineSystem;
-    public EntitySpawner playerCharacterSpawner;
-    public EntitySpawner enemyCharacterSpawner;
-    [SerializeField] private EntityDataCreator entityDataCreator;
+    private TurnTimelineSystem timelineSystem;
 
-    private List<EntityData> entityDataList;
+    [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
 
-    [SerializeField]
-    private List<string> playerCharacterID = new List<string>();
-
-    [SerializeField]
-    private List<string> enemyCharacterID = new List<string>();
-
-    public void Init(TurnTimelineSystem timelineSystem, EntitySpawner playerCharacterSpawner, EntitySpawner enemyCharacterSpawner)
+    public void Initialize(List<EntityData> dataList, TurnTimelineSystem timelineSystem, EntitySpawner playerCharacterSpawner, EntitySpawner enemyCharacterSpawner, HUDManager hudManager)
     {
         this.timelineSystem = timelineSystem;
         
-        this.playerCharacterSpawner = playerCharacterSpawner;
-        this.enemyCharacterSpawner = enemyCharacterSpawner;
-        
-        entityDataList = entityDataCreator.CreateEntityDataWithID(playerCharacterID, enemyCharacterID);
-        timelineSystem.OnCombatStart(entityDataList);
+        timelineSystem.Initialize(dataList);
 
-        List<EntityData> playerCharacterDataList = entityDataList.FindAll(element => element.Side == SIDE.PLAYER);
-        List<EntityData> enemyCharacterDataList = entityDataList.FindAll(element => element.Side == SIDE.ENEMY);
+        List<EntityData> playerCharacterDataList = dataList.FindAll(element => element.Side == SIDE.PLAYER);
+        List<EntityData> enemyCharacterDataList = dataList.FindAll(element => element.Side == SIDE.ENEMY);
 
-        this.playerCharacterSpawner.CreateEntity(playerCharacterDataList);
-        this.enemyCharacterSpawner.CreateEntity(enemyCharacterDataList);
+        foreach(var entityData in playerCharacterDataList.Select((value, index)=>(value,index)))
+        {
+            BaseUnit unit = playerCharacterSpawner.CreateUnit(entityData.value, hudManager, entityData.index);
+        }
+
+        foreach (var entityData in enemyCharacterDataList.Select((value, index) => (value, index)))
+        {
+            BaseUnit unit = enemyCharacterSpawner.CreateUnit(entityData.value, hudManager, entityData.index);
+        }
     }
 }
