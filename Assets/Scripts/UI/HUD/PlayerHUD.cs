@@ -23,19 +23,18 @@ public class PlayerHUD : BaseHUD
 
     public override void Initialize(BaseUnit unit)
     {
-        ControlledUnit = unit;
         unitName.text = unit.GetStat().GetData().Name;
         AP_BoxList = AP_Panel.GetComponentsInChildren<Image>();
 
-        ControlledUnit.GetStat().m_HPChanged += OnHPChanged;
-        ControlledUnit.GetStat().m_APChanged += OnAPChanged;
-        ControlledUnit.GetStat().m_Die += OnDied;
+        unit.GetStat().OnHPChanged += OnHPChanged;
+        unit.GetStat().OnAPChanged += OnAPChanged;
+        unit.GetStat().OnDie += OnDied;
     }
 
-    public override void OnHPChanged()
+    public override void OnHPChanged(float curHp, float maxHp)
     {
-        hp_Slider.value = ControlledUnit.GetStat().Cur_HP / ControlledUnit.GetStat().Max_HP;
-        hp_Text.text = ControlledUnit.GetStat().Cur_HP + " / " + ControlledUnit.GetStat().Max_HP;
+        hp_Slider.value = curHp / maxHp;
+        hp_Text.text = $"{curHp}/{maxHp}";
     }
 
     public override void OnDied()
@@ -43,11 +42,11 @@ public class PlayerHUD : BaseHUD
         statusBox.color = DieColor;
     }
 
-    public void OnAPChanged()
+    public void OnAPChanged(int curAp, int maxAp)
     {
         foreach (var box in AP_BoxList.Select((value, index) => (value, index)))
         {
-            if (box.index < ControlledUnit.GetStat().Cur_AP)
+            if (box.index < curAp)
             {
                 box.value.color = ActivateColor;
             }
@@ -57,6 +56,6 @@ public class PlayerHUD : BaseHUD
             }
         }
 
-        apText.text = ControlledUnit.GetStat().Cur_AP + " / " + ControlledUnit.GetStat().Max_AP;
+        apText.text = $"{curAp}/{maxAp}";
     }
 }

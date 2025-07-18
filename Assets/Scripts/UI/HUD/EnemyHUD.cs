@@ -8,18 +8,17 @@ public class EnemyHUD : BaseHUD
 
     public override void Initialize(BaseUnit unit)
     {
-        ControlledUnit = unit;
         Vector3 spawnPos = unit.transform.Find("StatusBoxPos").transform.position;
         transform.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(spawnPos + spawnOffset);
 
-        ControlledUnit.GetStat().m_HPChanged += OnHPChanged;
-        ControlledUnit.GetStat().m_Die += OnDied;
+        unit.GetStat().OnHPChanged += OnHPChanged;
+        unit.GetStat().OnDie += OnDied;
     }
 
-    public override void OnHPChanged()
+    public override void OnHPChanged(float curHp, float maxHp)
     {
-        hp_Slider.value = ControlledUnit.GetStat().Cur_HP / ControlledUnit.GetStat().Max_HP;
-        hp_Text.text = ControlledUnit.GetStat().Cur_HP + " / " + ControlledUnit.GetStat().Max_HP;
+        hp_Slider.value = curHp / maxHp;
+        hp_Text.text = $"{curHp}/{maxHp}";
     }
 
     public override void OnDied()
