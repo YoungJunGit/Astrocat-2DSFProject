@@ -166,6 +166,15 @@ MonoBehaviour:
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
   camera: {fileID: 4824807915384137517, guid: 89a24d4d307c063438e18ed7dfac6052, type: 3}
   eventSystem: {fileID: 2950124702827498561, guid: 64cc4daed2a76274fa6b6b1102824a4d, type: 3}
+  dataCreator: {fileID: 11400000, guid: 14c099d250c80944a88340265862554b, type: 2}
+  playerUnitID:
+  - 
+  - 
+  - 
+  enemyUnitID:
+  - 
+  - 
+  - 
   spawner: {fileID: 11400000, guid: e95eafb3c3986ef4791b17b0f999fb9b, type: 2}
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
 --- !u!1660057539 &9223372036854775807

@@ -12,7 +12,7 @@ public class EntityDataCreator : ScriptableObject
     public List<EntityData> CreateEntityDataWithID(List<string> playerCharacterID, List<string> enemyCharacterID)
     {
         List<EntityData> entityData = new List<EntityData>();
-        // 플레이어 엔티티 생성
+        
         foreach (string id in playerCharacterID)
         {
             CharacterDataEntity entity = playerData.data.Find(element => element.Character_ID == id);
@@ -21,8 +21,6 @@ public class EntityDataCreator : ScriptableObject
                 entityData.Add(CreateEntityData(entity));
             }
         }
-
-        // 적 엔티티 생성
         foreach (string id in enemyCharacterID)
         {
             MonsterDataEntity entity = enemyData.data.Find(element => element.Mob_ID == id);
