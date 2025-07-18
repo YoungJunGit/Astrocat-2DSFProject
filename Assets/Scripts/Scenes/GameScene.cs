@@ -11,11 +11,16 @@ public class GameScene : AbstractScene
     [SerializeField] private Camera camera;
     [SerializeField] private EventSystem eventSystem;
     
+    [Header("Data Settings")]
     [SerializeField] private EntityDataCreator dataCreator;
     [SerializeField] private string[] playerUnitID;
     [SerializeField] private string[] enemyUnitID;
+    [SerializeField] private List<PlayerUnit> playerUnits = new List<PlayerUnit>();
+    [SerializeField] private List<EnemyUnit> enemyUnits = new List<EnemyUnit>();
+    
     private List<EntityData> entityData = null;
     
+    [Header("Game Settings")]
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private HUDManager hudManager;
 
@@ -38,18 +43,20 @@ public class GameScene : AbstractScene
 
     protected override async UniTask CreateObjects()
     {
+        List<EntityData> entityDataList = null;
+        
         // Create player
-        List<EntityData> entityDataList = entityData.FindAll(element => element.Side == SIDE.PLAYER);
+        entityDataList = entityData.FindAll(element => element.Side == SIDE.PLAYER);
         foreach (EntityData playerData in entityDataList)
         {
-            spawner.CreatePlayerUnit(playerData);
+            playerUnits.Add(spawner.CreatePlayerUnit(playerData));
         }
         
         // Create enemy
         entityDataList = entityData.FindAll(element => element.Side == SIDE.ENEMY);;
         foreach (EntityData enemyData in entityDataList)
         {
-            spawner.CreatePlayerUnit(enemyData);
+            enemyUnits.Add(spawner.CreateEnemyUnit(enemyData));
         }
 
         // Create player HUD

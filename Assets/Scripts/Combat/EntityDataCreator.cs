@@ -6,7 +6,7 @@ using DataEnum;
 [CreateAssetMenu(fileName = "EntityDataCreator", menuName = "EntityDataCreator", order = 4)]
 public class EntityDataCreator : ScriptableObject
 {
-    public CharacterData playerData;
+    public PlayerData playerData;
     public MonsterData enemyData;
 
     public List<EntityData> CreateEntityDataWithID(List<string> playerCharacterID, List<string> enemyCharacterID)
@@ -32,23 +32,23 @@ public class EntityDataCreator : ScriptableObject
 
         return entityData;
     }
-    private EntityData CreateEntityData(CharacterDataEntity playerData)
+    private EntityData CreateEntityData(CharacterDataEntity characterData)
     {
         EntityData entityData = new EntityData();
 
         entityData.Side = SIDE.PLAYER;
-        entityData.ID = playerData.Character_ID;
-        entityData.Name = playerData.Char_Name;
-        entityData.Default_HP = playerData.Char_Default_HP;
-        entityData.Default_Attack = playerData.Char_Default_Attack;
-        entityData.Default_AP = playerData.Char_Default_AP;
-        entityData.Default_Speed = playerData.Char_Default_Speed;
-        entityData.Skill1_ID = playerData.Skill1_ID;
-        entityData.Skill2_ID = playerData.Skill2_ID;
-        entityData.Skill3_ID = playerData.Skill3_ID;
-        entityData.Weak_Type = playerData.Weak_Type;
-        entityData.Resist_Type = playerData.Resist_Type;
-        entityData.Asset_File = playerData.Asset_File;
+        entityData.ID = characterData.Character_ID;
+        entityData.Name = characterData.Char_Name;
+        entityData.Default_HP = characterData.Char_Default_HP;
+        entityData.Default_Attack = characterData.Char_Default_Attack;
+        entityData.Default_AP = characterData.Char_Default_AP;
+        entityData.Default_Speed = characterData.Char_Default_Speed;
+        entityData.Skill1_ID = characterData.Skill1_ID;
+        entityData.Skill2_ID = characterData.Skill2_ID;
+        entityData.Skill3_ID = characterData.Skill3_ID;
+        entityData.Weak_Type = characterData.Weak_Type;
+        entityData.Resist_Type = characterData.Resist_Type;
+        entityData.Asset_File = characterData.Asset_File;
 
         return entityData;
     }

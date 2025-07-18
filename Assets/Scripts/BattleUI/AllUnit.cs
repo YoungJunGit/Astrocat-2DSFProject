@@ -7,7 +7,7 @@ public class AllUnit : MonoBehaviour
 {
     public GameObject selectionBarPrefab, stateBoxPrefab, MonStateBoxPrefab, handIconInstance;
     public Transform startPos;
-    public CharacterData CharacterDataList;
+    public PlayerData playerDataList;
     public MonsterData MonsterDataList;
 
     [HideInInspector] public bool targetselection;
@@ -35,7 +35,7 @@ public class AllUnit : MonoBehaviour
     }
 
     /// <summary>
-    /// °ÔÀÓ ÃÊ±âÈ­: µ¥ÀÌÅÍ ·Îµå ¹× À¯´Ö UI »ý¼º
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     void Awake()
     {
@@ -53,7 +53,7 @@ public class AllUnit : MonoBehaviour
     }
 
     /// <summary>
-    /// Ä³¸¯ÅÍ ¹× ¸ó½ºÅÍ µ¥ÀÌÅÍ ÃÊ±âÈ­
+    /// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
     /// </summary>
     void InitData()
     {
@@ -62,13 +62,13 @@ public class AllUnit : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            PlayerData.Add(CharacterDataList.data[i]);
+            PlayerData.Add(playerDataList.data[i]);
             MonsterData.Add(MonsterDataList.data[i]);
         }
     }
 
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾î À¯´Ö »óÅÂ UI »ý¼º
+    /// ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     void CreateUnitUI()
     {
@@ -83,7 +83,7 @@ public class AllUnit : MonoBehaviour
     }
 
     /// <summary>
-    /// ¸ó½ºÅÍ »óÅÂ UI »ý¼º
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     void CreateMonsterUI()
     {
@@ -99,7 +99,7 @@ public class AllUnit : MonoBehaviour
     }
 
     /// <summary>
-    /// ÇöÀç ¼±ÅÃµÈ À¯´ÖÀ» °­Á¶ Ç¥½ÃÇÏ°í ¼±ÅÃ UI Ç¥½Ã
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ UI Ç¥ï¿½ï¿½
     /// </summary>
     void ShowCurrentUnitUI()
     {
@@ -122,15 +122,15 @@ public class AllUnit : MonoBehaviour
     }
 
     /// <summary>
-    /// ¼±ÅÃµÈ Çàµ¿ ¹öÆ°ÀÌ ´­·ÈÀ» ¶§ È£ÃâµÊ
+    /// ï¿½ï¿½ï¿½Ãµï¿½ ï¿½àµ¿ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È£ï¿½ï¿½ï¿½
     /// </summary>
-    /// <param name="actionType">¼±ÅÃµÈ ¾×¼Ç Å¸ÀÔ</param>
+    /// <param name="actionType">ï¿½ï¿½ï¿½Ãµï¿½ ï¿½×¼ï¿½ Å¸ï¿½ï¿½</param>
     void OnActionSelected(string actionType)
     {
         selectedActionType = actionType;
         targetselection = true;
         selectingUnitName = unitNames[currentUnitIndex];
-        Debug.Log($"{actionType} ¹öÆ°ÀÌ ´­·È½À´Ï´Ù.");
+        Debug.Log($"{actionType} ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½È½ï¿½ï¿½Ï´ï¿½.");
 
         Transform enemy = transform.Find("A");
         Vector3 worldPos = enemy.position + new Vector3(1.5f, 0, 0);
@@ -139,9 +139,9 @@ public class AllUnit : MonoBehaviour
     }
 
     /// <summary>
-    /// Å° ÀÔ·Â¿¡ µû¶ó handIconÀ» ÁÂ¿ì·Î ÀÌµ¿
+    /// Å° ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ handIconï¿½ï¿½ ï¿½Â¿ï¿½ï¿½ ï¿½Ìµï¿½
     /// </summary>
-    /// <param name="direction">+1 ¶Ç´Â -1</param>
+    /// <param name="direction">+1 ï¿½Ç´ï¿½ -1</param>
     void MoveHandIcon(int direction)
     {
         if (enemyNames.Length == 0) return;
@@ -157,7 +157,7 @@ public class AllUnit : MonoBehaviour
     }
 
     /// <summary>
-    /// ÇöÀç ¼±ÅÃµÈ Àû¿¡°Ô °ø°Ý ½ÇÇà
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     IEnumerator SelectCurrentEnemy()
     {
@@ -172,9 +172,9 @@ public class AllUnit : MonoBehaviour
     }
 
     /// <summary>
-    /// °ø°Ý ½ÇÇà ·ÎÁ÷
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     /// </summary>
-    /// <param name="enemyName">°ø°Ý ´ë»ó ÀûÀÇ ÀÌ¸§</param>
+    /// <param name="enemyName">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½</param>
     void ExecuteAttack(string enemyName)
     {
         var target = MonStateBoxs.Find(m => m.name == $"MonStateBox_{enemyName}");
@@ -185,8 +185,8 @@ public class AllUnit : MonoBehaviour
         if (selectedActionType == "BasicAttack")
         {
             bool dead = target.TakeDamage(attacker.basicDamage);
-            Debug.Log(dead ? $"[{selectingUnitName}]°¡ {enemyName}À» Á×¿´½À´Ï´Ù."
-                           : $"[{selectingUnitName}]°¡ {enemyName}À» °ø°ÝÇß½À´Ï´Ù. ³²Àº HP: {target.currentHP}");
+            Debug.Log(dead ? $"[{selectingUnitName}]ï¿½ï¿½ {enemyName}ï¿½ï¿½ ï¿½×¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½."
+                           : $"[{selectingUnitName}]ï¿½ï¿½ {enemyName}ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ HP: {target.currentHP}");
         }
 
         sr.color = Color.white;
@@ -194,7 +194,7 @@ public class AllUnit : MonoBehaviour
     }
 
     /// <summary>
-    /// ´ÙÀ½ À¯´ÖÀ¸·Î ÅÏ ³Ñ±è
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ñ±ï¿½
     /// </summary>
     public void NextTurn()
     {

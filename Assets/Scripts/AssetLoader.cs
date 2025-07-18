@@ -12,7 +12,7 @@ public class AssetLoader
         Sprite[] sprites = Resources.LoadAll<Sprite>(ImageAssetPath + assetName + "_Sprite");
 
         if (sprites.Length <= 0)
-            Debug.Log("¹è³Ê ÀÌ¹ÌÁöÀÇ °æ·Î ¼³Á¤ ¿À·ù!");
+            Debug.Log("ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
 
         return sprites;
     }
@@ -22,7 +22,7 @@ public class AssetLoader
         RuntimeAnimatorController animatorRuntimeController = Resources.Load<RuntimeAnimatorController>(AnimAssetPath + assetName + "_BannerAnimator");
 
         if (animatorRuntimeController == null)
-            Debug.Log("¹è³Ê ¾Ö´Ï¸ÞÀÌ¼ÇÀÇ °æ·Î ¼³Á¤ ¿À·ù!!");
+            Debug.Log("ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!!");
 
         return animatorRuntimeController;
     }
@@ -32,7 +32,7 @@ public class AssetLoader
         GameObject gameObject = Resources.Load<GameObject>(CharacterPrefabAssetPath + assetName);
 
         if (gameObject == null)
-            Debug.Log("Ä³¸¯ÅÍ ÇÁ¸®ÆÕ °æ·Î ¼³Á¤ ¿À·ù!");
+            Debug.Log($"No path : {CharacterPrefabAssetPath + assetName}!");
 
         return gameObject;
     }
@@ -42,7 +42,7 @@ public class AssetLoader
         GameObject gameObject = Resources.Load<GameObject>(MonsterPrefabAssetPath + assetName);
 
         if (gameObject == null)
-            Debug.Log("¸ó½ºÅÍ ÇÁ¸®ÆÕ °æ·Î ¼³Á¤ ¿À·ù!");
+            Debug.Log($"AssetLoader: No path: {CharacterPrefabAssetPath + assetName}!");
 
         return gameObject;
     }

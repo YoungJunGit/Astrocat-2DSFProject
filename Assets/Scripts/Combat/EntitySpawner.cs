@@ -19,7 +19,7 @@ public class EntitySpawner : ScriptableObject
     }
     public EnemyUnit CreateEnemyUnit(EntityData entityData)
     {
-        GameObject go = AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File);
+        GameObject go = AssetLoader.LoadMonsterPrefabAsset(entityData.Asset_File);
         BaseUnit unit = Instantiate(go, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
         
         // Set Position
