@@ -5,12 +5,15 @@ using DataEntity;
 using DataEnum;
 using Unity.VisualScripting;
 
-public class EntitySpawner : MonoBehaviour
+[CreateAssetMenu(fileName = "EntitySpawner", menuName = "GameScene/EntitySpawner", order = 1)]
+public class EntitySpawner : ScriptableObject
 {
     public PlayerUnit CreatePlayerUnit(EntityData entityData)
     {
         GameObject go = AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File);
         BaseUnit unit = Instantiate(go, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
+        
+        // Set Position
         
         return unit as PlayerUnit;
     }
@@ -18,6 +21,8 @@ public class EntitySpawner : MonoBehaviour
     {
         GameObject go = AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File);
         BaseUnit unit = Instantiate(go, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
+        
+        // Set Position
         
         return unit as EnemyUnit;
     }

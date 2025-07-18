@@ -1,13 +1,15 @@
 using NUnit.Framework;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "HUDManager", menuName = "HUDManager", order = 2)]
+[CreateAssetMenu(fileName = "HUDManager", menuName = "GameScene/HUDManager", order = 2)]
 public class HUDManager : ScriptableObject
 {
     [SerializeField] private PlayerHUD playerHUDPrefab;
     [SerializeField] private EnemyHUD enemyHUDPrefab;
 
     [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
+    
+    [SerializeField] GameObject statuesPanel;
 
     public void Initialize()
     {
@@ -16,8 +18,7 @@ public class HUDManager : ScriptableObject
 
     public PlayerHUD CreatePlayerHUD(PlayerUnit unit)
     {
-        Transform spawnTransform = GameObject.Find("PlayerStatus/StatusPanel").transform;
-        PlayerHUD hud = Instantiate(playerHUDPrefab, spawnTransform, false).GetComponent<PlayerHUD>();
+        PlayerHUD hud = Instantiate(playerHUDPrefab).GetComponent<PlayerHUD>();
         hud.Initialize(unit);
         unit_HUD_Dic.Add(unit, hud);
 
@@ -26,8 +27,7 @@ public class HUDManager : ScriptableObject
 
     public EnemyHUD CreateEnemyHUD(EnemyUnit unit)
     {
-        Transform spawnTransform = GameObject.Find("EnemyStatus").transform;
-        EnemyHUD hud = Instantiate(enemyHUDPrefab, spawnTransform, false).GetComponent<EnemyHUD>();
+        EnemyHUD hud = Instantiate(enemyHUDPrefab).GetComponent<EnemyHUD>();
         hud.Initialize(unit);
         unit_HUD_Dic.Add(unit, hud);
 
