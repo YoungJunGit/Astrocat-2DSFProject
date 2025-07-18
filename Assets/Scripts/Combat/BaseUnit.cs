@@ -5,32 +5,12 @@ using DataEnum;
 
 public class BaseUnit : MonoBehaviour
 {
-    private UnitStat stat = new UnitStat();
-    protected HUDManager hudManager;
+    private UnitStat _stat;
 
-    public virtual void Initialize(EntityData data, HUDManager hudManager)
+    public virtual void Initialize(EntityData data)
     {
-        stat.IntializeStat(data);
-        this.hudManager = hudManager;
-        CreateHUD();
-        stat.OnIntializeHUD();
+        _stat = new UnitStat(data);
     }
 
-    protected virtual void CreateHUD() {}
-
-    protected virtual void Attack()
-    {
-        stat.OnNormalAttack();
-
-        /* 공격 메서드 작성*/
-    }
-
-    protected virtual void Move()
-    {
-        /* 이동 메서드 작성 */
-
-        Attack();
-    }
-
-    public UnitStat GetStat() { return stat; }
+    public UnitStat GetStat() { return _stat; }
 }
