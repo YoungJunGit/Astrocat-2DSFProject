@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/UnitPositioner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/UnitPositioner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Canvas/StatusCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD/Enemy_StatusBox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD/Enemy_StatusBox.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD/Player_StatusBox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD/Player_StatusBox.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StatusCanvas.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StatusCanvas.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Refactoring/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Refactoring/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/GameScene/HUDManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/GameScene/HUDManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/EntitySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/EntitySpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Canvas/C_Status.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Canvas/C_Status.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Canvas/StatusCanvas.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Canvas/C_TimeLine.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Canvas/C_TimeLine.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUDManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUDManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +123,7 @@
       <workItem from="1752655410006" duration="8340000" />
       <workItem from="1752709543715" duration="66000" />
       <workItem from="1752735071613" duration="2433000" />
-      <workItem from="1752967367846" duration="1598000" />
+      <workItem from="1752967367846" duration="1944000" />
     </task>
     <servers />
   </component>
