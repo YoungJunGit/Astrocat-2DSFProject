@@ -23,6 +23,8 @@ public class GameScene : AbstractScene
     [Header("Game Settings")]
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private HUDManager hudManager;
+    [SerializeField] private CombatManager combatManager;
+    [SerializeField] private UnitPositioner unitPositioner;
 
     
     
@@ -39,33 +41,41 @@ public class GameScene : AbstractScene
     protected override async UniTask InitializeObjects()
     {
         entityData = dataCreator.CreateEntityDataWithID(playerUnitID.ToList(), enemyUnitID.ToList());
+        
+        spawner.Init();
+        hudManager.Init();
     }
 
     protected override async UniTask CreateObjects()
     {
+        // Create Units
         List<EntityData> entityDataList = null;
-        
-        // Create player
         entityDataList = entityData.FindAll(element => element.Side == SIDE.PLAYER);
         foreach (EntityData playerData in entityDataList)
         {
             playerUnits.Add(spawner.CreatePlayerUnit(playerData));
         }
-        
-        // Create enemy
         entityDataList = entityData.FindAll(element => element.Side == SIDE.ENEMY);;
         foreach (EntityData enemyData in entityDataList)
         {
             enemyUnits.Add(spawner.CreateEnemyUnit(enemyData));
         }
 
-        // Create player HUD
-        // create enemy HUD
+        // Create HUD
+        foreach (var playerUnit in playerUnits)
+        {
+            hudManager.CreatePlayerHUD(playerUnit);
+        }
+        foreach (var enemyUnit in enemyUnits)
+        {
+            hudManager.CreateEnemyHUD(enemyUnit);
+        }
     }
 
     protected override void PrepareGame()
     {
-        
+        // Set position for units
+        // Init CombatManager
     }
 
     protected override async UniTask BeginGame()

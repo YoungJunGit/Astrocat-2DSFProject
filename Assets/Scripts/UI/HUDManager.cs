@@ -9,11 +9,12 @@ public class HUDManager : ScriptableObject
 
     [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
     
-    [SerializeField] GameObject statuesPanel;
-
-    public void Initialize()
+    [SerializeField] private StatusCanvas statuesCanvasPref;
+    private StatusCanvas statuesCanvas;
+    
+    public void Init()
     {
-        
+        statuesCanvas = Instantiate(statuesCanvasPref);
     }
 
     public PlayerHUD CreatePlayerHUD(PlayerUnit unit)
@@ -21,6 +22,8 @@ public class HUDManager : ScriptableObject
         PlayerHUD hud = Instantiate(playerHUDPrefab).GetComponent<PlayerHUD>();
         hud.Initialize(unit);
         unit_HUD_Dic.Add(unit, hud);
+        
+        statuesCanvas.SetPlayerHUD(hud);
 
         return hud;
     }
@@ -30,6 +33,8 @@ public class HUDManager : ScriptableObject
         EnemyHUD hud = Instantiate(enemyHUDPrefab).GetComponent<EnemyHUD>();
         hud.Initialize(unit);
         unit_HUD_Dic.Add(unit, hud);
+        
+        statuesCanvas.SetEnemyHUD(hud);
 
         return hud;
     }
