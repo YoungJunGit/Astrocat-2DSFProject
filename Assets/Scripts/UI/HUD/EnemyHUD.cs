@@ -6,12 +6,8 @@ public class EnemyHUD : BaseHUD
     [Space(10f)]
     [SerializeField] private Vector3 spawnOffset;
 
-    [SerializeField] private BaseUnit target;
-
     public override void Initialize(BaseUnit unit)
     {
-        target = unit;
-        
         Vector3 spawnPos = unit.transform.Find("StatusBoxPos").transform.position;
         transform.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(spawnPos + spawnOffset);
 
@@ -25,7 +21,7 @@ public class EnemyHUD : BaseHUD
         hp_Text.text = $"{curHp}/{maxHp}";
     }
 
-    public override void OnDied()
+    public override void OnDied(UnitStat stat)
     {
         Destroy(gameObject);
     }

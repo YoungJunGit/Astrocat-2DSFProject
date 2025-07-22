@@ -1,5 +1,6 @@
 using System.Threading;
 using TMPro;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,5 +12,5 @@ public abstract class BaseHUD : MonoBehaviour
 
     public abstract void Initialize(BaseUnit unit);
     public abstract void OnHPChanged(float curHp, float maxHp);
-    public abstract void OnDied();
+    public abstract void OnDied(UnitStat stat);
 }

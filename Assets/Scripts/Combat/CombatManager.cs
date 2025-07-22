@@ -1,54 +1,37 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using DataEnum;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CombatManager", menuName = "GameScene/CombatManager", order = 1)]
 public class CombatManager : ScriptableObject
 {
-    [SerializeField] private int currentTernIdx;
-    
-    [SerializeField] private List<BaseUnit> timeLineOrderdUnits = new();
-    private List<PlayerUnit> playerUnits = null;
-    private List<EnemyUnit> enemyUnits = null;
-    
+    [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
+
+    private BaseUnit currentTurnUnit;
+
     private ActionSelector actionSelector = new();
     private UnitSelector unitSelector = new();
     
-    private bool isCombatStarted = false;
-    
-    public Action<List<BaseUnit>> OnTimeLineChanged;
-    public Action<int> OnTurnChanged;
-    
-    public void Init(List<PlayerUnit> playerUnits, List<EnemyUnit> enemyUnits)
-    {
-        this.playerUnits = playerUnits;
-        this.enemyUnits = enemyUnits;
-        timeLineOrderdUnits = new List<BaseUnit>();
-        
-        // TODO : Sort by speed in timeLineOrderdUnits
-        foreach (var playerUnit in playerUnits)
-        {
-            timeLineOrderdUnits.Add(playerUnit);
-        }
-        foreach (var enemyUnit in enemyUnits)
-        {
-            timeLineOrderdUnits.Add(enemyUnit);
-        }
-        
-        OnTimeLineChanged?.Invoke(timeLineOrderdUnits);
-        OnTurnChanged?.Invoke(currentTernIdx);
+    public Func<List<BaseUnit>, BaseUnit> m_EndTurn;
 
-        currentTernIdx = 0;
+    private bool isStartCombat = false;
+    
+    public void Init(TimelineSystem timeline, List<PlayerUnit> playerUnits, List<EnemyUnit> enemyUnits)
+    {
+        m_EndTurn += timeline.OnEndTurn;
+        currentTurnUnit = timeline.PrepareCombat(unit_HUD_Dic.GetUnits());
     }
     
     public async UniTask StartCombat()
     {
+        isStartCombat = true;
         while (true)
         {
-            Debug.Log("RoundStart");
-        
-            if (timeLineOrderdUnits[currentTernIdx] is PlayerUnit)
+            //Debug.Log("TurnStart : " + currentTurnUnit.GetStat().GetData().Name);
+
+            if (currentTurnUnit is PlayerUnit)
             {
                 int selectedAction = await actionSelector.SelectAction();
                 EnemyUnit selectedUnit = await unitSelector.SelectEnemyUnit();
@@ -56,16 +39,35 @@ public class CombatManager : ScriptableObject
             else
             {
                 // TODO : AI Logic for Enemy Unit
+                PlayerUnit selectedUnit = await unitSelector.SelectPlayerUnit();
             }
-        
-            // TODO : Execute Action
-            
-            // TODO : Check is finish
+
+            //TODO: Execute Action
+
+            //TODO: Check is finish
             //if ()
 
-            Debug.Log(currentTernIdx);
-            currentTernIdx = ++currentTernIdx % timeLineOrderdUnits.Count;
+            currentTurnUnit = m_EndTurn(unit_HUD_Dic.GetUnits());
         }
-        
     }
+
+    #region[For Debugging]
+    public void DieCharacter(SIDE side, int index)
+    {
+        BaseUnit unit = unit_HUD_Dic.GetUnits().Find(unit=>unit.GetStat().Priority + 1 == index
+                                                     && unit.GetStat().GetData().Side == side);
+
+        unit_HUD_Dic.Remove(unit);
+
+        unit?.GetStat().OnDie(unit.GetStat());
+    }
+
+    public void BuffCharacter(SIDE side, int index, Buff buff)
+    {
+        BaseUnit unit = unit_HUD_Dic.GetUnits().Find(unit => unit.GetStat().Priority + 1 == index
+                                                     && unit.GetStat().GetData().Side == side);
+
+        unit?.AddBuff(buff);
+    }
+    #endregion
 }

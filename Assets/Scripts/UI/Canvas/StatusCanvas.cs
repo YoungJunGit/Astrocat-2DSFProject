@@ -9,6 +9,8 @@ public class StatusCanvas : MonoBehaviour
     public void SetPlayerHUD(PlayerHUD playerHud)
     {
         playerHud.transform.SetParent(_playerStatusPanel, false);
+
+        // TODO : Set Position
     }
 
     public void SetEnemyHUD(EnemyHUD enemyHud)

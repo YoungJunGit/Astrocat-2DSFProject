@@ -4,8 +4,10 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using DataEntity;
 using DataEnum;
+using Obvious.Soap;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GameScene : AbstractScene
 {
@@ -27,9 +29,8 @@ public class GameScene : AbstractScene
 
     [SerializeField] private HUDManager hudManager;
     [SerializeField] private CombatManager combatManager;
+    [SerializeField] private TimelineSystem timeline;
     [SerializeField] private UnitPositioner unitPositioner;
-
-
 
     protected override int SceneIdx
     {
@@ -47,24 +48,24 @@ public class GameScene : AbstractScene
         entityData = dataCreator.CreateEntityDataWithID(playerUnitID.ToList(), enemyUnitID.ToList());
 
         spawner.Init();
-        hudManager.Init();
+        hudManager.Init(timeline);
     }
 
     protected override async UniTask CreateObjects()
     {
         // Create Units
         List<EntityData> entityDataList = null;
+
         entityDataList = entityData.FindAll(element => element.Side == SIDE.PLAYER);
-        foreach (EntityData playerData in entityDataList)
+        foreach (var playerData in entityDataList.Select((value, index)=>(value, index)))
         {
-            playerUnits.Add(spawner.CreatePlayerUnit(playerData));
+            playerUnits.Add(spawner.CreatePlayerUnit(playerData.value, playerData.index));
         }
 
         entityDataList = entityData.FindAll(element => element.Side == SIDE.ENEMY);
-        ;
-        foreach (EntityData enemyData in entityDataList)
+        foreach (var enemyData in entityDataList.Select((value, index)=>(value, index)))
         {
-            enemyUnits.Add(spawner.CreateEnemyUnit(enemyData));
+            enemyUnits.Add(spawner.CreateEnemyUnit(enemyData.value, enemyData.index));
         }
 
         // Create HUD
@@ -77,17 +78,30 @@ public class GameScene : AbstractScene
         {
             hudManager.CreateEnemyHUD(enemyUnit);
         }
+
+        hudManager.CreateBanners();
     }
 
     protected override void PrepareGame()
     {
         // Set position for units
         // Init CombatManager
-        combatManager.Init(playerUnits, enemyUnits);
+        combatManager.Init(timeline, playerUnits, enemyUnits);
+
+        // Add
+
+        if (debugMode)
+            ForDebugging();
     }
 
     protected override async UniTask BeginGame()
     {
         await combatManager.StartCombat();
+    }
+
+    private void ForDebugging()
+    {
+        if(!SceneManager.GetSceneByName("DebugingUI").isLoaded)
+            SceneManager.LoadSceneAsync("DebugingUI", LoadSceneMode.Additive);
     }
 }
