@@ -9,27 +9,29 @@ using Unity.VisualScripting;
 public class EntitySpawner : ScriptableObject
 {
     private Transform _entityRoot;
-    
+
     public void Init()
     {
         _entityRoot = new GameObject("EntityRoot").transform;
         _entityRoot.SetParent(null);
     }
 
-public PlayerUnit CreatePlayerUnit(EntityData entityData)
+    public PlayerUnit CreatePlayerUnit(EntityData entityData, Vector2 position)
     {
         GameObject go = AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File);
-        BaseUnit unit = Instantiate(go, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
+        
+        BaseUnit unit = Instantiate(go, position, Quaternion.identity).GetComponent<BaseUnit>();
         unit.Initialize(entityData);
         
         unit.transform.SetParent(_entityRoot);
         
         return unit as PlayerUnit;
     }
-    public EnemyUnit CreateEnemyUnit(EntityData entityData)
+    public EnemyUnit CreateEnemyUnit(EntityData entityData, Vector2 position)
     {
         GameObject go = AssetLoader.LoadMonsterPrefabAsset(entityData.Asset_File);
-        BaseUnit unit = Instantiate(go, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
+
+        BaseUnit unit = Instantiate(go, position, Quaternion.identity).GetComponent<BaseUnit>();
         unit.Initialize(entityData);
         
         unit.transform.SetParent(_entityRoot);

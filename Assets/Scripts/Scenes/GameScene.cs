@@ -29,7 +29,7 @@ public class GameScene : AbstractScene
     [SerializeField] private CombatManager combatManager;
     [SerializeField] private UnitPositioner unitPositioner;
 
-
+    Vector2 position;
 
     protected override int SceneIdx
     {
@@ -48,6 +48,7 @@ public class GameScene : AbstractScene
 
         spawner.Init();
         hudManager.Init();
+        unitPositioner.Init();
     }
 
     protected override async UniTask CreateObjects()
@@ -55,16 +56,24 @@ public class GameScene : AbstractScene
         // Create Units
         List<EntityData> entityDataList = null;
         entityDataList = entityData.FindAll(element => element.Side == SIDE.PLAYER);
+
+        unitPositioner.playerDataCount = entityDataList.Count + 1;
+
+        int index = 0;
         foreach (EntityData playerData in entityDataList)
         {
-            playerUnits.Add(spawner.CreatePlayerUnit(playerData));
+            index++;
+            position = unitPositioner.playerPositionCaculate(index);
+            playerUnits.Add(spawner.CreatePlayerUnit(playerData, position));
         }
 
         entityDataList = entityData.FindAll(element => element.Side == SIDE.ENEMY);
-        ;
+        index = 0;
         foreach (EntityData enemyData in entityDataList)
         {
-            enemyUnits.Add(spawner.CreateEnemyUnit(enemyData));
+            index++;
+            position = unitPositioner.enemyPositionCaculate(index);
+            enemyUnits.Add(spawner.CreateEnemyUnit(enemyData, position));
         }
 
         // Create HUD
@@ -73,10 +82,13 @@ public class GameScene : AbstractScene
             hudManager.CreatePlayerHUD(playerUnit);
         }
 
+        index = 0;
         foreach (var enemyUnit in enemyUnits)
         {
-            hudManager.CreateEnemyHUD(enemyUnit);
+            hudManager.CreateEnemyHUD(enemyUnit, index);
+            index++;
         }
+
     }
 
     protected override void PrepareGame()
@@ -89,5 +101,42 @@ public class GameScene : AbstractScene
     protected override async UniTask BeginGame()
     {
         await combatManager.StartCombat();
+    }
+
+    public void onPlayerDestroy() {
+
+        if (playerUnits.Count > 0 && playerUnits[0] != null)
+        {
+            GameObject.Destroy(playerUnits[0].gameObject);
+            playerUnits.RemoveAt(0);
+        }
+
+        unitPositioner.playerDataCount = playerUnits.Count+1;
+
+        for (int i = 0; i < playerUnits.Count; i++)
+        {
+            Vector2 newPosition = unitPositioner.playerPositionCaculate(i+1);
+            unitPositioner.Init();
+            playerUnits[i].transform.position = newPosition;
+        }
+    }
+
+    public void onEnemyDestroy()
+    {
+
+        if (enemyUnits.Count > 0 && enemyUnits[0] != null)
+        {
+            GameObject.Destroy(enemyUnits[0].gameObject);
+            enemyUnits.RemoveAt(0);
+        }
+
+        unitPositioner.playerDataCount = enemyUnits.Count + 1;
+
+        for (int i = 0; i < enemyUnits.Count; i++)
+        {
+            Vector2 newPosition = unitPositioner.enemyPositionCaculate(i + 1);
+            unitPositioner.Init();
+            enemyUnits[i].transform.position = newPosition;
+        }
     }
 }

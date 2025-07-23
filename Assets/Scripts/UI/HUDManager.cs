@@ -28,13 +28,13 @@ public class HUDManager : ScriptableObject
         return hud;
     }
 
-    public EnemyHUD CreateEnemyHUD(EnemyUnit unit)
+    public EnemyHUD CreateEnemyHUD(EnemyUnit unit, int index)
     {
         EnemyHUD hud = Instantiate(enemyHUDPrefab).GetComponent<EnemyHUD>();
         hud.Initialize(unit);
         unit_HUD_Dic.Add(unit, hud);
         
-        statuesCanvas.SetEnemyHUD(hud);
+        statuesCanvas.SetEnemyHUD(hud, index);
 
         return hud;
     }
