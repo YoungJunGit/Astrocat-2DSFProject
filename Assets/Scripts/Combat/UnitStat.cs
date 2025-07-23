@@ -10,6 +10,7 @@ public class UnitStat
     public Action<int, int> OnAPChanged;
     public Action OnDie;
 
+    public string Name { get => _baseData.Name; }
     public float Max_HP { get => (float)_baseData.Default_HP; }
     
     private float _curHp;       
