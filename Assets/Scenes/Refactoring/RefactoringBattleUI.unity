@@ -1122,13 +1122,13 @@ MonoBehaviour:
   MonStateBoxPrefab: {fileID: 7883662475984256924, guid: 54538a003e88e9842906a0a20a518098, type: 3}
   handIconInstance: {fileID: 1061949324}
   startPos: {fileID: 1461156464}
-  CharacterDataList: {fileID: 11400000, guid: e2a437b626ae06e4c8c4ffe08bc31b77, type: 2}
+  playerDataList: {fileID: 11400000, guid: e2a437b626ae06e4c8c4ffe08bc31b77, type: 2}
   MonsterDataList: {fileID: 11400000, guid: 491833a49b175d14f8813de0d7da9dd7, type: 2}
   targetselection: 0
   selectedActionType: 
+  selectingUnitName: 
   stateBoxs: []
   MonStateBoxs: []
-  selectingUnitName: 
   PlayerData: []
   MonsterData: []
 --- !u!224 &4083664799433905338

@@ -25,7 +25,7 @@ public class HUDManager : ScriptableObject
         statuesCanvas = Instantiate(statuesCanvasPref);
         timelineCanvas = Instantiate(timelineCanvasPrefab);
 
-        this.timeline.m_TimelineChanged += OnPop;
+        this.timeline.m_TimelineChanged += OnTimelineChanged;
         this.timeline.Init(timelineCanvas.GetComponentInChildren<TimelineUI>());
     }
 
@@ -46,7 +46,7 @@ public class HUDManager : ScriptableObject
         hud.Initialize(unit);
         unit_HUD_Dic.Add(unit, hud);
 
-        statuesCanvas.SetEnemyHUD(hud);
+        statuesCanvas.SetEnemyHUD(hud, unit.GetStat().Priority);
 
         return hud;
     }
@@ -60,7 +60,7 @@ public class HUDManager : ScriptableObject
     /// <summary>
     /// This Called when received message -> TimelineSystem : m_EndTurn
     /// </summary>
-    public void OnPop()
+    public void OnTimelineChanged()
     {
         timeline.AddTimeline(unit_HUD_Dic.GetUnits());
         timelineCanvas.SetParent(timeline.GetBannerList());
