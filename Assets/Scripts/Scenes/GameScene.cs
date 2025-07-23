@@ -86,7 +86,7 @@ public class GameScene : AbstractScene
     {
         // Set position for units
         // Init CombatManager
-        combatManager.Init(timeline, playerUnits, enemyUnits);
+        combatManager.Init(timeline);
 
         // Add
 

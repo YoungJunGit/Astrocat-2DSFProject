@@ -18,10 +18,15 @@ public class CombatManager : ScriptableObject
 
     private bool isStartCombat = false;
     
-    public void Init(TimelineSystem timeline, List<PlayerUnit> playerUnits, List<EnemyUnit> enemyUnits)
+    public void Init(TimelineSystem timeline)
     {
-        m_EndTurn += timeline.OnEndTurn;
+        m_EndTurn += timeline.Pop;
         currentTurnUnit = timeline.PrepareCombat(unit_HUD_Dic.GetUnits());
+
+        foreach (BaseUnit unit in unit_HUD_Dic.Keys)
+        {
+            unit.GetStat().OnDie += OnCharacterDie;
+        }
     }
     
     public async UniTask StartCombat()
@@ -49,6 +54,12 @@ public class CombatManager : ScriptableObject
 
             currentTurnUnit = m_EndTurn(unit_HUD_Dic.GetUnits());
         }
+    }
+
+    public void OnCharacterDie(UnitStat stat)
+    {
+        Debug.Log("Current Character Died!! Turn Skip!");
+        currentTurnUnit = m_EndTurn(unit_HUD_Dic.GetUnits());
     }
 
     #region[For Debugging]

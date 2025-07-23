@@ -14,7 +14,7 @@ public class TimelineSystem : ScriptableObject
     private int roundDepth;
     private int curRound;
 
-    public Action m_EndTurn;            // Funcs In this message (Sequence) HUDManager : OnEndTurn -> TimelineUI : OnEndTurn
+    public Action m_TimelineChanged;            // Funcs In this message (Sequence) HUDManager : OnEndTurn -> TimelineUI : OnEndTurn
     public Action m_EndRound;
 
     public void Init(TimelineUI timelineUI)
@@ -22,7 +22,7 @@ public class TimelineSystem : ScriptableObject
         roundDepth = 0;
         curRound = 1;
         this.timelineUI = timelineUI;
-        m_EndTurn += this.timelineUI.MoveBanners;
+        m_TimelineChanged += this.timelineUI.MoveBanners;
     }
 
     /// <summary>
@@ -32,7 +32,7 @@ public class TimelineSystem : ScriptableObject
     /// <returns> Give Unit to CombatManager before combat start </returns>
     public BaseUnit PrepareCombat(List<BaseUnit> unitList)
     {
-        // Message EndRound <- BaseUnit: OnEndRound()
+        // Attaching Actions
         foreach (BaseUnit unit in unitList)
         {
             m_EndRound += unit.OnEndRound;
@@ -52,12 +52,22 @@ public class TimelineSystem : ScriptableObject
     /// </summary>
     /// <param name="unitList"></param>
     /// <returns> Give Unit to CombatManager for next turn </returns>
-    public BaseUnit OnEndTurn(List<BaseUnit> unitList)
+    public BaseUnit Pop(List<BaseUnit> unitList = null)
     {
-        BaseUnit unit = Pop(unitList);
+        if (timelineUI.BannerList[0].Round > curRound)
+        {
+            Debug.Log("다음 라운드 시작!");
+            m_EndRound?.Invoke();
+            SortBanner();
+            curRound++;
+        }
 
-        m_EndTurn?.Invoke();
-        return unit;
+        timelineUI.GetCurrentTurnBanner().DestroyBanner();
+        timelineUI.OnPop();
+
+        m_TimelineChanged?.Invoke();
+
+        return unitList?.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
     }
 
     public void OnCharacterDie(UnitStat stat)
@@ -69,14 +79,12 @@ public class TimelineSystem : ScriptableObject
             banner.DestroyBanner();
         }
 
-        if (timelineUI.GetCurrentTurnBanner().GetStat() == stat)
-        {
-            timelineUI.GetCurrentTurnBanner().DestroyBanner();
-            Pop();
-        }
+        //if (timelineUI.GetCurrentTurnBanner().GetStat() == stat)
+        //{
+        //    Pop();
+        //}
 
-        SortBanner();
-        timelineUI.MoveBanners();
+        m_TimelineChanged?.Invoke();
     }
 
     public void OnCharacterAddBuff(Buff buff)
@@ -102,22 +110,6 @@ public class TimelineSystem : ScriptableObject
             }
         }
         SortBanner();
-    }
-
-    private BaseUnit Pop(List<BaseUnit> unitList = null)
-    {
-        timelineUI.GetCurrentTurnBanner().DestroyBanner();
-        timelineUI.OnPop();
-
-        // FIXME : Round Check must be operated before Pop() => Buff bug exist
-        if (timelineUI.GetCurrentTurnBanner().Round > curRound)
-        {
-            Debug.Log("다음 라운드 시작!");
-            m_EndRound?.Invoke();
-            curRound++;
-        }
-
-        return unitList?.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
     }
 
     private void SortBanner()
