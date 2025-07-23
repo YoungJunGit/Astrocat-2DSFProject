@@ -35,6 +35,12 @@ public class UnitStat
         _curSpeed = (float)baseData.Default_Speed;
     }
 
+    public void OnPrepareCombat()
+    {
+        OnHPChanged.Invoke(_curHp, Max_HP);
+        OnAPChanged?.Invoke(_curAp, Max_AP);
+    }
+
     public void GetDamaged(float value)
     {
         _curHp = Mathf.Clamp(_curHp - value, 0f, Max_HP);
@@ -48,6 +54,18 @@ public class UnitStat
     {
         _curHp = Mathf.Clamp(_curHp + value, 0f, Max_HP);
         OnHPChanged.Invoke(_curHp, Max_HP);
+    }
+
+    public void OnNormalAttack()
+    {
+        _curAp = Mathf.Clamp(_curAp + 1, 0, Max_AP);
+        OnAPChanged.Invoke(_curAp, Max_AP);
+    }
+
+    public void OnSkillAttack(int value)
+    {
+        _curAp = Mathf.Clamp(_curAp - value, 0, Max_AP);
+        OnAPChanged.Invoke(_curAp, Max_AP);
     }
 
     public void AddSpeed(float value)

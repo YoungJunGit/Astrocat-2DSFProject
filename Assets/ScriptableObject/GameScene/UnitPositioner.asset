@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61eb07269f5a4c70992d14fd88ff966f, type: 3}
   m_Name: UnitPositioner
   m_EditorClassIdentifier: 
+  unit_HUD_Dic: {fileID: 11400000, guid: 315cbd388b2fa9345a9aa4d557645ea7, type: 2}
+  box:
+    pointStart: {x: 2, y: 0}
+    pointEnd: {x: 8, y: -4}
+  StatusPosOffset: {x: 0, y: 5}

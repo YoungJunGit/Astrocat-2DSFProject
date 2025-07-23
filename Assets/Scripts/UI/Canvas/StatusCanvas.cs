@@ -13,11 +13,17 @@ public class StatusCanvas : MonoBehaviour
         playerHud.transform.SetParent(_playerStatusPanel, false);
     }
 
-    public void SetEnemyHUD(EnemyHUD enemyHud, int index)
+    public void SetEnemyHUD(EnemyHUD enemyHud, Transform transform)
     {
         enemyHud.transform.SetParent(_enemyStatusPanel, false);
 
-        // TODO : Offset을 unitPostitioner에서 조절할 수 있도록 수정해야 됨
-        enemyHud.transform.position = (unitPositioner.enemyPositions[index]+ new Vector2(0, 5));
+        if (transform != null)
+        {
+            enemyHud.AttachHUD(transform);
+        }
+        else
+        {
+            Debug.LogWarning($"StatusPosition is not set Properly!!!");
+        }
     }
 }

@@ -1,3 +1,4 @@
+using Obvious.Soap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ public class TimelineUI : MonoBehaviour
     [SerializeField] private GameObject Arrow;
     [SerializeField] private EntityBanner BannerPrefab;
     [SerializeField] private BannerLocationSetting _locationSetting;
+    [SerializeField] private IntVariable MaxShowBannerIndex;
 
     /// <summary>
     /// Change BannerList Collection
@@ -33,7 +35,7 @@ public class TimelineUI : MonoBehaviour
         Vector2 dest;
         foreach (EntityBanner banner in bannerList)
         {
-            dest = new Vector2((_locationSetting.InitialPos.x * 2) + _locationSetting.Distance * Mathf.Clamp(banner.Index, 1, 7), _locationSetting.InitialPos.y);
+            dest = new Vector2((_locationSetting.InitialPos.x * 2) + _locationSetting.Distance * Mathf.Clamp(banner.Index, 1, MaxShowBannerIndex), _locationSetting.InitialPos.y);
 
             banner.move?.Cancel();
             if (banner.gameObject.activeSelf)
@@ -49,7 +51,7 @@ public class TimelineUI : MonoBehaviour
 
     public EntityBanner CreateBanner(BaseUnit unit, int index, int round)
     {
-        EntityBanner banner = Instantiate(BannerPrefab).GetComponent<EntityBanner>();
+        EntityBanner banner = Instantiate(BannerPrefab, new Vector2((_locationSetting.InitialPos.x * 2) + _locationSetting.Distance * MaxShowBannerIndex, _locationSetting.InitialPos.y), Quaternion.identity).GetComponent<EntityBanner>();
         banner.Init(unit.GetStat(), index, round);
 
         return banner;

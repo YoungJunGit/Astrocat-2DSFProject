@@ -71,7 +71,8 @@ public class CombatManager : ScriptableObject
         BaseUnit unit = unit_HUD_Dic.GetUnits().Find(unit=>unit.GetStat().Priority + 1 == index
                                                      && unit.GetStat().GetData().Side == side);
 
-        unit_HUD_Dic.Remove(unit);
+        if (unit != null)
+            unit_HUD_Dic.Remove(unit);
 
         unit?.GetStat().OnDie(unit.GetStat());
     }

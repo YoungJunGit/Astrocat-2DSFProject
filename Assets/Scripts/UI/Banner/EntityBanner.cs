@@ -1,11 +1,12 @@
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+using Cysharp.Threading.Tasks;
 using DataEntity;
 using DataEnum;
+using Obvious.Soap;
+using System.Collections;
 using System.ComponentModel;
 using System.Threading;
-using Cysharp.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class EntityBanner : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class EntityBanner : MonoBehaviour
 
     [Header("Banner Settings")]
     [SerializeField] private float bannerSpeed = 1.0f;
-    [SerializeField] private Vector2 initialPos = Vector2.zero;
+    [SerializeField] private IntVariable MaxShowBannerIndex;
 
     private UnitStat stat;
 
@@ -31,7 +32,7 @@ public class EntityBanner : MonoBehaviour
         set 
         {
             index = value;
-            if (index <= 6)
+            if (index <= MaxShowBannerIndex - 1)
                 gameObject.SetActive(true);
             else
                 gameObject.SetActive(false);
@@ -41,7 +42,7 @@ public class EntityBanner : MonoBehaviour
         }
     }
 
-    [SerializeField] private int round;
+    private int round;
     public int Round { get { return round; } }
 
     public CancellationTokenSource move;

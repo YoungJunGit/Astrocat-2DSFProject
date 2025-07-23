@@ -1,51 +1,67 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "UnitPositioner", menuName = "GameScene/UnitPositioner", order = 5)]
 class UnitPositioner : ScriptableObject
 {
-    [HideInInspector] public int playerDataCount;
-    [HideInInspector] public int EnemyDataCount;
-    [HideInInspector] public List<Vector2> playerPositions = new List<Vector2>();
-    [HideInInspector] public List<Vector2> enemyPositions = new List<Vector2>();
-
-    // TODO : PointStart, PointEnd를 인스펙터창에서 조절할 수 있도록 수정해야 함
-    private Vector2 pointStart = new Vector2(2f, 0f);
-    private Vector2 pointEnd = new Vector2(8f, -4f);
-    private Vector2 direction;
-
-    private Vector2 targetPosition;
-    private StatusCanvas statuesCanvas;
-
-    public void Init()
+    [Serializable] private class UnitPositionBox
     {
-        direction = pointEnd - pointStart;
+        public Vector2 pointStart;
+        public Vector2 pointEnd;
     }
 
-    public Vector2 playerPositionCaculate(int index) {
+    [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
+    [SerializeField] private UnitPositionBox box;
 
-        Vector2 step = direction / playerDataCount;
-        targetPosition = pointStart + (step * index);
-        playerPositions[index - 1] = targetPosition;
-        return targetPosition;
-    }
-
-    public Vector2 enemyPositionCaculate(int index)
+    public void Prepare()
     {
-        Vector2 step = direction / EnemyDataCount;
-        targetPosition = pointStart + (step * index);
-        targetPosition.x = -targetPosition.x;
-        enemyPositions.Add(targetPosition);  // 가장 안전한 방식
-        return targetPosition;
+        foreach (BaseUnit unit in unit_HUD_Dic.Keys)
+        {
+            unit.GetStat().OnDie += OnCharacterDie;
+        }
     }
 
     public void SetPositionForUnits(List<PlayerUnit> playerUnits, List<EnemyUnit> enemyUnits)
     {
-        // Implement Method
+        Vector2 pos;
+        for (int i = 0; i < playerUnits.Count; i++)
+        {
+            pos = PlayerPositionCaculate(i, playerUnits.Count);
+            playerUnits[i].transform.position = pos;
+        }
+
+        for(int i = 0;i < enemyUnits.Count;i++)
+        {
+            pos = EnemyPositionCaculate(i, enemyUnits.Count);
+            enemyUnits[i].transform.position = pos;
+        }
     }
 
     public void OnCharacterDie(UnitStat stat)
     {
-        
+        List<PlayerUnit> playerUnits = unit_HUD_Dic.GetPlayerUnits();
+        List<EnemyUnit> enemyUnits = unit_HUD_Dic.GetEnemyUnits();
+        SetPositionForUnits(playerUnits, enemyUnits);
+    }
+
+    public void OnCharacterRevivel()
+    {
+        // To be added later
+    }
+
+    private Vector2 PlayerPositionCaculate(int index, int count)
+    {
+        Vector2 direction = box.pointEnd - box.pointStart;
+        Vector2 targetPosition = box.pointStart + (direction / (count + 1)) * (index + 1);
+        return targetPosition;
+    }
+
+    private Vector2 EnemyPositionCaculate(int index, int count)
+    {
+        Vector2 direction = box.pointEnd - box.pointStart;
+        Vector2 targetPosition = box.pointStart + (direction / (count + 1)) * (index + 1);
+        targetPosition.x = -targetPosition.x;
+        return targetPosition;
     }
 }

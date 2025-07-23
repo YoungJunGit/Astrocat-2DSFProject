@@ -1246,8 +1246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp_Text: {fileID: 3208227924969673857}
   hp_Slider: {fileID: 1758533310238802850}
-  apText: {fileID: 7145379005701788039}
-  AP_Panel: {fileID: 5711746057151147264}
+  ap_Text: {fileID: 7145379005701788039}
+  ap_Panel: {fileID: 5711746057151147264}
   ActivateColor: {r: 0.2117647, g: 0.56158066, b: 1, a: 1}
   DeactivateColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   statusBox: {fileID: 4266279459104811446}

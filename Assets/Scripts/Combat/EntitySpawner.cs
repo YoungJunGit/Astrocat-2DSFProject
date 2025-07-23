@@ -21,9 +21,6 @@ public class EntitySpawner : ScriptableObject
         GameObject go = AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File);
         BaseUnit unit = Instantiate(go, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
         unit.Initialize(entityData, index);
-
-        // TODO : 캐릭터 생성 타이밍에 포지션 설정X
-        //BaseUnit unit = Instantiate(go, position, Quaternion.identity).GetComponent<BaseUnit>();
         
         unit.transform.SetParent(_entityRoot);
         
@@ -35,9 +32,6 @@ public class EntitySpawner : ScriptableObject
         GameObject go = AssetLoader.LoadMonsterPrefabAsset(entityData.Asset_File);
         BaseUnit unit = Instantiate(go, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
         unit.Initialize(entityData, index);
-
-        // TODO : 캐릭터 생성 타이밍에 포지션 설정X
-        //BaseUnit unit = Instantiate(go, position, Quaternion.identity).GetComponent<BaseUnit>();
 
         unit.transform.SetParent(_entityRoot);
         

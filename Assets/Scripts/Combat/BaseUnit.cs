@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class BaseUnit : MonoBehaviour
 {
@@ -56,7 +57,7 @@ public class BaseUnit : MonoBehaviour
 
     public void OnDie(UnitStat stat)
     {
-
+        Destroy(gameObject);
     }
 
     public UnitStat GetStat() { return _stat; }

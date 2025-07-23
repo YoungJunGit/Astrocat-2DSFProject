@@ -17,3 +17,4 @@ MonoBehaviour:
   _anchor:
     max: {x: 0.31, y: 0.29}
     min: {x: 0.077, y: 0.079}
+  _maxShowIndex: 7

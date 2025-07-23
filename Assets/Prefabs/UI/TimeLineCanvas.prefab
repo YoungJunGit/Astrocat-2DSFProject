@@ -49,10 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88480c85cbe63644bf7bc7885db55ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bannerList: []
   Arrow: {fileID: 7913437602593985279}
   BannerPrefab: {fileID: -4350229450652637925, guid: 8d64bddc02f99ca45b7ff69eb6ef8f69, type: 3}
   _locationSetting: {fileID: 11400000, guid: 0dd90b7bec333594a85be197912ff1aa, type: 2}
+  MaxShowBannerIndex: {fileID: 11400000, guid: e470a0d88c8ef934b8d09b63a050e2ee, type: 2}
 --- !u!1 &6392610890553850371
 GameObject:
   m_ObjectHideFlags: 0
