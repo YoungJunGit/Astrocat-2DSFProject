@@ -9,6 +9,7 @@ class UnitPositioner : ScriptableObject
     [HideInInspector] public List<Vector2> playerPositions = new List<Vector2>();
     [HideInInspector] public List<Vector2> enemyPositions = new List<Vector2>();
 
+    // TODO : PointStart, PointEnd를 인스펙터창에서 조절할 수 있도록 수정해야 함
     private Vector2 pointStart = new Vector2(2f, 0f);
     private Vector2 pointEnd = new Vector2(8f, -4f);
     private Vector2 direction;
@@ -31,11 +32,20 @@ class UnitPositioner : ScriptableObject
 
     public Vector2 enemyPositionCaculate(int index)
     {
-        Vector2 step = direction / playerDataCount;
+        Vector2 step = direction / EnemyDataCount;
         targetPosition = pointStart + (step * index);
         targetPosition.x = -targetPosition.x;
         enemyPositions.Add(targetPosition);  // 가장 안전한 방식
         return targetPosition;
     }
 
+    public void SetPositionForUnits(List<PlayerUnit> playerUnits, List<EnemyUnit> enemyUnits)
+    {
+        // Implement Method
+    }
+
+    public void OnCharacterDie(UnitStat stat)
+    {
+        
+    }
 }

@@ -58,8 +58,11 @@ public class CombatManager : ScriptableObject
 
     public void OnCharacterDie(UnitStat stat)
     {
-        Debug.Log("Current Character Died!! Turn Skip!");
-        currentTurnUnit = m_EndTurn(unit_HUD_Dic.GetUnits());
+        if (currentTurnUnit.GetStat() == stat)
+        {
+            Debug.Log("Current Character Died!! Turn Skip!");
+            currentTurnUnit = m_EndTurn(unit_HUD_Dic.GetUnits());
+        }
     }
 
     #region[For Debugging]

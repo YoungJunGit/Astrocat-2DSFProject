@@ -79,11 +79,6 @@ public class TimelineSystem : ScriptableObject
             banner.DestroyBanner();
         }
 
-        //if (timelineUI.GetCurrentTurnBanner().GetStat() == stat)
-        //{
-        //    Pop();
-        //}
-
         m_TimelineChanged?.Invoke();
     }
 
@@ -130,47 +125,4 @@ public class TimelineSystem : ScriptableObject
         return timelineUI.BannerList;
     }
 
-    //public void OnStartBuff(int number, int durationRound, double speedValue, SIDE side)
-    //{
-    //    if (EntityInfoList.Count < number)
-    //    {
-    //        return;
-    //    }
-
-    //    int duration = TimelineList.Exists(element => element.MyBannerInfo.Side == side && 
-    //                                                  element.MyBannerInfo.Priority == (number - 1) &&
-    //                                                  element.Turn == curRound) ? durationRound : durationRound + 1;
-
-    //    Buff buff = new Buff("Speed Buff", duration, 0, 0, 0, speedValue);
-
-    //    foreach(EntityBannerInfo info in EntityInfoList)
-    //    {
-    //        if(info.Side == side && info.Priority == (number - 1))
-    //        {
-    //            info.OnAddBuff(buff);
-    //        }
-    //    }
-
-    //    ArrangeBanner();
-    //}
-
-    //private void AddTimeline()
-    //{
-    //    while (TimelineList.Count < 7)
-    //    {
-    //        roundDepth++;
-    //        foreach (EntityBannerInfo info in EntityInfoList)
-    //        {
-    //            int index = TimelineList.Count;
-    //            GameObject gameObject = Instantiate(BannerPrefab);
-    //            EntityBanner myBanner = gameObject.GetComponent<EntityBanner>();
-    //            myBanner.InitBanner(info, index, roundDepth);
-    //            myBanner.SetTransformByIndex(index + 2);
-    //            TimelineList.Add(myBanner);
-
-    //            if (index >= 7)
-    //                gameObject.SetActive(false);
-    //        }
-    //    }
-    //}
 }
