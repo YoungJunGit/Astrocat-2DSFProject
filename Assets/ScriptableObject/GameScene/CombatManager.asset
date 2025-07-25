@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a0696b4be107f4bbc6f11e6702e9da, type: 3}
   m_Name: CombatManager
   m_EditorClassIdentifier: 
+  currentTernIdx: 2
+  timeLineOrderdUnits:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  actionSelector: {fileID: 11400000, guid: 41504da8ae3a4f846aabb4b7d2199647, type: 2}
