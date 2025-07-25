@@ -8,7 +8,7 @@ public class UnitStat
 
     public Action<float, float> OnHPChanged;
     public Action<int, int> OnAPChanged;
-    public Action OnDie;
+    public Action<UnitStat> OnDie;
 
     public string Name { get => _baseData.Name; }
     public float Max_HP { get => (float)_baseData.Default_HP; }

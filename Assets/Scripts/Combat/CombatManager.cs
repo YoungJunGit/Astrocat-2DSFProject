@@ -38,8 +38,9 @@ public class CombatManager : ScriptableObject
 
             if (currentTurnUnit is PlayerUnit)
             {
-                int selectedAction = await actionSelector.SelectAction();
-                EnemyUnit selectedUnit = await unitSelector.SelectEnemyUnit();
+                UnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
+
+                await selectedAction.Execute();
             }
             else
             {
@@ -64,25 +65,4 @@ public class CombatManager : ScriptableObject
             currentTurnUnit = m_EndTurn(unit_HUD_Dic.GetUnits());
         }
     }
-
-    #region[For Debugging]
-    public void DieCharacter(SIDE side, int index)
-    {
-        BaseUnit unit = unit_HUD_Dic.GetUnits().Find(unit=>unit.GetStat().Priority + 1 == index
-                                                     && unit.GetStat().GetData().Side == side);
-
-        if (unit != null)
-            unit_HUD_Dic.Remove(unit);
-
-        unit?.GetStat().OnDie(unit.GetStat());
-    }
-
-    public void BuffCharacter(SIDE side, int index, Buff buff)
-    {
-        BaseUnit unit = unit_HUD_Dic.GetUnits().Find(unit => unit.GetStat().Priority + 1 == index
-                                                     && unit.GetStat().GetData().Side == side);
-
-        unit?.AddBuff(buff);
-    }
-    #endregion
 }
