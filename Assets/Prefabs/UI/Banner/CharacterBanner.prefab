@@ -165,7 +165,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2febc472c5c33c4284fab9838f5b698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySprites: []
+  myAnimator: {fileID: 287820033796012520}
+  rectTransform: {fileID: 5086063372089508902}
+  priorityRectTransform: {fileID: 999633606973699204}
+  bannerImg: {fileID: 3835703176869441858}
+  priorityImg: {fileID: 8410445151208139979}
   prioritySprites:
   - {fileID: 4905077122900421461, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: -8916584627476031112, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
@@ -173,14 +177,9 @@ MonoBehaviour:
   - {fileID: 6451946313195511577, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: -1220069359675031454, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: 1959712172958920446, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
-  myBannerInfo:
-    side: 0
-    speed: 0
-    priority: 0
-    stack: 0
-    bDie: 0
   bannerSpeed: 5
-  initialPos: {x: 80, y: -80}
+  MaxShowBannerIndex: {fileID: 11400000, guid: e470a0d88c8ef934b8d09b63a050e2ee, type: 2}
+  round: 0
 --- !u!95 &287820033796012520
 Animator:
   serializedVersion: 7

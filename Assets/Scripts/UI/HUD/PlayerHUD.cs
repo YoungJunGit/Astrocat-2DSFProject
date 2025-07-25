@@ -9,12 +9,12 @@ using System.Linq;
 public class PlayerHUD : BaseHUD
 {
     [Header("AP")]
-    [SerializeField] private TMP_Text apText;
-    [SerializeField] private GameObject AP_Panel;
+    [SerializeField] private TMP_Text ap_Text;
+    [SerializeField] private GameObject ap_Panel;
     [SerializeField] private Color ActivateColor;
     [SerializeField] private Color DeactivateColor;
 
-    private Image[] AP_BoxList;
+    private Image[] ap_BoxList;
 
     [Space(10f)]
     [SerializeField] private Image statusBox;
@@ -24,7 +24,7 @@ public class PlayerHUD : BaseHUD
     public override void Initialize(BaseUnit unit)
     {
         unitName.text = unit.GetStat().GetData().Name;
-        AP_BoxList = AP_Panel.GetComponentsInChildren<Image>();
+        ap_BoxList = ap_Panel.GetComponentsInChildren<Image>();
 
         unit.GetStat().OnHPChanged += OnHPChanged;
         unit.GetStat().OnAPChanged += OnAPChanged;
@@ -37,14 +37,14 @@ public class PlayerHUD : BaseHUD
         hp_Text.text = $"{curHp}/{maxHp}";
     }
 
-    public override void OnDied()
+    public override void OnDied(UnitStat stat)
     {
         statusBox.color = DieColor;
     }
 
     public void OnAPChanged(int curAp, int maxAp)
     {
-        foreach (var box in AP_BoxList.Select((value, index) => (value, index)))
+        foreach (var box in ap_BoxList.Select((value, index) => (value, index)))
         {
             if (box.index < curAp)
             {
@@ -56,6 +56,6 @@ public class PlayerHUD : BaseHUD
             }
         }
 
-        apText.text = $"{curAp}/{maxAp}";
+        ap_Text.text = $"{curAp}/{maxAp}";
     }
 }

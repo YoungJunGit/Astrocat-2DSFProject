@@ -401,9 +401,9 @@ RectTransform:
   - {fileID: 3030465889877236441}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 960, y: 0}
   m_SizeDelta: {x: 200, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7282957677853012459
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp_Text: {fileID: 1022801073456684004}
   hp_Slider: {fileID: 3319606366621633704}
-  spawnOffset: {x: 0, y: 0.7, z: 0}
+  posOffset: {x: 0, y: 0.7, z: 0}
 --- !u!1 &5040532298731431401
 GameObject:
   m_ObjectHideFlags: 0

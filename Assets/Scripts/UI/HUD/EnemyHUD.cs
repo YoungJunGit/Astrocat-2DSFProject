@@ -1,22 +1,38 @@
+using Cysharp.Threading.Tasks;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class EnemyHUD : BaseHUD
 {
     [Space(10f)]
-    [SerializeField] private Vector3 spawnOffset;
+    [SerializeField] private Vector3 posOffset;
+    private RectTransform rectTransform;
+    private Transform statusPos;
 
-    [SerializeField] private BaseUnit target;
+    private CancellationTokenSource update = new();
 
     public override void Initialize(BaseUnit unit)
     {
-        target = unit;
-        
-        Vector3 spawnPos = unit.transform.Find("StatusBoxPos").transform.position;
-        transform.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(spawnPos + spawnOffset);
-
+        rectTransform = GetComponent<RectTransform>();
         unit.GetStat().OnHPChanged += OnHPChanged;
         unit.GetStat().OnDie += OnDied;
+    }
+
+    public void AttachHUD(Transform statusPos)
+    {
+        this.statusPos = statusPos;
+        UpdatePosition().Forget();
+    }
+
+    private async UniTask UpdatePosition()
+    {
+        while (true)
+        {
+            await UniTask.Yield(cancellationToken: update.Token);
+            rectTransform.position = Camera.main.WorldToScreenPoint(statusPos.position + posOffset);
+        }
     }
 
     public override void OnHPChanged(float curHp, float maxHp)
@@ -25,8 +41,14 @@ public class EnemyHUD : BaseHUD
         hp_Text.text = $"{curHp}/{maxHp}";
     }
 
-    public override void OnDied()
+    public override void OnDied(UnitStat stat)
     {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        update.Cancel();
+        update.Dispose();
     }
 }

@@ -1,71 +1,81 @@
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+using Cysharp.Threading.Tasks;
 using DataEntity;
 using DataEnum;
+using Obvious.Soap;
+using System.Collections;
+using System.ComponentModel;
+using System.Threading;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class EntityBanner : MonoBehaviour
 {
-    private RectTransform rectTransform;
-    private RectTransform priorityRectTransform;
-    private Animator myAnimator;
-    private Image BannerImg;
-    private Image PriorityImg;
-    private Sprite[] mySprites;
+    [Header("Component Settings")]
+    [SerializeField] private Animator myAnimator;
+    [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private RectTransform priorityRectTransform;
+    [SerializeField] private Image bannerImg;
+    [SerializeField] private Image priorityImg;
+    
+    private Sprite[] sprites;
+    [SerializeField] private Sprite[] prioritySprites;
 
-    [SerializeField]
-    private Sprite[] prioritySprites;
-    [SerializeField]
-    private float bannerSpeed = 1.0f;
-    [SerializeField]
-    private Vector2 initialPos = Vector2.zero;
+    [Header("Banner Settings")]
+    [SerializeField] private float bannerSpeed = 1.0f;
+    [SerializeField] private IntVariable MaxShowBannerIndex;
 
-    private EntityBannerInfo myBannerInfo;
-    public EntityBannerInfo MyBannerInfo { get { return myBannerInfo; } }
+    private UnitStat stat;
 
-    private int turn = 0;
-    public int Turn { get { return turn; } }
-
-    private Coroutine MoveCoroutine;
-
-    public int CompareTo(EntityBanner other)
-    {
-        if (this.turn < other.turn) { return -1; }
-        else if (this.turn > other.turn)  { return 1; }
-        else
+    private int index;
+    public int Index {  
+        get { return index; }
+        set 
         {
-            if (this.myBannerInfo.Speed > other.myBannerInfo.Speed) { return -1; }
-            else if (this.myBannerInfo.Speed < other.myBannerInfo.Speed) { return 1; }
+            index = value;
+            if (index <= MaxShowBannerIndex - 1)
+                gameObject.SetActive(true);
             else
-            {
-                if (this.myBannerInfo.Side < other.myBannerInfo.Side) { return -1; }
-                else if (this.myBannerInfo.Side > other.myBannerInfo.Side) { return 1; }
-                else
-                {
-                    if (this.myBannerInfo.Priority < other.myBannerInfo.Priority) { return -1; }
-                    else return 1;
-                }
-            }
+                gameObject.SetActive(false);
+
+            // For Debugging
+            gameObject.name = $"Banner:{index}";
         }
     }
 
-    private void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        priorityRectTransform = transform.GetChild(0).GetComponent<RectTransform>();
-        BannerImg = GetComponent<Image>();
-        PriorityImg = transform.GetChild(0).GetComponent<Image>();
-        myAnimator = GetComponent<Animator>();
-    }
+    private int round;
+    public int Round { get { return round; } }
 
-    private IEnumerator MoveBanner(int index)
+    public CancellationTokenSource move;
+
+    public void Init(UnitStat stat, int index, int round)
     {
-        Vector2 start = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
-        Vector2 destination = new Vector2((initialPos.x * 2) + 80.0f * index, initialPos.y);
+        this.stat = stat;
+        this.index = index;
+        this.round = round;
+
+        sprites = AssetLoader.LoadImgAsset(this.stat.GetData().Asset_File);
+        myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(this.stat.GetData().Asset_File);
+
+        priorityImg.sprite = this.stat.GetData().Side == SIDE.PLAYER ? prioritySprites[this.stat.Priority] : prioritySprites[this.stat.Priority + 3];
+        bannerImg.sprite = sprites[0];
 
         if (index == 0)
+            myAnimator.SetTrigger("Skip");
+    }
+
+    /// <summary>
+    /// Move banner to destination smoothly -> Called in TimelineUI
+    /// </summary>
+    /// <param name="destination"></param>
+    /// <param name="isFirstBanner"></param>
+    /// <returns></returns>
+    public async UniTaskVoid Move(Vector2 destination, bool isFirstBanner)
+    {
+        move = new CancellationTokenSource();
+        Vector2 start = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
+
+        if (isFirstBanner)
         {
-            destination = new Vector2(initialPos.x, initialPos.y);
             myAnimator.SetTrigger("Move");
         }
 
@@ -74,72 +84,62 @@ public class EntityBanner : MonoBehaviour
         {
             curTime += Time.deltaTime * bannerSpeed;
             rectTransform.anchoredPosition = Vector2.Lerp(start, destination, curTime);
-            yield return null;
+
+            await UniTask.Yield(cancellationToken: move.Token);
         }
+        move = null;
     }
 
-    public void SetDestination(int index)
+    public void SetAnchor(Vector2 anchorMax, Vector2 anchorMin)
     {
-        gameObject.name = "Banner:" + index;
-
-        if (index < 7)
-        {
-            gameObject.SetActive(true);
-        }
-        else
-        {
-            gameObject.SetActive(false);
-        }
-
-        if (MoveCoroutine != null)
-            StopCoroutine(MoveCoroutine);
-
-        if (gameObject.activeSelf)
-            MoveCoroutine = StartCoroutine(MoveBanner(index));
-        else
-            rectTransform.anchoredPosition = new Vector2((initialPos.x * 2) + 80.0f * 7, initialPos.y);
+        priorityRectTransform.anchorMax = anchorMax;
+        priorityRectTransform.anchorMin = anchorMin;
     }
 
-    public void InitBanner(EntityBannerInfo entityBannerInfo, int index, int round)
+    public void SetPostion(Vector2 pos)
     {
-        gameObject.name = $"Banner: {index}";
-        myBannerInfo = entityBannerInfo;
-        turn = round;
-
-        mySprites = AssetLoader.LoadImgAsset(myBannerInfo.EntityInfo.Asset_File);
-        myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(myBannerInfo.EntityInfo.Asset_File);
-
-        if (index == 0)
-            myAnimator.SetTrigger("Skip");
-
-        if (myBannerInfo.Side == SIDE.PLAYER)
-            PriorityImg.sprite = prioritySprites[myBannerInfo.Priority];
-        else
-            PriorityImg.sprite = prioritySprites[myBannerInfo.Priority + 3];
-
-        BannerImg.sprite = mySprites[0];
-
-        transform.SetParent(GameObject.Find("Turn-Timeline").transform);
-    }
-
-    public void SetTransformByIndex(int index)
-    {
-        int clampedIndex = Mathf.Clamp(index, 0, 7);
-        Vector2 pos = new Vector2((initialPos.x * 2) + 80.0f * index, initialPos.y);
-        if (index == 0)
-        {
-            pos.x = initialPos.x;
-            priorityRectTransform.anchorMax = new Vector2(0.31f, 0.29f);
-            priorityRectTransform.anchorMin = new Vector2(0.077f, 0.079f);
-            BannerImg.sprite = mySprites[4];
-        }
-
         rectTransform.anchoredPosition = pos;
-        rectTransform.localScale = Vector3.one;
+    }
+    
+    public void SetScale(Vector2 scale)
+    {
+        rectTransform.localScale = scale;
+    }
+
+    public void SetSprite(int index)
+    {
+        bannerImg.sprite = sprites[index];
+    }
+
+    /// <summary>
+    /// EntityBanner : For Debugging
+    /// </summary>
+    /// <param name="index"> Index For Banner Name </param>
+    public void SetName(string name)
+    {
+        gameObject.name = name;
     }
 
     public void DestroyBanner()
     {
         Destroy(gameObject);
+    }
+
+    public int CompareTo(EntityBanner other)
+    {
+        if (this.round < other.round) { return -1; }
+        else if (this.round > other.round) { return 1; }
+        else
+        {
+            return stat.CompareTo(other.stat);
+        }
+    }
+
+    public UnitStat GetStat() { return stat; }
+
+    private void OnDestroy()
+    {
+        move?.Cancel();
+        move?.Dispose();
     }
 }

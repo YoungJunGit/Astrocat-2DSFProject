@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8dc0d9017710a458b4fcb31b7f0dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatusBox: {fileID: 4174963921481129628, guid: 713bc7122de375e45a093101ed57a3d2, type: 3}
+  StatusPos: {fileID: 6024364677408690715}
 --- !u!1 &1676029463811367025
 GameObject:
   m_ObjectHideFlags: 0

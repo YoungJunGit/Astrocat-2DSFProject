@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8750034192850409033}
-  - component: {fileID: 6846943120905078593}
+  - component: {fileID: 661991582230088870}
   m_Layer: 5
-  m_Name: Turn-Timeline
+  m_Name: TimelinePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6846943120905078593
+--- !u!114 &661991582230088870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,18 +46,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1723399168436875404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ecf3503477beea418f1238e30eb9ac7, type: 3}
+  m_Script: {fileID: 11500000, guid: a88480c85cbe63644bf7bc7885db55ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BannerPrefab: {fileID: 7230901669617324391, guid: 8d64bddc02f99ca45b7ff69eb6ef8f69, type: 3}
-  ArrowObject: {fileID: 7913437602593985279}
-  AddSpeedBtn: {fileID: 0}
-  DieBtn: {fileID: 0}
-  selectCharacterSide: 2
-  buffCharacterNumber: 2
-  durationRound: 2
-  addSpeedValue: 2
-  dieCharacterNumber: 2
+  Arrow: {fileID: 7913437602593985279}
+  BannerPrefab: {fileID: -4350229450652637925, guid: 8d64bddc02f99ca45b7ff69eb6ef8f69, type: 3}
+  _locationSetting: {fileID: 11400000, guid: 0dd90b7bec333594a85be197912ff1aa, type: 2}
+  MaxShowBannerIndex: {fileID: 11400000, guid: e470a0d88c8ef934b8d09b63a050e2ee, type: 2}
 --- !u!1 &6392610890553850371
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +65,7 @@ GameObject:
   - component: {fileID: 6289524192867293542}
   - component: {fileID: 7778736722043347747}
   - component: {fileID: 6841501682850891929}
-  - component: {fileID: 2105443901608710495}
+  - component: {fileID: 8944480728120779190}
   m_Layer: 5
   m_Name: TimeLineCanvas
   m_TagString: Untagged
@@ -161,7 +156,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2105443901608710495
+--- !u!114 &8944480728120779190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,9 +165,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6392610890553850371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c6341fa48c4364b8f2dffd5c887cad, type: 3}
+  m_Script: {fileID: 11500000, guid: 7660f2e70f329ea4b80eae26854a8ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timelinePanel: {fileID: 8750034192850409033}
+  _locationSetting: {fileID: 11400000, guid: 0dd90b7bec333594a85be197912ff1aa, type: 2}
 --- !u!1 &7913437602593985279
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8103460666375124938
 RectTransform:
   m_ObjectHideFlags: 0
@@ -209,7 +206,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 163, y: -80}
-  m_SizeDelta: {x: 40, y: 32}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4242861650791580472
 CanvasRenderer:
