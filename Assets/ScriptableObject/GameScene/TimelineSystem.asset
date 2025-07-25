@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<<< HEAD:Assets/ScriptableObject/GameScene/InputHandler.asset
-  m_Script: {fileID: 11500000, guid: a522592f7f814e178b2019e7925af8df, type: 3}
-  m_Name: InputHandler
-========
   m_Script: {fileID: 11500000, guid: 2ecf3503477beea418f1238e30eb9ac7, type: 3}
   m_Name: TimelineSystem
->>>>>>>> Develop:Assets/ScriptableObject/GameScene/TimelineSystem.asset
   m_EditorClassIdentifier: 

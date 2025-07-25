@@ -11,8 +11,7 @@ public class CombatManager : ScriptableObject
 
     private BaseUnit currentTurnUnit;
 
-    private ActionSelector actionSelector = new();
-    private UnitSelector unitSelector = new();
+    [SerializeField] private ActionSelector actionSelector;
     
     public Func<List<BaseUnit>, BaseUnit> m_EndTurn;
 
@@ -27,6 +26,8 @@ public class CombatManager : ScriptableObject
         {
             unit.GetStat().OnDie += OnCharacterDie;
         }
+        
+        actionSelector.Init();
     }
     
     public async UniTask StartCombat()
@@ -45,7 +46,6 @@ public class CombatManager : ScriptableObject
             else
             {
                 // TODO : AI Logic for Enemy Unit
-                PlayerUnit selectedUnit = await unitSelector.SelectPlayerUnit();
             }
 
             //TODO: Execute Action

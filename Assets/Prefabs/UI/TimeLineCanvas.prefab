@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Arrow: {fileID: 7913437602593985279}
   BannerPrefab: {fileID: -4350229450652637925, guid: 8d64bddc02f99ca45b7ff69eb6ef8f69, type: 3}
-  _locationSetting: {fileID: 11400000, guid: 0dd90b7bec333594a85be197912ff1aa, type: 2}
+  _locationSetting: {fileID: 11400000, guid: e3aa08dd05ed2fc4ebbc298dc06f8905, type: 2}
   MaxShowBannerIndex: {fileID: 11400000, guid: e470a0d88c8ef934b8d09b63a050e2ee, type: 2}
 --- !u!1 &6392610890553850371
 GameObject:
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timelinePanel: {fileID: 8750034192850409033}
-  _locationSetting: {fileID: 11400000, guid: 0dd90b7bec333594a85be197912ff1aa, type: 2}
+  _locationSetting: {fileID: 11400000, guid: e3aa08dd05ed2fc4ebbc298dc06f8905, type: 2}
 --- !u!1 &7913437602593985279
 GameObject:
   m_ObjectHideFlags: 0

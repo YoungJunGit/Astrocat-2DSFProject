@@ -9,7 +9,7 @@ class ActionSelector : ScriptableObject
     [SerializeField] private ActionSelectionButtons selectorPrefab;
     private ActionSelectionButtons selector;
     
-    private int _selectedActionType = 0;
+    private int _selectedActionType;
     
     public void Init()
     {

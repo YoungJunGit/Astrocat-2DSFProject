@@ -180,7 +180,7 @@ MonoBehaviour:
   spawner: {fileID: 11400000, guid: e95eafb3c3986ef4791b17b0f999fb9b, type: 2}
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
-  timeline: {fileID: 11400000, guid: 224d178c2c9f27a419e9428dd5f3c19f, type: 2}
+  timeline: {fileID: 11400000, guid: d1b1b5f4b1517f747959852e1fc42e01, type: 2}
   unitPositioner: {fileID: 11400000, guid: c4b92e3d7b3b8034fb2eb759f5fbdacd, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
