@@ -1,8 +1,9 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 abstract class UnitAction
 {
-    public abstract void Execute();
+    public abstract UniTask Execute();
 }
 
 class PlayerBaseAttackAction : UnitAction
@@ -10,21 +11,11 @@ class PlayerBaseAttackAction : UnitAction
     private PlayerUnit _caster;
     private EnemyUnit _target;
     
-    public PlayerBaseAttackAction SetCaster(PlayerUnit caster)
+    public override async UniTask Execute()
     {
-        _caster = caster;
+        _caster = UnitManager.GetCurrentPlayerUnit();
+        _target = await UnitManager.GetEnemyUnitBySelector();
         
-        return this;
-    }
-    public PlayerBaseAttackAction SetTarget(EnemyUnit target)
-    {
-        _target = target;
-        
-        return this;
-    }
-    
-    public override void Execute()
-    {
         if (_caster == null || _target == null)
         {
             Debug.LogError("Caster or target is not set.");

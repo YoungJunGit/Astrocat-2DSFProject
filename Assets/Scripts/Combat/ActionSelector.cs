@@ -1,8 +1,5 @@
-using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.InputSystem.iOS;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "ActionSelector", menuName = "GameScene/ActionSelector", order = 1)]
 class ActionSelector : ScriptableObject
@@ -10,16 +7,13 @@ class ActionSelector : ScriptableObject
     [SerializeField] private InputHandler inputHandler;
     
     [SerializeField] private ActionSelectionButtons selectorPrefab;
-    private Transform selectorRoot;
     private ActionSelectionButtons selector;
     
     private int _selectedActionType = 0;
     
-    public void Init(Transform selectorRoot)
+    public void Init()
     {
-        this.selectorRoot = selectorRoot;
-        
-        selector = Instantiate(selectorPrefab, selectorRoot);
+        selector = Instantiate(selectorPrefab);
         selector.gameObject.SetActive(false);
 
         selector.SetBasicAttackButtonListener(() => _selectedActionType = 1);
@@ -41,7 +35,7 @@ class ActionSelector : ScriptableObject
         switch (_selectedActionType)
         {
             case 1:
-                unitAction = new PlayerBaseAttackAction().SetCaster(playerUnit);
+                unitAction = new PlayerBaseAttackAction();
                 break;
                 
         }
@@ -49,4 +43,3 @@ class ActionSelector : ScriptableObject
         return unitAction;
     }
 }
-

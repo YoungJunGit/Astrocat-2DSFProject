@@ -13,7 +13,6 @@ public class CombatManager : ScriptableObject
     private List<EnemyUnit> enemyUnits = null;
     
     [SerializeField] private ActionSelector actionSelector;
-    private UnitSelector unitSelector = new();
     
     private bool isCombatStarted = false;
     
@@ -36,6 +35,8 @@ public class CombatManager : ScriptableObject
             timeLineOrderdUnits.Add(enemyUnit);
         }
         
+        actionSelector.Init();
+        
         OnTimeLineChanged?.Invoke(timeLineOrderdUnits);
         OnTurnChanged?.Invoke(currentTernIdx);
         
@@ -51,7 +52,6 @@ public class CombatManager : ScriptableObject
             if (timeLineOrderdUnits[currentTernIdx] is PlayerUnit)
             {
                 UnitAction selectedAction = await actionSelector.SelectAction(timeLineOrderdUnits[currentTernIdx] as PlayerUnit);
-                EnemyUnit selectedUnit = await unitSelector.SelectEnemyUnit();
                 
                 selectedAction.Execute();
             }

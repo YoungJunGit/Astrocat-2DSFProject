@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ActionSelector
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 11400000, guid: e82abb63cabe73e42a9cf0b3b5f6d149, type: 2}
-  selectorPrefab: {fileID: 4547812070366304198, guid: d17ca88f9b868c64693ee4c875c4e8cd, type: 3}
+  selectorPrefab: {fileID: 5584003277761100771, guid: 3a3d227a0510cee43810af629bebe03b, type: 3}
