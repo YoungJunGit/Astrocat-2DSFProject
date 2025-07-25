@@ -10,23 +10,36 @@ public class UnitStat
     public Action<int, int> OnAPChanged;
     public Action<UnitStat> OnDie;
 
-    public string Name { get => _baseData.Name; }
-    public float Max_HP { get => (float)_baseData.Default_HP; }
-    
+    public string Name          { get => _baseData.Name; }
+    public float Max_HP         { get => (float)_baseData.Default_HP; }
     private float _curHp;       
-    public float Cur_HP { get { return _curHp; } }
+    public float Cur_HP         { get { return _curHp; } }
     
-    public int Max_AP { get => _baseData.Default_AP; }
-    
+    public int Max_AP           { get => 9; }
     private int _curAp;         
-    public int Cur_AP {  get { return _curAp; } }
+    public int Cur_AP           {  get { return _curAp; } }
 
-    public UnitStat(EntityData baseData)
+    public float Default_Speed  { get => (float)_baseData.Default_Speed; }
+    private float _curSpeed; 
+    public float Cur_Speed      { get { return _curSpeed; } }
+
+    private int priority;
+    public int Priority         { get { return priority; } }
+
+    public UnitStat(EntityData baseData, int index)
     {
         _baseData = baseData;
+        priority = index;
         
         _curHp = (float)baseData.Default_HP;
         _curAp = baseData.Default_AP;
+        _curSpeed = (float)baseData.Default_Speed;
+    }
+
+    public void OnPrepareCombat()
+    {
+        OnHPChanged.Invoke(_curHp, Max_HP);
+        OnAPChanged?.Invoke(_curAp, Max_AP);
     }
 
     public void GetDamaged(float value)
@@ -35,7 +48,7 @@ public class UnitStat
         OnHPChanged.Invoke(_curHp, Max_HP);
 
         if (Cur_HP <= 0f)
-            OnDie.Invoke();
+            OnDie.Invoke(this);
     }
 
     public void GetHealed(float value)
@@ -44,5 +57,42 @@ public class UnitStat
         OnHPChanged.Invoke(_curHp, Max_HP);
     }
 
+    public void OnNormalAttack()
+    {
+        _curAp = Mathf.Clamp(_curAp + 1, 0, Max_AP);
+        OnAPChanged.Invoke(_curAp, Max_AP);
+    }
+
+    public void OnSkillAttack(int value)
+    {
+        _curAp = Mathf.Clamp(_curAp - value, 0, Max_AP);
+        OnAPChanged.Invoke(_curAp, Max_AP);
+    }
+
+    public void AddSpeed(float value)
+    {
+        _curSpeed += value;
+    }
+
+    /// <summary>
+    /// ������ ���� Ŀ���� Compare�Լ�
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
+    public int CompareTo(UnitStat other)
+    {
+        if (this.Cur_Speed > other.Cur_Speed) { return -1; }
+        else if (this.Cur_Speed < other.Cur_Speed) { return 1; }
+        else
+        {
+            if (this._baseData.Side < other._baseData.Side) { return -1; }
+            else if (this._baseData.Side > other._baseData.Side) { return 1; }
+            else
+            {
+                if (this.priority < other.priority) { return -1; }
+                else return 1;
+            }
+        }
+    }
     public EntityData GetData() { return _baseData; }
 }
