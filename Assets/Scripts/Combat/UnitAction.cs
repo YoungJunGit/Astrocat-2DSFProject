@@ -11,11 +11,14 @@ class PlayerBaseAttackAction : UnitAction
     private PlayerUnit _caster;
     private EnemyUnit _target;
     
+    public PlayerBaseAttackAction(PlayerUnit caster, EnemyUnit target)
+    {
+        _caster = caster;
+        _target = target;
+    }
+    
     public override async UniTask Execute()
     {
-        _caster = UnitManager.GetCurrentPlayerUnit();
-        _target = await UnitManager.GetEnemyUnitBySelector();
-        
         if (_caster == null || _target == null)
         {
             Debug.LogError("Caster or target is not set.");

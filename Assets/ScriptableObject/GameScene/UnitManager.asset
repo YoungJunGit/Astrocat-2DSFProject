@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a0696b4be107f4bbc6f11e6702e9da, type: 3}
-  m_Name: CombatManager
+  m_Script: {fileID: 11500000, guid: 54b7571fdaf146ec9495d47dd10b367c, type: 3}
+  m_Name: UnitManager
   m_EditorClassIdentifier: 
-  unit_HUD_Dic: {fileID: 11400000, guid: 315cbd388b2fa9345a9aa4d557645ea7, type: 2}
-  actionSelector: {fileID: 11400000, guid: 5fb1648dfc12e0d4881c1a7b50932813, type: 2}
+  spawner: {fileID: 11400000, guid: e95eafb3c3986ef4791b17b0f999fb9b, type: 2}
+  playerUnits: []
+  enemyUnits: []

@@ -17,7 +17,7 @@ public class HUDManager : ScriptableObject
     private TimelineCanvas timelineCanvas;
     
     private TimelineSystem timeline;
-
+ 
     public void Init(TimelineSystem timeLine)
     {
         this.timeline = timeLine;

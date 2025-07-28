@@ -56,7 +56,7 @@ public class TimelineSystem : ScriptableObject
     {
         if (timelineUI.BannerList[0].Round > curRound)
         {
-            Debug.Log("´ÙÀ½ ¶ó¿îµå ½ÃÀÛ!");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
             m_EndRound?.Invoke();
             SortBanner();
             curRound++;
@@ -94,6 +94,8 @@ public class TimelineSystem : ScriptableObject
     /// <param name="unitList"></param>
     public void AddTimeline(List<BaseUnit> unitList)
     {
+        if (unitList.Count <= 0) return;
+        
         while (timelineUI.BannerList.Count < 7)
         {
             roundDepth++;

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="" />
+    <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/GameScene/CombatManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/GameScene/CombatManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TimelineSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/TimelineSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HUDManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HUDManager.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,8 +38,10 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2ce8bd53d6c34e8aa27451ac5b09a98146ae00/16/e199d1a0/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2ce8bd53d6c34e8aa27451ac5b09a98146ae00/77/b36c0894/String.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2ce8bd53d6c34e8aa27451ac5b09a98146ae00/b8/2a9051eb/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89527d299cb64ba88f87240781b415e51ea400/21/03941a7d/ScriptableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89527d299cb64ba88f87240781b415e51ea400/24/aa032c08/Component.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89527d299cb64ba88f87240781b415e51ea400/4d/7debba45/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f72c99ce18e64a92acfcce42caf08d8f10fc00/7f/d027ab42/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
@@ -87,15 +97,13 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3064">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="3064" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -131,6 +139,12 @@
       <workItem from="1752967367846" duration="5872000" />
       <workItem from="1753268421607" duration="4934000" />
       <workItem from="1753429835103" duration="2086000" />
+      <workItem from="1753497113263" duration="2484000" />
+      <workItem from="1753500990206" duration="193000" />
+      <workItem from="1753501346414" duration="1468000" />
+      <workItem from="1753582200581" duration="1430000" />
+      <workItem from="1753583896866" duration="487000" />
+      <workItem from="1753698574701" duration="4000" />
     </task>
     <servers />
   </component>
@@ -162,8 +176,104 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/UnitManager.cs</url>
+          <line>27</line>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\UnitManager.cs" containingFunctionPresentation="메서드 'CreatePlayerUnit'">
+            <startOffsets>
+              <option value="782" />
+            </startOffsets>
+            <endOffsets>
+              <option value="783" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/UnitManager.cs</url>
+          <line>35</line>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\UnitManager.cs" containingFunctionPresentation="메서드 'CreateEnemyUnit'">
+            <startOffsets>
+              <option value="1042" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1043" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
+          <line>43</line>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'InitializeObjects'">
+            <startOffsets>
+              <option value="1189" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1282" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
+          <line>45</line>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'InitializeObjects'">
+            <startOffsets>
+              <option value="1292" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1318" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
+          <line>46</line>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'InitializeObjects'">
+            <startOffsets>
+              <option value="1327" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1346" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
+          <line>55</line>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'CreateObjects'">
+            <startOffsets>
+              <option value="1579" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1660" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
+          <line>61</line>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'CreateObjects'">
+            <startOffsets>
+              <option value="1852" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1932" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#TimelineUI" memberName="Arrow" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

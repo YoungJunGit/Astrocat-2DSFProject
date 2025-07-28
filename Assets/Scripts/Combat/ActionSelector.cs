@@ -4,8 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ActionSelector", menuName = "GameScene/ActionSelector", order = 1)]
 class ActionSelector : ScriptableObject
 {
-    [SerializeField] private InputHandler inputHandler;
-    
+    [SerializeField] private ActionFactory _actionFactory;
     [SerializeField] private ActionSelectionButtons selectorPrefab;
     private ActionSelectionButtons selector;
     
@@ -35,7 +34,7 @@ class ActionSelector : ScriptableObject
         switch (_selectedActionType)
         {
             case 1:
-                unitAction = new PlayerBaseAttackAction();
+                unitAction = await _actionFactory.CreateBaseAttackAction(playerUnit);
                 break;
                 
         }
