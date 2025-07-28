@@ -9,20 +9,29 @@ using DataEnum;
 [CreateAssetMenu(fileName = "TimelineSystem", menuName = "GameScene/TimelineSystem", order = 3)]
 public class TimelineSystem : ScriptableObject
 {
+    [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
+    [SerializeField] private TimelineCanvas timelineCanvasPrefab;
+    private TimelineCanvas timelineCanvas;
     private TimelineUI timelineUI;
 
     private int roundDepth;
     private int curRound;
 
-    public Action m_TimelineChanged;            // Funcs In this message (Sequence) HUDManager : OnEndTurn -> TimelineUI : OnEndTurn
     public Action m_EndRound;
 
-    public void Init(TimelineUI timelineUI)
+    public void Init()
     {
         roundDepth = 0;
         curRound = 1;
-        this.timelineUI = timelineUI;
-        m_TimelineChanged += this.timelineUI.MoveBanners;
+
+        timelineCanvas = Instantiate(timelineCanvasPrefab);
+        timelineUI = timelineCanvas.GetComponentInChildren<TimelineUI>();
+    }
+
+    public void CreateBanners()
+    {
+        AddTimeline(unit_HUD_Dic.GetUnits());
+        timelineCanvas.SetBanners(timelineUI.BannerList);
     }
 
     /// <summary>
@@ -52,7 +61,7 @@ public class TimelineSystem : ScriptableObject
     /// </summary>
     /// <param name="unitList"></param>
     /// <returns> Give Unit to CombatManager for next turn </returns>
-    public BaseUnit Pop(List<BaseUnit> unitList = null)
+    public BaseUnit Pop(List<BaseUnit> unitList)
     {
         if (timelineUI.BannerList[0].Round > curRound)
         {
@@ -65,7 +74,7 @@ public class TimelineSystem : ScriptableObject
         timelineUI.GetCurrentTurnBanner().DestroyBanner();
         timelineUI.OnPop();
 
-        m_TimelineChanged?.Invoke();
+        OnTimelineChanged(unitList);
 
         return unitList?.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
     }
@@ -79,12 +88,19 @@ public class TimelineSystem : ScriptableObject
             banner.DestroyBanner();
         }
 
-        m_TimelineChanged?.Invoke();
+        OnTimelineChanged(unit_HUD_Dic.GetUnits());
     }
 
     public void OnCharacterAddBuff(Buff buff)
     {
         SortBanner();
+        timelineUI.MoveBanners();
+    }
+
+    private void OnTimelineChanged(List<BaseUnit> unitList)
+    {
+        AddTimeline(unitList);
+        timelineCanvas.SetParent(timelineUI.BannerList);
         timelineUI.MoveBanners();
     }
 
@@ -119,10 +135,4 @@ public class TimelineSystem : ScriptableObject
             banner.value.Index = banner.index + 1;
         }
     }
-
-    public List<EntityBanner> GetBannerList()
-    {
-        return timelineUI.BannerList;
-    }
-
 }

@@ -14,13 +14,13 @@ public class CombatManager : ScriptableObject
     private ActionSelector actionSelector = new();
     private UnitSelector unitSelector = new();
     
-    public Func<List<BaseUnit>, BaseUnit> m_EndTurn;
+    public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
 
     private bool isStartCombat = false;
     
     public void Init(TimelineSystem timeline)
     {
-        m_EndTurn += timeline.Pop;
+        DequeueCurrentUnit += timeline.Pop;
         currentTurnUnit = timeline.PrepareCombat(unit_HUD_Dic.GetUnits());
 
         foreach (BaseUnit unit in unit_HUD_Dic.Keys)
@@ -52,7 +52,7 @@ public class CombatManager : ScriptableObject
             //TODO: Check is finish
             //if ()
 
-            currentTurnUnit = m_EndTurn(unit_HUD_Dic.GetUnits());
+            currentTurnUnit = DequeueCurrentUnit(unit_HUD_Dic.GetUnits());
         }
     }
 
@@ -61,7 +61,7 @@ public class CombatManager : ScriptableObject
         if (currentTurnUnit.GetStat() == stat)
         {
             Debug.Log("Current Character Died!! Turn Skip!");
-            currentTurnUnit = m_EndTurn(unit_HUD_Dic.GetUnits());
+            currentTurnUnit = DequeueCurrentUnit(unit_HUD_Dic.GetUnits());
         }
     }
 

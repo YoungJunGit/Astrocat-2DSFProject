@@ -29,7 +29,7 @@ public class GameScene : AbstractScene
 
     [SerializeField] private HUDManager hudManager;
     [SerializeField] private CombatManager combatManager;
-    [SerializeField] private TimelineSystem timeline;
+    [SerializeField] private TimelineSystem timelineSystem;
     [SerializeField] private UnitPositioner unitPositioner;
 
     protected override int SceneIdx
@@ -48,7 +48,8 @@ public class GameScene : AbstractScene
         entityData = dataCreator.CreateEntityDataWithID(playerUnitID.ToList(), enemyUnitID.ToList());
 
         spawner.Init();
-        hudManager.Init(timeline);
+        hudManager.Init();
+        timelineSystem.Init();
     }
 
     protected override async UniTask CreateObjects()
@@ -79,7 +80,7 @@ public class GameScene : AbstractScene
             hudManager.CreateEnemyHUD(enemyUnit);
         }
 
-        hudManager.CreateBanners();
+        timelineSystem.CreateBanners();
     }
 
     protected override void PrepareGame()
@@ -92,7 +93,7 @@ public class GameScene : AbstractScene
         unitPositioner.SetPositionForUnits(playerUnits, enemyUnits);
 
         // Init CombatManager
-        combatManager.Init(timeline);
+        combatManager.Init(timelineSystem);
 
         // Add
 

@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25d4344aba9dd44680eac8c7e09bac8, type: 3}
   m_Name: HUDManager
   m_EditorClassIdentifier: 
+  unit_HUD_Dic: {fileID: 11400000, guid: 315cbd388b2fa9345a9aa4d557645ea7, type: 2}
   playerHUDPrefab: {fileID: 370319284158185370, guid: 6b1112911265df241a1e6a37a1911361, type: 3}
   enemyHUDPrefab: {fileID: 2044870650616042443, guid: 713bc7122de375e45a093101ed57a3d2, type: 3}
-  bannerPrefab: {fileID: -4350229450652637925, guid: 8d64bddc02f99ca45b7ff69eb6ef8f69, type: 3}
-  unit_HUD_Dic: {fileID: 11400000, guid: 315cbd388b2fa9345a9aa4d557645ea7, type: 2}
-  statuesCanvasPref: {fileID: 6645648761260094638, guid: a7996abc53e8d7a4e9cd0184f713534a, type: 3}
-  timelineCanvasPrefab: {fileID: 8944480728120779190, guid: 47409dc05f91f744f85a3615484a1675, type: 3}
+  statusCanvasPref: {fileID: 6645648761260094638, guid: a7996abc53e8d7a4e9cd0184f713534a, type: 3}

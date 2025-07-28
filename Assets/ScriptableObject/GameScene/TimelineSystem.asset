@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ecf3503477beea418f1238e30eb9ac7, type: 3}
   m_Name: TimelineSystem
   m_EditorClassIdentifier: 
+  unit_HUD_Dic: {fileID: 11400000, guid: 315cbd388b2fa9345a9aa4d557645ea7, type: 2}
+  timelineCanvasPrefab: {fileID: 8944480728120779190, guid: 47409dc05f91f744f85a3615484a1675, type: 3}

@@ -9,24 +9,13 @@ public class HUDManager : ScriptableObject
 
     [SerializeField] private PlayerHUD playerHUDPrefab;
     [SerializeField] private EnemyHUD enemyHUDPrefab;
-    [SerializeField] private EntityBanner bannerPrefab;
 
-    [SerializeField] private StatusCanvas statuesCanvasPref;
-    [SerializeField] private TimelineCanvas timelineCanvasPrefab;
-    private StatusCanvas statuesCanvas;
-    private TimelineCanvas timelineCanvas;
-    
-    private TimelineSystem timeline;
+    [SerializeField] private StatusCanvas statusCanvasPref;
+    private StatusCanvas statusCanvas;
 
-    public void Init(TimelineSystem timeLine)
+    public void Init()
     {
-        this.timeline = timeLine;
-
-        statuesCanvas = Instantiate(statuesCanvasPref);
-        timelineCanvas = Instantiate(timelineCanvasPrefab);
-
-        this.timeline.m_TimelineChanged += OnTimelineChanged;
-        this.timeline.Init(timelineCanvas.GetComponentInChildren<TimelineUI>());
+        statusCanvas = Instantiate(statusCanvasPref);
     }
 
     public void Prepare()
@@ -44,7 +33,7 @@ public class HUDManager : ScriptableObject
         hud.Initialize(unit);
         unit_HUD_Dic.Add(unit, hud);
 
-        statuesCanvas.SetPlayerHUD(hud);
+        statusCanvas.SetPlayerHUD(hud);
 
         return hud;
     }
@@ -55,23 +44,8 @@ public class HUDManager : ScriptableObject
         hud.Initialize(unit);
         unit_HUD_Dic.Add(unit, hud);
 
-        statuesCanvas.SetEnemyHUD(hud, unit.GetStatusPosition());
+        statusCanvas.SetEnemyHUD(hud, unit.GetStatusPosition());
 
         return hud;
-    }
-
-    public void CreateBanners()
-    {
-        timeline.AddTimeline(unit_HUD_Dic.GetUnits());
-        timelineCanvas.SetBanners(timeline.GetBannerList());
-    }
-
-    /// <summary>
-    /// This Called when received message -> TimelineSystem : m_EndTurn
-    /// </summary>
-    public void OnTimelineChanged()
-    {
-        timeline.AddTimeline(unit_HUD_Dic.GetUnits());
-        timelineCanvas.SetParent(timeline.GetBannerList());
     }
 }
