@@ -7,12 +7,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CombatManager", menuName = "GameScene/CombatManager", order = 1)]
 public class CombatManager : ScriptableObject
 {
-    [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
+    [SerializeField] private ScriptableListBaseUnit unitList;
+    [SerializeField] private UnitSelector unitSelector;
 
     private BaseUnit currentTurnUnit;
 
     private ActionSelector actionSelector = new();
-    private UnitSelector unitSelector = new();
     
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
 
@@ -21,12 +21,14 @@ public class CombatManager : ScriptableObject
     public void Init(TimelineSystem timeline)
     {
         DequeueCurrentUnit += timeline.Pop;
-        currentTurnUnit = timeline.PrepareCombat(unit_HUD_Dic.GetUnits());
+        currentTurnUnit = timeline.PrepareCombat(unitList.GetUnits());
 
-        foreach (BaseUnit unit in unit_HUD_Dic.Keys)
+        foreach (BaseUnit unit in unitList)
         {
             unit.GetStat().OnDie += OnCharacterDie;
         }
+
+        unitSelector.Init();
     }
     
     public async UniTask StartCombat()
@@ -39,12 +41,12 @@ public class CombatManager : ScriptableObject
             if (currentTurnUnit is PlayerUnit)
             {
                 int selectedAction = await actionSelector.SelectAction();
-                EnemyUnit selectedUnit = await unitSelector.SelectEnemyUnit();
+                EnemyUnit selectedUnit = await unitSelector.SelectUnit(SIDE.ENEMY) as EnemyUnit;
             }
             else
             {
                 // TODO : AI Logic for Enemy Unit
-                PlayerUnit selectedUnit = await unitSelector.SelectPlayerUnit();
+                PlayerUnit selectedUnit = await unitSelector.SelectUnit(SIDE.PLAYER) as PlayerUnit;
             }
 
             //TODO: Execute Action
@@ -52,7 +54,7 @@ public class CombatManager : ScriptableObject
             //TODO: Check is finish
             //if ()
 
-            currentTurnUnit = DequeueCurrentUnit(unit_HUD_Dic.GetUnits());
+            currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
         }
     }
 
@@ -61,25 +63,25 @@ public class CombatManager : ScriptableObject
         if (currentTurnUnit.GetStat() == stat)
         {
             Debug.Log("Current Character Died!! Turn Skip!");
-            currentTurnUnit = DequeueCurrentUnit(unit_HUD_Dic.GetUnits());
+            currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
         }
     }
 
     #region[For Debugging]
     public void DieCharacter(SIDE side, int index)
     {
-        BaseUnit unit = unit_HUD_Dic.GetUnits().Find(unit=>unit.GetStat().Priority + 1 == index
+        BaseUnit unit = unitList.GetUnits().Find(unit=>unit.GetStat().Priority + 1 == index
                                                      && unit.GetStat().GetData().Side == side);
 
         if (unit != null)
-            unit_HUD_Dic.Remove(unit);
+            unitList.Remove(unit);
 
         unit?.GetStat().OnDie(unit.GetStat());
     }
 
     public void BuffCharacter(SIDE side, int index, Buff buff)
     {
-        BaseUnit unit = unit_HUD_Dic.GetUnits().Find(unit => unit.GetStat().Priority + 1 == index
+        BaseUnit unit = unitList.GetUnits().Find(unit => unit.GetStat().Priority + 1 == index
                                                      && unit.GetStat().GetData().Side == side);
 
         unit?.AddBuff(buff);

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: TimelineSystem
   m_EditorClassIdentifier: 
   unit_HUD_Dic: {fileID: 11400000, guid: 315cbd388b2fa9345a9aa4d557645ea7, type: 2}
+  unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
   timelineCanvasPrefab: {fileID: 8944480728120779190, guid: 47409dc05f91f744f85a3615484a1675, type: 3}

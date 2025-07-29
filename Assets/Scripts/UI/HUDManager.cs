@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HUDManager", menuName = "GameScene/HUDManager", order = 2)]
 public class HUDManager : ScriptableObject
 {
-    [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
+    [SerializeField] private ScriptableListBaseUnit unitList = null;
 
     [SerializeField] private PlayerHUD playerHUDPrefab;
     [SerializeField] private EnemyHUD enemyHUDPrefab;
@@ -20,7 +20,7 @@ public class HUDManager : ScriptableObject
 
     public void Prepare()
     {
-        foreach(BaseUnit unit in unit_HUD_Dic.Keys)
+        foreach(BaseUnit unit in unitList)
         {
             // For initializing unit's HUD
             unit.GetStat().OnPrepareCombat();
@@ -31,7 +31,7 @@ public class HUDManager : ScriptableObject
     {
         PlayerHUD hud = Instantiate(playerHUDPrefab).GetComponent<PlayerHUD>();
         hud.Initialize(unit);
-        unit_HUD_Dic.Add(unit, hud);
+        unitList.Add(unit);
 
         statusCanvas.SetPlayerHUD(hud);
 
@@ -42,9 +42,9 @@ public class HUDManager : ScriptableObject
     {
         EnemyHUD hud = Instantiate(enemyHUDPrefab).GetComponent<EnemyHUD>();
         hud.Initialize(unit);
-        unit_HUD_Dic.Add(unit, hud);
+        unitList.Add(unit);
 
-        statusCanvas.SetEnemyHUD(hud, unit.GetStatusPosition());
+        statusCanvas.SetEnemyHUD(hud, unit.attachments.GetStatusPosition());
 
         return hud;
     }

@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1668832729259816767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7418386760901857311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3198913481389063816}
+  m_Layer: 0
+  m_Name: UnitSelectArrowPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3198913481389063816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7418386760901857311}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2, y: 0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668832729259816767}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8791005897072304568
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +74,7 @@ GameObject:
   - component: {fileID: 540599017590550680}
   - component: {fileID: 7567201730022273457}
   - component: {fileID: 4262960432010205720}
+  - component: {fileID: 3144045134546210718}
   m_Layer: 0
   m_Name: penguin_Commander
   m_TagString: Untagged
@@ -64,6 +96,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4278333942873066040}
+  - {fileID: 3198913481389063816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &540599017590550680
@@ -155,4 +188,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8dc0d9017710a458b4fcb31b7f0dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachments: {fileID: 0}
   StatusPos: {fileID: 4278333942873066040}
+  UnitSelectArrowPos: {fileID: 3198913481389063816}
+--- !u!114 &3144045134546210718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791005897072304568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11ea222de4f79c41851a2e961274a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StatusPos: {fileID: 4278333942873066040}
+  UnitSelectArrowPos: {fileID: 3198913481389063816}

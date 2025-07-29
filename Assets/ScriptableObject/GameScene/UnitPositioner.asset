@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UnitPositioner
   m_EditorClassIdentifier: 
   unit_HUD_Dic: {fileID: 11400000, guid: 315cbd388b2fa9345a9aa4d557645ea7, type: 2}
+  unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
   box:
     pointStart: {x: 2, y: 0}
     pointEnd: {x: 8, y: -4}
-  StatusPosOffset: {x: 0, y: 5}

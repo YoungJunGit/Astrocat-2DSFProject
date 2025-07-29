@@ -9,7 +9,7 @@ using DataEnum;
 [CreateAssetMenu(fileName = "TimelineSystem", menuName = "GameScene/TimelineSystem", order = 3)]
 public class TimelineSystem : ScriptableObject
 {
-    [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
+    [SerializeField] private ScriptableListBaseUnit unitList = null;
     [SerializeField] private TimelineCanvas timelineCanvasPrefab;
     private TimelineCanvas timelineCanvas;
     private TimelineUI timelineUI;
@@ -30,7 +30,7 @@ public class TimelineSystem : ScriptableObject
 
     public void CreateBanners()
     {
-        AddTimeline(unit_HUD_Dic.GetUnits());
+        AddTimeline(this.unitList.GetUnits());
         timelineCanvas.SetBanners(timelineUI.BannerList);
     }
 
@@ -88,7 +88,7 @@ public class TimelineSystem : ScriptableObject
             banner.DestroyBanner();
         }
 
-        OnTimelineChanged(unit_HUD_Dic.GetUnits());
+        OnTimelineChanged(this.unitList.GetUnits());
     }
 
     public void OnCharacterAddBuff(Buff buff)

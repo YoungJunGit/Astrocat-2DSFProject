@@ -15,5 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Refactoring/DebugingUI.unity
     guid: 4fd6a2410c669b54fa3c60eb4675f75f
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31af72e612f127c4b99e2798919d49b7, type: 3}
+  m_Name: UnitSelectorController
+  m_EditorClassIdentifier: 
+  asset: {fileID: -944628639613478452, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}
+  selectionConfirmAction: {fileID: 7012923059670291259, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}
+  selectEnemyUnitAction: {fileID: -9050033385564606856, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}
+  selectPlayerUnitAction: {fileID: 328717022681128187, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7017088554297554690}
   - component: {fileID: 913438003329160336}
   - component: {fileID: 7024944457112686057}
+  - component: {fileID: 2528243859178665589}
   m_Layer: 0
   m_Name: penguin_Berserker
   m_TagString: Untagged
@@ -33,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8205968054746200525}
+  - {fileID: 8483483224150055731}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7017088554297554690
@@ -124,7 +126,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8dc0d9017710a458b4fcb31b7f0dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachments: {fileID: 0}
   StatusPos: {fileID: 8205968054746200525}
+  UnitSelectArrowPos: {fileID: 8483483224150055731}
+--- !u!114 &2528243859178665589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6107449881377857228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11ea222de4f79c41851a2e961274a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StatusPos: {fileID: 8205968054746200525}
+  UnitSelectArrowPos: {fileID: 8483483224150055731}
 --- !u!1 &8768941996546733312
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +169,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: 1.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6969334797089717582}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9119110301063761426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8483483224150055731}
+  m_Layer: 0
+  m_Name: UnitSelectArrowPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8483483224150055731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119110301063761426}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

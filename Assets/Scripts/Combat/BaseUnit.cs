@@ -8,6 +8,8 @@ using Unity.VisualScripting;
 
 public class BaseUnit : MonoBehaviour
 {
+    [HideInInspector] public UnitAttachments attachments;
+
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
 
@@ -15,6 +17,7 @@ public class BaseUnit : MonoBehaviour
 
     public virtual void Initialize(EntityData data, int index)
     {
+        attachments = GetComponent<UnitAttachments>();
         _stat = new UnitStat(data, index);
         _stat.OnDie += OnDie;
     }

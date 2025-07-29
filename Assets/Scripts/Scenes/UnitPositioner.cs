@@ -11,12 +11,12 @@ class UnitPositioner : ScriptableObject
         public Vector2 pointEnd;
     }
 
-    [SerializeField] private ScriptableDictionaryUnit_HUD unit_HUD_Dic = null;
+    [SerializeField] private ScriptableListBaseUnit unitList = null;
     [SerializeField] private UnitPositionBox box;
 
     public void Prepare()
     {
-        foreach (BaseUnit unit in unit_HUD_Dic.Keys)
+        foreach(BaseUnit unit in unitList)
         {
             unit.GetStat().OnDie += OnCharacterDie;
         }
@@ -40,8 +40,8 @@ class UnitPositioner : ScriptableObject
 
     public void OnCharacterDie(UnitStat stat)
     {
-        List<PlayerUnit> playerUnits = unit_HUD_Dic.GetPlayerUnits();
-        List<EnemyUnit> enemyUnits = unit_HUD_Dic.GetEnemyUnits();
+        List<PlayerUnit> playerUnits = unitList.GetPlayerUnits();
+        List<EnemyUnit> enemyUnits = unitList.GetEnemyUnits();
         SetPositionForUnits(playerUnits, enemyUnits);
     }
 
