@@ -13,6 +13,8 @@ public class EnemyHUD : BaseHUD
 
     private CancellationTokenSource update = new();
 
+    [HideInInspector] public Vector3 spawnPos;
+
     public override void Initialize(BaseUnit unit)
     {
         rectTransform = GetComponent<RectTransform>();

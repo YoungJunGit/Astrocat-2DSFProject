@@ -6,8 +6,6 @@ public class StatusCanvas : MonoBehaviour
     [SerializeField] Transform _playerStatusPanel;
     [SerializeField] Transform _enemyStatusPanel;
 
-    [SerializeField] private UnitPositioner unitPositioner;
-
     public void SetPlayerHUD(PlayerHUD playerHud)
     {
         playerHud.transform.SetParent(_playerStatusPanel, false);

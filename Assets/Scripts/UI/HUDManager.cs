@@ -48,4 +48,37 @@ public class HUDManager : ScriptableObject
 
         return hud;
     }
+
+    public void DeletePlayerHUD(PlayerUnit playerUnit) {
+        if (unit_HUD_Dic.TryGetValue(playerUnit, out var hud))
+        {
+            if (hud is PlayerHUD playerHud)
+            {
+                playerHud.OnDied();
+            }
+            unit_HUD_Dic.Remove(playerUnit);
+        }
+    }
+    public void DeleteEnemyHUD(EnemyUnit enemyUnit)
+    {
+        if (unit_HUD_Dic.TryGetValue(enemyUnit, out var hud))
+        {
+            if (hud is EnemyHUD enemyHud)
+            {
+                enemyHud.OnDied();
+            }
+            unit_HUD_Dic.Remove(enemyUnit);
+        }
+    }
+
+    public void repositionEnemyHUD() {
+        foreach (var leftHud in unit_HUD_Dic)
+        {
+            if (leftHud.Value is EnemyHUD enemyHud)
+            {
+                enemyHud.Initialize(leftHud.Key);
+            }
+        }
+    }
+
 }

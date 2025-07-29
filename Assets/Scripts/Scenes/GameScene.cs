@@ -79,6 +79,7 @@ public class GameScene : AbstractScene
         {
             hudManager.CreateEnemyHUD(enemyUnit);
         }
+        
 
         timelineSystem.CreateBanners();
     }

@@ -25,4 +25,10 @@ public class NodeState : ScriptableObject
     public string reward_id;
     public string[] rest_option;
     public string[] connected_node_ids;
+
+    public void init(int layer, Type type, bool accessible) {
+        this.layer = layer;
+        this.type = type;
+        this.is_accesible = accessible;
+    }
 }

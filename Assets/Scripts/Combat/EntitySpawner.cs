@@ -23,7 +23,7 @@ public class EntitySpawner : ScriptableObject
         unit.Initialize(entityData, index);
         
         unit.transform.SetParent(_entityRoot);
-        
+
         return unit as PlayerUnit;
     }
 
