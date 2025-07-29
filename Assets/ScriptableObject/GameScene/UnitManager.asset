@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b7571fdaf146ec9495d47dd10b367c, type: 3}
   m_Name: UnitManager
   m_EditorClassIdentifier: 
+  unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
   spawner: {fileID: 11400000, guid: e95eafb3c3986ef4791b17b0f999fb9b, type: 2}
-  playerUnits: []
-  enemyUnits: []
+  positioner: {fileID: 11400000, guid: c4b92e3d7b3b8034fb2eb759f5fbdacd, type: 2}

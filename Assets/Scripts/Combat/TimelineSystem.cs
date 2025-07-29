@@ -65,7 +65,7 @@ public class TimelineSystem : ScriptableObject
     {
         if (timelineUI.BannerList[0].Round > curRound)
         {
-            Debug.Log("���� ���� ����!");
+            Debug.Log("Start Next Round!!!");
             m_EndRound?.Invoke();
             SortBanner();
             curRound++;

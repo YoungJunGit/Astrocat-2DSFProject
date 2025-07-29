@@ -166,6 +166,7 @@ MonoBehaviour:
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
   camera: {fileID: 4824807915384137517, guid: 89a24d4d307c063438e18ed7dfac6052, type: 3}
   eventSystem: {fileID: 2950124702827498561, guid: 64cc4daed2a76274fa6b6b1102824a4d, type: 3}
+  unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
   dataCreator: {fileID: 11400000, guid: 14c099d250c80944a88340265862554b, type: 2}
   playerUnitID:
   - 10010001
@@ -175,12 +176,10 @@ MonoBehaviour:
   - 3001001
   - 3001002
   - 3001003
-  playerUnits: []
-  enemyUnits: []
-  spawner: {fileID: 11400000, guid: e95eafb3c3986ef4791b17b0f999fb9b, type: 2}
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
-  combatManager: {fileID: 11400000, guid: 6b1c47f1a8320d848b91b8e3f22c061d, type: 2}
-  timelineSystem: {fileID: 11400000, guid: 224d178c2c9f27a419e9428dd5f3c19f, type: 2}
+  combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
+  unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
+  timelineSystem: {fileID: 11400000, guid: d1b1b5f4b1517f747959852e1fc42e01, type: 2}
   unitPositioner: {fileID: 11400000, guid: c4b92e3d7b3b8034fb2eb759f5fbdacd, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

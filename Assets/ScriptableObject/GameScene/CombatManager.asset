@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CombatManager
   m_EditorClassIdentifier: 
   unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
-  unitSelector: {fileID: 11400000, guid: d4696c4828b72dc4aa29a30bd0cb7d1e, type: 2}
+  actionSelector: {fileID: 11400000, guid: 5fb1648dfc12e0d4881c1a7b50932813, type: 2}

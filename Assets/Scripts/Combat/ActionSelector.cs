@@ -12,6 +12,8 @@ class ActionSelector : ScriptableObject
     
     public void Init()
     {
+        _actionFactory.Init();
+
         selector = Instantiate(selectorPrefab);
         selector.gameObject.SetActive(false);
 
@@ -23,12 +25,14 @@ class ActionSelector : ScriptableObject
         Debug.Log($"{playerUnit.GetStat().Name} : Select Action");
         
         // TODO : Set correct position
-        selector.transform.position = playerUnit.transform.position;
+        selector.transform.position = playerUnit.attachments.GetActionSelectorPos().position;
         selector.gameObject.SetActive(true);
 
         _selectedActionType = 0;
         
         await UniTask.WaitUntil(() => _selectedActionType != 0);
+
+        selector.gameObject.SetActive(false);
 
         UnitAction unitAction = null;
         switch (_selectedActionType)
@@ -38,7 +42,7 @@ class ActionSelector : ScriptableObject
                 break;
                 
         }
-        
+
         return unitAction;
     }
 }

@@ -13,21 +13,22 @@ public class GameScene : AbstractScene
 {
     [SerializeField] private Camera camera;
     [SerializeField] private EventSystem eventSystem;
+    [SerializeField] private ScriptableListBaseUnit unitList = null;
 
-    [Header("Data Settings")] [SerializeField]
-    private EntityDataCreator dataCreator;
-
+    [Header("Data Settings")] 
+    [SerializeField] private EntityDataCreator dataCreator;
     [SerializeField] private string[] playerUnitID;
     [SerializeField] private string[] enemyUnitID;
-
     private List<EntityData> entityData = null;
 
+    [Header("Manager Settings")]
     [SerializeField] private HUDManager hudManager;
     [SerializeField] private CombatManager combatManager;
+    [SerializeField] private UnitManager unitManager;
 
+    [Header("etc")]
     [SerializeField] private TimelineSystem timelineSystem;
     [SerializeField] private UnitPositioner unitPositioner;
-    [SerializeField] private UnitManager unitManager;
 
     protected override int SceneIdx
     {
@@ -46,6 +47,7 @@ public class GameScene : AbstractScene
 
         hudManager.Init();
         unitManager.Init();
+        timelineSystem.Init();
     }
 
     protected override async UniTask CreateObjects()
@@ -64,7 +66,17 @@ public class GameScene : AbstractScene
         {
             unitManager.CreateEnemyUnit(enemyData.value, enemyData.index);
         }
-        
+
+        // Create HUD
+        foreach (PlayerUnit unit in unitList.GetPlayerUnits())
+        {
+            hudManager.CreatePlayerHUD(unit);
+        }
+
+        foreach (EnemyUnit unit in unitList.GetEnemyUnits())
+        {
+            hudManager.CreateEnemyHUD(unit);
+        }
 
         timelineSystem.CreateBanners();
     }

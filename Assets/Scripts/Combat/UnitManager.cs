@@ -6,12 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "UnitManager", menuName = "GameScene/UnitManager", order = 2)]
 class UnitManager : ScriptableObject
 {
-    UnitSelector _unitSelector = new();
+    [SerializeField] private ScriptableListBaseUnit unitList = null;
+
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
     
-    [SerializeField] private List<PlayerUnit> playerUnits = new();
-    [SerializeField] private List<EnemyUnit> enemyUnits = new();
+    //[SerializeField] private List<PlayerUnit> playerUnits = new();
+    //[SerializeField] private List<EnemyUnit> enemyUnits = new();
 
     public void Init()
     {
@@ -23,28 +24,28 @@ class UnitManager : ScriptableObject
     {
         var playerUnit = spawner.CreatePlayerUnit(entityData, index);
         
-        playerUnits.Add(playerUnit);
+        //playerUnits.Add(playerUnit);
+        unitList.Add(playerUnit);
 
         SetUnitPosition();
         
         return playerUnit;
     }
 
-    
-
     public EnemyUnit CreateEnemyUnit(EntityData entityData, int index)
     {
         var enemyUnit = spawner.CreateEnemyUnit(entityData, index);
         
-        enemyUnits.Add(enemyUnit);
+        //enemyUnits.Add(enemyUnit);
+        unitList.Add(enemyUnit);
         
         SetUnitPosition();
         
         return enemyUnit;
     }
 
-    public List<PlayerUnit> GetAllPlayerUnits() => playerUnits;
-    public List<EnemyUnit> GetAllEnemyUnits() => enemyUnits;
+    //public List<PlayerUnit> GetAllPlayerUnits() => playerUnits;
+    //public List<EnemyUnit> GetAllEnemyUnits() => enemyUnits;
     
     public PlayerUnit GetCurrentPlayerUnit()
     {
@@ -63,6 +64,6 @@ class UnitManager : ScriptableObject
     
     private void SetUnitPosition()
     {
-        positioner.SetPositionForUnits(playerUnits, enemyUnits);
+        positioner.SetPositionForUnits(unitList.GetPlayerUnits(), unitList.GetEnemyUnits());
     }
 }

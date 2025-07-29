@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb1d81f0c5b465f83ef34bbeebe8771, type: 3}
   m_Name: ActionFactory
   m_EditorClassIdentifier: 
-  _unitManager: {fileID: 0}
+  _unitSelector: {fileID: 11400000, guid: d4696c4828b72dc4aa29a30bd0cb7d1e, type: 2}

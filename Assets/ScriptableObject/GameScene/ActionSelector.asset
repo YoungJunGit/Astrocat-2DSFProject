@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc2c5c09fcc4f68b96cdcdf855372c1, type: 3}
   m_Name: ActionSelector
   m_EditorClassIdentifier: 
-  inputHandler: {fileID: 11400000, guid: e82abb63cabe73e42a9cf0b3b5f6d149, type: 2}
+  _actionFactory: {fileID: 11400000, guid: 40274e07c72dafa4f8916905710eb3f4, type: 2}
   selectorPrefab: {fileID: 5584003277761100771, guid: 3a3d227a0510cee43810af629bebe03b, type: 3}

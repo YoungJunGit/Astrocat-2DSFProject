@@ -14,7 +14,7 @@ public class CombatManager : ScriptableObject
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
 
     private bool isStartCombat = false;
-    
+
     public void Init(TimelineSystem timeline)
     {
         DequeueCurrentUnit += timeline.Pop;
@@ -26,12 +26,15 @@ public class CombatManager : ScriptableObject
         }
         actionSelector.Init();
     }
-    
+
     public async UniTask StartCombat()
     {
         isStartCombat = true;
         while (true)
         {
+            Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
+            await UniTask.WaitForSeconds(1);
+
             if (currentTurnUnit is PlayerUnit)
             {
                 UnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
@@ -58,7 +61,7 @@ public class CombatManager : ScriptableObject
     #region[For Debugging]
     public void DieCharacter(SIDE side, int index)
     {
-        BaseUnit unit = unitList.GetUnits().Find(unit=>unit.GetStat().Priority + 1 == index
+        BaseUnit unit = unitList.GetUnits().Find(unit => unit.GetStat().Priority + 1 == index
                                                      && unit.GetStat().GetData().Side == side);
 
         if (unit != null)

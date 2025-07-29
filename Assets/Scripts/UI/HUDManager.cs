@@ -31,7 +31,6 @@ public class HUDManager : ScriptableObject
     {
         PlayerHUD hud = Instantiate(playerHUDPrefab).GetComponent<PlayerHUD>();
         hud.Initialize(unit);
-        unitList.Add(unit);
 
         statusCanvas.SetPlayerHUD(hud);
 
@@ -42,7 +41,6 @@ public class HUDManager : ScriptableObject
     {
         EnemyHUD hud = Instantiate(enemyHUDPrefab).GetComponent<EnemyHUD>();
         hud.Initialize(unit);
-        unitList.Add(unit);
 
         statusCanvas.SetEnemyHUD(hud, unit.attachments.GetStatusPosition());
 
