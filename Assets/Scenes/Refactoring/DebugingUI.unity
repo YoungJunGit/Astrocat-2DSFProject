@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5098a10fae820489bc337e4ab53d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatManager: {fileID: 11400000, guid: 6b1c47f1a8320d848b91b8e3f22c061d, type: 2}
+  combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
   AddSpeedBtn: {fileID: 352124793}
   DieBtn: {fileID: 1294160201}
   buffSide: 1
