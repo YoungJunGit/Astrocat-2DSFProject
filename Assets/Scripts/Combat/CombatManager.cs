@@ -8,12 +8,9 @@ using UnityEngine;
 public class CombatManager : ScriptableObject
 {
     [SerializeField] private ScriptableListBaseUnit unitList;
-    [SerializeField] private UnitSelector unitSelector;
-
+    [SerializeField] private ActionSelector actionSelector;
     private BaseUnit currentTurnUnit;
 
-    private ActionSelector actionSelector = new();
-    
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
 
     private bool isStartCombat = false;
@@ -27,8 +24,7 @@ public class CombatManager : ScriptableObject
         {
             unit.GetStat().OnDie += OnCharacterDie;
         }
-
-        unitSelector.Init();
+        actionSelector.Init();
     }
     
     public async UniTask StartCombat()
@@ -36,20 +32,12 @@ public class CombatManager : ScriptableObject
         isStartCombat = true;
         while (true)
         {
-            //Debug.Log("TurnStart : " + currentTurnUnit.GetStat().GetData().Name);
-
             if (currentTurnUnit is PlayerUnit)
             {
-                int selectedAction = await actionSelector.SelectAction();
-                EnemyUnit selectedUnit = await unitSelector.SelectUnit(SIDE.ENEMY) as EnemyUnit;
-            }
-            else
-            {
-                // TODO : AI Logic for Enemy Unit
-                PlayerUnit selectedUnit = await unitSelector.SelectUnit(SIDE.PLAYER) as PlayerUnit;
-            }
+                UnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
 
-            //TODO: Execute Action
+                await selectedAction.Execute();
+            }
 
             //TODO: Check is finish
             //if ()

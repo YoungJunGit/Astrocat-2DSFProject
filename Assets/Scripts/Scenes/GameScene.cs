@@ -19,18 +19,15 @@ public class GameScene : AbstractScene
 
     [SerializeField] private string[] playerUnitID;
     [SerializeField] private string[] enemyUnitID;
-    [SerializeField] private List<PlayerUnit> playerUnits = new List<PlayerUnit>();
-    [SerializeField] private List<EnemyUnit> enemyUnits = new List<EnemyUnit>();
 
     private List<EntityData> entityData = null;
 
-    [Header("Game Settings")] [SerializeField]
-    private EntitySpawner spawner;
-
     [SerializeField] private HUDManager hudManager;
     [SerializeField] private CombatManager combatManager;
+
     [SerializeField] private TimelineSystem timelineSystem;
     [SerializeField] private UnitPositioner unitPositioner;
+    [SerializeField] private UnitManager unitManager;
 
     protected override int SceneIdx
     {
@@ -47,9 +44,8 @@ public class GameScene : AbstractScene
     {
         entityData = dataCreator.CreateEntityDataWithID(playerUnitID.ToList(), enemyUnitID.ToList());
 
-        spawner.Init();
         hudManager.Init();
-        timelineSystem.Init();
+        unitManager.Init();
     }
 
     protected override async UniTask CreateObjects()
@@ -60,24 +56,13 @@ public class GameScene : AbstractScene
         entityDataList = entityData.FindAll(element => element.Side == SIDE.PLAYER);
         foreach (var playerData in entityDataList.Select((value, index)=>(value, index)))
         {
-            playerUnits.Add(spawner.CreatePlayerUnit(playerData.value, playerData.index));
+            unitManager.CreatePlayerUnit(playerData.value, playerData.index);
         }
 
         entityDataList = entityData.FindAll(element => element.Side == SIDE.ENEMY);
         foreach (var enemyData in entityDataList.Select((value, index)=>(value, index)))
         {
-            enemyUnits.Add(spawner.CreateEnemyUnit(enemyData.value, enemyData.index));
-        }
-
-        // Create HUD
-        foreach (var playerUnit in playerUnits)
-        {
-            hudManager.CreatePlayerHUD(playerUnit);
-        }
-
-        foreach (var enemyUnit in enemyUnits)
-        {
-            hudManager.CreateEnemyHUD(enemyUnit);
+            unitManager.CreateEnemyUnit(enemyData.value, enemyData.index);
         }
         
 
@@ -87,11 +72,7 @@ public class GameScene : AbstractScene
     protected override void PrepareGame()
     {
         // Prepare before combat start
-        unitPositioner.Prepare();
         hudManager.Prepare();
-
-        // Set Postions For Units
-        unitPositioner.SetPositionForUnits(playerUnits, enemyUnits);
 
         // Init CombatManager
         combatManager.Init(timelineSystem);

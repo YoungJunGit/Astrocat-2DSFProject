@@ -10,6 +10,7 @@ public class UnitStat
     public Action<int, int> OnAPChanged;
     public Action<UnitStat> OnDie;
 
+    public string Name          { get => _baseData.Name; }
     public float Max_HP         { get => (float)_baseData.Default_HP; }
     private float _curHp;       
     public float Cur_HP         { get { return _curHp; } }
@@ -74,7 +75,7 @@ public class UnitStat
     }
 
     /// <summary>
-    /// Á¤·ÄÀ» À§ÇÑ Ä¿½ºÅÒ CompareÇÔ¼ö
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½ï¿½ï¿½ï¿½ Compareï¿½Ô¼ï¿½
     /// </summary>
     /// <param name="other"></param>
     /// <returns></returns>
