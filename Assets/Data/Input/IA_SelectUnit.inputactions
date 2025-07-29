@@ -24,6 +24,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "OnClick",
+                    "type": "Button",
+                    "id": "fb7d950c-ac56-4e99-91dc-3d6a5bf2a0da",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "SelectionConfirm",
                     "type": "Button",
                     "id": "b031a05d-d271-4db8-8cf4-9bcd4b8793bf",
@@ -163,6 +172,17 @@
                     "processors": "",
                     "groups": ";PC",
                     "action": "SelectionConfirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a7d326e-2760-475a-b7b6-d5daedeec835",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "OnClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

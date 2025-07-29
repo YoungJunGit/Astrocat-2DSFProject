@@ -110,7 +110,7 @@ public class TimelineSystem : ScriptableObject
     /// <param name="unitList"></param>
     public void AddTimeline(List<BaseUnit> unitList)
     {
-        while (timelineUI.BannerList.Count < 7)
+        while (timelineUI.BannerList.Count < 7 && unitList != null && unitList.Count != 0)
         {
             roundDepth++;
             foreach (BaseUnit unit in unitList)
