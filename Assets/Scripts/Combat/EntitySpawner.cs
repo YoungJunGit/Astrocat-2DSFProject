@@ -24,7 +24,7 @@ public class EntitySpawner : ScriptableObject
         unit.Initialize(entityData);
         
         unit.transform.SetParent(_entityRoot);
-        
+
         return unit as PlayerUnit;
     }
     public EnemyUnit CreateEnemyUnit(EntityData entityData, Vector2 position)

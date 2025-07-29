@@ -19,20 +19,35 @@ class UnitPositioner : ScriptableObject
     public void Init()
     {
         direction = pointEnd - pointStart;
+
+        // 플레이어 위치 초기화
+        playerPositions.Clear();
+        for (int i = 0; i < playerDataCount; i++)
+        {
+            playerPositions.Add(Vector2.zero);  // 기본값으로 채워 넣기
+        }
+
+        // 적 위치 초기화
+        enemyPositions.Clear();
+        for (int i = 0; i < EnemyDataCount; i++)
+        {
+            enemyPositions.Add(Vector2.zero);
+        }
     }
+
 
     public Vector2 playerPositionCaculate(int index) {
 
         Vector2 step = direction / playerDataCount;
-        targetPosition = pointStart + (step * index);
-        playerPositions[index - 1] = targetPosition;
+        targetPosition = pointStart + (step * (index + 1));
+        playerPositions[index] = targetPosition;
         return targetPosition;
     }
 
     public Vector2 enemyPositionCaculate(int index)
     {
         Vector2 step = direction / playerDataCount;
-        targetPosition = pointStart + (step * index);
+        targetPosition = pointStart + (step * (index + 1));
         targetPosition.x = -targetPosition.x;
         enemyPositions.Add(targetPosition);  // 가장 안전한 방식
         return targetPosition;

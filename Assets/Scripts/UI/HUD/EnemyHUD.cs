@@ -8,11 +8,13 @@ public class EnemyHUD : BaseHUD
 
     [SerializeField] private BaseUnit target;
 
+    [HideInInspector] public Vector3 spawnPos;
+
     public override void Initialize(BaseUnit unit)
     {
         target = unit;
-        
         Vector3 spawnPos = unit.transform.Find("StatusBoxPos").transform.position;
+        Debug.Log($"{spawnPos}");
         transform.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(spawnPos + spawnOffset);
 
         unit.GetStat().OnHPChanged += OnHPChanged;

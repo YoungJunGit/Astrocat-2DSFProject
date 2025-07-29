@@ -58,22 +58,23 @@ public class GameScene : AbstractScene
         entityDataList = entityData.FindAll(element => element.Side == SIDE.PLAYER);
 
         unitPositioner.playerDataCount = entityDataList.Count + 1;
+        unitPositioner.Init();
 
         int index = 0;
         foreach (EntityData playerData in entityDataList)
         {
-            index++;
             position = unitPositioner.playerPositionCaculate(index);
             playerUnits.Add(spawner.CreatePlayerUnit(playerData, position));
+            index++;
         }
 
         entityDataList = entityData.FindAll(element => element.Side == SIDE.ENEMY);
         index = 0;
         foreach (EntityData enemyData in entityDataList)
         {
-            index++;
             position = unitPositioner.enemyPositionCaculate(index);
             enemyUnits.Add(spawner.CreateEnemyUnit(enemyData, position));
+            index++;
         }
 
         // Create HUD
@@ -88,6 +89,7 @@ public class GameScene : AbstractScene
             hudManager.CreateEnemyHUD(enemyUnit, index);
             index++;
         }
+        
 
     }
 
@@ -107,16 +109,17 @@ public class GameScene : AbstractScene
 
         if (playerUnits.Count > 0 && playerUnits[0] != null)
         {
+            hudManager.DeletePlayerHUD(playerUnits[0]);
             GameObject.Destroy(playerUnits[0].gameObject);
             playerUnits.RemoveAt(0);
         }
 
         unitPositioner.playerDataCount = playerUnits.Count+1;
+        unitPositioner.Init();
 
         for (int i = 0; i < playerUnits.Count; i++)
         {
-            Vector2 newPosition = unitPositioner.playerPositionCaculate(i+1);
-            unitPositioner.Init();
+            Vector2 newPosition = unitPositioner.playerPositionCaculate(i);
             playerUnits[i].transform.position = newPosition;
         }
     }
@@ -126,17 +129,19 @@ public class GameScene : AbstractScene
 
         if (enemyUnits.Count > 0 && enemyUnits[0] != null)
         {
+            hudManager.DeleteEnemyHUD(enemyUnits[0]);
             GameObject.Destroy(enemyUnits[0].gameObject);
             enemyUnits.RemoveAt(0);
         }
 
         unitPositioner.playerDataCount = enemyUnits.Count + 1;
+        unitPositioner.Init();
 
         for (int i = 0; i < enemyUnits.Count; i++)
         {
-            Vector2 newPosition = unitPositioner.enemyPositionCaculate(i + 1);
-            unitPositioner.Init();
+            Vector2 newPosition = unitPositioner.enemyPositionCaculate(i);
             enemyUnits[i].transform.position = newPosition;
         }
+        hudManager.repositionEnemyHUD();
     }
 }
