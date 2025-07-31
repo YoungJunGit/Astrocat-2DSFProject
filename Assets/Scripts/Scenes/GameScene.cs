@@ -28,7 +28,6 @@ public class GameScene : AbstractScene
 
     [Header("etc")]
     [SerializeField] private TimelineSystem timelineSystem;
-    [SerializeField] private UnitPositioner unitPositioner;
 
     protected override int SceneIdx
     {
