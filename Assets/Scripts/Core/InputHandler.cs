@@ -26,6 +26,21 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     
     public Action OnQTEButtonA;
 
+    
+    
+    public void Init()
+    {
+        if (_userInputAction == null)
+        {
+            _userInputAction = new UserInputAction();
+            _userInputAction.SelectUnit.SetCallbacks(this);
+            _userInputAction.SelectAction.SetCallbacks(this);
+            _userInputAction.QTE.SetCallbacks(this);
+        }
+
+        SetInputState(InputState.None);
+    }
+    
     public void SetInputState(InputState inputState)
     {
         switch (inputState)
@@ -47,19 +62,8 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
                 break;
         }
     }
-    
-    public void Init()
-    {
-        if (_userInputAction == null)
-        {
-            _userInputAction = new UserInputAction();
-            _userInputAction.SelectUnit.SetCallbacks(this);
-            _userInputAction.SelectAction.SetCallbacks(this);
-            _userInputAction.QTE.SetCallbacks(this);
-        }
 
-        SetInputState(InputState.None);
-    }
+    public InputState GetInputState() => _currentInputState;
 
     public void OnEnemySelectionMove(InputAction.CallbackContext context)
     {
