@@ -1,5 +1,5 @@
 {
-    "name": "IA_SelectUnit",
+    "name": "UserInputAction",
     "maps": [
         {
             "name": "SelectUnit",
@@ -183,6 +183,102 @@
                     "processors": "",
                     "groups": ";PC",
                     "action": "OnClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "SelectAction",
+            "id": "1c9601b1-d19e-4ca3-ac0a-79a7438ec68d",
+            "actions": [
+                {
+                    "name": "BaseAttack",
+                    "type": "Button",
+                    "id": "1ceb7585-c567-4edf-b837-ae22ddcfa408",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkillSelect",
+                    "type": "Button",
+                    "id": "3f26849e-77c7-4028-892e-17915b0bfaf3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseItem",
+                    "type": "Button",
+                    "id": "74bbddcb-adb3-4116-98d1-70ad02f7b57d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9e723149-4cd5-488c-ae82-296d0d2179f5",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BaseAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "163d82d0-263f-4830-8b31-7b33bfab0205",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillSelect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7bf569b0-1f81-41a5-bf7f-99434f786755",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "QTE",
+            "id": "ade6d4c6-fe8a-4e62-b039-7773a71c1fd1",
+            "actions": [
+                {
+                    "name": "ButtonA",
+                    "type": "Button",
+                    "id": "abb0381d-5011-450f-b9d9-4374d2aded85",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ad6dd39b-f63d-4387-a451-883d1789f911",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonA",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

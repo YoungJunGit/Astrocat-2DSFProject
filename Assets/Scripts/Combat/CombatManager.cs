@@ -24,6 +24,7 @@ public class CombatManager : ScriptableObject
         {
             unit.GetStat().OnDie += OnCharacterDie;
         }
+        
         actionSelector.Init();
     }
 
@@ -37,7 +38,7 @@ public class CombatManager : ScriptableObject
 
             if (currentTurnUnit is PlayerUnit)
             {
-                UnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
+                IUnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
 
                 await selectedAction.Execute();
             }

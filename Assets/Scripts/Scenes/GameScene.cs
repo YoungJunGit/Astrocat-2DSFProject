@@ -28,6 +28,7 @@ public class GameScene : AbstractScene
 
     [Header("etc")]
     [SerializeField] private TimelineSystem timelineSystem;
+    [SerializeField] private InputHandler inputHandler;
 
     protected override int SceneIdx
     {
@@ -47,6 +48,7 @@ public class GameScene : AbstractScene
         hudManager.Init();
         unitManager.Init();
         timelineSystem.Init();
+        inputHandler.Init();
     }
 
     protected override async UniTask CreateObjects()

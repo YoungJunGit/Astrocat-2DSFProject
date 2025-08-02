@@ -20,7 +20,7 @@ class ActionSelector : ScriptableObject
         selector.SetBasicAttackButtonListener(() => _selectedActionType = 1);
     }
     
-    public async UniTask<UnitAction> SelectAction(PlayerUnit playerUnit)
+    public async UniTask<IUnitAction> SelectAction(PlayerUnit playerUnit)
     {
         Debug.Log($"{playerUnit.GetStat().Name} : Select Action");
         
@@ -34,13 +34,12 @@ class ActionSelector : ScriptableObject
 
         selector.gameObject.SetActive(false);
 
-        UnitAction unitAction = null;
+        IUnitAction unitAction = null;
         switch (_selectedActionType)
         {
             case 1:
                 unitAction = await _actionFactory.CreateBaseAttackAction(playerUnit);
                 break;
-                
         }
 
         return unitAction;

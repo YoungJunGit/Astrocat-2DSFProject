@@ -1,12 +1,12 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-abstract class UnitAction
+interface IUnitAction
 {
-    public abstract UniTask Execute();
+    public UniTask Execute();
 }
 
-class PlayerBaseAttackAction : UnitAction
+class PlayerBaseAttackAction : IUnitAction
 {
     private PlayerUnit _caster;
     private EnemyUnit _target;
@@ -17,7 +17,7 @@ class PlayerBaseAttackAction : UnitAction
         _target = target;
     }
     
-    public override async UniTask Execute()
+    public async UniTask Execute()
     {
         if (_caster == null || _target == null)
         {
