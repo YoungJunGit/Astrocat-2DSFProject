@@ -1,0 +1,31 @@
+using System;
+using UnityEngine;
+
+public class InputTester : MonoBehaviour
+{
+    
+    [SerializeField] private InputHandler.InputState _inputState = InputHandler.InputState.None;
+    
+    private InputHandler _inputHandler;
+
+    public void Init(InputHandler inputHandler)
+    {
+        _inputHandler = inputHandler;
+        
+        _inputHandler.OnSelectUnitEnemySelectionMove += () => Debug.Log("Enemy Selection Move");
+        _inputHandler.OnSelectUnitPlayerSelectionMove += () => Debug.Log("Player Selection Move");
+        _inputHandler.OnSelectUnitOnClick += () => Debug.Log("Unit On Click");
+        _inputHandler.OnSelectUnitSelectionConfirm += () => Debug.Log("Unit Selection Confirm");
+        
+        _inputHandler.OnSelectActionBaseAttack += () => Debug.Log("Base Attack Selected");
+        _inputHandler.OnSelectActionSkillSelect += () => Debug.Log("Skill Select Selected");
+        _inputHandler.OnSelectActionUseItem += () => Debug.Log("Use Item Selected");
+        
+        _inputHandler.OnQTEButtonA += () => Debug.Log("QTE Button A Pressed");
+    }
+
+    private void Update()
+    {
+        _inputHandler.SetInputState(_inputState);
+    }
+}
