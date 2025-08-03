@@ -6,25 +6,23 @@ public class UnitStat
 {
     private EntityData _baseData;
 
+    private float _curHp;
+    private int _curAp;
+    private float _curSpeed;
+    private int priority;
+
     public Action<float, float> OnHPChanged;
     public Action<int, int> OnAPChanged;
     public Action<UnitStat> OnDie;
 
     public string Name          { get => _baseData.Name; }
     public float Max_HP         { get => (float)_baseData.Default_HP; }
-    private float _curHp;       
-    public float Cur_HP         { get { return _curHp; } }
-    
     public int Max_AP           { get => 9; }
-    private int _curAp;         
-    public int Cur_AP           {  get { return _curAp; } }
-
     public float Default_Speed  { get => (float)_baseData.Default_Speed; }
-    private float _curSpeed; 
-    public float Cur_Speed      { get { return _curSpeed; } }
-
-    private int priority;
-    public int Priority         { get { return priority; } }
+    public float Cur_HP         { get => _curHp; }
+    public int Cur_AP           { get => _curAp; }
+    public float Cur_Speed      { get => _curSpeed; }
+    public int Priority         { get => priority; }  
 
     public UnitStat(EntityData baseData, int index)
     {
@@ -48,7 +46,9 @@ public class UnitStat
         OnHPChanged.Invoke(_curHp, Max_HP);
 
         if (Cur_HP <= 0f)
+        {
             OnDie.Invoke(this);
+        }
     }
 
     public void GetHealed(float value)
@@ -74,11 +74,6 @@ public class UnitStat
         _curSpeed += value;
     }
 
-    /// <summary>
-    /// ������ ���� Ŀ���� Compare�Լ�
-    /// </summary>
-    /// <param name="other"></param>
-    /// <returns></returns>
     public int CompareTo(UnitStat other)
     {
         if (this.Cur_Speed > other.Cur_Speed) { return -1; }

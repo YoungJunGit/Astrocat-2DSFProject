@@ -44,7 +44,7 @@ public class CombatTester : MonoBehaviour
     private void Awake()
     {
         Buff speedBuff = new Buff("Speed Buff", durationRound, 0, 0, 0, addSpeedValue);
-        /*AddSpeedBtn.onClick.AddListener(() => combatManager.BuffCharacter(buffSide, buffCharacterNumber, speedBuff));
-        DieBtn.onClick.AddListener(() => combatManager.DieCharacter(dieSide, dieCharacterNumber));*/
+        AddSpeedBtn.onClick.AddListener(() => combatManager.BuffCharacter(buffSide, buffCharacterNumber, speedBuff));
+        DieBtn.onClick.AddListener(() => combatManager.DieCharacter(dieSide, dieCharacterNumber));
     }
 }

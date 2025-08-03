@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "OnClick",
+                    "name": "Touch",
                     "type": "Button",
                     "id": "fb7d950c-ac56-4e99-91dc-3d6a5bf2a0da",
                     "expectedControlType": "",
@@ -182,7 +182,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";PC",
-                    "action": "OnClick",
+                    "action": "Touch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -6,6 +6,7 @@ class ActionSelector : ScriptableObject
 {
     [SerializeField] private ActionFactory _actionFactory;
     [SerializeField] private ActionSelectionButtons selectorPrefab;
+    [SerializeField] private InputHandler inputHandler;
     private ActionSelectionButtons selector;
     
     private int _selectedActionType;
@@ -24,13 +25,15 @@ class ActionSelector : ScriptableObject
     {
         Debug.Log($"{playerUnit.GetStat().Name} : Select Action");
         
-        // TODO : Set correct position
         selector.transform.position = playerUnit.attachments.GetActionSelectorPos().position;
         selector.gameObject.SetActive(true);
 
         _selectedActionType = 0;
-        
-        await UniTask.WaitUntil(() => _selectedActionType != 0);
+
+        using (var inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectAction))
+        {
+            await UniTask.WaitUntil(() => _selectedActionType != 0);
+        }
 
         selector.gameObject.SetActive(false);
 

@@ -46,9 +46,9 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     
     private UserInputAction _userInputAction;
     
-    public Action OnSelectUnitEnemySelectionMove;
-    public Action OnSelectUnitPlayerSelectionMove;
-    public Action OnSelectUnitOnClick;
+    public Action<int> OnSelectUnitEnemySelectionMove;
+    public Action<int> OnSelectUnitPlayerSelectionMove;
+    public Action OnSelectTouch;
     public Action OnSelectUnitSelectionConfirm;
     
     public Action OnSelectActionBaseAttack;
@@ -72,48 +72,48 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     public void OnEnemySelectionMove(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectUnitEnemySelectionMove.Invoke();
+            OnSelectUnitEnemySelectionMove?.Invoke((int)context.ReadValue<float>());
     }
 
     public void OnPlayerSelectionMove(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectUnitPlayerSelectionMove.Invoke();
+            OnSelectUnitPlayerSelectionMove?.Invoke((int)context.ReadValue<float>());
     }
 
-    public void OnOnClick(InputAction.CallbackContext context)
+    public void OnTouch(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectUnitOnClick.Invoke();
+            OnSelectTouch?.Invoke();
     }
 
     public void OnSelectionConfirm(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectUnitSelectionConfirm.Invoke();
+            OnSelectUnitSelectionConfirm?.Invoke();
     }
 
     public void OnBaseAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectActionBaseAttack.Invoke();
+            OnSelectActionBaseAttack?.Invoke();
     }
 
     public void OnSkillSelect(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectActionSkillSelect.Invoke();
+            OnSelectActionSkillSelect?.Invoke();
     }
 
     public void OnUseItem(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectActionUseItem.Invoke();
+            OnSelectActionUseItem?.Invoke();
     }
 
     public void OnButtonA(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnQTEButtonA.Invoke();
+            OnQTEButtonA?.Invoke();
     }
 }

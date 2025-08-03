@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actionFactory: {fileID: 11400000, guid: 40274e07c72dafa4f8916905710eb3f4, type: 2}
   selectorPrefab: {fileID: 5584003277761100771, guid: 3a3d227a0510cee43810af629bebe03b, type: 3}
+  inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}

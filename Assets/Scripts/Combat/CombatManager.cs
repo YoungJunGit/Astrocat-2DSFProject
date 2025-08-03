@@ -9,7 +9,6 @@ public class CombatManager : ScriptableObject
 {
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private ActionSelector actionSelector;
-    [SerializeField] private InputHandler inputHandler;
     private BaseUnit currentTurnUnit;
 
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
@@ -25,32 +24,29 @@ public class CombatManager : ScriptableObject
         {
             unit.GetStat().OnDie += OnCharacterDie;
         }
-        
+
         actionSelector.Init();
     }
 
     public async UniTask StartCombat()
     {
-        using (var inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectAction))
+        isStartCombat = true;
+        while (true)
         {
-            isStartCombat = true;
-            while (true)
+            Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
+            await UniTask.WaitForSeconds(1);
+
+            if (currentTurnUnit is PlayerUnit)
             {
-                Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
-                await UniTask.WaitForSeconds(1);
+                IUnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
 
-                if (currentTurnUnit is PlayerUnit)
-                {
-                    IUnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
-
-                    await selectedAction.Execute();
-                }
-
-                //TODO: Check is finish
-                //if ()
-
-                currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
+                await selectedAction.Execute();
             }
+
+            //TODO: Check is finish
+            //if ()
+
+            currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
         }
     }
 
@@ -72,7 +68,7 @@ public class CombatManager : ScriptableObject
         if (unit != null)
             unitList.Remove(unit);
 
-        unit?.GetStat().OnDie(unit.GetStat());
+        unit.GetStat().GetDamaged(10000);
     }
 
     public void BuffCharacter(SIDE side, int index, Buff buff)

@@ -19,7 +19,7 @@ public class BaseUnit : MonoBehaviour
     {
         attachments = GetComponent<UnitAttachments>();
         _stat = new UnitStat(data, index);
-        _stat.OnDie += OnDie;
+        _stat.OnDie += (stat) => gameObject.SetActive(false);
     }
 
     // TODO : Buff Test
@@ -58,9 +58,9 @@ public class BaseUnit : MonoBehaviour
         }
     }
 
-    public void OnDie(UnitStat stat)
+    public void OnDie()
     {
-        Destroy(gameObject);
+        // Add Method
     }
 
     public UnitStat GetStat() { return _stat; }

@@ -17,7 +17,14 @@ class UnitManager : ScriptableObject
     public void Init()
     {
         spawner.Init();
-        positioner.Prepare();
+    }
+
+    public void Prepare()
+    {
+        foreach (BaseUnit unit in unitList)
+        {
+            unit.GetStat().OnDie += (stat) => SetUnitPosition();
+        }
     }
     
     public PlayerUnit CreatePlayerUnit(EntityData entityData, int index)
@@ -61,7 +68,7 @@ class UnitManager : ScriptableObject
     {
         return null;
     }
-    
+
     private void SetUnitPosition()
     {
         positioner.SetPositionForUnits(unitList.GetPlayerUnits(), unitList.GetEnemyUnits());

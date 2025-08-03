@@ -99,6 +99,7 @@ public class GameScene : AbstractScene
     {
         // Prepare before combat start
         hudManager.Prepare();
+        unitManager.Prepare();
 
         // Init CombatManager
         combatManager.Init(timelineSystem);
