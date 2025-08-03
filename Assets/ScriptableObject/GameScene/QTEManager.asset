@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd308f299d8a774eb6df11969864703, type: 3}
   m_Name: QTEManager
   m_EditorClassIdentifier: 
+  qteUIPrefab: {fileID: 8727242285115235641, guid: 7c62da8f662d0e744b364164d35a79a4, type: 3}
+  inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}

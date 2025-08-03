@@ -6,9 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Input/IA_SelectUnit.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Input/IA_SelectUnit.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Input/UserInputAction.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Input/UserInputAction.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/ActionSelectionButtonsCanvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/ActionSelectionButtonsCanvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Banner.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Banner/CharacterBanner.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Banner/CharacterBanner.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD/Enemy_StatusBox.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD/Enemy_StatusBox.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD/Player_StatusBox.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD/Player_StatusBox.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StatusCanvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StatusCanvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TimeLineCanvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TimeLineCanvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/GameScene/QTEManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/GameScene/QTEManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/QTE/QTEManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/QTE/QTEManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/QTE/QTEUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/QTE/QTEUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/QTE/QteuiDesposer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/QTE/QteuiDesposer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Tester.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Tester/InputTester.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Tester/InputTester.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +65,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89527d299cb64ba88f87240781b415e51ea400/4d/7debba45/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f72c99ce18e64a92acfcce42caf08d8f10fc00/7f/d027ab42/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@7dcdc439b230/Editor/VisualScripting.Core/Reflection/Codebase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@7dcdc439b230/Editor/VisualScripting.Flow/Options/UnitBase.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -61,7 +86,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Unity 에디터에 연결.Unity 에디터에 연결.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;NJM-InputSystem&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Develop&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,13 +119,15 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21632">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="21632" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -144,6 +171,7 @@
       <workItem from="1753698574701" duration="4000" />
       <workItem from="1754038690884" duration="1402000" />
       <workItem from="1754100719363" duration="362000" />
+      <workItem from="1754180032916" duration="5493000" />
     </task>
     <servers />
   </component>
@@ -176,69 +204,30 @@
           <option name="timeStamp" value="3" />
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
-          <line>43</line>
-          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'InitializeObjects'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/QTE/QTEUI.cs</url>
+          <line>19</line>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\QTE\QTEUI.cs" containingFunctionPresentation="메서드 'StartQte'">
             <startOffsets>
-              <option value="1189" />
+              <option value="411" />
             </startOffsets>
             <endOffsets>
-              <option value="1282" />
+              <option value="427" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/QTE/QTEUI.cs</url>
+          <line>20</line>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\QTE\QTEUI.cs" containingFunctionPresentation="메서드 'StartQte'">
+            <startOffsets>
+              <option value="436" />
+            </startOffsets>
+            <endOffsets>
+              <option value="456" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
-          <line>45</line>
-          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'InitializeObjects'">
-            <startOffsets>
-              <option value="1292" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1318" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
-          <line>46</line>
-          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'InitializeObjects'">
-            <startOffsets>
-              <option value="1327" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1346" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
-          <line>55</line>
-          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'CreateObjects'">
-            <startOffsets>
-              <option value="1579" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1660" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs</url>
-          <line>61</line>
-          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Scenes\GameScene.cs" containingFunctionPresentation="메서드 'CreateObjects'">
-            <startOffsets>
-              <option value="1852" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1932" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

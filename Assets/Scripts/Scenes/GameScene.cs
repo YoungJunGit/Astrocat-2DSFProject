@@ -25,6 +25,7 @@ public class GameScene : AbstractScene
     [SerializeField] private HUDManager hudManager;
     [SerializeField] private CombatManager combatManager;
     [SerializeField] private UnitManager unitManager;
+    [SerializeField] private QTEManager qteManager;
 
     [Header("etc")]
     [SerializeField] private TimelineSystem timelineSystem;
@@ -32,6 +33,7 @@ public class GameScene : AbstractScene
     
     [Header("Debug")]
     [SerializeField] private InputTester inputTester;
+    [SerializeField] private QTETester qteTester;
 
     protected override int SceneIdx
     {
@@ -52,9 +54,14 @@ public class GameScene : AbstractScene
         unitManager.Init();
         timelineSystem.Init();
         inputHandler.Init();
-        
+        qteManager.Init();
+
         if (debugMode)
+        {
             inputTester.Init(inputHandler);
+            qteTester.Init();
+        }
+            
     }
 
     protected override async UniTask CreateObjects()

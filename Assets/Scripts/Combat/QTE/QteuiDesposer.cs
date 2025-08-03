@@ -8,11 +8,11 @@ public class QteuiDisposer : IDisposable
     public QteuiDisposer(QTEUI qteui, float time, Vector2 position)
     {
         _qteUI = qteui;
-        _qteUI.StartQTE(time, position);
+        _qteUI.StartQte(time, position);
     }
     
     public void Dispose()
     {
-        _qteUI.EndQTE();
+        _qteUI.EndQte();
     }
 }

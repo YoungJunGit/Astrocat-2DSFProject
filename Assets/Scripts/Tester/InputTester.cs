@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
 
-public class InputTester : MonoBehaviour
+public class InputTester : MonoBehaviour, IUpdateObserver
 {
     
     [SerializeField] private InputHandler.InputState _inputState = InputHandler.InputState.None;
+    [SerializeField] private bool updateInputState = false;
     
     private InputHandler _inputHandler;
 
@@ -22,10 +23,15 @@ public class InputTester : MonoBehaviour
         _inputHandler.OnSelectActionUseItem += () => Debug.Log("Use Item Selected");
         
         _inputHandler.OnQTEButtonA += () => Debug.Log("QTE Button A Pressed");
+        
+        UpdatePublisher.SubscribeObserver(this);
     }
 
-    private void Update()
+    public void ObserverUpdate(float dt)
     {
-        _inputHandler.SetInputState(_inputState);
+        if (updateInputState)
+            _inputHandler.CurrentInputState = _inputState;
+        
+        _inputState = _inputHandler.CurrentInputState;
     }
 }

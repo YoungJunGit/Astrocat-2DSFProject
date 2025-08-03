@@ -1,4 +1,4 @@
-
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -46,16 +46,16 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     
     private UserInputAction _userInputAction;
     
-    public UnityEvent OnSelectUnitEnemySelectionMove;
-    public UnityEvent OnSelectUnitPlayerSelectionMove;
-    public UnityEvent OnSelectUnitOnClick;
-    public UnityEvent OnSelectUnitSelectionConfirm;
+    public Action OnSelectUnitEnemySelectionMove;
+    public Action OnSelectUnitPlayerSelectionMove;
+    public Action OnSelectUnitOnClick;
+    public Action OnSelectUnitSelectionConfirm;
     
-    public UnityEvent OnSelectActionBaseAttack;
-    public UnityEvent OnSelectActionSkillSelect;
-    public UnityEvent OnSelectActionUseItem;
+    public Action OnSelectActionBaseAttack;
+    public Action OnSelectActionSkillSelect;
+    public Action OnSelectActionUseItem;
     
-    public UnityEvent OnQTEButtonA;
+    public Action OnQTEButtonA;
 
     public void Init()
     {
