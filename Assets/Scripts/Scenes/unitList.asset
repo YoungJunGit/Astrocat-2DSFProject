@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a11231538da9894d8dce88b47df6a36, type: 3}
-  m_Name: bool_DebugMode
+  m_Script: {fileID: 11500000, guid: 016142fe0f7edfd43b1f8791257854ac, type: 3}
+  m_Name: unitList
   m_EditorClassIdentifier: 
   TagIndex: 0
-  Description: Boolean for appearing debug mode
-  _guid: c8808d7de2361294fa09f3b5d598dad6
-  _saveGuid: 0
-  _value: 1
-  _debugLogEnabled: 0
-  _saved: 1
-  _defaultValue: 0
+  Description: 
   _resetOn: 0
-  _runtimeValue: 1
+  _list: []

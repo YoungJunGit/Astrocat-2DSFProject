@@ -27,9 +27,11 @@ public class Buff
 public class CombatTester : MonoBehaviour
 {
     [SerializeField] private CombatManager combatManager;
+    [SerializeField] private UnitManager unitManager;
 
     [SerializeField] private Button AddSpeedBtn;
     [SerializeField] private Button DieBtn;
+    [SerializeField] private HUDManager hudManager;
 
     [Header("Buff Test")] [Space(10f)]
     public SIDE buffSide;
@@ -46,5 +48,21 @@ public class CombatTester : MonoBehaviour
         Buff speedBuff = new Buff("Speed Buff", durationRound, 0, 0, 0, addSpeedValue);
         /*AddSpeedBtn.onClick.AddListener(() => combatManager.BuffCharacter(buffSide, buffCharacterNumber, speedBuff));
         DieBtn.onClick.AddListener(() => combatManager.DieCharacter(dieSide, dieCharacterNumber));*/
+    }
+
+    public void OnDieButton()
+    {
+        var currentUnit = combatManager.GetCurrentTurnUnit();
+        combatManager.OnCharacterDie(currentUnit.GetStat());
+
+        if (currentUnit is PlayerUnit)
+        {
+            hudManager.DeletePlayerHUD((PlayerUnit)currentUnit);
+            unitManager.DeletePlayerUnit((PlayerUnit)currentUnit);
+        }
+        else { 
+            hudManager.DeleteEnemyHUD((EnemyUnit)currentUnit);
+            unitManager.DeleteEnemyUnit((EnemyUnit)currentUnit);
+        }
     }
 }

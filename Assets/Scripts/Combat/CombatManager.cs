@@ -27,6 +27,8 @@ public class CombatManager : ScriptableObject
         actionSelector.Init();
     }
 
+    public BaseUnit GetCurrentTurnUnit() => currentTurnUnit;
+
     public async UniTask StartCombat()
     {
         isStartCombat = true;

@@ -10,7 +10,7 @@ class UnitManager : ScriptableObject
 
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
-    
+
     //[SerializeField] private List<PlayerUnit> playerUnits = new();
     //[SerializeField] private List<EnemyUnit> enemyUnits = new();
 
@@ -44,9 +44,46 @@ class UnitManager : ScriptableObject
         return enemyUnit;
     }
 
+    public void DeletePlayerUnit(PlayerUnit unit)
+    {
+        /*if (unit.GetStat().Cur_HP <= 0f)
+            unitList.Remove(unit); */
+        unitList.Remove(unit);
+        unit.OnDie(unit.GetStat());
+        SetUnitPosition();
+        CheckGameCondition();
+    }
+
+    public void DeleteEnemyUnit(EnemyUnit unit)
+    {
+        /*if (unit.GetStat().Cur_HP <= 0f)
+            unitList.Remove(unit);*/
+        unitList.Remove(unit);
+        unit.OnDie(unit.GetStat());
+        SetUnitPosition();
+        CheckGameCondition();
+    }
+
+    private void CheckGameCondition() {
+        if (unitList.GetPlayerUnits().Count == 0)
+        {
+            Debug.Log("Player Loss!!!");
+            UnityEditor.EditorApplication.isPlaying = false;
+
+            // todo => XP depend on game player give
+        }
+        else if (unitList.GetEnemyUnits().Count == 0)
+        {
+            Debug.Log("Player Win!!!");
+            UnityEditor.EditorApplication.isPlaying = false;
+            
+            //todo => XP, Money ,Item payment
+        }
+    }
+
     //public List<PlayerUnit> GetAllPlayerUnits() => playerUnits;
     //public List<EnemyUnit> GetAllEnemyUnits() => enemyUnits;
-    
+
     public PlayerUnit GetCurrentPlayerUnit()
     {
         return null;
