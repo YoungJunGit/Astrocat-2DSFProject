@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-class QTEUI : MonoBehaviour, IUpdateObserver
+public class QTEUI : MonoBehaviour, IUpdateObserver
 {
     [SerializeField] private GameObject qteUI;
-    [SerializeField] private Image leftTimeSlideImage;
+    [SerializeField] private Image leftTimeGageImage;
 
     private float _maxTime;
     private float _currentTime = 0f;
@@ -30,6 +30,6 @@ class QTEUI : MonoBehaviour, IUpdateObserver
 
     public void ObserverUpdate(float dt)
     {
-        leftTimeSlideImage.fillAmount = _currentTime / _maxTime;
+        leftTimeGageImage.fillAmount = _currentTime / _maxTime;
     }
 }

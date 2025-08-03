@@ -1,5 +1,6 @@
-using System;
+
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "InputHandler", menuName = "Core/InputHandler", order = 1)]
@@ -13,21 +14,49 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
         QTE
     }
     private InputState _currentInputState = InputState.None;
+
+    public InputState CurrentInputState
+    {
+        get => _currentInputState;
+
+        set
+        {
+            _currentInputState = value;
+            
+            switch (value)
+            {
+                case InputState.None:
+                    _userInputAction.Disable();
+                    break;
+                case InputState.SelectUnit:
+                    _userInputAction.Disable();
+                    _userInputAction.SelectUnit.Enable();
+                    break;
+                case InputState.SelectAction:
+                    _userInputAction.Disable();
+                    _userInputAction.SelectAction.Enable();
+                    break;
+                case InputState.QTE:
+                    _userInputAction.Disable();
+                    _userInputAction.QTE.Enable();
+                    break;
+            }
+        }
+    }
+    
     private UserInputAction _userInputAction;
     
-    public Action OnSelectUnitEnemySelectionMove;
-    public Action OnSelectUnitPlayerSelectionMove;
-    public Action OnSelectUnitOnClick;
-    public Action OnSelectUnitSelectionConfirm;
+    public UnityEvent OnSelectUnitEnemySelectionMove;
+    public UnityEvent OnSelectUnitPlayerSelectionMove;
+    public UnityEvent OnSelectUnitOnClick;
+    public UnityEvent OnSelectUnitSelectionConfirm;
     
-    public Action OnSelectActionBaseAttack;
-    public Action OnSelectActionSkillSelect;
-    public Action OnSelectActionUseItem;
+    public UnityEvent OnSelectActionBaseAttack;
+    public UnityEvent OnSelectActionSkillSelect;
+    public UnityEvent OnSelectActionUseItem;
     
-    public Action OnQTEButtonA;
+    public UnityEvent OnQTEButtonA;
 
-    
-    
     public void Init()
     {
         if (_userInputAction == null)
@@ -38,33 +67,8 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
             _userInputAction.QTE.SetCallbacks(this);
         }
 
-        SetInputState(InputState.None);
+        CurrentInputState = InputState.None;
     }
-    
-    public void SetInputState(InputState inputState)
-    {
-        switch (inputState)
-        {
-            case InputState.None:
-                _userInputAction.Disable();
-                break;
-            case InputState.SelectUnit:
-                _userInputAction.Disable();
-                _userInputAction.SelectUnit.Enable();
-                break;
-            case InputState.SelectAction:
-                _userInputAction.Disable();
-                _userInputAction.SelectAction.Enable();
-                break;
-            case InputState.QTE:
-                _userInputAction.Disable();
-                _userInputAction.QTE.Enable();
-                break;
-        }
-    }
-
-    public InputState GetInputState() => _currentInputState;
-
     public void OnEnemySelectionMove(InputAction.CallbackContext context)
     {
         if (context.performed)

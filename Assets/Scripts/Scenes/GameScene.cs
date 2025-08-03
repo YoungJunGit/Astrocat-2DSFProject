@@ -52,7 +52,9 @@ public class GameScene : AbstractScene
         unitManager.Init();
         timelineSystem.Init();
         inputHandler.Init();
-        inputTester.Init(inputHandler);
+        
+        if (debugMode)
+            inputTester.Init(inputHandler);
     }
 
     protected override async UniTask CreateObjects()
