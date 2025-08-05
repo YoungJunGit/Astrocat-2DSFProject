@@ -41,6 +41,13 @@ namespace DataEnum
         ENEMY
     }
 
+    public enum  UNIT_STATE
+    {
+        NONE = 0,
+        ATTACK,
+        MOVE
+    }
+
     /*Ãß°¡*/
     #endregion
 }

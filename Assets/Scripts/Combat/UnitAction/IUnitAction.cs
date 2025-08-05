@@ -25,6 +25,12 @@ class PlayerBaseAttackAction : IUnitAction
             return;
         }
         
-        Debug.Log($"{_caster.GetStat().Name} attack {_target.GetStat().Name}");
+        if(_caster is IMelee)
+        {
+            IMelee _melee_caster = _caster as IMelee;
+            _melee_caster.Move();
+        }
+
+        _caster.Attack(_target);
     }
 }

@@ -125,7 +125,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: penguin_commander_bullet_up2
+      name: penguin_commander_bullet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_commander_bullet_up1
+      name: penguin_commander_bullet_1
       rect:
         serializedVersion: 2
         x: 0
@@ -169,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_commander_bullet_middle
+      name: penguin_commander_bullet_2
       rect:
         serializedVersion: 2
         x: 0
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_commander_bullet_down1
+      name: penguin_commander_bullet_3
       rect:
         serializedVersion: 2
         x: 0
@@ -213,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_commander_bullet_down2
+      name: penguin_commander_bullet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -248,11 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      penguin_commander_bullet_down1: 3514996205508723247
-      penguin_commander_bullet_down2: 3846306349982944660
-      penguin_commander_bullet_middle: -381154335248503453
-      penguin_commander_bullet_up1: 5908513909563800524
-      penguin_commander_bullet_up2: -11686867183060408
+      penguin_commander_bullet_0: -11686867183060408
+      penguin_commander_bullet_1: 5908513909563800524
+      penguin_commander_bullet_2: -381154335248503453
+      penguin_commander_bullet_3: 3514996205508723247
+      penguin_commander_bullet_4: 3846306349982944660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

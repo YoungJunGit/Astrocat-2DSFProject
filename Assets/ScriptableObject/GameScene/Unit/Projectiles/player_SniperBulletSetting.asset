@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63df59032438054fbb3b0d180203e03, type: 3}
+  m_Name: player_SniperBulletSetting
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -3501066498535033731, guid: 1018426e367240e499b2207b8ca99a1d, type: 3}
+  - {fileID: -7329793525582471868, guid: 1018426e367240e499b2207b8ca99a1d, type: 3}
+  - {fileID: 6513731715980162581, guid: 1018426e367240e499b2207b8ca99a1d, type: 3}
+  - {fileID: 8152040037491437074, guid: 1018426e367240e499b2207b8ca99a1d, type: 3}
+  - {fileID: 3767205470816179506, guid: 1018426e367240e499b2207b8ca99a1d, type: 3}
+  targetTag: Enemy
+  speed: 30

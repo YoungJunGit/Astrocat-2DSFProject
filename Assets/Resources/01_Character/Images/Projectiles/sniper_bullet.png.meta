@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -125,7 +125,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sniper_bullet_0
+      name: sniper_bullet_4
       rect:
         serializedVersion: 2
         x: 11
@@ -133,7 +133,7 @@ TextureImporter:
         width: 103
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sniper_bullet_1
+      name: sniper_bullet_3
       rect:
         serializedVersion: 2
         x: 2
@@ -155,7 +155,7 @@ TextureImporter:
         width: 107
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,7 +177,7 @@ TextureImporter:
         width: 109
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sniper_bullet_3
+      name: sniper_bullet_1
       rect:
         serializedVersion: 2
         x: 2
@@ -199,7 +199,7 @@ TextureImporter:
         width: 107
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sniper_bullet_4
+      name: sniper_bullet_0
       rect:
         serializedVersion: 2
         x: 11
@@ -221,7 +221,7 @@ TextureImporter:
         width: 103
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2bec26a6e8c44b54188364befc458c4c
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sniper_bullet_0: 3767205470816179506
-      sniper_bullet_1: 8152040037491437074
+      sniper_bullet_0: -3501066498535033731
+      sniper_bullet_1: -7329793525582471868
       sniper_bullet_2: 6513731715980162581
-      sniper_bullet_3: -7329793525582471868
-      sniper_bullet_4: -3501066498535033731
+      sniper_bullet_3: 8152040037491437074
+      sniper_bullet_4: 3767205470816179506
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63df59032438054fbb3b0d180203e03, type: 3}
+  m_Name: player_RiflemanBulletSetting
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 6138896008621725998, guid: 77d3ccc52b7585e4d8a690aa9aba1086, type: 3}
+  - {fileID: 8427187125634147087, guid: 77d3ccc52b7585e4d8a690aa9aba1086, type: 3}
+  - {fileID: 4403547507639030375, guid: 77d3ccc52b7585e4d8a690aa9aba1086, type: 3}
+  - {fileID: -364603440020690390, guid: 77d3ccc52b7585e4d8a690aa9aba1086, type: 3}
+  - {fileID: 6588111875569489607, guid: 77d3ccc52b7585e4d8a690aa9aba1086, type: 3}
+  targetTag: Enemy
+  speed: 30

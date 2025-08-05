@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -125,7 +125,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rifleman_bullet_0
+      name: rifleman_bullet_4
       rect:
         serializedVersion: 2
         x: 11
@@ -133,7 +133,7 @@ TextureImporter:
         width: 121
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rifleman_bullet_1
+      name: rifleman_bullet_3
       rect:
         serializedVersion: 2
         x: 2
@@ -155,7 +155,7 @@ TextureImporter:
         width: 125
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,7 +177,7 @@ TextureImporter:
         width: 124
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rifleman_bullet_3
+      name: rifleman_bullet_1
       rect:
         serializedVersion: 2
         x: 2
@@ -199,7 +199,7 @@ TextureImporter:
         width: 125
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rifleman_bullet_4
+      name: rifleman_bullet_0
       rect:
         serializedVersion: 2
         x: 11
@@ -221,7 +221,7 @@ TextureImporter:
         width: 121
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d14d12812cd4b9540ab28f6a598ed076
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rifleman_bullet_0: 6588111875569489607
-      rifleman_bullet_1: -364603440020690390
+      rifleman_bullet_0: 6138896008621725998
+      rifleman_bullet_1: 8427187125634147087
       rifleman_bullet_2: 4403547507639030375
-      rifleman_bullet_3: 8427187125634147087
-      rifleman_bullet_4: 6138896008621725998
+      rifleman_bullet_3: -364603440020690390
+      rifleman_bullet_4: 6588111875569489607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

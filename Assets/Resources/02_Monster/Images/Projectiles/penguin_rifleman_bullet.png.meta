@@ -125,7 +125,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: penguin_rifleman_bullet_up2
+      name: penguin_rifleman_bullet_0
       rect:
         serializedVersion: 2
         x: 20
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_rifleman_bullet_up1
+      name: penguin_rifleman_bullet_1
       rect:
         serializedVersion: 2
         x: 8
@@ -169,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_rifleman_bullet_middle
+      name: penguin_rifleman_bullet_2
       rect:
         serializedVersion: 2
         x: 0
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_rifleman_bullet_down1
+      name: penguin_rifleman_bullet_3
       rect:
         serializedVersion: 2
         x: 8
@@ -213,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penguin_rifleman_bullet_down2
+      name: penguin_rifleman_bullet_4
       rect:
         serializedVersion: 2
         x: 20
@@ -248,11 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      penguin_rifleman_bullet_down1: -7739445574567035601
-      penguin_rifleman_bullet_down2: 5197327793993159493
-      penguin_rifleman_bullet_middle: -475882923210232555
-      penguin_rifleman_bullet_up1: -6681776376280909386
-      penguin_rifleman_bullet_up2: -5016171527809822917
+      penguin_rifleman_bullet_0: -5016171527809822917
+      penguin_rifleman_bullet_1: -6681776376280909386
+      penguin_rifleman_bullet_2: -475882923210232555
+      penguin_rifleman_bullet_3: -7739445574567035601
+      penguin_rifleman_bullet_4: 5197327793993159493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
