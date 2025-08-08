@@ -12,12 +12,14 @@ public class BaseUnit : MonoBehaviour
 
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
+    private CrowdControlManager _crowdControlManager;
 
     public Action<Buff> m_AddBuff;
 
     public virtual void Initialize(EntityData data, int index)
     {
         attachments = GetComponent<UnitAttachments>();
+        
         _stat = new UnitStat(data, index);
         _stat.OnDie += OnDie;
     }
@@ -49,7 +51,7 @@ public class BaseUnit : MonoBehaviour
 
     public void OnEndRound()
     {
-        // ¿ª¼øÀ¸·Î for¹®À» µ¹¸®´Â ÀÌÀ¯ - for¹®À» µ¹¸®´Â Áß¿¡ ÄÃ·º¼Ç ¼öÁ¤ÀÌ ÀÌ·ïÁö±â ¶§¹®
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ forï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ - forï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         for (int i = buffList.Count - 1; i >= 0; i--)
         {
             buffList[i].Buff_Duration -= 1;

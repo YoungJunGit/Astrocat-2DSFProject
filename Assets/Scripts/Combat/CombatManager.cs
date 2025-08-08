@@ -10,6 +10,7 @@ public class CombatManager : ScriptableObject
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private ActionSelector actionSelector;
     [SerializeField] private InputHandler inputHandler;
+    [SerializeField] private UnitManager unitManager;
     private BaseUnit currentTurnUnit;
 
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
@@ -45,7 +46,7 @@ public class CombatManager : ScriptableObject
 
                     await selectedAction.Execute();
                 }
-
+                
                 //TODO: Check is finish
                 //if ()
 
