@@ -4,16 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ActionFactory", menuName = "GameScene/ActionFactory", order = 3)]
 class ActionFactory : ScriptableObject
 {
-    [SerializeField] private UnitSelector _unitSelector;
+    [SerializeField] private UnitManager _unitManager;
     
-    public void Init()
-    {
-        _unitSelector.Init();
-    }
-
     public async UniTask<PlayerBaseAttackAction> CreateBaseAttackAction(PlayerUnit playerUnit)
     {
-        EnemyUnit enemy = await _unitSelector.SelectUnit(DataEnum.SIDE.ENEMY) as EnemyUnit;
+        EnemyUnit enemy = await _unitManager.GetEnemyUnitBySelector();
         
         return new PlayerBaseAttackAction(playerUnit, enemy);
     }

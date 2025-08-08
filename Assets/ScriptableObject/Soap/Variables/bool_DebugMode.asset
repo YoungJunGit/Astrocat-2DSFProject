@@ -16,9 +16,9 @@ MonoBehaviour:
   Description: Boolean for appearing debug mode
   _guid: c8808d7de2361294fa09f3b5d598dad6
   _saveGuid: 0
-  _value: 1
+  _value: 0
   _debugLogEnabled: 0
   _saved: 1
   _defaultValue: 0
   _resetOn: 0
-  _runtimeValue: 1
+  _runtimeValue: 0

@@ -12,8 +12,6 @@ class ActionSelector : ScriptableObject
     
     public void Init()
     {
-        _actionFactory.Init();
-
         selector = Instantiate(selectorPrefab);
         selector.gameObject.SetActive(false);
 
