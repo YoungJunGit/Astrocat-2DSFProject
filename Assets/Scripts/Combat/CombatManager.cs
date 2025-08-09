@@ -50,8 +50,8 @@ public class CombatManager : ScriptableObject
                 {
                     // TODO : Enemy Action
                 }
-                
-                
+
+                ApplyCrowdControl();
                 
                 //TODO: Check is finish
                 //if ()
@@ -70,24 +70,13 @@ public class CombatManager : ScriptableObject
         }
     }
 
-    #region[For Debugging]
-    public void DieCharacter(SIDE side, int index)
+    public void ApplyCrowdControl()
     {
-        BaseUnit unit = unitList.GetUnits().Find(unit => unit.GetStat().Priority + 1 == index
-                                                     && unit.GetStat().GetData().Side == side);
-
-        if (unit != null)
-            unitList.Remove(unit);
-
-        unit?.GetStat().OnDie(unit.GetStat());
+        var units = unitManager.GetAllUnit();
+        
+        foreach (var unit in units)
+        {
+            unit.GetCrowdControlManager().ApplyCrowdControl();
+        }
     }
-
-    public void BuffCharacter(SIDE side, int index, Buff buff)
-    {
-        BaseUnit unit = unitList.GetUnits().Find(unit => unit.GetStat().Priority + 1 == index
-                                                     && unit.GetStat().GetData().Side == side);
-
-        unit?.AddBuff(buff);
-    }
-    #endregion
 }

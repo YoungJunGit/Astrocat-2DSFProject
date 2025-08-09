@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using DataEnum;
 
 [CreateAssetMenu(fileName = "UnitSelector", menuName = "GameScene/UnitSelector", order = 1)]
-public class UnitSelector : ScriptableObject
+class UnitSelector : ScriptableObject
 {
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private UnitSelectorController controller;

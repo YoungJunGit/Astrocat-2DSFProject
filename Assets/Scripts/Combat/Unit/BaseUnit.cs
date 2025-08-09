@@ -12,7 +12,7 @@ public class BaseUnit : MonoBehaviour
 
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
-    private CrowdControlManager _crowdControlManager;
+    private CrowdControlManager _crowdControlManager = new();
 
     public Action<Buff> m_AddBuff;
 
@@ -22,7 +22,11 @@ public class BaseUnit : MonoBehaviour
         
         _stat = new UnitStat(data, index);
         _stat.OnDie += OnDie;
+        
+        _crowdControlManager.Init(this);
     }
+
+    public CrowdControlManager GetCrowdControlManager() => _crowdControlManager;
 
     // TODO : Buff Test
     public void AddBuff(Buff newBuff)

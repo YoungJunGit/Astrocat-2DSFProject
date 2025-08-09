@@ -12,8 +12,15 @@ public class CrowdControlManager
         Flood,
         Confusion,
     }
+
     
     private HashSet<ICrowdControl> _crowdControlList = new();
+    private BaseUnit _target;
+    
+    public void Init(BaseUnit target)
+    {
+        _target = target;
+    }
     
     public void AddCrowdControl(CrowdControlType crowdControlType)
     {
@@ -28,6 +35,17 @@ public class CrowdControlManager
         _crowdControlList.Add(crowdControl);
     }
 
+    public void ApplyCrowdControl()
+    {
+        if (_target == null || _crowdControlList.Count <= 0)
+            return;
+        
+        foreach (var crowdControl in _crowdControlList)
+        {
+            crowdControl.ApplyCrowdControl(_target);
+        }
+    }
+    
     private bool TryUpdateExistingCrowdControl(ICrowdControl crowdControl)
     {
         if (_crowdControlList.TryGetValue(crowdControl, out ICrowdControl existing))
@@ -36,13 +54,5 @@ public class CrowdControlManager
             return true;
         }
         return false;
-    }
-    
-    public void ApplyCrowdControl(BaseUnit target)
-    {
-        foreach (var crowdControl in _crowdControlList)
-        {
-            crowdControl.ApplyCrowdControl(target);
-        }
     }
 }

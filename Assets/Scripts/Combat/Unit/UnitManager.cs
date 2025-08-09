@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DataEntity;
+using DataEnum;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "UnitManager", menuName = "GameScene/UnitManager", order = 2)]
@@ -8,12 +9,10 @@ class UnitManager : ScriptableObject
 {
     [SerializeField] private ScriptableListBaseUnit unitList = null;
 
+    [SerializeField] private UnitSelector unitSelector;
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
     
-    //[SerializeField] private List<PlayerUnit> playerUnits = new();
-    //[SerializeField] private List<EnemyUnit> enemyUnits = new();
-
     public void Init()
     {
         spawner.Init();
@@ -24,7 +23,6 @@ class UnitManager : ScriptableObject
     {
         var playerUnit = spawner.CreatePlayerUnit(entityData, index);
         
-        //playerUnits.Add(playerUnit);
         unitList.Add(playerUnit);
 
         SetUnitPosition();
@@ -36,7 +34,6 @@ class UnitManager : ScriptableObject
     {
         var enemyUnit = spawner.CreateEnemyUnit(entityData, index);
         
-        //enemyUnits.Add(enemyUnit);
         unitList.Add(enemyUnit);
         
         SetUnitPosition();
@@ -44,22 +41,19 @@ class UnitManager : ScriptableObject
         return enemyUnit;
     }
 
-    //public List<PlayerUnit> GetAllPlayerUnits() => playerUnits;
-    //public List<EnemyUnit> GetAllEnemyUnits() => enemyUnits;
-    
-    public PlayerUnit GetCurrentPlayerUnit()
-    {
-        return null;
-    }
-
     public async UniTask<EnemyUnit> GetEnemyUnitBySelector()
     {
-        return null;
+        return await unitSelector.SelectUnit(SIDE.ENEMY) as EnemyUnit;
     }
     
     public async UniTask<PlayerUnit> GetPlayerUnitBySelector()
     {
-        return null;
+        return await unitSelector.SelectUnit(SIDE.PLAYER) as PlayerUnit;
+    }
+
+    public List<BaseUnit> GetAllUnit()
+    {
+        return unitList.GetUnits();
     }
     
     private void SetUnitPosition()
