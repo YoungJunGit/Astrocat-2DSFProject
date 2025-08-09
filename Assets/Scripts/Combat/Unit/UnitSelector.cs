@@ -7,6 +7,7 @@ using DataEnum;
 [CreateAssetMenu(fileName = "UnitSelector", menuName = "GameScene/UnitSelector", order = 1)]
 class UnitSelector : ScriptableObject
 {
+    [SerializeField] private InputHandler inputHandler;
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private UnitSelectorController controller;
     [SerializeField] public GameObject unitSelectArrowPrefab;
@@ -21,16 +22,19 @@ class UnitSelector : ScriptableObject
 
     public async UniTask<BaseUnit> SelectUnit(SIDE side)
     {
-        isConfirmed = false;
-        unitSelectArrow = Instantiate(unitSelectArrowPrefab, unitList.GetUnits(side)[controller.GetSelectionIndex(side)].attachments.GetUnitSelectArrowPos(), false);
+        using (var inputDispose = new InputDisposer(inputHandler, InputHandler.InputState.SelectUnit))
+        {
+            isConfirmed = false;
+            unitSelectArrow = Instantiate(unitSelectArrowPrefab, unitList.GetUnits(side)[controller.GetSelectionIndex(side)].attachments.GetUnitSelectArrowPos(), false);
 
-        controller.OnStartSelect((index) => MoveArrow(index, side), side, unitList.GetUnits(side).Count);
-        await UniTask.WaitUntil(() => isConfirmed == true);
-        controller.OnEndSelect();
+            controller.OnStartSelect((index) => MoveArrow(index, side), side, unitList.GetUnits(side).Count);
+            await UniTask.WaitUntil(() => isConfirmed == true);
+            controller.OnEndSelect();
 
-        Destroy(unitSelectArrow);
+            Destroy(unitSelectArrow);
 
-        return unitList.GetUnits(side)[controller.GetSelectionIndex(side)];
+            return unitList.GetUnits(side)[controller.GetSelectionIndex(side)];
+        }
     }
 
     public void MoveArrow(int index, SIDE side)

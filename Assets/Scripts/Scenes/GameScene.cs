@@ -31,9 +31,10 @@ public class GameScene : AbstractScene
     [SerializeField] private TimelineSystem timelineSystem;
     [SerializeField] private InputHandler inputHandler;
     
-    [Header("Debug")]
+    [Header("Tester")]
     [SerializeField] private InputTester inputTester;
     [SerializeField] private QTETester qteTester;
+    [SerializeField] private CCTester ccTester;
 
     protected override int SceneIdx
     {
@@ -104,9 +105,12 @@ public class GameScene : AbstractScene
         combatManager.Init(timelineSystem);
 
         // Add
-
+        
         if (debugMode)
+        {
             ForDebugging();
+            combatManager.OnTernEnd += ccTester.SetCCOnRendomUnit;
+        }
     }
 
     protected override async UniTask BeginGame()
@@ -118,5 +122,7 @@ public class GameScene : AbstractScene
     {
         if (!SceneManager.GetSceneByName("DebugingUI").isLoaded)
             SceneManager.LoadSceneAsync("DebugingUI", LoadSceneMode.Additive);
+        
+        
     }
 }

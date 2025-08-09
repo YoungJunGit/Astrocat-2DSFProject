@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class CrowdControlManager
@@ -33,6 +34,8 @@ public class CrowdControlManager
 
         crowdControl.Count = 1;
         _crowdControlList.Add(crowdControl);
+        
+        Debug.Log($"{_target} get {crowdControlType}\nCrowdControl List: \n{ToString()}");
     }
 
     public void ApplyCrowdControl()
@@ -54,5 +57,15 @@ public class CrowdControlManager
             return true;
         }
         return false;
+    }
+
+    private string ToString()
+    {
+        string result = $"";
+        foreach (var crowdControl in _crowdControlList)
+        {
+            result += $"\n{crowdControl.GetType().Name} : {crowdControl.Count}";
+        }
+        return result;
     }
 }

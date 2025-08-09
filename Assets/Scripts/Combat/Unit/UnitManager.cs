@@ -17,6 +17,7 @@ class UnitManager : ScriptableObject
     {
         spawner.Init();
         positioner.Prepare();
+        unitSelector.Init();
     }
     
     public PlayerUnit CreatePlayerUnit(EntityData entityData, int index)

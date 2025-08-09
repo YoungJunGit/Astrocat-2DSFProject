@@ -86,6 +86,6 @@ public class UnitSelectorController : ScriptableObject
 
     private void OnSelectionConfirmPerformed(InputAction.CallbackContext context)
     {
-        confirm();
+        confirm?.Invoke();
     }
 }

@@ -72,48 +72,48 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     public void OnEnemySelectionMove(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectUnitEnemySelectionMove.Invoke();
+            OnSelectUnitEnemySelectionMove?.Invoke();
     }
 
     public void OnPlayerSelectionMove(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectUnitPlayerSelectionMove.Invoke();
+            OnSelectUnitPlayerSelectionMove?.Invoke();
     }
 
     public void OnOnClick(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectUnitOnClick.Invoke();
+            OnSelectUnitOnClick?.Invoke();
     }
 
     public void OnSelectionConfirm(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectUnitSelectionConfirm.Invoke();
+            OnSelectUnitSelectionConfirm?.Invoke();
     }
 
     public void OnBaseAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectActionBaseAttack.Invoke();
+            OnSelectActionBaseAttack?.Invoke();
     }
 
     public void OnSkillSelect(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectActionSkillSelect.Invoke();
+            OnSelectActionSkillSelect?.Invoke();
     }
 
     public void OnUseItem(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectActionUseItem.Invoke();
+            OnSelectActionUseItem?.Invoke();
     }
 
     public void OnButtonA(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnQTEButtonA.Invoke();
+            OnQTEButtonA?.Invoke();
     }
 }

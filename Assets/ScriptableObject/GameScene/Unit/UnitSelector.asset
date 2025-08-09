@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5381aaded75246f3850cc4336b497e25, type: 3}
   m_Name: UnitSelector
   m_EditorClassIdentifier: 
+  inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
   unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
   controller: {fileID: 11400000, guid: f65f05e5ac23abf458c66ebd516434c0, type: 2}
   unitSelectArrowPrefab: {fileID: 9037477630077754174, guid: 72ea19e7d0b9abd4aac8e49d1b9d1f09, type: 3}

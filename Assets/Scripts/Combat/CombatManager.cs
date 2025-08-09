@@ -14,6 +14,7 @@ public class CombatManager : ScriptableObject
     private BaseUnit currentTurnUnit;
 
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
+    public Action OnTernEnd;
 
     private bool isStartCombat = false;
 
@@ -50,13 +51,14 @@ public class CombatManager : ScriptableObject
                 {
                     // TODO : Enemy Action
                 }
-
                 ApplyCrowdControl();
                 
                 //TODO: Check is finish
                 //if ()
 
                 currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
+                
+                OnTernEnd?.Invoke();
             }
         }
     }
