@@ -46,6 +46,12 @@ public class CombatManager : ScriptableObject
 
                     await selectedAction.Execute();
                 }
+                else if (currentTurnUnit is EnemyUnit)
+                {
+                    // TODO : Enemy Action
+                }
+                
+                
                 
                 //TODO: Check is finish
                 //if ()
