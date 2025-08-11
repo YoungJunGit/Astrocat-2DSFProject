@@ -39,6 +39,12 @@ class UnitSelector : ScriptableObject
         return unitList.GetUnits(side)[controller.GetSelectionIndex(side)];
     }
 
+    public BaseUnit SelectRandomUnit(SIDE side)
+    {
+        int randomIndex = Random.Range(0, unitList.GetUnits(side).Count);
+        return unitList.GetUnits(side)[randomIndex];
+    }
+
     public void MoveArrow(int index)
     {
         unitSelectArrow.transform.SetParent(unitList.GetUnits(side)[index].attachments.GetUnitSelectArrowPos(), false);

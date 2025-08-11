@@ -16,7 +16,7 @@ MonoBehaviour:
   decryptToggle: 0
   data:
   - Mob_ID: 3001001
-    Mob_Name: Mob_Name_1001
+    Mob_Name: "\uB77C\uC774\uD50C\uB9E8 \uD3AD\uADC4"
     Mob_Default_HP: 100
     Mob_Default_Attack: 40
     Mob_Default_AP: 3
@@ -28,7 +28,7 @@ MonoBehaviour:
     Resist_Type: 3
     Asset_File: penguin_Rifleman
   - Mob_ID: 3001002
-    Mob_Name: Mob_Name_1002
+    Mob_Name: "\uBC84\uC11C\uCEE4 \uD3AD\uADC4"
     Mob_Default_HP: 100
     Mob_Default_Attack: 40
     Mob_Default_AP: 3
@@ -40,7 +40,7 @@ MonoBehaviour:
     Resist_Type: 3
     Asset_File: penguin_Berserker
   - Mob_ID: 3001003
-    Mob_Name: Mob_Name_1003
+    Mob_Name: "\uCEE4\uB9E8\uB354 \uD3AD\uADC4"
     Mob_Default_HP: 100
     Mob_Default_Attack: 40
     Mob_Default_AP: 3
@@ -51,15 +51,3 @@ MonoBehaviour:
     Weak_Type: 1
     Resist_Type: 3
     Asset_File: penguin_Commander
-  - Mob_ID: 3001004
-    Mob_Name: Mob_Name_1004
-    Mob_Default_HP: 100
-    Mob_Default_Attack: 40
-    Mob_Default_AP: 3
-    Mob_Default_Speed: 10
-    Skill1_ID: 
-    Skill2_ID: 
-    Skill3_ID: 
-    Weak_Type: 1
-    Resist_Type: 3
-    Asset_File: penguin_Berserker

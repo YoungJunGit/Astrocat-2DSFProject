@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC801 OOO\uACF5\uACA9 \uC900\uBE44 \uC911\n\uB300\uC751 \uBC14\uB78C!"
+  m_text: "{Name}, {AttackType}\uACF5\uACA9 \uC900\uBE44 \uC911\n\uB300\uC751 \uBC14\uB78C."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 51236a2345d018748b7a8e0f99c885de, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: b0a26e96708a93141a46b5d2083d55e5, type: 2}
@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 1082678758224106236}
   - component: {fileID: 4978429908181697494}
   - component: {fileID: 6086613758383382135}
+  - component: {fileID: 2010626627746695132}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
@@ -253,6 +254,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2010626627746695132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416498070609961622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb1483c45703bf45943e600b1d3c38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8892958696800983321
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +277,9 @@ GameObject:
   - component: {fileID: 3918364811695138132}
   - component: {fileID: 516918349417571501}
   - component: {fileID: 3646288855997512551}
+  - component: {fileID: 681987726552113239}
+  - component: {fileID: 2767362775746219967}
+  - component: {fileID: 5648736906615112108}
   m_Layer: 5
   m_Name: AttackWarningDialogue
   m_TagString: Untagged
@@ -312,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -329,3 +345,50 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &681987726552113239
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8892958696800983321}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &2767362775746219967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8892958696800983321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa650ec342c5d1478e2fdbabb237e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeIn: 1
+  fadeInDuration: 0.5
+  fadeInCurve: 6
+  fadeOut: 0
+  fadeOutDuration: 0.5
+  fadeOutCurve: 6
+  startDelay: 3
+  fadeInOutDelay: 3
+  loops: 1
+--- !u!114 &5648736906615112108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8892958696800983321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbd801d197974784990b5ccde1a88787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComp: {fileID: 3357167780740825209}
+  duration: 2

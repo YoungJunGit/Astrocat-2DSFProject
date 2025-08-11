@@ -36,14 +36,19 @@ public class CombatManager : ScriptableObject
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
             await UniTask.WaitForSeconds(1);
 
+            IUnitAction selectedAction = null;
             if (currentTurnUnit is PlayerUnit)
             {
-                IUnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
+                selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
+            }
+            else if (currentTurnUnit is EnemyUnit)
+            {
+                selectedAction = await actionSelector.SelectAction(currentTurnUnit as EnemyUnit);
+            }
 
-                if (selectedAction != null)
-                {
-                    await selectedAction.Execute();
-                }
+            if (selectedAction != null)
+            {
+                await selectedAction.Execute();
             }
 
             //TODO: Check is finish

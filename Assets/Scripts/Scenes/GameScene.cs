@@ -23,6 +23,7 @@ public class GameScene : AbstractScene
 
     [Header("Manager Settings")]
     [SerializeField] private HUDManager hudManager;
+    [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private CombatManager combatManager;
     [SerializeField] private UnitManager unitManager;
     [SerializeField] private QTEManager qteManager;
@@ -52,6 +53,7 @@ public class GameScene : AbstractScene
         entityData = dataCreator.CreateEntityDataWithID(playerUnitID.ToList(), enemyUnitID.ToList());
 
         hudManager.Init();
+        dialogueManager.Init();
         unitManager.Init();
         timelineSystem.Init();
         inputHandler.Init();

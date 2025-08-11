@@ -41,7 +41,7 @@ class ActionSelector : ScriptableObject
         switch (_selectedActionType)
         {
             case 1:
-                unitAction = await _actionFactory.CreateBaseAttackAction(playerUnit);
+                unitAction = await _actionFactory.CreatePlayerBaseAttackAction(playerUnit);
                 break;
         }
 
@@ -50,6 +50,12 @@ class ActionSelector : ScriptableObject
 
     public async UniTask<IUnitAction> SelectAction(EnemyUnit enemyUnit)
     {
-        return null;
+        // TODO : Add Other Actions
+        //_selectedActionType = Random.Range(0, 3);
+
+        IUnitAction unitAction = null;
+        unitAction = await _actionFactory.CreateEnemyBaseAttackAction(enemyUnit);
+
+        return unitAction;
     }    
 }

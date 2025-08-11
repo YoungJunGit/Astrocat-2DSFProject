@@ -1,5 +1,5 @@
 using Cysharp.Threading.Tasks;
-using System.Net.Mail;
+using System;
 using UnityEngine;
 
 interface IUnitAction
@@ -11,7 +11,7 @@ class BaseAttackAction : IUnitAction
 {
     protected BaseUnit _caster;
     protected BaseUnit _target;
-    
+
     public BaseAttackAction(BaseUnit caster, BaseUnit target)
     {
         _caster = caster;
@@ -20,12 +20,6 @@ class BaseAttackAction : IUnitAction
     
     public virtual async UniTask Execute()
     {
-        if (_caster == null || _target == null)
-        {
-            Debug.LogError("Caster or target is not set.");
-            return;
-        }
-
         _caster.Attack(_target);
     }
 
@@ -61,7 +55,7 @@ class RangeAttack : BaseAttackAction
 
     public void ShootBullet()
     {
-        BaseBullet bullet = Object.Instantiate(bulletPrefab, _caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+        BaseBullet bullet = UnityEngine.Object.Instantiate(bulletPrefab, _caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
         bullet.Initialize(_target.attachments.GetHitBox(), DamageEvent);
     }
 }
