@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &476927332129258707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7070440769836989942}
+  m_Layer: 0
+  m_Name: BulletSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7070440769836989942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476927332129258707}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.172, y: 0.768, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668832729259816767}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2607028067347671450
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +182,7 @@ GameObject:
   - component: {fileID: 1668832729259816767}
   - component: {fileID: 540599017590550680}
   - component: {fileID: 7567201730022273457}
-  - component: {fileID: 2054621835580840776}
+  - component: {fileID: -8222413695083083825}
   - component: {fileID: 3144045134546210718}
   m_Layer: 0
   m_Name: penguin_Commander
@@ -175,6 +206,7 @@ Transform:
   m_Children:
   - {fileID: 4278333942873066040}
   - {fileID: 3198913481389063816}
+  - {fileID: 7070440769836989942}
   - {fileID: 4570266462473249399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,7 +287,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2054621835580840776
+--- !u!114 &-8222413695083083825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,12 +296,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8791005897072304568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44099a6c279f5a04883184478b646c11, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b8dc0d9017710a458b4fcb31b7f0dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attachments: {fileID: 0}
   animEventHandler: {fileID: 11400000, guid: 31831c5f72edf6944a5c46892e4dd922, type: 2}
-  BulletPrefab: {fileID: 0}
+  unit_Type: 2
 --- !u!114 &3144045134546210718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitSelectArrowPos: {fileID: 3198913481389063816}
-  HitBoxPos: {fileID: 4570266462473249399}
+  HitBox: {fileID: 526402450981247230}
   StatusPos: {fileID: 4278333942873066040}
   ActionSelectorPos: {fileID: 0}
-  BulletSpawnPos: {fileID: 0}
+  BulletSpawnPos: {fileID: 7070440769836989942}

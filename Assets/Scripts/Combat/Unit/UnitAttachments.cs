@@ -6,7 +6,7 @@ public class UnitAttachments : MonoBehaviour
     [SerializeField, ShowIf("IsUnit"), Required] 
     private Transform UnitSelectArrowPos;
     [SerializeField, ShowIf("IsUnit"), Required]
-    private Transform HitBoxPos;
+    private Collider2D HitBox;
     [SerializeField, ShowIf("IsEnemy"), Required] 
     private Transform StatusPos;
     [SerializeField, ShowIf("IsPlayer"), Required] 
@@ -15,13 +15,13 @@ public class UnitAttachments : MonoBehaviour
     private Transform BulletSpawnPos;
 
     public Transform GetStatusPosition() => StatusPos;
-    public Transform GetHitBoxPosition() => HitBoxPos;
+    public Collider2D GetHitBox() => HitBox;
     public Transform GetUnitSelectArrowPos() => UnitSelectArrowPos;
     public Transform GetActionSelectorPos() => ActionSelectorPos;
     public Transform GetBulletSpawnPos() => BulletSpawnPos;
 
     private bool IsUnit     => GetComponent<BaseUnit>() != null;
-    private bool IsEnemy    => GetComponent<BaseUnit>() is EnemyUnit;
-    private bool IsPlayer   => GetComponent<BaseUnit>() is PlayerUnit;
-    private bool IsRange    => GetComponent<BaseUnit>() is IRange;
+    private bool IsEnemy    => IsUnit && GetComponent<BaseUnit>() is EnemyUnit;
+    private bool IsPlayer   => IsUnit && GetComponent<BaseUnit>() is PlayerUnit;
+    private bool IsRange    => IsUnit && GetComponent<BaseUnit>().GetUnitType() == DataEnum.UNIT_TYPE.RANGE;
 }

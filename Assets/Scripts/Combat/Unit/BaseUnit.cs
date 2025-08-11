@@ -10,9 +10,10 @@ using NaughtyAttributes;
 public class BaseUnit : MonoBehaviour
 {
     [HideInInspector] public UnitAttachments attachments;
-    [SerializeField, Required] protected AnimationEventHandler animEventHandler;
+    [Required] public AnimationEventHandler animEventHandler;
+    [SerializeField] private UNIT_TYPE unit_Type;
 
-    protected Animator anim;
+    private Animator anim;
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
 
@@ -72,6 +73,11 @@ public class BaseUnit : MonoBehaviour
         // Add Method
     }
 
+    public void StartAnimation(string paramName)
+    {
+        
+    }
+
     /// <summary>
     /// This Method Operate at Animation Event
     /// </summary>
@@ -81,10 +87,10 @@ public class BaseUnit : MonoBehaviour
         switch (state)
         {
             case UNIT_STATE.ATTACK:
-                animEventHandler.Attack();
+                animEventHandler.AttackEvent();
                 break;
             case UNIT_STATE.MOVE:
-                animEventHandler.Move();
+                animEventHandler.MoveEvent();
                 break;
             default:
                 Debug.LogWarning("State is not set properly!!!");
@@ -93,4 +99,5 @@ public class BaseUnit : MonoBehaviour
     }
 
     public UnitStat GetStat() { return _stat; }
+    public UNIT_TYPE GetUnitType() => unit_Type;
 }

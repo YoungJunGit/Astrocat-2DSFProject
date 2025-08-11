@@ -47,4 +47,9 @@ class ActionSelector : ScriptableObject
 
         return unitAction;
     }
+
+    public async UniTask<IUnitAction> SelectAction(EnemyUnit enemyUnit)
+    {
+        return null;
+    }    
 }

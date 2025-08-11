@@ -40,7 +40,10 @@ public class CombatManager : ScriptableObject
             {
                 IUnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
 
-                await selectedAction.Execute();
+                if (selectedAction != null)
+                {
+                    await selectedAction.Execute();
+                }
             }
 
             //TODO: Check is finish

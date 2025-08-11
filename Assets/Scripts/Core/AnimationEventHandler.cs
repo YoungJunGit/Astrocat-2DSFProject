@@ -7,13 +7,13 @@ public class AnimationEventHandler : ScriptableObject
     public event Action attack;
     public event Action move;
 
-    public void Attack()
+    public void AttackEvent()
     {
         attack?.Invoke();
         attack = null;
     }
 
-    public void Move()
+    public void MoveEvent()
     {
         move?.Invoke();
         move = null;

@@ -29,6 +29,7 @@ public class GameScene : AbstractScene
 
     [Header("etc")]
     [SerializeField] private TimelineSystem timelineSystem;
+    [SerializeField] private UnitMechanismSetter unitMechanismSetter;
     [SerializeField] private InputHandler inputHandler;
     
     [Header("Debug")]

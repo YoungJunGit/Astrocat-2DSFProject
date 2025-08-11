@@ -1,6 +1,7 @@
 using UnityEngine;
 
+// Dummy
 public interface IRange
 {
-    void ShootBullet(BaseUnit unit);
+
 }

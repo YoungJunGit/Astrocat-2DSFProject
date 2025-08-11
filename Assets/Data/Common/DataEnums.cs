@@ -41,6 +41,13 @@ namespace DataEnum
         ENEMY
     }
 
+    public enum UNIT_TYPE
+    {
+        NONE = 0,
+        MELEE,
+        RANGE
+    }
+
     public enum  UNIT_STATE
     {
         NONE = 0,

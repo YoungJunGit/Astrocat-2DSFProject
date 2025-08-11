@@ -11,10 +11,18 @@ class ActionFactory : ScriptableObject
         _unitSelector.Init();
     }
 
-    public async UniTask<PlayerBaseAttackAction> CreateBaseAttackAction(PlayerUnit playerUnit)
+    public async UniTask<BaseAttackAction> CreateBaseAttackAction(BaseUnit unit)
     {
         EnemyUnit enemy = await _unitSelector.SelectUnit(DataEnum.SIDE.ENEMY) as EnemyUnit;
-        
-        return new PlayerBaseAttackAction(playerUnit, enemy);
+
+        switch(unit.GetUnitType())
+        {
+            case DataEnum.UNIT_TYPE.MELEE:
+                return new MeleeAttack(unit, enemy);
+            case DataEnum.UNIT_TYPE.RANGE:
+                return new RangeAttack(unit, enemy);
+        }
+
+        return null;
     }
 }
