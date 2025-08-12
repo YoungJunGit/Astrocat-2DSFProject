@@ -10,7 +10,7 @@ namespace DataEnum
         HOLY,
         VOID
     }
-
+    
     public enum TARGET_TYPE
     {
         NONE = 0,

@@ -1,5 +1,6 @@
 using UnityEngine;
 using DataEntity;
+using DataEnum;
 using System;
 
 public class UnitStat
@@ -9,8 +10,14 @@ public class UnitStat
     public Action<float, float> OnHPChanged;
     public Action<int, int> OnAPChanged;
     public Action<UnitStat> OnDie;
+    
+    public string Name { get => _baseData.Name; }
+    public ELEMENT_TYPE WeakType { get => _baseData.Weak_Type; }
+    public ELEMENT_TYPE ResistType { get => _baseData.Resist_Type; }
 
-    public string Name          { get => _baseData.Name; }
+    public ELEMENT_TYPE _currentCondition = ELEMENT_TYPE.NONE;
+
+    public double DefaultAttack  { get => _baseData.Default_Attack; }
     public float Max_HP         { get => (float)_baseData.Default_HP; }
     private float _curHp;       
     public float Cur_HP         { get { return _curHp; } }
@@ -25,6 +32,12 @@ public class UnitStat
 
     private int priority;
     public int Priority         { get { return priority; } }
+
+    public int radiantStack = 0 ;
+    public int fireStack = 0 ;
+    public int gravityStack = 0 ;
+    public int forbiddenStack = 0;
+
 
     public UnitStat(EntityData baseData, int index)
     {
@@ -42,8 +55,9 @@ public class UnitStat
         OnAPChanged?.Invoke(_curAp, Max_AP);
     }
 
-    public void GetDamaged(float value)
+    public void GetDamaged(float value, float Cur_HP)     
     {
+        _curHp = Cur_HP;
         _curHp = Mathf.Clamp(_curHp - value, 0f, Max_HP);
         OnHPChanged.Invoke(_curHp, Max_HP);
 
@@ -94,5 +108,6 @@ public class UnitStat
             }
         }
     }
+
     public EntityData GetData() { return _baseData; }
 }

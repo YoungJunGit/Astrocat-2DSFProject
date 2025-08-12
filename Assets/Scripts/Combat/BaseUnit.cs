@@ -14,7 +14,7 @@ public class BaseUnit : MonoBehaviour
     private UnitStat _stat;
 
     public Action<Buff> m_AddBuff;
-
+    
     public virtual void Initialize(EntityData data, int index)
     {
         attachments = GetComponent<UnitAttachments>();
