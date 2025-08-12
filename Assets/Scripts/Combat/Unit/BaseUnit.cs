@@ -19,7 +19,7 @@ public class BaseUnit : MonoBehaviour
     private CrowdControlManager _crowdControlManager = new();
 
     public Action<Buff> m_AddBuff;
-
+    
     public virtual void Initialize(EntityData data, int index)
     {
         attachments = GetComponent<UnitAttachments>();

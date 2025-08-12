@@ -13,6 +13,9 @@ public class HUDManager : ScriptableObject
     [SerializeField] private StatusCanvas statusCanvasPref;
     private StatusCanvas statusCanvas;
 
+    Dictionary<PlayerUnit, PlayerHUD> playerHudDic = new Dictionary<PlayerUnit, PlayerHUD>();
+    Dictionary<EnemyUnit, EnemyHUD> enemyHudDic = new Dictionary<EnemyUnit, EnemyHUD>();
+
     public void Init()
     {
         statusCanvas = Instantiate(statusCanvasPref);
@@ -31,7 +34,7 @@ public class HUDManager : ScriptableObject
     {
         PlayerHUD hud = Instantiate(playerHUDPrefab).GetComponent<PlayerHUD>();
         hud.Initialize(unit);
-
+        playerHudDic.Add(unit, hud);
         statusCanvas.SetPlayerHUD(hud);
 
         return hud;
@@ -41,9 +44,29 @@ public class HUDManager : ScriptableObject
     {
         EnemyHUD hud = Instantiate(enemyHUDPrefab).GetComponent<EnemyHUD>();
         hud.Initialize(unit);
-
+        enemyHudDic.Add(unit, hud);
         statusCanvas.SetEnemyHUD(hud, unit.attachments.GetStatusPosition());
 
         return hud;
     }
+
+    public void DeletePlayerHUD(PlayerUnit playerUnit)
+    {
+        if (playerHudDic.TryGetValue(playerUnit, out var playerHud))
+        {
+            playerHud.OnDied(playerUnit.GetStat());
+            playerHudDic.Remove(playerUnit);
+        }
+    }
+
+    public void DeleteEnemyHUD(EnemyUnit enemyUnit)
+    {
+        if (enemyHudDic.TryGetValue(enemyUnit, out var enemyHud))
+        {
+            enemyHud.OnDied(enemyUnit.GetStat());
+            Destroy(enemyHud.gameObject);
+            enemyHudDic.Remove(enemyUnit);
+        }
+    }
+
 }

@@ -12,7 +12,6 @@ class UnitManager : ScriptableObject
     [SerializeField] private UnitSelector unitSelector;
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
-    
     public void Init()
     {
         spawner.Init();
@@ -47,6 +46,23 @@ class UnitManager : ScriptableObject
         SetUnitPosition();
         
         return enemyUnit;
+    }
+
+    private void CheckGameCondition() {
+        if (unitList.GetPlayerUnits().Count == 0)
+        {
+            Debug.Log("Player Loss!!!");
+            UnityEditor.EditorApplication.isPlaying = false;
+
+            // todo => XP depend on game player give
+        }
+        else if (unitList.GetEnemyUnits().Count == 0)
+        {
+            Debug.Log("Player Win!!!");
+            UnityEditor.EditorApplication.isPlaying = false;
+            
+            //todo => XP, Money ,Item payment
+        }
     }
 
     public async UniTask<EnemyUnit> GetEnemyUnitBySelector()
