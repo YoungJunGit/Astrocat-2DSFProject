@@ -11,6 +11,7 @@ public class CombatManager : ScriptableObject
     [SerializeField] private ActionSelector actionSelector;
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private UnitManager unitManager;
+
     private BaseUnit currentTurnUnit;
 
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
@@ -27,39 +28,41 @@ public class CombatManager : ScriptableObject
         {
             unit.GetStat().OnDie += OnCharacterDie;
         }
-        
+
         actionSelector.Init();
     }
 
     public async UniTask StartCombat()
     {
-        using (var inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectAction))
+        isStartCombat = true;
+        while (true)
         {
-            isStartCombat = true;
-            while (true)
+            Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
+            await UniTask.WaitForSeconds(1);
+
+            IUnitAction selectedAction = null;
+            if (currentTurnUnit is PlayerUnit)
             {
-                Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
                 await UniTask.WaitForSeconds(1);
-
-                if (currentTurnUnit is PlayerUnit)
-                {
-                    IUnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
-
-                    await selectedAction.Execute();
-                }
-                else if (currentTurnUnit is EnemyUnit)
-                {
-                    // TODO : Enemy Action
-                }
-                ApplyCrowdControl();
-                
-                //TODO: Check is finish
-                //if ()
-
-                currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
-                
-                OnTernEnd?.Invoke();
+                selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
             }
+            else if (currentTurnUnit is EnemyUnit)
+            {
+                selectedAction = await actionSelector.SelectAction(currentTurnUnit as EnemyUnit);
+            }
+
+            if (selectedAction != null)
+            {
+                await selectedAction.Execute();
+            }
+
+            OnTernEnd?.Invoke();
+            ApplyCrowdControl();
+
+            //TODO: Check is finish
+            //if ()
+
+            currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
         }
     }
 

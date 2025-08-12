@@ -6,6 +6,7 @@ class ActionSelector : ScriptableObject
 {
     [SerializeField] private ActionFactory _actionFactory;
     [SerializeField] private ActionSelectionButtons selectorPrefab;
+    [SerializeField] private InputHandler inputHandler;
     private ActionSelectionButtons selector;
     
     private int _selectedActionType;
@@ -22,13 +23,15 @@ class ActionSelector : ScriptableObject
     {
         Debug.Log($"{playerUnit.GetStat().Name} : Select Action");
         
-        // TODO : Set correct position
         selector.transform.position = playerUnit.attachments.GetActionSelectorPos().position;
         selector.gameObject.SetActive(true);
 
         _selectedActionType = 0;
-        
-        await UniTask.WaitUntil(() => _selectedActionType != 0);
+
+        using (var inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectAction))
+        {
+            await UniTask.WaitUntil(() => _selectedActionType != 0);
+        }
 
         selector.gameObject.SetActive(false);
 
@@ -36,10 +39,21 @@ class ActionSelector : ScriptableObject
         switch (_selectedActionType)
         {
             case 1:
-                unitAction = await _actionFactory.CreateBaseAttackAction(playerUnit);
+                unitAction = await _actionFactory.CreatePlayerBaseAttackAction(playerUnit);
                 break;
         }
 
         return unitAction;
     }
+
+    public async UniTask<IUnitAction> SelectAction(EnemyUnit enemyUnit)
+    {
+        // TODO : Add Other Actions
+        //_selectedActionType = Random.Range(0, 3);
+
+        IUnitAction unitAction = null;
+        unitAction = await _actionFactory.CreateEnemyBaseAttackAction(enemyUnit);
+
+        return unitAction;
+    }    
 }

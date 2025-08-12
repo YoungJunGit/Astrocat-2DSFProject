@@ -180,10 +180,12 @@ MonoBehaviour:
   - 3001002
   - 3001003
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
+  dialogueManager: {fileID: 11400000, guid: a9c4d3a688e42c147bd8d307a5cb2de2, type: 2}
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
   unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
   qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
   timelineSystem: {fileID: 11400000, guid: d1b1b5f4b1517f747959852e1fc42e01, type: 2}
+  unitMechanismSetter: {fileID: 11400000, guid: 1ff632932886a4847a1536132d827018, type: 2}
   inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
   inputTester: {fileID: 1732112614}
   qteTester: {fileID: 1732112615}

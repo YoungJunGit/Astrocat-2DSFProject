@@ -110,7 +110,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""OnClick"",
+                    ""name"": ""Touch"",
                     ""type"": ""Button"",
                     ""id"": ""fb7d950c-ac56-4e99-91dc-3d6a5bf2a0da"",
                     ""expectedControlType"": """",
@@ -268,7 +268,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";PC"",
-                    ""action"": ""OnClick"",
+                    ""action"": ""Touch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -394,7 +394,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         m_SelectUnit = asset.FindActionMap("SelectUnit", throwIfNotFound: true);
         m_SelectUnit_EnemySelectionMove = m_SelectUnit.FindAction("EnemySelectionMove", throwIfNotFound: true);
         m_SelectUnit_PlayerSelectionMove = m_SelectUnit.FindAction("PlayerSelectionMove", throwIfNotFound: true);
-        m_SelectUnit_OnClick = m_SelectUnit.FindAction("OnClick", throwIfNotFound: true);
+        m_SelectUnit_Touch = m_SelectUnit.FindAction("Touch", throwIfNotFound: true);
         m_SelectUnit_SelectionConfirm = m_SelectUnit.FindAction("SelectionConfirm", throwIfNotFound: true);
         // SelectAction
         m_SelectAction = asset.FindActionMap("SelectAction", throwIfNotFound: true);
@@ -488,7 +488,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
     private List<ISelectUnitActions> m_SelectUnitActionsCallbackInterfaces = new List<ISelectUnitActions>();
     private readonly InputAction m_SelectUnit_EnemySelectionMove;
     private readonly InputAction m_SelectUnit_PlayerSelectionMove;
-    private readonly InputAction m_SelectUnit_OnClick;
+    private readonly InputAction m_SelectUnit_Touch;
     private readonly InputAction m_SelectUnit_SelectionConfirm;
     /// <summary>
     /// Provides access to input actions defined in input action map "SelectUnit".
@@ -510,9 +510,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @PlayerSelectionMove => m_Wrapper.m_SelectUnit_PlayerSelectionMove;
         /// <summary>
-        /// Provides access to the underlying input action "SelectUnit/OnClick".
+        /// Provides access to the underlying input action "SelectUnit/Touch".
         /// </summary>
-        public InputAction @OnClick => m_Wrapper.m_SelectUnit_OnClick;
+        public InputAction @Touch => m_Wrapper.m_SelectUnit_Touch;
         /// <summary>
         /// Provides access to the underlying input action "SelectUnit/SelectionConfirm".
         /// </summary>
@@ -549,9 +549,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
             @PlayerSelectionMove.started += instance.OnPlayerSelectionMove;
             @PlayerSelectionMove.performed += instance.OnPlayerSelectionMove;
             @PlayerSelectionMove.canceled += instance.OnPlayerSelectionMove;
-            @OnClick.started += instance.OnOnClick;
-            @OnClick.performed += instance.OnOnClick;
-            @OnClick.canceled += instance.OnOnClick;
+            @Touch.started += instance.OnTouch;
+            @Touch.performed += instance.OnTouch;
+            @Touch.canceled += instance.OnTouch;
             @SelectionConfirm.started += instance.OnSelectionConfirm;
             @SelectionConfirm.performed += instance.OnSelectionConfirm;
             @SelectionConfirm.canceled += instance.OnSelectionConfirm;
@@ -572,9 +572,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
             @PlayerSelectionMove.started -= instance.OnPlayerSelectionMove;
             @PlayerSelectionMove.performed -= instance.OnPlayerSelectionMove;
             @PlayerSelectionMove.canceled -= instance.OnPlayerSelectionMove;
-            @OnClick.started -= instance.OnOnClick;
-            @OnClick.performed -= instance.OnOnClick;
-            @OnClick.canceled -= instance.OnOnClick;
+            @Touch.started -= instance.OnTouch;
+            @Touch.performed -= instance.OnTouch;
+            @Touch.canceled -= instance.OnTouch;
             @SelectionConfirm.started -= instance.OnSelectionConfirm;
             @SelectionConfirm.performed -= instance.OnSelectionConfirm;
             @SelectionConfirm.canceled -= instance.OnSelectionConfirm;
@@ -860,12 +860,12 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPlayerSelectionMove(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "OnClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Touch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnOnClick(InputAction.CallbackContext context);
+        void OnTouch(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "SelectionConfirm" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

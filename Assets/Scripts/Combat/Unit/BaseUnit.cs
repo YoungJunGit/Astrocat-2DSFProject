@@ -5,10 +5,14 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
+using NaughtyAttributes;
 
+[RequireComponent(typeof(AnimationHandler))]
 public class BaseUnit : MonoBehaviour
 {
     [HideInInspector] public UnitAttachments attachments;
+    [HideInInspector] public AnimationHandler animHandler;
+    [SerializeField] private UNIT_TYPE unit_Type;
 
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
@@ -19,11 +23,11 @@ public class BaseUnit : MonoBehaviour
     public virtual void Initialize(EntityData data, int index)
     {
         attachments = GetComponent<UnitAttachments>();
-        
         _stat = new UnitStat(data, index);
-        _stat.OnDie += OnDie;
-        
+        _stat.OnDie += (stat) => gameObject.SetActive(false);
+
         _crowdControlManager.Init(this);
+        animHandler = GetComponent<AnimationHandler>();
     }
 
     public CrowdControlManager GetCrowdControlManager() => _crowdControlManager;
@@ -55,7 +59,6 @@ public class BaseUnit : MonoBehaviour
 
     public void OnEndRound()
     {
-        // �������� for���� ������ ���� - for���� ������ �߿� �÷��� ������ �̷����� ����
         for (int i = buffList.Count - 1; i >= 0; i--)
         {
             buffList[i].Buff_Duration -= 1;
@@ -64,10 +67,16 @@ public class BaseUnit : MonoBehaviour
         }
     }
 
-    public void OnDie(UnitStat stat)
+    public void OnDie()
     {
-        Destroy(gameObject);
+        // Add Method
+    }
+
+    public void StartAnimation(string paramName)
+    {
+        
     }
 
     public UnitStat GetStat() { return _stat; }
+    public UNIT_TYPE GetUnitType() => unit_Type;
 }
