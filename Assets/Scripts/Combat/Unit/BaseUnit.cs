@@ -23,11 +23,13 @@ public class BaseUnit : MonoBehaviour
     public virtual void Initialize(EntityData data, int index)
     {
         attachments = GetComponent<UnitAttachments>();
+        animHandler = GetComponent<AnimationHandler>();
+        animHandler.Init();
+
         _stat = new UnitStat(data, index);
         _stat.OnDie += (stat) => gameObject.SetActive(false);
 
         _crowdControlManager.Init(this);
-        animHandler = GetComponent<AnimationHandler>();
     }
 
     public CrowdControlManager GetCrowdControlManager() => _crowdControlManager;

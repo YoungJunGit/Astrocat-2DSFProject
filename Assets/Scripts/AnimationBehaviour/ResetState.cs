@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class ResetState : StateMachineBehaviour
 {
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<AnimationHandler>().ResetAnimation();
+        AnimationHandler handler = animator.GetComponent<AnimationHandler>();
+        handler.resetTimer = new CountdownTimer(stateInfo.length);
+        handler.resetTimer.OnTimerStop += handler.ResetAnimation;
+        handler.resetTimer.Start();
     }
 }

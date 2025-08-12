@@ -7,6 +7,7 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
     private Animator anim;
+    public CountdownTimer resetTimer;
     private int currentAnimation;
     private int previousAnimation;
 
