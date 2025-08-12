@@ -59,12 +59,12 @@ public class CombatTester : MonoBehaviour
 
         if (currentUnit is PlayerUnit)
         {
-            hudManager.DeletePlayerHUD((PlayerUnit)currentUnit);
-            unitManager.DeletePlayerUnit((PlayerUnit)currentUnit);
+            //hudManager.DeletePlayerHUD((PlayerUnit)currentUnit);
+            //unitManager.DeletePlayerUnit((PlayerUnit)currentUnit);
         }
         else { 
-            hudManager.DeleteEnemyHUD((EnemyUnit)currentUnit);
-            unitManager.DeleteEnemyUnit((EnemyUnit)currentUnit);
+            //hudManager.DeleteEnemyHUD((EnemyUnit)currentUnit);
+            //unitManager.DeleteEnemyUnit((EnemyUnit)currentUnit);
         }
     }
 }

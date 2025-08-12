@@ -49,24 +49,4 @@ public class HUDManager : ScriptableObject
 
         return hud;
     }
-
-    public void DeletePlayerHUD(PlayerUnit playerUnit)
-    {
-        if (playerHudDic.TryGetValue(playerUnit, out var playerHud))
-        {
-            playerHud.OnDied(playerUnit.GetStat());
-            playerHudDic.Remove(playerUnit);
-        }
-    }
-
-    public void DeleteEnemyHUD(EnemyUnit enemyUnit)
-    {
-        if (enemyHudDic.TryGetValue(enemyUnit, out var enemyHud))
-        {
-            enemyHud.OnDied(enemyUnit.GetStat());
-            Destroy(enemyHud.gameObject);
-            enemyHudDic.Remove(enemyUnit);
-        }
-    }
-
 }

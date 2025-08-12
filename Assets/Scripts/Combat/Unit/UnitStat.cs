@@ -53,9 +53,8 @@ public class UnitStat
         OnAPChanged?.Invoke(_curAp, Max_AP);
     }
 
-    public void GetDamaged(float value, float Cur_HP)     
+    public void GetDamaged(float value)     
     {
-        _curHp = Cur_HP;
         _curHp = Mathf.Clamp(_curHp - value, 0f, Max_HP);
         OnHPChanged.Invoke(_curHp, Max_HP);
 
