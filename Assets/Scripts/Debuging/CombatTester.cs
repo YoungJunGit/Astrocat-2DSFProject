@@ -31,20 +31,22 @@ public class CombatTester : MonoBehaviour
     [SerializeField] private Button AddSpeedBtn;
     [SerializeField] private Button DieBtn;
 
-    [Header("Buff Test")] [Space(10f)]
+    [Header("Buff Test")]
+    [Space(10f)]
     public SIDE buffSide;
-    [Range(1, 3)]   public int buffCharacterNumber;
-    [Range(1, 10)]  public int durationRound;
+    [Range(1, 3)] public int buffCharacterNumber;
+    [Range(1, 10)] public int durationRound;
     public double addSpeedValue;
 
-    [Header("Die Test")] [Space(10f)]
+    [Header("Die Test")]
+    [Space(10f)]
     public SIDE dieSide;
-    [Range(1, 3)]   public int dieCharacterNumber;
+    [Range(1, 3)] public int dieCharacterNumber;
 
     private void Awake()
     {
         Buff speedBuff = new Buff("Speed Buff", durationRound, 0, 0, 0, addSpeedValue);
-        AddSpeedBtn.onClick.AddListener(() => combatManager.BuffCharacter(buffSide, buffCharacterNumber, speedBuff));
-        DieBtn.onClick.AddListener(() => combatManager.DieCharacter(dieSide, dieCharacterNumber));
+        //AddSpeedBtn.onClick.AddListener(() => combatManager.BuffCharacter(buffSide, buffCharacterNumber, speedBuff));
+        //DieBtn.onClick.AddListener(() => combatManager.DieCharacter(dieSide, dieCharacterNumber));
     }
 }
