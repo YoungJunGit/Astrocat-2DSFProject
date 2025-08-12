@@ -7,13 +7,13 @@ using System;
 using Unity.VisualScripting;
 using NaughtyAttributes;
 
+[RequireComponent(typeof(AnimationHandler))]
 public class BaseUnit : MonoBehaviour
 {
     [HideInInspector] public UnitAttachments attachments;
-    [Required] public AnimationEventHandler animEventHandler;
+    [HideInInspector] public AnimationHandler animHandler;
     [SerializeField] private UNIT_TYPE unit_Type;
 
-    private Animator anim;
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
 
@@ -21,15 +21,10 @@ public class BaseUnit : MonoBehaviour
 
     public virtual void Initialize(EntityData data, int index)
     {
-        anim = GetComponent<Animator>();
         attachments = GetComponent<UnitAttachments>();
+        animHandler = GetComponent<AnimationHandler>();
         _stat = new UnitStat(data, index);
         _stat.OnDie += (stat) => gameObject.SetActive(false);
-    }
-
-    public virtual void Attack(BaseUnit unit)
-    {
-        anim.SetTrigger("Attack");
     }
 
     // TODO : Buff Test
@@ -76,26 +71,6 @@ public class BaseUnit : MonoBehaviour
     public void StartAnimation(string paramName)
     {
         
-    }
-
-    /// <summary>
-    /// This Method Operate at Animation Event
-    /// </summary>
-    /// <param name="state"></param>
-    private void OperateEvent(UNIT_STATE state)
-    {
-        switch (state)
-        {
-            case UNIT_STATE.ATTACK:
-                animEventHandler.AttackEvent();
-                break;
-            case UNIT_STATE.MOVE:
-                animEventHandler.MoveEvent();
-                break;
-            default:
-                Debug.LogWarning("State is not set properly!!!");
-                break;
-        }
     }
 
     public UnitStat GetStat() { return _stat; }

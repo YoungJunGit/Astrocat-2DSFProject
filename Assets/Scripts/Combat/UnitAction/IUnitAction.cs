@@ -1,5 +1,7 @@
 using Cysharp.Threading.Tasks;
 using System;
+using DataEnum;
+using DataHashAnim;
 using UnityEngine;
 
 interface IUnitAction
@@ -20,7 +22,7 @@ class BaseAttackAction : IUnitAction
     
     public virtual async UniTask Execute()
     {
-        _caster.Attack(_target);
+        _caster.animHandler.ChangeAnimation(AnimCombat.ATTACK);
     }
 
     protected void DamageEvent()
@@ -49,7 +51,7 @@ class RangeAttack : BaseAttackAction
 
     public override async UniTask Execute()
     {
-        _caster.animEventHandler.attack += ShootBullet;
+        _caster.animHandler.attack += ShootBullet;
         base.Execute();
     }
 

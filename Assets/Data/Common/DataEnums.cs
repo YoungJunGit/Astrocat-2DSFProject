@@ -48,7 +48,7 @@ namespace DataEnum
         RANGE
     }
 
-    public enum  UNIT_STATE
+    public enum UNIT_STATE
     {
         NONE = 0,
         ATTACK,
