@@ -12,8 +12,7 @@ class PlayerBaseAttackAction : UnitAction
     private PlayerUnit _caster;
     private EnemyUnit _target;
     private double damageValue;
-    public float enemyCur_HP;
-    public float enemyCur_Speed;
+    public float speedDamage;
 
     public PlayerBaseAttackAction(PlayerUnit caster, EnemyUnit target)
     {
@@ -34,11 +33,10 @@ class PlayerBaseAttackAction : UnitAction
     //player기준 상태이상
     public void CalculateDamange(PlayerUnit _caster, EnemyUnit _target)
     {
-        damageValue = _caster.GetStat().DefaultAttack;
         var targetStat = _target.GetStat();
         var casterStat = _caster.GetStat();
-        enemyCur_HP = targetStat.Cur_HP;
-        enemyCur_Speed = targetStat.Default_Speed;
+        damageValue = casterStat.DefaultAttack;
+        speedDamage = targetStat.Default_Speed;
 
         switch (targetStat._currentCondition)
         {
@@ -53,23 +51,29 @@ class PlayerBaseAttackAction : UnitAction
 
             case ELEMENT_TYPE.FIRE:
                 targetStat.fireStack++;
-                enemyCur_HP *= 0.9f;
+                damageValue += targetStat.Cur_HP * 0.9f;
                 break;
 
             case ELEMENT_TYPE.GRAVITY: // Volcano, 스킬 쿨타임 대기턴 수 구현 X               
-                if (casterStat._currentCondition == ELEMENT_TYPE.FIRE)
+                if (casterStat._currentCondition == ELEMENT_TYPE.FIRE && casterStat.forbiddenStack == 0)
                 {
                     int extraDamage = 0;
                     int fs = targetStat.fireStack;
-                    if (fs == 3) { extraDamage = 40; targetStat.forbiddenStack = 1; }
-                    else if (fs == 6) { extraDamage = 80; targetStat.forbiddenStack = 3; }
-                    else if (fs == 9) { extraDamage = 150; targetStat.forbiddenStack = 5; }
-                    else if (fs >= 15) { extraDamage = 300; targetStat.forbiddenStack = 8; }
-                    enemyCur_HP -= fs * 3 + extraDamage;
+                    if (fs == 3) { extraDamage = 40; casterStat.forbiddenStack = 1; }
+                    else if (fs == 6) { extraDamage = 80; casterStat.forbiddenStack = 3; }
+                    else if (fs == 9) { extraDamage = 150; casterStat.forbiddenStack = 5; }
+                    else if (fs >= 15) { extraDamage = 300; casterStat.forbiddenStack = 8; }
+                    damageValue += fs * 3 + extraDamage;
                     targetStat.gravityStack = 0;
                 }
-                targetStat.gravityStack++;
-                enemyCur_Speed *= 0.9f;
+                else if (casterStat._currentCondition == ELEMENT_TYPE.FIRE && casterStat.forbiddenStack != 0)
+                {
+                    casterStat.forbiddenStack--;
+                    Debug.Log($"{casterStat.Name} cannot use this skill");
+                    break;
+                }
+                //targetStat.gravityStack++;
+                speedDamage = speedDamage * 0.9f;
                 break;
 
             case ELEMENT_TYPE.RADIATION: // Radiant Eruption
@@ -83,25 +87,25 @@ class PlayerBaseAttackAction : UnitAction
                     else if (fs > 15) extraDamage = 100;
                     else if (fs > 30) extraDamage = 150;
                     else extraDamage = 300;
-                    enemyCur_HP -= extraDamage;
+                    damageValue += extraDamage;
                     targetStat.radiantStack = 0;
                 }
 
-                if (rStack < 5) enemyCur_Speed -= 10;
+                if (rStack < 5) speedDamage += 10;
                 else if (rStack < 15)
                 {
-                    enemyCur_Speed -= 20;
-                    enemyCur_HP -= 20;
+                    speedDamage += 20;
+                    damageValue += 20;
                 }
                 else if (rStack < 30)
                 {
-                    enemyCur_Speed -= 30;
-                    enemyCur_HP -= 40;
+                    speedDamage += 30;
+                    damageValue += 40;
                 }
                 else
                 {
-                    enemyCur_Speed -= 50;
-                    enemyCur_HP -= 100;
+                    speedDamage += 50;
+                    damageValue += 100;
                 }
                 rStack++;
                 break;
@@ -114,6 +118,7 @@ class PlayerBaseAttackAction : UnitAction
                 // TODO
                 break;
         }
-        _caster.GetStat().GetDamaged((float)damageValue, enemyCur_HP);
+        targetStat.GetDamaged((float)damageValue);
+        targetStat.AddSpeed(-(float)speedDamage);
     }
 }
