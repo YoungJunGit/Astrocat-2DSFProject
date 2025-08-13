@@ -384,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2818255802048241641
 RectTransform:
   m_ObjectHideFlags: 0
@@ -455,6 +455,7 @@ MonoBehaviour:
   hp_Text: {fileID: 1022801073456684004}
   hp_Slider: {fileID: 3319606366621633704}
   posOffset: {x: 0, y: 0.7, z: 0}
+  spawnPos: {x: 0, y: 0, z: 0}
 --- !u!1 &5040532298731431401
 GameObject:
   m_ObjectHideFlags: 0

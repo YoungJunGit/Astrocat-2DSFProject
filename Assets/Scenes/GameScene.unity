@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 1732112613}
   - component: {fileID: 1732112614}
   - component: {fileID: 1732112615}
+  - component: {fileID: 1732112616}
   m_Layer: 0
   m_Name: GameScene
   m_TagString: Untagged
@@ -179,13 +180,16 @@ MonoBehaviour:
   - 3001002
   - 3001003
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
+  dialogueManager: {fileID: 11400000, guid: a9c4d3a688e42c147bd8d307a5cb2de2, type: 2}
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
   unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
   qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
   timelineSystem: {fileID: 11400000, guid: d1b1b5f4b1517f747959852e1fc42e01, type: 2}
+  unitMechanismSetter: {fileID: 11400000, guid: 1ff632932886a4847a1536132d827018, type: 2}
   inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
   inputTester: {fileID: 1732112614}
   qteTester: {fileID: 1732112615}
+  ccTester: {fileID: 1732112616}
 --- !u!114 &1732112614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputState: 0
+  updateInputState: 0
 --- !u!114 &1732112615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +218,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
   inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
+--- !u!114 &1732112616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732112611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24837b69b8b5a4b44b4b41d4be215bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

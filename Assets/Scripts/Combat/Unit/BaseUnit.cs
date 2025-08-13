@@ -5,22 +5,34 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
+using NaughtyAttributes;
 
+[RequireComponent(typeof(AnimationHandler))]
 public class BaseUnit : MonoBehaviour
 {
     [HideInInspector] public UnitAttachments attachments;
+    [HideInInspector] public AnimationHandler animHandler;
+    [SerializeField] private UNIT_TYPE unit_Type;
 
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
+    private CrowdControlManager _crowdControlManager = new();
 
     public Action<Buff> m_AddBuff;
-
+    
     public virtual void Initialize(EntityData data, int index)
     {
         attachments = GetComponent<UnitAttachments>();
+        animHandler = GetComponent<AnimationHandler>();
+        animHandler.Init();
+
         _stat = new UnitStat(data, index);
-        _stat.OnDie += OnDie;
+        _stat.OnDie += (stat) => gameObject.SetActive(false);
+
+        _crowdControlManager.Init(this);
     }
+
+    public CrowdControlManager GetCrowdControlManager() => _crowdControlManager;
 
     // TODO : Buff Test
     public void AddBuff(Buff newBuff)
@@ -49,7 +61,6 @@ public class BaseUnit : MonoBehaviour
 
     public void OnEndRound()
     {
-        // 역순으로 for문을 돌리는 이유 - for문을 돌리는 중에 컬렉션 수정이 이뤄지기 때문
         for (int i = buffList.Count - 1; i >= 0; i--)
         {
             buffList[i].Buff_Duration -= 1;
@@ -58,10 +69,16 @@ public class BaseUnit : MonoBehaviour
         }
     }
 
-    public void OnDie(UnitStat stat)
+    public void OnDie()
     {
-        Destroy(gameObject);
+        // Add Method
+    }
+
+    public void StartAnimation(string paramName)
+    {
+        
     }
 
     public UnitStat GetStat() { return _stat; }
+    public UNIT_TYPE GetUnitType() => unit_Type;
 }

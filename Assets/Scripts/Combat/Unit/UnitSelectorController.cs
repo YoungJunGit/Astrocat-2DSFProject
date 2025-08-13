@@ -1,4 +1,5 @@
 using DataEnum;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,10 +8,8 @@ using UnityEngine.InputSystem;
 [CreateAssetMenu(fileName = "UnitSelectorController", menuName = "GameScene/UnitSelectorController", order = 1)]
 public class UnitSelectorController : ScriptableObject
 {
-    [SerializeField] private InputActionAsset asset;
-    [SerializeField] private InputActionReference selectionConfirmAction;
-    [SerializeField] private InputActionReference selectEnemyUnitAction;
-    [SerializeField] private InputActionReference selectPlayerUnitAction;
+    [SerializeField] private InputHandler inputHandler;
+    public InputHandler InputHandler => inputHandler;
 
     private UnityAction confirm;
     private UnityAction<int> select;
@@ -23,50 +22,48 @@ public class UnitSelectorController : ScriptableObject
 
     private int _maxUnitCount;
 
-    public void Initialize(UnityAction confirm)
+    public void Initialize(UnityAction confirm, UnityAction<int> select)
     {
         side                            = SIDE.NONE;
         _selectedUnitIndex              = 0;
         _previousEnemySelectionIndex    = 0;
         _previousPlayerSelectionIndex   = 0;
-        this.confirm = confirm;
+        this.confirm    = confirm;
+        this.select     = select;
     }
 
-    public void OnStartSelect(UnityAction<int> select, DataEnum.SIDE side, int maxUnitcount)
+    public void OnStartSelect(DataEnum.SIDE side, int maxUnitcount)
     {
-        this.select = select;
         this.side = side;
         _maxUnitCount = maxUnitcount;
 
-        asset.Enable();
-        selectionConfirmAction.action.performed += OnSelectionConfirmPerformed;
+        inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
 
         if (side == DataEnum.SIDE.ENEMY)
         {
             _selectedUnitIndex = _previousEnemySelectionIndex;
-            selectEnemyUnitAction.action.performed += OnSelectUnitPerformed;
+            inputHandler.OnSelectUnitEnemySelectionMove += OnUnitSelect;
         }
-        else
+        else if (side == DataEnum.SIDE.PLAYER)
         {
             _selectedUnitIndex = _previousPlayerSelectionIndex;
-            selectPlayerUnitAction.action.performed += OnSelectUnitPerformed;
+            inputHandler.OnSelectUnitPlayerSelectionMove += OnUnitSelect;
         }
     }
 
     public void OnEndSelect()
     {
-        asset.Disable();
-        selectionConfirmAction.action.performed -= OnSelectionConfirmPerformed;
+        inputHandler.OnSelectUnitSelectionConfirm = null;
 
         if (side == DataEnum.SIDE.ENEMY)
         {
             _previousEnemySelectionIndex = _selectedUnitIndex;
-            selectEnemyUnitAction.action.performed -= OnSelectUnitPerformed;
+            inputHandler.OnSelectUnitEnemySelectionMove = null;
         }
-        else
+        else if (side == DataEnum.SIDE.PLAYER)
         {
             _previousPlayerSelectionIndex = _selectedUnitIndex;
-            selectPlayerUnitAction.action.performed -= OnSelectUnitPerformed;
+            inputHandler.OnSelectUnitPlayerSelectionMove = null;
         }
     }
 
@@ -74,18 +71,15 @@ public class UnitSelectorController : ScriptableObject
     {
         if (side == DataEnum.SIDE.PLAYER)
             return _previousPlayerSelectionIndex;
-        else
+        else if (side == DataEnum.SIDE.ENEMY)
             return _previousEnemySelectionIndex;
+        else
+            return 0;
     }
 
-    private void OnSelectUnitPerformed(InputAction.CallbackContext context)
+    private void OnUnitSelect(int value)
     {
-        _selectedUnitIndex = Mathf.Clamp(_selectedUnitIndex + (int)context.ReadValue<float>(), 0, _maxUnitCount - 1);
+        _selectedUnitIndex = Mathf.Clamp(_selectedUnitIndex + value, 0, _maxUnitCount - 1);
         select(_selectedUnitIndex);
-    }
-
-    private void OnSelectionConfirmPerformed(InputAction.CallbackContext context)
-    {
-        confirm();
     }
 }

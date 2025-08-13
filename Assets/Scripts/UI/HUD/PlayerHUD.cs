@@ -28,18 +28,17 @@ public class PlayerHUD : BaseHUD
 
         unit.GetStat().OnHPChanged += OnHPChanged;
         unit.GetStat().OnAPChanged += OnAPChanged;
-        unit.GetStat().OnDie += OnDied;
     }
 
     public override void OnHPChanged(float curHp, float maxHp)
     {
         hp_Slider.value = curHp / maxHp;
         hp_Text.text = $"{curHp}/{maxHp}";
-    }
 
-    public override void OnDied(UnitStat stat)
-    {
-        statusBox.color = DieColor;
+        if (curHp <= 0)
+            statusBox.color = DieColor;
+        else
+            statusBox.color = Color.white;
     }
 
     public void OnAPChanged(int curAp, int maxAp)

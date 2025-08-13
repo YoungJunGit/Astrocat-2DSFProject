@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31af72e612f127c4b99e2798919d49b7, type: 3}
   m_Name: UnitSelectorController
   m_EditorClassIdentifier: 
+  inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
   asset: {fileID: -944628639613478452, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}
   selectionConfirmAction: {fileID: 7012923059670291259, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}
   selectEnemyUnitAction: {fileID: -9050033385564606856, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}

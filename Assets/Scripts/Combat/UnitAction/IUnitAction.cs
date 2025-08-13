@@ -1,4 +1,7 @@
 using Cysharp.Threading.Tasks;
+using System;
+using DataEnum;
+using DataHashAnim;
 using UnityEngine;
 
 interface IUnitAction
@@ -6,25 +9,55 @@ interface IUnitAction
     public UniTask Execute();
 }
 
-class PlayerBaseAttackAction : IUnitAction
+class BaseAttackAction : IUnitAction
 {
-    private PlayerUnit _caster;
-    private EnemyUnit _target;
-    
-    public PlayerBaseAttackAction(PlayerUnit caster, EnemyUnit target)
+    protected BaseUnit _caster;
+    protected BaseUnit _target;
+
+    public BaseAttackAction(BaseUnit caster, BaseUnit target)
     {
         _caster = caster;
         _target = target;
     }
     
-    public async UniTask Execute()
+    public virtual async UniTask Execute()
     {
-        if (_caster == null || _target == null)
-        {
-            Debug.LogError("Caster or target is not set.");
-            return;
-        }
-        
-        Debug.Log($"{_caster.GetStat().Name} attack {_target.GetStat().Name}");
+        _caster.animHandler.ChangeAnimation(AnimCombat.ATTACK);
+    }
+
+    protected void DamageEvent()
+    {
+        _target.GetStat().GetDamaged((float)_caster.GetStat().GetData().Default_Attack);
+    }
+}
+
+class MeleeAttack : BaseAttackAction
+{
+    public MeleeAttack(BaseUnit caster, BaseUnit target) : base(caster, target) { }
+
+    public override async UniTask Execute()
+    {
+        base.Execute();
+    }
+}
+
+class RangeAttack : BaseAttackAction 
+{
+    private GameObject bulletPrefab;
+    public RangeAttack(BaseUnit caster, BaseUnit target) : base(caster, target) 
+    {
+        bulletPrefab = AssetLoader.LoadBulletPrefabAsset(caster.GetStat().GetData().Asset_File);
+    }
+
+    public override async UniTask Execute()
+    {
+        _caster.animHandler.attack += ShootBullet;
+        base.Execute();
+    }
+
+    public void ShootBullet()
+    {
+        BaseBullet bullet = UnityEngine.Object.Instantiate(bulletPrefab, _caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+        bullet.Initialize(_target.attachments.GetHitBox(), DamageEvent);
     }
 }

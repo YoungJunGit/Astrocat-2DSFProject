@@ -10,7 +10,7 @@ namespace DataEnum
         HOLY,
         VOID
     }
-
+    
     public enum TARGET_TYPE
     {
         NONE = 0,
@@ -39,6 +39,20 @@ namespace DataEnum
         NONE = 0,
         PLAYER,
         ENEMY
+    }
+
+    public enum UNIT_TYPE
+    {
+        NONE = 0,
+        MELEE,
+        RANGE
+    }
+
+    public enum UNIT_STATE
+    {
+        NONE = 0,
+        ATTACK,
+        MOVE
     }
 
     /*Ãß°¡*/

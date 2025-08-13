@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63df59032438054fbb3b0d180203e03, type: 3}
+  m_Name: player_CommissarBulletSetting
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 8454372508686597968, guid: 6e1c5946c7eee59439f13494b276ae3e, type: 3}
+  - {fileID: -6053485760209080222, guid: 6e1c5946c7eee59439f13494b276ae3e, type: 3}
+  - {fileID: 4301029556650960561, guid: 6e1c5946c7eee59439f13494b276ae3e, type: 3}
+  - {fileID: 3897220752169775613, guid: 6e1c5946c7eee59439f13494b276ae3e, type: 3}
+  - {fileID: 6951103894628511241, guid: 6e1c5946c7eee59439f13494b276ae3e, type: 3}
+  targetTag: Enemy
+  speed: 30

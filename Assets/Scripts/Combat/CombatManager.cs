@@ -10,9 +10,12 @@ public class CombatManager : ScriptableObject
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private ActionSelector actionSelector;
     [SerializeField] private InputHandler inputHandler;
+    [SerializeField] private UnitManager unitManager;
+
     private BaseUnit currentTurnUnit;
 
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
+    public Action OnTernEnd;
 
     private bool isStartCombat = false;
 
@@ -25,32 +28,43 @@ public class CombatManager : ScriptableObject
         {
             unit.GetStat().OnDie += OnCharacterDie;
         }
-        
+
         actionSelector.Init();
     }
 
+    public BaseUnit GetCurrentTurnUnit() => currentTurnUnit;
+
     public async UniTask StartCombat()
     {
-        using (var inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectAction))
+        isStartCombat = true;
+        while (true)
         {
-            isStartCombat = true;
-            while (true)
+            Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
+            await UniTask.WaitForSeconds(1);
+
+            IUnitAction selectedAction = null;
+            if (currentTurnUnit is PlayerUnit)
             {
-                Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
                 await UniTask.WaitForSeconds(1);
-
-                if (currentTurnUnit is PlayerUnit)
-                {
-                    IUnitAction selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
-
-                    await selectedAction.Execute();
-                }
-
-                //TODO: Check is finish
-                //if ()
-
-                currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
+                selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
             }
+            else if (currentTurnUnit is EnemyUnit)
+            {
+                selectedAction = await actionSelector.SelectAction(currentTurnUnit as EnemyUnit);
+            }
+
+            if (selectedAction != null)
+            {
+                await selectedAction.Execute();
+            }
+
+            OnTernEnd?.Invoke();
+            ApplyCrowdControl();
+
+            //TODO: Check is finish
+            //if ()
+
+            currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
         }
     }
 
@@ -63,24 +77,13 @@ public class CombatManager : ScriptableObject
         }
     }
 
-    #region[For Debugging]
-    public void DieCharacter(SIDE side, int index)
+    public void ApplyCrowdControl()
     {
-        BaseUnit unit = unitList.GetUnits().Find(unit => unit.GetStat().Priority + 1 == index
-                                                     && unit.GetStat().GetData().Side == side);
-
-        if (unit != null)
-            unitList.Remove(unit);
-
-        unit?.GetStat().OnDie(unit.GetStat());
+        var units = unitManager.GetAllUnit();
+        
+        foreach (var unit in units)
+        {
+            unit.GetCrowdControlManager().ApplyCrowdControl();
+        }
     }
-
-    public void BuffCharacter(SIDE side, int index, Buff buff)
-    {
-        BaseUnit unit = unitList.GetUnits().Find(unit => unit.GetStat().Priority + 1 == index
-                                                     && unit.GetStat().GetData().Side == side);
-
-        unit?.AddBuff(buff);
-    }
-    #endregion
 }

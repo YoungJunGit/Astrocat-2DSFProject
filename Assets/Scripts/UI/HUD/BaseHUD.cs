@@ -12,5 +12,4 @@ public abstract class BaseHUD : MonoBehaviour
 
     public abstract void Initialize(BaseUnit unit);
     public abstract void OnHPChanged(float curHp, float maxHp);
-    public abstract void OnDied(UnitStat stat);
 }

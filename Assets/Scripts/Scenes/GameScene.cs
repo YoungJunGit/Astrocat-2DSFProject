@@ -23,17 +23,20 @@ public class GameScene : AbstractScene
 
     [Header("Manager Settings")]
     [SerializeField] private HUDManager hudManager;
+    [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private CombatManager combatManager;
     [SerializeField] private UnitManager unitManager;
     [SerializeField] private QTEManager qteManager;
 
     [Header("etc")]
     [SerializeField] private TimelineSystem timelineSystem;
+    [SerializeField] private UnitMechanismSetter unitMechanismSetter;
     [SerializeField] private InputHandler inputHandler;
     
-    [Header("Debug")]
+    [Header("Tester")]
     [SerializeField] private InputTester inputTester;
     [SerializeField] private QTETester qteTester;
+    [SerializeField] private CCTester ccTester;
 
     protected override int SceneIdx
     {
@@ -51,6 +54,7 @@ public class GameScene : AbstractScene
         entityData = dataCreator.CreateEntityDataWithID(playerUnitID.ToList(), enemyUnitID.ToList());
 
         hudManager.Init();
+        dialogueManager.Init();
         unitManager.Init();
         timelineSystem.Init();
         inputHandler.Init();
@@ -99,14 +103,18 @@ public class GameScene : AbstractScene
     {
         // Prepare before combat start
         hudManager.Prepare();
+        unitManager.Prepare();
 
         // Init CombatManager
         combatManager.Init(timelineSystem);
 
         // Add
-
+        
         if (debugMode)
+        {
             ForDebugging();
+            combatManager.OnTernEnd += ccTester.SetCCOnRendomUnit;
+        }
     }
 
     protected override async UniTask BeginGame()
@@ -118,5 +126,7 @@ public class GameScene : AbstractScene
     {
         if (!SceneManager.GetSceneByName("DebugingUI").isLoaded)
             SceneManager.LoadSceneAsync("DebugingUI", LoadSceneMode.Additive);
+        
+        
     }
 }

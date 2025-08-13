@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: UnitManager
   m_EditorClassIdentifier: 
   unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
+  unitSelector: {fileID: 11400000, guid: d4696c4828b72dc4aa29a30bd0cb7d1e, type: 2}
   spawner: {fileID: 11400000, guid: e95eafb3c3986ef4791b17b0f999fb9b, type: 2}
   positioner: {fileID: 11400000, guid: c4b92e3d7b3b8034fb2eb759f5fbdacd, type: 2}
