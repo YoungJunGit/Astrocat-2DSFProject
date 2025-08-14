@@ -41,6 +41,7 @@ public class EntityDataCreator : ScriptableObject
         entityData.Name = characterData.Char_Name;
         entityData.Default_HP = characterData.Char_Default_HP;
         entityData.Default_Attack = characterData.Char_Default_Attack;
+        entityData.Default_Defense = characterData.Char_Default_Defense;
         entityData.Default_AP = characterData.Char_Default_AP;
         entityData.Default_Speed = characterData.Char_Default_Speed;
         entityData.Skill1_ID = characterData.Skill1_ID;
@@ -61,6 +62,7 @@ public class EntityDataCreator : ScriptableObject
         entityData.Name = enemyData.Mob_Name;
         entityData.Default_HP = enemyData.Mob_Default_HP;
         entityData.Default_Attack = enemyData.Mob_Default_Attack;
+        entityData.Default_Defense = enemyData.Mob_Default_Defense;
         entityData.Default_AP = enemyData.Mob_Default_AP;
         entityData.Default_Speed = enemyData.Mob_Default_Speed;
         entityData.Skill1_ID = enemyData.Skill1_ID;

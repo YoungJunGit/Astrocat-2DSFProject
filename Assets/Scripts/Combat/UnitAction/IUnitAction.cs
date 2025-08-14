@@ -39,6 +39,11 @@ class MeleeAttack : BaseAttackAction
     {
         base.Execute();
     }
+
+    private void Move()
+    {
+
+    }
 }
 
 class RangeAttack : BaseAttackAction 
@@ -55,7 +60,7 @@ class RangeAttack : BaseAttackAction
         base.Execute();
     }
 
-    public void ShootBullet()
+    private void ShootBullet()
     {
         BaseBullet bullet = UnityEngine.Object.Instantiate(bulletPrefab, _caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
         bullet.Initialize(_target.attachments.GetHitBox(), DamageEvent);

@@ -11,6 +11,7 @@ namespace DataEntity
         public string       Char_Name;
         public double       Char_Default_HP         = 0.0f;
         public double       Char_Default_Attack     = 0.0f;
+        public double       Char_Default_Defense    = 0.0f;
         public int          Char_Default_AP         = 0;
         public double       Char_Default_Speed      = 0.0f;
         public string       Skill1_ID;
@@ -28,6 +29,7 @@ namespace DataEntity
         public string       Mob_Name;
         public double       Mob_Default_HP          = 0.0f;
         public double       Mob_Default_Attack      = 0.0f;
+        public double       Mob_Default_Defense    = 0.0f;
         public int          Mob_Default_AP          = 0;
         public double       Mob_Default_Speed       = 0.0f; 
         public string       Skill1_ID;
@@ -76,6 +78,7 @@ namespace DataEntity
         public string Name;
         public double Default_HP = 0.0f;
         public double Default_Attack = 0.0f;
+        public double Default_Defense = 0.0f;
         public int Default_AP = 0;
         public double Default_Speed = 0.0f;
         public string Skill1_ID;
