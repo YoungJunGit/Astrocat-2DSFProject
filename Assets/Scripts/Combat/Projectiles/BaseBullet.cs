@@ -8,7 +8,7 @@ public class BaseBullet : MonoBehaviour
     private BulletSetting setting;
 
     private Collider2D targetCollider;
-    private Action damage;
+    private Action damage = delegate { };
 
     public void Initialize(Collider2D collider, Action damage)
     {

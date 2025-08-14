@@ -107,6 +107,8 @@ GameObject:
   - component: {fileID: 6373240093065124089}
   - component: {fileID: -3834221789020881662}
   - component: {fileID: 154728953800932838}
+  - component: {fileID: 6842347833642596548}
+  - component: {fileID: 2441184545085072076}
   m_Layer: 0
   m_Name: player_Rifleman
   m_TagString: Untagged
@@ -174,8 +176,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 879355233
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -7619757368694492843, guid: 300afa9255148104fa0927229a847bed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -250,7 +252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachments: {fileID: 0}
-  animEventHandler: {fileID: 11400000, guid: 31831c5f72edf6944a5c46892e4dd922, type: 2}
+  animHandler: {fileID: 0}
+  combatInfo: {fileID: 0}
   unit_Type: 2
 --- !u!114 &154728953800932838
 MonoBehaviour:
@@ -269,6 +272,33 @@ MonoBehaviour:
   StatusPos: {fileID: 0}
   ActionSelectorPos: {fileID: 1988427710473020047}
   BulletSpawnPos: {fileID: 5164625258097670367}
+--- !u!114 &6842347833642596548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679063432124650289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5815c219eff51458db52c9cd127119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2441184545085072076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679063432124650289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cccb5a9394c7c4ea7860e5523c4150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0}
+  targetPos: {x: 0, y: 0}
+  isFinishedAction: 0
 --- !u!1 &8051634240824631529
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,5 +375,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6, y: 1.5}
+  m_Size: {x: 0.8, y: 1.5}
   m_EdgeRadius: 0

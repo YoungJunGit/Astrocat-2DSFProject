@@ -7,6 +7,7 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
     private Animator anim;
+    public CountdownTimer animTimer;
     public CountdownTimer resetTimer;
     private int currentAnimation;
     private int previousAnimation;
@@ -30,9 +31,13 @@ public class AnimationHandler : MonoBehaviour
         currentAnimation = Animator.StringToHash(animation);
         anim.CrossFade(animation, fadeTime);
     }
+
     public void ResetAnimation()
     {
         anim.CrossFade(previousAnimation, 0f);
+        int animation = currentAnimation;
+        currentAnimation = previousAnimation;
+        previousAnimation = animation;
     }
 
     #region[Event]

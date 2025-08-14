@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8523507434249258772}
   - component: {fileID: -5194684252191518127}
   - component: {fileID: 2528243859178665589}
+  - component: {fileID: 679435252751335599}
+  - component: {fileID: 6997385603633252268}
   m_Layer: 0
   m_Name: penguin_Berserker
   m_TagString: Untagged
@@ -80,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 879355233
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -835485020, guid: 3c39eaffa7f00754f9ff66dc6187c6dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -156,7 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachments: {fileID: 0}
-  animEventHandler: {fileID: 11400000, guid: 31831c5f72edf6944a5c46892e4dd922, type: 2}
+  animHandler: {fileID: 0}
+  combatInfo: {fileID: 0}
   unit_Type: 1
 --- !u!114 &2528243859178665589
 MonoBehaviour:
@@ -175,6 +178,33 @@ MonoBehaviour:
   StatusPos: {fileID: 8205968054746200525}
   ActionSelectorPos: {fileID: 0}
   BulletSpawnPos: {fileID: 0}
+--- !u!114 &679435252751335599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6107449881377857228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5815c219eff51458db52c9cd127119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6997385603633252268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6107449881377857228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cccb5a9394c7c4ea7860e5523c4150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0}
+  targetPos: {x: 0, y: 0}
+  isFinishedAction: 0
 --- !u!1 &6380070910020170873
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +281,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.75, y: 1.4}
+  m_Size: {x: 0.85, y: 1.4}
   m_EdgeRadius: 0
 --- !u!1 &8768941996546733312
 GameObject:

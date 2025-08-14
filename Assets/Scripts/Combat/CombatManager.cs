@@ -45,7 +45,6 @@ public class CombatManager : ScriptableObject
             IUnitAction selectedAction = null;
             if (currentTurnUnit is PlayerUnit)
             {
-                await UniTask.WaitForSeconds(1);
                 selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
             }
             else if (currentTurnUnit is EnemyUnit)

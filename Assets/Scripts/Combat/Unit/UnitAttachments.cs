@@ -6,7 +6,7 @@ public class UnitAttachments : MonoBehaviour
     [SerializeField, ShowIf("IsUnit"), Required] 
     private Transform UnitSelectArrowPos;
     [SerializeField, ShowIf("IsUnit"), Required]
-    private Collider2D HitBox;
+    private BoxCollider2D HitBox;
     [SerializeField, ShowIf("IsEnemy"), Required] 
     private Transform StatusPos;
     [SerializeField, ShowIf("IsPlayer"), Required] 
@@ -15,7 +15,7 @@ public class UnitAttachments : MonoBehaviour
     private Transform BulletSpawnPos;
 
     public Transform GetStatusPosition() => StatusPos;
-    public Collider2D GetHitBox() => HitBox;
+    public BoxCollider2D GetHitBox() => HitBox;
     public Transform GetUnitSelectArrowPos() => UnitSelectArrowPos;
     public Transform GetActionSelectorPos() => ActionSelectorPos;
     public Transform GetBulletSpawnPos() => BulletSpawnPos;

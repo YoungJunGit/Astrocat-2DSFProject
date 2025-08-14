@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 105020349212731361}
   - component: {fileID: -7824902753804961236}
   - component: {fileID: 4641263727476839594}
+  - component: {fileID: 6597660181802548211}
+  - component: {fileID: 5670068492515297362}
   m_Layer: 0
   m_Name: penguin_Rifleman
   m_TagString: Untagged
@@ -111,8 +113,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 879355233
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1404472182, guid: 8c138383b6a27ad4382a2b1605dc3a08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -160,7 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachments: {fileID: 0}
-  animEventHandler: {fileID: 11400000, guid: 31831c5f72edf6944a5c46892e4dd922, type: 2}
+  animHandler: {fileID: 0}
+  combatInfo: {fileID: 0}
   unit_Type: 2
 --- !u!114 &4641263727476839594
 MonoBehaviour:
@@ -179,6 +182,33 @@ MonoBehaviour:
   StatusPos: {fileID: 6024364677408690715}
   ActionSelectorPos: {fileID: 0}
   BulletSpawnPos: {fileID: 5412638006137911718}
+--- !u!114 &6597660181802548211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080599516558338195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5815c219eff51458db52c9cd127119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5670068492515297362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080599516558338195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cccb5a9394c7c4ea7860e5523c4150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0}
+  targetPos: {x: 0, y: 0}
+  isFinishedAction: 0
 --- !u!1 &1676029463811367025
 GameObject:
   m_ObjectHideFlags: 0

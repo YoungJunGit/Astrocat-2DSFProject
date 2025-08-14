@@ -7,11 +7,13 @@ using System;
 using Unity.VisualScripting;
 using NaughtyAttributes;
 
-[RequireComponent(typeof(AnimationHandler))]
+[RequireComponent(typeof(AnimationHandler)), RequireComponent(typeof(UnitAttachments)), RequireComponent(typeof(UnitCombatInfo))]
 public class BaseUnit : MonoBehaviour
 {
     [HideInInspector] public UnitAttachments attachments;
     [HideInInspector] public AnimationHandler animHandler;
+    [HideInInspector] public UnitCombatInfo combatInfo;
+
     [SerializeField] private UNIT_TYPE unit_Type;
 
     private List<Buff> buffList = new List<Buff>();
@@ -24,6 +26,7 @@ public class BaseUnit : MonoBehaviour
     {
         attachments = GetComponent<UnitAttachments>();
         animHandler = GetComponent<AnimationHandler>();
+        combatInfo = GetComponent<UnitCombatInfo>();
         animHandler.Init();
 
         _stat = new UnitStat(data, index);
@@ -72,11 +75,6 @@ public class BaseUnit : MonoBehaviour
     public void OnDie()
     {
         // Add Method
-    }
-
-    public void StartAnimation(string paramName)
-    {
-        
     }
 
     public UnitStat GetStat() { return _stat; }

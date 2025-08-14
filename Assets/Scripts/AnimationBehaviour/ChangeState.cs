@@ -1,11 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChangeState : StateMachineBehaviour
 {
     public string state = "";
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<AnimationHandler>().ChangeAnimation(state);
+        AnimationHandler handler = animator.GetComponent<AnimationHandler>();
+        handler.animTimer = new CountdownTimer(stateInfo.length);
+        handler.animTimer.OnTimerStop += () => handler.ChangeAnimation(state);
+        handler.animTimer.Start();
     }
 }
