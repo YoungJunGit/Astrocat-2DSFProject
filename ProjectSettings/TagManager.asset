@@ -45,8 +45,14 @@ TagManager:
   - name: Character
     uniqueID: 879355233
     locked: 0
+  - name: Actor
+    uniqueID: 209078163
+    locked: 0
   - name: Bullet
     uniqueID: 1398011895
+    locked: 0
+  - name: UI
+    uniqueID: 1226203051
     locked: 0
   m_RenderingLayers:
   - Default

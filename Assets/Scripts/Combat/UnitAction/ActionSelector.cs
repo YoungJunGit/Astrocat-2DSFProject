@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using NaughtyAttributes;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ActionSelector", menuName = "GameScene/ActionSelector", order = 1)]
@@ -7,6 +8,7 @@ class ActionSelector : ScriptableObject
     [SerializeField] private ActionFactory _actionFactory;
     [SerializeField] private ActionSelectionButtons selectorPrefab;
     [SerializeField] private InputHandler inputHandler;
+    [SerializeField, SortingLayer] private string layerName;
     private ActionSelectionButtons selector;
     
     private int _selectedActionType;
@@ -24,6 +26,7 @@ class ActionSelector : ScriptableObject
         Debug.Log($"{playerUnit.GetStat().Name} : Select Action");
         
         selector.transform.position = playerUnit.attachments.GetActionSelectorPos().position;
+        selector.GetComponent<Canvas>().sortingLayerName = layerName;
         selector.gameObject.SetActive(true);
 
         _selectedActionType = 0;

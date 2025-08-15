@@ -23,6 +23,7 @@ class BaseAttackAction : IUnitAction
     public virtual async UniTask Execute()
     {
         _caster.combatInfo.isFinishedAction = false;
+        _caster.GetComponent<SpriteRenderer>().sortingLayerName = "Actor";
 
         await UniTask.WaitUntil(() => _caster.combatInfo.isFinishedAction);
     }
@@ -35,6 +36,7 @@ class BaseAttackAction : IUnitAction
     protected void FinishedAction()
     {
         _caster.combatInfo.isFinishedAction = true;
+        _caster.GetComponent<SpriteRenderer>().sortingLayerName = "Character";
     }
 }
 
