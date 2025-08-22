@@ -3,10 +3,12 @@ using NaughtyAttributes;
 
 public class UnitAttachments : MonoBehaviour
 {
-    [SerializeField, ShowIf("IsUnit"), Required] 
-    private Transform UnitSelectArrowPos;
+    [SerializeField, Required]
+    private SpriteRenderer SpriteRenderer;
     [SerializeField, ShowIf("IsUnit"), Required]
     private BoxCollider2D HitBox;
+    [SerializeField, ShowIf("IsUnit"), Required] 
+    private Transform UnitSelectArrowPos;
     [SerializeField, ShowIf("IsEnemy"), Required] 
     private Transform StatusPos;
     [SerializeField, ShowIf("IsPlayer"), Required] 
@@ -14,8 +16,9 @@ public class UnitAttachments : MonoBehaviour
     [SerializeField, ShowIf("IsRange"), Required] 
     private Transform BulletSpawnPos;
 
-    public Transform GetStatusPosition() => StatusPos;
+    public SpriteRenderer GetSpriteRenderer() => SpriteRenderer;
     public BoxCollider2D GetHitBox() => HitBox;
+    public Transform GetStatusPosition() => StatusPos;
     public Transform GetUnitSelectArrowPos() => UnitSelectArrowPos;
     public Transform GetActionSelectorPos() => ActionSelectorPos;
     public Transform GetBulletSpawnPos() => BulletSpawnPos;

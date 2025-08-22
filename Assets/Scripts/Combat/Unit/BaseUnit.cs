@@ -7,27 +7,30 @@ using System;
 using Unity.VisualScripting;
 using NaughtyAttributes;
 
-[RequireComponent(typeof(AnimationHandler)), RequireComponent(typeof(UnitAttachments)), RequireComponent(typeof(UnitCombatInfo))]
+[RequireComponent(typeof(UnitAttachments))]
 public class BaseUnit : MonoBehaviour
 {
-    [HideInInspector] public UnitAttachments attachments;
-    [HideInInspector] public AnimationHandler animHandler;
-    [HideInInspector] public UnitCombatInfo combatInfo;
+    [Required]
+    public AnimationHandler mainAnimHandler;
+    [ShowIf("HasSupporter"), Required]
+    public AnimationHandler supporterAnimHandler;
 
     [SerializeField] private UNIT_TYPE unit_Type;
+    [SerializeField] private bool HasSupporter = false;
 
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
     private CrowdControlManager _crowdControlManager = new();
 
+    [HideInInspector] public UnitAttachments attachments;
+    public UnitCombatInfo combatInfo;
     public Action<Buff> m_AddBuff;
     
     public virtual void Initialize(EntityData data, int index)
     {
         attachments = GetComponent<UnitAttachments>();
-        animHandler = GetComponent<AnimationHandler>();
-        combatInfo = GetComponent<UnitCombatInfo>();
-        animHandler.Init();
+        combatInfo = new UnitCombatInfo();
+        mainAnimHandler.Init();
 
         _stat = new UnitStat(data, index);
         _stat.OnDie += (stat) => gameObject.SetActive(false);

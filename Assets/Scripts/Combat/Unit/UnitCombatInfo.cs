@@ -2,20 +2,18 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-public class UnitCombatInfo : MonoBehaviour
+public class UnitCombatInfo
 {
-    [HideInInspector] public Vector2 startPos;
-    [HideInInspector] public Vector2 targetPos;
-    [HideInInspector] public bool isFinishedAction;
-    [HideInInspector] public Dictionary<string, Action> actionList = new Dictionary<string, Action>();
+    public UnitCombatInfo() 
+    {
+        startPos = Vector2.zero;
+        targetPos = Vector2.zero;
+        isFinishedAction = false;
+        actionList = new Dictionary<string, Action>();
+    }
 
-    /// <summary>
-    /// AnimationEvent - Used for move duration, never change!!!
-    /// </summary>
-    private void StartMovePosition() { }
-
-    /// <summary>
-    /// Animation Event  - Used for move duration, never change!!!
-    /// </summary>
-    private void EndMovePosition() { }
+    public Vector2 startPos;
+    public Vector2 targetPos;
+    public bool isFinishedAction;
+    public Dictionary<string, Action> actionList;
 }

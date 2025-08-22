@@ -1,5 +1,6 @@
 using DataEnum;
 using DataHashAnim;
+using NaughtyAttributes;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -65,5 +66,16 @@ public class AnimationHandler : MonoBehaviour
                 break;
         }
     }
+
+    /// <summary>
+    /// Animation Event - Used for move duration, never change!!!
+    /// </summary>
+    private void StartMovePosition() { }
+
+    /// <summary>
+    /// Animation Event  - Used for move duration, never change!!!
+    /// </summary>
+    private void EndMovePosition() { }
+
     #endregion
 }

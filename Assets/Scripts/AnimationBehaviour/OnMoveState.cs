@@ -19,8 +19,9 @@ public class OnMoveState : StateMachineBehaviour
         {
             float duration = endEvent.time - startEvent.time;
             AnimationHandler handler = animator.GetComponent<AnimationHandler>();
-            Vector2 pos = isRetreat ? animator.transform.GetComponent<UnitCombatInfo>().startPos : animator.transform.GetComponent<UnitCombatInfo>().targetPos;
-            handler.move += () => animator.transform.DOMove(pos, duration).SetEase(moveCurve);
+            BaseUnit unit = animator.GetComponentInParent<BaseUnit>();
+            Vector2 pos = isRetreat ? unit.combatInfo.startPos : unit.combatInfo.targetPos;
+            handler.move += () => unit.transform.DOMove(pos, duration).SetEase(moveCurve);
         }    
     }
 }

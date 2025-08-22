@@ -23,7 +23,7 @@ class BaseAttackAction : IUnitAction
     public virtual async UniTask Execute()
     {
         _caster.combatInfo.isFinishedAction = false;
-        _caster.GetComponent<SpriteRenderer>().sortingLayerName = "Actor";
+        _caster.attachments.GetSpriteRenderer().sortingLayerName = "Actor";
 
         await UniTask.WaitUntil(() => _caster.combatInfo.isFinishedAction);
     }
@@ -36,7 +36,7 @@ class BaseAttackAction : IUnitAction
     protected void FinishedAction()
     {
         _caster.combatInfo.isFinishedAction = true;
-        _caster.GetComponent<SpriteRenderer>().sortingLayerName = "Character";
+        _caster.attachments.GetSpriteRenderer().sortingLayerName = "Character";
     }
 }
 
@@ -46,18 +46,18 @@ class MeleeAttack : BaseAttackAction
 
     public override async UniTask Execute()
     {
-        _caster.animHandler.attack += DamageEvent;
+        _caster.mainAnimHandler.attack += DamageEvent;
 
         // Save Position
         _caster.combatInfo.startPos = (Vector2)_caster.transform.position;
 
         // Identify target's postition
-        float xOffset = _caster.attachments.GetHitBox().size.x + _target.attachments.GetHitBox().size.x;
+        float xOffset = _caster.attachments.GetHitBox().size.x / 2 + _target.attachments.GetHitBox().size.x / 2;
         Vector2 offset = _caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
         _caster.combatInfo.targetPos = (Vector2)_target.transform.position + offset;
 
         _caster.combatInfo.actionList.Add("FinishedAction", FinishedAction);
-        _caster.animHandler.ChangeAnimation(AnimCombat.MOVE);
+        _caster.mainAnimHandler.ChangeAnimation(AnimCombat.MOVE);
 
         await base.Execute();
     }
@@ -73,8 +73,8 @@ class RangeAttack : BaseAttackAction
 
     public override async UniTask Execute()
     {
-        _caster.animHandler.attack += ShootBullet;
-        _caster.animHandler.ChangeAnimation(AnimCombat.ATTACK);
+        _caster.mainAnimHandler.attack += ShootBullet;
+        _caster.mainAnimHandler.ChangeAnimation(AnimCombat.ATTACK);
 
         await base.Execute();
     }
