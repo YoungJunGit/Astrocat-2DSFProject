@@ -14,6 +14,8 @@ class PlayerBaseAttackAction : UnitAction
     private double damageValue;
     public float speedDamage;
 
+    [SerializeField] private CombatManager combatManager;
+
     public PlayerBaseAttackAction(PlayerUnit caster, EnemyUnit target)
     {
         _caster = caster;
@@ -25,10 +27,9 @@ class PlayerBaseAttackAction : UnitAction
         if (_caster == null || _target == null)
         {
             Debug.LogError("Caster or target is not set.");
-            return;
         }
-        CalculateDamange(_caster, _target);
         Debug.Log($"{_caster.GetStat().Name} attack {_target.GetStat().Name}");
+        CalculateDamange(_caster, _target);
     }
     //player기준 상태이상
     public void CalculateDamange(PlayerUnit _caster, EnemyUnit _target)
@@ -50,11 +51,14 @@ class PlayerBaseAttackAction : UnitAction
                 break;
 
             case ELEMENT_TYPE.FIRE:
+                if (targetStat.fireStack == 2) 
                 targetStat.fireStack++;
                 damageValue += targetStat.Cur_HP * 0.9f;
                 break;
 
-            case ELEMENT_TYPE.GRAVITY: // Volcano, 스킬 쿨타임 대기턴 수 구현 X               
+            case ELEMENT_TYPE.GRAVITY: // Volcano, 스킬 쿨타임 대기턴 수 구현 X
+                if (targetStat.gravityStack == 0) // TODO: color change code
+
                 if (casterStat._currentCondition == ELEMENT_TYPE.FIRE && casterStat.forbiddenStack == 0)
                 {
                     int extraDamage = 0;
@@ -68,9 +72,8 @@ class PlayerBaseAttackAction : UnitAction
                 }
                 else if (casterStat._currentCondition == ELEMENT_TYPE.FIRE && casterStat.forbiddenStack != 0)
                 {
-                    casterStat.forbiddenStack--;
-                    Debug.Log($"{casterStat.Name} cannot use this skill");
-                    break;
+                    Debug.Log($"{casterStat.Name} cannot use this skill, try other skill");
+                    combatManager.executed = false;
                 }
                 //targetStat.gravityStack++;
                 speedDamage = speedDamage * 0.9f;
@@ -119,6 +122,7 @@ class PlayerBaseAttackAction : UnitAction
                 break;
         }
         targetStat.GetDamaged((float)damageValue);
-        targetStat.AddSpeed(-(float)speedDamage);
+        targetStat.AddSpeed((float)-speedDamage);
+        combatManager.executed = true;
     }
 }
