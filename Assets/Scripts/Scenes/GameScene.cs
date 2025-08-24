@@ -37,7 +37,6 @@ public class GameScene : AbstractScene
     [SerializeField] private InputTester inputTester;
     [SerializeField] private QTETester qteTester;
     [SerializeField] private CCTester ccTester;
-
     protected override int SceneIdx
     {
         get { return 1; }

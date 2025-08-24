@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using UnityEngine;
+using System.Reflection;
 using UnityEngine.UI;
 using DataEntity;
 using DataEnum;
@@ -75,6 +76,40 @@ public class TimelineSystem : ScriptableObject
         timelineUI.OnPop();
 
         OnTimelineChanged(unitList);
+
+        // _list 전체 가져오기
+        foreach (BaseUnit unit in this.unitList.GetUnits())
+        {
+            Debug.Log(unit.name);
+
+            UnitStat stat = unit.GetStat();
+
+            // 예: stack 이라는 이름이 들어간 int 필드 모두 +1
+            var fields = typeof(UnitStat).GetFields(
+                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
+            );
+
+            foreach (var field in fields)
+            {
+                if (field.FieldType == typeof(int) &&
+                    field.Name.IndexOf("stack", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    int value = (int)field.GetValue(stat);
+
+                    if (field.Name.Equals("forbiddenStack", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // forbiddenStack은 -1
+                        field.SetValue(stat, value - 1);
+                    }
+                    else
+                    {
+                        // 나머지 stack들은 +1
+                        field.SetValue(stat, value + 1);
+                    }
+                }
+            }
+        }
+
 
         return unitList?.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
     }

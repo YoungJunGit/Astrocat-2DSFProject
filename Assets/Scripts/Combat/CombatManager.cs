@@ -18,6 +18,7 @@ public class CombatManager : ScriptableObject
     public Action OnTernEnd;
 
     private bool isStartCombat = false;
+    public bool executed;
 
     public void Init(TimelineSystem timeline)
     {
@@ -42,30 +43,42 @@ public class CombatManager : ScriptableObject
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
             await UniTask.WaitForSeconds(1);
 
-            IUnitAction selectedAction = null;
-            if (currentTurnUnit is PlayerUnit)
-            {
-                await UniTask.WaitForSeconds(1);
-                selectedAction = await actionSelector.SelectAction(currentTurnUnit as PlayerUnit);
-            }
-            else if (currentTurnUnit is EnemyUnit)
-            {
-                selectedAction = await actionSelector.SelectAction(currentTurnUnit as EnemyUnit);
-            }
+            await ProcessCurrentTurnAsync();
 
-            if (selectedAction != null)
-            {
-                await selectedAction.Execute();
-            }
-
-            OnTernEnd?.Invoke();
-            ApplyCrowdControl();
-
-            //TODO: Check is finish
-            //if ()
-
-            currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
         }
+    }
+    private async UniTask ProcessCurrentTurnAsync()
+    {
+        while (true)
+        {
+            IUnitAction selectedAction = null;
+
+            if (currentTurnUnit is PlayerUnit player)
+            {
+                await UniTask.WaitForSeconds(1); // 연출용 대기 유지
+                selectedAction = await actionSelector.SelectAction(player);
+            }
+            else if (currentTurnUnit is EnemyUnit enemy)
+            {
+                selectedAction = await actionSelector.SelectAction(enemy);
+            }
+
+            if (selectedAction == null)
+                continue;
+
+            await selectedAction.Execute();
+            if (executed == false)
+                continue;
+
+            break;
+        }
+
+        OnTernEnd?.Invoke();
+        ApplyCrowdControl();
+
+        //TODO: Check is finish
+        //if ()
+        currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
     }
 
     public void OnCharacterDie(UnitStat stat)
