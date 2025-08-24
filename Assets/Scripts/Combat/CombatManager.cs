@@ -43,7 +43,27 @@ public class CombatManager : ScriptableObject
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
             await UniTask.WaitForSeconds(1);
 
-            await ProcessCurrentTurnAsync();
+            IUnitAction selectedAction = null;
+
+            if (currentTurnUnit is PlayerUnit player)
+            {
+                selectedAction = await actionSelector.SelectAction(player);
+            }
+            else if (currentTurnUnit is EnemyUnit enemy)
+            {
+                selectedAction = await actionSelector.SelectAction(enemy);
+            }
+
+            await selectedAction.Execute();
+
+            OnTernEnd?.Invoke();
+            ApplyCrowdControl();
+
+            //TODO: Check is finish
+            //if ()
+            currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
+
+            //await ProcessCurrentTurnAsync();
         }
     }
     private async UniTask ProcessCurrentTurnAsync()
