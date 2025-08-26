@@ -35,8 +35,7 @@ public class UnitStat
     public int fireStack = 0 ;
     public int gravityStack = 0 ;
     public int forbiddenStack = 0;
-
-
+    
     public UnitStat(EntityData baseData, int index)
     {
         _baseData = baseData;
@@ -62,6 +61,11 @@ public class UnitStat
         {
             OnDie.Invoke(this);
         }
+    }
+
+    public string[] GetSkillsID()
+    {
+        return new string[] { _baseData.Skill1_ID, _baseData.Skill2_ID, _baseData.Skill3_ID };
     }
 
     public void GetHealed(float value)

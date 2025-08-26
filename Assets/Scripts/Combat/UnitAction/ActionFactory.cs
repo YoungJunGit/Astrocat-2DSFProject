@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -7,6 +8,11 @@ class ActionFactory : ScriptableObject
     [SerializeField] private UnitManager _unitManager;
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private UnitSelector _unitSelector;
+
+    private Dictionary<string, SkillAttackAction> _skillDictionary = new()
+    {
+        {"test", null} // TODO : ADD Skill here
+    };
     
     public void Init()
     {
@@ -45,5 +51,18 @@ class ActionFactory : ScriptableObject
         }
 
         return null;
+    }
+
+    public SkillAttackAction CreateSkillAttackAction(BaseUnit unit, string skillID)
+    {
+        SkillAttackAction skillAction = null;
+        _skillDictionary.TryGetValue(skillID, out skillAction);
+
+        if (skillAction == null)
+        {
+            Debug.Log($"{unit.GetStat().Name} : {skillID} Skill is not registered");
+        }
+        
+        return skillAction;
     }
 }
