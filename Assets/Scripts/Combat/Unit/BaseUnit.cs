@@ -1,11 +1,13 @@
 using DataEntity;
 using DataEnum;
+using DataHashAnim;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
 using NaughtyAttributes;
+using Cysharp.Threading.Tasks;
 
 [RequireComponent(typeof(UnitAttachments))]
 public class BaseUnit : MonoBehaviour
@@ -25,6 +27,7 @@ public class BaseUnit : MonoBehaviour
     [HideInInspector] public UnitAttachments attachments;
     public UnitCombatInfo combatInfo;
     public Action<Buff> m_AddBuff;
+    public Action<BaseUnit> m_FinishedDying;
     
     public virtual void Initialize(EntityData data, int index)
     {
@@ -33,7 +36,6 @@ public class BaseUnit : MonoBehaviour
         mainAnimHandler.Init();
 
         _stat = new UnitStat(data, index);
-        _stat.OnDie += (stat) => gameObject.SetActive(false);
 
         _crowdControlManager.Init(this);
     }
@@ -75,9 +77,19 @@ public class BaseUnit : MonoBehaviour
         }
     }
 
-    public void OnDie()
+    public void OnDamaged(float value, bool isCritical)
     {
-        // Add Method
+
+    }
+
+    public void OnHealed(float value)
+    {
+
+    }
+
+    public async virtual UniTask OnDie()
+    {
+        mainAnimHandler.ChangeAnimation(AnimCombat.DEATH);
     }
 
     public UnitStat GetStat() { return _stat; }

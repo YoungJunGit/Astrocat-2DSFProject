@@ -9,7 +9,7 @@ public class CombatManager : ScriptableObject
 {
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private ActionSelector actionSelector;
-    [SerializeField] private InputHandler inputHandler;
+    [SerializeField] private EventHandler combatEventHandler;
     [SerializeField] private UnitManager unitManager;
 
     private BaseUnit currentTurnUnit;
@@ -27,7 +27,7 @@ public class CombatManager : ScriptableObject
 
         foreach (BaseUnit unit in unitList)
         {
-            unit.GetStat().OnDie += OnCharacterDie;
+            unit.m_FinishedDying += OnCharacterDie;
         }
 
         actionSelector.Init();
@@ -41,7 +41,6 @@ public class CombatManager : ScriptableObject
         while (true)
         {
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
-            await UniTask.WaitForSeconds(1);
 
             IUnitAction selectedAction = null;
 
@@ -55,6 +54,9 @@ public class CombatManager : ScriptableObject
             }
 
             await selectedAction.Execute();
+
+            await UniTask.WaitForSeconds(1);
+            await UniTask.WaitUntil(() => combatEventHandler.IsEventEmpty());
 
             OnTernEnd?.Invoke();
             ApplyCrowdControl();
@@ -100,9 +102,9 @@ public class CombatManager : ScriptableObject
         currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
     }
 
-    public void OnCharacterDie(UnitStat stat)
+    public void OnCharacterDie(BaseUnit unit)
     {
-        if (currentTurnUnit.GetStat() == stat)
+        if (currentTurnUnit == unit)
         {
             Debug.Log("Current Character Died!! Turn Skip!");
             currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());

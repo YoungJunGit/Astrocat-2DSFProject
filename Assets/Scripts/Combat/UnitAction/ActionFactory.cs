@@ -6,16 +6,10 @@ class ActionFactory : ScriptableObject
 {
     [SerializeField] private UnitManager _unitManager;
     [SerializeField] private DialogueManager dialogueManager;
-    [SerializeField] private UnitSelector _unitSelector;
-    
-    public void Init()
-    {
-        _unitSelector.Init();
-    }
 
     public async UniTask<BaseAttackAction> CreatePlayerBaseAttackAction(BaseUnit unit)
     {
-        EnemyUnit enemy = await _unitSelector.SelectUnit(DataEnum.SIDE.ENEMY) as EnemyUnit;
+        EnemyUnit enemy = await _unitManager.GetEnemyUnitBySelector();
 
         BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit, enemy);
 
@@ -25,13 +19,22 @@ class ActionFactory : ScriptableObject
     public async UniTask<BaseAttackAction> CreateEnemyBaseAttackAction(BaseUnit unit)
     {
         // TODO : Must change method of selecting player unit
-        PlayerUnit player = _unitSelector.SelectRandomUnit(DataEnum.SIDE.PLAYER) as PlayerUnit;
+        PlayerUnit player = _unitManager.GetRandomPlayerUnitBySelector();
 
         BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit, player);
 
         await dialogueManager.ShowAttackWarningDialogue(unit);
 
         return attackAction;
+    }
+
+    public async UniTask<BaseBuffAction> CreatePlayerBaseBuffAction(BaseUnit unit)
+    {
+        PlayerUnit player = await _unitManager.GetPlayerUnitBySelector();
+
+        BaseBuffAction buffAction = new BaseBuffAction(unit, player);
+
+        return buffAction;
     }
 
     private BaseAttackAction CreateBaseAttackActionByUnitType(BaseUnit unit, BaseUnit target)

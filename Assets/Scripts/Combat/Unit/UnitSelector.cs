@@ -10,8 +10,8 @@ class UnitSelector : ScriptableObject
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private UnitSelectorController controller;
-    [SerializeField] public GameObject unitSelectArrowPrefab;
-    private GameObject unitSelectArrow;
+    [SerializeField] public UnitSelectorObject unitSelectArrowPrefab;
+    private UnitSelectorObject unitSelectArrow;
     private SIDE side;
     private bool isConfirmed;
 
@@ -27,6 +27,7 @@ class UnitSelector : ScriptableObject
         this.side = side;
         isConfirmed = false;
         unitSelectArrow = Instantiate(unitSelectArrowPrefab, unitList.GetUnits(side)[controller.GetSelectionIndex(side)].attachments.GetUnitSelectArrowPos(), false);
+        unitSelectArrow.Set(side);
 
         using (var inputDisposer = new InputDisposer(controller.InputHandler, InputHandler.InputState.SelectUnit))
         {
@@ -35,7 +36,7 @@ class UnitSelector : ScriptableObject
             controller.OnEndSelect();
         }
 
-        Destroy(unitSelectArrow);
+        Destroy(unitSelectArrow.gameObject);
 
         return unitList.GetUnits(side)[controller.GetSelectionIndex(side)];
     }
