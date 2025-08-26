@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit/CombatUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit/CombatUtils.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/BaseAttackAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/BaseAttackAction.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/SkillAttackAction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/SkillAttackAction.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Combat/ActionSelectionButtonsCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Combat/ActionSelectionButtonsCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit/UnitStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit/UnitStat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionSelectionButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionSelectionButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/IUnitAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/IUnitAction.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
