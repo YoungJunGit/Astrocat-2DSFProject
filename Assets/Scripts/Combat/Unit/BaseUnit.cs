@@ -8,6 +8,7 @@ using System;
 using Unity.VisualScripting;
 using NaughtyAttributes;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 
 [RequireComponent(typeof(UnitAttachments))]
 public class BaseUnit : MonoBehaviour
@@ -79,7 +80,10 @@ public class BaseUnit : MonoBehaviour
 
     public void OnDamaged(float value, bool isCritical)
     {
+        attachments.GetSpriteRenderer().color = Color.red;
+        attachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);
 
+        mainAnimHandler.ChangeAnimation(AnimCombat.HIT);
     }
 
     public void OnHealed(float value)

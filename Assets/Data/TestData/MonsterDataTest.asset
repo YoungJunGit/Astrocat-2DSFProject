@@ -18,7 +18,7 @@ MonoBehaviour:
   - Mob_ID: 3001001
     Mob_Name: "\uB77C\uC774\uD50C\uB9E8 \uD3AD\uADC4"
     Mob_Default_HP: 100
-    Mob_Default_Attack: 200
+    Mob_Default_Attack: 100
     Mob_Default_Defense: 0
     Mob_Default_AP: 3
     Mob_Default_Speed: 6
@@ -31,7 +31,7 @@ MonoBehaviour:
   - Mob_ID: 3001002
     Mob_Name: "\uBC84\uC11C\uCEE4 \uD3AD\uADC4"
     Mob_Default_HP: 100
-    Mob_Default_Attack: 200
+    Mob_Default_Attack: 100
     Mob_Default_Defense: 0
     Mob_Default_AP: 3
     Mob_Default_Speed: 7
@@ -44,7 +44,7 @@ MonoBehaviour:
   - Mob_ID: 3001003
     Mob_Name: "\uCEE4\uB9E8\uB354 \uD3AD\uADC4"
     Mob_Default_HP: 100
-    Mob_Default_Attack: 200
+    Mob_Default_Attack: 100
     Mob_Default_Defense: 0
     Mob_Default_AP: 3
     Mob_Default_Speed: 7
