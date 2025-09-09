@@ -83,7 +83,8 @@ public class BaseUnit : MonoBehaviour
         attachments.GetSpriteRenderer().color = Color.red;
         attachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);
 
-        mainAnimHandler.ChangeAnimation(AnimCombat.HIT);
+        if(this is PlayerUnit)
+            mainAnimHandler.ChangeAnimation(AnimCombat.HIT);
     }
 
     public void OnHealed(float value)

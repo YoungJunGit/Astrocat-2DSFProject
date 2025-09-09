@@ -14,11 +14,13 @@ class BaseAttackAction : IUnitAction
 {
     protected BaseUnit _caster;
     protected BaseUnit _target;
+    protected DamageFactory _damageFactory;
 
     public BaseAttackAction(BaseUnit caster, BaseUnit target)
     {
         _caster = caster;
         _target = target;
+        _damageFactory = AssetLoader.GetDamageFactory();
     }
     
     public virtual async UniTask Execute()
@@ -31,7 +33,8 @@ class BaseAttackAction : IUnitAction
 
     protected void DamageEvent()
     {
-        _target.GetStat().GetDamaged((float)_caster.GetStat().GetData().Default_Attack);
+        DamageContainer damage = _damageFactory.CreateNormalDamage((float)_caster.GetStat().GetData().Default_Attack, _target.attachments.GetHitBox().bounds);
+        _target.GetStat().GetDamaged(damage.Value, damage.Critical);
     }
 
     protected void FinishedAction()

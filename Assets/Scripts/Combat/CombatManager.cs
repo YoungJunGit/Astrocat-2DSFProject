@@ -55,11 +55,11 @@ public class CombatManager : ScriptableObject
 
             await selectedAction.Execute();
 
-            await UniTask.WaitForSeconds(1);
-            await UniTask.WaitUntil(() => combatEventHandler.IsEventEmpty());
-
             OnTernEnd?.Invoke();
             ApplyCrowdControl();
+
+            await UniTask.WaitUntil(() => combatEventHandler.IsEventEmpty());
+            await UniTask.WaitForSeconds(1);
 
             //TODO: Check is finish
             //if ()
