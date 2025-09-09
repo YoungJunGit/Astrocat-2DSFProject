@@ -215,6 +215,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7409331925337517123}
   - {fileID: 5275880455834478187}
   - {fileID: 8151974234939720401}
   - {fileID: 5709772750612602284}
@@ -314,10 +315,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpriteRenderer: {fileID: 592864886840181407}
   HitBox: {fileID: 3961806676366638132}
+  MeleeHitPos: {fileID: 7409331925337517123}
   UnitSelectArrowPos: {fileID: 5275880455834478187}
   StatusPos: {fileID: 0}
   ActionSelectorPos: {fileID: 8151974234939720401}
   BulletSpawnPos: {fileID: 5709772750612602284}
+--- !u!1 &4259125568071417494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7409331925337517123}
+  m_Layer: 0
+  m_Name: MeleeHitPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7409331925337517123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259125568071417494}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.75, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6987533177550786384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8432471429420237439
 GameObject:
   m_ObjectHideFlags: 0
