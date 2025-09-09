@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class EntityBanner : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class EntityBanner : MonoBehaviour
     [SerializeField] private IntVariable MaxShowBannerIndex;
 
     private UnitStat stat;
+    private EntityBanner previousTurnBanner;
+    public int stateIndex; // 0 == normal turn,  1 == faint, 2 == extra turn
 
     private int index;
     public int Index {  
@@ -32,7 +35,7 @@ public class EntityBanner : MonoBehaviour
         set 
         {
             index = value;
-            if (index <= MaxShowBannerIndex - 1)
+            if (index <= MaxShowBannerIndex.Value - 1)
                 gameObject.SetActive(true);
             else
                 gameObject.SetActive(false);
@@ -52,6 +55,7 @@ public class EntityBanner : MonoBehaviour
         this.stat = stat;
         this.index = index;
         this.round = round;
+        this.stateIndex = 0;
 
         sprites = AssetLoader.LoadImgAsset(this.stat.GetData().Asset_File);
         myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(this.stat.GetData().Asset_File);
@@ -122,7 +126,26 @@ public class EntityBanner : MonoBehaviour
 
     public void DestroyBanner()
     {
-        Destroy(gameObject);
+        this.transform
+            .DOScale(Vector3.zero, 0.4f)
+            .SetEase(Ease.Linear)
+            .OnComplete(() =>
+            {
+                Destroy(gameObject);
+            });
+    }
+
+    public void FaintingEffect() 
+    {
+        var c = bannerImg.color;
+        var darkColor = new Color(c.r * 0.3f, c.g * 0.3f, c.b * 0.3f, c.a);
+
+        DOTween.Sequence()
+            .Join(bannerImg.DOColor(darkColor, 0.4f).SetEase(Ease.OutQuad))
+            .Join(bannerImg.DOFade(0.7f, 0.4f).SetEase(Ease.OutQuad))
+            .Play();
+
+        Debug.Log("Fainting Effect applied (darken + fade)");
     }
 
     public int CompareTo(EntityBanner other)

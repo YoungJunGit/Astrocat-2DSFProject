@@ -10,23 +10,32 @@ using DataEnum;
 [CreateAssetMenu(fileName = "TimelineSystem", menuName = "GameScene/TimelineSystem", order = 3)]
 public class TimelineSystem : ScriptableObject
 {
-    [SerializeField] private ScriptableListBaseUnit unitList = null;
+    [SerializeField] public ScriptableListBaseUnit unitList = null;
     [SerializeField] private TimelineCanvas timelineCanvasPrefab;
-    private TimelineCanvas timelineCanvas;
-    private TimelineUI timelineUI;
+    public TimelineCanvas timelineCanvas;
+    public TimelineUI timelineUI;
+    public EntityBanner previousTurnBanner;
 
-    private int roundDepth;
+    public int roundDepth;
     private int curRound;
+    private int currentDie;
+    private int foundIndex;
+    private int maxBanner;
 
     public Action m_EndRound;
+    private BannerActions actions;
 
     public void Init()
     {
+        foundIndex = 0;
         roundDepth = 0;
         curRound = 1;
+        currentDie = 2;
+        maxBanner = 7;
 
         timelineCanvas = Instantiate(timelineCanvasPrefab);
         timelineUI = timelineCanvas.GetComponentInChildren<TimelineUI>();
+        actions = new BannerActions(this);
     }
 
     public void CreateBanners()
@@ -64,7 +73,7 @@ public class TimelineSystem : ScriptableObject
     /// <returns> Give Unit to CombatManager for next turn </returns>
     public BaseUnit Pop(List<BaseUnit> unitList)
     {
-        if (timelineUI.BannerList[0].Round > curRound)
+        if (timelineUI.BannerList[0].stateIndex !=2 && timelineUI.BannerList[0].Round > curRound)
         {
             Debug.Log("Start Next Round!!!");
             m_EndRound?.Invoke();
@@ -72,71 +81,63 @@ public class TimelineSystem : ScriptableObject
             curRound++;
         }
 
+        previousTurnBanner = timelineUI.GetCurrentTurnBanner();    
         timelineUI.GetCurrentTurnBanner().DestroyBanner();
         timelineUI.OnPop();
+        OnTimelineChanged(unitList, currentDie, foundIndex);
 
-        OnTimelineChanged(unitList);
-
-        // _list 전체 가져오기
-        foreach (BaseUnit unit in this.unitList.GetUnits())
-        {
-            Debug.Log(unit.name);
-
-            UnitStat stat = unit.GetStat();
-
-            // 예: stack 이라는 이름이 들어간 int 필드 모두 +1
-            var fields = typeof(UnitStat).GetFields(
-                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
-            );
-
-            foreach (var field in fields)
-            {
-                if (field.FieldType == typeof(int) &&
-                    field.Name.IndexOf("stack", StringComparison.OrdinalIgnoreCase) >= 0)
-                {
-                    int value = (int)field.GetValue(stat);
-
-                    if (field.Name.Equals("forbiddenStack", StringComparison.OrdinalIgnoreCase))
-                    {
-                        // forbiddenStack은 -1
-                        field.SetValue(stat, value - 1);
-                    }
-                    else
-                    {
-                        // 나머지 stack들은 +1
-                        field.SetValue(stat, value + 1);
-                    }
-                }
-            }
-        }
-
+        actions.UpdateAllUnitStacks();
 
         return unitList?.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
     }
 
     public void OnCharacterDie(UnitStat stat)
     {
+        if (timelineUI.GetCurrentTurnBanner().GetStat() == stat) currentDie = 1;
+        else { 
+            currentDie = 0;
+            foundIndex = timelineUI.BannerList.FindIndex(banner => banner.GetStat() == stat);
+            Debug.Log($"foundIndex: {foundIndex}");
+        }
+
         List<EntityBanner> deleteBannerList = timelineUI.BannerList.FindAll(banner => banner.GetStat() == stat);
         timelineUI.BannerList.RemoveAll(banner => banner.GetStat() == stat);
         foreach (EntityBanner banner in deleteBannerList)
         {
             banner.DestroyBanner();
         }
-
-        OnTimelineChanged(this.unitList.GetUnits());
+        maxBanner--;
+        SortBanner();
+        OnTimelineChanged(this.unitList.GetUnits(), currentDie, foundIndex);
+        foundIndex = 0;
     }
 
     public void OnCharacterAddBuff(Buff buff)
     {
         SortBanner();
-        timelineUI.MoveBanners();
+        timelineUI.MoveBanners(foundIndex, maxBanner);
     }
 
-    private void OnTimelineChanged(List<BaseUnit> unitList)
+    private void OnTimelineChanged(List<BaseUnit> unitList, int currentDie, int foundIndex)
     {
-        AddTimeline(unitList);
-        timelineCanvas.SetParent(timelineUI.BannerList);
-        timelineUI.MoveBanners();
+        if (currentDie == 2)
+        {
+            Debug.Log("Just turn selection");
+            AddTimeline(unitList);
+            timelineCanvas.SetParent(timelineUI.BannerList);
+            timelineUI.MoveBanners(foundIndex, maxBanner);
+        }
+        else if (currentDie == 1) {
+            Debug.Log($"maxbanner decreased: {maxBanner}");
+            AddTimeline(unitList);
+            timelineUI.MoveBanners(foundIndex, maxBanner);
+            currentDie = 2;
+        }
+        else if (currentDie == 0) {
+            AddTimeline(unitList);
+            timelineUI.MoveBanners(foundIndex, maxBanner);
+            currentDie = 2;
+        }
     }
 
     /// <summary>
@@ -145,7 +146,7 @@ public class TimelineSystem : ScriptableObject
     /// <param name="unitList"></param>
     public void AddTimeline(List<BaseUnit> unitList)
     {
-        while (timelineUI.BannerList.Count < 7 && unitList != null && unitList.Count > 0)
+        while (timelineUI.BannerList.Count < maxBanner && unitList != null && unitList.Count > 0)
         {
             roundDepth++;
             foreach (BaseUnit unit in unitList)
@@ -161,8 +162,13 @@ public class TimelineSystem : ScriptableObject
     private void SortBanner()
     {
         // For Debugging
-        if(timelineUI.GetCurrentTurnBanner() != null)
+        if(timelineUI.GetCurrentTurnBanner() != null) 
             timelineUI.GetCurrentTurnBanner().SetName("CurrentBanner");
+
+        /*if (CheckBannerState() == 1)
+        {
+            Pop(this.unitList.GetUnits());
+        } */
 
         timelineUI.BannerList.Sort((EntityBanner a, EntityBanner b) => a.CompareTo(b));
         foreach (var banner in timelineUI.BannerList.Select((value, index) => (value, index)))
@@ -171,3 +177,69 @@ public class TimelineSystem : ScriptableObject
         }
     }
 }
+public class BannerActions
+{
+    private readonly TimelineSystem owner;
+    public BannerActions(TimelineSystem owner) => this.owner = owner;
+
+    public void FaintingButton()
+    {
+        int nextBanner = owner.timelineUI.GetCurrentTurnBanner().Index - 1;
+        EntityBanner faintingTarget = owner.timelineUI.BannerList[nextBanner];
+        faintingTarget.stateIndex = 1;
+        faintingTarget.FaintingEffect();
+    }
+
+    public void ExtraButton()
+    {
+        owner.roundDepth++;
+
+        int index = owner.timelineUI.BannerList.Count;
+        var unitStat = owner.timelineUI.GetCurrentTurnBanner().GetStat();
+
+        EntityBanner banner = owner.timelineUI.effect.CreateExtraBanner(unitStat, index, owner.roundDepth);
+        owner.timelineUI.BannerList.Add(banner);
+        owner.timelineUI.effect.ReorderExtraTurn(index);
+        owner.timelineCanvas.SetParent(owner.timelineUI.BannerList);
+    }
+
+    public int CheckBannerState()
+    {
+        switch (owner.timelineUI.GetCurrentTurnBanner().stateIndex)
+        {
+            case 1: return 1;
+            case 2: return 2;
+            default: return 0;
+        }
+    }
+
+    public void UpdateAllUnitStacks()
+    {
+        var units = owner.unitList.GetUnits();
+
+        foreach (BaseUnit unit in units)
+        {
+            Debug.Log(unit.name);
+
+            UnitStat stat = unit.GetStat();
+            var fields = typeof(UnitStat).GetFields(
+                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
+            );
+
+            foreach (var field in fields)
+            {
+                if (field.FieldType == typeof(int) &&
+                    field.Name.IndexOf("stack", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    int value = (int)field.GetValue(stat);
+
+                    if (field.Name.Equals("forbiddenStack", StringComparison.OrdinalIgnoreCase))
+                        field.SetValue(stat, value - 1);
+                    else
+                        field.SetValue(stat, value + 1);
+                }
+            }
+        }
+    }
+}
+
