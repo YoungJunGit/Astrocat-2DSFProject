@@ -14,7 +14,6 @@ public class TimelineSystem : ScriptableObject
     [SerializeField] private TimelineCanvas timelineCanvasPrefab;
     public TimelineCanvas timelineCanvas;
     public TimelineUI timelineUI;
-    public EntityBanner previousTurnBanner;
 
     public int roundDepth;
     private int curRound;
@@ -81,8 +80,7 @@ public class TimelineSystem : ScriptableObject
             SortBanner();
             curRound++;
         }
-
-        previousTurnBanner = timelineUI.GetCurrentTurnBanner();    
+  
         timelineUI.GetCurrentTurnBanner().DestroyBanner();
         timelineUI.OnPop();
         OnTimelineChanged(unitList, currentDie, foundIndex);
@@ -167,68 +165,3 @@ public class TimelineSystem : ScriptableObject
         }
     }
 }
-
-public class BannerActions
-{
-    private readonly TimelineSystem owner;
-    public BannerActions(TimelineSystem owner) => this.owner = owner;
-
-    public void FaintingButton()
-    {
-        int nextBanner = owner.timelineUI.GetCurrentTurnBanner().Index - 1;
-        EntityBanner faintingTarget = owner.timelineUI.BannerList[nextBanner];
-        faintingTarget.stateIndex = 1;
-        faintingTarget.FaintingEffect();
-    }
-
-    public void ExtraButton()
-    {
-        owner.roundDepth++;
-
-        int index = owner.timelineUI.BannerList.Count;
-        var unitStat = owner.timelineUI.GetCurrentTurnBanner().GetStat();
-
-        EntityBanner banner = owner.timelineUI.effect.CreateExtraBanner(unitStat, index, owner.roundDepth);
-        owner.timelineUI.BannerList.Add(banner);
-        owner.timelineUI.effect.ReorderExtraTurn(index);
-        owner.timelineCanvas.SetParent(owner.timelineUI.BannerList);
-    }
-
-    public int CheckBannerState()
-    {
-        switch (owner.timelineUI.GetCurrentTurnBanner().stateIndex)
-        {
-            case 1: return 1;
-            case 2: return 2;
-            default: return 0;
-        }
-    }
-
-    public void UpdateAllUnitStacks()
-    {
-        var units = owner.unitList.GetUnits();
-
-        foreach (BaseUnit unit in units)
-        {
-            UnitStat stat = unit.GetStat();
-            var fields = typeof(UnitStat).GetFields(
-                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
-            );
-
-            foreach (var field in fields)
-            {
-                if (field.FieldType == typeof(int) &&
-                    field.Name.IndexOf("stack", StringComparison.OrdinalIgnoreCase) >= 0)
-                {
-                    int value = (int)field.GetValue(stat);
-
-                    if (field.Name.Equals("forbiddenStack", StringComparison.OrdinalIgnoreCase))
-                        field.SetValue(stat, value - 1);
-                    else
-                        field.SetValue(stat, value + 1);
-                }
-            }
-        }
-    }
-}
-

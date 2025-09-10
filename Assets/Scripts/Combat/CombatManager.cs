@@ -80,46 +80,13 @@ public class CombatManager : ScriptableObject
             //await ProcessCurrentTurnAsync();
         }
     }
-    private async UniTask ProcessCurrentTurnAsync()
-    {
-        while (true)
-        {
-            IUnitAction selectedAction = null;
-
-            if (currentTurnUnit is PlayerUnit player)
-            {
-                await UniTask.WaitForSeconds(1); // 연출용 대기 유지
-                selectedAction = await actionSelector.SelectAction(player);
-            }
-            else if (currentTurnUnit is EnemyUnit enemy)
-            {
-                selectedAction = await actionSelector.SelectAction(enemy);
-            }
-
-            if (selectedAction == null)
-                continue;
-
-            await selectedAction.Execute();
-            if (executed == false)
-                continue;
-
-            break;
-        }
-
-        OnTernEnd?.Invoke();
-        ApplyCrowdControl();
-
-        //TODO: Check is finish
-        //if ()
-        currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
-    }
 
     public void OnCharacterDie(BaseUnit unit)
     {
         if (currentTurnUnit == unit)
         {
             Debug.Log("Current Character Died!! Turn Skip!");
-            _timeline.OnCharacterDie(stat);
+            _timeline.OnCharacterDie(unit);
             currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
         }
     }

@@ -24,7 +24,8 @@ class BaseAttackAction : IUnitAction
 
     protected void DamageEvent()
     {
-        _target.GetStat().GetDamaged((float)_caster.GetStat().GetData().Default_Attack);
+        DamageContainer damage = AssetLoader.GetDamageFactory().CreateNormalDamage((float)_caster.GetStat().GetData().Default_Attack, _target.attachments.GetHitBox().bounds);
+        _target.GetStat().GetDamaged(damage.Value, damage.Critical);
     }
 
     protected void FinishedAction()
@@ -46,9 +47,9 @@ class MeleeAttack : BaseAttackAction
         _caster.combatInfo.startPos = (Vector2)_caster.transform.position;
 
         // Identify target's postition
-        float xOffset = _caster.attachments.GetHitBox().size.x / 2 + _target.attachments.GetHitBox().size.x / 2;
+        float xOffset = _caster.attachments.GetHitBox().size.x / 2;
         Vector2 offset = _caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
-        _caster.combatInfo.targetPos = (Vector2)_target.transform.position + offset;
+        _caster.combatInfo.targetPos = (Vector2)_target.attachments.GetMeleeHitPos().position + offset;
 
         _caster.combatInfo.actionList.Add("FinishedAction", FinishedAction);
         _caster.mainAnimHandler.ChangeAnimation(AnimCombat.MOVE);

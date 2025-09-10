@@ -26,7 +26,6 @@ public class EntityBanner : MonoBehaviour
     [SerializeField] private IntVariable MaxShowBannerIndex;
 
     private UnitStat stat;
-    private EntityBanner previousTurnBanner;
     public int stateIndex; // 0 == normal turn,  1 == faint, 2 == extra turn
 
     private int index;
