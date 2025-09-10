@@ -12,7 +12,9 @@ public class CombatManager : ScriptableObject
     [SerializeField] private EventHandler combatEventHandler;
     [SerializeField] private UnitManager unitManager;
 
+    private BannerActions _actions;
     private BaseUnit currentTurnUnit;
+    private TimelineSystem _timeline;
 
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
     public Action OnTernEnd;
@@ -22,6 +24,8 @@ public class CombatManager : ScriptableObject
 
     public void Init(TimelineSystem timeline)
     {
+        _timeline = timeline;
+        _actions = new BannerActions(_timeline);
         DequeueCurrentUnit += timeline.Pop;
         currentTurnUnit = timeline.PrepareCombat(unitList.GetUnits());
 
@@ -41,6 +45,14 @@ public class CombatManager : ScriptableObject
         while (true)
         {
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
+
+            // 0 == normal turn,  1 == faint, 2 == extra turn
+            if (_actions.CheckBannerState() == 1) {
+                OnTernEnd?.Invoke();
+                ApplyCrowdControl();
+                currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
+                continue;
+            }
 
             IUnitAction selectedAction = null;
 
@@ -107,8 +119,19 @@ public class CombatManager : ScriptableObject
         if (currentTurnUnit == unit)
         {
             Debug.Log("Current Character Died!! Turn Skip!");
+            _timeline.OnCharacterDie(stat);
             currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
         }
+    }
+
+    public void OnFainting()
+    {
+        _actions.FaintingButton();
+    }
+
+    public void OnExtraTurn()
+    {
+        _actions.ExtraButton();
     }
 
     public void ApplyCrowdControl()
