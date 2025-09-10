@@ -7,24 +7,16 @@ using System.ComponentModel;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
-public class EntityBanner : MonoBehaviour
+public class EntityBannertemp : MonoBehaviour
 {
-    public enum BannerState
-    {
-        NORMAL,
-        FAINT,
-        EXTRA
-    }
-
     [Header("Component Settings")]
     [SerializeField] private Animator myAnimator;
     [SerializeField] private RectTransform rectTransform;
     [SerializeField] private RectTransform priorityRectTransform;
     [SerializeField] private Image bannerImg;
     [SerializeField] private Image priorityImg;
-
+    
     private Sprite[] sprites;
     [SerializeField] private Sprite[] prioritySprites;
 
@@ -33,15 +25,14 @@ public class EntityBanner : MonoBehaviour
     [SerializeField] private IntVariable MaxShowBannerIndex;
 
     private UnitStat stat;
-    private BannerState state;
 
     private int index;
-    public int Index {
+    public int Index {  
         get { return index; }
-        set
+        set 
         {
             index = value;
-            if (index <= MaxShowBannerIndex.Value - 1)
+            if (index <= MaxShowBannerIndex - 1)
                 gameObject.SetActive(true);
             else
                 gameObject.SetActive(false);
@@ -52,7 +43,7 @@ public class EntityBanner : MonoBehaviour
     }
 
     private int round;
-    public int Round => round;
+    public int Round { get { return round; } }
 
     public CancellationTokenSource move;
 
@@ -109,7 +100,7 @@ public class EntityBanner : MonoBehaviour
     {
         rectTransform.anchoredPosition = pos;
     }
-
+    
     public void SetScale(Vector2 scale)
     {
         rectTransform.localScale = scale;
@@ -129,51 +120,12 @@ public class EntityBanner : MonoBehaviour
         gameObject.name = name;
     }
 
-    public void SetState(BannerState state)
-    {
-        this.state = state;
-    }
-
     public void DestroyBanner()
     {
-        this.transform
-            .DOScale(Vector3.zero, 0.4f)
-            .SetEase(Ease.Linear)
-            .OnComplete(() =>
-            {
-                this.transform.DOKill();
-                Destroy(gameObject);
-            });
-    }
-
-    public void FaintingEffect()
-    {
-        var c = bannerImg.color;
-        var darkColor = new Color(c.r * 0.3f, c.g * 0.3f, c.b * 0.3f, c.a);
-
-        DOTween.Sequence()
-            .Join(bannerImg.DOColor(darkColor, 0.4f).SetEase(Ease.OutQuad))
-            .Join(bannerImg.DOFade(0.7f, 0.4f).SetEase(Ease.OutQuad))
-            .Play();
-    }
-
-    public int CompareTo(EntityBanner other)
-    {
-        if (this.round < other.round) { return -1; }
-        else if (this.round > other.round) { return 1; }
-        else
-        {
-            return stat.CompareTo(other.stat);
-        }
-    }
-
-    public void CopyStat(UnitStat other)
-    {
-        stat = other;
+        Destroy(gameObject);
     }
 
     public UnitStat GetStat() { return stat; }
-    public BannerState GetState() { return state; }
 
     private void OnDestroy()
     {

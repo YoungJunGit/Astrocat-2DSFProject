@@ -2,17 +2,16 @@ using DG.Tweening;
 using Obvious.Soap;
 using System.Collections.Generic;
 using UnityEngine;
+using static EntityBanner;
 
 public class ExtraBannerEffect
 {
-    private readonly TimelineUI timelineUI;
     private readonly EntityBanner bannerPrefab;
     private readonly BannerLocationSetting location;
     private readonly IntVariable maxShowBannerIndex;
 
-    public ExtraBannerEffect(TimelineUI timelineUI, EntityBanner bannerPrefab, BannerLocationSetting location, IntVariable maxShowBannerIndex)
+    public ExtraBannerEffect(EntityBanner bannerPrefab, BannerLocationSetting location, IntVariable maxShowBannerIndex)
     {
-        this.timelineUI = timelineUI;
         this.bannerPrefab = bannerPrefab;
         this.location = location;
         this.maxShowBannerIndex = maxShowBannerIndex;
@@ -28,14 +27,12 @@ public class ExtraBannerEffect
             .SetEase(Ease.Linear);
         banner.gameObject.name = $"Banner:{index}";
 
-        maxShowBannerIndex.Add(1);
-        banner.stateIndex = 2;
+        banner.SetState(BannerState.EXTRA);
         return banner;
     }
 
-    public void ReorderExtraTurn(int extraIndex)
+    public void ReorderExtraTurn(List<EntityBanner> bannerList, int extraIndex)
     {
-        var bannerList = timelineUI.BannerList;
         EntityBanner extraBanner = bannerList[extraIndex];
 
         List<EntityBanner> newList = new List<EntityBanner>();

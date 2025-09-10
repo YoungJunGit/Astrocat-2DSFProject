@@ -1,12 +1,10 @@
-using DG.Tweening;
 using Obvious.Soap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
 
-public class TimelineUI : MonoBehaviour
+public class TimelineUItemp : MonoBehaviour
 {
     private List<EntityBanner> bannerList = new List<EntityBanner>();
     public List<EntityBanner> BannerList { get { return bannerList; } }
@@ -17,13 +15,6 @@ public class TimelineUI : MonoBehaviour
     [SerializeField] private BannerLocationSetting _locationSetting;
     [SerializeField] private IntVariable MaxShowBannerIndex;
 
-    public ExtraBannerEffect effect;
-
-    private void Awake()
-    {
-        effect = new ExtraBannerEffect(BannerPrefab, _locationSetting, MaxShowBannerIndex);
-    }
-
     /// <summary>
     /// Change BannerList Collection
     /// </summary>
@@ -31,29 +22,38 @@ public class TimelineUI : MonoBehaviour
     {
         currentTurnBanner = bannerList[0];
         bannerList.RemoveAt(0);
-
-        currentTurnBanner.transform.DOKill();
-        currentTurnBanner.transform
-            .DOScale(Vector3.one * 1.2f, 0.4f)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetEase(Ease.Linear);
     }
 
     /// <summary>
     /// This called when received message -> TimelineSystem : m_EndTurn
     /// </summary>
-    public void MoveBanners(int foundIndex)
+    public void MoveBanners()
     {
         currentTurnBanner.move?.Cancel();
         currentTurnBanner.Move(_locationSetting.InitialPos, true).Forget();
 
-        effect.Apply(bannerList, foundIndex);
+        Vector2 dest;
+        foreach (EntityBanner banner in bannerList)
+        {
+            dest = new Vector2((_locationSetting.InitialPos.x * 2) + _locationSetting.Distance * Mathf.Clamp(banner.Index, 1, MaxShowBannerIndex), _locationSetting.InitialPos.y);
+
+            banner.move?.Cancel();
+            if (banner.gameObject.activeSelf)
+            {
+                banner.Move(dest, false).Forget();
+            }
+            else
+            {
+                banner.SetPostion(dest);
+            }
+        }
     }
 
     public EntityBanner CreateBanner(BaseUnit unit, int index, int round)
     {
         EntityBanner banner = Instantiate(BannerPrefab, new Vector2((_locationSetting.InitialPos.x * 2) + _locationSetting.Distance * MaxShowBannerIndex, _locationSetting.InitialPos.y), Quaternion.identity).GetComponent<EntityBanner>();
         banner.Init(unit.GetStat(), index, round);
+
         return banner;
     }
 

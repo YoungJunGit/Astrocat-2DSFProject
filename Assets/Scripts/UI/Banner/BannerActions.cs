@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using UnityEngine;
+using static EntityBanner;
 
 public class BannerActions
 {
@@ -11,7 +12,7 @@ public class BannerActions
     {
         int nextBanner = owner.timelineUI.GetCurrentTurnBanner().Index - 1;
         EntityBanner faintingTarget = owner.timelineUI.BannerList[nextBanner];
-        faintingTarget.stateIndex = 1;
+        faintingTarget.SetState(BannerState.FAINT);
         faintingTarget.FaintingEffect();
     }
 
@@ -24,18 +25,8 @@ public class BannerActions
 
         EntityBanner banner = owner.timelineUI.effect.CreateExtraBanner(unitStat, index, owner.roundDepth);
         owner.timelineUI.BannerList.Add(banner);
-        owner.timelineUI.effect.ReorderExtraTurn(index);
+        owner.timelineUI.effect.ReorderExtraTurn(owner.timelineUI.BannerList ,index);
         owner.timelineCanvas.SetParent(owner.timelineUI.BannerList);
-    }
-
-    public int CheckBannerState()
-    {
-        switch (owner.timelineUI.GetCurrentTurnBanner().stateIndex)
-        {
-            case 1: return 1;
-            case 2: return 2;
-            default: return 0;
-        }
     }
 
     public void UpdateAllUnitStacks()

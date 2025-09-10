@@ -4,8 +4,8 @@ using Cysharp.Threading.Tasks;
 using DataEnum;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CombatManager", menuName = "GameScene/CombatManager", order = 1)]
-public class CombatManager : ScriptableObject
+[CreateAssetMenu(fileName = "CombatManagertemp", menuName = "GameScene/CombatManagertemp", order = 1)]
+public class CombatManagertemp : ScriptableObject
 {
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private ActionSelector actionSelector;
@@ -13,7 +13,6 @@ public class CombatManager : ScriptableObject
     [SerializeField] private UnitManager unitManager;
 
     private BaseUnit currentTurnUnit;
-    private TimelineSystem _timeline;
 
     public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
     public Action OnTernEnd;
@@ -23,7 +22,6 @@ public class CombatManager : ScriptableObject
 
     public void Init(TimelineSystem timeline)
     {
-        _timeline = timeline;
         DequeueCurrentUnit += timeline.Pop;
         currentTurnUnit = timeline.PrepareCombat(unitList.GetUnits());
 
@@ -44,21 +42,18 @@ public class CombatManager : ScriptableObject
         {
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
-            if (_timeline.timelineUI.GetCurrentTurnBanner().GetState() == EntityBanner.BannerState.NORMAL)
+            IUnitAction selectedAction = null;
+
+            if (currentTurnUnit is PlayerUnit player)
             {
-                IUnitAction selectedAction = null;
-
-                if (currentTurnUnit is PlayerUnit player)
-                {
-                    selectedAction = await actionSelector.SelectAction(player);
-                }
-                else if (currentTurnUnit is EnemyUnit enemy)
-                {
-                    selectedAction = await actionSelector.SelectAction(enemy);
-                }
-
-                await selectedAction.Execute();
+                selectedAction = await actionSelector.SelectAction(player);
             }
+            else if (currentTurnUnit is EnemyUnit enemy)
+            {
+                selectedAction = await actionSelector.SelectAction(enemy);
+            }
+
+            await selectedAction.Execute();
 
             OnTernEnd?.Invoke();
             ApplyCrowdControl();
@@ -73,25 +68,47 @@ public class CombatManager : ScriptableObject
             //await ProcessCurrentTurnAsync();
         }
     }
+    private async UniTask ProcessCurrentTurnAsync()
+    {
+        while (true)
+        {
+            IUnitAction selectedAction = null;
+
+            if (currentTurnUnit is PlayerUnit player)
+            {
+                await UniTask.WaitForSeconds(1); // 연출용 대기 유지
+                selectedAction = await actionSelector.SelectAction(player);
+            }
+            else if (currentTurnUnit is EnemyUnit enemy)
+            {
+                selectedAction = await actionSelector.SelectAction(enemy);
+            }
+
+            if (selectedAction == null)
+                continue;
+
+            await selectedAction.Execute();
+            if (executed == false)
+                continue;
+
+            break;
+        }
+
+        OnTernEnd?.Invoke();
+        ApplyCrowdControl();
+
+        //TODO: Check is finish
+        //if ()
+        currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
+    }
 
     public void OnCharacterDie(BaseUnit unit)
     {
         if (currentTurnUnit == unit)
         {
             Debug.Log("Current Character Died!! Turn Skip!");
-            _timeline.OnCharacterDie(unit);
             currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
         }
-    }
-
-    public void OnFainting()
-    {
-        _timeline.GetActions().FaintingButton();
-    }
-
-    public void OnExtraTurn()
-    {
-        _timeline.GetActions().ExtraButton();
     }
 
     public void ApplyCrowdControl()
