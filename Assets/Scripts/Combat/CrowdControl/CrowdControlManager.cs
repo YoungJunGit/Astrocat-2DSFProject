@@ -17,10 +17,12 @@ public class CrowdControlManager
     
     private HashSet<ICrowdControl> _crowdControlList = new();
     private BaseUnit _target;
+    private DamageFactory _damageFactory;
     
     public void Init(BaseUnit target)
     {
         _target = target;
+        _damageFactory = AssetLoader.GetDamageFactory();
     }
     
     public void AddCrowdControl(CrowdControlType crowdControlType)
@@ -33,6 +35,7 @@ public class CrowdControlManager
             return;
 
         crowdControl.Count = 1;
+        
         _crowdControlList.Add(crowdControl);
         
         Debug.Log($"{_target} get {crowdControlType}\nCrowdControl List: \n{ToString()}");
@@ -45,6 +48,7 @@ public class CrowdControlManager
         
         foreach (var crowdControl in _crowdControlList)
         {
+            // TODO : Calculate CC damage
             crowdControl.ApplyCrowdControl(_target);
         }
     }

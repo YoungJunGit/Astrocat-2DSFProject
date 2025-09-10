@@ -32,19 +32,32 @@ public class UnitSelectorController : ScriptableObject
         this.select     = select;
     }
 
-    public void OnStartSelect(DataEnum.SIDE side, int maxUnitcount)
+    public void Prepare(SIDE side, int maxUnitCount)
+    {
+        _maxUnitCount = maxUnitCount;
+
+        if (side == SIDE.ENEMY)
+        {
+            _previousEnemySelectionIndex = _previousEnemySelectionIndex > _maxUnitCount - 1 ? _maxUnitCount - 1 : _previousEnemySelectionIndex;
+        }
+        else if(side == SIDE.PLAYER)
+        {
+            _previousPlayerSelectionIndex = _previousPlayerSelectionIndex > _maxUnitCount - 1 ? _maxUnitCount - 1 : _previousPlayerSelectionIndex;
+        }
+    }
+
+    public void OnStartSelect(SIDE side)
     {
         this.side = side;
-        _maxUnitCount = maxUnitcount;
 
         inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
 
-        if (side == DataEnum.SIDE.ENEMY)
+        if (side == SIDE.ENEMY)
         {
             _selectedUnitIndex = _previousEnemySelectionIndex;
             inputHandler.OnSelectUnitEnemySelectionMove += OnUnitSelect;
         }
-        else if (side == DataEnum.SIDE.PLAYER)
+        else if (side == SIDE.PLAYER)
         {
             _selectedUnitIndex = _previousPlayerSelectionIndex;
             inputHandler.OnSelectUnitPlayerSelectionMove += OnUnitSelect;
@@ -55,12 +68,12 @@ public class UnitSelectorController : ScriptableObject
     {
         inputHandler.OnSelectUnitSelectionConfirm = null;
 
-        if (side == DataEnum.SIDE.ENEMY)
+        if (side == SIDE.ENEMY)
         {
             _previousEnemySelectionIndex = _selectedUnitIndex;
             inputHandler.OnSelectUnitEnemySelectionMove = null;
         }
-        else if (side == DataEnum.SIDE.PLAYER)
+        else if (side == SIDE.PLAYER)
         {
             _previousPlayerSelectionIndex = _selectedUnitIndex;
             inputHandler.OnSelectUnitPlayerSelectionMove = null;
@@ -69,9 +82,9 @@ public class UnitSelectorController : ScriptableObject
 
     public int GetSelectionIndex(SIDE side)
     {
-        if (side == DataEnum.SIDE.PLAYER)
+        if (side == SIDE.PLAYER)
             return _previousPlayerSelectionIndex;
-        else if (side == DataEnum.SIDE.ENEMY)
+        else if (side == SIDE.ENEMY)
             return _previousEnemySelectionIndex;
         else
             return 0;

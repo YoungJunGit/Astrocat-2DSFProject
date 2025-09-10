@@ -7,6 +7,7 @@ public class AssetLoader
     private static string CharacterPrefabAssetPath = "01_Character/Prefabs/";
     private static string MonsterPrefabAssetPath = "02_Monster/Prefabs/";
     private static string BulletPrefabAssetPath = "08_Etc/Prefabs/";
+    private static string DamageFactoryPath = "08_Etc/";
 
     public static Sprite[] LoadImgAsset(string assetName)
     {
@@ -56,5 +57,15 @@ public class AssetLoader
             Debug.LogWarning($"AssetLoader: No path: {BulletPrefabAssetPath + assetName}_Bullet!");
 
         return gameObject;
+    }
+
+    public static DamageFactory GetDamageFactory()
+    {
+        DamageFactory damageFactory = Resources.Load<DamageFactory>(DamageFactoryPath + "DamageFactory");
+
+        if (damageFactory == null)
+            Debug.LogWarning($"AssetLoader: No path: {DamageFactoryPath}DamageFactory!");
+
+        return damageFactory;
     }
 }

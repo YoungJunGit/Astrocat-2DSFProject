@@ -1,0 +1,1183 @@
+fileFormatVersion: 2
+guid: 69769666ff8f3094cbadeb5a3b86885d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2788314769335436156
+    second: commissar_death_0
+  - first:
+      213: 2100798171192707858
+    second: commissar_death_1
+  - first:
+      213: 4978014519452202573
+    second: commissar_death_2
+  - first:
+      213: 2035717112037319364
+    second: commissar_death_3
+  - first:
+      213: -7690561305563240085
+    second: commissar_death_4
+  - first:
+      213: 3363839851438511812
+    second: commissar_death_5
+  - first:
+      213: -908208319447932692
+    second: commissar_death_6
+  - first:
+      213: 1685782673633035103
+    second: commissar_death_7
+  - first:
+      213: -8805827903203925360
+    second: commissar_death_8
+  - first:
+      213: -8677519858881116802
+    second: commissar_death_9
+  - first:
+      213: 8509871388464653896
+    second: commissar_death_10
+  - first:
+      213: -5804139922121147295
+    second: commissar_death_11
+  - first:
+      213: -5340451886819148614
+    second: commissar_death_12
+  - first:
+      213: -633784054783636929
+    second: commissar_death_13
+  - first:
+      213: 4216564887087685961
+    second: commissar_death_14
+  - first:
+      213: -7505261053107841066
+    second: commissar_death_15
+  - first:
+      213: 560021518773237117
+    second: commissar_death_16
+  - first:
+      213: -4337736297242271012
+    second: commissar_death_17
+  - first:
+      213: 8726264673640446614
+    second: commissar_death_18
+  - first:
+      213: -2608851915438697947
+    second: commissar_death_19
+  - first:
+      213: -3302396276099669050
+    second: commissar_death_20
+  - first:
+      213: 1554633614490634742
+    second: commissar_death_21
+  - first:
+      213: 3014402034018526799
+    second: commissar_death_22
+  - first:
+      213: -3921964671140975914
+    second: commissar_death_23
+  - first:
+      213: -3618437038850659144
+    second: commissar_death_24
+  - first:
+      213: 7770359192081092158
+    second: commissar_death_25
+  - first:
+      213: 8049677458460450887
+    second: commissar_death_26
+  - first:
+      213: -2785256028206277200
+    second: commissar_death_27
+  - first:
+      213: 8579400275061917066
+    second: commissar_death_28
+  - first:
+      213: -2875917776605884532
+    second: commissar_death_29
+  - first:
+      213: -815582129458055825
+    second: commissar_death_30
+  - first:
+      213: -7705270490222996179
+    second: commissar_death_31
+  - first:
+      213: -4450103666783150291
+    second: commissar_death_32
+  - first:
+      213: -8608998854910022210
+    second: commissar_death_33
+  - first:
+      213: -3005370012311407941
+    second: commissar_death_34
+  - first:
+      213: 6015514603767787521
+    second: commissar_death_35
+  - first:
+      213: 5461819207773448587
+    second: commissar_death_36
+  - first:
+      213: -3156201257610137191
+    second: commissar_death_37
+  - first:
+      213: 2992519548885456449
+    second: commissar_death_38
+  - first:
+      213: 6656597969318842820
+    second: commissar_death_39
+  - first:
+      213: -364576811001215379
+    second: commissar_death_40
+  - first:
+      213: 9128642907306245157
+    second: commissar_death_41
+  - first:
+      213: -744316622029142824
+    second: commissar_death_42
+  - first:
+      213: 1858873528383324343
+    second: commissar_death_43
+  - first:
+      213: 3450353382085824835
+    second: commissar_death_44
+  - first:
+      213: -6593465278747108079
+    second: commissar_death_45
+  - first:
+      213: 1477265974647464493
+    second: commissar_death_46
+  - first:
+      213: -1498086622309147073
+    second: commissar_death_47
+  - first:
+      213: 8014841181273657033
+    second: commissar_death_48
+  - first:
+      213: -8218776857100673778
+    second: commissar_death_49
+  - first:
+      213: 1696590197140579092
+    second: commissar_death_50
+  - first:
+      213: -2313259653874705918
+    second: commissar_death_51
+  - first:
+      213: -4040346215726166300
+    second: commissar_death_52
+  - first:
+      213: -6648363207030854053
+    second: commissar_death_53
+  - first:
+      213: -7821678710487767697
+    second: commissar_death_54
+  - first:
+      213: 7064768408781374897
+    second: commissar_death_55
+  - first:
+      213: 4377532268510394283
+    second: commissar_death_56
+  - first:
+      213: 8435092784245216096
+    second: commissar_death_57
+  - first:
+      213: -6271722977205124238
+    second: commissar_death_58
+  - first:
+      213: -8905754654901458123
+    second: commissar_death_59
+  - first:
+      213: -3693127360716408527
+    second: commissar_death_60
+  - first:
+      213: 1712167783094241186
+    second: commissar_death_61
+  - first:
+      213: -3215249313716418009
+    second: commissar_death_62
+  - first:
+      213: 3273810819180348797
+    second: commissar_death_63
+  - first:
+      213: 289613798768356560
+    second: commissar_death_64
+  - first:
+      213: -2250616426795945644
+    second: commissar_death_65
+  - first:
+      213: -3943784581427037386
+    second: commissar_death_66
+  - first:
+      213: 72244560609709897
+    second: commissar_death_67
+  - first:
+      213: -4147291494243523043
+    second: commissar_death_68
+  - first:
+      213: 4986718901787729392
+    second: commissar_death_69
+  - first:
+      213: -7960471829554089830
+    second: commissar_death_70
+  - first:
+      213: 3958937962147097462
+    second: commissar_death_71
+  - first:
+      213: 1781964545424269671
+    second: commissar_death_72
+  - first:
+      213: 3466205257427933001
+    second: commissar_death_73
+  - first:
+      213: 8425230243786979273
+    second: commissar_death_74
+  - first:
+      213: -3405080350671511471
+    second: commissar_death_75
+  - first:
+      213: 7834312905104167334
+    second: commissar_death_76
+  - first:
+      213: -6588506231376404967
+    second: commissar_death_77
+  - first:
+      213: 1080737049840658876
+    second: commissar_death_78
+  - first:
+      213: 211330962835961330
+    second: commissar_death_79
+  - first:
+      213: -5705929556994080130
+    second: commissar_death_80
+  - first:
+      213: 1538028805733304284
+    second: commissar_death_81
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: commissar_death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c39cb8d7aed49d0800000000000000
+      internalID: -2788314769335436156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b4bb26ec8872d10800000000000000
+      internalID: 2100798171192707858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_2
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d467faea4d5751540800000000000000
+      internalID: 4978014519452202573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_3
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c22b2e7de1504c10800000000000000
+      internalID: 2035717112037319364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_4
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b69e98a2d33a54590800000000000000
+      internalID: -7690561305563240085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_5
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c69b42c582ceae20800000000000000
+      internalID: 3363839851438511812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_6
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0604968556563f0800000000000000
+      internalID: -908208319447932692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_7
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53c766f86a156710800000000000000
+      internalID: 1685782673633035103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_8
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 092ae446d2a6bc580800000000000000
+      internalID: -8805827903203925360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_9
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e754effe9a1439780800000000000000
+      internalID: -8677519858881116802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_10
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84622b9c0f2291670800000000000000
+      internalID: 8509871388464653896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_11
+      rect:
+        serializedVersion: 2
+        x: 2244
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c3e431e7d837fa0800000000000000
+      internalID: -5804139922121147295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_12
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc741acd47e2e5b0800000000000000
+      internalID: -5340451886819148614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_13
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a805692c85437f0800000000000000
+      internalID: -633784054783636929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_14
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9412f3bac6f348a30800000000000000
+      internalID: 4216564887087685961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_15
+      rect:
+        serializedVersion: 2
+        x: 3060
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7dee636d4f7d790800000000000000
+      internalID: -7505261053107841066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_16
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75bd0daa9895c700800000000000000
+      internalID: 560021518773237117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_17
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd26e89e1d34dc3c0800000000000000
+      internalID: -4337736297242271012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_18
+      rect:
+        serializedVersion: 2
+        x: 3672
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69af068ac7be91970800000000000000
+      internalID: 8726264673640446614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_19
+      rect:
+        serializedVersion: 2
+        x: 3876
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522dda4510f7bcbd0800000000000000
+      internalID: -2608851915438697947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_20
+      rect:
+        serializedVersion: 2
+        x: 4080
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3a18f65188b22d0800000000000000
+      internalID: -3302396276099669050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_21
+      rect:
+        serializedVersion: 2
+        x: 4284
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9889b190b239510800000000000000
+      internalID: 1554633614490634742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_22
+      rect:
+        serializedVersion: 2
+        x: 4488
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f46a3efcdae45d920800000000000000
+      internalID: 3014402034018526799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_23
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6daa20b39e16299c0800000000000000
+      internalID: -3921964671140975914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_24
+      rect:
+        serializedVersion: 2
+        x: 4896
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bca0393faab8cdc0800000000000000
+      internalID: -3618437038850659144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_25
+      rect:
+        serializedVersion: 2
+        x: 5100
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e4f2d148cd5db60800000000000000
+      internalID: 7770359192081092158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_26
+      rect:
+        serializedVersion: 2
+        x: 5304
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740210cdff236bf60800000000000000
+      internalID: 8049677458460450887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_27
+      rect:
+        serializedVersion: 2
+        x: 5508
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bddf363668c859d0800000000000000
+      internalID: -2785256028206277200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_28
+      rect:
+        serializedVersion: 2
+        x: 5712
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8544f43817201770800000000000000
+      internalID: 8579400275061917066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_29
+      rect:
+        serializedVersion: 2
+        x: 5916
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8fcc2af400b618d0800000000000000
+      internalID: -2875917776605884532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_30
+      rect:
+        serializedVersion: 2
+        x: 6122
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65fe78df587ea4f0800000000000000
+      internalID: -815582129458055825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_31
+      rect:
+        serializedVersion: 2
+        x: 6324
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2555fb3051611590800000000000000
+      internalID: -7705270490222996179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_32
+      rect:
+        serializedVersion: 2
+        x: 6528
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f1abfea4e0e32c0800000000000000
+      internalID: -4450103666783150291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_33
+      rect:
+        serializedVersion: 2
+        x: 6732
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebde7556721b68880800000000000000
+      internalID: -8608998854910022210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_death_34
+      rect:
+        serializedVersion: 2
+        x: 6936
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.75, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990ef0e2adeada347aedd409f82e80e1
+      internalID: -3005370012311407941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ea9699f8333a2f74b8febf02cf603fbe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":35.0,"y":1.0},"gridSpriteSize":{"x":204.0,"y":1173.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      commissar_death_0: -2788314769335436156
+      commissar_death_1: 2100798171192707858
+      commissar_death_10: 8509871388464653896
+      commissar_death_11: -5804139922121147295
+      commissar_death_12: -5340451886819148614
+      commissar_death_13: -633784054783636929
+      commissar_death_14: 4216564887087685961
+      commissar_death_15: -7505261053107841066
+      commissar_death_16: 560021518773237117
+      commissar_death_17: -4337736297242271012
+      commissar_death_18: 8726264673640446614
+      commissar_death_19: -2608851915438697947
+      commissar_death_2: 4978014519452202573
+      commissar_death_20: -3302396276099669050
+      commissar_death_21: 1554633614490634742
+      commissar_death_22: 3014402034018526799
+      commissar_death_23: -3921964671140975914
+      commissar_death_24: -3618437038850659144
+      commissar_death_25: 7770359192081092158
+      commissar_death_26: 8049677458460450887
+      commissar_death_27: -2785256028206277200
+      commissar_death_28: 8579400275061917066
+      commissar_death_29: -2875917776605884532
+      commissar_death_3: 2035717112037319364
+      commissar_death_30: -815582129458055825
+      commissar_death_31: -7705270490222996179
+      commissar_death_32: -4450103666783150291
+      commissar_death_33: -8608998854910022210
+      commissar_death_34: -3005370012311407941
+      commissar_death_4: -7690561305563240085
+      commissar_death_5: 3363839851438511812
+      commissar_death_6: -908208319447932692
+      commissar_death_7: 1685782673633035103
+      commissar_death_8: -8805827903203925360
+      commissar_death_9: -8677519858881116802
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -9,5 +9,6 @@ namespace DataHashAnim
         readonly static public int MOVE = Animator.StringToHash("Move");
         readonly static public int RETREAT = Animator.StringToHash("Retreat");
         readonly static public int HIT = Animator.StringToHash("Hit");
+        readonly static public int DEATH = Animator.StringToHash("Death");
     }
 }

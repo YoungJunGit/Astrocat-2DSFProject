@@ -21,7 +21,7 @@ class ActionFactory : ScriptableObject
 
     public async UniTask<BaseAttackAction> CreatePlayerBaseAttackAction(BaseUnit unit)
     {
-        EnemyUnit enemy = await _unitSelector.SelectUnit(DataEnum.SIDE.ENEMY) as EnemyUnit;
+        EnemyUnit enemy = await _unitManager.GetEnemyUnitBySelector();
 
         BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit, enemy);
 
@@ -31,7 +31,7 @@ class ActionFactory : ScriptableObject
     public async UniTask<BaseAttackAction> CreateEnemyBaseAttackAction(BaseUnit unit)
     {
         // TODO : Must change method of selecting player unit
-        PlayerUnit player = _unitSelector.SelectRandomUnit(DataEnum.SIDE.PLAYER) as PlayerUnit;
+        PlayerUnit player = _unitManager.GetRandomPlayerUnitBySelector();
 
         BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit, player);
 
@@ -40,17 +40,13 @@ class ActionFactory : ScriptableObject
         return attackAction;
     }
 
-    private BaseAttackAction CreateBaseAttackActionByUnitType(BaseUnit unit, BaseUnit target)
+    public async UniTask<BaseBuffAction> CreatePlayerBaseBuffAction(BaseUnit unit)
     {
-        switch (unit.GetUnitType())
-        {
-            case DataEnum.UNIT_TYPE.MELEE:
-                return new MeleeAttack(unit, target);
-            case DataEnum.UNIT_TYPE.RANGE:
-                return new RangeAttack(unit, target);
-        }
+        PlayerUnit player = await _unitManager.GetPlayerUnitBySelector();
 
-        return null;
+        BaseBuffAction buffAction = new BaseBuffAction(unit, player);
+
+        return buffAction;
     }
 
     public SkillAttackAction CreateSkillAttackAction(BaseUnit unit, string skillID)
@@ -64,5 +60,18 @@ class ActionFactory : ScriptableObject
         }
         
         return skillAction;
+    }
+
+    private BaseAttackAction CreateBaseAttackActionByUnitType(BaseUnit unit, BaseUnit target)
+    {
+        switch (unit.GetUnitType())
+        {
+            case DataEnum.UNIT_TYPE.MELEE:
+                return new MeleeAttack(unit, target);
+            case DataEnum.UNIT_TYPE.RANGE:
+                return new RangeAttack(unit, target);
+        }
+
+        return null;
     }
 }

@@ -48,6 +48,8 @@ class ActionSelector : ScriptableObject
             case 1:
                 selector.gameObject.SetActive(false);
                 unitAction = await _actionFactory.CreatePlayerBaseAttackAction(playerUnit);
+                // For Debugging
+                //unitAction = await _actionFactory.CreatePlayerBaseBuffAction(playerUnit);
                 break;
             case 2:
                 var skillID = playerUnit.GetStat().GetSkillsID();

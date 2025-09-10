@@ -46,7 +46,7 @@ public class TimelineSystem : ScriptableObject
         foreach (BaseUnit unit in unitList)
         {
             m_EndRound += unit.OnEndRound;
-            unit.GetStat().OnDie += OnCharacterDie;
+            unit.m_FinishedDying += OnCharacterDie;
             unit.m_AddBuff += OnCharacterAddBuff;
         }
 
@@ -114,10 +114,10 @@ public class TimelineSystem : ScriptableObject
         return unitList?.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
     }
 
-    public void OnCharacterDie(UnitStat stat)
+    public void OnCharacterDie(BaseUnit unit)
     {
-        List<EntityBanner> deleteBannerList = timelineUI.BannerList.FindAll(banner => banner.GetStat() == stat);
-        timelineUI.BannerList.RemoveAll(banner => banner.GetStat() == stat);
+        List<EntityBanner> deleteBannerList = timelineUI.BannerList.FindAll(banner => banner.GetStat() == unit.GetStat());
+        timelineUI.BannerList.RemoveAll(banner => banner.GetStat() == unit.GetStat());
         foreach (EntityBanner banner in deleteBannerList)
         {
             banner.DestroyBanner();

@@ -55,7 +55,7 @@ public class CombatTester : MonoBehaviour
     public void OnDieButton()
     {
         var currentUnit = combatManager.GetCurrentTurnUnit();
-        combatManager.OnCharacterDie(currentUnit.GetStat());
+        //combatManager.OnCharacterDie(currentUnit.GetStat());
 
         if (currentUnit is PlayerUnit)
         {
