@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1ccc0e1deaa287a43959000662c72d10
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 120194
+  packageName: 2D Pixel Spaceships kit
+  packageVersion: 1.1
+  assetPath: Assets/2D Pixel Spaceships kit/Animations/Projectiles/Projectile_1_Fly.anim
+  uploadId: 401923
