@@ -40,7 +40,7 @@ public class GameScene : AbstractScene
     [SerializeField] private CCTester ccTester;
     protected override int SceneIdx
     {
-        get { return 1; }
+        get { return 2; }
     }
 
     protected override void BindObjects()

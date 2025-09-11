@@ -123,5 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca9093ca8b3253469753ea2ac16cce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_select_controller: {fileID: 9100000, guid: c6a1053c05283e14088ff0903a5ddc00, type: 2}
-  player_select_controller: {fileID: 9100000, guid: 44912c811c2e5b44caa524c1d693a2cf, type: 2}
+  enemy_select_controller: {fileID: 9100000, guid: 741fbda2f6bf2c747812eb8c50a590a3, type: 2}
+  player_select_controller: {fileID: 9100000, guid: bfd63cb9ccb4a7142893904259796c4e, type: 2}

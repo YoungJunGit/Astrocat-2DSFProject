@@ -6,6 +6,7 @@ using AYellowpaper.SerializedCollections;
 public enum BACKGROUND
 {
     None,
+    Title,
     IcePlanet
 }
 

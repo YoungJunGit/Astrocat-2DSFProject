@@ -178,7 +178,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &6645648761260094638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerStatusPanel: {fileID: 8417022078013290071}
   _enemyStatusPanel: {fileID: 781866791970454673}
-  unitPositioner: {fileID: 11400000, guid: c4b92e3d7b3b8034fb2eb759f5fbdacd, type: 2}
 --- !u!1 &3934611100039142273
 GameObject:
   m_ObjectHideFlags: 0

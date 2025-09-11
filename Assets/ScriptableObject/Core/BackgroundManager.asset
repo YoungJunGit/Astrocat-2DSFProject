@@ -15,4 +15,6 @@ MonoBehaviour:
   backgrounds:
     _serializedList:
     - Key: 1
+      Value: {fileID: 11400000, guid: 973e26134e0377f47aa7c57e3f39db56, type: 2}
+    - Key: 2
       Value: {fileID: 11400000, guid: 44f3d0453d14b2c4ca228fe848ec6c70, type: 2}

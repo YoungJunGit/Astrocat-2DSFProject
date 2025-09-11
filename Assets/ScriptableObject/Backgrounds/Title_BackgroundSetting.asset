@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee9d6150fc035c4fa631c5f39542727, type: 3}
-  m_Name: IcePlanet_BackgroundSetting
+  m_Name: Title_BackgroundSetting
   m_EditorClassIdentifier: 
   background_sprites:
-  - {fileID: -2936800343139373264, guid: 09a3bbe16849c934d875c851d462c446, type: 3}
-  - {fileID: 5685259277987472262, guid: eb65f5ef4b9a8194b852692339a90e09, type: 3}
-  - {fileID: 1320910718616926719, guid: 7524247bf14a68348be3c2c2058c65e7, type: 3}
-  - {fileID: -6775549560185069986, guid: 68b97d218e8b2124cb74c91ad436f405, type: 3}
-  background_anims: []
+  - {fileID: 7395046637855900065, guid: da953acfd93901145b31a38bd6e89192, type: 3}
+  background_anims:
+  - {fileID: 9100000, guid: b86500a0ce99fb74b9c83ec6c445f2eb, type: 2}
