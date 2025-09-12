@@ -15,8 +15,8 @@ public class TimelineSystem : ScriptableObject
     [SerializeField] public ScriptableListBaseUnit unitList = null;
     [SerializeField] private IntVariable MaxShowBannerIndex;
     [SerializeField] private TimelineCanvas timelineCanvasPrefab;
-    public TimelineCanvas timelineCanvas;
-    public TimelineUI timelineUI;
+    [HideInInspector] public TimelineCanvas timelineCanvas;
+    [HideInInspector] public TimelineUI timelineUI;
 
     public int roundDepth;
     private int curRound;

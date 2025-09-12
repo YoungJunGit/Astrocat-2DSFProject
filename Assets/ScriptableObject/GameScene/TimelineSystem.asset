@@ -17,4 +17,4 @@ MonoBehaviour:
   timelineCanvasPrefab: {fileID: 8944480728120779190, guid: 47409dc05f91f744f85a3615484a1675, type: 3}
   timelineCanvas: {fileID: 0}
   timelineUI: {fileID: 0}
-  roundDepth: 0
+  roundDepth: 2

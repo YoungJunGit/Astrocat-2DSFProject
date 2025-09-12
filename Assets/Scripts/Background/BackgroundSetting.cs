@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEditor.Animations;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "BackgroundSetting", menuName = "Backgrounds/BackgroundSetting")]
 public class BackgroundSetting : ScriptableObject
@@ -17,7 +18,7 @@ public class BackgroundSetting : ScriptableObject
     [SerializeField] private List<RuntimeAnimatorController> background_anims;
 
     public Sprite GetBackgroundSprite(int index) => background_sprites[index];
-    public RuntimeAnimatorController GetBackgroundAnimator(int index) => background_anims[index];
+    public RuntimeAnimatorController GetBackgroundAnimator(int index) => background_anims.ElementAtOrDefault(index);
     public string GetName() => Name;
     public int BackgroundCount => background_sprites.Count;
 }
