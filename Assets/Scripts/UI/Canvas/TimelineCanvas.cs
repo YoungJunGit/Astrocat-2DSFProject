@@ -35,7 +35,7 @@ public class TimelineCanvas : MonoBehaviour
     /// // Banner : Set RectTransform
     /// </summary>
     /// <param name="bannerList"></param>
-    public void SetRectTransform(List<EntityBanner> bannerList)
+    private void SetRectTransform(List<EntityBanner> bannerList)
     {
         Vector2 pos;
         foreach (var banner in bannerList.Select((value, index) => (value, index)))
