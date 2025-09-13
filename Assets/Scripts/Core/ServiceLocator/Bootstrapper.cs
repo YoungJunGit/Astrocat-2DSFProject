@@ -1,4 +1,5 @@
 using UnityEngine;
+
 [DisallowMultipleComponent]
 [RequireComponent(typeof(ServiceLocator))]
 public abstract class Bootstrapper : MonoBehaviour
@@ -17,10 +18,7 @@ public abstract class Bootstrapper : MonoBehaviour
 
     private bool _hasBeenBootstraped;
 
-    private void Awake()
-    {
-        BootstrapOnDemand();
-    }
+    private void Awake() => BootstrapOnDemand();
 
     public void BootstrapOnDemand()
     {
@@ -41,7 +39,7 @@ public class ServiceLocatorGlobalBootstrapper : Bootstrapper
     
     protected override void Bootstrap()
     {
-        
+        Locator.ConfigureAsGlobal(dontDestroyOnLoad);
     }
 }
 
@@ -50,6 +48,6 @@ public class ServiceLocatorSceneBootstrapper : Bootstrapper
 {
     protected override void Bootstrap()
     {
-        
+        Locator.ConfigureAsScene();       
     }
 }

@@ -55,11 +55,17 @@ public class GameScene : AbstractScene
 
         hudManager.Init();
         dialogueManager.Init();
+        
         unitManager.Init();
+        ServiceLocator.Global.Register<UnitManager>(unitManager);
+        
         timelineSystem.Init();
         inputHandler.Init();
+        ServiceLocator.ForSceneOf(this).Register(inputHandler);
+        
         qteManager.Init();
-
+        ServiceLocator.For(this).Register(qteManager);
+        
         if (debugMode)
         {
             inputTester.Init(inputHandler);

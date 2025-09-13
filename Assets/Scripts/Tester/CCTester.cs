@@ -5,10 +5,13 @@ using Random = UnityEngine.Random;
 
 public class CCTester : MonoBehaviour
 {
-    [SerializeField] UnitManager unitManager;
-    
+    UnitManager unitManager;
+
     public void SetCCOnRendomUnit()
     {
+        if (unitManager == null)
+            ServiceLocator.For(this).Get(out unitManager);
+        
         Debug.Log($"Set CC");
         
         var units = unitManager.GetAllUnit();
