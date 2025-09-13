@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: aa163536788a31e428531bb26bbeb990
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292505
+  packageName: SSSMapGenerator
+  packageVersion: 1.0.2
+  assetPath: Assets/SSSMapGenerator/Script/SerializableData.cs
+  uploadId: 706674

@@ -14,7 +14,9 @@ public class UnitStat
 
     public Action<float, float> OnHPChanged;
     public Action<int, int> OnAPChanged;
-    public Action<UnitStat> OnDie;
+    public Action<float, bool> OnDamaged;
+    public Action<float> OnHealed;
+    public Action OnDie;
     
     public string Name { get => _baseData.Name; }
     public ELEMENT_TYPE WeakType { get => _baseData.Weak_Type; }
@@ -52,14 +54,15 @@ public class UnitStat
         OnAPChanged?.Invoke(_curAp, Max_AP);
     }
 
-    public void GetDamaged(float value)     
+    public void GetDamaged(float value, bool isCritical = false)     
     {
         _curHp = Mathf.Clamp(_curHp - value, 0f, Max_HP);
         OnHPChanged.Invoke(_curHp, Max_HP);
+        OnDamaged.Invoke(value, isCritical);
 
         if (Cur_HP <= 0f)
         {
-            OnDie.Invoke(this);
+            OnDie.Invoke();
         }
     }
 
@@ -72,6 +75,7 @@ public class UnitStat
     {
         _curHp = Mathf.Clamp(_curHp + value, 0f, Max_HP);
         OnHPChanged.Invoke(_curHp, Max_HP);
+        OnHealed.Invoke(value);
     }
 
     public void OnNormalAttack()

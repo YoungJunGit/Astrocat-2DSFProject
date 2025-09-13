@@ -7,11 +7,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "UnitManager", menuName = "GameScene/UnitManager", order = 2)]
 class UnitManager : ScriptableObject
 {
-    [SerializeField] private ScriptableListBaseUnit unitList = null;
+    [SerializeField] private ScriptableListBaseUnit currentUnitList = null;
 
     [SerializeField] private UnitSelector unitSelector;
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
+
+    private List<BaseUnit> unitList = new List<BaseUnit>();
+
     public void Init()
     {
         spawner.Init();
@@ -20,9 +23,12 @@ class UnitManager : ScriptableObject
 
     public void Prepare()
     {
-        foreach (BaseUnit unit in unitList)
+        foreach (BaseUnit unit in currentUnitList)
         {
-            unit.GetStat().OnDie += (stat) => SetUnitPosition();
+            unit.GetStat().OnDamaged += unit.OnDamaged;
+            unit.GetStat().OnHealed += unit.OnHealed;
+            unit.GetStat().OnDie += () => { unit.OnDie().Forget(); };
+            unit.m_FinishedDying += (deadUnit) => { currentUnitList.Remove(deadUnit); SetUnitPosition(); };
         }
     }
     
@@ -30,6 +36,7 @@ class UnitManager : ScriptableObject
     {
         var playerUnit = spawner.CreatePlayerUnit(entityData, index);
         
+        currentUnitList.Add(playerUnit);
         unitList.Add(playerUnit);
 
         SetUnitPosition();
@@ -41,22 +48,23 @@ class UnitManager : ScriptableObject
     {
         var enemyUnit = spawner.CreateEnemyUnit(entityData, index);
         
+        currentUnitList.Add(enemyUnit);
         unitList.Add(enemyUnit);
-        
+
         SetUnitPosition();
         
         return enemyUnit;
     }
 
     private void CheckGameCondition() {
-        if (unitList.GetPlayerUnits().Count == 0)
+        if (currentUnitList.GetPlayerUnits().Count == 0)
         {
             Debug.Log("Player Loss!!!");
             UnityEditor.EditorApplication.isPlaying = false;
 
             // todo => XP depend on game player give
         }
-        else if (unitList.GetEnemyUnits().Count == 0)
+        else if (currentUnitList.GetEnemyUnits().Count == 0)
         {
             Debug.Log("Player Win!!!");
             UnityEditor.EditorApplication.isPlaying = false;
@@ -75,13 +83,18 @@ class UnitManager : ScriptableObject
         return await unitSelector.SelectUnit(SIDE.PLAYER) as PlayerUnit;
     }
 
+    public PlayerUnit GetRandomPlayerUnitBySelector()
+    {
+        return unitSelector.SelectRandomUnit(SIDE.PLAYER) as PlayerUnit;
+    }
+
     public List<BaseUnit> GetAllUnit()
     {
-        return unitList.GetUnits();
+        return currentUnitList.GetUnits();
     }
 
     private void SetUnitPosition()
     {
-        positioner.SetPositionForUnits(unitList.GetPlayerUnits(), unitList.GetEnemyUnits());
+        positioner.SetPositionForUnits(currentUnitList.GetPlayerUnits(), currentUnitList.GetEnemyUnits());
     }
 }

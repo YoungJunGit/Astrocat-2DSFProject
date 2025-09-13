@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b8b86e772700aa1438ff914ecc527350
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 120194
+  packageName: 2D Pixel Spaceships kit
+  packageVersion: 1.1
+  assetPath: Assets/2D Pixel Spaceships kit/Scripts/SpaceshipSpawner.cs
+  uploadId: 401923

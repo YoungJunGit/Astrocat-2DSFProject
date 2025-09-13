@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: 3a21003817c424b40ab4ef01d0b79a17
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3073625238003469270
+    second: rifleman_death_0
+  - first:
+      213: -1446942112458079236
+    second: rifleman_death_1
+  - first:
+      213: -6279628593580353330
+    second: rifleman_death_2
+  - first:
+      213: 1033540981060948919
+    second: rifleman_death_3
+  - first:
+      213: -2917392051911506649
+    second: rifleman_death_4
+  - first:
+      213: -2258232798101710562
+    second: rifleman_death_5
+  - first:
+      213: 6008590120290552521
+    second: rifleman_death_6
+  - first:
+      213: 4903830424921454737
+    second: rifleman_death_7
+  - first:
+      213: -4820763226524344007
+    second: rifleman_death_8
+  - first:
+      213: 2176970052624009358
+    second: rifleman_death_9
+  - first:
+      213: 2343739968591220263
+    second: rifleman_death_10
+  - first:
+      213: -2284230919955435674
+    second: rifleman_death_11
+  - first:
+      213: -3251075709869836921
+    second: rifleman_death_12
+  - first:
+      213: 3105077178743415106
+    second: rifleman_death_13
+  - first:
+      213: 5825601633232455097
+    second: rifleman_death_14
+  - first:
+      213: 2579477485975176575
+    second: rifleman_death_15
+  - first:
+      213: 7178542899667456327
+    second: rifleman_death_16
+  - first:
+      213: -1905889987225391324
+    second: rifleman_death_17
+  - first:
+      213: 3404765114280343443
+    second: rifleman_death_18
+  - first:
+      213: -2018649357397096148
+    second: rifleman_death_19
+  - first:
+      213: -2055275190627424990
+    second: rifleman_death_20
+  - first:
+      213: 8912465272924408594
+    second: rifleman_death_21
+  - first:
+      213: 978805349190004582
+    second: rifleman_death_22
+  - first:
+      213: 7244602733444507924
+    second: rifleman_death_23
+  - first:
+      213: -3429649076550357874
+    second: rifleman_death_24
+  - first:
+      213: -2682851504041603554
+    second: rifleman_death_25
+  - first:
+      213: -7281222112002555896
+    second: rifleman_death_26
+  - first:
+      213: 1738486009953336239
+    second: rifleman_death_27
+  - first:
+      213: -6193601239636570151
+    second: rifleman_death_28
+  - first:
+      213: -1848592721174783941
+    second: rifleman_death_29
+  - first:
+      213: -3658480648887655056
+    second: rifleman_death_30
+  - first:
+      213: 6581811612393115936
+    second: rifleman_death_31
+  - first:
+      213: 4816112011283496670
+    second: rifleman_death_32
+  - first:
+      213: 6490376594801820694
+    second: rifleman_death_33
+  - first:
+      213: -1274500152877922478
+    second: rifleman_death_34
+  - first:
+      213: 7129629187856691241
+    second: rifleman_death_35
+  - first:
+      213: -5452356043365670800
+    second: rifleman_death_36
+  - first:
+      213: -4680678615501034984
+    second: rifleman_death_37
+  - first:
+      213: -8536617127246889053
+    second: rifleman_death_38
+  - first:
+      213: -956343429146325814
+    second: rifleman_death_39
+  - first:
+      213: 2167877947090637004
+    second: rifleman_death_40
+  - first:
+      213: -1713264021616243309
+    second: rifleman_death_41
+  - first:
+      213: 7289211901180989580
+    second: rifleman_death_42
+  - first:
+      213: 2670922526973135383
+    second: rifleman_death_43
+  - first:
+      213: -4943583459010586596
+    second: rifleman_death_44
+  - first:
+      213: 5693183405122769620
+    second: rifleman_death_45
+  - first:
+      213: -7773191771033672213
+    second: rifleman_death_46
+  - first:
+      213: -3182355586589054957
+    second: rifleman_death_47
+  - first:
+      213: -3573235652088129269
+    second: rifleman_death_48
+  - first:
+      213: -4789033499905619450
+    second: rifleman_death_49
+  - first:
+      213: -7890266723359743150
+    second: rifleman_death_50
+  - first:
+      213: -6340809099403376844
+    second: rifleman_death_51
+  - first:
+      213: -623027155509124029
+    second: rifleman_death_52
+  - first:
+      213: -6056611164677400959
+    second: rifleman_death_53
+  - first:
+      213: 3133524203807001975
+    second: rifleman_death_54
+  - first:
+      213: 5337623674451125400
+    second: rifleman_death_55
+  - first:
+      213: -6641943319062297583
+    second: rifleman_death_56
+  - first:
+      213: -5678198334922078583
+    second: rifleman_death_57
+  - first:
+      213: -5319176774693938044
+    second: rifleman_death_58
+  - first:
+      213: 8160139641837047207
+    second: rifleman_death_59
+  - first:
+      213: -9204371054553317688
+    second: rifleman_death_60
+  - first:
+      213: -837279979129822852
+    second: rifleman_death_61
+  - first:
+      213: 413801830015559563
+    second: rifleman_death_62
+  - first:
+      213: -8424141721807383458
+    second: rifleman_death_63
+  - first:
+      213: 665030175311539646
+    second: rifleman_death_64
+  - first:
+      213: -2552123927358076227
+    second: rifleman_death_65
+  - first:
+      213: 328764742955996281
+    second: rifleman_death_66
+  - first:
+      213: 211812216188176534
+    second: rifleman_death_67
+  - first:
+      213: -7120847857191502132
+    second: rifleman_death_68
+  - first:
+      213: -1886194251346077173
+    second: rifleman_death_69
+  - first:
+      213: -96252145408656274
+    second: rifleman_death_70
+  - first:
+      213: -7645090336470336876
+    second: rifleman_death_71
+  - first:
+      213: -8974372261256877392
+    second: rifleman_death_72
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rifleman_death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24b02c712a4855d0800000000000000
+      internalID: -3073625238003469270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf30260a0dd6bebe0800000000000000
+      internalID: -1446942112458079236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_2
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec8d146a0174ad8a0800000000000000
+      internalID: -6279628593580353330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_3
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b352fcdb00e75e00800000000000000
+      internalID: 1033540981060948919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_4
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7254443c2675387d0800000000000000
+      internalID: -2917392051911506649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_5
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19d2091c3529a0e0800000000000000
+      internalID: -2258232798101710562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_6
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca07d821ecc26350800000000000000
+      internalID: 6008590120290552521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_7
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19832343ac7ed0440800000000000000
+      internalID: 4903830424921454737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_8
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93120c01365391db0800000000000000
+      internalID: -4820763226524344007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_9
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8841519ab6263e10800000000000000
+      internalID: 2176970052624009358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_10
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ec3c17513a68020800000000000000
+      internalID: 2343739968591220263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_11
+      rect:
+        serializedVersion: 2
+        x: 2244
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66fa717a418cc40e0800000000000000
+      internalID: -2284230919955435674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_12
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785be47eddbd1e2d0800000000000000
+      internalID: -3251075709869836921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_13
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2416c2f1e33771b20800000000000000
+      internalID: 3105077178743415106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_14
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b581cfe1d1b8d050800000000000000
+      internalID: 5825601633232455097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_15
+      rect:
+        serializedVersion: 2
+        x: 3060
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f750ba95b152cc320800000000000000
+      internalID: 2579477485975176575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_16
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 741d493dbbe4f9360800000000000000
+      internalID: 7178542899667456327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_17
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42fe47a872bec85e0800000000000000
+      internalID: -1905889987225391324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_18
+      rect:
+        serializedVersion: 2
+        x: 3672
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 397725c05d7204f20800000000000000
+      internalID: 3404765114280343443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_19
+      rect:
+        serializedVersion: 2
+        x: 3876
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c29864eca115cf3e0800000000000000
+      internalID: -2018649357397096148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_20
+      rect:
+        serializedVersion: 2
+        x: 4080
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225aafa7a123a73e0800000000000000
+      internalID: -2055275190627424990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_21
+      rect:
+        serializedVersion: 2
+        x: 4284
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b0aa902ff6fab70800000000000000
+      internalID: 8912465272924408594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_22
+      rect:
+        serializedVersion: 2
+        x: 4488
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66fe8b6774a659d00800000000000000
+      internalID: 978805349190004582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_23
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419a8c17dcff98460800000000000000
+      internalID: 7244602733444507924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_24
+      rect:
+        serializedVersion: 2
+        x: 4896
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c28fff5507760d0800000000000000
+      internalID: -3429649076550357874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_25
+      rect:
+        serializedVersion: 2
+        x: 5100
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1e4a7c75c894cad0800000000000000
+      internalID: -2682851504041603554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_26
+      rect:
+        serializedVersion: 2
+        x: 5304
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8004e531117e3fa90800000000000000
+      internalID: -7281222112002555896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_27
+      rect:
+        serializedVersion: 2
+        x: 5508
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab314ea0d7502810800000000000000
+      internalID: 1738486009953336239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_28
+      rect:
+        serializedVersion: 2
+        x: 5712
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df0b07dc78eb0aa0800000000000000
+      internalID: -6193601239636570151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_29
+      rect:
+        serializedVersion: 2
+        x: 5916
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b381100e6ba7856e0800000000000000
+      internalID: -1848592721174783941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_30
+      rect:
+        serializedVersion: 2
+        x: 6120
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0752969bb377a3dc0800000000000000
+      internalID: -3658480648887655056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_31
+      rect:
+        serializedVersion: 2
+        x: 6324
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0219b3f1aca475b50800000000000000
+      internalID: 6581811612393115936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_32
+      rect:
+        serializedVersion: 2
+        x: 6528
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ede7b0f7b5446d240800000000000000
+      internalID: 4816112011283496670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_33
+      rect:
+        serializedVersion: 2
+        x: 6732
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6140caf1023721a50800000000000000
+      internalID: 6490376594801820694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_death_34
+      rect:
+        serializedVersion: 2
+        x: 6936
+        y: 0
+        width: 204
+        height: 1173
+      alignment: 9
+      pivot: {x: 0.85294116, y: 0.0051150895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257c7811dd0105ee0800000000000000
+      internalID: -1274500152877922478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 345d8c0ea75a99a43a8539f6aa828fb4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":36.0,"y":1.0},"gridSpriteSize":{"x":204.0,"y":1173.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      rifleman_death_0: -3073625238003469270
+      rifleman_death_1: -1446942112458079236
+      rifleman_death_10: 2343739968591220263
+      rifleman_death_11: -2284230919955435674
+      rifleman_death_12: -3251075709869836921
+      rifleman_death_13: 3105077178743415106
+      rifleman_death_14: 5825601633232455097
+      rifleman_death_15: 2579477485975176575
+      rifleman_death_16: 7178542899667456327
+      rifleman_death_17: -1905889987225391324
+      rifleman_death_18: 3404765114280343443
+      rifleman_death_19: -2018649357397096148
+      rifleman_death_2: -6279628593580353330
+      rifleman_death_20: -2055275190627424990
+      rifleman_death_21: 8912465272924408594
+      rifleman_death_22: 978805349190004582
+      rifleman_death_23: 7244602733444507924
+      rifleman_death_24: -3429649076550357874
+      rifleman_death_25: -2682851504041603554
+      rifleman_death_26: -7281222112002555896
+      rifleman_death_27: 1738486009953336239
+      rifleman_death_28: -6193601239636570151
+      rifleman_death_29: -1848592721174783941
+      rifleman_death_3: 1033540981060948919
+      rifleman_death_30: -3658480648887655056
+      rifleman_death_31: 6581811612393115936
+      rifleman_death_32: 4816112011283496670
+      rifleman_death_33: 6490376594801820694
+      rifleman_death_34: -1274500152877922478
+      rifleman_death_35: -1932047560
+      rifleman_death_4: -2917392051911506649
+      rifleman_death_5: -2258232798101710562
+      rifleman_death_6: 6008590120290552521
+      rifleman_death_7: 4903830424921454737
+      rifleman_death_8: -4820763226524344007
+      rifleman_death_9: 2176970052624009358
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

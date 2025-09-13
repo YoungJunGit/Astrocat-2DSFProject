@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: daab852f48e51584d9e94b3eba89e470
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 120194
+  packageName: 2D Pixel Spaceships kit
+  packageVersion: 1.1
+  assetPath: Assets/2D Pixel Spaceships kit/Animations/Projectiles/Projectile_6.controller
+  uploadId: 401923

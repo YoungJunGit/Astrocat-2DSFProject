@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c7ddb51d560498f4882af4ce315bc287
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 120194
+  packageName: 2D Pixel Spaceships kit
+  packageVersion: 1.1
+  assetPath: Assets/2D Pixel Spaceships kit/Scripts/EngineAnimationPreset.cs
+  uploadId: 401923

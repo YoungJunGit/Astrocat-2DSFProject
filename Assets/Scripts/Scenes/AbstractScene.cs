@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using NaughtyAttributes;
 using Obvious.Soap;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,15 +7,30 @@ using UnityEngine.SceneManagement;
 public abstract class AbstractScene : MonoBehaviour
 {
     [SerializeField] protected abstract int SceneIdx { get; }
+
+    [Header("Background Setting")]
+    [SerializeField] 
+    protected BackgroundManager backgroundManager;
+
+    [ShowIf("IsBackgroundAssigned"), SerializeField]
+    protected BACKGROUND background_type;
+
+    [ShowIf("IsBackgroundAssigned"), SerializeField]
+    [Tooltip("If this set to -1, apply random background sprite"), MinValue(-1)]
+    protected int background_index;
+
+    [HorizontalLine(color: EColor.Blue)]
     [SerializeField] protected BoolVariable debugMode;
-    
+
     private async void Start()
     {
         if (!SceneManager.GetSceneByBuildIndex(0).isLoaded)
         {
-            SceneManager.LoadScene(0, LoadSceneMode.Additive);
+            var asyncOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+            await asyncOperation;
         }
 
+        backgroundManager.SetBackground(background_type, background_index);
         BindObjects();
         await InitializeObjects();
         await CreateObjects();
@@ -31,4 +47,6 @@ public abstract class AbstractScene : MonoBehaviour
     protected abstract void PrepareGame();
 
     protected abstract UniTask BeginGame();
+
+    private bool IsBackgroundAssigned => backgroundManager != null;
 }

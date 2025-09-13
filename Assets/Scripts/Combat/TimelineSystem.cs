@@ -1,32 +1,40 @@
-using System.Collections.Generic;
-using System.Linq;
-using System;
-using UnityEngine;
-using System.Reflection;
-using UnityEngine.UI;
 using DataEntity;
 using DataEnum;
+using Obvious.Soap;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using UnityEngine;
+using UnityEngine.UI;
+using static EntityBanner;
 
 [CreateAssetMenu(fileName = "TimelineSystem", menuName = "GameScene/TimelineSystem", order = 3)]
 public class TimelineSystem : ScriptableObject
 {
-    [SerializeField] private ScriptableListBaseUnit unitList = null;
+    [SerializeField] public ScriptableListBaseUnit unitList = null;
+    [SerializeField] private IntVariable MaxShowBannerIndex;
     [SerializeField] private TimelineCanvas timelineCanvasPrefab;
-    private TimelineCanvas timelineCanvas;
-    private TimelineUI timelineUI;
+    [HideInInspector] public TimelineCanvas timelineCanvas;
+    [HideInInspector] public TimelineUI timelineUI;
 
-    private int roundDepth;
+    public int roundDepth;
     private int curRound;
+    private int foundIndex;
 
     public Action m_EndRound;
+    private BannerActions actions;
 
     public void Init()
     {
         roundDepth = 0;
         curRound = 1;
 
+        foundIndex = 0;
+
         timelineCanvas = Instantiate(timelineCanvasPrefab);
         timelineUI = timelineCanvas.GetComponentInChildren<TimelineUI>();
+        actions = new BannerActions(this);
     }
 
     public void CreateBanners()
@@ -46,7 +54,7 @@ public class TimelineSystem : ScriptableObject
         foreach (BaseUnit unit in unitList)
         {
             m_EndRound += unit.OnEndRound;
-            unit.GetStat().OnDie += OnCharacterDie;
+            unit.m_FinishedDying += OnCharacterDie;
             unit.m_AddBuff += OnCharacterAddBuff;
         }
 
@@ -64,7 +72,7 @@ public class TimelineSystem : ScriptableObject
     /// <returns> Give Unit to CombatManager for next turn </returns>
     public BaseUnit Pop(List<BaseUnit> unitList)
     {
-        if (timelineUI.BannerList[0].Round > curRound)
+        if (timelineUI.BannerList[0].GetState() != BannerState.EXTRA && timelineUI.BannerList[0].Round > curRound)
         {
             Debug.Log("Start Next Round!!!");
             m_EndRound?.Invoke();
@@ -74,69 +82,38 @@ public class TimelineSystem : ScriptableObject
 
         timelineUI.GetCurrentTurnBanner().DestroyBanner();
         timelineUI.OnPop();
+        OnTimelineChanged(unitList, foundIndex);
 
-        OnTimelineChanged(unitList);
-
-        // _list 전체 가져오기
-        foreach (BaseUnit unit in this.unitList.GetUnits())
-        {
-            Debug.Log(unit.name);
-
-            UnitStat stat = unit.GetStat();
-
-            // 예: stack 이라는 이름이 들어간 int 필드 모두 +1
-            var fields = typeof(UnitStat).GetFields(
-                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
-            );
-
-            foreach (var field in fields)
-            {
-                if (field.FieldType == typeof(int) &&
-                    field.Name.IndexOf("stack", StringComparison.OrdinalIgnoreCase) >= 0)
-                {
-                    int value = (int)field.GetValue(stat);
-
-                    if (field.Name.Equals("forbiddenStack", StringComparison.OrdinalIgnoreCase))
-                    {
-                        // forbiddenStack은 -1
-                        field.SetValue(stat, value - 1);
-                    }
-                    else
-                    {
-                        // 나머지 stack들은 +1
-                        field.SetValue(stat, value + 1);
-                    }
-                }
-            }
-        }
-
+        actions.UpdateAllUnitStacks();
 
         return unitList?.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
     }
 
-    public void OnCharacterDie(UnitStat stat)
+    public void OnCharacterDie(BaseUnit unit)
     {
-        List<EntityBanner> deleteBannerList = timelineUI.BannerList.FindAll(banner => banner.GetStat() == stat);
-        timelineUI.BannerList.RemoveAll(banner => banner.GetStat() == stat);
+        List<EntityBanner> deleteBannerList = timelineUI.BannerList.FindAll(banner => banner.GetStat() == unit.GetStat());
+        timelineUI.BannerList.RemoveAll(banner => banner.GetStat() == unit.GetStat());
+
         foreach (EntityBanner banner in deleteBannerList)
         {
             banner.DestroyBanner();
         }
-
-        OnTimelineChanged(this.unitList.GetUnits());
+        SortBanner();
+        OnTimelineChanged(this.unitList.GetUnits(), foundIndex);
+        foundIndex = 0;
     }
 
     public void OnCharacterAddBuff(Buff buff)
     {
         SortBanner();
-        timelineUI.MoveBanners();
+        timelineUI.MoveBanners(foundIndex);
     }
 
-    private void OnTimelineChanged(List<BaseUnit> unitList)
+    private void OnTimelineChanged(List<BaseUnit> unitList, int foundIndex)
     {
         AddTimeline(unitList);
         timelineCanvas.SetParent(timelineUI.BannerList);
-        timelineUI.MoveBanners();
+        timelineUI.MoveBanners(foundIndex);
     }
 
     /// <summary>
@@ -145,7 +122,7 @@ public class TimelineSystem : ScriptableObject
     /// <param name="unitList"></param>
     public void AddTimeline(List<BaseUnit> unitList)
     {
-        while (timelineUI.BannerList.Count < 7 && unitList != null && unitList.Count > 0)
+        while (timelineUI.BannerList.Count < MaxShowBannerIndex && unitList != null && unitList.Count > 0)
         {
             roundDepth++;
             foreach (BaseUnit unit in unitList)
@@ -161,7 +138,7 @@ public class TimelineSystem : ScriptableObject
     private void SortBanner()
     {
         // For Debugging
-        if(timelineUI.GetCurrentTurnBanner() != null)
+        if (timelineUI.GetCurrentTurnBanner() != null)
             timelineUI.GetCurrentTurnBanner().SetName("CurrentBanner");
 
         timelineUI.BannerList.Sort((EntityBanner a, EntityBanner b) => a.CompareTo(b));
@@ -170,4 +147,6 @@ public class TimelineSystem : ScriptableObject
             banner.value.Index = banner.index + 1;
         }
     }
+
+    public BannerActions GetActions() => actions;
 }

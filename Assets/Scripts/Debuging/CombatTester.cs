@@ -31,6 +31,7 @@ public class CombatTester : MonoBehaviour
 
     [SerializeField] private Button AddSpeedBtn;
     [SerializeField] private Button DieBtn;
+    [SerializeField] private Button Fainting;
     [SerializeField] private HUDManager hudManager;
 
     [Header("Buff Test")]
@@ -55,7 +56,7 @@ public class CombatTester : MonoBehaviour
     public void OnDieButton()
     {
         var currentUnit = combatManager.GetCurrentTurnUnit();
-        combatManager.OnCharacterDie(currentUnit.GetStat());
+        //combatManager.OnCharacterDie(currentUnit.GetStat());
 
         if (currentUnit is PlayerUnit)
         {
@@ -66,5 +67,14 @@ public class CombatTester : MonoBehaviour
             //hudManager.DeleteEnemyHUD((EnemyUnit)currentUnit);
             //unitManager.DeleteEnemyUnit((EnemyUnit)currentUnit);
         }
+    }
+    public void OnFaintingButton()
+    {
+        combatManager.OnFainting();
+    }
+
+    public void OnExtraButton()
+    {
+        combatManager.OnExtraTurn();
     }
 }

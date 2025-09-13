@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fd8e67cbd5c4c8e4cac614d81912d620
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 120194
+  packageName: 2D Pixel Spaceships kit
+  packageVersion: 1.1
+  assetPath: Assets/2D Pixel Spaceships kit/Scripts/ProjectileController.cs
+  uploadId: 401923

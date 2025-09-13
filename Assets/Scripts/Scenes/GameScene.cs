@@ -1,10 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Cysharp.Threading.Tasks;
 using DataEntity;
 using DataEnum;
+using NaughtyAttributes;
 using Obvious.Soap;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -39,7 +40,7 @@ public class GameScene : AbstractScene
     [SerializeField] private CCTester ccTester;
     protected override int SceneIdx
     {
-        get { return 1; }
+        get { return 2; }
     }
 
     protected override void BindObjects()

@@ -10,8 +10,8 @@ class UnitSelector : ScriptableObject
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private UnitSelectorController controller;
-    [SerializeField] public GameObject unitSelectArrowPrefab;
-    private GameObject unitSelectArrow;
+    [SerializeField] public UnitSelectorObject unitSelectArrowPrefab;
+    private UnitSelectorObject unitSelectArrow;
     private SIDE side;
     private bool isConfirmed;
 
@@ -24,18 +24,22 @@ class UnitSelector : ScriptableObject
 
     public async UniTask<BaseUnit> SelectUnit(SIDE side)
     {
+        controller.Prepare(side, unitList.GetUnits(side).Count);
         this.side = side;
         isConfirmed = false;
-        unitSelectArrow = Instantiate(unitSelectArrowPrefab, unitList.GetUnits(side)[controller.GetSelectionIndex(side)].attachments.GetUnitSelectArrowPos(), false);
+
+        int selectIndex = controller.GetSelectionIndex(side);
+        unitSelectArrow = Instantiate(unitSelectArrowPrefab, unitList.GetUnits(side)[selectIndex].attachments.GetUnitSelectArrowPos(), false);
+        unitSelectArrow.Set(side);
 
         using (var inputDisposer = new InputDisposer(controller.InputHandler, InputHandler.InputState.SelectUnit))
         {
-            controller.OnStartSelect(side, unitList.GetUnits(side).Count);
+            controller.OnStartSelect(side);
             await UniTask.WaitUntil(() => isConfirmed == true);
             controller.OnEndSelect();
         }
 
-        Destroy(unitSelectArrow);
+        Destroy(unitSelectArrow.gameObject);
 
         return unitList.GetUnits(side)[controller.GetSelectionIndex(side)];
     }

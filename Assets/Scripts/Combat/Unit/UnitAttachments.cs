@@ -7,6 +7,8 @@ public class UnitAttachments : MonoBehaviour
     private SpriteRenderer SpriteRenderer;
     [SerializeField, ShowIf("IsUnit"), Required]
     private BoxCollider2D HitBox;
+    [SerializeField, ShowIf("IsUnit"), Required]
+    private Transform MeleeHitPos;
     [SerializeField, ShowIf("IsUnit"), Required] 
     private Transform UnitSelectArrowPos;
     [SerializeField, ShowIf("IsEnemy"), Required] 
@@ -18,6 +20,7 @@ public class UnitAttachments : MonoBehaviour
 
     public SpriteRenderer GetSpriteRenderer() => SpriteRenderer;
     public BoxCollider2D GetHitBox() => HitBox;
+    public Transform GetMeleeHitPos() => MeleeHitPos;
     public Transform GetStatusPosition() => StatusPos;
     public Transform GetUnitSelectArrowPos() => UnitSelectArrowPos;
     public Transform GetActionSelectorPos() => ActionSelectorPos;

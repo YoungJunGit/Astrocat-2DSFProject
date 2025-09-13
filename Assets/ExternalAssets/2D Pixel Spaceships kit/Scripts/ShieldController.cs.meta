@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9873e3e7a77805e4f9ac5053324232e0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 120194
+  packageName: 2D Pixel Spaceships kit
+  packageVersion: 1.1
+  assetPath: Assets/2D Pixel Spaceships kit/Scripts/ShieldController.cs
+  uploadId: 401923

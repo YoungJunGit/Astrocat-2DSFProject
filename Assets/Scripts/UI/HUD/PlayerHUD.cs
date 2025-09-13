@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using DG.Tweening;
 
 public class PlayerHUD : BaseHUD
 {
@@ -21,6 +22,9 @@ public class PlayerHUD : BaseHUD
     [SerializeField] private TMP_Text unitName;
     [SerializeField] private Color DieColor;
 
+    [Header("HP Tween")]
+    [SerializeField] private float hpTweenDuration = 0.5f;
+
     public override void Initialize(BaseUnit unit)
     {
         unitName.text = unit.GetStat().GetData().Name;
@@ -32,11 +36,18 @@ public class PlayerHUD : BaseHUD
 
     public override void OnHPChanged(float curHp, float maxHp)
     {
-        hp_Slider.value = curHp / maxHp;
+        float targetValue= curHp / maxHp;
         hp_Text.text = $"{curHp}/{maxHp}";
 
+        hp_Slider.DOKill();
+
+        hp_Slider.direction = Slider.Direction.RightToLeft;
+        hp_Slider.DOValue(targetValue, hpTweenDuration);
+
         if (curHp <= 0)
+        {
             statusBox.color = DieColor;
+        }
         else
             statusBox.color = Color.white;
     }

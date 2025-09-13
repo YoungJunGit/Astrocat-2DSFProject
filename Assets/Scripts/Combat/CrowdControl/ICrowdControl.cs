@@ -17,7 +17,7 @@ public class BurnCC : ICrowdControl
 public class OppressionCC : ICrowdControl
 {
     public int Count { get; set; }
-    
+
     public void ApplyCrowdControl(BaseUnit target)
     {
         
