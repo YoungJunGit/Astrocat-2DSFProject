@@ -19,7 +19,7 @@ public abstract class AbstractScene : MonoBehaviour
     [Tooltip("If this set to -1, apply random background sprite"), MinValue(-1)]
     protected int background_index;
 
-    [HorizontalLine(color: EColor.Blue)]
+    [Space(20f)]
     [SerializeField] protected BoolVariable debugMode;
 
     private async void Start()
@@ -30,6 +30,7 @@ public abstract class AbstractScene : MonoBehaviour
             await asyncOperation;
         }
 
+        SceneHandler.Instance.DestroyLoadingScreen();
         backgroundManager.SetBackground(background_type, background_index);
         BindObjects();
         await InitializeObjects();

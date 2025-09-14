@@ -1,7 +1,6 @@
-using UnityEngine;
-using NaughtyAttributes;
-using UnityEngine.Rendering;
 using AYellowpaper.SerializedCollections;
+using Sirenix.OdinInspector;
+using UnityEngine;
 
 public enum BACKGROUND
 {
@@ -18,11 +17,9 @@ public class BackgroundManager : ScriptableObject
 
     public void SetBackground(BACKGROUND type, int index)
     {
-        Background background = GameObject.Find("Background").GetComponent<Background>();
-
-        if (background != null && type != BACKGROUND.None)
+        if (type != BACKGROUND.None)
         {
-            background.Init(backgrounds[type], index);
+            BackgroundCreator.Instance.CreateBackground(backgrounds[type], index);
         }
         else
         {

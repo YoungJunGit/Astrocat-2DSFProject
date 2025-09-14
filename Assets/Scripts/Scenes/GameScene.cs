@@ -121,6 +121,8 @@ public class GameScene : AbstractScene
             ForDebugging();
             combatManager.OnTernEnd += ccTester.SetCCOnRendomUnit;
         }
+
+        //SceneHandler.Instance.DestroyLoadingScreen();
     }
 
     protected override async UniTask BeginGame()

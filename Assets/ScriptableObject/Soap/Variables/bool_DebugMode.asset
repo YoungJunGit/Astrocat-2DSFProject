@@ -12,11 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a11231538da9894d8dce88b47df6a36, type: 3}
   m_Name: bool_DebugMode
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: RepaintRequest
+      Entry: 6
+      Data: 
   TagIndex: 0
   Description: Boolean for appearing debug mode
   _guid: c8808d7de2361294fa09f3b5d598dad6
   _saveGuid: 0
-  _value: 1
+  _value: 0
   _debugLogEnabled: 0
   _saved: 1
   _defaultValue: 0
