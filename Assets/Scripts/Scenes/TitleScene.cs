@@ -9,7 +9,6 @@ public class TitleScene : AbstractScene
 
     [Header("Manager Setting")]
     [SerializeField] private TitleManager titleManager;
-    [SerializeField] private SceneHandler sceneChanger;
 
     protected override int SceneIdx => 1;
     protected override void BindObjects() 
@@ -21,7 +20,6 @@ public class TitleScene : AbstractScene
     protected override async UniTask InitializeObjects() 
     {
         titleManager.Init();
-        DontDestroyOnLoad(sceneChanger);
     }
     protected override async UniTask CreateObjects()
     {
@@ -32,6 +30,6 @@ public class TitleScene : AbstractScene
     {
         await UniTask.WaitUntil(() => Input.anyKeyDown);
 
-        SceneHandler.Instance.ChangeScene(2);
+        sceneHandler.ChangeScene(2);
     }
 }

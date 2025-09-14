@@ -1,29 +1,57 @@
-using AYellowpaper.SerializedCollections;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public enum BACKGROUND
+public class BackgroundManager
 {
-    None,
-    Title,
-    IcePlanet
-}
+    [ShowInInspector, ReadOnly] private BackgroundSetting setting;
 
-[CreateAssetMenu(fileName = "BackgroundManager", menuName = "Core/BackgroundManager")]
-public class BackgroundManager : ScriptableObject
-{
-    [SerializedDictionary("Background Type", "Setting")]
-    public AYellowpaper.SerializedCollections.SerializedDictionary<BACKGROUND, BackgroundSetting> backgrounds;
+    protected BackgroundManager() { }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Initialize()
+    {
+        ServiceLocator.Global.Register<BackgroundManager>(new BackgroundManager());
+    }
 
     public void SetBackground(BACKGROUND type, int index)
     {
+        BackgroundContainer backgroundContainer = AssetLoader.LoadScriptableObjectAsset<BackgroundContainer>("BackgroundContainer");
         if (type != BACKGROUND.None)
         {
-            BackgroundCreator.Instance.CreateBackground(backgrounds[type], index);
+            CreateBackground(backgroundContainer.backgrounds[type], index);
         }
         else
         {
             Debug.LogWarning("Set Background Type!!!");
+        }
+    }
+
+    public void CreateBackground(BackgroundSetting setting, int index)
+    {
+        if (setting != null)
+        {
+            this.setting = setting;
+            int background_index = Mathf.Clamp(index, 0, setting.BackgroundCount);
+
+            GameObject background = Object.Instantiate(AssetLoader.LoadPrefabAsset("Background"));
+            if (background != null)
+            {
+                background.name = setting.GetName() + $"{background_index}_Background";
+                SpriteRenderer background_spriteRenderer = background.GetComponent<SpriteRenderer>();
+                Animator background_animator = background.GetComponent<Animator>();
+
+                if (index == -1)
+                {
+                    background_index = Random.Range(0, setting.BackgroundCount);
+                }
+
+                background_spriteRenderer.sprite = setting.GetBackgroundSprite(background_index);
+
+                if (setting.GetBackgroundAnimator(index) != null)
+                {
+                    background_animator.runtimeAnimatorController = setting.GetBackgroundAnimator(index);
+                }
+            }
         }
     }
 }

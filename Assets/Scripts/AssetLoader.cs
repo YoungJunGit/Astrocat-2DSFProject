@@ -6,8 +6,8 @@ public class AssetLoader
     private static string AnimAssetPath = "05_UI_UX/Banner/Animations/";
     private static string CharacterPrefabAssetPath = "01_Character/Prefabs/";
     private static string MonsterPrefabAssetPath = "02_Monster/Prefabs/";
-    private static string BulletPrefabAssetPath = "08_Etc/Prefabs/";
-    private static string DamageFactoryPath = "08_Etc/";
+    private static string ScriptableObjectAssetPath = "08_Etc/ScriptableObject/";
+    private static string PrefabAssetPath = "08_Etc/Prefabs/";
 
     public static Sprite[] LoadImgAsset(string assetName)
     {
@@ -51,21 +51,44 @@ public class AssetLoader
 
     public static GameObject LoadBulletPrefabAsset(string assetName)
     {
-        GameObject gameObject = Resources.Load<GameObject>(BulletPrefabAssetPath + assetName + "_Bullet");
+        GameObject gameObject = Resources.Load<GameObject>(PrefabAssetPath + assetName + "_Bullet");
 
         if (gameObject == null)
-            Debug.LogWarning($"AssetLoader: No path: {BulletPrefabAssetPath + assetName}_Bullet!");
+            Debug.LogWarning($"AssetLoader: No path: {PrefabAssetPath + assetName}_Bullet!");
 
         return gameObject;
     }
 
     public static DamageFactory GetDamageFactory()
     {
-        DamageFactory damageFactory = Resources.Load<DamageFactory>(DamageFactoryPath + "DamageFactory");
+        DamageFactory damageFactory = Resources.Load<DamageFactory>(ScriptableObjectAssetPath + "DamageFactory");
 
         if (damageFactory == null)
-            Debug.LogWarning($"AssetLoader: No path: {DamageFactoryPath}DamageFactory!");
+            Debug.LogWarning($"AssetLoader: No path: {ScriptableObjectAssetPath}DamageFactory!");
 
         return damageFactory;
+    }
+
+    public static GameObject LoadPrefabAsset(string assetName)
+    {
+        GameObject gameObject = Resources.Load<GameObject>(PrefabAssetPath + assetName);
+
+        if(gameObject == null)
+            Debug.LogWarning($"AssetLoader: No path: {PrefabAssetPath + assetName}!");
+
+        return gameObject;
+    }
+
+    public static T LoadScriptableObjectAsset<T>(string assetName) where T : ScriptableObject
+    {
+        T scriptableObject = Resources.Load<T>(ScriptableObjectAssetPath + assetName);
+
+        if (scriptableObject == null)
+            Debug.LogWarning($"AssetLoader: No path: {ScriptableObjectAssetPath + assetName}!");
+
+        if (scriptableObject.GetType() != typeof(T))
+            Debug.LogWarning($"Type mismatch: {typeof(T)}-{scriptableObject.GetType()}");
+
+        return scriptableObject;
     }
 }

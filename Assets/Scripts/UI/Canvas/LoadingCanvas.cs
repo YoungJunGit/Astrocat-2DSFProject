@@ -23,7 +23,6 @@ public class LoadingCanvas : MonoBehaviour
 
     public void OnLoadingComplete()
     {
-        Debug.Log("1");
         _loadingCircle.SetActive(false);
         _FinishedLoadingText.SetActive(true);
         _glowEffect.FadeAnimation().Forget();

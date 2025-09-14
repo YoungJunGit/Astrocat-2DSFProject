@@ -8,29 +8,31 @@ public abstract class AbstractScene : MonoBehaviour
 {
     [SerializeField] protected abstract int SceneIdx { get; }
 
-    [Header("Background Setting")]
-    [SerializeField] 
-    protected BackgroundManager backgroundManager;
-
-    [ShowIf("IsBackgroundAssigned"), SerializeField]
+    [SerializeField]
     protected BACKGROUND background_type;
 
-    [ShowIf("IsBackgroundAssigned"), SerializeField]
+    [SerializeField]
     [Tooltip("If this set to -1, apply random background sprite"), MinValue(-1)]
     protected int background_index;
 
     [Space(20f)]
     [SerializeField] protected BoolVariable debugMode;
 
+    protected SceneHandler sceneHandler;
+    protected BackgroundManager backgroundManager;
+
     private async void Start()
     {
+        ServiceLocator.For(this).Get(out sceneHandler);
+        ServiceLocator.For(this).Get(out backgroundManager);
+
         if (!SceneManager.GetSceneByBuildIndex(0).isLoaded)
         {
             var asyncOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
             await asyncOperation;
         }
 
-        SceneHandler.Instance.DestroyLoadingScreen();
+        sceneHandler.DestroyLoadingScreen();
         backgroundManager.SetBackground(background_type, background_index);
         BindObjects();
         await InitializeObjects();
@@ -48,6 +50,4 @@ public abstract class AbstractScene : MonoBehaviour
     protected abstract void PrepareGame();
 
     protected abstract UniTask BeginGame();
-
-    private bool IsBackgroundAssigned => backgroundManager != null;
 }

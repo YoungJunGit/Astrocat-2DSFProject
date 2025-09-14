@@ -1,14 +1,12 @@
 ﻿using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class SceneHandler : Singleton<SceneHandler>
+public class SceneHandler
 {
-    [SerializeField] private LoadingCanvas loadingCanvasPrefab;
     private LoadingCanvas _loadingCanvas;
 
     protected SceneHandler() { }
@@ -23,6 +21,12 @@ public class SceneHandler : Singleton<SceneHandler>
 
     private int _sceneIndex;
     private string _sceneName;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Initialize()
+    {
+        ServiceLocator.Global.Register<SceneHandler>(new SceneHandler());
+    }
 
     public void ChangeScene(int levelIndex)
     {
@@ -40,7 +44,7 @@ public class SceneHandler : Singleton<SceneHandler>
 
     public async void OnFadeComplete(Slider loadingBar)
     {
-        AsyncOperation asyncOperation;
+        AsyncOperation asyncOperation = null;
         switch (_changeMod)
         {
             case ChangeMod.Int:
@@ -49,8 +53,6 @@ public class SceneHandler : Singleton<SceneHandler>
             case ChangeMod.String:
                 asyncOperation = SceneManager.LoadSceneAsync(_sceneName);
                 break;
-            default:
-                throw new ArgumentOutOfRangeException();
         }
 
         asyncOperation.allowSceneActivation = false;
@@ -59,8 +61,8 @@ public class SceneHandler : Singleton<SceneHandler>
 
     private void SetLoadingScreen()
     {
-        _loadingCanvas = Instantiate(loadingCanvasPrefab);
-        DontDestroyOnLoad(_loadingCanvas);
+        _loadingCanvas = Object.Instantiate(AssetLoader.LoadPrefabAsset("LoadingCanvas")).GetComponent<LoadingCanvas>();
+        Object.DontDestroyOnLoad(_loadingCanvas);
         if (_loadingCanvas != null)
         {
             _loadingCanvas.Fade(OnFadeComplete);
@@ -88,7 +90,7 @@ public class SceneHandler : Singleton<SceneHandler>
     public void DestroyLoadingScreen()
     {
         if(_loadingCanvas != null)
-            Destroy(_loadingCanvas.gameObject);
+            Object.Destroy(_loadingCanvas.gameObject);
     }
 
     public void PauseGame(bool bPause)
