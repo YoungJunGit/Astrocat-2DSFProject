@@ -128,6 +128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlowText
       objectReference: {fileID: 0}
+    - target: {fileID: 1100268251533074676, guid: bed8e7689c25b9e4da471b9a63e718b6, type: 3}
+      propertyPath: fadeInOutDelay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8880431810449335951, guid: bed8e7689c25b9e4da471b9a63e718b6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
