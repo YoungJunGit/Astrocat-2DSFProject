@@ -61,4 +61,9 @@ public class Fade : MonoBehaviour
         OnFinishEvent?.Invoke();
         return true;
     }
+
+    public void StopFade()
+    {
+        ui.DOKill();
+    }
 }

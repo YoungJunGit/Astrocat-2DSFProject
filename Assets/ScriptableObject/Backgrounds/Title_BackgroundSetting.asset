@@ -15,6 +15,8 @@ MonoBehaviour:
   background_sprites:
   - {fileID: 7395046637855900065, guid: da953acfd93901145b31a38bd6e89192, type: 3}
   - {fileID: 530438073, guid: b270cebbc1622eb46a6c625afc3fb625, type: 3}
+  - {fileID: 252694725, guid: 1513491190a5a7344912c3aef7f6a3b8, type: 3}
   background_anims:
   - {fileID: 9100000, guid: b86500a0ce99fb74b9c83ec6c445f2eb, type: 2}
   - {fileID: 9100000, guid: 2acadf2a29520f94b8976f69128c52b0, type: 2}
+  - {fileID: 9100000, guid: 4ba4ab40f99f61f4e92fd8c91b5b9c19, type: 2}
