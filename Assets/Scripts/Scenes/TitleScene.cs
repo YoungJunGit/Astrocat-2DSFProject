@@ -30,6 +30,6 @@ public class TitleScene : AbstractScene
     {
         await UniTask.WaitUntil(() => Input.anyKeyDown);
 
-        sceneHandler.ChangeScene(2);
+        sceneHandler.ChangeScene(1);
     }
 }

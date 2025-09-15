@@ -115,7 +115,7 @@ public class GameScene : AbstractScene
         unitManager.Prepare();
 
         // Init CombatManager
-        combatManager.Init(timelineSystem, sceneHandler);
+        combatManager.Init(timelineSystem);
 
         // Add
         
@@ -129,6 +129,8 @@ public class GameScene : AbstractScene
     protected override async UniTask BeginGame()
     {
         await combatManager.StartCombat();
+
+        sceneHandler.ChangeScene(0);
     }
 
     private void ForDebugging()

@@ -14,17 +14,15 @@ public class CombatManager : ScriptableObject
 
     private BaseUnit currentTurnUnit;
     private TimelineSystem _timeline;
-    private SceneHandler _sceneHandler;
 
     private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit = new EventRegistry<List<BaseUnit>, BaseUnit>();
     public Action OnTernEnd;
 
     public bool executed;
 
-    public void Init(TimelineSystem timeline, SceneHandler sceneHandler)
+    public void Init(TimelineSystem timeline)
     {
         _timeline = timeline;
-        _sceneHandler = sceneHandler;
         DequeueCurrentUnit.Register(_timeline.Pop);
         currentTurnUnit = _timeline.PrepareCombat(unitList.GetUnits());
 
@@ -75,8 +73,6 @@ public class CombatManager : ScriptableObject
 
         // TODO: Check whether the enemy or the player wins
         // if()
-
-        _sceneHandler.ChangeScene(1);
     }
 
     public void OnCharacterDie(BaseUnit unit)

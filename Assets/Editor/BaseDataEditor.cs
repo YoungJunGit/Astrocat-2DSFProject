@@ -1,3 +1,4 @@
+using DataEntity;
 using Newtonsoft.Json.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -52,4 +53,28 @@ public class BaseDataEditor<T> : Editor
             _target.data.Add(protocolData);
         }
     }
+}
+
+[CustomEditor(typeof(MonsterData))]
+public class MonsterDataEditor : BaseDataEditor<MonsterDataEntity>
+{
+
+}
+
+[CustomEditor(typeof(PlayerData))]
+public class CharacterDataEditor : BaseDataEditor<CharacterDataEntity>
+{
+
+}
+
+[CustomEditor(typeof(SkillData))]
+public class SkillDataEditor : BaseDataEditor<SkillDataEntity>
+{
+
+}
+
+[CustomEditor(typeof(StringData))]
+public class StringDataEditor : BaseDataEditor<StringDataEntity>
+{
+
 }

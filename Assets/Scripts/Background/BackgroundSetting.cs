@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using UnityEditor.Animations;
 using System.Linq;
 
 [CreateAssetMenu(fileName = "BackgroundSetting", menuName = "Backgrounds/BackgroundSetting")]

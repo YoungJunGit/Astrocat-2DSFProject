@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using NaughtyAttributes;
 using Obvious.Soap;
 using UnityEngine;
@@ -26,9 +27,9 @@ public abstract class AbstractScene : MonoBehaviour
         ServiceLocator.For(this).Get(out sceneHandler);
         ServiceLocator.For(this).Get(out backgroundManager);
 
-        if (!SceneManager.GetSceneByBuildIndex(0).isLoaded)
+        if (!SceneManager.GetSceneByName("Base").isLoaded)
         {
-            var asyncOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+            var asyncOperation = SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
             await asyncOperation;
         }
 

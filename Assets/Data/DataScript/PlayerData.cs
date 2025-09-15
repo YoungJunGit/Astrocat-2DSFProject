@@ -7,9 +7,3 @@ public class PlayerData : BaseData<CharacterDataEntity>
 {
 
 }
-
-[CustomEditor(typeof(PlayerData))]
-public class CharacterDataEditor : BaseDataEditor<CharacterDataEntity>
-{
-
-}
