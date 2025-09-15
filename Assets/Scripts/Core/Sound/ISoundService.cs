@@ -2,9 +2,9 @@ using UnityEngine;
 
 public interface ISoundService
 {
-    void PlayEffectSound(AudioClip clip);
+    void PlayEffectSound(string clipName);
     
-    void PlayBackGround(AudioClip clip, bool loop = true);
+    void PlayBackGround(string clipName, bool loop = true);
     void StopBackGround();
     
     void SetMasterVolume(float volume);
