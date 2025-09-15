@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/ServiceLocator/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ServiceLocator/Bootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/ServiceLocator/ServiceLocator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ServiceLocator/ServiceLocator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tester/CCTester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tester/CCTester.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tester/QTETester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tester/QTETester.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +33,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2ce8bd53d6c34e8aa27451ac5b09a98146ae00/16/e199d1a0/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89527d299cb64ba88f87240781b415e51ea400/4d/7debba45/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Sound/ISoundService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@7fe8299111a7/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@5c9fd4989cdd/Runtime/UGUI/UI/Core/GraphicRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@7dcdc439b230/Editor/VisualScripting.Core/Reflection/Codebase.cs" root0="SKIP_HIGHLIGHTING" />
@@ -62,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Unity 에디터에 연결.Unity 에디터에 연결.executor": "Debug",
-    "git-widget-placeholder": "NJM-Refactoring",
+    "git-widget-placeholder": "NJM-Sound",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -118,15 +114,13 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="23204">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="23204" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -180,6 +174,7 @@
       <workItem from="1754701367348" duration="2889000" />
       <workItem from="1754708281510" duration="2092000" />
       <workItem from="1757736749178" duration="2961000" />
+      <workItem from="1757906022129" duration="905000" />
     </task>
     <servers />
   </component>
@@ -214,40 +209,19 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/QTE/QTEUI.cs</url>
           <line>19</line>
-          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\QTE\QTEUI.cs" containingFunctionPresentation="메서드 'StartQte'">
-            <startOffsets>
-              <option value="411" />
-            </startOffsets>
-            <endOffsets>
-              <option value="427" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\QTE\QTEUI.cs" containingFunctionPresentation="메서드 'StartQte'" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionSelectionButtons.cs</url>
           <line>23</line>
-          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\UnitAction\ActionSelectionButtons.cs" containingFunctionPresentation="메서드 'EnableSkillSelectionButtons'">
-            <startOffsets>
-              <option value="844" />
-            </startOffsets>
-            <endOffsets>
-              <option value="845" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\UnitAction\ActionSelectionButtons.cs" containingFunctionPresentation="메서드 'EnableSkillSelectionButtons'" />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionSelector.cs</url>
           <line>52</line>
-          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\UnitAction\ActionSelector.cs" containingFunctionPresentation="메서드 'SelectAction'">
-            <startOffsets>
-              <option value="1979" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1985" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\GIt\Astrocat-2DSFProject\Assets\Scripts\Combat\UnitAction\ActionSelector.cs" containingFunctionPresentation="메서드 'SelectAction'" />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">

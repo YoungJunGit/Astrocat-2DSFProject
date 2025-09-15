@@ -1,0 +1,15 @@
+using UnityEngine;
+
+public interface ISoundService
+{
+    void PlayEffectSound(AudioClip clip);
+    
+    void PlayBackGround(AudioClip clip, bool loop = true);
+    void StopBackGround();
+    
+    void SetMasterVolume(float volume);
+    void SetSFXVolume(float volume);
+    void SetBGMVolume(float volume);
+    
+    void Clear();
+}
