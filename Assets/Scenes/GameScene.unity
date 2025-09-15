@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 1732112614}
   - component: {fileID: 1732112615}
   - component: {fileID: 1732112616}
+  - component: {fileID: 1732112617}
   m_Layer: 0
   m_Name: GameScene
   m_TagString: Untagged
@@ -166,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abb74b7d834ff74daa2cca072ff2e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundManager: {fileID: 11400000, guid: 84b5c105073552146869f27addd7c955, type: 2}
   background_type: 2
   background_index: -1
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
@@ -193,6 +193,7 @@ MonoBehaviour:
   inputTester: {fileID: 1732112614}
   qteTester: {fileID: 1732112615}
   ccTester: {fileID: 1732112616}
+  backgroundChanger: {fileID: 1732112617}
 --- !u!114 &1732112614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,8 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17438ecae8964566912bb7f5589f90c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
-  inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
 --- !u!114 &1732112616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +232,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24837b69b8b5a4b44b4b41d4be215bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
+--- !u!114 &1732112617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732112611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f011d62f0aface4f81962ac148bcf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -38,6 +38,8 @@ public class GameScene : AbstractScene
     [SerializeField] private InputTester inputTester;
     [SerializeField] private QTETester qteTester;
     [SerializeField] private CCTester ccTester;
+    [SerializeField] private BackgroundChanger backgroundChanger;
+
     protected override int SceneIdx
     {
         get { return 2; }
@@ -70,6 +72,7 @@ public class GameScene : AbstractScene
         {
             inputTester.Init(inputHandler);
             qteTester.Init();
+            backgroundChanger.Init();
         }
             
     }
@@ -112,17 +115,15 @@ public class GameScene : AbstractScene
         unitManager.Prepare();
 
         // Init CombatManager
-        combatManager.Init(timelineSystem);
+        combatManager.Init(timelineSystem, sceneHandler);
 
         // Add
         
         if (debugMode)
         {
-            ForDebugging();
+            //ForDebugging();
             combatManager.OnTernEnd += ccTester.SetCCOnRendomUnit;
         }
-
-        //SceneHandler.Instance.DestroyLoadingScreen();
     }
 
     protected override async UniTask BeginGame()
