@@ -68,6 +68,7 @@ public class ServiceLocator : MonoBehaviour
 
     private static List<GameObject> tempGO;
 
+    
     public static ServiceLocator For(MonoBehaviour mono)
     {
         var locator = mono.GetComponentInParent<ServiceLocator>();
@@ -84,11 +85,25 @@ public class ServiceLocator : MonoBehaviour
         return locator;
     }
 
-    public static ServiceLocator ForSceneOf(MonoBehaviour mono)
+    public static ServiceLocator For(ScriptableObject scriptableObject)
     {
-        Scene scene = mono.gameObject.scene;
+        return ForSceneOf(scriptableObject);
+    }
 
-        if (sceneLocators.TryGetValue(scene, out var locator) && locator != mono)
+    
+    public static ServiceLocator ForSceneOf(UnityEngine.Object obj)
+    {
+        Scene scene;
+        if (obj is MonoBehaviour mono)
+        {
+            scene = mono.gameObject.scene;
+        }
+        else
+        {
+            scene = SceneManager.GetActiveScene();
+        }
+
+        if (sceneLocators.TryGetValue(scene, out var locator) && locator != obj)
         {
             return locator;
         }
