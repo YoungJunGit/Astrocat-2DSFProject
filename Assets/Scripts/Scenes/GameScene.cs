@@ -57,21 +57,22 @@ public class GameScene : AbstractScene
         dialogueManager.Init();
         
         unitManager.Init();
-        ServiceLocator.Global.Register<UnitManager>(unitManager);
         
         timelineSystem.Init();
         inputHandler.Init();
-        ServiceLocator.ForSceneOf(this).Register(inputHandler);
         
         qteManager.Init();
-        ServiceLocator.For(this).Register(qteManager);
         
         if (debugMode)
         {
             inputTester.Init(inputHandler);
             qteTester.Init();
         }
-            
+
+        ServiceLocator.ForSceneOf(this)
+            .Register(new UnitActionExecuter() as IUnitActionExecuter)
+            .Register(unitManager)
+            .Register(inputHandler);
     }
 
     protected override async UniTask CreateObjects()

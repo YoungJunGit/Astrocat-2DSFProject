@@ -2,12 +2,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using DataEnum;
 
-abstract class UnitAction
-{
-    public abstract UniTask Execute();
-}
-
-class PlayerBaseAttackAction : UnitAction
+class PlayerBaseAttackAction : IUnitAction
 {
     private PlayerUnit _caster;
     private EnemyUnit _target;
@@ -22,7 +17,7 @@ class PlayerBaseAttackAction : UnitAction
         _target = target;
     }
     
-    public override async UniTask Execute()
+    public async UniTask Execute(IUnitActionContext context)
     {
         if (_caster == null || _target == null)
         {
@@ -31,7 +26,7 @@ class PlayerBaseAttackAction : UnitAction
         Debug.Log($"{_caster.GetStat().Name} attack {_target.GetStat().Name}");
         CalculateDamange(_caster, _target);
     }
-    //player±âÁØ »óÅÂÀÌ»ó
+    //playerï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì»ï¿½
     public void CalculateDamange(PlayerUnit _caster, EnemyUnit _target)
     {
         var targetStat = _target.GetStat();
@@ -56,7 +51,7 @@ class PlayerBaseAttackAction : UnitAction
                 damageValue += targetStat.Cur_HP * 0.9f;
                 break;
 
-            case ELEMENT_TYPE.GRAVITY: // Volcano, ½ºÅ³ ÄðÅ¸ÀÓ ´ë±âÅÏ ¼ö ±¸Çö X
+            case ELEMENT_TYPE.GRAVITY: // Volcano, ï¿½ï¿½Å³ ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ X
                 if (targetStat.gravityStack == 0) // TODO: color change code
 
                 if (casterStat._currentCondition == ELEMENT_TYPE.FIRE && casterStat.forbiddenStack == 0)

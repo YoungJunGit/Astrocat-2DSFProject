@@ -12,7 +12,7 @@ class BaseBuffAction : IUnitAction
         _target = target;
     }
 
-    public virtual async UniTask Execute()
+    public virtual async UniTask Execute(IUnitActionContext context)
     {
         Debug.Log("Buff Action");
     }

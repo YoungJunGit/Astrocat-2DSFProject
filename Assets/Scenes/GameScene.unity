@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abb74b7d834ff74daa2cca072ff2e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundManager: {fileID: 11400000, guid: 84b5c105073552146869f27addd7c955, type: 2}
   background_type: 2
   background_index: -1
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
@@ -233,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24837b69b8b5a4b44b4b41d4be215bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

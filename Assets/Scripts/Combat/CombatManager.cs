@@ -20,6 +20,8 @@ public class CombatManager : ScriptableObject
 
     private bool isStartCombat = false;
     public bool executed;
+    
+    private IUnitActionExecuter actionExecuter;
 
     public void Init(TimelineSystem timeline)
     {
@@ -33,6 +35,9 @@ public class CombatManager : ScriptableObject
         }
 
         actionSelector.Init();
+        
+        ServiceLocator.For(this)
+            .Get(out actionExecuter);
     }
 
     public BaseUnit GetCurrentTurnUnit() => currentTurnUnit;
@@ -57,7 +62,7 @@ public class CombatManager : ScriptableObject
                     selectedAction = await actionSelector.SelectAction(enemy);
                 }
 
-                await selectedAction.Execute();
+                await actionExecuter.ExecuteRequest(selectedAction);
             }
 
             OnTernEnd?.Invoke();

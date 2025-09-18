@@ -4,7 +4,7 @@ using DataEnum;
 using DataHashAnim;
 using UnityEngine;
 
-interface IUnitAction
+public interface IUnitAction
 {
-    public UniTask Execute();
+    public UniTask Execute(IUnitActionContext context);
 }
