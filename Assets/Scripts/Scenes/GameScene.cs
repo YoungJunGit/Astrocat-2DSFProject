@@ -38,6 +38,8 @@ public class GameScene : AbstractScene
     [SerializeField] private InputTester inputTester;
     [SerializeField] private QTETester qteTester;
     [SerializeField] private CCTester ccTester;
+
+    [SerializeField] private UnitActionExecuter unitActionExecuter;
     protected override int SceneIdx
     {
         get { return 2; }
@@ -47,6 +49,11 @@ public class GameScene : AbstractScene
     {
         camera = Instantiate(camera);
         eventSystem = Instantiate(eventSystem);
+        
+        ServiceLocator.ForSceneOf(this)
+            .Register(unitActionExecuter as IUnitActionExecuter)
+            .Register(unitManager)
+            .Register(inputHandler);
     }
 
     protected override async UniTask InitializeObjects()
@@ -63,16 +70,13 @@ public class GameScene : AbstractScene
         
         qteManager.Init();
         
+        unitActionExecuter.Init();
+        
         if (debugMode)
         {
             inputTester.Init(inputHandler);
             qteTester.Init();
         }
-
-        ServiceLocator.ForSceneOf(this)
-            .Register(new UnitActionExecuter() as IUnitActionExecuter)
-            .Register(unitManager)
-            .Register(inputHandler);
     }
 
     protected override async UniTask CreateObjects()

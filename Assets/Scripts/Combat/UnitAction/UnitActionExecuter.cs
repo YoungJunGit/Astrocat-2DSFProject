@@ -8,11 +8,16 @@ public interface IUnitActionExecuter
     public UniTask ExecuteRequest(BaseUnit caster, IUnitAction action);
 }
 
+[CreateAssetMenu(fileName = "UnitActionExecuter", menuName = "GameScene/UnitActionExecuter")]
 public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
 {
     UnitManager _unitManager;
-    
-    
+
+    public void Init()
+    {
+        ServiceLocator.For(this)
+            .Get(out _unitManager);
+    }
     
     public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action)
     {
