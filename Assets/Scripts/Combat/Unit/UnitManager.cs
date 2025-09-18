@@ -5,7 +5,7 @@ using DataEnum;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "UnitManager", menuName = "GameScene/UnitManager", order = 2)]
-class UnitManager : ScriptableObject
+public class UnitManager : ScriptableObject
 {
     [SerializeField] private ScriptableListBaseUnit currentUnitList = null;
 

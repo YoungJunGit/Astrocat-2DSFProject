@@ -62,7 +62,7 @@ public class CombatManager : ScriptableObject
                     selectedAction = await actionSelector.SelectAction(enemy);
                 }
 
-                await actionExecuter.ExecuteRequest(selectedAction);
+                await actionExecuter.ExecuteRequest(currentTurnUnit, selectedAction);
             }
 
             OnTernEnd?.Invoke();
