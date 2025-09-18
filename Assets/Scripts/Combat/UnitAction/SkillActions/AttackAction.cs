@@ -14,7 +14,7 @@ class BaseAttackAction : IUnitAction
         _target = target;
     }
     
-    public virtual async UniTask Execute()
+    public virtual async UniTask Execute(IUnitActionContext context)
     {
         _caster.combatInfo.isFinishedAction = false;
         _caster.attachments.GetSpriteRenderer().sortingLayerName = "Actor";
@@ -39,7 +39,7 @@ class MeleeAttack : BaseAttackAction
 {
     public MeleeAttack(BaseUnit caster, BaseUnit target) : base(caster, target) { }
 
-    public override async UniTask Execute()
+    public override async UniTask Execute(IUnitActionContext context)
     {
         _caster.mainAnimHandler.attack += DamageEvent;
 
@@ -54,7 +54,7 @@ class MeleeAttack : BaseAttackAction
         _caster.combatInfo.actionList.Add("FinishedAction", FinishedAction);
         _caster.mainAnimHandler.ChangeAnimation(AnimCombat.MOVE);
 
-        await base.Execute();
+        await base.Execute(context);
     }
 }
 
@@ -66,12 +66,12 @@ class RangeAttack : BaseAttackAction
         bulletPrefab = AssetLoader.LoadBulletPrefabAsset(caster.GetStat().GetData().Asset_File);
     }
 
-    public override async UniTask Execute()
+    public override async UniTask Execute(IUnitActionContext context)
     {
         _caster.mainAnimHandler.attack += ShootBullet;
         _caster.mainAnimHandler.ChangeAnimation(AnimCombat.ATTACK);
 
-        await base.Execute();
+        await base.Execute(context);
     }
 
     private void ShootBullet()

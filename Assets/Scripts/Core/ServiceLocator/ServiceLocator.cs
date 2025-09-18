@@ -127,12 +127,14 @@ public class ServiceLocator : MonoBehaviour
     public ServiceLocator Register<T>(T service)
     {
         services.Register(service);
+        Debug.Log($"ServiceLocater.Register : {typeof(T).Name} registered");
         return this;
     }
 
     public ServiceLocator Register(Type type, object service)
     {
         services.Register(type, service);
+        Debug.Log($"ServiceLocater.Register : {type.Name} registered");
         return this;
     }
 
