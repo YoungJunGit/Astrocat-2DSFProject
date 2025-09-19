@@ -69,11 +69,7 @@ public class CombatManager : ScriptableObject
             await UniTask.WaitUntil(() => combatEventHandler.IsEventEmpty());
             await UniTask.WaitForSeconds(1);
 
-            //TODO: Check is finish
-            //if ()
             currentTurnUnit = DequeueCurrentUnit.Call(unitList.GetUnits());
-
-            //await ProcessCurrentTurnAsync();
         }
 
         // TODO: Check whether the enemy or the player wins

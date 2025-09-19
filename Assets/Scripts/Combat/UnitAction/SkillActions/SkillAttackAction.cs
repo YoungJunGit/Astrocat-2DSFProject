@@ -2,20 +2,11 @@ using Cysharp.Threading.Tasks;
 
 public class SkillAttackAction : IUnitAction
 {
-    protected BaseUnit _caster;
-    protected BaseUnit _target;
-
-    public SkillAttackAction(BaseUnit caster, BaseUnit target)
-    {
-        _caster = caster;
-        _target = target;
-    }
-
     public virtual async UniTask Execute(IUnitActionContext context)
     {
-        _caster.combatInfo.isFinishedAction = false;
-        _caster.attachments.GetSpriteRenderer().sortingLayerName = "Actor";
+        context.Caster.combatInfo.isFinishedAction = false;
+        context.Caster.attachments.GetSpriteRenderer().sortingLayerName = "Actor";
 
-        await UniTask.WaitUntil(() => _caster.combatInfo.isFinishedAction);
+        await UniTask.WaitUntil(() => context.Caster.combatInfo.isFinishedAction);
     }
 }

@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 1732112614}
   - component: {fileID: 1732112615}
   - component: {fileID: 1732112616}
+  - component: {fileID: 1732112617}
   m_Layer: 0
   m_Name: GameScene
   m_TagString: Untagged
@@ -178,9 +179,9 @@ MonoBehaviour:
   - 10010002
   - 10010003
   enemyUnitID:
-  - 3001001
+  - 
   - 3001002
-  - 3001003
+  - 
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
   dialogueManager: {fileID: 11400000, guid: a9c4d3a688e42c147bd8d307a5cb2de2, type: 2}
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
@@ -192,6 +193,7 @@ MonoBehaviour:
   inputTester: {fileID: 1732112614}
   qteTester: {fileID: 1732112615}
   ccTester: {fileID: 1732112616}
+  backgroundChanger: {fileID: 1732112617}
   unitActionExecuter: {fileID: 11400000, guid: ef3fa3b1869ee0245a386f002e7ebdcb, type: 2}
 --- !u!114 &1732112614
 MonoBehaviour:
@@ -231,6 +233,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24837b69b8b5a4b44b4b41d4be215bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1732112617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732112611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f011d62f0aface4f81962ac148bcf62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

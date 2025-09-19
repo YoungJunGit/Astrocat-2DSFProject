@@ -1,58 +1,35 @@
 
 using Cysharp.Threading.Tasks;
 using DataHashAnim;
+using Michsky.UI.Shift;
 using UnityEngine;
 
 class BaseAttackAction : IUnitAction
 {
-    protected BaseUnit _caster;
-    protected BaseUnit _target;
-
-    public BaseAttackAction(BaseUnit caster, BaseUnit target)
-    {
-        _caster = caster;
-        _target = target;
-    }
-    
     public virtual async UniTask Execute(IUnitActionContext context)
     {
-        _caster.combatInfo.isFinishedAction = false;
-        _caster.attachments.GetSpriteRenderer().sortingLayerName = "Actor";
+        context.OnStartAction();
 
-        await UniTask.WaitUntil(() => _caster.combatInfo.isFinishedAction);
-    }
-
-    protected void DamageEvent()
-    {
-        DamageContainer damage = AssetLoader.GetDamageFactory().CreateNormalDamage((float)_caster.GetStat().GetData().Default_Attack, _target.attachments.GetHitBox().bounds);
-        _target.GetStat().GetDamaged(damage.Value, damage.Critical);
-    }
-
-    protected void FinishedAction()
-    {
-        _caster.combatInfo.isFinishedAction = true;
-        _caster.attachments.GetSpriteRenderer().sortingLayerName = "Character";
+        await UniTask.WaitUntil(() => context.Caster.combatInfo.isFinishedAction);
     }
 }
 
 class MeleeAttack : BaseAttackAction
 {
-    public MeleeAttack(BaseUnit caster, BaseUnit target) : base(caster, target) { }
-
     public override async UniTask Execute(IUnitActionContext context)
     {
-        _caster.GetAnimationHandler().attack += DamageEvent;
+        context.Caster.GetAnimationHandler().attack += context.DamageEvent;
 
         // Save Position
-        _caster.combatInfo.startPos = (Vector2)_caster.transform.position;
+        context.Caster.combatInfo.startPos = (Vector2)context.Caster.transform.position;
 
         // Identify target's postition
-        float xOffset = _caster.attachments.GetHitBox().size.x / 2;
-        Vector2 offset = _caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
-        _caster.combatInfo.targetPos = (Vector2)_target.attachments.GetMeleeHitPos().position + offset;
+        float xOffset = context.Caster.attachments.GetHitBox().size.x / 2;
+        Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
+        context.Caster.combatInfo.targetPos = (Vector2)context.unitManager.SelectedUnit.attachments.GetMeleeHitPos().position + offset;
 
-        _caster.combatInfo.actionList.Add("FinishedAction", FinishedAction);
-        _caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
+        context.Caster.combatInfo.actionList.Add("FinishedAction", context.OnFinishedAction);
+        context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
 
         await base.Execute(context);
     }
@@ -60,23 +37,18 @@ class MeleeAttack : BaseAttackAction
 
 class RangeAttack : BaseAttackAction 
 {
-    private GameObject bulletPrefab;
-    public RangeAttack(BaseUnit caster, BaseUnit target) : base(caster, target) 
-    {
-        bulletPrefab = AssetLoader.LoadBulletPrefabAsset(caster.GetStat().GetData().Asset_File);
-    }
-
     public override async UniTask Execute(IUnitActionContext context)
     {
-        _caster.GetAnimationHandler().attack += ShootBullet;
-        _caster.GetAnimationHandler().ChangeAnimation(AnimCombat.ATTACK);
+        context.Caster.GetAnimationHandler().attack += () => { ShootBullet(context); };
+        context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.ATTACK);
 
         await base.Execute(context);
     }
 
-    private void ShootBullet()
+    private void ShootBullet(IUnitActionContext context)
     {
-        BaseBullet bullet = UnityEngine.Object.Instantiate(bulletPrefab, _caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
-        bullet.Initialize(_target.attachments.GetHitBox(), () => { DamageEvent(); FinishedAction(); });
+        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().GetData().Asset_File);
+        BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+        bullet.Initialize(context.unitManager.SelectedUnit.attachments.GetHitBox(), () => { context.DamageEvent(); context.OnFinishedAction(); });
     }
 }

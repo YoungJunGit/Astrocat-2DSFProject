@@ -23,6 +23,6 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
     {
         var context = new UnitActionContext(caster, _unitManager);
         
-        action.Execute(context);
+        await action.Execute(context);
     }
 }
