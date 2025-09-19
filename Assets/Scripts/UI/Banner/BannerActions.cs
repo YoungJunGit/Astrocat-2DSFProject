@@ -29,30 +29,30 @@ public class BannerActions
         owner.timelineCanvas.SetParent(owner.timelineUI.BannerList);
     }
 
-    public void UpdateAllUnitStacks()
-    {
-        var units = owner.unitList.GetUnits();
+    //public void UpdateAllUnitStacks()
+    //{
+    //    var units = owner.unitList.GetUnits();
 
-        foreach (BaseUnit unit in units)
-        {
-            UnitStat stat = unit.GetStat();
-            var fields = typeof(UnitStat).GetFields(
-                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
-            );
+    //    foreach (BaseUnit unit in units)
+    //    {
+    //        UnitStat stat = unit.GetStat();
+    //        var fields = typeof(UnitStat).GetFields(
+    //            BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic
+    //        );
 
-            foreach (var field in fields)
-            {
-                if (field.FieldType == typeof(int) &&
-                    field.Name.IndexOf("stack", StringComparison.OrdinalIgnoreCase) >= 0)
-                {
-                    int value = (int)field.GetValue(stat);
+    //        foreach (var field in fields)
+    //        {
+    //            if (field.FieldType == typeof(int) &&
+    //                field.Name.IndexOf("stack", StringComparison.OrdinalIgnoreCase) >= 0)
+    //            {
+    //                int value = (int)field.GetValue(stat);
 
-                    if (field.Name.Equals("forbiddenStack", StringComparison.OrdinalIgnoreCase))
-                        field.SetValue(stat, value - 1);
-                    else
-                        field.SetValue(stat, value + 1);
-                }
-            }
-        }
-    }
+    //                if (field.Name.Equals("forbiddenStack", StringComparison.OrdinalIgnoreCase))
+    //                    field.SetValue(stat, value - 1);
+    //                else
+    //                    field.SetValue(stat, value + 1);
+    //            }
+    //        }
+    //    }
+    //}
 }
