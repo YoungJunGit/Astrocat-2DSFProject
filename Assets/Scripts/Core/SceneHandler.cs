@@ -9,8 +9,6 @@ public class SceneHandler
 {
     private LoadingCanvas _loadingCanvas;
 
-    protected SceneHandler() { }
-
     private enum ChangeMod
     {
         Int,
@@ -21,12 +19,6 @@ public class SceneHandler
 
     private int _sceneIndex;
     private string _sceneName;
-
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void Initialize()
-    {
-        ServiceLocator.Global.Register<SceneHandler>(new SceneHandler());
-    }
 
     public void ChangeScene(int levelIndex)
     {

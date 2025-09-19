@@ -7,14 +7,6 @@ public class BackgroundManager
 
     private GameObject background;
 
-    protected BackgroundManager() { }
-
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void Initialize()
-    {
-        ServiceLocator.Global.Register<BackgroundManager>(new BackgroundManager());
-    }
-
     public void SetBackground(BACKGROUND type, int index)
     {
         BackgroundContainer backgroundContainer = AssetLoader.LoadScriptableObjectAsset<BackgroundContainer>("BackgroundContainer");

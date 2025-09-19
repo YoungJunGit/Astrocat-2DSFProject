@@ -6,17 +6,17 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
-using NaughtyAttributes;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(UnitAttachments))]
 public class BaseUnit : MonoBehaviour
 {
-    [Required]
-    public AnimationHandler mainAnimHandler;
-    [ShowIf("HasSupporter"), Required]
-    public AnimationHandler supporterAnimHandler;
+    [SerializeField, Required]
+    private AnimationHandler _animHandler;
+    [SerializeField, ShowIf("HasSupporter"), Required]
+    protected SupporterUnit _supporterUnit;
 
     [SerializeField] private UNIT_TYPE unit_Type;
     [SerializeField] private bool HasSupporter = false;
@@ -34,14 +34,15 @@ public class BaseUnit : MonoBehaviour
     {
         attachments = GetComponent<UnitAttachments>();
         combatInfo = new UnitCombatInfo();
-        mainAnimHandler.Init();
+        _animHandler.Init();
 
         _stat = new UnitStat(data, index);
 
         _crowdControlManager.Init(this);
-    }
 
-    public CrowdControlManager GetCrowdControlManager() => _crowdControlManager;
+        if (HasSupporter)
+            _supporterUnit.Initialize();
+    }
 
     // TODO : Buff Test
     public void AddBuff(Buff newBuff)
@@ -84,7 +85,12 @@ public class BaseUnit : MonoBehaviour
         attachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);
 
         if(this is PlayerUnit)
-            mainAnimHandler.ChangeAnimation(AnimCombat.HIT);
+            _animHandler.ChangeAnimation(AnimCombat.HIT);
+
+        if(HasSupporter)
+        {
+            _supporterUnit.OnDamaged();
+        }
     }
 
     public void OnHealed(float value)
@@ -94,9 +100,16 @@ public class BaseUnit : MonoBehaviour
 
     public async virtual UniTask OnDie()
     {
-        mainAnimHandler.ChangeAnimation(AnimCombat.DEATH);
+        _animHandler.ChangeAnimation(AnimCombat.DEATH);
+
+        if(HasSupporter)
+        {
+            _supporterUnit.OnDie(combatInfo).Forget();
+        }
     }
 
-    public UnitStat GetStat() { return _stat; }
+    public AnimationHandler GetAnimationHandler() => _animHandler;
+    public CrowdControlManager GetCrowdControlManager() => _crowdControlManager;
+    public UnitStat GetStat() => _stat;
     public UNIT_TYPE GetUnitType() => unit_Type;
 }

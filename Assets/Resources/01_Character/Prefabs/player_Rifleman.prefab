@@ -250,8 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c0092ab530cdb43a081377eea667b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainAnimHandler: {fileID: 5052415058350787849}
-  supporterAnimHandler: {fileID: 0}
+  _animHandler: {fileID: 5052415058350787849}
+  _supporterUnit: {fileID: 0}
   unit_Type: 2
   HasSupporter: 0
   attachments: {fileID: 0}

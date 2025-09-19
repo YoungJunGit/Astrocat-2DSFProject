@@ -22,6 +22,13 @@ public abstract class AbstractScene : MonoBehaviour
     protected SceneHandler sceneHandler;
     protected BackgroundManager backgroundManager;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Initialize()
+    {
+        ServiceLocator.Global.Register<SceneHandler>(new SceneHandler());
+        ServiceLocator.Global.Register<BackgroundManager>(new BackgroundManager());
+    }
+
     private async void Start()
     {
         ServiceLocator.For(this).Get(out sceneHandler);

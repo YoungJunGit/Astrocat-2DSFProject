@@ -41,7 +41,7 @@ class MeleeAttack : BaseAttackAction
 
     public override async UniTask Execute()
     {
-        _caster.mainAnimHandler.attack += DamageEvent;
+        _caster.GetAnimationHandler().attack += DamageEvent;
 
         // Save Position
         _caster.combatInfo.startPos = (Vector2)_caster.transform.position;
@@ -52,7 +52,7 @@ class MeleeAttack : BaseAttackAction
         _caster.combatInfo.targetPos = (Vector2)_target.attachments.GetMeleeHitPos().position + offset;
 
         _caster.combatInfo.actionList.Add("FinishedAction", FinishedAction);
-        _caster.mainAnimHandler.ChangeAnimation(AnimCombat.MOVE);
+        _caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
 
         await base.Execute();
     }
@@ -68,8 +68,8 @@ class RangeAttack : BaseAttackAction
 
     public override async UniTask Execute()
     {
-        _caster.mainAnimHandler.attack += ShootBullet;
-        _caster.mainAnimHandler.ChangeAnimation(AnimCombat.ATTACK);
+        _caster.GetAnimationHandler().attack += ShootBullet;
+        _caster.GetAnimationHandler().ChangeAnimation(AnimCombat.ATTACK);
 
         await base.Execute();
     }

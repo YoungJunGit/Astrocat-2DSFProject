@@ -15,7 +15,7 @@ public class CombatManager : ScriptableObject
     private BaseUnit currentTurnUnit;
     private TimelineSystem _timeline;
 
-    private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit = new EventRegistry<List<BaseUnit>, BaseUnit>();
+    private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit = new();
     public Action OnTernEnd;
 
     public bool executed;
