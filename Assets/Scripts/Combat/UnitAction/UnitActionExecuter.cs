@@ -5,14 +5,23 @@ using UnityEngine;
 
 public interface IUnitActionExecuter
 {
-    public UniTask ExecuteRequest(IUnitAction action);
+    public UniTask ExecuteRequest(BaseUnit caster, IUnitAction action);
 }
 
-public class UnitActionExecuter : IUnitActionExecuter
+[CreateAssetMenu(fileName = "UnitActionExecuter", menuName = "GameScene/UnitActionExecuter")]
+public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
 {
-    public async UniTask ExecuteRequest(IUnitAction action)
+    UnitManager _unitManager;
+
+    public void Init()
     {
-        var context = new UnitActionContext();
+        ServiceLocator.For(this)
+            .Get(out _unitManager);
+    }
+    
+    public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action)
+    {
+        var context = new UnitActionContext(caster, _unitManager);
         
         action.Execute(context);
     }
