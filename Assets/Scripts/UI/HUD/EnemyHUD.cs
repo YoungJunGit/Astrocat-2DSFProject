@@ -55,4 +55,9 @@ public class EnemyHUD : BaseHUD, IUpdateObserver
         gameObject.SetActive(true);
         rectTransform.position = Camera.main.WorldToScreenPoint(statusPos.position + posOffset);
     }
+
+    private void OnDestroy()
+    {
+        UpdatePublisher.DiscribeObserver(this);
+    }
 }

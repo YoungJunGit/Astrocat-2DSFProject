@@ -1,5 +1,5 @@
 using UnityEngine;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 
 public class UnitAttachments : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class UnitAttachments : MonoBehaviour
     private Transform StatusPos;
     [SerializeField, ShowIf("IsPlayer"), Required] 
     private Transform ActionSelectorPos;
-    [SerializeField, ShowIf("IsRange"), Required] 
+    [SerializeField, ShowIf("@this.IsRange || this.IsSupporterUnit"), Required] 
     private Transform BulletSpawnPos;
 
     public SpriteRenderer GetSpriteRenderer() => SpriteRenderer;
@@ -27,6 +27,7 @@ public class UnitAttachments : MonoBehaviour
     public Transform GetBulletSpawnPos() => BulletSpawnPos;
 
     private bool IsUnit     => GetComponent<BaseUnit>() != null;
+    private bool IsSupporterUnit => GetComponent<SupporterUnit>() != null;
     private bool IsEnemy    => IsUnit && GetComponent<BaseUnit>() is EnemyUnit;
     private bool IsPlayer   => IsUnit && GetComponent<BaseUnit>() is PlayerUnit;
     private bool IsRange    => IsUnit && GetComponent<BaseUnit>().GetUnitType() == DataEnum.UNIT_TYPE.RANGE;

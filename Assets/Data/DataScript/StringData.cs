@@ -7,9 +7,3 @@ public class StringData : BaseData<StringDataEntity>
 {
 
 }
-
-[CustomEditor(typeof(StringData))]
-public class StringDataEditor : BaseDataEditor<StringDataEntity>
-{
-
-}

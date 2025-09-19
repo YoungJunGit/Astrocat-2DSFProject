@@ -7,9 +7,3 @@ public class SkillData : BaseData<SkillDataEntity>
 {
 
 }
-
-[CustomEditor(typeof(SkillData))]
-public class SkillDataEditor : BaseDataEditor<SkillDataEntity>
-{
-
-}

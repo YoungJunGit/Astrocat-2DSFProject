@@ -7,9 +7,3 @@ public class MonsterData : BaseData<MonsterDataEntity>
 {
 
 }
-
-[CustomEditor(typeof(MonsterData))]
-public class MonsterDataEditor : BaseDataEditor<MonsterDataEntity>
-{
-
-}

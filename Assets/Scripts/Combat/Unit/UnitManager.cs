@@ -56,23 +56,6 @@ class UnitManager : ScriptableObject
         return enemyUnit;
     }
 
-    private void CheckGameCondition() {
-        if (currentUnitList.GetPlayerUnits().Count == 0)
-        {
-            Debug.Log("Player Loss!!!");
-            UnityEditor.EditorApplication.isPlaying = false;
-
-            // todo => XP depend on game player give
-        }
-        else if (currentUnitList.GetEnemyUnits().Count == 0)
-        {
-            Debug.Log("Player Win!!!");
-            UnityEditor.EditorApplication.isPlaying = false;
-            
-            //todo => XP, Money ,Item payment
-        }
-    }
-
     public async UniTask<EnemyUnit> GetEnemyUnitBySelector()
     {
         return await unitSelector.SelectUnit(SIDE.ENEMY) as EnemyUnit;

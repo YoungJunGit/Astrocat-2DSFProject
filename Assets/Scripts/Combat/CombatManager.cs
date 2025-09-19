@@ -15,10 +15,9 @@ public class CombatManager : ScriptableObject
     private BaseUnit currentTurnUnit;
     private TimelineSystem _timeline;
 
-    public Func<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
+    private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit = new();
     public Action OnTernEnd;
 
-    private bool isStartCombat = false;
     public bool executed;
     
     private IUnitActionExecuter actionExecuter;
@@ -26,8 +25,8 @@ public class CombatManager : ScriptableObject
     public void Init(TimelineSystem timeline)
     {
         _timeline = timeline;
-        DequeueCurrentUnit += timeline.Pop;
-        currentTurnUnit = timeline.PrepareCombat(unitList.GetUnits());
+        DequeueCurrentUnit.Register(_timeline.Pop);
+        currentTurnUnit = _timeline.PrepareCombat(unitList.GetUnits());
 
         foreach (BaseUnit unit in unitList)
         {
@@ -44,8 +43,7 @@ public class CombatManager : ScriptableObject
 
     public async UniTask StartCombat()
     {
-        isStartCombat = true;
-        while (true)
+        while (unitList.GetUnits(SIDE.ENEMY).Count != 0 && unitList.GetUnits(SIDE.PLAYER).Count != 0)
         {
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
@@ -73,10 +71,13 @@ public class CombatManager : ScriptableObject
 
             //TODO: Check is finish
             //if ()
-            currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
+            currentTurnUnit = DequeueCurrentUnit.Call(unitList.GetUnits());
 
             //await ProcessCurrentTurnAsync();
         }
+
+        // TODO: Check whether the enemy or the player wins
+        // if()
     }
 
     public void OnCharacterDie(BaseUnit unit)
@@ -85,7 +86,7 @@ public class CombatManager : ScriptableObject
         {
             Debug.Log("Current Character Died!! Turn Skip!");
             _timeline.OnCharacterDie(unit);
-            currentTurnUnit = DequeueCurrentUnit(unitList.GetUnits());
+            currentTurnUnit = DequeueCurrentUnit.Call(unitList.GetUnits());
         }
     }
 

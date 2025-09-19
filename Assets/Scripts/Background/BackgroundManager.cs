@@ -5,13 +5,7 @@ public class BackgroundManager
 {
     [ShowInInspector, ReadOnly] private BackgroundSetting setting;
 
-    protected BackgroundManager() { }
-
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void Initialize()
-    {
-        ServiceLocator.Global.Register<BackgroundManager>(new BackgroundManager());
-    }
+    private GameObject background;
 
     public void SetBackground(BACKGROUND type, int index)
     {
@@ -26,14 +20,14 @@ public class BackgroundManager
         }
     }
 
-    public void CreateBackground(BackgroundSetting setting, int index)
+    private void CreateBackground(BackgroundSetting setting, int index)
     {
         if (setting != null)
         {
             this.setting = setting;
             int background_index = Mathf.Clamp(index, 0, setting.BackgroundCount);
 
-            GameObject background = Object.Instantiate(AssetLoader.LoadPrefabAsset("Background"));
+            background = Object.Instantiate(AssetLoader.LoadPrefabAsset("Background"));
             if (background != null)
             {
                 background.name = setting.GetName() + $"{background_index}_Background";
@@ -51,6 +45,22 @@ public class BackgroundManager
                 {
                     background_animator.runtimeAnimatorController = setting.GetBackgroundAnimator(index);
                 }
+            }
+        }
+    }
+
+    public void ChangeBackground(int index)
+    {
+        if (index <= setting.BackgroundCount && index > 0)
+        {
+            background.name = setting.GetName() + $"{index - 1}_Background";
+            SpriteRenderer background_spriteRenderer = background.GetComponent<SpriteRenderer>();
+            Animator background_animator = background.GetComponent<Animator>();
+
+            background_spriteRenderer.sprite = setting.GetBackgroundSprite(index - 1);
+            if (setting.GetBackgroundAnimator(index - 1) != null)
+            {
+                background_animator.runtimeAnimatorController = setting.GetBackgroundAnimator(index - 1);
             }
         }
     }

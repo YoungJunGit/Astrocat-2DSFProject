@@ -84,7 +84,7 @@ public class TimelineSystem : ScriptableObject
         timelineUI.OnPop();
         OnTimelineChanged(unitList, foundIndex);
 
-        actions.UpdateAllUnitStacks();
+        //actions.UpdateAllUnitStacks();
 
         return unitList?.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
     }

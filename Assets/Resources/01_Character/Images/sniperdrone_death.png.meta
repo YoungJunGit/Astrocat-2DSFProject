@@ -1,0 +1,725 @@
+fileFormatVersion: 2
+guid: 90051a39b45426e4d81064e51ad9c37f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1526639925883092069
+    second: drone_death_0
+  - first:
+      213: 8561845570764459859
+    second: drone_death_1
+  - first:
+      213: 7629066207562532477
+    second: drone_death_2
+  - first:
+      213: 7512183686863032043
+    second: drone_death_3
+  - first:
+      213: -4464861982622120617
+    second: drone_death_4
+  - first:
+      213: 1160216493795409510
+    second: drone_death_5
+  - first:
+      213: 8897409446059562868
+    second: drone_death_6
+  - first:
+      213: 22231737771934
+    second: drone_death_7
+  - first:
+      213: -8468696215945103692
+    second: drone_death_8
+  - first:
+      213: 4759079708828530550
+    second: drone_death_9
+  - first:
+      213: 2387559801772780413
+    second: drone_death_10
+  - first:
+      213: -5490381120134960930
+    second: drone_death_11
+  - first:
+      213: 9212551730151135260
+    second: drone_death_12
+  - first:
+      213: 1712120935572927024
+    second: drone_death_13
+  - first:
+      213: 5152146112866739078
+    second: drone_death_14
+  - first:
+      213: -1172742087516000706
+    second: drone_death_15
+  - first:
+      213: -4231950184929666801
+    second: drone_death_16
+  - first:
+      213: 8035299263511364065
+    second: drone_death_17
+  - first:
+      213: -4005632634737416715
+    second: drone_death_18
+  - first:
+      213: 7293212078018002306
+    second: drone_death_19
+  - first:
+      213: -580107525660971660
+    second: drone_death_20
+  - first:
+      213: 1660085520738458464
+    second: drone_death_21
+  - first:
+      213: -276245758266657779
+    second: drone_death_22
+  - first:
+      213: -6118894705973327565
+    second: drone_death_23
+  - first:
+      213: -7147352165222575939
+    second: drone_death_24
+  - first:
+      213: 3894289575650502380
+    second: drone_death_25
+  - first:
+      213: -2733110795171599731
+    second: drone_death_26
+  - first:
+      213: -521463262051079873
+    second: drone_death_27
+  - first:
+      213: -796201082601734064
+    second: drone_death_28
+  - first:
+      213: -8568979370741903329
+    second: drone_death_29
+  - first:
+      213: -4326280252235691177
+    second: drone_death_30
+  - first:
+      213: -1913566505757576741
+    second: drone_death_31
+  - first:
+      213: 2469714275033659472
+    second: drone_death_32
+  - first:
+      213: 8507748302097512509
+    second: drone_death_33
+  - first:
+      213: 2109643176050210059
+    second: drone_death_34
+  - first:
+      213: 3960121034810350870
+    second: drone_death_35
+  - first:
+      213: 5415226312278973513
+    second: drone_death_36
+  - first:
+      213: 7234088015523193712
+    second: drone_death_37
+  - first:
+      213: 554454181510632661
+    second: drone_death_38
+  - first:
+      213: 3090054918788111080
+    second: drone_death_39
+  - first:
+      213: 3261860286011940140
+    second: drone_death_40
+  - first:
+      213: 9120603671896400716
+    second: drone_death_41
+  - first:
+      213: 2299979642014298065
+    second: drone_death_42
+  - first:
+      213: 7181333111008304938
+    second: drone_death_43
+  - first:
+      213: 8278568812138472466
+    second: drone_death_44
+  - first:
+      213: 3624178034861118114
+    second: drone_death_45
+  - first:
+      213: -8618338557753352668
+    second: drone_death_46
+  - first:
+      213: -3037869655437334846
+    second: drone_death_47
+  - first:
+      213: -2065463188617007837
+    second: drone_death_48
+  - first:
+      213: 4743552323295552506
+    second: drone_death_49
+  - first:
+      213: -7463083207368162577
+    second: drone_death_50
+  - first:
+      213: 1663346135801086752
+    second: drone_death_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniperdrone_death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.81428576}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2ddf30777bdf04a8309007587a788a
+      internalID: 1779901563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_1
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd81caae8e9b7f4d8795d7adc0220e7
+      internalID: -1906142994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_2
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1af3b3e6ff6e7c4ebd206dae68b6aca
+      internalID: -814841663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_3
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e15ae63fa379a6478a3df017552c502
+      internalID: -667515953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_4
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 086c34d6ead32dc4799fa38eeabc5821
+      internalID: -1471608861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_5
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72abf259f9170c34ea3ad744a0c2432c
+      internalID: -1305892616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_6
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb02bebef914444ca8aad2d4f00f5df
+      internalID: -692970309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_7
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608ffe223071aa14ba72eca6eb5dd147
+      internalID: -1146272924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_8
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac7e34e228998047a868105078c61e9
+      internalID: 2145462412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_9
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41347a40940a2fc4f99d6ac7029c2364
+      internalID: -1606139810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_10
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a4c63bfe54b4645b40106b5c6e110c
+      internalID: -1463823598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_11
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaba3f4bf9471ec439c1777684bafd82
+      internalID: 1703200970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_12
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1db2b6046b353428304cbe6b4cfa8c
+      internalID: -728306981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_13
+      rect:
+        serializedVersion: 2
+        x: 2964
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a369916389c14d94183b7848b6b6e17a
+      internalID: -434836628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_14
+      rect:
+        serializedVersion: 2
+        x: 3192
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5966d80ea5507aa4fb9ca063a95d398c
+      internalID: -1467365206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_15
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e115def9cea8bd347b255196a77adcb5
+      internalID: -1400162773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_16
+      rect:
+        serializedVersion: 2
+        x: 3648
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77162f2634030e4ba00bd818286d1cf
+      internalID: -1927706358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_17
+      rect:
+        serializedVersion: 2
+        x: 3876
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19cc0278dc547124086f0e7ef70e0416
+      internalID: -1389548689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniperdrone_death_18
+      rect:
+        serializedVersion: 2
+        x: 4104
+        y: 0
+        width: 228
+        height: 210
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.8142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac982fe26b7be7645b96452e7c3560f9
+      internalID: -1999244838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6bcdd45d9b84c584da700452d0515c40
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":19.0,"y":1.0},"gridSpriteSize":{"x":228.0,"y":210.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":1.0},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      sniperdrone_death_0: 1779901563
+      sniperdrone_death_1: -1906142994
+      sniperdrone_death_10: -1463823598
+      sniperdrone_death_11: 1703200970
+      sniperdrone_death_12: -728306981
+      sniperdrone_death_13: -434836628
+      sniperdrone_death_14: -1467365206
+      sniperdrone_death_15: -1400162773
+      sniperdrone_death_16: -1927706358
+      sniperdrone_death_17: -1389548689
+      sniperdrone_death_18: -1999244838
+      sniperdrone_death_2: -814841663
+      sniperdrone_death_3: -667515953
+      sniperdrone_death_4: -1471608861
+      sniperdrone_death_5: -1305892616
+      sniperdrone_death_6: -692970309
+      sniperdrone_death_7: -1146272924
+      sniperdrone_death_8: 2145462412
+      sniperdrone_death_9: -1606139810
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
