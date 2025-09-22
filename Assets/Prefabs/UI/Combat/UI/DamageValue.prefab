@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4040178881386814935}
   - component: {fileID: 6576410931921534081}
   - component: {fileID: 198915795325969270}
-  - component: {fileID: 7790823683516500013}
+  - component: {fileID: 5893529049545711731}
   m_Layer: 0
   m_Name: DamageValue
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6576410931921534081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,107 +129,15 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &7790823683516500013
-MonoBehaviour:
+--- !u!225 &5893529049545711731
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6109333512648936273}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c47a0e13f928c3448764bb099fd28cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value_prefab: {fileID: 2846424109453363813, guid: a4c654259040d4e43a7e3f9871aef589, type: 3}
-  normal_damage_sprites:
-  - {fileID: -4528566417383404418, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  - {fileID: -5330949863883809688, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  - {fileID: 2541520942224142117, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  - {fileID: 7344130211388188396, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  - {fileID: -5605566977159264145, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  - {fileID: 5923307266479412989, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  - {fileID: -6893452538141488813, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  - {fileID: -5783962523617537966, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  - {fileID: -5282732913854733732, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  - {fileID: -4522239327414485752, guid: 8212e1b41cc5af546aaa08e113592966, type: 3}
-  critical_damage_sprites:
-  - {fileID: -3268234779732683574, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  - {fileID: -653485287241941940, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  - {fileID: 4062635961960482101, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  - {fileID: -4686783450423120685, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  - {fileID: 5627063850581078119, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  - {fileID: 9180908575165741958, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  - {fileID: -3111159273950209503, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  - {fileID: -3137743506111678120, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  - {fileID: -3399456288816284237, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  - {fileID: -5108789216282829114, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
-  isCritical: 1
-  value: 500
-  jumpEase:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: -0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  fadeEase:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: -0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.3
-      value: -0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  jumpValue: 100
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

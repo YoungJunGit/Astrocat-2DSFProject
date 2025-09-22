@@ -29,6 +29,10 @@ public class GameScene : AbstractScene
     [SerializeField] private UnitManager unitManager;
     [SerializeField] private QTEManager qteManager;
 
+    [Header("Service Locator Register")]
+    [SerializeField] private UnitActionExecuter unitActionExecuter;
+    [SerializeField] private DamageFactory damageFactory;
+
     [Header("etc")]
     [SerializeField] private TimelineSystem timelineSystem;
     [SerializeField] private UnitMechanismSetter unitMechanismSetter;
@@ -40,7 +44,6 @@ public class GameScene : AbstractScene
     [SerializeField] private CCTester ccTester;
     [SerializeField] private BackgroundChanger backgroundChanger;
 
-    [SerializeField] private UnitActionExecuter unitActionExecuter;
     protected override int SceneIdx
     {
         get { return 2; }
@@ -50,11 +53,12 @@ public class GameScene : AbstractScene
     {
         camera = Instantiate(camera);
         eventSystem = Instantiate(eventSystem);
-        
+
         ServiceLocator.ForSceneOf(this)
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(unitManager)
-            .Register(inputHandler);
+            .Register(inputHandler)
+            .Register(damageFactory);
     }
 
     protected override async UniTask InitializeObjects()

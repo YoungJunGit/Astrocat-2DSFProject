@@ -19,10 +19,10 @@ public class CrowdControlManager
     private BaseUnit _target;
     private DamageFactory _damageFactory;
     
-    public void Init(BaseUnit target)
+    public void Init(BaseUnit target, DamageFactory damageFactory)
     {
         _target = target;
-        _damageFactory = AssetLoader.GetDamageFactory();
+        _damageFactory = damageFactory;
     }
     
     public void AddCrowdControl(CrowdControlType crowdControlType)

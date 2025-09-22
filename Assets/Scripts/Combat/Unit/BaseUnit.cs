@@ -38,7 +38,10 @@ public class BaseUnit : MonoBehaviour
 
         _stat = new UnitStat(data, index);
 
-        _crowdControlManager.Init(this);
+        DamageFactory damageFactory;
+        ServiceLocator.For(this).Get(out damageFactory);
+
+        _crowdControlManager.Init(this, damageFactory);
 
         if (HasSupporter)
             _supporterUnit.Initialize();
@@ -79,7 +82,7 @@ public class BaseUnit : MonoBehaviour
         }
     }
 
-    public void OnDamaged(float value, bool isCritical)
+    public void OnDamaged(float value)
     {
         attachments.GetSpriteRenderer().color = Color.red;
         attachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);

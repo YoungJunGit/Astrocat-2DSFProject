@@ -5,16 +5,18 @@ public interface IUnitActionContext
 {
     BaseUnit Caster { get; }
     UnitManager unitManager { get; }
+    DamageFactory damageFactory { get; }
 
     void OnStartAction();
     void OnFinishedAction();
     void DamageEvent();
 }
 
-public record UnitActionContext(BaseUnit Caster, UnitManager unitManager) : IUnitActionContext
+public record UnitActionContext(BaseUnit Caster, UnitManager unitManager, DamageFactory damageFactory) : IUnitActionContext
 {
     public BaseUnit Caster { get; } = Caster;
     public UnitManager unitManager { get; } = unitManager;
+    public DamageFactory damageFactory { get; } = damageFactory;
 
     public void OnStartAction()
     {
@@ -30,7 +32,8 @@ public record UnitActionContext(BaseUnit Caster, UnitManager unitManager) : IUni
 
     public void DamageEvent()
     {
-        DamageContainer damage = AssetLoader.GetDamageFactory().CreateNormalDamage((float)Caster.GetStat().GetData().Default_Attack, unitManager.SelectedUnit.attachments.GetHitBox().bounds);
-        unitManager.SelectedUnit.GetStat().GetDamaged(damage.Value, damage.Critical);
+        float damage = damageFactory.CreateNormalDamage((float)Caster.GetStat().GetData().Default_Attack, unitManager.SelectedUnit.attachments.GetHitBox().bounds);
+
+        unitManager.SelectedUnit.GetStat().GetDamaged(damage);
     }
 }
