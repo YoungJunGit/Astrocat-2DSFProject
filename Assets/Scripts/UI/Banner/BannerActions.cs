@@ -10,8 +10,8 @@ public class BannerActions
 
     public void FaintingButton()
     {
-        int nextBanner = owner.timelineUI.GetCurrentTurnBanner().Index - 1;
-        EntityBanner faintingTarget = owner.timelineUI.BannerList[nextBanner];
+        int nextBanner = owner.CurrentTurnBanner.Index - 1;
+        EntityBanner faintingTarget = owner.BannerList[nextBanner];
         faintingTarget.SetState(BannerState.FAINT);
         faintingTarget.FaintingEffect();
     }
@@ -20,13 +20,13 @@ public class BannerActions
     {
         owner.roundDepth++;
 
-        int index = owner.timelineUI.BannerList.Count;
-        var unitStat = owner.timelineUI.GetCurrentTurnBanner().GetStat();
+        int index = owner.BannerList.Count;
+        var unitStat = owner.CurrentTurnBanner.GetStat();
 
         EntityBanner banner = owner.timelineUI.effect.CreateExtraBanner(unitStat, index, owner.roundDepth);
-        owner.timelineUI.BannerList.Add(banner);
-        owner.timelineUI.effect.ReorderExtraTurn(owner.timelineUI.BannerList ,index);
-        owner.timelineCanvas.SetParent(owner.timelineUI.BannerList);
+        owner.BannerList.Add(banner);
+        owner.timelineUI.effect.ReorderExtraTurn(owner.BannerList ,index);
+        owner.timelineCanvas.SetParent(owner.BannerList);
     }
 
     //public void UpdateAllUnitStacks()

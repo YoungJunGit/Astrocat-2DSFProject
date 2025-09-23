@@ -7,10 +7,10 @@ using static EntityBanner;
 public class ExtraBannerEffect
 {
     private readonly EntityBanner bannerPrefab;
-    private readonly BannerLocationSetting location;
+    private readonly BannerSetting location;
     private readonly IntVariable maxShowBannerIndex;
 
-    public ExtraBannerEffect(EntityBanner bannerPrefab, BannerLocationSetting location, IntVariable maxShowBannerIndex)
+    public ExtraBannerEffect(EntityBanner bannerPrefab, BannerSetting location, IntVariable maxShowBannerIndex)
     {
         this.bannerPrefab = bannerPrefab;
         this.location = location;
@@ -69,10 +69,9 @@ public class ExtraBannerEffect
                     location.InitialPos.y
                 );
 
-                banner.move?.Cancel();
                 if (banner.gameObject.activeSelf)
                 {
-                    banner.Move(dest, false).Forget();
+                    banner.Move(dest, false);
                 }
                 else
                 {
@@ -90,10 +89,9 @@ public class ExtraBannerEffect
                     location.InitialPos.y
                 );
 
-                banner.move?.Cancel();
                 if (banner.gameObject.activeSelf)
                 {
-                    banner.Move(dest, false).Forget();
+                    banner.Move(dest, false);
                 }
                 else
                 {

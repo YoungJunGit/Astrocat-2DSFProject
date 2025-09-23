@@ -9,24 +9,33 @@ using UnityEngine;
 using UnityEngine.UI;
 using static EntityBanner;
 
-[CreateAssetMenu(fileName = "TimelineSystem", menuName = "GameScene/TimelineSystem", order = 3)]
+[CreateAssetMenu(fileName = "TimelineSystem", menuName = "GameScene/Timeline/TimelineSystem", order = 3)]
 public class TimelineSystem : ScriptableObject
 {
     [SerializeField] public ScriptableListBaseUnit unitList = null;
-    [SerializeField] private IntVariable MaxShowBannerIndex;
+    private List<EntityBanner>  bannerList = new();
+    private EntityBanner        currentTurnBanner;
+
+    [SerializeField] private IntVariable    MaxShowBannerIndex;
     [SerializeField] private TimelineCanvas timelineCanvasPrefab;
     [HideInInspector] public TimelineCanvas timelineCanvas;
-    [HideInInspector] public TimelineUI timelineUI;
+    [HideInInspector] public TimelineUI     timelineUI;
 
-    public int roundDepth;
+    public int  roundDepth;
     private int curRound;
     private int foundIndex;
 
-    public Action m_EndRound;
-    private BannerActions actions;
+    public Action           m_EndRound;
+    private BannerActions   actions;
+
+    public List<EntityBanner> BannerList    => bannerList;
+    public EntityBanner CurrentTurnBanner   => currentTurnBanner;
+    public BannerActions GetActions()       => actions;
 
     public void Init()
     {
+        bannerList.Clear();
+        currentTurnBanner = null;
         roundDepth = 0;
         curRound = 1;
 
@@ -39,8 +48,8 @@ public class TimelineSystem : ScriptableObject
 
     public void CreateBanners()
     {
-        AddTimeline(this.unitList.GetUnits());
-        timelineCanvas.SetBanners(timelineUI.BannerList);
+        AddTimeline(unitList.GetUnits());
+        timelineCanvas.SetBanners(bannerList);
     }
 
     /// <summary>
@@ -59,10 +68,12 @@ public class TimelineSystem : ScriptableObject
         }
 
         // Inititalize and Sort BannerList for combat
-        timelineUI.OnPop();
+        currentTurnBanner = bannerList[0];
+        bannerList.RemoveAt(0);
+        timelineUI.OnPop(currentTurnBanner);
         SortBanner();
 
-        return unitList.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
+        return unitList.Find(unit => unit.GetStat() == currentTurnBanner.GetStat());
     }
 
     /// <summary>
@@ -72,7 +83,7 @@ public class TimelineSystem : ScriptableObject
     /// <returns> Give Unit to CombatManager for next turn </returns>
     public BaseUnit Pop(List<BaseUnit> unitList)
     {
-        if (timelineUI.BannerList[0].GetState() != BannerState.EXTRA && timelineUI.BannerList[0].Round > curRound)
+        if (bannerList[0].GetState() != BannerState.EXTRA && bannerList[0].Round > curRound)
         {
             Debug.Log("Start Next Round!!!");
             m_EndRound?.Invoke();
@@ -80,19 +91,21 @@ public class TimelineSystem : ScriptableObject
             curRound++;
         }
 
-        timelineUI.GetCurrentTurnBanner().DestroyBanner();
-        timelineUI.OnPop();
+        currentTurnBanner.DestroyBanner();
+        currentTurnBanner = bannerList[0];
+        bannerList.RemoveAt(0);
+        timelineUI.OnPop(currentTurnBanner);
         OnTimelineChanged(unitList, foundIndex);
 
         //actions.UpdateAllUnitStacks();
 
-        return unitList?.Find(unit => unit.GetStat() == timelineUI.GetCurrentTurnBanner().GetStat());
+        return unitList?.Find(unit => unit.GetStat() == currentTurnBanner.GetStat());
     }
 
     public void OnCharacterDie(BaseUnit unit)
     {
-        List<EntityBanner> deleteBannerList = timelineUI.BannerList.FindAll(banner => banner.GetStat() == unit.GetStat());
-        timelineUI.BannerList.RemoveAll(banner => banner.GetStat() == unit.GetStat());
+        List<EntityBanner> deleteBannerList = bannerList.FindAll(banner => banner.GetStat() == unit.GetStat());
+        bannerList.RemoveAll(banner => banner.GetStat() == unit.GetStat());
 
         foreach (EntityBanner banner in deleteBannerList)
         {
@@ -106,30 +119,26 @@ public class TimelineSystem : ScriptableObject
     public void OnCharacterAddBuff(Buff buff)
     {
         SortBanner();
-        timelineUI.MoveBanners(foundIndex);
+        timelineUI.MoveBanners(currentTurnBanner, bannerList, foundIndex);
     }
 
     private void OnTimelineChanged(List<BaseUnit> unitList, int foundIndex)
     {
         AddTimeline(unitList);
-        timelineCanvas.SetParent(timelineUI.BannerList);
-        timelineUI.MoveBanners(foundIndex);
+        timelineCanvas.SetParent(bannerList);
+        timelineUI.MoveBanners(currentTurnBanner, bannerList, foundIndex);
     }
 
-    /// <summary>
-    /// Create Banners when timeline banners are lacking -> Called in HUDManager
-    /// </summary>
-    /// <param name="unitList"></param>
     public void AddTimeline(List<BaseUnit> unitList)
     {
-        while (timelineUI.BannerList.Count < MaxShowBannerIndex && unitList != null && unitList.Count > 0)
+        while (bannerList.Count < MaxShowBannerIndex && unitList != null && unitList.Count > 0)
         {
             roundDepth++;
             foreach (BaseUnit unit in unitList)
             {
-                int index = timelineUI.BannerList.Count;
+                int index = bannerList.Count;
                 EntityBanner banner = timelineUI.CreateBanner(unit, index, roundDepth);
-                timelineUI.BannerList.Add(banner);
+                bannerList.Add(banner);
             }
         }
         SortBanner();
@@ -138,15 +147,13 @@ public class TimelineSystem : ScriptableObject
     private void SortBanner()
     {
         // For Debugging
-        if (timelineUI.GetCurrentTurnBanner() != null)
-            timelineUI.GetCurrentTurnBanner().SetName("CurrentBanner");
+        if (currentTurnBanner != null)
+            currentTurnBanner.SetName("CurrentBanner");
 
-        timelineUI.BannerList.Sort((EntityBanner a, EntityBanner b) => a.CompareTo(b));
-        foreach (var banner in timelineUI.BannerList.Select((value, index) => (value, index)))
+        bannerList.Sort((EntityBanner a, EntityBanner b) => a.CompareTo(b));
+        foreach (var banner in bannerList.Select((value, index) => (value, index)))
         {
             banner.value.Index = banner.index + 1;
         }
     }
-
-    public BannerActions GetActions() => actions;
 }

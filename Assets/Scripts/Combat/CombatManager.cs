@@ -47,7 +47,7 @@ public class CombatManager : ScriptableObject
         {
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
-            if (_timeline.timelineUI.GetCurrentTurnBanner().GetState() == EntityBanner.BannerState.NORMAL)
+            if (_timeline.CurrentTurnBanner.GetState() == EntityBanner.BannerState.NORMAL)
             {
                 IUnitAction selectedAction = null;
 
