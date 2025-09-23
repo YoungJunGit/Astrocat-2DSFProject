@@ -106,6 +106,8 @@ public class BaseUnit : MonoBehaviour
         {
             _supporterUnit.OnDie(combatInfo).Forget();
         }
+        SoundManager.Instance.PlayEffectSound("Liquid");
+        SoundManager.Instance.SetSFXVolume(0.6f);
     }
 
     public AnimationHandler GetAnimationHandler() => _animHandler;
