@@ -25,6 +25,7 @@ public abstract class AbstractScene : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
     {
+        ServiceLocator.Global.Register(new SoundService() as ISoundService);
         ServiceLocator.Global.Register<SceneHandler>(new SceneHandler());
         ServiceLocator.Global.Register<BackgroundManager>(new BackgroundManager());
     }

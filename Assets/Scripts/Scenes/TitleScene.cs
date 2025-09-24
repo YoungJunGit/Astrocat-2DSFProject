@@ -9,12 +9,16 @@ public class TitleScene : AbstractScene
 
     [Header("Manager Setting")]
     [SerializeField] private TitleManager titleManager;
+    
+    private ISoundService _soundService;
 
     protected override int SceneIdx => 1;
     protected override void BindObjects() 
     {
         mainCamera = Instantiate(mainCamera);
         eventSystem = Instantiate(eventSystem);
+        
+        ServiceLocator.For(this).Get(out _soundService);
     }
 
     protected override async UniTask InitializeObjects() 
@@ -28,8 +32,13 @@ public class TitleScene : AbstractScene
     protected override void PrepareGame() { }
     protected override async UniTask BeginGame() 
     {
+        _soundService.PlayBackGround("");
+        
         await UniTask.WaitUntil(() => Input.anyKeyDown);
+        
+        _soundService.PlayEffectSound("");
 
+        _soundService.Clear();
         sceneHandler.ChangeScene(1);
     }
 }
