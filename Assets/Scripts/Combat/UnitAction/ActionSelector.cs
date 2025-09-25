@@ -49,7 +49,7 @@ class ActionSelector : ScriptableObject
                 selector.gameObject.SetActive(false);
                 unitAction = await _actionFactory.CreatePlayerBaseAttackAction(playerUnit);
 
-                SoundManager.Instance.PlayEffectSound("Click");
+                //SoundManager.Instance.PlayEffectSound("Click");
                 // For Debugging
                 //unitAction = await _actionFactory.CreatePlayerBaseBuffAction(playerUnit);
                 break;

@@ -18,14 +18,17 @@ public class BaseUnit : MonoBehaviour
     [SerializeField, ShowIf("HasSupporter"), Required]
     protected SupporterUnit _supporterUnit;
 
-    [SerializeField] private UNIT_TYPE unit_Type;
-    [SerializeField] private bool HasSupporter = false;
+    [SerializeField] 
+    private UNIT_TYPE unit_Type;
+    [SerializeField] 
+    private bool HasSupporter = false;
 
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
     private CrowdControlManager _crowdControlManager = new();
 
-    [HideInInspector] public UnitAttachments attachments;
+    [HideInInspector] 
+    public UnitAttachments attachments;
     public UnitCombatInfo combatInfo;
     public Action<Buff> m_AddBuff;
     public Action<BaseUnit> m_FinishedDying;
@@ -109,12 +112,12 @@ public class BaseUnit : MonoBehaviour
         {
             _supporterUnit.OnDie(combatInfo).Forget();
         }
-        SoundManager.Instance.PlayEffectSound("Liquid");
-        SoundManager.Instance.SetSFXVolume(0.6f);
+        //SoundManager.Instance.PlayEffectSound("Liquid");
+        //SoundManager.Instance.SetSFXVolume(0.6f);
     }
 
-    public AnimationHandler GetAnimationHandler() => _animHandler;
+    public AnimationHandler GetAnimationHandler()       => _animHandler;
     public CrowdControlManager GetCrowdControlManager() => _crowdControlManager;
-    public UnitStat GetStat() => _stat;
-    public UNIT_TYPE GetUnitType() => unit_Type;
+    public UnitStat GetStat()                           => _stat;
+    public UNIT_TYPE GetUnitType()                      => unit_Type;
 }

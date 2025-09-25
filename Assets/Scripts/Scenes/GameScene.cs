@@ -76,7 +76,7 @@ public class GameScene : AbstractScene
         qteManager.Init();
         
         unitActionExecuter.Init();
-        SoundManager.Instance.Init();
+        // SoundManager.Instance.Init();
 
         if (debugMode)
         {
