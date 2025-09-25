@@ -21,9 +21,9 @@ class ActionFactory : ScriptableObject
 
     public async UniTask<BaseAttackAction> CreatePlayerBaseAttackAction(BaseUnit unit)
     {
-        EnemyUnit enemy = await _unitManager.GetEnemyUnitBySelector();
+        await _unitManager.GetEnemyUnitBySelector();
 
-        BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit, enemy);
+        BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit);
 
         return attackAction;
     }
@@ -31,9 +31,9 @@ class ActionFactory : ScriptableObject
     public async UniTask<BaseAttackAction> CreateEnemyBaseAttackAction(BaseUnit unit)
     {
         // TODO : Must change method of selecting player unit
-        PlayerUnit player = _unitManager.GetRandomPlayerUnitBySelector();
+        _unitManager.GetRandomPlayerUnitBySelector();
 
-        BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit, player);
+        BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit);
 
         await dialogueManager.ShowAttackWarningDialogue(unit);
 
@@ -42,9 +42,9 @@ class ActionFactory : ScriptableObject
 
     public async UniTask<BaseBuffAction> CreatePlayerBaseBuffAction(BaseUnit unit)
     {
-        PlayerUnit player = await _unitManager.GetPlayerUnitBySelector();
+        await _unitManager.GetPlayerUnitBySelector();
 
-        BaseBuffAction buffAction = new BaseBuffAction(unit, player);
+        BaseBuffAction buffAction = new BaseBuffAction();
 
         return buffAction;
     }
@@ -62,14 +62,14 @@ class ActionFactory : ScriptableObject
         return skillAction;
     }
 
-    private BaseAttackAction CreateBaseAttackActionByUnitType(BaseUnit unit, BaseUnit target)
+    private BaseAttackAction CreateBaseAttackActionByUnitType(BaseUnit unit)
     {
         switch (unit.GetUnitType())
         {
             case DataEnum.UNIT_TYPE.MELEE:
-                return new MeleeAttack(unit, target);
+                return new MeleeAttack();
             case DataEnum.UNIT_TYPE.RANGE:
-                return new RangeAttack(unit, target);
+                return new RangeAttack();
         }
 
         return null;

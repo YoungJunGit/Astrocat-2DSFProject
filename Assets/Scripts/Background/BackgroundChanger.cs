@@ -20,8 +20,13 @@ public class BackgroundChanger : MonoBehaviour, IUpdateObserver
             {
                 inputNum = i;
                 backgroundManager.ChangeBackground(inputNum);
-                break; // 키를 하나만 처리하고 루프를 종료합니다.
+                break;
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        UpdatePublisher.DiscribeObserver(this);
     }
 }

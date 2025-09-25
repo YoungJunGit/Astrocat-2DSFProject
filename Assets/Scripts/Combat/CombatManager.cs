@@ -47,7 +47,7 @@ public class CombatManager : ScriptableObject
         {
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
-            if (_timeline.timelineUI.GetCurrentTurnBanner().GetState() == EntityBanner.BannerState.NORMAL)
+            if (_timeline.CurrentTurnBanner.GetState() == EntityBanner.BannerState.NORMAL)
             {
                 IUnitAction selectedAction = null;
 
@@ -69,11 +69,7 @@ public class CombatManager : ScriptableObject
             await UniTask.WaitUntil(() => combatEventHandler.IsEventEmpty());
             await UniTask.WaitForSeconds(1);
 
-            //TODO: Check is finish
-            //if ()
             currentTurnUnit = DequeueCurrentUnit.Call(unitList.GetUnits());
-
-            //await ProcessCurrentTurnAsync();
         }
 
         // TODO: Check whether the enemy or the player wins

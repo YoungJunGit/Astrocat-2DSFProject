@@ -13,6 +13,7 @@ public class UnitManager : ScriptableObject
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
 
+    private BaseUnit _selectedUnit;
     private List<BaseUnit> unitList = new List<BaseUnit>();
 
     public void Init()
@@ -56,20 +57,22 @@ public class UnitManager : ScriptableObject
         return enemyUnit;
     }
 
-    public async UniTask<EnemyUnit> GetEnemyUnitBySelector()
+    public async UniTask GetEnemyUnitBySelector()
     {
-        return await unitSelector.SelectUnit(SIDE.ENEMY) as EnemyUnit;
+        _selectedUnit = await unitSelector.SelectUnit(SIDE.ENEMY);
     }
     
-    public async UniTask<PlayerUnit> GetPlayerUnitBySelector()
+    public async UniTask GetPlayerUnitBySelector()
     {
-        return await unitSelector.SelectUnit(SIDE.PLAYER) as PlayerUnit;
+        _selectedUnit = await unitSelector.SelectUnit(SIDE.PLAYER);
     }
 
-    public PlayerUnit GetRandomPlayerUnitBySelector()
+    public void GetRandomPlayerUnitBySelector()
     {
-        return unitSelector.SelectRandomUnit(SIDE.PLAYER) as PlayerUnit;
+        _selectedUnit = unitSelector.SelectRandomUnit(SIDE.PLAYER);
     }
+
+    public BaseUnit SelectedUnit => _selectedUnit;
 
     public List<BaseUnit> GetAllUnit()
     {

@@ -59,16 +59,6 @@ public class AssetLoader
         return gameObject;
     }
 
-    public static DamageFactory GetDamageFactory()
-    {
-        DamageFactory damageFactory = Resources.Load<DamageFactory>(ScriptableObjectAssetPath + "DamageFactory");
-
-        if (damageFactory == null)
-            Debug.LogWarning($"AssetLoader: No path: {ScriptableObjectAssetPath}DamageFactory!");
-
-        return damageFactory;
-    }
-
     public static GameObject LoadPrefabAsset(string assetName)
     {
         GameObject gameObject = Resources.Load<GameObject>(PrefabAssetPath + assetName);

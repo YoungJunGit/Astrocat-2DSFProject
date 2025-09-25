@@ -14,7 +14,7 @@ public class UnitStat
 
     public Action<float, float> OnHPChanged;
     public Action<int, int> OnAPChanged;
-    public Action<float, bool> OnDamaged;
+    public Action<float> OnDamaged;
     public Action<float> OnHealed;
     public Action OnDie;
     
@@ -54,11 +54,11 @@ public class UnitStat
         OnAPChanged?.Invoke(_curAp, Max_AP);
     }
 
-    public void GetDamaged(float value, bool isCritical = false)     
+    public void GetDamaged(float value)     
     {
         _curHp = Mathf.Clamp(_curHp - value, 0f, Max_HP);
         OnHPChanged.Invoke(_curHp, Max_HP);
-        OnDamaged.Invoke(value, isCritical);
+        OnDamaged.Invoke(value);
 
         if (Cur_HP <= 0f)
         {

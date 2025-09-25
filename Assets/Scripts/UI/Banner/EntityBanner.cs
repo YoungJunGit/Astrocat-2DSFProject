@@ -28,8 +28,8 @@ public class EntityBanner : MonoBehaviour
     private Sprite[] sprites;
     [SerializeField] private Sprite[] prioritySprites;
 
-    [Header("Banner Settings")]
-    [SerializeField] private float bannerSpeed = 1.0f;
+    [Header("Banner Move Settings")]
+    [SerializeField] private float moveDuration = 0.25f;
     [SerializeField] private IntVariable MaxShowBannerIndex;
 
     private UnitStat stat;
@@ -54,8 +54,6 @@ public class EntityBanner : MonoBehaviour
     private int round;
     public int Round => round;
 
-    public CancellationTokenSource move;
-
     public void Init(UnitStat stat, int index, int round)
     {
         this.stat = stat;
@@ -64,39 +62,21 @@ public class EntityBanner : MonoBehaviour
 
         sprites = AssetLoader.LoadImgAsset(this.stat.GetData().Asset_File);
         myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(this.stat.GetData().Asset_File);
-
-        priorityImg.sprite = this.stat.GetData().Side == SIDE.PLAYER ? prioritySprites[this.stat.Priority] : prioritySprites[this.stat.Priority + 3];
         bannerImg.sprite = sprites[0];
+        priorityImg.sprite = this.stat.GetData().Side == SIDE.PLAYER ? prioritySprites[this.stat.Priority] : prioritySprites[this.stat.Priority + 3];
 
         if (index == 0)
             myAnimator.SetTrigger("Skip");
     }
 
-    /// <summary>
-    /// Move banner to destination smoothly -> Called in TimelineUI
-    /// </summary>
-    /// <param name="destination"></param>
-    /// <param name="isFirstBanner"></param>
-    /// <returns></returns>
-    public async UniTaskVoid Move(Vector2 destination, bool isFirstBanner)
+    public void Move(Vector2 destination, bool isFirstBanner)
     {
-        move = new CancellationTokenSource();
-        Vector2 start = new Vector2(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
+        rectTransform.DOAnchorPos(destination, moveDuration);
 
         if (isFirstBanner)
         {
             myAnimator.SetTrigger("Move");
         }
-
-        float curTime = 0.0f;
-        while (rectTransform.anchoredPosition != destination)
-        {
-            curTime += Time.deltaTime * bannerSpeed;
-            rectTransform.anchoredPosition = Vector2.Lerp(start, destination, curTime);
-
-            await UniTask.Yield(cancellationToken: move.Token);
-        }
-        move = null;
     }
 
     public void SetAnchor(Vector2 anchorMax, Vector2 anchorMin)
@@ -167,17 +147,6 @@ public class EntityBanner : MonoBehaviour
         }
     }
 
-    public void CopyStat(UnitStat other)
-    {
-        stat = other;
-    }
-
     public UnitStat GetStat() { return stat; }
     public BannerState GetState() { return state; }
-
-    private void OnDestroy()
-    {
-        move?.Cancel();
-        move?.Dispose();
-    }
 }

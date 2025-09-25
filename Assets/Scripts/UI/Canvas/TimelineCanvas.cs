@@ -7,7 +7,7 @@ using UnityEngine;
 public class TimelineCanvas : MonoBehaviour
 {
     [SerializeField] private Transform _timelinePanel;
-    [SerializeField] private BannerLocationSetting _locationSetting;
+    [SerializeField] private BannerSetting _bannerSetting;
 
     /// <summary>
     /// Banner : Integrated -> Set Parent + Set RectTransform
@@ -40,11 +40,11 @@ public class TimelineCanvas : MonoBehaviour
         Vector2 pos;
         foreach (var banner in bannerList.Select((value, index) => (value, index)))
         {
-            pos = new Vector2((_locationSetting.InitialPos.x * 2) + _locationSetting.Distance * banner.index, _locationSetting.InitialPos.y);
+            pos = new Vector2((_bannerSetting.InitialPos.x * 2) + _bannerSetting.Distance * banner.index, _bannerSetting.InitialPos.y);
             if (banner.index == 0)
             {
-                pos.x = _locationSetting.InitialPos.x;
-                banner.value.SetAnchor(_locationSetting.Anchor.max, _locationSetting.Anchor.min);
+                pos.x = _bannerSetting.InitialPos.x;
+                banner.value.SetAnchor(_bannerSetting.Anchor.max, _bannerSetting.Anchor.min);
                 banner.value.SetSprite(4);
             }
             banner.value.SetPostion(pos);
