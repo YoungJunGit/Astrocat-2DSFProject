@@ -6,7 +6,7 @@ public class QTETester : MonoBehaviour
     [SerializeField] private InputHandler inputHandler;
 
     public void Init()
-    {
+    {       
         inputHandler.OnSelectActionSkillSelect += Test;
     }
 
