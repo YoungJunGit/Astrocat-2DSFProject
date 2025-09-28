@@ -138,8 +138,6 @@ public class GameScene : AbstractScene
     protected override async UniTask BeginGame()
     {
         await combatManager.StartCombat();
-
-        sceneHandler.ChangeScene(0);
     }
 
     private void ForDebugging()

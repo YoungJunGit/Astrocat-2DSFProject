@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using NaughtyAttributes;
 using Obvious.Soap;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,15 +18,17 @@ public abstract class AbstractScene : MonoBehaviour
 
     [Space(20f)]
     [SerializeField] protected BoolVariable debugMode;
+    [SerializeField] private bool changeSceneOnEndGame;
+    [SerializeField, ShowIf("changeSceneOnEndGame")] private int changeSceneIndex;
 
-    protected SceneHandler sceneHandler;
+    protected ISceneHandler sceneHandler;
     protected BackgroundManager backgroundManager;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
     {
         ServiceLocator.Global.Register(new SoundService() as ISoundService);
-        ServiceLocator.Global.Register<SceneHandler>(new SceneHandler());
+        ServiceLocator.Global.Register(new SceneHandler() as ISceneHandler);
         ServiceLocator.Global.Register<BackgroundManager>(new BackgroundManager());
     }
 
@@ -41,13 +43,22 @@ public abstract class AbstractScene : MonoBehaviour
             await asyncOperation;
         }
 
-        sceneHandler.DestroyLoadingScreen();
         backgroundManager.SetBackground(background_type, background_index);
+
         BindObjects();
         await InitializeObjects();
         await CreateObjects();
         PrepareGame();
+
+        await sceneHandler.OnFinishedLoading();
+
         await BeginGame();
+
+        if (changeSceneOnEndGame)
+        {
+            await sceneHandler.FadeScreen();
+            sceneHandler.LoadingScreen(changeSceneIndex);
+        }
     }
 
     protected abstract void BindObjects();
