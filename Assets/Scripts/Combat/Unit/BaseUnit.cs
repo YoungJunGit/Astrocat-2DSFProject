@@ -26,6 +26,7 @@ public class BaseUnit : MonoBehaviour
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
     private CrowdControlManager _crowdControlManager = new();
+    private ISoundService _soundService;
 
     [HideInInspector] 
     public UnitAttachments attachments;
@@ -42,7 +43,9 @@ public class BaseUnit : MonoBehaviour
         _stat = new UnitStat(data, index);
 
         DamageFactory damageFactory;
-        ServiceLocator.For(this).Get(out damageFactory);
+        ServiceLocator.For(this)
+            .Get(out damageFactory)
+            .Get(out _soundService);
 
         _crowdControlManager.Init(this, damageFactory);
 
@@ -112,8 +115,11 @@ public class BaseUnit : MonoBehaviour
         {
             _supporterUnit.OnDie(combatInfo).Forget();
         }
-        //SoundManager.Instance.PlayEffectSound("Liquid");
-        //SoundManager.Instance.SetSFXVolume(0.6f);
+        if (this is PlayerUnit) {
+            _soundService.PlayEffectSound("Die");
+            _soundService.PlayEffectSound("Hover", 2f);
+        }
+        else _soundService.PlayEffectSound("Die");
     }
 
     public AnimationHandler GetAnimationHandler()       => _animHandler;

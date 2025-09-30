@@ -21,6 +21,7 @@ public class GameScene : AbstractScene
     [SerializeField] private string[] playerUnitID;
     [SerializeField] private string[] enemyUnitID;
     private List<EntityData> entityData = null;
+    private ISoundService _soundService;
 
     [Header("Manager Settings")]
     [SerializeField] private HUDManager hudManager;
@@ -59,6 +60,7 @@ public class GameScene : AbstractScene
             .Register(unitManager)
             .Register(inputHandler)
             .Register(damageFactory);
+        ServiceLocator.For(this).Get(out _soundService);
     }
 
     protected override async UniTask InitializeObjects()
@@ -76,7 +78,8 @@ public class GameScene : AbstractScene
         qteManager.Init();
         
         unitActionExecuter.Init();
-        // SoundManager.Instance.Init();
+
+        _soundService.PlayBackGround("Title_Background", true);
 
         if (debugMode)
         {

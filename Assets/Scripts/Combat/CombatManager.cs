@@ -21,6 +21,7 @@ public class CombatManager : ScriptableObject
     public bool executed;
     
     private IUnitActionExecuter actionExecuter;
+    private ISoundService _soundService;
 
     public void Init(TimelineSystem timeline)
     {
@@ -36,7 +37,9 @@ public class CombatManager : ScriptableObject
         actionSelector.Init();
         
         ServiceLocator.For(this)
-            .Get(out actionExecuter);
+            .Get(out actionExecuter)
+            .Get(out _soundService);
+
     }
 
     public BaseUnit GetCurrentTurnUnit() => currentTurnUnit;

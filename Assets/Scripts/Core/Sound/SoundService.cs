@@ -20,8 +20,13 @@ public class SoundService : ISoundService
 
     // BGM 로딩 경쟁 상태 방지용 버전 토큰
     private int _bgmLoadVersion = 0;
-
     public void PlayEffectSound(string clipName)
+    {
+        // 인터페이스 준수: 기존 시그니처는 0초 지연으로 재생
+        PlayEffectSound(clipName, 0f);
+    }
+
+    public void PlayEffectSound(string clipName, float delaySeconds)
     {
         // fire-and-forget
         UniTask.Void(async () =>
@@ -35,7 +40,17 @@ public class SoundService : ISoundService
                 return;
             }
 
+            if (_root == null) EnsureInitialized();
+
+            if (delaySeconds > 0f)
+            {
+                await UniTask.Delay(Mathf.Max(0, Mathf.RoundToInt(delaySeconds * 1000f)));
+            }
+
             _sfxSource.PlayOneShot(clip);
+            SetBGMVolume(0.7f);
+            await RestoreBackground(clip.length);
+
         });
     }
 
@@ -93,6 +108,13 @@ public class SoundService : ISoundService
     {
         _sfxVolume = Mathf.Clamp01(volume);
         ApplyVolumes();
+    }
+
+    private async UniTask RestoreBackground(float seconds)
+    {
+        await UniTask.Delay(Mathf.Max(0, Mathf.RoundToInt(seconds * 1000f)));
+
+        if (_bgmSource != null) SetBGMVolume(1.0f);
     }
 
     public void SetBGMVolume(float volume)
@@ -173,6 +195,7 @@ public class SoundService : ISoundService
     }
 
     // Addressables 비동기 로드 (키 = clipName)
+    
     private async UniTask<AudioClip> LoadClipAsync(string clipName)
     {
         if (string.IsNullOrWhiteSpace(clipName))

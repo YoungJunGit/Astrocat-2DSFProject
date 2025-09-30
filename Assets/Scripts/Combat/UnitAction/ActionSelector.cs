@@ -11,7 +11,8 @@ class ActionSelector : ScriptableObject
     [SerializeField] private InputHandler inputHandler;
     [SerializeField, SortingLayer] private string layerName;
     private ActionSelectionButtons selector;
-    
+    private ISoundService _soundService;
+
     private int _selectedActionType;
     private int _selectedSkillIndex;
     
@@ -24,6 +25,8 @@ class ActionSelector : ScriptableObject
         
         selector.OnBaisicSelection += (index) => _selectedActionType = index;
         selector.OnSkillSelection += (index) => _selectedSkillIndex = index;
+
+        ServiceLocator.For(this).Get(out _soundService);
     }
     
     List<string> skillName = new();
@@ -46,14 +49,17 @@ class ActionSelector : ScriptableObject
         switch (_selectedActionType)
         {
             case 1:
+                _soundService.PlayEffectSound("Click");
+                Debug.Log("Click Sound");
                 selector.gameObject.SetActive(false);
                 unitAction = await _actionFactory.CreatePlayerBaseAttackAction(playerUnit);
 
-                //SoundManager.Instance.PlayEffectSound("Click");
+                _soundService.PlayEffectSound("Player_Shoot");
                 // For Debugging
                 //unitAction = await _actionFactory.CreatePlayerBaseBuffAction(playerUnit);
                 break;
             case 2:
+                _soundService.PlayEffectSound("Start_Menu");
                 var skillID = playerUnit.GetStat().GetSkillsID();
                 
                 skillName.Clear();
@@ -75,13 +81,15 @@ class ActionSelector : ScriptableObject
                 
                 _selectedSkillIndex = 0;
                 await UniTask.WaitUntil(() => _selectedSkillIndex != 0);
-                
+                _soundService.PlayEffectSound("Click");
+
                 unitAction = _actionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
 
                 selector.gameObject.SetActive(false);
                 selector.DisableSkillSelectionButtons();
                 break;
             case 3:
+                _soundService.PlayEffectSound("Item_Select");
                 // TODO : Use Item
                 break;
         }
@@ -97,6 +105,8 @@ class ActionSelector : ScriptableObject
 
         IUnitAction unitAction = null;
         unitAction = await _actionFactory.CreateEnemyBaseAttackAction(enemyUnit);
+        if (enemyUnit.name == "penguin_Berserker(Clone)") _soundService.PlayEffectSound("Knife", 1f);
+        else _soundService.PlayEffectSound("Enemy_Shoot");
 
         return unitAction;
     }    
