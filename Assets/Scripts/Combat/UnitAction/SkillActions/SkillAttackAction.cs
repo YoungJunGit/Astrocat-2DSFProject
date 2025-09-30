@@ -1,8 +1,9 @@
+using System.Threading;
 using Cysharp.Threading.Tasks;
 
 public class SkillAttackAction : IUnitAction
 {
-    public virtual async UniTask Execute(IUnitActionContext context)
+    public virtual async UniTask Execute(IUnitActionContext context, CancellationToken cancellationToken = default)
     {
         context.Caster.combatInfo.isFinishedAction = false;
         context.Caster.attachments.GetSpriteRenderer().sortingLayerName = "Actor";

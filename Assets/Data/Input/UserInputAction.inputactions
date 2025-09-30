@@ -283,6 +283,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Parry",
+            "id": "3f77f61b-8f56-427f-84b5-57ca218ff0ee",
+            "actions": [
+                {
+                    "name": "OnParry",
+                    "type": "Button",
+                    "id": "d864db99-1b9a-4e4e-9f57-7cc3adc2e662",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fc4520b7-801c-4954-a67d-f2c680e99425",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnParry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

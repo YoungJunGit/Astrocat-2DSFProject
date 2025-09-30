@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "InputHandler", menuName = "Core/InputHandler", order = 1)]
-public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions, UserInputAction.ISelectActionActions, UserInputAction.IQTEActions
+public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions, UserInputAction.ISelectActionActions, UserInputAction.IQTEActions, UserInputAction.IParryActions
 {
     public enum InputState
     {
@@ -56,6 +56,8 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     public Action OnSelectActionUseItem;
     
     public Action OnQTEButtonA;
+    
+    public Action OnParry;
 
     public void Init()
     {
@@ -116,5 +118,11 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     {
         if (context.performed)
             OnQTEButtonA?.Invoke();
+    }
+
+    public void OnOnParry(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            OnParry?.Invoke();
     }
 }

@@ -2,11 +2,12 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "ActionSelector", menuName = "GameScene/ActionSelector", order = 1)]
 class ActionSelector : ScriptableObject
 {
-    [SerializeField] private ActionFactory _actionFactory;
+    [FormerlySerializedAs("_actionFactory")] [SerializeField] private UnitActionFactory unitActionFactory;
     [SerializeField] private ActionSelectionButtons selectorPrefab;
     [SerializeField] private InputHandler inputHandler;
     [SerializeField, SortingLayer] private string layerName;
@@ -47,7 +48,7 @@ class ActionSelector : ScriptableObject
         {
             case 1:
                 selector.gameObject.SetActive(false);
-                unitAction = await _actionFactory.CreatePlayerBaseAttackAction(playerUnit);
+                unitAction = await unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
 
                 //SoundManager.Instance.PlayEffectSound("Click");
                 // For Debugging
@@ -76,7 +77,7 @@ class ActionSelector : ScriptableObject
                 _selectedSkillIndex = 0;
                 await UniTask.WaitUntil(() => _selectedSkillIndex != 0);
                 
-                unitAction = _actionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
+                unitAction = unitActionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
 
                 selector.gameObject.SetActive(false);
                 selector.DisableSkillSelectionButtons();
@@ -96,7 +97,7 @@ class ActionSelector : ScriptableObject
         //_selectedActionType = Random.Range(0, 3);
 
         IUnitAction unitAction = null;
-        unitAction = await _actionFactory.CreateEnemyBaseAttackAction(enemyUnit);
+        unitAction = await unitActionFactory.CreateEnemyBaseAttackAction(enemyUnit);
 
         return unitAction;
     }    

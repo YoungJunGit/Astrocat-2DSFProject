@@ -1,3 +1,5 @@
+using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEditor.Timeline.Actions;
@@ -24,7 +26,19 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
     public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action)
     {
         var context = new UnitActionContext(caster, _unitManager, _damageFactory);
+        var cts = new CancellationTokenSource();
         
-        await action.Execute(context);
+        try
+        {
+            await action.Execute(context, cts.Token);
+        }
+        catch (OperationCanceledException)
+        {
+            Debug.Log($"{caster.GetStat().Name} : Action was canceled.");
+        }
+        finally
+        {
+            cts.Dispose();
+        }
     }
 }
