@@ -18,7 +18,7 @@ class PlayerBaseAttackAction : IUnitAction
         _target = target;
     }
     
-    public async UniTask Execute(IUnitActionContext context, CancellationToken cancellationToken = default)
+    public async UniTask Execute(IUnitActionContext context, CancellationTokenSource cancellationToken = default)
     {
         if (_caster == null || _target == null)
         {

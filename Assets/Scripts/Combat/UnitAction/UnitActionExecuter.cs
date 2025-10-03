@@ -15,22 +15,26 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
 {
     UnitManager _unitManager;
     DamageFactory _damageFactory;
+    IParryingApplier _parryingApplier;
+    InputHandler _inputHandler;
 
     public void Init()
     {
         ServiceLocator.For(this)
             .Get(out _unitManager)
-            .Get(out _damageFactory);
+            .Get(out _damageFactory)
+            .Get(out _parryingApplier)
+            .Get(out _inputHandler);
     }
     
     public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action)
     {
-        var context = new UnitActionContext(caster, _unitManager, _damageFactory);
+        var context = new UnitActionContext(caster, _unitManager, _damageFactory, _parryingApplier, _inputHandler);
         var cts = new CancellationTokenSource();
         
         try
         {
-            await action.Execute(context, cts.Token);
+            await action.Execute(context, cts);
         }
         catch (OperationCanceledException)
         {

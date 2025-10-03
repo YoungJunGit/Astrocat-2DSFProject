@@ -282,7 +282,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animHandler: {fileID: 7322455768656537500}
   _supporterUnit: {fileID: 0}
-  _animationParryingHandler: {fileID: 6436424483058964266}
   unit_Type: 1
   HasSupporter: 0
   attachments: {fileID: 0}
@@ -442,3 +441,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa617a76e3737474dbfdcfe20fb49194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}

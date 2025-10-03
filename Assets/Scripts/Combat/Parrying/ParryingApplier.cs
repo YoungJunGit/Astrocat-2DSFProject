@@ -4,7 +4,7 @@ using System.Threading;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ParryingApplier", menuName = "GameScene/ParryingApplier", order = 1)]
-public class ParryingApplier : ScriptableObject
+public class ParryingApplier : ScriptableObject, IParryingApplier
 {
     private bool _isParryOpen;
     private bool _isJustParryOpen;
@@ -21,11 +21,12 @@ public class ParryingApplier : ScriptableObject
     
     public enum ParryType
     {
+        Failed,
         Parry,
         JustParry
     }
     
-    public Action<ParryType> OnParry;
+    public Action<ParryType> OnParry { get; }
 
     public void Init()
     {
@@ -36,16 +37,17 @@ public class ParryingApplier : ScriptableObject
         _inputHandler.OnParry += () =>
         {
             if (_isParryed) return;
-
+            
             _isParryed = true;
             
-            if (_isParryOpen)
-            {
-                PerformParry(ParryType.Parry);
-            }
-            else if (_isJustParryOpen)
+            
+            if (_isJustParryOpen)
             {
                 PerformParry(ParryType.JustParry);
+            }
+            else if (_isParryOpen)
+            {
+                PerformParry(ParryType.Parry);
             }
             else
             {
@@ -62,20 +64,25 @@ public class ParryingApplier : ScriptableObject
         _executedUnitAction?.Cancel();
         _unitActionExecuter.ExecuteRequest(_defender, unitAction);
         
+        // TODO : attacker parried animation
+        
         OnParry?.Invoke(parryType);
     }
-
-
-    public void SetParryOpen(BaseUnit attacker, BaseUnit defender, CancellationTokenSource executedUnitAction)
+    
+    public void SetCurTernParryInfo(BaseUnit attacker, BaseUnit defender, CancellationTokenSource executedUnitAction)
     {
         _isParryed = false;
         
         _attacker = attacker;
         _defender = defender;
         _executedUnitAction = executedUnitAction;
+    }
+
+    public void SetParryOpen()
+    {
         _isParryOpen = true;
     }
-    
+
     public void SetJustParryOpen() => _isJustParryOpen = true;
 
     public void SetParryClose()

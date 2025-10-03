@@ -375,7 +375,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
             ""id"": ""3f77f61b-8f56-427f-84b5-57ca218ff0ee"",
             ""actions"": [
                 {
-                    ""name"": ""OnParry"",
+                    ""name"": ""PerformParry"",
                     ""type"": ""Button"",
                     ""id"": ""d864db99-1b9a-4e4e-9f57-7cc3adc2e662"",
                     ""expectedControlType"": """",
@@ -392,7 +392,18 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""OnParry"",
+                    ""action"": ""PerformParry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4102085-319d-4455-ba8c-3722b61e8f25"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PerformParry"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -434,7 +445,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         m_QTE_ButtonA = m_QTE.FindAction("ButtonA", throwIfNotFound: true);
         // Parry
         m_Parry = asset.FindActionMap("Parry", throwIfNotFound: true);
-        m_Parry_OnParry = m_Parry.FindAction("OnParry", throwIfNotFound: true);
+        m_Parry_PerformParry = m_Parry.FindAction("PerformParry", throwIfNotFound: true);
     }
 
     ~@UserInputAction()
@@ -861,7 +872,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
     // Parry
     private readonly InputActionMap m_Parry;
     private List<IParryActions> m_ParryActionsCallbackInterfaces = new List<IParryActions>();
-    private readonly InputAction m_Parry_OnParry;
+    private readonly InputAction m_Parry_PerformParry;
     /// <summary>
     /// Provides access to input actions defined in input action map "Parry".
     /// </summary>
@@ -874,9 +885,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         /// </summary>
         public ParryActions(@UserInputAction wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Parry/OnParry".
+        /// Provides access to the underlying input action "Parry/PerformParry".
         /// </summary>
-        public InputAction @OnParry => m_Wrapper.m_Parry_OnParry;
+        public InputAction @PerformParry => m_Wrapper.m_Parry_PerformParry;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -903,9 +914,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_ParryActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_ParryActionsCallbackInterfaces.Add(instance);
-            @OnParry.started += instance.OnOnParry;
-            @OnParry.performed += instance.OnOnParry;
-            @OnParry.canceled += instance.OnOnParry;
+            @PerformParry.started += instance.OnPerformParry;
+            @PerformParry.performed += instance.OnPerformParry;
+            @PerformParry.canceled += instance.OnPerformParry;
         }
 
         /// <summary>
@@ -917,9 +928,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="ParryActions" />
         private void UnregisterCallbacks(IParryActions instance)
         {
-            @OnParry.started -= instance.OnOnParry;
-            @OnParry.performed -= instance.OnOnParry;
-            @OnParry.canceled -= instance.OnOnParry;
+            @PerformParry.started -= instance.OnPerformParry;
+            @PerformParry.performed -= instance.OnPerformParry;
+            @PerformParry.canceled -= instance.OnPerformParry;
         }
 
         /// <summary>
@@ -1054,11 +1065,11 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
     public interface IParryActions
     {
         /// <summary>
-        /// Method invoked when associated input action "OnParry" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "PerformParry" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnOnParry(InputAction.CallbackContext context);
+        void OnPerformParry(InputAction.CallbackContext context);
     }
 }

@@ -11,7 +11,8 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
         None,
         SelectUnit,
         SelectAction,
-        QTE
+        QTE,
+        Parry
     }
     private InputState _currentInputState = InputState.None;
 
@@ -40,6 +41,10 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
                     _userInputAction.Disable();
                     _userInputAction.QTE.Enable();
                     break;
+                case InputState.Parry:
+                    _userInputAction.Disable();
+                    _userInputAction.Parry.Enable();
+                     break;
             }
         }
     }
@@ -67,6 +72,7 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
             _userInputAction.SelectUnit.SetCallbacks(this);
             _userInputAction.SelectAction.SetCallbacks(this);
             _userInputAction.QTE.SetCallbacks(this);
+            _userInputAction.Parry.SetCallbacks(this);
         }
 
         CurrentInputState = InputState.None;
@@ -120,8 +126,8 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
             OnQTEButtonA?.Invoke();
     }
 
-    public void OnOnParry(InputAction.CallbackContext context)
-    {
+    public void OnPerformParry(InputAction.CallbackContext context)
+      {
         if (context.performed)
             OnParry?.Invoke();
     }

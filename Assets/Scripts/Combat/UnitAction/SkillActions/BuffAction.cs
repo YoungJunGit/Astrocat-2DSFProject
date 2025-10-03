@@ -4,7 +4,7 @@ using UnityEngine;
 
 class BaseBuffAction : IUnitAction
 {
-    public virtual async UniTask Execute(IUnitActionContext context, CancellationToken cancellationToken = default)
+    public virtual async UniTask Execute(IUnitActionContext context, CancellationTokenSource cancellationToken = default)
     {
         Debug.Log("Buff Action");
     }

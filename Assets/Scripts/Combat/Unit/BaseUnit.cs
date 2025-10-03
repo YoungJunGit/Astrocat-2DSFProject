@@ -17,8 +17,6 @@ public class BaseUnit : MonoBehaviour
     private AnimationHandler _animHandler;
     [SerializeField, ShowIf("HasSupporter"), Required]
     protected SupporterUnit _supporterUnit;
-    [SerializeField, Required]
-    protected AnimationParryingHandler _animationParryingHandler;
 
     [SerializeField] 
     private UNIT_TYPE unit_Type;
@@ -47,8 +45,6 @@ public class BaseUnit : MonoBehaviour
         ServiceLocator.For(this).Get(out damageFactory);
 
         _crowdControlManager.Init(this, damageFactory);
-        
-        _animationParryingHandler.Init(this);
 
         if (HasSupporter)
             _supporterUnit.Initialize();
@@ -124,5 +120,4 @@ public class BaseUnit : MonoBehaviour
     public CrowdControlManager GetCrowdControlManager() => _crowdControlManager;
     public UnitStat GetStat()                           => _stat;
     public UNIT_TYPE GetUnitType()                      => unit_Type;
-    public AnimationParryingHandler GetAnimationParryingHandler() => _animationParryingHandler;
 }

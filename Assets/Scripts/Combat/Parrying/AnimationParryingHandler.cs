@@ -1,39 +1,45 @@
 using System.Threading;
+using Obvious.Soap;
 using UnityEngine;
 
 public class AnimationParryingHandler : MonoBehaviour
 {
-    IParryingApplier _parryingApplier;
+    private IParryingApplier _parryingApplier;
+    [SerializeField]
+    private BoolVariable isDebugMode;
     
-    BaseUnit _attacker;
-    BaseUnit _defender;
-    CancellationTokenSource _ct;
-
-    public void Init(BaseUnit attacker)
+    private IParryingApplier ParryingApplier
     {
-        ServiceLocator.For(this).Get(out _parryingApplier);
+        get
+        {
+            if (_parryingApplier == null)
+                ServiceLocator.For(this).Get(out _parryingApplier);
+            
+            return _parryingApplier;
+        }
+    }
+
+    public void SetParryOpen()
+    {
+        if (isDebugMode?.Value == true)
+            Debug.Log($"Parry Open");
         
-        _attacker = attacker;
-    }
-    
-    public void SetParryInfo(BaseUnit defander, CancellationTokenSource ct)
-    {
-        _defender = defander;
-        _ct = ct;
+        ParryingApplier.SetParryOpen();
     }
 
-    public void SetParryOpen(BaseUnit attacker, BaseUnit defender, CancellationTokenSource ct)
-    {
-        _parryingApplier.SetParryOpen(attacker, defender, ct);
-    }
-    
     public void SetJustParryOpen()
     {
-        _parryingApplier.SetJustParryOpen();
+        if (isDebugMode?.Value == true)
+            Debug.Log($"Just Parry Open");
+        
+        ParryingApplier.SetJustParryOpen();
     }
 
-    public void SetParryingClose()
+    public void SetParryClose()
     {
-        _parryingApplier.SetParryClose();
+        if (isDebugMode?.Value == true)
+            Debug.Log($"Just Parry Close");
+        
+        ParryingApplier.SetParryClose();
     }
 }

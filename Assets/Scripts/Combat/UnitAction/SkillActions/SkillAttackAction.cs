@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 
 public class SkillAttackAction : IUnitAction
 {
-    public virtual async UniTask Execute(IUnitActionContext context, CancellationToken cancellationToken = default)
+    public virtual async UniTask Execute(IUnitActionContext context, CancellationTokenSource cancellationToken = default)
     {
         context.Caster.combatInfo.isFinishedAction = false;
         context.Caster.attachments.GetSpriteRenderer().sortingLayerName = "Actor";

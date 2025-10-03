@@ -5,8 +5,10 @@ using UnityEngine;
 public interface IParryingApplier
 {
     Action<ParryingApplier.ParryType> OnParry { get; }
+
+    void SetCurTernParryInfo(BaseUnit attacker, BaseUnit defender, CancellationTokenSource executedUnitAction);
     
-    public void SetParryOpen(BaseUnit attacker, BaseUnit defender, CancellationTokenSource executedUnitAction);
-    public void SetJustParryOpen();
-    public void SetParryClose();
+    void SetParryOpen();
+    void SetJustParryOpen();
+    void SetParryClose();
 }
