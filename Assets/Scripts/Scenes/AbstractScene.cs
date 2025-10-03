@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using NaughtyAttributes;
 using Obvious.Soap;
 using UnityEngine;
@@ -26,8 +25,8 @@ public abstract class AbstractScene : MonoBehaviour
     private static void Initialize()
     {
         ServiceLocator.Global.Register(new SoundService() as ISoundService);
-        ServiceLocator.Global.Register<SceneHandler>(new SceneHandler());
-        ServiceLocator.Global.Register<BackgroundManager>(new BackgroundManager());
+        ServiceLocator.Global.Register(new SceneHandler());
+        ServiceLocator.Global.Register(new BackgroundManager());
     }
 
     private async void Start()
@@ -36,10 +35,7 @@ public abstract class AbstractScene : MonoBehaviour
         ServiceLocator.For(this).Get(out backgroundManager);
 
         if (!SceneManager.GetSceneByName("Base").isLoaded)
-        {
-            var asyncOperation = SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
-            await asyncOperation;
-        }
+            await SceneManager.LoadSceneAsync("0. Base", LoadSceneMode.Additive);
 
         sceneHandler.DestroyLoadingScreen();
         backgroundManager.SetBackground(background_type, background_index);
