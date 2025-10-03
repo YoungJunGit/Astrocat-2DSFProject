@@ -6,29 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Monster/penguin_berserker_attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Monster/penguin_berserker_attack.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Input/UserInputAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Input/UserInputAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Input/UserInputAction.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Input/UserInputAction.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/02_Monster/Prefabs/penguin_Berserker.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/02_Monster/Prefabs/penguin_Berserker.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1. GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1. GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/Soap/Variables/bool_DebugMode.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/Soap/Variables/bool_DebugMode.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Parrying/AnimationParryingHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Parrying/AnimationParryingHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Parrying/IParryingApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Parrying/IParryingApplier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Parrying/ParryingApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Parrying/ParryingApplier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/QTE/InputDisposer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/QTE/InputDisposer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit/BaseUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Unit/BaseUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionExecuter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/ActionExecuter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/IUnitAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/IUnitAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/AttackAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/AttackAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/BuffAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/BuffAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/SkillAttackAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/SkillAttackAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/UnitActionContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/UnitActionContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/UnitActionExecuter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/UnitActionExecuter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tester/InputTester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tester/InputTester.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +188,7 @@
       <workItem from="1758101608722" duration="667000" />
       <workItem from="1758187573645" duration="3908000" />
       <workItem from="1759224994714" duration="6744000" />
-      <workItem from="1759450620642" duration="6612000" />
+      <workItem from="1759450620642" duration="7222000" />
     </task>
     <servers />
   </component>
@@ -263,16 +241,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/AttackAction.cs</url>
-          <line>43</line>
+          <line>45</line>
           <properties documentPath="C:\Workspace\Git\Astrocat-2DSFProject\Assets\Scripts\Combat\UnitAction\SkillActions\AttackAction.cs" containingFunctionPresentation="메서드 'Execute'">
             <startOffsets>
-              <option value="1736" />
+              <option value="1823" />
             </startOffsets>
             <endOffsets>
-              <option value="1854" />
+              <option value="1941" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="26" />
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

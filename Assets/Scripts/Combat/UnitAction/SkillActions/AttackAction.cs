@@ -12,7 +12,7 @@ class BaseAttackAction : IUnitAction
     {
         context.OnStartAction();
         
-        await UniTask.WaitUntil(() => context.Caster.combatInfo.isFinishedAction);
+        Debug.Log($"{context.Caster.GetStat().Name} : Action was finished.");
     }
 }
 
@@ -49,6 +49,7 @@ class MeleeAttack : BaseAttackAction
         }
         
         inputDisposer.Dispose();
+        
 
         await base.Execute(context, cancellationToken);
     }
