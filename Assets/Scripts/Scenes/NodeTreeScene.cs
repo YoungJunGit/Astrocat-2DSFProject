@@ -5,6 +5,9 @@ public class NodeTreeScene : AbstractScene
 {
     protected override int SceneIdx { get; } = 2;
     
+    [SerializeField]
+    NodeMapGenerator nodeMapGenerator;
+    
     protected override void BindObjects()
     {
         
@@ -12,7 +15,7 @@ public class NodeTreeScene : AbstractScene
 
     protected async override UniTask InitializeObjects()
     {
-        
+        nodeMapGenerator.init();
     }
 
     protected async override UniTask CreateObjects()

@@ -45,13 +45,13 @@ namespace S3MG{
 		float fillTime = 0.4f;
 		float elapsedTime = 0f;
 
-		MapGenerator  mapGenerator;
+		MapGenerator  _mapGenerator;
 
 		/*------------------------------------------------------------
 		Executed only once when MonoBehaviour is created, Will work if the GameObject is active even if the component is disabled
 		------------------------------------------------------------*/
 		void Awake(){
-			mapGenerator = FindFirstObjectByType<MapGenerator>();
+			_mapGenerator = FindFirstObjectByType<MapGenerator>();
 			currentColor = defaultColor;
 		}
 
@@ -139,19 +139,19 @@ namespace S3MG{
 		void entryStart(){
 			visited = true;
 
-			if(nodeType != NodeData.Type.Start) mapGenerator.paintPath(this);
+			if(nodeType != NodeData.Type.Start) _mapGenerator.paintPath(this);
 
 			if(nodeType != NodeData.Type.Start && nodeType != NodeData.Type.Final){
-				mapGenerator.passedSameFloor(this);
+				_mapGenerator.passedSameFloor(this);
 			}
 			else{
 				passedNode();
 			}
 
-			mapGenerator.nowNode = this;
+			_mapGenerator.nowNode = this;
 
-			if(mapGenerator.skipNodeProcessing){
-				mapGenerator.toNextNode();
+			if(_mapGenerator.skipNodeProcessing){
+				_mapGenerator.toNextNode();
 			}
 			else{
 				switch(nodeType){
