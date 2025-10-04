@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 823027328
+  seed: 1513835392
   floorNum: 5
   routeNum: 4
   normalNodeSize: 80
@@ -29,8 +29,7 @@ MonoBehaviour:
   floorDistance: 80
   routeDistance: 80
   activeRouteNum: 4
-  mapCanvas: {fileID: 0}
-  nodePref: {fileID: 3376982875141614277, guid: fe63b3b7812e6cd47aa92542e2450b53, type: 3}
+  nodePref: {fileID: 2233898142981473485, guid: d930a38253f29b3489870b8b3ee32fe5, type: 3}
   pathImagePref: {fileID: 5878281430672081569, guid: f902e890fbfbeac4ea3cf6ed178ecbca, type: 3}
   pathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   passedPathColor: {r: 1, g: 1, b: 1, a: 1}

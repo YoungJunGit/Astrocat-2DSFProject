@@ -48,8 +48,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 		[SerializeField, Range(1,20)] public int activeRouteNum = 4;
 		Node[] activeRouteNodeArray;
 
-		[Header("▼Canvas to Display Map")]
-		[SerializeField] public GameObject mapCanvas;
+		private GameObject mapCanvas;
 		RectTransform mapParent;
 
 		[Header("▼Node Prefab: ButtonPrefab with Node class")]
@@ -115,8 +114,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 			if(!isCompleted) return;
 			if(noMapOperation) return;
 			
-			
-
 			if(Mouse.current.leftButton.wasPressedThisFrame){
 				oldMousePos = Mouse.current.position.ReadValue() - ((oldMousePos == Vector2.zero) ? mapParent.anchoredPosition : Vector2.zero);
 			}
@@ -197,14 +194,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 		bool dataCheckBeforeGeneration(){
 			bool check = false;
 
-			if(mapCanvas == null){
-				Debug.Log($"Please register the Canvas to display the map.");
-				check = true;
-			}
-			if(mapCanvas.transform.parent != null){
-				Debug.Log($"Please place the Canvas to display the map in the Root.");
-				check = true;
-			}
 			if(nodePref == null){
 				Debug.Log($"Please register the Node Prefab.");
 				check = true;
@@ -273,6 +262,10 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 		Pre-generation
 		------------------------------------------------------------*/
 		void preGenerated(){
+			mapCanvas = new GameObject("Map Canvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
+			var canvas = mapCanvas.GetComponent<Canvas>();
+			canvas.renderMode = RenderMode.ScreenSpaceCamera;
+			
 			GameObject parentObject = new GameObject("Parent");
 			parentObject.layer = LayerMask.NameToLayer("UI");
 			mapParent = parentObject.AddComponent<RectTransform>();
@@ -308,6 +301,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 
 			if(makeStart){
 				startNode = Instantiate(nodePref, mapParent);
+				startNode.Init(this);
+				
 				setNodeSize(startNode, startNodeSize);
 				startNode.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
 				startNode.gameObject.name = $"Start Node";
@@ -317,6 +312,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 			for(int i = 0; i < floorNum; i++){
 				for(int j = 0; j < routeNum; j++){
 					Node node = Instantiate(nodePref, mapParent);
+					node.Init(this);
+					
 					setNodeSize(node, normalNodeSize);
 					node.floor = i;
 					node.route = j;
@@ -333,6 +330,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 			}
 
 			finalNode = Instantiate(nodePref, mapParent);
+			finalNode.Init(this);
+			
 			setNodeSize(finalNode, finalNodeSize);
 			finalNode.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? (startNodeSize / 2) + (normalNodeSize / 2) : 0));
 			finalNode.gameObject.name = $"Final Node";
