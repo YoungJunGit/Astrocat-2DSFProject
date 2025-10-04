@@ -17,6 +17,31 @@ public class TimelineUI : MonoBehaviour
         effect = new ExtraBannerEffect(bannerSetting.BannerPrefab, bannerSetting, MaxShowBannerIndex);
     }
 
+    public void SetParent(List<EntityBanner> bannerList)
+    {
+        foreach (EntityBanner banner in bannerList)
+        {
+            banner.transform.SetParent(transform, false);
+        }
+    }
+
+    public void SetRectTransform(List<EntityBanner> bannerList)
+    {
+        Vector2 pos;
+        foreach (var banner in bannerList.Select((value, index) => (value, index)))
+        {
+            pos = new Vector2((bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * banner.index, bannerSetting.InitialPos.y);
+            if (banner.index == 0)
+            {
+                pos.x = bannerSetting.InitialPos.x;
+                banner.value.SetAnchor(bannerSetting.Anchor.max, bannerSetting.Anchor.min);
+                banner.value.SetSprite(4);
+            }
+            banner.value.SetPostion(pos);
+            banner.value.SetScale(Vector2.one);
+        }
+    }
+
     /// <summary>
     /// Change BannerList Collection
     /// </summary>

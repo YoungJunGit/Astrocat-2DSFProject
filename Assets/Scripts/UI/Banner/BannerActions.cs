@@ -26,7 +26,7 @@ public class BannerActions
         EntityBanner banner = owner.timelineUI.effect.CreateExtraBanner(unitStat, index, owner.roundDepth);
         owner.BannerList.Add(banner);
         owner.timelineUI.effect.ReorderExtraTurn(owner.BannerList ,index);
-        owner.timelineCanvas.SetParent(owner.BannerList);
+        owner.timelineUI.SetParent(owner.BannerList);
     }
 
     //public void UpdateAllUnitStacks()

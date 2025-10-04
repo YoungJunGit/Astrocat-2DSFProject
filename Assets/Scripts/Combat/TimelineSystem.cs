@@ -17,39 +17,38 @@ public class TimelineSystem : ScriptableObject
     private EntityBanner        currentTurnBanner;
 
     [SerializeField] private IntVariable    MaxShowBannerIndex;
-    [SerializeField] private TimelineCanvas timelineCanvasPrefab;
-    [HideInInspector] public TimelineCanvas timelineCanvas;
+    [SerializeField] private TimelineUI     _timelineUIPrefab;
     [HideInInspector] public TimelineUI     timelineUI;
 
     public int  roundDepth;
-    private int curRound;
-    private int foundIndex;
+    private int _curRound;
+    private int _foundIndex;
 
     public Action           m_EndRound;
-    private BannerActions   actions;
+    private BannerActions   _actions;
 
     public List<EntityBanner> BannerList    => bannerList;
     public EntityBanner CurrentTurnBanner   => currentTurnBanner;
-    public BannerActions GetActions()       => actions;
+    public BannerActions Actions            => _actions;
 
     public void Init()
     {
         bannerList.Clear();
         currentTurnBanner = null;
         roundDepth = 0;
-        curRound = 1;
+        _curRound = 1;
 
-        foundIndex = 0;
+        _foundIndex = 0;
 
-        timelineCanvas = Instantiate(timelineCanvasPrefab);
-        timelineUI = timelineCanvas.GetComponentInChildren<TimelineUI>();
-        actions = new BannerActions(this);
+        timelineUI = Instantiate(_timelineUIPrefab);
+        _actions = new BannerActions(this);
     }
 
     public void CreateBanners()
     {
         AddTimeline(unitList.GetUnits());
-        timelineCanvas.SetBanners(bannerList);
+        timelineUI.SetParent(bannerList);
+        timelineUI.SetRectTransform(bannerList);
     }
 
     /// <summary>
@@ -83,19 +82,19 @@ public class TimelineSystem : ScriptableObject
     /// <returns> Give Unit to CombatManager for next turn </returns>
     public BaseUnit Pop(List<BaseUnit> unitList)
     {
-        if (bannerList[0].GetState() != BannerState.EXTRA && bannerList[0].Round > curRound)
+        if (bannerList[0].GetState() != BannerState.EXTRA && bannerList[0].Round > _curRound)
         {
             Debug.Log("Start Next Round!!!");
             m_EndRound?.Invoke();
             SortBanner();
-            curRound++;
+            _curRound++;
         }
 
         currentTurnBanner.DestroyBanner();
         currentTurnBanner = bannerList[0];
         bannerList.RemoveAt(0);
         timelineUI.OnPop(currentTurnBanner);
-        OnTimelineChanged(unitList, foundIndex);
+        OnTimelineChanged(unitList, _foundIndex);
 
         //actions.UpdateAllUnitStacks();
 
@@ -112,20 +111,20 @@ public class TimelineSystem : ScriptableObject
             banner.DestroyBanner();
         }
         SortBanner();
-        OnTimelineChanged(this.unitList.GetUnits(), foundIndex);
-        foundIndex = 0;
+        OnTimelineChanged(this.unitList.GetUnits(), _foundIndex);
+        _foundIndex = 0;
     }
 
     public void OnCharacterAddBuff(Buff buff)
     {
         SortBanner();
-        timelineUI.MoveBanners(currentTurnBanner, bannerList, foundIndex);
+        timelineUI.MoveBanners(currentTurnBanner, bannerList, _foundIndex);
     }
 
     private void OnTimelineChanged(List<BaseUnit> unitList, int foundIndex)
     {
         AddTimeline(unitList);
-        timelineCanvas.SetParent(bannerList);
+        timelineUI.SetParent(bannerList);
         timelineUI.MoveBanners(currentTurnBanner, bannerList, foundIndex);
     }
 

@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
   MaxShowBannerIndex: {fileID: 11400000, guid: e470a0d88c8ef934b8d09b63a050e2ee, type: 2}
-  timelineCanvasPrefab: {fileID: 8944480728120779190, guid: 47409dc05f91f744f85a3615484a1675, type: 3}
-  timelineCanvas: {fileID: 0}
+  _timelineUIPrefab: {fileID: 7425917508110186694, guid: 47409dc05f91f744f85a3615484a1675, type: 3}
   timelineUI: {fileID: 0}
-  roundDepth: 2
+  roundDepth: 0
