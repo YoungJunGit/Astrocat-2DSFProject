@@ -3,7 +3,7 @@ using UnityEngine;
 
 class BaseBuffAction : IUnitAction
 {
-    public virtual async UniTask Execute(IUnitActionContext context)
+    public virtual async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction)
     {
         Debug.Log("Buff Action");
     }

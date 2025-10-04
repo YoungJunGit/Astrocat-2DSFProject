@@ -6,5 +6,5 @@ using UnityEngine;
 
 public interface IUnitAction
 {
-    public UniTask Execute(IUnitActionContext context);
+    public UniTask Execute(IUnitActionContext context, IUnitActionEvent actionEvent);
 }

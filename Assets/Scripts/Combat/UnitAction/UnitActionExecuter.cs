@@ -25,6 +25,6 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
     {
         var context = new UnitActionContext(caster, _unitManager, _damageFactory);
         
-        await action.Execute(context);
+        await action.Execute(context, new UnitActionEvent());
     }
 }

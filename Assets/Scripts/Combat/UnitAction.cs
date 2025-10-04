@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using DataEnum;
 
-class PlayerBaseAttackAction : IUnitAction
+class PlayerBaseAttackAction
 {
     private PlayerUnit _caster;
     private EnemyUnit _target;
