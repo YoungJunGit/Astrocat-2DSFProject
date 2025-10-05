@@ -114,7 +114,7 @@ public class GameScene : AbstractScene
             hudManager.CreateEnemyHUD(unit);
         }
 
-        timelineSystem.CreateBanners();
+        timelineSystem.CreateBanners(unitManager.GetAllUnit());
     }
 
     protected override void PrepareGame()

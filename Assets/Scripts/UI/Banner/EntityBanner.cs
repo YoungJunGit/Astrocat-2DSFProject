@@ -32,38 +32,37 @@ public class EntityBanner : MonoBehaviour
     [SerializeField] private float moveDuration = 0.25f;
     [SerializeField] private IntVariable MaxShowBannerIndex;
 
-    private UnitStat stat;
-    private BannerState state;
+    private UnitStat    _stat;
+    private BannerState _state;
 
-    private int index;
+    private int _index;
     public int Index {
-        get { return index; }
+        get { return _index; }
         set
         {
-            index = value;
-            if (index <= MaxShowBannerIndex.Value - 1)
+            _index = value;
+            if (_index <= MaxShowBannerIndex.Value - 1)
                 gameObject.SetActive(true);
             else
                 gameObject.SetActive(false);
 
             // For Debugging
-            gameObject.name = $"Banner:{index}";
+            gameObject.name = $"Banner:{_index}";
         }
     }
 
-    private int round;
-    public int Round => round;
+    public int Round { get; private set; }
 
     public void Init(UnitStat stat, int index, int round)
     {
-        this.stat = stat;
-        this.index = index;
-        this.round = round;
+        _stat = stat;
+        _index = index;
+        Round = round;
 
-        sprites = AssetLoader.LoadImgAsset(this.stat.GetData().Asset_File);
-        myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(this.stat.GetData().Asset_File);
+        sprites = AssetLoader.LoadImgAsset(this._stat.GetData().Asset_File);
+        myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(this._stat.GetData().Asset_File);
         bannerImg.sprite = sprites[0];
-        priorityImg.sprite = this.stat.GetData().Side == SIDE.PLAYER ? prioritySprites[this.stat.Priority] : prioritySprites[this.stat.Priority + 3];
+        priorityImg.sprite = this._stat.GetData().Side == SIDE.PLAYER ? prioritySprites[this._stat.Priority] : prioritySprites[this._stat.Priority + 3];
 
         if (index == 0)
             myAnimator.SetTrigger("Skip");
@@ -111,7 +110,7 @@ public class EntityBanner : MonoBehaviour
 
     public void SetState(BannerState state)
     {
-        this.state = state;
+        this._state = state;
     }
 
     public void DestroyBanner()
@@ -139,14 +138,13 @@ public class EntityBanner : MonoBehaviour
 
     public int CompareTo(EntityBanner other)
     {
-        if (this.round < other.round) { return -1; }
-        else if (this.round > other.round) { return 1; }
+        if (this.Round < other.Round) { return -1; }
+        else if (this.Round > other.Round) { return 1; }
         else
         {
-            return stat.CompareTo(other.stat);
+            return _stat.CompareTo(other._stat);
         }
     }
-
-    public UnitStat GetStat() { return stat; }
-    public BannerState GetState() { return state; }
+    public UnitStat GetStat() { return _stat; }
+    public BannerState GetState() { return _state; }
 }

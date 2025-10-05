@@ -18,18 +18,15 @@ public class TimelineSystem : ScriptableObject
 
     [SerializeField] private IntVariable    MaxShowBannerIndex;
     [SerializeField] private TimelineUI     _timelineUIPrefab;
-    [HideInInspector] public TimelineUI     timelineUI;
+    
+    private TimelineUI     _timelineUI;
 
-    public int  roundDepth;
+    private int  roundDepth;
     private int _curRound;
     private int _foundIndex;
 
-    public Action           m_EndRound;
-    private BannerActions   _actions;
-
     public List<EntityBanner> BannerList    => bannerList;
     public EntityBanner CurrentTurnBanner   => currentTurnBanner;
-    public BannerActions Actions            => _actions;
 
     public void Init()
     {
@@ -40,15 +37,14 @@ public class TimelineSystem : ScriptableObject
 
         _foundIndex = 0;
 
-        timelineUI = Instantiate(_timelineUIPrefab);
-        _actions = new BannerActions(this);
+        _timelineUI = Instantiate(_timelineUIPrefab);
     }
 
-    public void CreateBanners()
+    public void CreateBanners(List<BaseUnit> unitList)
     {
-        AddTimeline(unitList.GetUnits());
-        timelineUI.SetParent(bannerList);
-        timelineUI.SetRectTransform(bannerList);
+        AddTimeline(unitList);
+        _timelineUI.SetParent(bannerList);
+        _timelineUI.SetRectTransform(bannerList);
     }
 
     /// <summary>
@@ -61,7 +57,6 @@ public class TimelineSystem : ScriptableObject
         // Attaching Actions
         foreach (BaseUnit unit in unitList)
         {
-            m_EndRound += unit.OnEndRound;
             unit.m_FinishedDying += OnCharacterDie;
             unit.m_AddBuff += OnCharacterAddBuff;
         }
@@ -69,7 +64,7 @@ public class TimelineSystem : ScriptableObject
         // Inititalize and Sort BannerList for combat
         currentTurnBanner = bannerList[0];
         bannerList.RemoveAt(0);
-        timelineUI.OnPop(currentTurnBanner);
+        _timelineUI.OnPop(currentTurnBanner);
         SortBanner();
 
         return unitList.Find(unit => unit.GetStat() == currentTurnBanner.GetStat());
@@ -82,10 +77,9 @@ public class TimelineSystem : ScriptableObject
     /// <returns> Give Unit to CombatManager for next turn </returns>
     public BaseUnit Pop(List<BaseUnit> unitList)
     {
-        if (bannerList[0].GetState() != BannerState.EXTRA && bannerList[0].Round > _curRound)
+        if (bannerList[0].Round > _curRound)
         {
             Debug.Log("Start Next Round!!!");
-            m_EndRound?.Invoke();
             SortBanner();
             _curRound++;
         }
@@ -93,7 +87,7 @@ public class TimelineSystem : ScriptableObject
         currentTurnBanner.DestroyBanner();
         currentTurnBanner = bannerList[0];
         bannerList.RemoveAt(0);
-        timelineUI.OnPop(currentTurnBanner);
+        _timelineUI.OnPop(currentTurnBanner);
         OnTimelineChanged(unitList, _foundIndex);
 
         //actions.UpdateAllUnitStacks();
@@ -118,14 +112,14 @@ public class TimelineSystem : ScriptableObject
     public void OnCharacterAddBuff(Buff buff)
     {
         SortBanner();
-        timelineUI.MoveBanners(currentTurnBanner, bannerList, _foundIndex);
+        _timelineUI.MoveBanners(currentTurnBanner, bannerList, _foundIndex);
     }
 
     private void OnTimelineChanged(List<BaseUnit> unitList, int foundIndex)
     {
         AddTimeline(unitList);
-        timelineUI.SetParent(bannerList);
-        timelineUI.MoveBanners(currentTurnBanner, bannerList, foundIndex);
+        _timelineUI.SetParent(bannerList);
+        _timelineUI.MoveBanners(currentTurnBanner, bannerList, foundIndex);
     }
 
     public void AddTimeline(List<BaseUnit> unitList)
@@ -136,7 +130,7 @@ public class TimelineSystem : ScriptableObject
             foreach (BaseUnit unit in unitList)
             {
                 int index = bannerList.Count;
-                EntityBanner banner = timelineUI.CreateBanner(unit, index, roundDepth);
+                EntityBanner banner = _timelineUI.CreateBanner(unit, index, roundDepth);
                 bannerList.Add(banner);
             }
         }

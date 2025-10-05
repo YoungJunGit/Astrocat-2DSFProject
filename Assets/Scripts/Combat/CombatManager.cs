@@ -88,12 +88,12 @@ public class CombatManager : ScriptableObject
 
     public void OnFainting()
     {
-        _timeline.Actions.FaintingButton();
+        //_timeline.Actions.FaintingButton();
     }
 
     public void OnExtraTurn()
     {
-        _timeline.Actions.ExtraButton();
+        //_timeline.Actions.ExtraButton();
     }
 
     public void ApplyCrowdControl()

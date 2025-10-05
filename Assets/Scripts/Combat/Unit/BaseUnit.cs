@@ -68,22 +68,22 @@ public class BaseUnit : MonoBehaviour
         m_AddBuff?.Invoke(newBuff);
     }
 
-    public void RemoveBuff(Buff newBuff)
-    {
-        buffList.Remove(newBuff);
+    //public void RemoveBuff(Buff newBuff)
+    //{
+    //    buffList.Remove(newBuff);
 
-        _stat.AddSpeed(-(float)newBuff.Speed_Value);
-    }
+    //    _stat.AddSpeed(-(float)newBuff.Speed_Value);
+    //}
 
-    public void OnEndRound()
-    {
-        for (int i = buffList.Count - 1; i >= 0; i--)
-        {
-            buffList[i].Buff_Duration -= 1;
-            if (buffList[i].Buff_Duration <= 0)
-                RemoveBuff(buffList[i]);
-        }
-    }
+    //public void OnEndRound()
+    //{
+    //    for (int i = buffList.Count - 1; i >= 0; i--)
+    //    {
+    //        buffList[i].Buff_Duration -= 1;
+    //        if (buffList[i].Buff_Duration <= 0)
+    //            RemoveBuff(buffList[i]);
+    //    }
+    //}
 
     public void OnDamaged(float value)
     {

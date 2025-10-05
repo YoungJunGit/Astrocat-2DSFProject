@@ -18,15 +18,15 @@ public class BannerActions
 
     public void ExtraButton()
     {
-        owner.roundDepth++;
+        //owner.roundDepth++;
 
-        int index = owner.BannerList.Count;
-        var unitStat = owner.CurrentTurnBanner.GetStat();
+        //int index = owner.BannerList.Count;
+        //var unitStat = owner.CurrentTurnBanner.GetStat();
 
-        EntityBanner banner = owner.timelineUI.effect.CreateExtraBanner(unitStat, index, owner.roundDepth);
-        owner.BannerList.Add(banner);
-        owner.timelineUI.effect.ReorderExtraTurn(owner.BannerList ,index);
-        owner.timelineUI.SetParent(owner.BannerList);
+        //EntityBanner banner = owner.timelineUI.effect.CreateExtraBanner(unitStat, index, owner.roundDepth);
+        //owner.BannerList.Add(banner);
+        //owner.timelineUI.effect.ReorderExtraTurn(owner.BannerList ,index);
+        //owner.timelineUI.SetParent(owner.BannerList);
     }
 
     //public void UpdateAllUnitStacks()
