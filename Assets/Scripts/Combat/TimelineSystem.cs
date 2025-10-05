@@ -23,7 +23,6 @@ public class TimelineSystem : ScriptableObject
 
     private int  roundDepth;
     private int _curRound;
-    private int _foundIndex;
 
     public List<EntityBanner> BannerList    => bannerList;
     public EntityBanner CurrentTurnBanner   => currentTurnBanner;
@@ -34,8 +33,6 @@ public class TimelineSystem : ScriptableObject
         currentTurnBanner = null;
         roundDepth = 0;
         _curRound = 1;
-
-        _foundIndex = 0;
 
         _timelineUI = Instantiate(_timelineUIPrefab);
     }
@@ -88,7 +85,7 @@ public class TimelineSystem : ScriptableObject
         currentTurnBanner = bannerList[0];
         bannerList.RemoveAt(0);
         _timelineUI.OnPop(currentTurnBanner);
-        OnTimelineChanged(unitList, _foundIndex);
+        OnTimelineChanged(unitList);
 
         //actions.UpdateAllUnitStacks();
 
@@ -105,21 +102,20 @@ public class TimelineSystem : ScriptableObject
             banner.DestroyBanner();
         }
         SortBanner();
-        OnTimelineChanged(this.unitList.GetUnits(), _foundIndex);
-        _foundIndex = 0;
+        OnTimelineChanged(this.unitList.GetUnits());
     }
 
     public void OnCharacterAddBuff(Buff buff)
     {
         SortBanner();
-        _timelineUI.MoveBanners(currentTurnBanner, bannerList, _foundIndex);
+        _timelineUI.MoveBanners(currentTurnBanner, bannerList);
     }
 
-    private void OnTimelineChanged(List<BaseUnit> unitList, int foundIndex)
+    private void OnTimelineChanged(List<BaseUnit> unitList)
     {
         AddTimeline(unitList);
         _timelineUI.SetParent(bannerList);
-        _timelineUI.MoveBanners(currentTurnBanner, bannerList, foundIndex);
+        _timelineUI.MoveBanners(currentTurnBanner, bannerList);
     }
 
     public void AddTimeline(List<BaseUnit> unitList)

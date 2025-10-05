@@ -1,21 +1,15 @@
 using DG.Tweening;
+using NUnit.Framework.Internal;
 using Obvious.Soap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class TimelineUI : MonoBehaviour
 {
     [SerializeField] private BannerSetting bannerSetting;
-    [SerializeField] private IntVariable MaxShowBannerIndex;
-
-    public ExtraBannerEffect effect;
-
-    private void Awake()
-    {
-        effect = new ExtraBannerEffect(bannerSetting.BannerPrefab, bannerSetting, MaxShowBannerIndex);
-    }
 
     public void SetParent(List<EntityBanner> bannerList)
     {
@@ -54,16 +48,31 @@ public class TimelineUI : MonoBehaviour
             .SetEase(Ease.Linear);
     }
 
-    public void MoveBanners(EntityBanner banner, List<EntityBanner> bannerList, int foundIndex)
+    public void MoveBanners(EntityBanner banner, List<EntityBanner> bannerList)
     {
         banner.Move(bannerSetting.InitialPos, true);
 
-        effect.Apply(bannerList, foundIndex);
+        foreach (EntityBanner entityBanner in bannerList)
+        {
+            Vector2 dest = new Vector2(
+                (bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * Mathf.Clamp(entityBanner.Index, 1, bannerSetting.MaxBannerIndex),
+                bannerSetting.InitialPos.y
+            );
+
+            if (entityBanner.gameObject.activeSelf)
+            {
+                entityBanner.Move(dest, false);
+            }
+            else
+            {
+                entityBanner.SetPostion(dest);
+            }
+        }
     }
 
     public EntityBanner CreateBanner(BaseUnit unit, int index, int round)
     {
-        EntityBanner banner = Instantiate(bannerSetting.BannerPrefab, new Vector2((bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * MaxShowBannerIndex, bannerSetting.InitialPos.y), Quaternion.identity).GetComponent<EntityBanner>();
+        EntityBanner banner = Instantiate(bannerSetting.BannerPrefab, new Vector2((bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * bannerSetting.MaxBannerIndex, bannerSetting.InitialPos.y), Quaternion.identity).GetComponent<EntityBanner>();
         banner.Init(unit.GetStat(), index, round);
         return banner;
     }

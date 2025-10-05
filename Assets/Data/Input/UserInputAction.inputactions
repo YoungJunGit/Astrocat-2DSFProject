@@ -77,6 +77,17 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Positive",
+                    "id": "2acfd7a6-100e-48de-b2e5-5a6b2288f239",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "EnemySelectionMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "Negative",
                     "id": "1cc86ba4-741d-4d89-89cd-f6e7a6192e78",
                     "path": "<Keyboard>/a",
@@ -91,6 +102,17 @@
                     "name": "Negative",
                     "id": "3e7680d4-9e88-4f85-97c6-39e604fd766b",
                     "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "EnemySelectionMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Negative",
+                    "id": "413ff4a6-250f-4e41-aa1a-2b3fee071861",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";PC",

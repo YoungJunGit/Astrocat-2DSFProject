@@ -8,6 +8,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using R3;
 
 public class EntityBanner : MonoBehaviour
 {
@@ -50,6 +51,9 @@ public class EntityBanner : MonoBehaviour
             gameObject.name = $"Banner:{_index}";
         }
     }
+
+    private ReactiveProperty<int> _reactiveIndex;
+    public int ReactiveIndex => _reactiveIndex.Value;
 
     public int Round { get; private set; }
 
