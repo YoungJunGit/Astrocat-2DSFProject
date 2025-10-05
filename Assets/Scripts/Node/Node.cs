@@ -1,18 +1,11 @@
-/*
- * SSSMapGenerator : Ver. 1.0.2
- * Written by Takashi Sowa @ loloop
-*/
-
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using S3MG;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using UnityEngine.SceneManagement;
 
-namespace S3MG{
-
-	public class Node : MonoBehaviour{
+public class Node : MonoBehaviour, IUpdateObserver, IDisposable{
 
 		[SerializeField] public int floor {get; set;}
 		[SerializeField] public int route {get; set;}
@@ -45,20 +38,22 @@ namespace S3MG{
 		float fillTime = 0.4f;
 		float elapsedTime = 0f;
 
-		MapGenerator  _mapGenerator;
+		NodeMapGenerator  _mapGenerator;
 
 		/*------------------------------------------------------------
 		Executed only once when MonoBehaviour is created, Will work if the GameObject is active even if the component is disabled
 		------------------------------------------------------------*/
-		void Awake(){
-			_mapGenerator = FindFirstObjectByType<MapGenerator>();
+		public void Init(NodeMapGenerator mapGenerator){
+			_mapGenerator = mapGenerator;
 			currentColor = defaultColor;
+			UpdatePublisher.SubscribeObserver(this);
 		}
 
 		/*------------------------------------------------------------
 		Called once per frame, Executed when the GameObject and component are enabled
 		------------------------------------------------------------*/
-		void Update(){
+		public void ObserverUpdate(float dt)
+		{
 			if(!nodeButton.enabled || visited) return;
 
 			float t = (Time.time - lerpStartTime) / lerpDuration;
@@ -245,6 +240,9 @@ namespace S3MG{
 		void handleRandom(){
 			Debug.Log("Execute random process");
 		}
-	}
 
-}
+		public void Dispose()
+		{
+			UpdatePublisher.DiscribeObserver(this);
+		}
+	}

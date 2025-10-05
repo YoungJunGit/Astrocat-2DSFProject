@@ -27,7 +27,5 @@ namespace S3MG{
 		public Sprite sprite;
 		public Type type;
 		public string nodeName;
-
 	}
-
 }
