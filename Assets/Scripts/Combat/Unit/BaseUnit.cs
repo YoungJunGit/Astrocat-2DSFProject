@@ -51,22 +51,22 @@ public class BaseUnit : MonoBehaviour
     }
 
     // TODO : Buff Test
-    public void AddBuff(Buff newBuff)
-    {
-        Buff buff = buffList.Find(element => element.Buff_Name == newBuff.Buff_Name);
+    //public void AddBuff(Buff newBuff)
+    //{
+    //    Buff buff = buffList.Find(element => element.Buff_Name == newBuff.Buff_Name);
 
-        if (buff == null)
-        {
-            buffList.Add(newBuff);
-            _stat.AddSpeed((float)newBuff.Speed_Value);
-        }
-        else
-        {
-            buffList[buffList.IndexOf(buff)] = newBuff;
-        }
+    //    if (buff == null)
+    //    {
+    //        buffList.Add(newBuff);
+    //        _stat.AddSpeed((float)newBuff.Speed_Value);
+    //    }
+    //    else
+    //    {
+    //        buffList[buffList.IndexOf(buff)] = newBuff;
+    //    }
 
-        m_AddBuff?.Invoke(newBuff);
-    }
+    //    m_AddBuff?.Invoke(newBuff);
+    //}
 
     //public void RemoveBuff(Buff newBuff)
     //{
@@ -101,7 +101,7 @@ public class BaseUnit : MonoBehaviour
 
     public void OnHealed(float value)
     {
-
+        // TODO : Heal Logic
     }
 
     public async virtual UniTask OnDie()

@@ -12,7 +12,7 @@ class UnitPositioner : ScriptableObject
     }
     [SerializeField] private UnitPositionBox box;
 
-    public void SetPositionForUnits(List<PlayerUnit> playerUnits, List<EnemyUnit> enemyUnits)
+    public void SetPositionForUnits(List<BaseUnit> playerUnits, List<BaseUnit> enemyUnits)
     {
         Vector2 pos;
         for (int i = 0; i < playerUnits.Count; i++)

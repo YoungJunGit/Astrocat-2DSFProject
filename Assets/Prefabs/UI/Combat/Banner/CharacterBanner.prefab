@@ -177,9 +177,8 @@ MonoBehaviour:
   - {fileID: 6451946313195511577, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: -1220069359675031454, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: 1959712172958920446, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
-  bannerSpeed: 5
-  MaxShowBannerIndex: {fileID: 11400000, guid: e470a0d88c8ef934b8d09b63a050e2ee, type: 2}
-  round: 0
+  moveDuration: 0.25
+  bannerSetting: {fileID: 11400000, guid: 0425d3b894a671f439d621ba24ad226f, type: 2}
 --- !u!95 &287820033796012520
 Animator:
   serializedVersion: 7

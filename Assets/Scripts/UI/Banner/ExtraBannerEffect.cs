@@ -27,7 +27,7 @@ public class ExtraBannerEffect
             .SetEase(Ease.Linear);
         banner.gameObject.name = $"Banner:{index}";
 
-        banner.SetState(BannerState.EXTRA);
+        //banner.SetState(BannerState.EXTRA);
         return banner;
     }
 

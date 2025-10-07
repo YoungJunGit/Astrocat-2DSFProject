@@ -4,11 +4,13 @@ using Obvious.Soap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.FilePathAttribute;
 
 public class TimelineUI : MonoBehaviour
 {
+    [SerializeField] private EntityBanner  bannerPrefab;
     [SerializeField] private BannerSetting bannerSetting;
 
     public void SetParent(List<EntityBanner> bannerList)
@@ -21,10 +23,9 @@ public class TimelineUI : MonoBehaviour
 
     public void SetRectTransform(List<EntityBanner> bannerList)
     {
-        Vector2 pos;
         foreach (var banner in bannerList.Select((value, index) => (value, index)))
         {
-            pos = new Vector2((bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * banner.index, bannerSetting.InitialPos.y);
+            Vector2 pos = new Vector2((bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * banner.index, bannerSetting.InitialPos.y);
             if (banner.index == 0)
             {
                 pos.x = bannerSetting.InitialPos.x;
@@ -34,18 +35,6 @@ public class TimelineUI : MonoBehaviour
             banner.value.SetPostion(pos);
             banner.value.SetScale(Vector2.one);
         }
-    }
-
-    /// <summary>
-    /// Change BannerList Collection
-    /// </summary>
-    public void OnPop(EntityBanner banner)
-    {
-        banner.transform.DOKill();
-        banner.transform
-            .DOScale(Vector3.one * 1.2f, 0.4f)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetEase(Ease.Linear);
     }
 
     public void MoveBanners(EntityBanner banner, List<EntityBanner> bannerList)
@@ -70,10 +59,24 @@ public class TimelineUI : MonoBehaviour
         }
     }
 
-    public EntityBanner CreateBanner(BaseUnit unit, int index, int round)
+    public List<EntityBanner> CreateBanners(List<BaseUnit> unitList, int index, int round)
     {
-        EntityBanner banner = Instantiate(bannerSetting.BannerPrefab, new Vector2((bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * bannerSetting.MaxBannerIndex, bannerSetting.InitialPos.y), Quaternion.identity).GetComponent<EntityBanner>();
-        banner.Init(unit.GetStat(), index, round);
-        return banner;
+        List<EntityBanner> createdUnits = new();
+        foreach (var unit in unitList.Select((value, index) => (value, index)))
+        {
+            EntityBanner banner = Instantiate(bannerPrefab).GetComponent<EntityBanner>();
+            banner.Init(unit.value.GetStat(), index + unit.index, round);
+            createdUnits.Add(banner);
+        }
+
+        return createdUnits;
+    }
+
+    public void DeleteBanners(List<EntityBanner> bannerList)
+    {
+        foreach(EntityBanner banner in bannerList)
+        {
+            banner.DestroyBanner();
+        }
     }
 }

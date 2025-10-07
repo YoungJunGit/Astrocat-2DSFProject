@@ -14,7 +14,6 @@ public class GameScene : AbstractScene
 {
     [SerializeField] private Camera camera;
     [SerializeField] private EventSystem eventSystem;
-    [SerializeField] private ScriptableListBaseUnit unitList = null;
 
     [Header("Data Settings")] 
     [SerializeField] private EntityDataCreator dataCreator;
@@ -35,7 +34,6 @@ public class GameScene : AbstractScene
 
     [Header("etc")]
     [SerializeField] private TimelineSystem timelineSystem;
-    [SerializeField] private UnitMechanismSetter unitMechanismSetter;
     [SerializeField] private InputHandler inputHandler;
     
     [Header("Tester")]
@@ -67,14 +65,13 @@ public class GameScene : AbstractScene
 
         hudManager.Init();
         dialogueManager.Init();
-        
+        combatManager.Init();
         unitManager.Init();
-        
+        qteManager.Init();
+
         timelineSystem.Init();
         inputHandler.Init();
-        
-        qteManager.Init();
-        
+
         unitActionExecuter.Init();
         // SoundManager.Instance.Init();
 
@@ -104,17 +101,18 @@ public class GameScene : AbstractScene
         }
 
         // Create HUD
-        foreach (PlayerUnit unit in unitList.GetPlayerUnits())
+        foreach (PlayerUnit unit in unitManager.GetPlayerUnits().Cast<PlayerUnit>())
         {
             hudManager.CreatePlayerHUD(unit);
         }
 
-        foreach (EnemyUnit unit in unitList.GetEnemyUnits())
+        foreach (EnemyUnit unit in unitManager.GetEnemyUnits().Cast<EnemyUnit>())
         {
             hudManager.CreateEnemyHUD(unit);
         }
 
-        timelineSystem.CreateBanners(unitManager.GetAllUnit());
+        // Create Banners
+        timelineSystem.CreateBanners(unitManager.GetAllUnits());
     }
 
     protected override void PrepareGame()
@@ -123,8 +121,8 @@ public class GameScene : AbstractScene
         hudManager.Prepare();
         unitManager.Prepare();
 
-        // Init CombatManager
-        combatManager.Init(timelineSystem);
+        // Prepare CombatManager
+        combatManager.Prepare(timelineSystem);
 
         // Add
         

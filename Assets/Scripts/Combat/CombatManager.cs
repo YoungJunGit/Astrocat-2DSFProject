@@ -19,10 +19,19 @@ public class CombatManager : ScriptableObject
     public Action OnTernEnd;
 
     public bool executed;
-    
+
     private IUnitActionExecuter actionExecuter;
 
-    public void Init(TimelineSystem timeline)
+    public void Init()
+    {
+        actionSelector.Init();
+        ServiceLocator.For(this)
+                      .Get(out actionExecuter);
+
+        // TimelineManager
+    }
+
+    public void Prepare(TimelineSystem timeline)
     {
         _timeline = timeline;
         DequeueCurrentUnit.Register(_timeline.Pop);
@@ -32,11 +41,6 @@ public class CombatManager : ScriptableObject
         {
             unit.m_FinishedDying += OnCharacterDie;
         }
-
-        actionSelector.Init();
-        
-        ServiceLocator.For(this)
-            .Get(out actionExecuter);
     }
 
     public BaseUnit GetCurrentTurnUnit() => currentTurnUnit;
@@ -47,21 +51,18 @@ public class CombatManager : ScriptableObject
         {
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
-            if (_timeline.CurrentTurnBanner.GetState() == EntityBanner.BannerState.NORMAL)
+            IUnitAction selectedAction = null;
+
+            if (currentTurnUnit is PlayerUnit player)
             {
-                IUnitAction selectedAction = null;
-
-                if (currentTurnUnit is PlayerUnit player)
-                {
-                    selectedAction = await actionSelector.SelectAction(player);
-                }
-                else if (currentTurnUnit is EnemyUnit enemy)
-                {
-                    selectedAction = await actionSelector.SelectAction(enemy);
-                }
-
-                await actionExecuter.ExecuteRequest(currentTurnUnit, selectedAction);
+                selectedAction = await actionSelector.SelectAction(player);
             }
+            else if (currentTurnUnit is EnemyUnit enemy)
+            {
+                selectedAction = await actionSelector.SelectAction(enemy);
+            }
+
+            await actionExecuter.ExecuteRequest(currentTurnUnit, selectedAction);
 
             OnTernEnd?.Invoke();
             ApplyCrowdControl();
@@ -98,8 +99,8 @@ public class CombatManager : ScriptableObject
 
     public void ApplyCrowdControl()
     {
-        var units = unitManager.GetAllUnit();
-        
+        var units = unitManager.GetAllUnits();
+
         foreach (var unit in units)
         {
             unit.GetCrowdControlManager().ApplyCrowdControl();

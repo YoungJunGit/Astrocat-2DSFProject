@@ -12,26 +12,20 @@ using static EntityBanner;
 [CreateAssetMenu(fileName = "TimelineSystem", menuName = "GameScene/Timeline/TimelineSystem", order = 3)]
 public class TimelineSystem : ScriptableObject
 {
-    [SerializeField] public ScriptableListBaseUnit unitList = null;
-    private List<EntityBanner>  bannerList = new();
-    private EntityBanner        currentTurnBanner;
-
     [SerializeField] private IntVariable    MaxShowBannerIndex;
     [SerializeField] private TimelineUI     _timelineUIPrefab;
-    
-    private TimelineUI     _timelineUI;
+    private TimelineUI _timelineUI;
 
-    private int  roundDepth;
+    private List<EntityBanner> bannerList = new();
+    private EntityBanner currentTurnBanner;
+    private int _roundDepth;
     private int _curRound;
-
-    public List<EntityBanner> BannerList    => bannerList;
-    public EntityBanner CurrentTurnBanner   => currentTurnBanner;
 
     public void Init()
     {
         bannerList.Clear();
         currentTurnBanner = null;
-        roundDepth = 0;
+        _roundDepth = 0;
         _curRound = 1;
 
         _timelineUI = Instantiate(_timelineUIPrefab);
@@ -61,10 +55,10 @@ public class TimelineSystem : ScriptableObject
         // Inititalize and Sort BannerList for combat
         currentTurnBanner = bannerList[0];
         bannerList.RemoveAt(0);
-        _timelineUI.OnPop(currentTurnBanner);
+        currentTurnBanner.OnPop();
         SortBanner();
 
-        return unitList.Find(unit => unit.GetStat() == currentTurnBanner.GetStat());
+        return unitList.Find(unit => unit.GetStat() == currentTurnBanner.Stat);
     }
 
     /// <summary>
@@ -84,25 +78,25 @@ public class TimelineSystem : ScriptableObject
         currentTurnBanner.DestroyBanner();
         currentTurnBanner = bannerList[0];
         bannerList.RemoveAt(0);
-        _timelineUI.OnPop(currentTurnBanner);
+        currentTurnBanner.OnPop();
         OnTimelineChanged(unitList);
 
         //actions.UpdateAllUnitStacks();
 
-        return unitList?.Find(unit => unit.GetStat() == currentTurnBanner.GetStat());
+        return unitList?.Find(unit => unit.GetStat() == currentTurnBanner.Stat);
     }
 
     public void OnCharacterDie(BaseUnit unit)
     {
-        List<EntityBanner> deleteBannerList = bannerList.FindAll(banner => banner.GetStat() == unit.GetStat());
-        bannerList.RemoveAll(banner => banner.GetStat() == unit.GetStat());
+        List<EntityBanner> deleteBannerList = bannerList.FindAll(banner => banner.Stat == unit.GetStat());
+        bannerList.RemoveAll(banner => banner.Stat == unit.GetStat());
 
-        foreach (EntityBanner banner in deleteBannerList)
-        {
-            banner.DestroyBanner();
-        }
+        _timelineUI.DeleteBanners(deleteBannerList);
         SortBanner();
-        OnTimelineChanged(this.unitList.GetUnits());
+
+        UnitManager unitManager;
+        ServiceLocator.For(this).Get(out unitManager);
+        OnTimelineChanged(unitManager.GetAllUnits());
     }
 
     public void OnCharacterAddBuff(Buff buff)
@@ -122,22 +116,17 @@ public class TimelineSystem : ScriptableObject
     {
         while (bannerList.Count < MaxShowBannerIndex && unitList != null && unitList.Count > 0)
         {
-            roundDepth++;
-            foreach (BaseUnit unit in unitList)
-            {
-                int index = bannerList.Count;
-                EntityBanner banner = _timelineUI.CreateBanner(unit, index, roundDepth);
-                bannerList.Add(banner);
-            }
+            _roundDepth++;
+            List<EntityBanner> createdList = _timelineUI.CreateBanners(unitList, bannerList.Count, _roundDepth); 
+            bannerList.AddRange(createdList);
         }
         SortBanner();
     }
 
     private void SortBanner()
     {
-        // For Debugging
         if (currentTurnBanner != null)
-            currentTurnBanner.SetName("CurrentBanner");
+            currentTurnBanner.Index = 0;
 
         bannerList.Sort((EntityBanner a, EntityBanner b) => a.CompareTo(b));
         foreach (var banner in bannerList.Select((value, index) => (value, index)))

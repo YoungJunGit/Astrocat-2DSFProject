@@ -1,24 +1,18 @@
 using Cysharp.Threading.Tasks;
 using DataEntity;
 using DataEnum;
+using DG.Tweening;
 using Obvious.Soap;
+using R3;
 using System.Collections;
 using System.ComponentModel;
+using System.Reflection;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using R3;
 
 public class EntityBanner : MonoBehaviour
 {
-    public enum BannerState
-    {
-        NORMAL,
-        FAINT,
-        EXTRA
-    }
-
     [Header("Component Settings")]
     [SerializeField] private Animator myAnimator;
     [SerializeField] private RectTransform rectTransform;
@@ -29,12 +23,12 @@ public class EntityBanner : MonoBehaviour
     private Sprite[] sprites;
     [SerializeField] private Sprite[] prioritySprites;
 
-    [Header("Banner Move Settings")]
+    [Header("Banner Settings")]
     [SerializeField] private float moveDuration = 0.25f;
-    [SerializeField] private IntVariable MaxShowBannerIndex;
+    [SerializeField] private BannerSetting bannerSetting;
 
-    private UnitStat    _stat;
-    private BannerState _state;
+    private UnitStat        _stat;
+    public UnitStat Stat => _stat;
 
     private int _index;
     public int Index {
@@ -42,34 +36,43 @@ public class EntityBanner : MonoBehaviour
         set
         {
             _index = value;
-            if (_index <= MaxShowBannerIndex.Value - 1)
+            _reactiveIndex.Value = value;
+            if (_index <= bannerSetting.MaxBannerIndex - 1)
                 gameObject.SetActive(true);
             else
                 gameObject.SetActive(false);
-
-            // For Debugging
-            gameObject.name = $"Banner:{_index}";
         }
     }
 
-    private ReactiveProperty<int> _reactiveIndex;
+    private ReactiveProperty<int> _reactiveIndex = new(0);
     public int ReactiveIndex => _reactiveIndex.Value;
 
-    public int Round { get; private set; }
+    private int _round;
+    public int Round => _round;
 
     public void Init(UnitStat stat, int index, int round)
     {
         _stat = stat;
         _index = index;
-        Round = round;
+        _round = round;
 
-        sprites = AssetLoader.LoadImgAsset(this._stat.GetData().Asset_File);
-        myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(this._stat.GetData().Asset_File);
+        _reactiveIndex = new(index);
+        _reactiveIndex.Do(idx => gameObject.name = $"Banner:{idx}")
+                      .Subscribe(idx => ReactiveMove(idx))
+                      .AddTo(this);
+
+        sprites = AssetLoader.LoadImgAsset(_stat.GetData().Asset_File);
         bannerImg.sprite = sprites[0];
-        priorityImg.sprite = this._stat.GetData().Side == SIDE.PLAYER ? prioritySprites[this._stat.Priority] : prioritySprites[this._stat.Priority + 3];
+        priorityImg.sprite = _stat.GetData().Side == SIDE.PLAYER ? prioritySprites[_stat.Priority] : prioritySprites[_stat.Priority + 3];
+        myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(_stat.GetData().Asset_File);
 
         if (index == 0)
             myAnimator.SetTrigger("Skip");
+    }
+
+    public void ReactiveMove(int index)
+    {
+        Debug.Log(gameObject.name);
     }
 
     public void Move(Vector2 destination, bool isFirstBanner)
@@ -103,18 +106,13 @@ public class EntityBanner : MonoBehaviour
         bannerImg.sprite = sprites[index];
     }
 
-    /// <summary>
-    /// EntityBanner : For Debugging
-    /// </summary>
-    /// <param name="index"> Index For Banner Name </param>
-    public void SetName(string name)
+    public void OnPop()
     {
-        gameObject.name = name;
-    }
-
-    public void SetState(BannerState state)
-    {
-        this._state = state;
+        this.transform.DOKill();
+        this.transform
+            .DOScale(Vector3.one * 1.2f, 0.4f)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetEase(Ease.Linear);
     }
 
     public void DestroyBanner()
@@ -149,6 +147,4 @@ public class EntityBanner : MonoBehaviour
             return _stat.CompareTo(other._stat);
         }
     }
-    public UnitStat GetStat() { return _stat; }
-    public BannerState GetState() { return _state; }
 }

@@ -74,7 +74,17 @@ public class UnitManager : ScriptableObject
 
     public BaseUnit SelectedUnit => _selectedUnit;
 
-    public List<BaseUnit> GetAllUnit()
+    public List<BaseUnit> GetEnemyUnits()
+    {
+        return currentUnitList.GetEnemyUnits();
+    }
+
+    public List<BaseUnit> GetPlayerUnits()
+    {
+        return currentUnitList.GetPlayerUnits();
+    }
+
+    public List<BaseUnit> GetAllUnits()
     {
         return currentUnitList.GetUnits();
     }

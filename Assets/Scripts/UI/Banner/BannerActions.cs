@@ -10,10 +10,10 @@ public class BannerActions
 
     public void FaintingButton()
     {
-        int nextBanner = owner.CurrentTurnBanner.Index - 1;
-        EntityBanner faintingTarget = owner.BannerList[nextBanner];
-        faintingTarget.SetState(BannerState.FAINT);
-        faintingTarget.FaintingEffect();
+        //int nextBanner = owner.CurrentTurnBanner.Index - 1;
+        //EntityBanner faintingTarget = owner.BannerList[nextBanner];
+        //faintingTarget.SetState(BannerState.FAINT);
+        //faintingTarget.FaintingEffect();
     }
 
     public void ExtraButton()
