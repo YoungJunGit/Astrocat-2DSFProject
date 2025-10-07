@@ -13,7 +13,6 @@ using static EntityBanner;
 public class TimelineSystem : ScriptableObject
 {
     [SerializeField] private IntVariable    MaxShowBannerIndex;
-    [SerializeField] private TimelineUI     _timelineUIPrefab;
     private TimelineUI _timelineUI;
 
     private List<EntityBanner> bannerList = new();
@@ -28,7 +27,7 @@ public class TimelineSystem : ScriptableObject
         _roundDepth = 0;
         _curRound = 1;
 
-        _timelineUI = Instantiate(_timelineUIPrefab);
+        //_timelineUI = Instantiate(_timelineUIPrefab);
     }
 
     public void CreateBanners(List<BaseUnit> unitList)

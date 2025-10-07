@@ -23,40 +23,40 @@ public class TimelineUI : MonoBehaviour
 
     public void SetRectTransform(List<EntityBanner> bannerList)
     {
-        foreach (var banner in bannerList.Select((value, index) => (value, index)))
-        {
-            Vector2 pos = new Vector2((bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * banner.index, bannerSetting.InitialPos.y);
-            if (banner.index == 0)
-            {
-                pos.x = bannerSetting.InitialPos.x;
-                banner.value.SetAnchor(bannerSetting.Anchor.max, bannerSetting.Anchor.min);
-                banner.value.SetSprite(4);
-            }
-            banner.value.SetPostion(pos);
-            banner.value.SetScale(Vector2.one);
-        }
+        //foreach (var banner in bannerList.Select((value, index) => (value, index)))
+        //{
+        //    Vector2 pos = new Vector2((bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * banner.index, bannerSetting.InitialPos.y);
+        //    if (banner.index == 0)
+        //    {
+        //        pos.x = bannerSetting.InitialPos.x;
+        //        banner.value.SetAnchor(bannerSetting.Anchor.max, bannerSetting.Anchor.min);
+        //        banner.value.SetSprite(4);
+        //    }
+        //    banner.value.SetPostion(pos);
+        //    banner.value.SetScale(Vector2.one);
+        //}
     }
 
     public void MoveBanners(EntityBanner banner, List<EntityBanner> bannerList)
     {
-        banner.Move(bannerSetting.InitialPos, true);
+        //banner.Move(bannerSetting.InitialPos, true);
 
-        foreach (EntityBanner entityBanner in bannerList)
-        {
-            Vector2 dest = new Vector2(
-                (bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * Mathf.Clamp(entityBanner.Index, 1, bannerSetting.MaxBannerIndex),
-                bannerSetting.InitialPos.y
-            );
+        //foreach (EntityBanner entityBanner in bannerList)
+        //{
+        //    Vector2 dest = new Vector2(
+        //        (bannerSetting.InitialPos.x * 2) + bannerSetting.Distance * Mathf.Clamp(entityBanner.Index, 1, bannerSetting.MaxBannerIndex),
+        //        bannerSetting.InitialPos.y
+        //    );
 
-            if (entityBanner.gameObject.activeSelf)
-            {
-                entityBanner.Move(dest, false);
-            }
-            else
-            {
-                entityBanner.SetPostion(dest);
-            }
-        }
+        //    if (entityBanner.gameObject.activeSelf)
+        //    {
+        //        entityBanner.Move(dest, false);
+        //    }
+        //    else
+        //    {
+        //        entityBanner.SetPostion(dest);
+        //    }
+        //}
     }
 
     public List<EntityBanner> CreateBanners(List<BaseUnit> unitList, int index, int round)

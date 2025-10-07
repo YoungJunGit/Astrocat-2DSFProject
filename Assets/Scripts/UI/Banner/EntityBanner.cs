@@ -28,37 +28,31 @@ public class EntityBanner : MonoBehaviour
     [SerializeField] private BannerSetting bannerSetting;
 
     private UnitStat        _stat;
-    public UnitStat Stat => _stat;
+    private ReactiveProperty<int> _reactiveIndex;
+    private int _round;
 
-    private int _index;
+    public UnitStat Stat => _stat;
     public int Index {
-        get { return _index; }
+        get { return _reactiveIndex.Value; }
         set
         {
-            _index = value;
+            gameObject.name = $"Banner:{value}";
             _reactiveIndex.Value = value;
-            if (_index <= bannerSetting.MaxBannerIndex - 1)
-                gameObject.SetActive(true);
-            else
-                gameObject.SetActive(false);
         }
     }
-
-    private ReactiveProperty<int> _reactiveIndex = new(0);
-    public int ReactiveIndex => _reactiveIndex.Value;
-
-    private int _round;
     public int Round => _round;
 
     public void Init(UnitStat stat, int index, int round)
     {
         _stat = stat;
-        _index = index;
         _round = round;
-
         _reactiveIndex = new(index);
-        _reactiveIndex.Do(idx => gameObject.name = $"Banner:{idx}")
+
+        _reactiveIndex.Where(idx => idx < bannerSetting.MaxBannerIndex)
                       .Subscribe(idx => ReactiveMove(idx))
+                      .AddTo(this);
+        _reactiveIndex.Where(idx => idx >= bannerSetting.MaxBannerIndex)
+                      .Subscribe(idx => ReactiveSet(idx))
                       .AddTo(this);
 
         sprites = AssetLoader.LoadImgAsset(_stat.GetData().Asset_File);
@@ -72,43 +66,28 @@ public class EntityBanner : MonoBehaviour
 
     public void ReactiveMove(int index)
     {
-        Debug.Log(gameObject.name);
-    }
-
-    public void Move(Vector2 destination, bool isFirstBanner)
-    {
-        rectTransform.DOAnchorPos(destination, moveDuration);
-
-        if (isFirstBanner)
+        gameObject.SetActive(true);
+        if (index == 0)
         {
+            rectTransform.DOAnchorPos(bannerSetting.InitialPos, moveDuration);
             myAnimator.SetTrigger("Move");
+        }
+        else
+        {
+            rectTransform.DOAnchorPos(bannerSetting.CurrentPos(index), moveDuration);
         }
     }
 
-    public void SetAnchor(Vector2 anchorMax, Vector2 anchorMin)
+    public void ReactiveSet(int index)
     {
-        priorityRectTransform.anchorMax = anchorMax;
-        priorityRectTransform.anchorMin = anchorMin;
-    }
+        gameObject.SetActive(false);
 
-    public void SetPostion(Vector2 pos)
-    {
-        rectTransform.anchoredPosition = pos;
-    }
-
-    public void SetScale(Vector2 scale)
-    {
-        rectTransform.localScale = scale;
-    }
-
-    public void SetSprite(int index)
-    {
-        bannerImg.sprite = sprites[index];
+        this.transform.DOKill();
+        rectTransform.anchoredPosition = bannerSetting.FinalPos;
     }
 
     public void OnPop()
     {
-        this.transform.DOKill();
         this.transform
             .DOScale(Vector3.one * 1.2f, 0.4f)
             .SetLoops(-1, LoopType.Yoyo)

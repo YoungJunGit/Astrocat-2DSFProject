@@ -69,7 +69,6 @@ public class GameScene : AbstractScene
         unitManager.Init();
         qteManager.Init();
 
-        timelineSystem.Init();
         inputHandler.Init();
 
         unitActionExecuter.Init();
@@ -111,8 +110,8 @@ public class GameScene : AbstractScene
             hudManager.CreateEnemyHUD(unit);
         }
 
-        // Create Banners
-        timelineSystem.CreateBanners(unitManager.GetAllUnits());
+        // Create etc
+        combatManager.CreateObjects();
     }
 
     protected override void PrepareGame()
@@ -122,9 +121,7 @@ public class GameScene : AbstractScene
         unitManager.Prepare();
 
         // Prepare CombatManager
-        combatManager.Prepare(timelineSystem);
-
-        // Add
+        combatManager.Prepare();
         
         if (debugMode)
         {

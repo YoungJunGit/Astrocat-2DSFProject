@@ -10,10 +10,12 @@ public class CombatManager : ScriptableObject
     [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private ActionSelector actionSelector;
     [SerializeField] private EventHandler combatEventHandler;
-    [SerializeField] private UnitManager unitManager;
+    [SerializeField] private TimelineManager timelineManagerPrefab;
 
     private BaseUnit currentTurnUnit;
-    private TimelineSystem _timeline;
+    private UnitManager unitManager;
+    private TimelineSystem  _timeline;
+    private TimelineManager _timelineManager;
 
     private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit = new();
     public Action OnTernEnd;
@@ -24,18 +26,25 @@ public class CombatManager : ScriptableObject
 
     public void Init()
     {
-        actionSelector.Init();
-        ServiceLocator.For(this)
-                      .Get(out actionExecuter);
+        _timelineManager = Instantiate(timelineManagerPrefab);
 
-        // TimelineManager
+        ServiceLocator.For(this)
+                      .Get(out actionExecuter)
+                      .Get(out unitManager);
+
+        actionSelector.Init();
+        _timelineManager.Init(unitManager);
     }
 
-    public void Prepare(TimelineSystem timeline)
+    public void CreateObjects()
     {
-        _timeline = timeline;
-        DequeueCurrentUnit.Register(_timeline.Pop);
-        currentTurnUnit = _timeline.PrepareCombat(unitList.GetUnits());
+        _timelineManager.CreateTimeline();
+    }
+
+    public void Prepare()
+    {
+        _timelineManager.Prepare();
+        DequeueCurrentUnit.Register(_timelineManager.Pop);
 
         foreach (BaseUnit unit in unitList)
         {
@@ -43,12 +52,12 @@ public class CombatManager : ScriptableObject
         }
     }
 
-    public BaseUnit GetCurrentTurnUnit() => currentTurnUnit;
-
     public async UniTask StartCombat()
     {
         while (unitList.GetUnits(SIDE.ENEMY).Count != 0 && unitList.GetUnits(SIDE.PLAYER).Count != 0)
         {
+            currentTurnUnit = DequeueCurrentUnit.Call(unitList.GetUnits());
+
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
             IUnitAction selectedAction = null;
@@ -69,8 +78,6 @@ public class CombatManager : ScriptableObject
 
             await UniTask.WaitUntil(() => combatEventHandler.IsEventEmpty());
             await UniTask.WaitForSeconds(1);
-
-            currentTurnUnit = DequeueCurrentUnit.Call(unitList.GetUnits());
         }
 
         // TODO: Check whether the enemy or the player wins
@@ -79,12 +86,9 @@ public class CombatManager : ScriptableObject
 
     public void OnCharacterDie(BaseUnit unit)
     {
+        _timelineManager.DeleteBanners(unit);
         if (currentTurnUnit == unit)
-        {
-            Debug.Log("Current Character Died!! Turn Skip!");
-            _timeline.OnCharacterDie(unit);
             currentTurnUnit = DequeueCurrentUnit.Call(unitList.GetUnits());
-        }
     }
 
     public void OnFainting()

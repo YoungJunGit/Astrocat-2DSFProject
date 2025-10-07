@@ -3,18 +3,36 @@ using ObservableCollections;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using R3;
 
 public class TimelineManagerModel
 {
     private readonly TimelineModel _timelineModel;
-    private readonly UnitManager _unitManager;
 
-    public IReadOnlyObservableList<EntityBanner> BannersList => _timelineModel.BannerList;
+    public IReadOnlyObservableList<EntityBanner> BannerList => _timelineModel.BannerList;
+    public ReadOnlyReactiveProperty<int> CurRound           => _timelineModel.curRound.ToReadOnlyReactiveProperty();
 
-    public TimelineManagerModel(UnitManager unitManager)
+    public TimelineManagerModel()
     {
         _timelineModel = new TimelineModel(0, 1);
-        _unitManager = unitManager;
+    }
+
+    public BaseUnit OnPop(List<BaseUnit> unitList)
+    {
+        if (_timelineModel.BannerList[0].Round > _timelineModel.curRound.Value)
+            _timelineModel.curRound.Value++;
+
+        EntityBanner bannerToDelete = _timelineModel.CurrentTurnBanner;
+        _timelineModel.CurrentTurnBanner = _timelineModel.BannerList[0];
+        _timelineModel.BannerList.RemoveAt(0);
+        _timelineModel.CurrentTurnBanner.OnPop();
+
+        if(bannerToDelete != null)
+            bannerToDelete.DestroyBanner();
+
+        SortBanners();
+
+        return unitList.Find(unit => unit.GetStat() == _timelineModel.CurrentTurnBanner.Stat);
     }
 
     public void AddBanner(EntityBanner banner, BaseUnit unit)
@@ -25,7 +43,7 @@ public class TimelineManagerModel
 
     public void RemoveBanner(EntityBanner banner)
     {
-
+        _timelineModel.BannerList.Remove(banner);
     }
 
     public void IncreaseRoundDepth()
@@ -33,8 +51,23 @@ public class TimelineManagerModel
         _timelineModel.roundDepth++;
     }
 
-    public void NextRound()
+    public void SortBanners()
     {
-        _timelineModel.curRound++;
+        // Sort Banners
+        _timelineModel.BannerList.Sort(new BannerComparer());
+
+        // Update Index
+        if (_timelineModel.CurrentTurnBanner != null)
+            _timelineModel.CurrentTurnBanner.Index = 0;
+        foreach (var banner in _timelineModel.BannerList.Select((value, index) => (value, index)))
+            banner.value.Index = banner.index + 1;
+    }
+
+    class BannerComparer : IComparer<EntityBanner>
+    {
+        public int Compare(EntityBanner a, EntityBanner b)
+        {
+            return a.CompareTo(b);
+        }
     }
 }
