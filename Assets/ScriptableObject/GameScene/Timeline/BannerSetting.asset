@@ -15,6 +15,4 @@ MonoBehaviour:
   _maxBannerIndex: {fileID: 11400000, guid: e470a0d88c8ef934b8d09b63a050e2ee, type: 2}
   _initialPos: {x: 80, y: -80}
   _distance: 80
-  _anchor:
-    max: {x: 0.31, y: 0.29}
-    min: {x: 0.077, y: 0.079}
+  _moveDuration: 0.25

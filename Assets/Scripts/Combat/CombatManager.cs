@@ -7,15 +7,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CombatManager", menuName = "GameScene/CombatManager", order = 1)]
 public class CombatManager : ScriptableObject
 {
-    [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private ActionSelector actionSelector;
     [SerializeField] private EventHandler combatEventHandler;
     [SerializeField] private TimelineManager timelineManagerPrefab;
 
-    private BaseUnit currentTurnUnit;
     private UnitManager unitManager;
-    private TimelineSystem  _timeline;
     private TimelineManager _timelineManager;
+    private BaseUnit currentTurnUnit;
 
     private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit = new();
     public Action OnTernEnd;
@@ -33,20 +31,20 @@ public class CombatManager : ScriptableObject
                       .Get(out unitManager);
 
         actionSelector.Init();
-        _timelineManager.Init(unitManager);
+        _timelineManager.Init();
     }
 
     public void CreateObjects()
     {
-        _timelineManager.CreateTimeline();
+        _timelineManager.CreateTimeline(unitManager.GetAllUnits());
     }
 
     public void Prepare()
     {
-        _timelineManager.Prepare();
+        _timelineManager.Prepare(unitManager.GetAllUnits());
         DequeueCurrentUnit.Register(_timelineManager.Pop);
 
-        foreach (BaseUnit unit in unitList)
+        foreach (BaseUnit unit in unitManager.GetAllUnits())
         {
             unit.m_FinishedDying += OnCharacterDie;
         }
@@ -54,9 +52,9 @@ public class CombatManager : ScriptableObject
 
     public async UniTask StartCombat()
     {
-        while (unitList.GetUnits(SIDE.ENEMY).Count != 0 && unitList.GetUnits(SIDE.PLAYER).Count != 0)
+        while (unitManager.GetEnemyUnits().Count != 0 && unitManager.GetPlayerUnits().Count != 0)
         {
-            currentTurnUnit = DequeueCurrentUnit.Call(unitList.GetUnits());
+            currentTurnUnit = DequeueCurrentUnit.Call(unitManager.GetAllUnits());
 
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
@@ -88,7 +86,7 @@ public class CombatManager : ScriptableObject
     {
         _timelineManager.DeleteBanners(unit);
         if (currentTurnUnit == unit)
-            currentTurnUnit = DequeueCurrentUnit.Call(unitList.GetUnits());
+            currentTurnUnit = DequeueCurrentUnit.Call(unitManager.GetAllUnits());
     }
 
     public void OnFainting()

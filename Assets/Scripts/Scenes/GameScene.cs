@@ -33,7 +33,6 @@ public class GameScene : AbstractScene
     [SerializeField] private DamageFactory damageFactory;
 
     [Header("etc")]
-    [SerializeField] private TimelineSystem timelineSystem;
     [SerializeField] private InputHandler inputHandler;
     
     [Header("Tester")]

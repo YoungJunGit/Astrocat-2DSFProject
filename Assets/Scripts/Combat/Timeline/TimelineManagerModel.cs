@@ -20,7 +20,10 @@ public class TimelineManagerModel
     public BaseUnit OnPop(List<BaseUnit> unitList)
     {
         if (_timelineModel.BannerList[0].Round > _timelineModel.curRound.Value)
+        {
             _timelineModel.curRound.Value++;
+            SortBanners();
+        }
 
         EntityBanner bannerToDelete = _timelineModel.CurrentTurnBanner;
         _timelineModel.CurrentTurnBanner = _timelineModel.BannerList[0];
@@ -44,6 +47,7 @@ public class TimelineManagerModel
     public void RemoveBanner(EntityBanner banner)
     {
         _timelineModel.BannerList.Remove(banner);
+        banner.DestroyBanner();
     }
 
     public void IncreaseRoundDepth()

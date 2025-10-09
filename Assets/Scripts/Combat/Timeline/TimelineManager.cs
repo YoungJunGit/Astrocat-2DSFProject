@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using ObservableCollections;
 using Obvious.Soap;
 using R3;
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,23 +12,21 @@ public class TimelineManager : MonoBehaviour
     [SerializeField] private IntVariable MaxBannerIndex;
 
     private TimelineManagerModel _timelineManagerModel;
-    private UnitManager _unitManager;
 
-    public void Init(UnitManager unitManager)
+    public void Init()
     {
-        _unitManager = unitManager;
         _timelineManagerModel = new TimelineManagerModel();
     }
 
-    public void CreateTimeline()
+    public void CreateTimeline(List<BaseUnit> units)
     {
-        while (_timelineManagerModel.BannerList.Count < MaxBannerIndex && _unitManager.GetAllUnits() != null && _unitManager.GetAllUnits().Count > 0)
+        while (_timelineManagerModel.BannerList.Count < MaxBannerIndex && units != null && units.Count > 0)
         {
-            CreateBanners();
+            CreateBanners(units);
         }
     }
 
-    public void Prepare()
+    public void Prepare(List<BaseUnit> units)
     {
         // Data Bindings
         _timelineManagerModel.BannerList.ObserveRemove()
@@ -37,17 +34,11 @@ public class TimelineManager : MonoBehaviour
                                         {
                                             if (_timelineManagerModel.BannerList.Count < MaxBannerIndex)
                                             {
-                                                CreateBanners();
+                                                CreateBanners(units);
                                                 _timelineManagerModel.SortBanners();
                                             }
                                         })
                                         .AddTo(this);
-
-        _timelineManagerModel.CurRound.Subscribe(_ => 
-                                      {
-                                          _timelineManagerModel.SortBanners();
-                                      })
-                                      .AddTo(this);
     }
 
     public BaseUnit Pop(List<BaseUnit> unitList)
@@ -55,10 +46,10 @@ public class TimelineManager : MonoBehaviour
         return _timelineManagerModel.OnPop(unitList);
     }
 
-    private void CreateBanners()
+    private void CreateBanners(List<BaseUnit> units)
     {
         _timelineManagerModel.IncreaseRoundDepth();
-        foreach (var unit in _unitManager.GetAllUnits())
+        foreach (var unit in units)
         {
             EntityBanner banner = Instantiate(bannerPrefab).GetComponent<EntityBanner>();
             banner.transform.SetParent(transform, false);
@@ -72,7 +63,6 @@ public class TimelineManager : MonoBehaviour
         foreach (var banner in bannersToRemove)
         {
             _timelineManagerModel.RemoveBanner(banner);
-            banner.DestroyBanner();
         }
     }
 }

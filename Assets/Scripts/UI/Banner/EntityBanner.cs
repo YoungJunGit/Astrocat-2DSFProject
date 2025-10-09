@@ -19,12 +19,10 @@ public class EntityBanner : MonoBehaviour
     [SerializeField] private RectTransform priorityRectTransform;
     [SerializeField] private Image bannerImg;
     [SerializeField] private Image priorityImg;
-
-    private Sprite[] sprites;
     [SerializeField] private Sprite[] prioritySprites;
+    private Sprite[] sprites;
 
     [Header("Banner Settings")]
-    [SerializeField] private float moveDuration = 0.25f;
     [SerializeField] private BannerSetting bannerSetting;
 
     private UnitStat        _stat;
@@ -48,37 +46,34 @@ public class EntityBanner : MonoBehaviour
         _round = round;
         _reactiveIndex = new(index);
 
-        _reactiveIndex.Where(idx => idx < bannerSetting.MaxBannerIndex)
-                      .Subscribe(idx => ReactiveMove(idx))
-                      .AddTo(this);
-        _reactiveIndex.Where(idx => idx >= bannerSetting.MaxBannerIndex)
-                      .Subscribe(idx => ReactiveSet(idx))
-                      .AddTo(this);
-
         sprites = AssetLoader.LoadImgAsset(_stat.GetData().Asset_File);
         bannerImg.sprite = sprites[0];
         priorityImg.sprite = _stat.GetData().Side == SIDE.PLAYER ? prioritySprites[_stat.Priority] : prioritySprites[_stat.Priority + 3];
         myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(_stat.GetData().Asset_File);
 
-        if (index == 0)
-            myAnimator.SetTrigger("Skip");
+        _reactiveIndex.Where(idx => idx < bannerSetting.MaxBannerIndex)
+                      .Subscribe(idx => Move(idx))
+                      .AddTo(this);
+        _reactiveIndex.Where(idx => idx >= bannerSetting.MaxBannerIndex)
+                      .Subscribe(idx => Set(idx))
+                      .AddTo(this);
     }
 
-    public void ReactiveMove(int index)
+    private void Move(int index)
     {
         gameObject.SetActive(true);
         if (index == 0)
         {
-            rectTransform.DOAnchorPos(bannerSetting.InitialPos, moveDuration);
+            rectTransform.DOAnchorPos(bannerSetting.InitialPos, bannerSetting.MoveDuration);
             myAnimator.SetTrigger("Move");
         }
         else
         {
-            rectTransform.DOAnchorPos(bannerSetting.CurrentPos(index), moveDuration);
+            rectTransform.DOAnchorPos(bannerSetting.CurrentPos(index), bannerSetting.MoveDuration);
         }
     }
 
-    public void ReactiveSet(int index)
+    private void Set(int index)
     {
         gameObject.SetActive(false);
 
@@ -119,8 +114,8 @@ public class EntityBanner : MonoBehaviour
 
     public int CompareTo(EntityBanner other)
     {
-        if (this.Round < other.Round) { return -1; }
-        else if (this.Round > other.Round) { return 1; }
+        if (this._round < other._round) { return -1; }
+        else if (this._round > other._round) { return 1; }
         else
         {
             return _stat.CompareTo(other._stat);
