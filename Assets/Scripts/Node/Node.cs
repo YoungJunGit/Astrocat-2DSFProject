@@ -216,7 +216,7 @@ public class Node : MonoBehaviour, IUpdateObserver, IDisposable{
 		}
 
 		void handleEnemy(){
-			Debug.Log("Fight a enemy");
+			Debug.Log("적 스테이지로 진입");
 		}
 
 		void handleMiddle(){

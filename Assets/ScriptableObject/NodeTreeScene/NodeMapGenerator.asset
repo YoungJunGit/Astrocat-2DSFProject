@@ -20,15 +20,15 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 1513835392
-  floorNum: 5
-  routeNum: 4
+  seed: 1511932032
+  floorNum: 10
+  routeNum: 16
   normalNodeSize: 80
   startNodeSize: 160
   finalNodeSize: 160
   floorDistance: 80
   routeDistance: 80
-  activeRouteNum: 4
+  activeRouteNum: 2
   nodePref: {fileID: 2233898142981473485, guid: d930a38253f29b3489870b8b3ee32fe5, type: 3}
   pathImagePref: {fileID: 5878281430672081569, guid: f902e890fbfbeac4ea3cf6ed178ecbca, type: 3}
   pathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -44,18 +44,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a4deefdba6121ec43ba0d2508d9264d6, type: 2}
   fixedNodeData: []
   mapNodeData:
-  - nodeData: {fileID: 11400000, guid: 44019690c2889c5439a1734cc1e0efa7, type: 2}
+  - nodeData: {fileID: 11400000, guid: bd99df6ed73e951419a8f7c0b17b0725, type: 2}
     serializable: 1
     chance: 1
     appearedAfter: 1
     reverseAppearedAfter: 0
   - nodeData: {fileID: 11400000, guid: eb0499932e1320d4f8985f1e9a5b6f37, type: 2}
     serializable: 1
-    chance: 1
-    appearedAfter: 1
+    chance: 0.3
+    appearedAfter: 5
     reverseAppearedAfter: 0
   - nodeData: {fileID: 11400000, guid: e9b6002ed4bcd454993e0c31d3781c46, type: 2}
     serializable: 1
-    chance: 1
-    appearedAfter: 1
+    chance: 0.6
+    appearedAfter: 6
     reverseAppearedAfter: 0
