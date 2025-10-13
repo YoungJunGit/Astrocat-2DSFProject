@@ -9,7 +9,7 @@ public class TimelineManagerModel
 {
     private readonly TimelineModel _timelineModel;
 
-    public IReadOnlyObservableList<EntityBanner> BannerList => _timelineModel.BannerList;
+    public IReadOnlyObservableList<IBanner> BannerList => _timelineModel.BannerList;
     public ReadOnlyReactiveProperty<int> CurRound           => _timelineModel.curRound.ToReadOnlyReactiveProperty();
 
     public TimelineManagerModel()
@@ -25,29 +25,29 @@ public class TimelineManagerModel
             SortBanners();
         }
 
-        EntityBanner bannerToDelete = _timelineModel.CurrentTurnBanner;
+        IBanner bannerToDelete = _timelineModel.CurrentTurnBanner;
         _timelineModel.CurrentTurnBanner = _timelineModel.BannerList[0];
         _timelineModel.BannerList.RemoveAt(0);
-        _timelineModel.CurrentTurnBanner.OnPop();
+        _timelineModel.CurrentTurnBanner.SetState(new BannerCurrent());
 
         if(bannerToDelete != null)
-            bannerToDelete.DestroyBanner();
+            bannerToDelete.SetState(new BannerDestroy());
 
         SortBanners();
 
-        return unitList.Find(unit => unit.GetStat() == _timelineModel.CurrentTurnBanner.Stat);
+        return unitList.Find(unit => _timelineModel.CurrentTurnBanner.CompareStat(unit.GetStat()));
     }
 
-    public void AddBanner(EntityBanner banner, BaseUnit unit)
+    public void AddBanner(NormalBanner banner, BaseUnit unit)
     {
         banner.Init(unit.GetStat(), _timelineModel.BannerList.Count, _timelineModel.roundDepth);
         _timelineModel.BannerList.Add(banner);
     }
 
-    public void RemoveBanner(EntityBanner banner)
+    public void RemoveBanner(IBanner banner)
     {
         _timelineModel.BannerList.Remove(banner);
-        banner.DestroyBanner();
+        banner.SetState(new BannerDestroy());
     }
 
     public void IncreaseRoundDepth()
@@ -67,9 +67,9 @@ public class TimelineManagerModel
             banner.value.Index = banner.index + 1;
     }
 
-    class BannerComparer : IComparer<EntityBanner>
+    class BannerComparer : IComparer<IBanner>
     {
-        public int Compare(EntityBanner a, EntityBanner b)
+        public int Compare(IBanner a, IBanner b)
         {
             return a.CompareTo(b);
         }

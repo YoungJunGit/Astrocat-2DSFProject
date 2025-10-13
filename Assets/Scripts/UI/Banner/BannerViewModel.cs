@@ -32,4 +32,9 @@ public class BannerViewModel
             return _bannerModel.Stat.CompareTo(other._bannerModel.Stat);
         }
     }
+
+    public bool CompareStat(UnitStat otherStat)
+    {
+        return _bannerModel.Stat == otherStat;
+    }
 }

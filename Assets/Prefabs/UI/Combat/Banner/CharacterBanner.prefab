@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5086063372089508902}
   - component: {fileID: 4099616435232307199}
   - component: {fileID: 3835703176869441858}
-  - component: {fileID: -4350229450652637925}
+  - component: {fileID: 5903212427269575898}
   - component: {fileID: 287820033796012520}
   m_Layer: 5
   m_Name: CharacterBanner
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-4350229450652637925
+--- !u!114 &5903212427269575898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,23 +162,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 7230901669617324391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2febc472c5c33c4284fab9838f5b698, type: 3}
+  m_Script: {fileID: 11500000, guid: 01be6849c2da73f46ad421f3074b24af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimator: {fileID: 287820033796012520}
-  rectTransform: {fileID: 5086063372089508902}
-  priorityRectTransform: {fileID: 999633606973699204}
-  bannerImg: {fileID: 3835703176869441858}
-  priorityImg: {fileID: 8410445151208139979}
-  prioritySprites:
+  _myAnimator: {fileID: 287820033796012520}
+  _rectTransform: {fileID: 5086063372089508902}
+  _priorityRectTransform: {fileID: 999633606973699204}
+  _bannerImg: {fileID: 3835703176869441858}
+  _priorityImg: {fileID: 8410445151208139979}
+  _prioritySprites:
   - {fileID: 4905077122900421461, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: -8916584627476031112, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: -356242567614232945, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: 6451946313195511577, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: -1220069359675031454, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
   - {fileID: 1959712172958920446, guid: c7bcea499900d9f4589198eb6da8d48b, type: 3}
-  moveDuration: 0.25
-  bannerSetting: {fileID: 11400000, guid: 0425d3b894a671f439d621ba24ad226f, type: 2}
+  _bannerSetting: {fileID: 11400000, guid: 0425d3b894a671f439d621ba24ad226f, type: 2}
 --- !u!95 &287820033796012520
 Animator:
   serializedVersion: 7

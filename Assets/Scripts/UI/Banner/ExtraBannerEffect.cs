@@ -2,25 +2,23 @@ using DG.Tweening;
 using Obvious.Soap;
 using System.Collections.Generic;
 using UnityEngine;
-using static EntityBanner;
 
 public class ExtraBannerEffect
 {
-    private readonly EntityBanner bannerPrefab;
+    private readonly Banner bannerPrefab;
     private readonly BannerSetting location;
     private readonly IntVariable maxShowBannerIndex;
 
-    public ExtraBannerEffect(EntityBanner bannerPrefab, BannerSetting location, IntVariable maxShowBannerIndex)
+    public ExtraBannerEffect(Banner bannerPrefab, BannerSetting location, IntVariable maxShowBannerIndex)
     {
         this.bannerPrefab = bannerPrefab;
         this.location = location;
         this.maxShowBannerIndex = maxShowBannerIndex;
     }
 
-    public EntityBanner CreateExtraBanner(UnitStat unit, int index, int round)
+    public Banner CreateExtraBanner(UnitStat unit, int index, int round)
     {
-        EntityBanner banner = Object.Instantiate(bannerPrefab, new Vector2(location.InitialPos.x, (location.InitialPos.y * 2.3f)), Quaternion.identity).GetComponent<EntityBanner>();
-        banner.Init(unit, index, round);
+        Banner banner = Object.Instantiate(bannerPrefab, new Vector2(location.InitialPos.x, (location.InitialPos.y * 2.3f)), Quaternion.identity).GetComponent<Banner>();
 
         banner.transform.localScale = Vector3.zero;
         banner.transform.DOScale(Vector3.one, 0.4f)
@@ -31,11 +29,11 @@ public class ExtraBannerEffect
         return banner;
     }
 
-    public void ReorderExtraTurn(List<EntityBanner> bannerList, int extraIndex)
+    public void ReorderExtraTurn(List<Banner> bannerList, int extraIndex)
     {
-        EntityBanner extraBanner = bannerList[extraIndex];
+        Banner extraBanner = bannerList[extraIndex];
 
-        List<EntityBanner> newList = new List<EntityBanner>();
+        List<Banner> newList = new List<Banner>();
 
         newList.Add(extraBanner);
 

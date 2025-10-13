@@ -7,25 +7,28 @@ using R3;
 
 public interface IBanner
 {
-    
+    int Index { get; set; }
+    int Round { get; set; }
+    void SetState(IBannerState newState);
     int CompareTo(IBanner other);
+    bool CompareStat(UnitStat otherStat);
 }
 
 public abstract class Banner : MonoBehaviour, IBanner
 {
     [Header("Component Settings")]
-    [SerializeField] private Animator       _myAnimator;
-    [SerializeField] private RectTransform  _rectTransform;
-    [SerializeField] private RectTransform  _priorityRectTransform;
-    [SerializeField] private Image          _bannerImg;
-    [SerializeField] private Image          _priorityImg;
-    [SerializeField] private Sprite[]       _prioritySprites;
-    private Sprite[]                        _sprites;
+    [SerializeField] protected Animator       _myAnimator;
+    [SerializeField] protected RectTransform  _rectTransform;
+    [SerializeField] protected RectTransform  _priorityRectTransform;
+    [SerializeField] protected Image          _bannerImg;
+    [SerializeField] protected Image          _priorityImg;
+    [SerializeField] protected Sprite[]       _prioritySprites;
+    protected Sprite[]                        _sprites;
 
     [Header("Banner Settings")]
-    [SerializeField] private BannerSetting  _bannerSetting;
+    [SerializeField] protected BannerSetting  _bannerSetting;
 
-    private BannerViewModel _bannerViewModel;
+    protected BannerViewModel _bannerViewModel;
     public int Index
     {
         get { return _bannerViewModel.ReactiveIndex.CurrentValue; }
@@ -37,24 +40,18 @@ public abstract class Banner : MonoBehaviour, IBanner
         set { _bannerViewModel.SetRound(value); }
     }
 
-    public void Init(UnitStat stat, int index, int round)
+    public int CompareTo(IBanner other)         => _bannerViewModel.CompareTo((other as Banner)._bannerViewModel);
+    public bool CompareStat(UnitStat otherStat) => _bannerViewModel.CompareStat(otherStat);
+    protected void Copy(Banner other)
     {
-        _sprites                = AssetLoader.LoadImgAsset(stat.GetData().Asset_File);
-        _bannerImg.sprite       = _sprites[0];
-        _priorityImg.sprite     = stat.GetData().Side == SIDE.PLAYER ? _prioritySprites[stat.Priority] : _prioritySprites[stat.Priority + 3];
-        _myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(stat.GetData().Asset_File);
-
-        _bannerViewModel = new BannerViewModel(stat, index, round);
-
-        _bannerViewModel.ReactiveIndex.Where(idx => idx < _bannerSetting.MaxBannerIndex)
-                                      .Subscribe(idx => Move(idx))
-                                      .AddTo(this);
-        _bannerViewModel.ReactiveIndex.Where(idx => idx >= _bannerSetting.MaxBannerIndex)
-                                      .Subscribe(idx => Set(idx))
-                                      .AddTo(this);
+        _sprites         = other._sprites;
+        _bannerImg       = other._bannerImg;
+        _prioritySprites = other._prioritySprites;
+        _myAnimator.runtimeAnimatorController = other._myAnimator.runtimeAnimatorController;
+        _bannerViewModel = other._bannerViewModel;
     }
 
-    private void Move(int index)
+    protected void MovePosition(int index)
     {
         gameObject.SetActive(true);
         if (index == 0)
@@ -68,7 +65,7 @@ public abstract class Banner : MonoBehaviour, IBanner
         }
     }
 
-    private void Set(int index)
+    protected void SetPosition(int index)
     {
         gameObject.SetActive(false);
 
@@ -76,8 +73,8 @@ public abstract class Banner : MonoBehaviour, IBanner
         _rectTransform.anchoredPosition = _bannerSetting.FinalPos;
     }
 
-    public int CompareTo(IBanner other)
+    public void SetState(IBannerState newState)
     {
-        return _bannerViewModel.CompareTo((other as Banner)._bannerViewModel);
+        newState.PlayState(transform);
     }
 }

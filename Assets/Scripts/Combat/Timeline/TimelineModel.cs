@@ -6,14 +6,14 @@ using R3;
 
 public class TimelineModel
 {
-    public ObservableList<EntityBanner> BannerList = null;
-    public EntityBanner CurrentTurnBanner = null;
+    public ObservableList<IBanner> BannerList = null;
+    public IBanner CurrentTurnBanner = null;
     public ReactiveProperty<int> curRound;
     public int roundDepth;
 
     public TimelineModel(int roundDepth, int curRound)
     {
-        this.BannerList = new ObservableList<EntityBanner>();
+        this.BannerList = new ObservableList<IBanner>();
         this.curRound   = new ReactiveProperty<int>(curRound);
         this.roundDepth = roundDepth;
     }

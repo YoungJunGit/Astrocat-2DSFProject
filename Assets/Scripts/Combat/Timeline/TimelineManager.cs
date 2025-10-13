@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class TimelineManager : MonoBehaviour
 {
-    [SerializeField] private EntityBanner bannerPrefab;
+    [SerializeField] private Banner bannerPrefab;
     [SerializeField] private IntVariable MaxBannerIndex;
 
     private TimelineManagerModel _timelineManagerModel;
@@ -51,7 +51,7 @@ public class TimelineManager : MonoBehaviour
         _timelineManagerModel.IncreaseRoundDepth();
         foreach (var unit in units)
         {
-            EntityBanner banner = Instantiate(bannerPrefab).GetComponent<EntityBanner>();
+            NormalBanner banner = Instantiate(bannerPrefab).GetComponent<NormalBanner>();
             banner.transform.SetParent(transform, false);
             _timelineManagerModel.AddBanner(banner, unit);
         }
@@ -59,7 +59,7 @@ public class TimelineManager : MonoBehaviour
 
     public void DeleteBanners(BaseUnit unit)
     {
-        var bannersToRemove = _timelineManagerModel.BannerList.Where(banner => banner.Stat == unit.GetStat()).ToList();
+        var bannersToRemove = _timelineManagerModel.BannerList.Where(banner => banner.CompareStat(unit.GetStat())).ToList();
         foreach (var banner in bannersToRemove)
         {
             _timelineManagerModel.RemoveBanner(banner);

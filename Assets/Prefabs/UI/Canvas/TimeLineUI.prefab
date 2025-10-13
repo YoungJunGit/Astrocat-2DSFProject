@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27f4946e6da5144d86610b21f3683e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bannerPrefab: {fileID: -4350229450652637925, guid: 8d64bddc02f99ca45b7ff69eb6ef8f69, type: 3}
+  bannerPrefab: {fileID: 5903212427269575898, guid: 8d64bddc02f99ca45b7ff69eb6ef8f69, type: 3}
   MaxBannerIndex: {fileID: 11400000, guid: e470a0d88c8ef934b8d09b63a050e2ee, type: 2}
 --- !u!1 &7913437602593985279
 GameObject:
