@@ -20,9 +20,9 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 1511932032
+  seed: 2143361024
   floorNum: 10
-  routeNum: 16
+  routeNum: 8
   normalNodeSize: 80
   startNodeSize: 160
   finalNodeSize: 160

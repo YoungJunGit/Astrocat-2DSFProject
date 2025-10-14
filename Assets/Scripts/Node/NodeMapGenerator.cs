@@ -85,6 +85,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 		List<RectTransform> pathsRectTransform = new List<RectTransform>();
 		float mapWidth;
 		float mapHeight;
+		Vector2 mapAxis;
 		bool isCompleted = false;
 
 		Vector2 oldMousePos;
@@ -113,17 +114,21 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 		{
 			if(!isCompleted) return;
 			if(noMapOperation) return;
-			
-			if(Mouse.current.leftButton.wasPressedThisFrame){
+
+			RectTransform canvas = mapCanvas.GetComponent<RectTransform>();
+			float xLimit = Mathf.Abs(canvas.rect.width - mapWidth);
+			float yLimit = Mathf.Abs(canvas.rect.height - mapHeight) + 2*Mathf.Abs(mapAxis.y);
+
+            if (Mouse.current.leftButton.wasPressedThisFrame){
 				oldMousePos = Mouse.current.position.ReadValue() - ((oldMousePos == Vector2.zero) ? mapParent.anchoredPosition : Vector2.zero);
 			}
 			else if(Mouse.current.leftButton.isPressed){
 				newMousePos.x -= (oldMousePos.x - Mouse.current.position.ReadValue().x) * mouseSensitive;
 				newMousePos.y -= (oldMousePos.y - Mouse.current.position.ReadValue().y) * mouseSensitive;
-				if(newMousePos.x > mapWidth / 2) newMousePos.x = mapWidth / 2;
-				if(newMousePos.x < -mapWidth / 2) newMousePos.x = -mapWidth / 2;
-				if(newMousePos.y > Screen.height / 2) newMousePos.y = Screen.height / 2;
-				if(newMousePos.y < -(mapHeight + backgroundPadding * 2) - Screen.height / 4) newMousePos.y = -(mapHeight + backgroundPadding * 2) - Screen.height / 4;
+				if(newMousePos.x > xLimit) newMousePos.x = xLimit;
+				if(newMousePos.x < -xLimit) newMousePos.x = -xLimit;
+				if(newMousePos.y > mapAxis.y) newMousePos.y = mapAxis.y;
+				if(newMousePos.y < -yLimit) newMousePos.y = -yLimit;
 				mapParent.anchoredPosition = newMousePos;
 				oldMousePos = Mouse.current.position.ReadValue();
 			}
@@ -478,6 +483,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, mapHeight + (backgroundPadding * 2));
 			Vector2 pos = rectTransform.anchoredPosition;
 			rectTransform.anchoredPosition = new Vector2(pos.x, pos.y - ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) - backgroundPadding);
+			mapAxis = rectTransform .anchoredPosition;
 			bg.transform.SetAsFirstSibling();
 		}
 
