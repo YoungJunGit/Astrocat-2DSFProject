@@ -47,10 +47,7 @@ public class GameScene : AbstractScene
     [SerializeField] private CCTester ccTester;
     [SerializeField] private BackgroundChanger backgroundChanger;
 
-    protected override int SceneIdx
-    {
-        get { return 2; }
-    }
+    protected override int SceneIdx { get; } = 3;
 
     protected override void BindObjects()
     {

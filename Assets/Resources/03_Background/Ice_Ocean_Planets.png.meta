@@ -1,0 +1,417 @@
+fileFormatVersion: 2
+guid: b26f1c8f3cc69c0428495d0d6d2ef79b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4811570520528020917
+    second: Ice_Ocean_Planets_0
+  - first:
+      213: 5371856261954001181
+    second: Ice_Ocean_Planets_1
+  - first:
+      213: 1659559896838708456
+    second: Ice_Ocean_Planets_2
+  - first:
+      213: -7998117070645480163
+    second: Ice_Ocean_Planets_3
+  - first:
+      213: -5290181232609041311
+    second: Ice_Ocean_Planets_4
+  - first:
+      213: 5780100139183542879
+    second: Ice_Ocean_Planets_5
+  - first:
+      213: 4998931791846656482
+    second: Ice_Ocean_Planets_6
+  - first:
+      213: 3181126230099783213
+    second: Ice_Ocean_Planets_7
+  - first:
+      213: -3928844493152257898
+    second: Ice_Ocean_Planets_8
+  - first:
+      213: 740326986990907346
+    second: Ice_Ocean_Planets_9
+  - first:
+      213: 8260104470320037680
+    second: Ice_Ocean_Planets_10
+  - first:
+      213: -1272280620938452196
+    second: Ice_Ocean_Planets_11
+  - first:
+      213: -2017691976350116471
+    second: Ice_Ocean_Planets_12
+  - first:
+      213: 7134354449581855968
+    second: Ice_Ocean_Planets_13
+  - first:
+      213: 5592204426412382648
+    second: Ice_Ocean_Planets_14
+  - first:
+      213: -2431848628117579535
+    second: Ice_Ocean_Planets_15
+  - first:
+      213: 5381747782631044144
+    second: Ice_Ocean_Planets_16
+  - first:
+      213: -4019376485418041127
+    second: Ice_Ocean_Planets_17
+  - first:
+      213: 6733462249192864434
+    second: Ice_Ocean_Planets_18
+  - first:
+      213: -8021776393941473541
+    second: Ice_Ocean_Planets_19
+  - first:
+      213: 3994919955285602469
+    second: Ice_Ocean_Planets_20
+  - first:
+      213: 5414283928808042725
+    second: Ice_Ocean_Planets_21
+  - first:
+      213: -4539705730806592494
+    second: Ice_Ocean_Planets_22
+  - first:
+      213: 2099478773670049199
+    second: Ice_Ocean_Planets_23
+  - first:
+      213: 6247986148546746402
+    second: Ice_Ocean_Planets_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_0
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1179
+        width: 134
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a9f28ba1ed93db0800000000000000
+      internalID: -4811570520528020917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_1
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1075
+        width: 350
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19d9361fcaac8a40800000000000000
+      internalID: 5371856261954001181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_2
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 1119
+        width: 246
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec1e86fee0f70710800000000000000
+      internalID: 1659559896838708456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_16
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 371
+        width: 246
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0343876381fcfaa40800000000000000
+      internalID: 5381747782631044144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_17
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 287
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d08910d16e4838c0800000000000000
+      internalID: -4019376485418041127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_20
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 215
+        width: 258
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0fae8888ec07730800000000000000
+      internalID: 3994919955285602469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_23
+      rect:
+        serializedVersion: 2
+        x: 2171
+        y: 275
+        width: 134
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa5731632d8d22d10800000000000000
+      internalID: 2099478773670049199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 745
+        width: 309
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33da2f9fba9df864dbd730284c820a98
+      internalID: -91235271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_4
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 685
+        width: 377
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113fb416767c0ff42bd758d42f78fa05
+      internalID: 257508018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ice_Ocean_Planets_5
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 234
+        width: 393
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e5db9b87dba484583bb44c5c111d6b
+      internalID: -292197431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 887068b653c36b2449e42fc22c93fdbf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Ice_Ocean_Planets_3: -91235271
+      Ice_Ocean_Planets_4: 257508018
+      Ice_Ocean_Planets_5: -292197431
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

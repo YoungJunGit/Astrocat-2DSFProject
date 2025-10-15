@@ -12,7 +12,7 @@ public class TitleScene : AbstractScene
     
     private ISoundService _soundService;
 
-    protected override int SceneIdx => 1;
+    protected override int SceneIdx { get; } = 1;
     protected override void BindObjects() 
     {
         mainCamera = Instantiate(mainCamera);

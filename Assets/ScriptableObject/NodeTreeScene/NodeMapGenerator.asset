@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df15faeed5021ea43bdde538ae03d67d, type: 3}
+  m_Name: NodeMapGenerator
+  m_EditorClassIdentifier: 
+  skipNodeProcessing: 0
+  playOnAwake: 1
+  makeStart: 1
+  isOffset: 1
+  showText: 1
+  crossable: 0
+  allRandom: 0
+  randomizeSeed: 1
+  seed: 2143361024
+  floorNum: 10
+  routeNum: 8
+  normalNodeSize: 80
+  startNodeSize: 160
+  finalNodeSize: 160
+  floorDistance: 80
+  routeDistance: 80
+  activeRouteNum: 2
+  nodePref: {fileID: 2233898142981473485, guid: d930a38253f29b3489870b8b3ee32fe5, type: 3}
+  pathImagePref: {fileID: 5878281430672081569, guid: f902e890fbfbeac4ea3cf6ed178ecbca, type: 3}
+  pathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  passedPathColor: {r: 1, g: 1, b: 1, a: 1}
+  pathWidth: 4
+  paddingBetweenNodes: 0
+  backgroundPref: {fileID: 4695275133454352915, guid: 7e506f1f8f4f9fd468964fccf21845d4, type: 3}
+  backgroundPadding: 80
+  mouseSensitive: 1
+  gamepadSensitive: 2
+  startNodeData: {fileID: 11400000, guid: a5dd8b8215095554389f88a22f71c641, type: 2}
+  finalNodeData:
+  - {fileID: 11400000, guid: a4deefdba6121ec43ba0d2508d9264d6, type: 2}
+  fixedNodeData: []
+  mapNodeData:
+  - nodeData: {fileID: 11400000, guid: bd99df6ed73e951419a8f7c0b17b0725, type: 2}
+    serializable: 1
+    chance: 1
+    appearedAfter: 1
+    reverseAppearedAfter: 0
+  - nodeData: {fileID: 11400000, guid: eb0499932e1320d4f8985f1e9a5b6f37, type: 2}
+    serializable: 1
+    chance: 0.3
+    appearedAfter: 5
+    reverseAppearedAfter: 0
+  - nodeData: {fileID: 11400000, guid: e9b6002ed4bcd454993e0c31d3781c46, type: 2}
+    serializable: 1
+    chance: 0.6
+    appearedAfter: 6
+    reverseAppearedAfter: 0
