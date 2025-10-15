@@ -4,14 +4,15 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "InputHandler", menuName = "Core/InputHandler", order = 1)]
-public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions, UserInputAction.ISelectActionActions, UserInputAction.IQTEActions
+public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions, UserInputAction.ISelectActionActions, UserInputAction.IQTEActions, UserInputAction.IParryActions
 {
     public enum InputState
     {
         None,
         SelectUnit,
         SelectAction,
-        QTE
+        QTE,
+        Parry
     }
     private InputState _currentInputState = InputState.None;
 
@@ -40,6 +41,10 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
                     _userInputAction.Disable();
                     _userInputAction.QTE.Enable();
                     break;
+                case InputState.Parry:
+                    _userInputAction.Disable();
+                    _userInputAction.Parry.Enable();
+                     break;
             }
         }
     }
@@ -56,6 +61,8 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     public Action OnSelectActionUseItem;
     
     public Action OnQTEButtonA;
+    
+    public Action OnParry;
 
     public void Init()
     {
@@ -65,6 +72,7 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
             _userInputAction.SelectUnit.SetCallbacks(this);
             _userInputAction.SelectAction.SetCallbacks(this);
             _userInputAction.QTE.SetCallbacks(this);
+            _userInputAction.Parry.SetCallbacks(this);
         }
 
         CurrentInputState = InputState.None;
@@ -116,5 +124,11 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     {
         if (context.performed)
             OnQTEButtonA?.Invoke();
+    }
+
+    public void OnPerformParry(InputAction.CallbackContext context)
+      {
+        if (context.performed)
+            OnParry?.Invoke();
     }
 }

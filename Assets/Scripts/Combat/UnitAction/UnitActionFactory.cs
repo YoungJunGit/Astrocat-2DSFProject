@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ActionFactory", menuName = "GameScene/ActionFactory", order = 3)]
-class ActionFactory : ScriptableObject
+class UnitActionFactory : ScriptableObject
 {
     [SerializeField] private UnitManager _unitManager;
     [SerializeField] private DialogueManager dialogueManager;
@@ -73,5 +73,11 @@ class ActionFactory : ScriptableObject
         }
 
         return null;
+    }
+
+    public IUnitAction CreateParryingAction(BaseUnit defender, ParryingApplier.ParryType parryType)
+    {
+        // TODO
+        return default;
     }
 }

@@ -38,6 +38,8 @@ public class GameScene : AbstractScene
     [SerializeField] private TimelineSystem timelineSystem;
     [SerializeField] private UnitMechanismSetter unitMechanismSetter;
     [SerializeField] private InputHandler inputHandler;
+    [SerializeField] private UnitActionFactory unitActionFactory;
+    [SerializeField] private ParryingApplier parryingApplier;
     
     [Header("Tester")]
     [SerializeField] private InputTester inputTester;
@@ -59,8 +61,9 @@ public class GameScene : AbstractScene
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(unitManager)
             .Register(inputHandler)
-            .Register(damageFactory);
-        ServiceLocator.For(this).Get(out _soundService);
+            .Register(damageFactory)
+            .Register(unitActionFactory)
+            .Register(parryingApplier as IParryingApplier);
     }
 
     protected override async UniTask InitializeObjects()
@@ -80,6 +83,8 @@ public class GameScene : AbstractScene
         unitActionExecuter.Init();
 
         _soundService.PlayBackGround("Title_Background", true);
+
+        parryingApplier.Init();
 
         if (debugMode)
         {
@@ -149,7 +154,5 @@ public class GameScene : AbstractScene
     {
         if (!SceneManager.GetSceneByName("DebugingUI").isLoaded)
             SceneManager.LoadSceneAsync("DebugingUI", LoadSceneMode.Additive);
-        
-        
     }
 }

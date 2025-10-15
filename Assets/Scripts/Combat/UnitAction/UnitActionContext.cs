@@ -5,18 +5,22 @@ public interface IUnitActionContext
 {
     BaseUnit Caster { get; }
     UnitManager unitManager { get; }
-    DamageFactory damageFactory { get; }
+    DamageFactory DamageFactory { get; }
+    IParryingApplier ParryingApplier { get; }
+    InputHandler InputHandler { get; }
 
     void OnStartAction();
     void OnFinishedAction();
     void DamageEvent();
 }
 
-public record UnitActionContext(BaseUnit Caster, UnitManager unitManager, DamageFactory damageFactory) : IUnitActionContext
+public record UnitActionContext(BaseUnit Caster, UnitManager unitManager, DamageFactory DamageFactory, IParryingApplier ParryingApplier, InputHandler InputHandler) : IUnitActionContext
 {
     public BaseUnit Caster { get; } = Caster;
     public UnitManager unitManager { get; } = unitManager;
-    public DamageFactory damageFactory { get; } = damageFactory;
+    public DamageFactory DamageFactory { get; } = DamageFactory;
+    public IParryingApplier ParryingApplier { get; } = ParryingApplier;
+    public InputHandler InputHandler { get; } = InputHandler;
 
     public void OnStartAction()
     {
@@ -32,7 +36,7 @@ public record UnitActionContext(BaseUnit Caster, UnitManager unitManager, Damage
 
     public void DamageEvent()
     {
-        float damage = damageFactory.CreateNormalDamage((float)Caster.GetStat().GetData().Default_Attack, unitManager.SelectedUnit.attachments.GetHitBox().bounds);
+        float damage = DamageFactory.CreateNormalDamage((float)Caster.GetStat().GetData().Default_Attack, unitManager.SelectedUnit.attachments.GetHitBox().bounds);
 
         unitManager.SelectedUnit.GetStat().GetDamaged(damage);
     }

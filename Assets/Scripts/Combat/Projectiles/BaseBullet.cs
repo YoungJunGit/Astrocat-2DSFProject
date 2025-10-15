@@ -2,7 +2,7 @@ using NaughtyAttributes;
 using UnityEngine;
 using System;
 
-public class BaseBullet : MonoBehaviour
+public class BaseBullet : MonoBehaviour, IDisposable
 {
     [SerializeField, Expandable] 
     private BulletSetting setting;
@@ -32,5 +32,10 @@ public class BaseBullet : MonoBehaviour
             damage();
             Destroy(gameObject);
         }
+    }
+
+    public void Dispose()
+    {
+        Destroy(gameObject);
     }
 }
