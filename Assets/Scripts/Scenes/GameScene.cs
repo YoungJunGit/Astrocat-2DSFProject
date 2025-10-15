@@ -14,7 +14,6 @@ public class GameScene : AbstractScene
 {
     [SerializeField] private Camera camera;
     [SerializeField] private EventSystem eventSystem;
-    [SerializeField] private ScriptableListBaseUnit unitList = null;
 
     [Header("Data Settings")] 
     [SerializeField] private EntityDataCreator dataCreator;
@@ -35,8 +34,6 @@ public class GameScene : AbstractScene
     [SerializeField] private DamageFactory damageFactory;
 
     [Header("etc")]
-    [SerializeField] private TimelineSystem timelineSystem;
-    [SerializeField] private UnitMechanismSetter unitMechanismSetter;
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private UnitActionFactory unitActionFactory;
     [SerializeField] private ParryingApplier parryingApplier;
@@ -69,14 +66,12 @@ public class GameScene : AbstractScene
 
         hudManager.Init();
         dialogueManager.Init();
-        
+        combatManager.Init();
         unitManager.Init();
-        
-        timelineSystem.Init();
-        inputHandler.Init();
-        
         qteManager.Init();
-        
+
+        inputHandler.Init();
+
         unitActionExecuter.Init();
 
         _soundService.PlayBackGround("Title_Background", true);
@@ -109,17 +104,18 @@ public class GameScene : AbstractScene
         }
 
         // Create HUD
-        foreach (PlayerUnit unit in unitList.GetPlayerUnits())
+        foreach (PlayerUnit unit in unitManager.GetPlayerUnits().Cast<PlayerUnit>())
         {
             hudManager.CreatePlayerHUD(unit);
         }
 
-        foreach (EnemyUnit unit in unitList.GetEnemyUnits())
+        foreach (EnemyUnit unit in unitManager.GetEnemyUnits().Cast<EnemyUnit>())
         {
             hudManager.CreateEnemyHUD(unit);
         }
 
-        timelineSystem.CreateBanners();
+        // Create etc
+        combatManager.CreateObjects();
     }
 
     protected override void PrepareGame()
@@ -128,10 +124,8 @@ public class GameScene : AbstractScene
         hudManager.Prepare();
         unitManager.Prepare();
 
-        // Init CombatManager
-        combatManager.Init(timelineSystem);
-
-        // Add
+        // Prepare CombatManager
+        combatManager.Prepare();
         
         if (debugMode)
         {
@@ -143,8 +137,6 @@ public class GameScene : AbstractScene
     protected override async UniTask BeginGame()
     {
         await combatManager.StartCombat();
-
-        sceneHandler.ChangeScene(0);
     }
 
     private void ForDebugging()

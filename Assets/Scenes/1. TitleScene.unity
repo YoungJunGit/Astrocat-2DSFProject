@@ -166,6 +166,8 @@ MonoBehaviour:
   background_type: 1
   background_index: 2
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
+  changeSceneOnEndGame: 1
+  changeSceneIndex: 1
   mainCamera: {fileID: 7280001317294197267, guid: 4bed7bcaefeeb57438d2afffff22a4b1, type: 3}
   eventSystem: {fileID: 6410659421442689278, guid: fb80a152ac1f10e49992428a69dd1242, type: 3}
   titleManager: {fileID: 11400000, guid: 72b31fe6d5dd6d34dae002005c322140, type: 2}

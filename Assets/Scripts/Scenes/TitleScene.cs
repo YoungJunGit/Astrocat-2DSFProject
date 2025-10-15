@@ -39,6 +39,5 @@ public class TitleScene : AbstractScene
         _soundService.PlayEffectSound("Click");
 
         _soundService.Clear();
-        sceneHandler.ChangeScene(1);
     }
 }

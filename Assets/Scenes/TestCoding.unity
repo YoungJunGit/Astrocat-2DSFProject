@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1732112611
+--- !u!1 &932670652
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,131 +127,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1732112612}
-  - component: {fileID: 1732112613}
-  - component: {fileID: 1732112614}
-  - component: {fileID: 1732112615}
-  - component: {fileID: 1732112616}
-  - component: {fileID: 1732112617}
+  - component: {fileID: 932670653}
+  - component: {fileID: 932670654}
   m_Layer: 0
-  m_Name: GameScene
+  m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1732112612
+--- !u!4 &932670653
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732112611}
+  m_GameObject: {fileID: 932670652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 332.22534, y: 956.7083, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1732112613
+--- !u!114 &932670654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732112611}
+  m_GameObject: {fileID: 932670652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abb74b7d834ff74daa2cca072ff2e52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  background_type: 2
-  background_index: -1
-  debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
-  changeSceneOnEndGame: 0
-  changeSceneIndex: 0
-  camera: {fileID: 4824807915384137517, guid: 89a24d4d307c063438e18ed7dfac6052, type: 3}
-  eventSystem: {fileID: 2950124702827498561, guid: 64cc4daed2a76274fa6b6b1102824a4d, type: 3}
-  dataCreator: {fileID: 11400000, guid: 14c099d250c80944a88340265862554b, type: 2}
-  playerUnitID:
-  - 10010001
-  - 10010002
-  - 
-  enemyUnitID:
-  - 3001001
-  - 3001002
-  - 
-  hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
-  dialogueManager: {fileID: 11400000, guid: a9c4d3a688e42c147bd8d307a5cb2de2, type: 2}
-  combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
-  unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
-  qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
-  unitActionExecuter: {fileID: 11400000, guid: ef3fa3b1869ee0245a386f002e7ebdcb, type: 2}
-  damageFactory: {fileID: 11400000, guid: 840102ba6981ac64c81bc20a98d8c779, type: 2}
-  timelineSystem: {fileID: 11400000, guid: d1b1b5f4b1517f747959852e1fc42e01, type: 2}
-  inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
-  unitActionFactory: {fileID: 11400000, guid: 40274e07c72dafa4f8916905710eb3f4, type: 2}
-  parryingApplier: {fileID: 11400000, guid: 5b3c094ceb8a6934cb198ef20c7ed20c, type: 2}
-  inputTester: {fileID: 1732112614}
-  qteTester: {fileID: 1732112615}
-  ccTester: {fileID: 1732112616}
-  backgroundChanger: {fileID: 1732112617}
---- !u!114 &1732112614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732112611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7489947250188d64da2ee06275ccd73b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputState: 0
-  updateInputState: 0
---- !u!114 &1732112615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732112611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17438ecae8964566912bb7f5589f90c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
-  inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
---- !u!114 &1732112616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732112611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24837b69b8b5a4b44b4b41d4be215bf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1732112617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732112611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f011d62f0aface4f81962ac148bcf62, type: 3}
+  m_Script: {fileID: 11500000, guid: 1273e9d143fe0a242a9b19eb015fed15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1732112612}
+  - {fileID: 932670653}

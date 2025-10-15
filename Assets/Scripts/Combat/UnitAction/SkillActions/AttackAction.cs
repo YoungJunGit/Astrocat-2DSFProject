@@ -25,19 +25,6 @@ class MeleeAttack : BaseAttackAction
         try
         {
             context.Caster.GetAnimationHandler().attack += context.DamageEvent;
-
-            // Save Position
-            context.Caster.combatInfo.startPos = context.Caster.transform.position;
-
-            // Identify target's postition
-            float xOffset = context.Caster.attachments.GetHitBox().size.x / 2;
-            Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
-            
-            BaseUnit target = context.unitManager.SelectedUnit;
-            context.ParryingApplier.SetCurTernParryInfo(context.Caster, target, cancellationToken);
-            
-            context.Caster.combatInfo.targetPos = (Vector2)context.unitManager.SelectedUnit.attachments.GetMeleeHitPos().position + offset;
-
             context.Caster.combatInfo.actionList.Add("FinishedAction", context.OnFinishedAction);
             context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
             

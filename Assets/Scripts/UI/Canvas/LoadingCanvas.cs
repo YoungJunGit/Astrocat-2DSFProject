@@ -13,16 +13,32 @@ public class LoadingCanvas : MonoBehaviour
     [SerializeField] private GameObject _FinishedLoadingText;
     [SerializeField] private Fade _glowEffect;
 
-    public void Fade(Action<Slider> onFinishedFade)
+    public void Fade(Action onFinishedFade)
     {
         _loadingImage.DOFade(1f, 0.5f).OnComplete(() => {
             _loading.SetActive(true);
-            onFinishedFade.Invoke(_loadingBar);
+            onFinishedFade.Invoke();
         });
+    }
+
+    public async UniTask Loading(AsyncOperation asyncOperation)
+    {
+        while (!asyncOperation.isDone)
+        {
+            await UniTask.Yield();
+            _loadingBar.value = asyncOperation.progress;
+
+            if (asyncOperation.progress >= 0.9f)
+            {
+                DOTween.KillAll();
+                break;
+            }
+        }
     }
 
     public void OnLoadingComplete()
     {
+        _loadingBar.value = 1f;
         _loadingCircle.SetActive(false);
         _FinishedLoadingText.SetActive(true);
         _glowEffect.FadeAnimation().Forget();

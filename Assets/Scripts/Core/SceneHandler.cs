@@ -1,11 +1,20 @@
 ﻿using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public interface ISceneHandler
+{
+    UniTask FadeScreen();
+    void LoadingScreen(int levleIndex);
+    void LoadingScreen(string sceneName);
+    UniTask OnFinishedLoading();
+    void PauseGame(bool bPause);
+}
 
-public class SceneHandler
+public class SceneHandler : ISceneHandler
 {
     private LoadingCanvas _loadingCanvas;
 
@@ -20,21 +29,55 @@ public class SceneHandler
     private int _sceneIndex;
     private string _sceneName;
 
-    public void ChangeScene(int levelIndex)
+    public async UniTask FadeScreen()
+    {
+        _loadingCanvas = UnityEngine.Object.Instantiate(AssetLoader.LoadPrefabAsset("LoadingCanvas")).GetComponent<LoadingCanvas>();
+        UnityEngine.Object.DontDestroyOnLoad(_loadingCanvas);
+        if (_loadingCanvas != null)
+        {
+            bool isFinishedFade = false;
+            _loadingCanvas.Fade(() => isFinishedFade = true);
+            await UniTask.WaitUntil(() => isFinishedFade);
+        }
+    }
+
+    public void LoadingScreen(int levelIndex)
     {
         _sceneIndex = levelIndex;
         _changeMod = ChangeMod.Int;
-        SetLoadingScreen();
+        ChangeScene().Forget();
     }
 
-    public void ChangeScene(string sceneName)
+    public void LoadingScreen(string sceneName)
     {
         _sceneName = sceneName;
         _changeMod = ChangeMod.String;
-        SetLoadingScreen();
+        ChangeScene().Forget();
     }
 
-    public async void OnFadeComplete(Slider loadingBar)
+    public async UniTask OnFinishedLoading()
+    {
+        if (_loadingCanvas != null)
+        {
+            _loadingCanvas.OnLoadingComplete();
+            await UniTask.WaitUntil(() => Input.anyKeyDown);
+            UnityEngine.Object.Destroy(_loadingCanvas.gameObject);
+        }
+    }
+
+    public void PauseGame(bool bPause)
+    {
+        if (bPause)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
+    private async UniTask ChangeScene()
     {
         AsyncOperation asyncOperation = null;
         switch (_changeMod)
@@ -48,52 +91,7 @@ public class SceneHandler
         }
 
         asyncOperation.allowSceneActivation = false;
-        await Loading(asyncOperation, loadingBar);
-    }
-
-    private void SetLoadingScreen()
-    {
-        _loadingCanvas = Object.Instantiate(AssetLoader.LoadPrefabAsset("LoadingCanvas")).GetComponent<LoadingCanvas>();
-        Object.DontDestroyOnLoad(_loadingCanvas);
-        if (_loadingCanvas != null)
-        {
-            _loadingCanvas.Fade(OnFadeComplete);
-        }
-    }
-
-    private async UniTask Loading(AsyncOperation asyncOperation, Slider loadingBar)
-    {
-        while(!asyncOperation.isDone)
-        {
-            await UniTask.Yield();
-            loadingBar.value = asyncOperation.progress;
-
-            if(asyncOperation.progress >= 0.9f)
-            {
-                _loadingCanvas.OnLoadingComplete();
-                await UniTask.WaitUntil(() => Input.anyKeyDown);
-                DOTween.KillAll();
-                asyncOperation.allowSceneActivation = true;
-                break;
-            }
-        }
-    }
-
-    public void DestroyLoadingScreen()
-    {
-        if(_loadingCanvas != null)
-            Object.Destroy(_loadingCanvas.gameObject);
-    }
-
-    public void PauseGame(bool bPause)
-    {
-        if(bPause)
-        {
-            Time.timeScale = 0f;
-        }
-        else
-        {
-            Time.timeScale = 1f;
-        }
+        await _loadingCanvas.Loading(asyncOperation);
+        asyncOperation.allowSceneActivation = true;
     }
 }

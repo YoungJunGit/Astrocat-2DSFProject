@@ -8,10 +8,6 @@ public interface IUnitActionContext
     DamageFactory DamageFactory { get; }
     IParryingApplier ParryingApplier { get; }
     InputHandler InputHandler { get; }
-
-    void OnStartAction();
-    void OnFinishedAction();
-    void DamageEvent();
 }
 
 public record UnitActionContext(BaseUnit Caster, UnitManager unitManager, DamageFactory DamageFactory, IParryingApplier ParryingApplier, InputHandler InputHandler) : IUnitActionContext
@@ -21,23 +17,4 @@ public record UnitActionContext(BaseUnit Caster, UnitManager unitManager, Damage
     public DamageFactory DamageFactory { get; } = DamageFactory;
     public IParryingApplier ParryingApplier { get; } = ParryingApplier;
     public InputHandler InputHandler { get; } = InputHandler;
-
-    public void OnStartAction()
-    {
-        Caster.combatInfo.isFinishedAction = false;
-        Caster.attachments.GetSpriteRenderer().sortingLayerName = "Actor";
-    }
-
-    public void OnFinishedAction()
-    {
-        Caster.combatInfo.isFinishedAction = true;
-        Caster.attachments.GetSpriteRenderer().sortingLayerName = "Character";
-    }
-
-    public void DamageEvent()
-    {
-        float damage = DamageFactory.CreateNormalDamage((float)Caster.GetStat().GetData().Default_Attack, unitManager.SelectedUnit.attachments.GetHitBox().bounds);
-
-        unitManager.SelectedUnit.GetStat().GetDamaged(damage);
-    }
 }
