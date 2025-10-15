@@ -87,6 +87,7 @@ public class CombatManager : ScriptableObject
             await UniTask.WaitForSeconds(1);
         }
 
+        DequeueCurrentUnit.UnregisterAll();
         // TODO: Check whether the enemy or the player wins
         // if()
     }

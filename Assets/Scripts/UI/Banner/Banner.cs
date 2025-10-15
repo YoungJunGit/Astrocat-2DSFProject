@@ -32,7 +32,7 @@ public abstract class Banner : MonoBehaviour, IBanner
     public int Index
     {
         get { return _bannerViewModel.ReactiveIndex.CurrentValue; }
-        set { _bannerViewModel.SetIndex(value); }
+        set { _bannerViewModel.SetIndex(value); gameObject.name = $"Banner: {value}"; }
     }
     public int Round
     {
@@ -75,6 +75,6 @@ public abstract class Banner : MonoBehaviour, IBanner
 
     public void SetState(IBannerState newState)
     {
-        newState.PlayState(transform);
+        newState.PlayState(this.transform);
     }
 }

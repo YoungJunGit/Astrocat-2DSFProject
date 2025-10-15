@@ -24,10 +24,11 @@ public class EventRegistry<TResult>
 
     public void UnregisterAll()
     {
-        foreach (Func<TResult> _event in events)
+        foreach (var _event in events)
         {
             eventSender -= _event;
         }
+        events.Clear();
     }
 }
 
@@ -51,9 +52,10 @@ public class EventRegistry<T, TResult>
 
     public void UnregisterAll()
     {
-        foreach (Func<T, TResult> _event in events)
+        foreach (var _event in events)
         {
             eventSender -= _event;
         }
+        events.Clear();
     }
 }

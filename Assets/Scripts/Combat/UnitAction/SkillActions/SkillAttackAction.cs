@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 
 public class SkillAttackAction : IUnitAction
 {
-    public virtual async UniTask Execute(IUnitActionContext context, CancellationTokenSource cancellationToken = default)
+    public virtual async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
 
 

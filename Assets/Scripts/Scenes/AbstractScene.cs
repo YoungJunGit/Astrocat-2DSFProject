@@ -21,6 +21,7 @@ public abstract class AbstractScene : MonoBehaviour
     [SerializeField] private bool changeSceneOnEndGame;
     [SerializeField, ShowIf("changeSceneOnEndGame")] private int changeSceneIndex;
 
+    protected ISoundService soundService;
     protected ISceneHandler sceneHandler;
     protected BackgroundManager backgroundManager;
 
@@ -34,8 +35,10 @@ public abstract class AbstractScene : MonoBehaviour
 
     private async void Start()
     {
-        ServiceLocator.For(this).Get(out sceneHandler);
-        ServiceLocator.For(this).Get(out backgroundManager);
+        ServiceLocator.For(this)
+            .Get(out sceneHandler)
+            .Get(out backgroundManager)
+            .Get(out soundService);
 
         if (!SceneManager.GetSceneByName("Base").isLoaded)
             await SceneManager.LoadSceneAsync("0. Base", LoadSceneMode.Additive);

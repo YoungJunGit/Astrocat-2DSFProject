@@ -7,5 +7,5 @@ using UnityEngine;
 
 public interface IUnitAction
 {
-    public UniTask Execute(IUnitActionContext context, CancellationTokenSource cancellationToken);
+    public UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken);
 }

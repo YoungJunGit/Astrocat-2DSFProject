@@ -12,15 +12,11 @@ using UnityEngine.SceneManagement;
 
 public class GameScene : AbstractScene
 {
-    [SerializeField] private Camera camera;
-    [SerializeField] private EventSystem eventSystem;
-
     [Header("Data Settings")] 
     [SerializeField] private EntityDataCreator dataCreator;
     [SerializeField] private string[] playerUnitID;
     [SerializeField] private string[] enemyUnitID;
     private List<EntityData> entityData = null;
-    private ISoundService _soundService;
 
     [Header("Manager Settings")]
     [SerializeField] private HUDManager hudManager;
@@ -48,9 +44,6 @@ public class GameScene : AbstractScene
 
     protected override void BindObjects()
     {
-        camera = Instantiate(camera);
-        eventSystem = Instantiate(eventSystem);
-
         ServiceLocator.ForSceneOf(this)
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(unitManager)
@@ -74,7 +67,7 @@ public class GameScene : AbstractScene
 
         unitActionExecuter.Init();
 
-        _soundService.PlayBackGround("Title_Background", true);
+        soundService.PlayBackGround("Title_Background", true);
 
         parryingApplier.Init();
 

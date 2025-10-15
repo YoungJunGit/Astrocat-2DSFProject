@@ -78,11 +78,7 @@ public class ParryingApplier : ScriptableObject, IParryingApplier
         _executedUnitAction = executedUnitAction;
     }
 
-    public void SetParryOpen()
-    {
-        _isParryOpen = true;
-    }
-
+    public void SetParryOpen()     => _isParryOpen = true;
     public void SetJustParryOpen() => _isJustParryOpen = true;
 
     public void SetParryClose()

@@ -31,10 +31,11 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
     {
         var context = new UnitActionContext(caster, _unitManager, _damageFactory, _parryingApplier, _inputHandler);
         var cts = new CancellationTokenSource();
+        var unitActionEvent = new UnitActionEvent();
         
         try
         {
-            await action.Execute(context, cts);
+            await action.Execute(context, unitActionEvent, cts);
         }
         catch (OperationCanceledException)
         {
