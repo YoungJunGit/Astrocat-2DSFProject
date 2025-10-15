@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 2143361024
+  seed: 650827328
   floorNum: 10
   routeNum: 8
   normalNodeSize: 80
@@ -42,20 +42,23 @@ MonoBehaviour:
   startNodeData: {fileID: 11400000, guid: a5dd8b8215095554389f88a22f71c641, type: 2}
   finalNodeData:
   - {fileID: 11400000, guid: a4deefdba6121ec43ba0d2508d9264d6, type: 2}
-  fixedNodeData: []
-  mapNodeData:
+  fixedNodeData:
   - nodeData: {fileID: 11400000, guid: bd99df6ed73e951419a8f7c0b17b0725, type: 2}
+    appearedOn: 1
+  - nodeData: {fileID: 11400000, guid: fe4b802f146f8a848af8268cfc156471, type: 2}
+    appearedOn: 3
+  - nodeData: {fileID: 11400000, guid: ab08df6943a7ce640b02f483aaf67ce5, type: 2}
+    appearedOn: 5
+  - nodeData: {fileID: 11400000, guid: 202bb7210f15c3242b4446d6344aa29d, type: 2}
+    appearedOn: 7
+  mapNodeData:
+  - nodeData: {fileID: 11400000, guid: e9b6002ed4bcd454993e0c31d3781c46, type: 2}
     serializable: 1
     chance: 1
     appearedAfter: 1
     reverseAppearedAfter: 0
-  - nodeData: {fileID: 11400000, guid: eb0499932e1320d4f8985f1e9a5b6f37, type: 2}
+  - nodeData: {fileID: 0}
     serializable: 1
-    chance: 0.3
-    appearedAfter: 5
-    reverseAppearedAfter: 0
-  - nodeData: {fileID: 11400000, guid: e9b6002ed4bcd454993e0c31d3781c46, type: 2}
-    serializable: 1
-    chance: 0.6
-    appearedAfter: 6
+    chance: 1
+    appearedAfter: 1
     reverseAppearedAfter: 0
