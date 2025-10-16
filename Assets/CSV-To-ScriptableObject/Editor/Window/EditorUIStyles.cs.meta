@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f921813bd496424b86902f298db917ed
+timeCreated: 1745765038
+AssetOrigin:
+  serializedVersion: 1
+  productId: 318944
+  packageName: CSV To ScriptableObjects
+  packageVersion: 1.0
+  assetPath: Assets/CSV-To-ScriptableObject/Editor/Window/EditorUIStyles.cs
+  uploadId: 754109

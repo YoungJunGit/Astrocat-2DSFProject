@@ -407,6 +407,13 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+      Ice_Ocean_Planets_0: -4811570520528020917
+      Ice_Ocean_Planets_1: 5371856261954001181
+      Ice_Ocean_Planets_16: 5381747782631044144
+      Ice_Ocean_Planets_17: -4019376485418041127
+      Ice_Ocean_Planets_2: 1659559896838708456
+      Ice_Ocean_Planets_20: 3994919955285602469
+      Ice_Ocean_Planets_23: 2099478773670049199
       Ice_Ocean_Planets_3: -91235271
       Ice_Ocean_Planets_4: 257508018
       Ice_Ocean_Planets_5: -292197431
