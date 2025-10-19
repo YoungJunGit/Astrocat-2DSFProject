@@ -1,4 +1,3 @@
-
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using System.Collections.Generic;
@@ -8,50 +7,47 @@ using DataEnum;
 class UnitSelector : ScriptableObject
 {
     [SerializeField] private InputHandler inputHandler;
-    [SerializeField] private ScriptableListBaseUnit unitList;
     [SerializeField] private UnitSelectorController controller;
-    [SerializeField] public UnitSelectorObject unitSelectArrowPrefab;
+    [SerializeField] private UnitSelectorObject unitSelectArrowPrefab;
     private UnitSelectorObject unitSelectArrow;
+    private ScriptableListBaseUnit _units;
     private SIDE side;
     private bool isConfirmed;
 
-    public void Init()
+    public void Init(ScriptableListBaseUnit units)
     {
+        _units = units;
         side = SIDE.NONE;
         isConfirmed = false;
-        controller.Initialize(() => isConfirmed = true, (index) => MoveArrow(index));
+        controller.Initialize(() => isConfirmed = true, 
+            (index) => unitSelectArrow.transform.SetParent(_units.GetUnits(side)[index].attachments.GetUnitSelectArrowPos(), false));
     }
 
     public async UniTask<BaseUnit> SelectUnit(SIDE side)
     {
-        controller.Prepare(side, unitList.GetUnits(side).Count);
+        controller.Prepare(side, _units.GetUnits(side).Count);
         this.side = side;
         isConfirmed = false;
 
         int selectIndex = controller.GetSelectionIndex(side);
-        unitSelectArrow = Instantiate(unitSelectArrowPrefab, unitList.GetUnits(side)[selectIndex].attachments.GetUnitSelectArrowPos(), false);
+        unitSelectArrow = Instantiate(unitSelectArrowPrefab, _units.GetUnits(side)[selectIndex].attachments.GetUnitSelectArrowPos(), false);
         unitSelectArrow.Set(side);
 
         using (var inputDisposer = new InputDisposer(controller.InputHandler, InputHandler.InputState.SelectUnit))
         {
             controller.OnStartSelect(side);
             await UniTask.WaitUntil(() => isConfirmed == true);
-            controller.OnEndSelect();
+            controller.OnEndSelect(side);
         }
 
         Destroy(unitSelectArrow.gameObject);
 
-        return unitList.GetUnits(side)[controller.GetSelectionIndex(side)];
+        return _units.GetUnits(side)[controller.GetSelectionIndex(side)];
     }
 
     public BaseUnit SelectRandomUnit(SIDE side)
     {
-        int randomIndex = Random.Range(0, unitList.GetUnits(side).Count);
-        return unitList.GetUnits(side)[randomIndex];
-    }
-
-    public void MoveArrow(int index)
-    {
-        unitSelectArrow.transform.SetParent(unitList.GetUnits(side)[index].attachments.GetUnitSelectArrowPos(), false);
+        int randomIndex = Random.Range(0, _units.GetUnits(side).Count);
+        return _units.GetUnits(side)[randomIndex];
     }
 }

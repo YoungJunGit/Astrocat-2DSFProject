@@ -1,3 +1,4 @@
+using DataEnum;
 using Obvious.Soap;
 using System.Collections;
 using System.Collections.Generic;
@@ -55,4 +56,8 @@ public class ScriptableListBaseUnit : ScriptableList<BaseUnit>
         }
         return enemyUnits;
     }
+
+    public int IndexOfPlayer(BaseUnit unit)      => GetPlayerUnits().IndexOf(unit);
+    public int IndexOfEnemy(BaseUnit unit)       => GetEnemyUnits().IndexOf(unit);
+    public int IndexOf(SIDE side, BaseUnit unit) => GetUnits(side).IndexOf(unit);
 }

@@ -1,9 +1,11 @@
+using Cysharp.Threading.Tasks;
 using Michsky.UI.Shift;
 using System;
 using UnityEngine;
 
 public interface IUnitActionEvent
 {
+    UniTask ShowAttackMessage(IUnitActionContext context);
     void OnStartAction(IUnitActionContext context);
     void OnFinishedAction(IUnitActionContext context);
     void DamageEvent(IUnitActionContext context);
@@ -11,6 +13,11 @@ public interface IUnitActionEvent
 
 public class UnitActionEvent : IUnitActionEvent
 {
+    public async UniTask ShowAttackMessage(IUnitActionContext context)
+    {
+        await context.DialogueManager.ShowAttackWarningDialogue(context.Caster);
+    }
+
     public void OnStartAction(IUnitActionContext context)
     {
         context.Caster.combatInfo.isFinishedAction = false;

@@ -19,7 +19,7 @@ public class UnitManager : ScriptableObject
     public void Init()
     {
         spawner.Init();
-        unitSelector.Init();
+        unitSelector.Init(currentUnitList);
     }
 
     public void Prepare()
@@ -82,6 +82,16 @@ public class UnitManager : ScriptableObject
     public List<BaseUnit> GetPlayerUnits()
     {
         return currentUnitList.GetPlayerUnits();
+    }
+
+    public List<BaseUnit> GetUnit(SIDE side)
+    {
+        if (side == SIDE.PLAYER)
+            return currentUnitList.GetPlayerUnits();
+        else if (side == SIDE.ENEMY)
+            return currentUnitList.GetEnemyUnits();
+
+        return null;
     }
 
     public List<BaseUnit> GetAllUnits()

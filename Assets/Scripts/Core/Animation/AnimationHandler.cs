@@ -42,8 +42,8 @@ public class AnimationHandler : MonoBehaviour
     }
 
     #region[Event]
-    public event Action attack;
-    public event Action move;
+    public event Action Attack;
+    public event Action Move;
 
     /// <summary>
     /// This Method Operate at Animation Event
@@ -54,12 +54,12 @@ public class AnimationHandler : MonoBehaviour
         switch (state)
         {
             case UNIT_STATE.ATTACK:
-                attack?.Invoke();
-                attack = null;
+                Attack?.Invoke();
+                Attack = null;
                 break;
             case UNIT_STATE.MOVE:
-                move?.Invoke();
-                move = null;
+                Move?.Invoke();
+                Move = null;
                 break;
             default:
                 Debug.LogWarning("State is not set properly!!!");

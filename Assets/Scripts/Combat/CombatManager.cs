@@ -68,15 +68,10 @@ public class CombatManager : ScriptableObject
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
             IUnitAction selectedAction = null;
-
             if (currentTurnUnit is PlayerUnit player)
-            {
                 selectedAction = await actionSelector.SelectAction(player);
-            }
             else if (currentTurnUnit is EnemyUnit enemy)
-            {
                 selectedAction = await actionSelector.SelectAction(enemy);
-            }
 
             await actionExecuter.ExecuteRequest(currentTurnUnit, selectedAction);
 

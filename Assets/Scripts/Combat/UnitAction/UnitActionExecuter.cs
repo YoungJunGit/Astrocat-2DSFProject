@@ -1,8 +1,6 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public interface IUnitActionExecuter
@@ -14,6 +12,7 @@ public interface IUnitActionExecuter
 public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
 {
     UnitManager _unitManager;
+    DialogueManager _dialogueManager;
     DamageFactory _damageFactory;
     IParryingApplier _parryingApplier;
     InputHandler _inputHandler;
@@ -22,6 +21,7 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
     {
         ServiceLocator.For(this)
             .Get(out _unitManager)
+            .Get(out _dialogueManager)
             .Get(out _damageFactory)
             .Get(out _parryingApplier)
             .Get(out _inputHandler);
@@ -29,7 +29,7 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
     
     public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action)
     {
-        var context = new UnitActionContext(caster, _unitManager, _damageFactory, _parryingApplier, _inputHandler);
+        var context = new UnitActionContext(caster, _unitManager, _dialogueManager, _damageFactory, _parryingApplier, _inputHandler);
         var cts = new CancellationTokenSource();
         var unitActionEvent = new UnitActionEvent();
         

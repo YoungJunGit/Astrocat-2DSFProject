@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -6,6 +7,8 @@ using UnityEngine.InputSystem;
 [CreateAssetMenu(fileName = "InputHandler", menuName = "Core/InputHandler", order = 1)]
 public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions, UserInputAction.ISelectActionActions, UserInputAction.IQTEActions, UserInputAction.IParryActions
 {
+    private UserInputAction _userInputAction;
+
     public enum InputState
     {
         None,
@@ -14,6 +17,7 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
         QTE,
         Parry
     }
+
     private InputState _currentInputState = InputState.None;
 
     public InputState CurrentInputState
@@ -22,6 +26,24 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
 
         set
         {
+            switch (CurrentInputState)
+            {
+                case InputState.None:
+                    break;
+                case InputState.SelectUnit:
+                    DisposeOnSelectUnitActions();
+                    break;
+                case InputState.SelectAction:
+                    DisposeOnSelectActionActions();
+                    break;
+                case InputState.QTE:
+                    DisposeQTEActions();
+                    break;
+                case InputState.Parry:
+                    DisposeParryActions();
+                    break;
+            }
+
             _currentInputState = value;
             
             switch (value)
@@ -44,25 +66,10 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
                 case InputState.Parry:
                     _userInputAction.Disable();
                     _userInputAction.Parry.Enable();
-                     break;
+                    break;
             }
         }
     }
-    
-    private UserInputAction _userInputAction;
-    
-    public Action<int> OnSelectUnitEnemySelectionMove;
-    public Action<int> OnSelectUnitPlayerSelectionMove;
-    public Action OnSelectTouch;
-    public Action OnSelectUnitSelectionConfirm;
-    
-    public Action OnSelectActionBaseAttack;
-    public Action OnSelectActionSkillSelect;
-    public Action OnSelectActionUseItem;
-    
-    public Action OnQTEButtonA;
-    
-    public Action OnParry;
 
     public void Init()
     {
@@ -77,6 +84,15 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
 
         CurrentInputState = InputState.None;
     }
+
+    #region[Action - SelectUnit]
+
+    public event Action<int> OnSelectUnitEnemySelectionMove;
+    public event Action<int> OnSelectUnitPlayerSelectionMove;
+    public event Action OnSelectUnitTouch;
+    public event Action OnSelectUnitSelectionConfirm;
+    public event Action OnSelectUnitSelectionCancle;
+
     public void OnEnemySelectionMove(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -87,13 +103,12 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     {
         if (context.performed)
             OnSelectUnitPlayerSelectionMove?.Invoke((int)context.ReadValue<float>());
-
     }
 
     public void OnTouch(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSelectTouch?.Invoke();
+            OnSelectUnitTouch?.Invoke();
     }
 
     public void OnSelectionConfirm(InputAction.CallbackContext context)
@@ -101,6 +116,29 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
         if (context.performed)
             OnSelectUnitSelectionConfirm?.Invoke();
     }
+
+    public void OnSelectionCancle(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            OnSelectUnitSelectionCancle?.Invoke();
+    }
+
+    private void DisposeOnSelectUnitActions()
+    {
+        OnSelectUnitEnemySelectionMove  = null;
+        OnSelectUnitPlayerSelectionMove = null;
+        OnSelectUnitTouch               = null;
+        OnSelectUnitSelectionConfirm    = null;
+        OnSelectUnitSelectionCancle     = null;
+    }
+
+    #endregion
+
+    #region[Action - SelectAction]
+
+    public event Action OnSelectActionBaseAttack;
+    public event Action OnSelectActionSkillSelect;
+    public event Action OnSelectActionUseItem;
 
     public void OnBaseAttack(InputAction.CallbackContext context)
     {
@@ -120,15 +158,46 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
             OnSelectActionUseItem?.Invoke();
     }
 
+    private void DisposeOnSelectActionActions()
+    {
+        OnSelectActionBaseAttack    = null;
+        OnSelectActionSkillSelect   = null;
+        OnSelectActionUseItem       = null;
+    }
+
+    #endregion
+
+    #region[Action - QTE]
+
+    public event Action OnQTEButtonA;
+
     public void OnButtonA(InputAction.CallbackContext context)
     {
         if (context.performed)
             OnQTEButtonA?.Invoke();
     }
 
+    private void DisposeQTEActions()
+    {
+        OnQTEButtonA = null;
+    }
+
+    #endregion
+
+    #region[Action - Parry]
+
+    public event Action OnParry;
+
     public void OnPerformParry(InputAction.CallbackContext context)
-      {
+    {
         if (context.performed)
             OnParry?.Invoke();
     }
+
+    private void DisposeParryActions()
+    {
+        OnParry = null;
+    }
+
+    #endregion
 }
