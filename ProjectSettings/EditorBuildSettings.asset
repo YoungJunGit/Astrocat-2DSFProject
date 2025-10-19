@@ -21,5 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/DebugingUI.unity
     guid: 4fd6a2410c669b54fa3c60eb4675f75f
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 8b8b0ebb89545bb41be272c35afa0cd8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}
   m_UseUCBPForAssetBundles: 0

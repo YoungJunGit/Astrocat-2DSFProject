@@ -15,5 +15,5 @@ MonoBehaviour:
   unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
   actionSelector: {fileID: 11400000, guid: 5fb1648dfc12e0d4881c1a7b50932813, type: 2}
   combatEventHandler: {fileID: 11400000, guid: a21d472ff7f759f4a9c6fcc3e789e1c1, type: 2}
-  unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
+  timelineManagerPrefab: {fileID: 1253780471671226137, guid: 47409dc05f91f744f85a3615484a1675, type: 3}
   executed: 0

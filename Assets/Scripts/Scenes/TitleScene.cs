@@ -4,23 +4,11 @@ using UnityEngine.EventSystems;
 
 public class TitleScene : AbstractScene
 {
-    [SerializeField] private Camera mainCamera;
-    [SerializeField] private EventSystem eventSystem;
-
     [Header("Manager Setting")]
     [SerializeField] private TitleManager titleManager;
-    
-    private ISoundService _soundService;
 
     protected override int SceneIdx { get; } = 1;
-    protected override void BindObjects() 
-    {
-        mainCamera = Instantiate(mainCamera);
-        eventSystem = Instantiate(eventSystem);
-        
-        ServiceLocator.For(this).Get(out _soundService);
-    }
-
+    protected override void BindObjects() { }
     protected override async UniTask InitializeObjects() 
     {
         titleManager.Init();
@@ -32,13 +20,12 @@ public class TitleScene : AbstractScene
     protected override void PrepareGame() { }
     protected override async UniTask BeginGame() 
     {
-        _soundService.PlayBackGround("");
+        soundService.PlayBackGround("Title_Background", true);
         
         await UniTask.WaitUntil(() => Input.anyKeyDown);
         
-        _soundService.PlayEffectSound("");
+        soundService.PlayEffectSound("Click");
 
-        _soundService.Clear();
-        sceneHandler.ChangeScene(1);
+        soundService.Clear();
     }
 }

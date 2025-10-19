@@ -170,18 +170,17 @@ MonoBehaviour:
   background_type: 2
   background_index: -1
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
-  camera: {fileID: 4824807915384137517, guid: 89a24d4d307c063438e18ed7dfac6052, type: 3}
-  eventSystem: {fileID: 2950124702827498561, guid: 64cc4daed2a76274fa6b6b1102824a4d, type: 3}
-  unitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
+  changeSceneOnEndGame: 1
+  changeSceneIndex: 1
   dataCreator: {fileID: 11400000, guid: 14c099d250c80944a88340265862554b, type: 2}
   playerUnitID:
   - 10010001
   - 10010002
-  - 10010003
+  - 
   enemyUnitID:
   - 3001001
-  - 3001002
-  - 3001003
+  - 
+  - 
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
   dialogueManager: {fileID: 11400000, guid: a9c4d3a688e42c147bd8d307a5cb2de2, type: 2}
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
@@ -189,9 +188,9 @@ MonoBehaviour:
   qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
   unitActionExecuter: {fileID: 11400000, guid: ef3fa3b1869ee0245a386f002e7ebdcb, type: 2}
   damageFactory: {fileID: 11400000, guid: 840102ba6981ac64c81bc20a98d8c779, type: 2}
-  timelineSystem: {fileID: 11400000, guid: d1b1b5f4b1517f747959852e1fc42e01, type: 2}
-  unitMechanismSetter: {fileID: 11400000, guid: 1ff632932886a4847a1536132d827018, type: 2}
   inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
+  unitActionFactory: {fileID: 11400000, guid: 40274e07c72dafa4f8916905710eb3f4, type: 2}
+  parryingApplier: {fileID: 11400000, guid: 5b3c094ceb8a6934cb198ef20c7ed20c, type: 2}
   inputTester: {fileID: 1732112614}
   qteTester: {fileID: 1732112615}
   ccTester: {fileID: 1732112616}

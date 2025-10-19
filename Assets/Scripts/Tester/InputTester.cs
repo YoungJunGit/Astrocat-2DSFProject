@@ -24,6 +24,8 @@ public class InputTester : MonoBehaviour, IUpdateObserver
         
         _inputHandler.OnQTEButtonA += () => Debug.Log("QTE Button A Pressed");
         
+        _inputHandler.OnParry += () => Debug.Log("Parry Button Pressed");
+        
         UpdatePublisher.SubscribeObserver(this);
     }
 

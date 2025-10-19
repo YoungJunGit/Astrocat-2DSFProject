@@ -34,24 +34,24 @@ public class ScriptableListBaseUnit : ScriptableList<BaseUnit>
         return units;
     }
 
-    public List<PlayerUnit> GetPlayerUnits()
+    public List<BaseUnit> GetPlayerUnits()
     {
-        List<PlayerUnit> playerUnits = new List<PlayerUnit>();
+        List<BaseUnit> playerUnits = new List<BaseUnit>();
         foreach (BaseUnit unit in _list)
         {
             if (unit is PlayerUnit)
-                playerUnits.Add(unit as PlayerUnit);
+                playerUnits.Add(unit);
         }
         return playerUnits;
     }
 
-    public List<EnemyUnit> GetEnemyUnits()
+    public List<BaseUnit> GetEnemyUnits()
     {
-        List<EnemyUnit> enemyUnits = new List<EnemyUnit>();
+        List<BaseUnit> enemyUnits = new List<BaseUnit>();
         foreach (BaseUnit unit in _list)
         {
             if (unit is EnemyUnit)
-                enemyUnits.Add(unit as EnemyUnit);
+                enemyUnits.Add(unit);
         }
         return enemyUnits;
     }

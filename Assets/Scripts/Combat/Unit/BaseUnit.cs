@@ -26,6 +26,7 @@ public class BaseUnit : MonoBehaviour
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
     private CrowdControlManager _crowdControlManager = new();
+    private ISoundService _soundService;
 
     [HideInInspector] 
     public UnitAttachments attachments;
@@ -42,7 +43,9 @@ public class BaseUnit : MonoBehaviour
         _stat = new UnitStat(data, index);
 
         DamageFactory damageFactory;
-        ServiceLocator.For(this).Get(out damageFactory);
+        ServiceLocator.For(this)
+            .Get(out damageFactory)
+            .Get(out _soundService);
 
         _crowdControlManager.Init(this, damageFactory);
 
@@ -51,39 +54,39 @@ public class BaseUnit : MonoBehaviour
     }
 
     // TODO : Buff Test
-    public void AddBuff(Buff newBuff)
-    {
-        Buff buff = buffList.Find(element => element.Buff_Name == newBuff.Buff_Name);
+    //public void AddBuff(Buff newBuff)
+    //{
+    //    Buff buff = buffList.Find(element => element.Buff_Name == newBuff.Buff_Name);
 
-        if (buff == null)
-        {
-            buffList.Add(newBuff);
-            _stat.AddSpeed((float)newBuff.Speed_Value);
-        }
-        else
-        {
-            buffList[buffList.IndexOf(buff)] = newBuff;
-        }
+    //    if (buff == null)
+    //    {
+    //        buffList.Add(newBuff);
+    //        _stat.AddSpeed((float)newBuff.Speed_Value);
+    //    }
+    //    else
+    //    {
+    //        buffList[buffList.IndexOf(buff)] = newBuff;
+    //    }
 
-        m_AddBuff?.Invoke(newBuff);
-    }
+    //    m_AddBuff?.Invoke(newBuff);
+    //}
 
-    public void RemoveBuff(Buff newBuff)
-    {
-        buffList.Remove(newBuff);
+    //public void RemoveBuff(Buff newBuff)
+    //{
+    //    buffList.Remove(newBuff);
 
-        _stat.AddSpeed(-(float)newBuff.Speed_Value);
-    }
+    //    _stat.AddSpeed(-(float)newBuff.Speed_Value);
+    //}
 
-    public void OnEndRound()
-    {
-        for (int i = buffList.Count - 1; i >= 0; i--)
-        {
-            buffList[i].Buff_Duration -= 1;
-            if (buffList[i].Buff_Duration <= 0)
-                RemoveBuff(buffList[i]);
-        }
-    }
+    //public void OnEndRound()
+    //{
+    //    for (int i = buffList.Count - 1; i >= 0; i--)
+    //    {
+    //        buffList[i].Buff_Duration -= 1;
+    //        if (buffList[i].Buff_Duration <= 0)
+    //            RemoveBuff(buffList[i]);
+    //    }
+    //}
 
     public void OnDamaged(float value)
     {
@@ -101,7 +104,7 @@ public class BaseUnit : MonoBehaviour
 
     public void OnHealed(float value)
     {
-
+        // TODO : Heal Logic
     }
 
     public async virtual UniTask OnDie()
@@ -112,8 +115,11 @@ public class BaseUnit : MonoBehaviour
         {
             _supporterUnit.OnDie(combatInfo).Forget();
         }
-        //SoundManager.Instance.PlayEffectSound("Liquid");
-        //SoundManager.Instance.SetSFXVolume(0.6f);
+        if (this is PlayerUnit) {
+            _soundService.PlayEffectSound("Die");
+            _soundService.PlayEffectSound("Hover", 2f);
+        }
+        else _soundService.PlayEffectSound("Die");
     }
 
     public AnimationHandler GetAnimationHandler()       => _animHandler;

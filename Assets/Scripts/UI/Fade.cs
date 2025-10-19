@@ -29,6 +29,7 @@ public class Fade : MonoBehaviour
     private int loops = 1;
 
     private CanvasGroup ui;
+    private Sequence infinite;
 
     public async UniTask<bool> FadeAnimation(Action OnFinishEvent = null, float offSetStartDelay = 0f)
     {
@@ -51,7 +52,7 @@ public class Fade : MonoBehaviour
         else if(fadeOut && fadeIn)
         {
             ui.alpha = 0f;
-            DOTween.Sequence().Append(ui.DOFade(1f, fadeOutDuration).SetEase(fadeOutCurve))
+            infinite = DOTween.Sequence().Append(ui.DOFade(1f, fadeOutDuration).SetEase(fadeOutCurve))
                               .AppendInterval(fadeInOutDelay)
                               .Append(ui.DOFade(0f, fadeInDuration).SetEase(fadeInCurve))
                               .SetAs(tweenParams);
@@ -62,8 +63,9 @@ public class Fade : MonoBehaviour
         return true;
     }
 
-    public void StopFade()
+    private void OnDestroy()
     {
-        ui.DOKill();
+        if (infinite != null)
+            infinite.Kill();
     }
 }

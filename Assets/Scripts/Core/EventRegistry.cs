@@ -4,17 +4,17 @@ using System;
 
 
 
-public class EventRegistry<T>
+public class EventRegistry<TResult>
 {
-    private Func<T> eventSender;
-    private HashSet<Func<T>> events = new HashSet<Func<T>>();
+    private Func<TResult> eventSender;
+    private HashSet<Func<TResult>> events = new HashSet<Func<TResult>>();
 
-    public T Call()
+    public TResult Call()
     {
         return eventSender.Invoke();
     }
 
-    public void Register(Func<T> callback)
+    public void Register(Func<TResult> callback)
     {
         if (events.Add(callback))
             eventSender += callback;
@@ -24,24 +24,25 @@ public class EventRegistry<T>
 
     public void UnregisterAll()
     {
-        foreach (Func<T> _event in events)
+        foreach (var _event in events)
         {
             eventSender -= _event;
         }
+        events.Clear();
     }
 }
 
-public class EventRegistry<S, A>
+public class EventRegistry<T, TResult>
 {
-    private Func<S, A> eventSender;
-    private HashSet<Func<S, A>> events = new HashSet<Func<S, A>>();
+    private Func<T, TResult> eventSender;
+    private HashSet<Func<T, TResult>> events = new HashSet<Func<T, TResult>>();
 
-    public A Call(S param)
+    public TResult Call(T param)
     {
         return eventSender.Invoke(param);
     }
 
-    public void Register(Func<S, A> callback)
+    public void Register(Func<T, TResult> callback)
     {
         if (events.Add(callback))
             eventSender += callback;
@@ -51,9 +52,10 @@ public class EventRegistry<S, A>
 
     public void UnregisterAll()
     {
-        foreach (Func<S, A> _event in events)
+        foreach (var _event in events)
         {
             eventSender -= _event;
         }
+        events.Clear();
     }
 }

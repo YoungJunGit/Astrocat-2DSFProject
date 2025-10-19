@@ -55,18 +55,18 @@ public class CombatTester : MonoBehaviour
 
     public void OnDieButton()
     {
-        var currentUnit = combatManager.GetCurrentTurnUnit();
-        //combatManager.OnCharacterDie(currentUnit.GetStat());
+        //var currentUnit = combatManager.GetCurrentTurnUnit();
+        ////combatManager.OnCharacterDie(currentUnit.GetStat());
 
-        if (currentUnit is PlayerUnit)
-        {
-            //hudManager.DeletePlayerHUD((PlayerUnit)currentUnit);
-            //unitManager.DeletePlayerUnit((PlayerUnit)currentUnit);
-        }
-        else { 
-            //hudManager.DeleteEnemyHUD((EnemyUnit)currentUnit);
-            //unitManager.DeleteEnemyUnit((EnemyUnit)currentUnit);
-        }
+        //if (currentUnit is PlayerUnit)
+        //{
+        //    //hudManager.DeletePlayerHUD((PlayerUnit)currentUnit);
+        //    //unitManager.DeletePlayerUnit((PlayerUnit)currentUnit);
+        //}
+        //else { 
+        //    //hudManager.DeleteEnemyHUD((EnemyUnit)currentUnit);
+        //    //unitManager.DeleteEnemyUnit((EnemyUnit)currentUnit);
+        //}
     }
     public void OnFaintingButton()
     {

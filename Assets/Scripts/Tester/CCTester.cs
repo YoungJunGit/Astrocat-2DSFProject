@@ -14,7 +14,7 @@ public class CCTester : MonoBehaviour
         
         Debug.Log($"Set CC");
         
-        var units = unitManager.GetAllUnit();
+        var units = unitManager.GetAllUnits();
         
         units[Random.Range(0, units.Count)].GetCrowdControlManager()
             .AddCrowdControl((CrowdControlType)Random.Range(0, Enum.GetValues(typeof(CrowdControlType)).Length));

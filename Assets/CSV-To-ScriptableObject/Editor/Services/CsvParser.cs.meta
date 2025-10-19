@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 05b408b503dd4df4945c881d99e06d7e
+timeCreated: 1745764752
+AssetOrigin:
+  serializedVersion: 1
+  productId: 318944
+  packageName: CSV To ScriptableObjects
+  packageVersion: 1.0
+  assetPath: Assets/CSV-To-ScriptableObject/Editor/Services/CsvParser.cs
+  uploadId: 754109

@@ -29,7 +29,7 @@ namespace DataEntity
         public string       Mob_Name;
         public double       Mob_Default_HP          = 0.0f;
         public double       Mob_Default_Attack      = 0.0f;
-        public double       Mob_Default_Defense    = 0.0f;
+        public double       Mob_Default_Defense     = 0.0f;
         public int          Mob_Default_AP          = 0;
         public double       Mob_Default_Speed       = 0.0f; 
         public string       Skill1_ID;

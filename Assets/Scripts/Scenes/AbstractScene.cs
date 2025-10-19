@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
-using NaughtyAttributes;
+using DG.Tweening;
 using Obvious.Soap;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,33 +18,47 @@ public abstract class AbstractScene : MonoBehaviour
 
     [Space(20f)]
     [SerializeField] protected BoolVariable debugMode;
+    [SerializeField] private bool changeSceneOnEndGame;
+    [SerializeField, ShowIf("changeSceneOnEndGame")] private int changeSceneIndex;
 
-    protected SceneHandler sceneHandler;
+    protected ISoundService soundService;
+    protected ISceneHandler sceneHandler;
     protected BackgroundManager backgroundManager;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
     {
         ServiceLocator.Global.Register(new SoundService() as ISoundService);
-        ServiceLocator.Global.Register(new SceneHandler());
-        ServiceLocator.Global.Register(new BackgroundManager());
+        ServiceLocator.Global.Register(new SceneHandler() as ISceneHandler);
+        ServiceLocator.Global.Register<BackgroundManager>(new BackgroundManager());
     }
 
     private async void Start()
     {
-        ServiceLocator.For(this).Get(out sceneHandler);
-        ServiceLocator.For(this).Get(out backgroundManager);
+        ServiceLocator.For(this)
+            .Get(out sceneHandler)
+            .Get(out backgroundManager)
+            .Get(out soundService);
 
         if (!SceneManager.GetSceneByName("Base").isLoaded)
             await SceneManager.LoadSceneAsync("0. Base", LoadSceneMode.Additive);
 
-        sceneHandler.DestroyLoadingScreen();
         backgroundManager.SetBackground(background_type, background_index);
+
         BindObjects();
         await InitializeObjects();
         await CreateObjects();
         PrepareGame();
+
+        await sceneHandler.OnFinishedLoading();
+
         await BeginGame();
+
+        if (changeSceneOnEndGame)
+        {
+            await sceneHandler.FadeScreen();
+            sceneHandler.LoadingScreen(changeSceneIndex);
+        }
     }
 
     protected abstract void BindObjects();

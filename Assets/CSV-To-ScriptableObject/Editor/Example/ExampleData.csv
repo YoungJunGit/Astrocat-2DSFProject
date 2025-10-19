@@ -1,0 +1,6 @@
+﻿stringValue,intValue,floatValue,doubleValue,boolValue,vector2Value,vector3Value,colorValue,enumValue,intArray,stringArray,floatList,stringList,nestedValue.name,nestedValue.value,nestedValue.privateStringFieldSerialized
+Hello World,42,3.14,2.71828,true,1.5;2.5,1;2;3,255;0;0;255,First,1;2;3,apple;banana;orange,1.1;2.2;3.3,red;green;blue,Main Nested,100,Hidden String
+Testing CSV,123,6.28,1.4142,false,0;1,0;1;0,#00FF00,Second,5;6;7,cat;dog;bird,4.4;5.5,alpha;beta,Second Nested,101,Secret Text
+Sample Data,-55,9.81,3.1415,true,-1;-1,1;1;1,128;128;128;255,Third,10,single,9.9,gamma,Third Nested,102,Hidden3
+Unity Example,777,1.618,0.577,false,3;4,5;6;7,#FF00FF,First,42;13,hello;world,1.1;2.2,test;debug,Fourth Nested,103,Hidden4
+Final Row,999,2.718,1.732,true,10;20,15;25;35,0;255;0;255,Second,1;3;5;7,x;y;z,7.7;8.8;9.9,final;row,Last Nested,104,Hidden5

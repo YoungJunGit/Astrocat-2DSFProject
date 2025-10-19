@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7b346c7685c89fc43bcf51b38d2972ac
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 318944
+  packageName: CSV To ScriptableObjects
+  packageVersion: 1.0
+  assetPath: Assets/CSV-To-ScriptableObject/Editor/CsvToScriptableObject.Editor.asmdef
+  uploadId: 754109

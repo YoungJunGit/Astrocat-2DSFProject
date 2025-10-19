@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: 1d783e64eb6688645839f886f3a1159c
+  m_SerializeEntries:
+  - m_GUID: 31a8191ac72070444825e5d3f58b486c
+    m_Address: Knife
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 468f662ba85278c419ef967f7c33907b
+    m_Address: Start
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63fdd226143a14849a56391907c62105
+    m_Address: Player_Shoot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67580fec17862a94495e727756630c58
+    m_Address: Die
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 706fe564125064b47a381f5452699e1e
+    m_Address: Enemy_Shoot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7252279f5e584b54fbea1ee26f538be9
+    m_Address: Item_Select
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ac1670904bb1624b87dc52bc71f00bc
+    m_Address: Title_Background
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7c1be5dde6b127459ea56630ba00b7a
+    m_Address: Scene_Change
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5039e18ee0d6a64197cb27abf873620
+    m_Address: Target_Position
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bfc5803fa8fa8924bbeaa34f4f689bb1
+    m_Address: Click
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2116408d42d23246862451183dc30f0
+    m_Address: Start_Menu
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1cdaeee9b9a1e5140b38f22245d612eb, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d0fc729cc80deeb45957cc9b2bc56e8e, type: 2}
+    - {fileID: 11400000, guid: 4f39bb093b9b14e4a9bf9ba6b4bd780c, type: 2}

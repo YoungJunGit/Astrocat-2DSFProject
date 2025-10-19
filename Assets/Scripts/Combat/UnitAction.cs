@@ -1,8 +1,9 @@
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using DataEnum;
 
-class PlayerBaseAttackAction : IUnitAction
+class PlayerBaseAttackAction
 {
     private PlayerUnit _caster;
     private EnemyUnit _target;
@@ -17,7 +18,7 @@ class PlayerBaseAttackAction : IUnitAction
         _target = target;
     }
     
-    public async UniTask Execute(IUnitActionContext context)
+    public async UniTask Execute(IUnitActionContext context, CancellationTokenSource cancellationToken = default)
     {
         if (_caster == null || _target == null)
         {

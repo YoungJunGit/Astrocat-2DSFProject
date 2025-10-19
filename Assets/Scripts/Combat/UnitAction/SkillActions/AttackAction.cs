@@ -1,24 +1,28 @@
-
+using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DataHashAnim;
 using Michsky.UI.Shift;
+using NUnit.Framework;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 class BaseAttackAction : IUnitAction
 {
-    public virtual async UniTask Execute(IUnitActionContext context)
+    public virtual async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
-        context.OnStartAction();
+        unitAction.OnStartAction(context);
 
-        await UniTask.WaitUntil(() => context.Caster.combatInfo.isFinishedAction);
+        await UniTask.WaitUntil(() => context.Caster.combatInfo.isFinishedAction, cancellationToken: cancellationToken.Token);
+        Debug.Log($"{context.Caster.GetStat().Name} : Action was finished.");
     }
 }
 
 class MeleeAttack : BaseAttackAction
 {
-    public override async UniTask Execute(IUnitActionContext context)
+    public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
-        context.Caster.GetAnimationHandler().attack += context.DamageEvent;
+        var inputDisposer = new InputDisposer(context.InputHandler, InputHandler.InputState.Parry);
 
         // Save Position
         context.Caster.combatInfo.startPos = (Vector2)context.Caster.transform.position;
@@ -28,27 +32,47 @@ class MeleeAttack : BaseAttackAction
         Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
         context.Caster.combatInfo.targetPos = (Vector2)context.unitManager.SelectedUnit.attachments.GetMeleeHitPos().position + offset;
 
-        context.Caster.combatInfo.actionList.Add("FinishedAction", context.OnFinishedAction);
+        context.Caster.GetAnimationHandler().attack += () => { unitAction.DamageEvent(context); };
+        context.Caster.combatInfo.actionList.Add("FinishedAction", () => { unitAction.OnFinishedAction(context); });
         context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
 
-        await base.Execute(context);
+        try
+        {
+            await base.Execute(context, unitAction, cancellationToken);
+        }
+        catch (OperationCanceledException)
+        {
+            Debug.Log($"{context.Caster.GetStat().Name} : Action was canceled.");
+        }
+        
+        inputDisposer.Dispose();
     }
 }
 
 class RangeAttack : BaseAttackAction 
 {
-    public override async UniTask Execute(IUnitActionContext context)
+    public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
-        context.Caster.GetAnimationHandler().attack += () => { ShootBullet(context); };
+        BaseBullet bullet = null;
+        context.Caster.GetAnimationHandler().attack += () => { bullet = ShootBullet(context, unitAction); };
         context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.ATTACK);
 
-        await base.Execute(context);
+        try
+        {
+            await base.Execute(context, unitAction, cancellationToken);
+        }
+        catch (OperationCanceledException)
+        {
+            bullet?.Dispose();
+            Debug.Log($"{context.Caster.GetStat().Name} : Action was canceled.");
+        }
     }
 
-    private void ShootBullet(IUnitActionContext context)
+    private BaseBullet ShootBullet(IUnitActionContext context, IUnitActionEvent unitAction)
     {
         GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().GetData().Asset_File);
         BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
-        bullet.Initialize(context.unitManager.SelectedUnit.attachments.GetHitBox(), () => { context.DamageEvent(); context.OnFinishedAction(); });
+        bullet.Initialize(context.unitManager.SelectedUnit.attachments.GetHitBox(), () => { unitAction.DamageEvent(context); unitAction.OnFinishedAction(context); });
+        return bullet;
     }
 }

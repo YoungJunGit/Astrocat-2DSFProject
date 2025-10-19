@@ -12,10 +12,6 @@ using UnityEngine.SceneManagement;
 
 public class GameScene : AbstractScene
 {
-    [SerializeField] private Camera camera;
-    [SerializeField] private EventSystem eventSystem;
-    [SerializeField] private ScriptableListBaseUnit unitList = null;
-
     [Header("Data Settings")] 
     [SerializeField] private EntityDataCreator dataCreator;
     [SerializeField] private string[] playerUnitID;
@@ -34,9 +30,9 @@ public class GameScene : AbstractScene
     [SerializeField] private DamageFactory damageFactory;
 
     [Header("etc")]
-    [SerializeField] private TimelineSystem timelineSystem;
-    [SerializeField] private UnitMechanismSetter unitMechanismSetter;
     [SerializeField] private InputHandler inputHandler;
+    [SerializeField] private UnitActionFactory unitActionFactory;
+    [SerializeField] private ParryingApplier parryingApplier;
     
     [Header("Tester")]
     [SerializeField] private InputTester inputTester;
@@ -48,14 +44,13 @@ public class GameScene : AbstractScene
 
     protected override void BindObjects()
     {
-        camera = Instantiate(camera);
-        eventSystem = Instantiate(eventSystem);
-
         ServiceLocator.ForSceneOf(this)
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(unitManager)
             .Register(inputHandler)
-            .Register(damageFactory);
+            .Register(damageFactory)
+            .Register(unitActionFactory)
+            .Register(parryingApplier as IParryingApplier);
     }
 
     protected override async UniTask InitializeObjects()
@@ -64,16 +59,17 @@ public class GameScene : AbstractScene
 
         hudManager.Init();
         dialogueManager.Init();
-        
+        combatManager.Init();
         unitManager.Init();
-        
-        timelineSystem.Init();
-        inputHandler.Init();
-        
         qteManager.Init();
-        
+
+        inputHandler.Init();
+
         unitActionExecuter.Init();
-        // SoundManager.Instance.Init();
+
+        soundService.PlayBackGround("Title_Background", true);
+
+        parryingApplier.Init();
 
         if (debugMode)
         {
@@ -101,17 +97,18 @@ public class GameScene : AbstractScene
         }
 
         // Create HUD
-        foreach (PlayerUnit unit in unitList.GetPlayerUnits())
+        foreach (PlayerUnit unit in unitManager.GetPlayerUnits().Cast<PlayerUnit>())
         {
             hudManager.CreatePlayerHUD(unit);
         }
 
-        foreach (EnemyUnit unit in unitList.GetEnemyUnits())
+        foreach (EnemyUnit unit in unitManager.GetEnemyUnits().Cast<EnemyUnit>())
         {
             hudManager.CreateEnemyHUD(unit);
         }
 
-        timelineSystem.CreateBanners();
+        // Create etc
+        combatManager.CreateObjects();
     }
 
     protected override void PrepareGame()
@@ -120,10 +117,8 @@ public class GameScene : AbstractScene
         hudManager.Prepare();
         unitManager.Prepare();
 
-        // Init CombatManager
-        combatManager.Init(timelineSystem);
-
-        // Add
+        // Prepare CombatManager
+        combatManager.Prepare();
         
         if (debugMode)
         {
@@ -135,15 +130,11 @@ public class GameScene : AbstractScene
     protected override async UniTask BeginGame()
     {
         await combatManager.StartCombat();
-
-        sceneHandler.ChangeScene(0);
     }
 
     private void ForDebugging()
     {
         if (!SceneManager.GetSceneByName("DebugingUI").isLoaded)
             SceneManager.LoadSceneAsync("DebugingUI", LoadSceneMode.Additive);
-        
-        
     }
 }

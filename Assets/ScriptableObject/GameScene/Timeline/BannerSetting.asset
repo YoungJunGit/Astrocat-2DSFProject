@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c873a37959a86649abccb809c6e7198, type: 3}
   m_Name: BannerSetting
   m_EditorClassIdentifier: 
-  _bannerPrefab: {fileID: -4350229450652637925, guid: 8d64bddc02f99ca45b7ff69eb6ef8f69, type: 3}
-  _maxBannerIndex: 7
+  _maxBannerIndex: {fileID: 11400000, guid: e470a0d88c8ef934b8d09b63a050e2ee, type: 2}
   _initialPos: {x: 80, y: -80}
   _distance: 80
-  _anchor:
-    max: {x: 0.31, y: 0.29}
-    min: {x: 0.077, y: 0.079}
+  _moveDuration: 0.25

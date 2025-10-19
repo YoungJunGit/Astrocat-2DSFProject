@@ -12,7 +12,7 @@ public class ServiceManager
         var type = typeof(T);
         
         if (!_services.TryAdd(type, service))
-            Debug.LogError($"{type.Name} is already registered");
+            Debug.LogWarning($"{type.Name} is already registered");
 
         return this;
     }
@@ -26,7 +26,7 @@ public class ServiceManager
         }
         
         if (!_services.TryAdd(type, service))
-            Debug.LogError($"{type.Name} is already registered");
+            Debug.LogWarning($"{type.Name} is already registered");
         
         return this;
     }
