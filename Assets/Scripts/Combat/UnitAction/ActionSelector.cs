@@ -105,15 +105,11 @@ class ActionSelector : ScriptableObject
         return unitAction;
     }
 
-    public async UniTask<IUnitAction> SelectAction(EnemyUnit enemyUnit)
+    public IUnitAction SelectAction(EnemyUnit enemyUnit)
     {
         // TODO : Add Other Actions
         //_selectedActionType = Random.Range(0, 3);
 
-        IUnitAction unitAction = null;
-
-        unitAction = await unitActionFactory.CreateEnemyBaseAttackAction(enemyUnit);
-
-        return unitAction;
+        return unitActionFactory.CreateEnemyBaseAttackAction(enemyUnit);
     }    
 }

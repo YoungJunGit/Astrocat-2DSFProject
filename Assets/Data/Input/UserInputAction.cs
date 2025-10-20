@@ -183,6 +183,17 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Positive"",
+                    ""id"": ""b8f00786-dd03-495b-9c8b-10690b16bf62"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";PC"",
+                    ""action"": ""EnemySelectionMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""Negative"",
                     ""id"": ""1cc86ba4-741d-4d89-89cd-f6e7a6192e78"",
                     ""path"": ""<Keyboard>/a"",
@@ -208,6 +219,17 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""name"": ""Negative"",
                     ""id"": ""413ff4a6-250f-4e41-aa1a-2b3fee071861"",
                     ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";PC"",
+                    ""action"": ""EnemySelectionMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""739cb5b2-ce58-486a-94d9-0b8a6380bcb7"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";PC"",
@@ -249,6 +271,28 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Positive"",
+                    ""id"": ""822c9d55-ff15-42df-ba10-e1ed27aa3bb9"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";PC"",
+                    ""action"": ""PlayerSelectionMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Positive"",
+                    ""id"": ""e46edb36-a9db-4d23-8d10-0d6497f25600"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";PC"",
+                    ""action"": ""PlayerSelectionMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""Negative"",
                     ""id"": ""0e67d116-97b6-4aad-a7cc-ad4d0fb93546"",
                     ""path"": ""<Keyboard>/a"",
@@ -263,6 +307,28 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""name"": ""Negative"",
                     ""id"": ""11f53f30-7bdb-4c0a-be77-366ae5ca32e5"",
                     ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";PC"",
+                    ""action"": ""PlayerSelectionMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""b513f8cf-2037-4263-88c0-05bc87c116a9"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";PC"",
+                    ""action"": ""PlayerSelectionMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""a94df5f8-7a2e-431b-b6d1-d4e96dcaa27d"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";PC"",

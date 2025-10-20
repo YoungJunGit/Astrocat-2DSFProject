@@ -26,24 +26,23 @@ public class UnitSelectorController : ScriptableObject
         this.select     = select;
     }
 
-    public void Prepare(SIDE side, int maxUnitCount)
+    public void Prepare()
+    {
+        inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
+    }
+
+    public void UpdateIndex(int maxUnitCount, SIDE side)
     {
         _maxUnitCount = maxUnitCount;
 
-        if (side == SIDE.ENEMY)
-        {
+        if(side == SIDE.ENEMY)
             _previousEnemySelectionIndex = _previousEnemySelectionIndex > _maxUnitCount - 1 ? _maxUnitCount - 1 : _previousEnemySelectionIndex;
-        }
-        else if(side == SIDE.PLAYER)
-        {
+        else if (side == SIDE.PLAYER)
             _previousPlayerSelectionIndex = _previousPlayerSelectionIndex > _maxUnitCount - 1 ? _maxUnitCount - 1 : _previousPlayerSelectionIndex;
-        }
     }
 
     public void OnStartSelect(SIDE side)
     {
-        inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
-
         if (side == SIDE.ENEMY)
         {
             _selectedUnitIndex = _previousEnemySelectionIndex;

@@ -16,28 +16,22 @@ class UnitActionFactory : ScriptableObject
     {
         await _unitManager.GetEnemyUnitBySelector();
 
-        BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit);
-
-        return attackAction;
+        return CreateBaseAttackActionByUnitType(unit);
     }
 
-    public async UniTask<BaseAttackAction> CreateEnemyBaseAttackAction(BaseUnit unit)
+    public BaseAttackAction CreateEnemyBaseAttackAction(BaseUnit unit)
     {
         // TODO : Must change method of selecting player unit
         _unitManager.GetRandomPlayerUnitBySelector();
 
-        BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit);
-
-        return attackAction;
+        return CreateBaseAttackActionByUnitType(unit);
     }
 
     public async UniTask<BaseBuffAction> CreatePlayerBaseBuffAction(BaseUnit unit)
     {
         await _unitManager.GetPlayerUnitBySelector();
 
-        BaseBuffAction buffAction = new BaseBuffAction();
-
-        return buffAction;
+        return new BaseBuffAction();
     }
 
     public SkillAttackAction CreateSkillAttackAction(BaseUnit unit, string skillID)

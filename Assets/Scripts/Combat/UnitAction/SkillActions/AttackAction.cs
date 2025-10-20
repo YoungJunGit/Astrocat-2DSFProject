@@ -1,14 +1,19 @@
-using System;
-using System.Threading;
 using Cysharp.Threading.Tasks;
+using DataEnum;
 using DataHashAnim;
 using Michsky.UI.Shift;
 using NUnit.Framework;
+using System;
+using System.Threading;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 class BaseAttackAction : IUnitAction
 {
+    public virtual ACTION_TARGET_TYPE Target_Type { get; } = ACTION_TARGET_TYPE.SINGLE;
+
+    public virtual Func<BaseUnit, bool> Target_Filter { get; } = null;
+
     public virtual async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
         unitAction.OnStartAction(context);
