@@ -5,7 +5,7 @@ using DataEnum;
 using TMPro;
 
 [CreateAssetMenu(fileName = "UnitSelector", menuName = "GameScene/UnitSelector", order = 1)]
-class UnitSelector : ScriptableObject
+public class UnitSelector : ScriptableObject
 {
     [SerializeField] private UnitSelectorController controller;
     [SerializeField] private UnitSelectorObject unitSelectArrowPrefab;
@@ -24,8 +24,7 @@ class UnitSelector : ScriptableObject
         _side       = SIDE.NONE;
         isConfirmed = false;
         arrowList.Clear();
-        controller.Initialize(() => isConfirmed = true, 
-            (index) => unitSelectArrow.transform.SetParent(_units.GetUnits(_side)[index].attachments.GetUnitSelectArrowPos(), false));
+        controller.Initialize(() => isConfirmed = true, SetUnitSelectArrow);
     }
 
     public async UniTask SelectTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy, SIDE side)

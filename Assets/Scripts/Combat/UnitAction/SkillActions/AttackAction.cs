@@ -6,13 +6,16 @@ using NUnit.Framework;
 using System;
 using System.Threading;
 using UnityEngine;
+using Utils;
 using Object = UnityEngine.Object;
 
 class BaseAttackAction : IUnitAction
 {
-    public virtual ACTION_TARGET_TYPE Target_Type { get; } = ACTION_TARGET_TYPE.SINGLE;
-
+    public SIDE Target_Type { get; }
+    public virtual ACTION_TARGET_TYPE Action_Type { get; } = ACTION_TARGET_TYPE.SINGLE;
     public virtual Func<BaseUnit, bool> Target_Filter { get; } = null;
+
+    public BaseAttackAction(SIDE side) { Target_Type = side; }
 
     public virtual async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
@@ -25,65 +28,82 @@ class BaseAttackAction : IUnitAction
 
 class MeleeAttack : BaseAttackAction
 {
+    public MeleeAttack(SIDE side) : base(side) { }
+
     public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
         if (context.Caster is EnemyUnit)
             await unitAction.ShowAttackMessage(context);
 
-        var inputDisposer = new InputDisposer(context.InputHandler, InputHandler.InputState.Parry);
-
-        // Save Position
-        context.Caster.combatInfo.startPos = (Vector2)context.Caster.transform.position;
-
-        // Identify target's postition
-        float xOffset = context.Caster.attachments.GetHitBox().size.x / 2;
-        Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
-        context.Caster.combatInfo.targetPos = (Vector2)context.unitManager.SelectedUnit.attachments.GetMeleeHitPos().position + offset;
-
-        context.Caster.GetAnimationHandler().Attack += () => { unitAction.DamageEvent(context); };
-        context.Caster.combatInfo.actionList.Add("FinishedAction", () => { unitAction.OnFinishedAction(context); });
-        context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
-
-        try
+        BaseUnit target;
+        if (unitAction.TryGetSingle(context, out target))
         {
-            await base.Execute(context, unitAction, cancellationToken);
+            var inputDisposer = new InputDisposer(context.InputHandler, InputHandler.InputState.Parry);
+
+            // Save Position
+            context.Caster.combatInfo.startPos = (Vector2)context.Caster.transform.position;
+
+            // Identify target's postition
+            float xOffset = context.Caster.attachments.GetHitBox().size.x / 2;
+            Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
+            context.Caster.combatInfo.targetPos = (Vector2)target.attachments.GetMeleeHitPos().position + offset;
+
+            context.Caster.GetAnimationHandler().Attack += () => { unitAction.DamageEvent(context, target); };
+            context.Caster.combatInfo.actionList.Add("FinishedAction", () => { unitAction.OnFinishedAction(context); });
+            context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
+
+            try
+            {
+                await base.Execute(context, unitAction, cancellationToken);
+            }
+            catch (OperationCanceledException)
+            {
+                Debug.Log($"{context.Caster.GetStat().Name} : Action was canceled.");
+            }
+
+            inputDisposer.Dispose();
         }
-        catch (OperationCanceledException)
-        {
-            Debug.Log($"{context.Caster.GetStat().Name} : Action was canceled.");
-        }
-        
-        inputDisposer.Dispose();
     }
 }
 
 class RangeAttack : BaseAttackAction 
 {
+    public RangeAttack(SIDE side) : base(side) { }
+
     public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
         if (context.Caster is EnemyUnit)
             await unitAction.ShowAttackMessage(context);
 
-        BaseBullet bullet = null;
-        context.Caster.GetAnimationHandler().Attack += () => { bullet = ShootBullet(context, unitAction); };
-        context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.ATTACK);
+        BaseUnit target;
+        if (unitAction.TryGetSingle(context, out target))
+        {
+            BaseBullet bullet = null;
+            context.Caster.GetAnimationHandler().Attack += () => { bullet = ShootBullet(context, unitAction, target); };
+            context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.ATTACK);
 
-        try
-        {
-            await base.Execute(context, unitAction, cancellationToken);
-        }
-        catch (OperationCanceledException)
-        {
-            bullet?.Dispose();
-            Debug.Log($"{context.Caster.GetStat().Name} : Action was canceled.");
+            try
+            {
+                await base.Execute(context, unitAction, cancellationToken);
+            }
+            catch (OperationCanceledException)
+            {
+                bullet?.Dispose();
+                Debug.Log($"{context.Caster.GetStat().Name} : Action was canceled.");
+            }
         }
     }
 
-    private BaseBullet ShootBullet(IUnitActionContext context, IUnitActionEvent unitAction)
+    private BaseBullet ShootBullet(IUnitActionContext context, IUnitActionEvent unitAction, BaseUnit target)
     {
         GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().GetData().Asset_File);
         BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
-        bullet.Initialize(context.unitManager.SelectedUnit.attachments.GetHitBox(), () => { unitAction.DamageEvent(context); unitAction.OnFinishedAction(context); });
-        return bullet;
+        if (bullet != null)
+        {
+            context.SoundService.PlayEffectSound("Player_Shoot");
+            bullet.Initialize(target.attachments.GetHitBox(), () => { unitAction.DamageEvent(context, target); unitAction.OnFinishedAction(context); });
+            return bullet;
+        }
+        return null;
     }
 }

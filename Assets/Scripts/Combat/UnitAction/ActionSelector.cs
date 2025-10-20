@@ -57,9 +57,7 @@ class ActionSelector : ScriptableObject
                         selector.gameObject.SetActive(false);
 
                         selectActionComplete = true;
-                        unitAction = await unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
-
-                        _soundService.PlayEffectSound("Player_Shoot");
+                        unitAction = unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
                         break;
                     case 2:
                         _soundService.PlayEffectSound("Start_Menu");

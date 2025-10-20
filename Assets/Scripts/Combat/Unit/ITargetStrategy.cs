@@ -108,7 +108,7 @@ public class TargetStrategyFactory
 {
     public ITargetStrategy CreateTargetStrategy(IUnitAction unitAction)
     {
-        switch (unitAction.Target_Type)
+        switch (unitAction.Action_Type)
         {
             case ACTION_TARGET_TYPE.SINGLE:
                 return new SingleTargetStrategy(unitAction.Target_Filter);

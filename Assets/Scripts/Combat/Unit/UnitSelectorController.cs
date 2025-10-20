@@ -65,8 +65,11 @@ public class UnitSelectorController : ScriptableObject
 
     private void OnUnitSelect(int value)
     {
+        int temp = _selectedUnitIndex;
         _selectedUnitIndex = Mathf.Clamp(_selectedUnitIndex + value, 0, _maxUnitCount - 1);
-        select(_selectedUnitIndex);
+
+        if(_selectedUnitIndex != temp)
+            select(_selectedUnitIndex);
     }
 
     public int GetSelectionIndex(SIDE side)

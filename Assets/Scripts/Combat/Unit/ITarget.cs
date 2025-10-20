@@ -23,7 +23,7 @@ public class TargetFactory
 {
     public ITarget<BaseUnit> CreateTarget(IUnitAction unitAction)
     {
-        switch (unitAction.Target_Type)
+        switch (unitAction.Action_Type)
         {
             case ACTION_TARGET_TYPE.SINGLE:
             case ACTION_TARGET_TYPE.ALL:

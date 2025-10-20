@@ -68,16 +68,24 @@ public class CombatManager : ScriptableObject
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
             IUnitAction selectedAction = null;
+            ITarget<BaseUnit> target = null;
+            ITargetStrategy targetStrategy = null;
             if (currentTurnUnit is PlayerUnit player)
             {
                 selectedAction = await actionSelector.SelectAction(player);
+                target         = new TargetFactory().CreateTarget(selectedAction);
+                targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(selectedAction);
+                await unitManager.UnitSelector.SelectTarget(target, targetStrategy, selectedAction.Target_Type);
             }
             else if (currentTurnUnit is EnemyUnit enemy)
             {
                 selectedAction = actionSelector.SelectAction(enemy);
+                target         = new TargetFactory().CreateTarget(selectedAction);
+                targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(selectedAction);
+                unitManager.UnitSelector.SelectRandomTarget(target, targetStrategy);
             }
 
-            await actionExecuter.ExecuteRequest(currentTurnUnit, selectedAction);
+            await actionExecuter.ExecuteRequest(currentTurnUnit, selectedAction, target);
 
             OnTernEnd?.Invoke();
             ApplyCrowdControl();
