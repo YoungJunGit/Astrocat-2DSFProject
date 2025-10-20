@@ -87,7 +87,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 		float mapHeight;
 		Vector2 mapAxis;
 		bool isCompleted = false;
-
+		private RectTransform backGround;
 		Vector2 oldMousePos;
 		Vector2 newMousePos;
 
@@ -116,9 +116,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 			if(noMapOperation) return;
 
 			RectTransform canvas = mapCanvas.GetComponent<RectTransform>();
-			float xLimit = Mathf.Abs(canvas.rect.width - mapWidth);
-			float yLimit = Mathf.Abs(canvas.rect.height - mapHeight) + 2*Mathf.Abs(mapAxis.y);
-
+			float xLimit = Mathf.Abs(canvas.rect.width - backGround.rect.width) / 4;
+			float yLimit = mapAxis.y - 10;
             if (Mouse.current.leftButton.wasPressedThisFrame){
 				oldMousePos = Mouse.current.position.ReadValue() - ((oldMousePos == Vector2.zero) ? mapParent.anchoredPosition : Vector2.zero);
 			}
@@ -127,8 +126,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 				newMousePos.y -= (oldMousePos.y - Mouse.current.position.ReadValue().y) * mouseSensitive;
 				if(newMousePos.x > xLimit) newMousePos.x = xLimit;
 				if(newMousePos.x < -xLimit) newMousePos.x = -xLimit;
-				if(newMousePos.y > mapAxis.y) newMousePos.y = mapAxis.y;
-				if(newMousePos.y < -yLimit) newMousePos.y = -yLimit;
+				if(newMousePos.y > yLimit) newMousePos.y = yLimit;
+				if(newMousePos.y < yLimit-backGround.rect.width) newMousePos.y = yLimit - backGround.rect.width;
 				mapParent.anchoredPosition = newMousePos;
 				oldMousePos = Mouse.current.position.ReadValue();
 			}
@@ -485,6 +484,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 			rectTransform.anchoredPosition = new Vector2(pos.x, pos.y - ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) - backgroundPadding);
 			mapAxis = rectTransform .anchoredPosition;
 			bg.transform.SetAsFirstSibling();
+			backGround = bg.GetComponent<RectTransform>();
 		}
 
 		/*------------------------------------------------------------
