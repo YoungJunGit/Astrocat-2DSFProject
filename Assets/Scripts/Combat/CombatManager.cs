@@ -67,23 +67,20 @@ public class CombatManager : ScriptableObject
 
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
+            // Step 1 : Select Action
             IUnitAction selectedAction = null;
-            ITarget<BaseUnit> target = null;
-            ITargetStrategy targetStrategy = null;
             if (currentTurnUnit is PlayerUnit player)
-            {
                 selectedAction = await actionSelector.SelectAction(player);
-                target         = new TargetFactory().CreateTarget(selectedAction);
-                targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(selectedAction);
-                await unitManager.UnitSelector.SelectTarget(target, targetStrategy, selectedAction.Target_Type);
-            }
             else if (currentTurnUnit is EnemyUnit enemy)
-            {
                 selectedAction = actionSelector.SelectAction(enemy);
-                target         = new TargetFactory().CreateTarget(selectedAction);
-                targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(selectedAction);
+
+            // Step 2 : Select Target
+            ITarget<BaseUnit> target = new TargetFactory().CreateTarget(selectedAction);
+            ITargetStrategy targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(selectedAction);
+            if (currentTurnUnit is PlayerUnit)
+                await unitManager.UnitSelector.SelectTarget(target, targetStrategy, selectedAction.Target_Type);
+            else if (currentTurnUnit is EnemyUnit)
                 unitManager.UnitSelector.SelectRandomTarget(target, targetStrategy);
-            }
 
             await actionExecuter.ExecuteRequest(currentTurnUnit, selectedAction, target);
 

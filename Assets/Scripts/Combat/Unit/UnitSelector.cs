@@ -4,8 +4,14 @@ using System.Collections.Generic;
 using DataEnum;
 using TMPro;
 
+public interface IUnitSelector
+{
+    public UniTask SelectTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy, SIDE side);
+    public void SelectRandomTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy);
+}
+
 [CreateAssetMenu(fileName = "UnitSelector", menuName = "GameScene/UnitSelector", order = 1)]
-public class UnitSelector : ScriptableObject
+public class UnitSelector : ScriptableObject , IUnitSelector
 {
     [SerializeField] private UnitSelectorController controller;
     [SerializeField] private UnitSelectorObject unitSelectArrowPrefab;
@@ -69,35 +75,6 @@ public class UnitSelector : ScriptableObject
         strategy.SelectTarget(_units.GetPlayerUnits(), bag);
     }
 
-    public async UniTask<BaseUnit> SelectUnit(SIDE side)
-    {
-        _side = side;
-        isConfirmed = false;
-        controller.UpdateIndex(_units.GetUnits(side).Count, side);
-
-        int selectIndex = controller.GetSelectionIndex(side);
-        unitSelectArrow = Instantiate(unitSelectArrowPrefab, _units.GetUnits(side)[selectIndex].attachments.GetUnitSelectArrowPos(), false);
-        unitSelectArrow.Init(side);
-
-        using (var inputDisposer = new InputDisposer(controller.InputHandler, InputHandler.InputState.SelectUnit))
-        {
-            controller.Prepare();
-            controller.OnStartSelect(side);
-            await UniTask.WaitUntil(() => isConfirmed == true);
-            controller.OnEndSelect(side);
-        }
-
-        Destroy(unitSelectArrow.gameObject);
-
-        return _units.GetUnits(side)[controller.GetSelectionIndex(side)];
-    }
-
-    public BaseUnit SelectRandomUnit(SIDE side)
-    {
-        int randomIndex = Random.Range(0, _units.GetUnits(side).Count);
-        return _units.GetUnits(side)[randomIndex];
-    }
-
     private void SetUnitSelectArrow(int targetIndex)
     {
         DestroyUnitSelectArrow();
@@ -112,7 +89,7 @@ public class UnitSelector : ScriptableObject
         {
             UnitSelectorObject arrow = Instantiate(unitSelectArrowPrefab, target.attachments.GetUnitSelectArrowPos(), false);
             bool IsSelectable = strategy.Filter == null || !strategy.Filter(target);
-            arrow.Init_Temp(_side, IsSelectable);
+            arrow.Init(_side, IsSelectable);
             arrowList.Add(arrow);
         }
     }

@@ -24,7 +24,7 @@ public class UnitStat
 
     public ELEMENT_TYPE _currentCondition = ELEMENT_TYPE.NONE;
 
-    public double DefaultAttack  { get => _baseData.Default_Attack; }
+    public double DefaultAttack { get => _baseData.Default_Attack; }
     public float Max_HP         { get => (float)_baseData.Default_HP; }
     public int Max_AP           { get => 9; }
     public float Default_Speed  { get => (float)_baseData.Default_Speed; }

@@ -6,11 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ActionFactory", menuName = "GameScene/ActionFactory", order = 3)]
 class UnitActionFactory : ScriptableObject
 {
-    [SerializeField] private UnitManager _unitManager;
-
     private Dictionary<string, SkillAttackAction> _skillDictionary = new()
     {
-        {"20010001", null} // TODO : ADD Skill here
+        {"20010001", new Skill_Taunt()} // TODO : ADD Skill here
     };
 
     public BaseAttackAction CreatePlayerBaseAttackAction(BaseUnit unit)

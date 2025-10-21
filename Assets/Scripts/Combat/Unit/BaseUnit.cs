@@ -33,6 +33,8 @@ public class BaseUnit : MonoBehaviour
     public UnitCombatInfo combatInfo;
     public Action<Buff> m_AddBuff;
     public Action<BaseUnit> m_FinishedDying;
+
+    public bool unSelectable = false;
     
     public virtual void Initialize(EntityData data, int index)
     {
@@ -41,6 +43,9 @@ public class BaseUnit : MonoBehaviour
         _animHandler.Init();
 
         _stat = new UnitStat(data, index);
+
+        if(_stat.Priority == 2)
+            unSelectable = true;
 
         DamageFactory damageFactory;
         ServiceLocator.For(this)

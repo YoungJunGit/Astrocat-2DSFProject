@@ -15,7 +15,7 @@ public class UnitManager : ScriptableObject
 
     private List<BaseUnit> unitList = new List<BaseUnit>();
 
-    public UnitSelector UnitSelector => unitSelector;
+    public IUnitSelector UnitSelector => unitSelector;
 
     public void Init()
     {
