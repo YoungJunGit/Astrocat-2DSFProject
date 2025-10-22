@@ -54,11 +54,11 @@ MonoBehaviour:
   mapNodeData:
   - nodeData: {fileID: 11400000, guid: e9b6002ed4bcd454993e0c31d3781c46, type: 2}
     serializable: 1
-    chance: 1
+    chance: 0.5
     appearedAfter: 1
     reverseAppearedAfter: 0
   - nodeData: {fileID: 11400000, guid: 159dd5fd5ef5e3c4682342bc74b01392, type: 2}
     serializable: 1
     chance: 0.5
-    appearedAfter: 2
+    appearedAfter: 1
     reverseAppearedAfter: 0
