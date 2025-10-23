@@ -75,13 +75,19 @@ public class CombatManager : ScriptableObject
                 selectedAction = actionSelector.SelectAction(enemy);
 
             // Step 2 : Select Target
-            ITarget<BaseUnit> target = new TargetFactory().CreateTarget(selectedAction);
-            ITargetStrategy targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(selectedAction);
+            ITarget<BaseUnit> target = new TargetFactory().CreateTarget(selectedAction.Action_Type);
+            ITargetStrategy targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(selectedAction.Action_Type, selectedAction.Target_Filter);
             if (currentTurnUnit is PlayerUnit)
+            {
                 await unitManager.UnitSelector.SelectTarget(target, targetStrategy, selectedAction.Target_Type);
+            }
             else if (currentTurnUnit is EnemyUnit)
+            {
+                targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(ACTION_TARGET_TYPE.RANDOM, selectedAction.Target_Filter);
                 unitManager.UnitSelector.SelectRandomTarget(target, targetStrategy);
+            }
 
+            // Step 3 : Execute Action
             await actionExecuter.ExecuteRequest(currentTurnUnit, selectedAction, target);
 
             OnTernEnd?.Invoke();

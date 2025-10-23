@@ -21,9 +21,9 @@ public sealed class ListTarget<TUnit> : ITarget<TUnit>
 
 public class TargetFactory
 {
-    public ITarget<BaseUnit> CreateTarget(IUnitAction unitAction)
+    public ITarget<BaseUnit> CreateTarget(ACTION_TARGET_TYPE type)
     {
-        switch (unitAction.Action_Type)
+        switch (type)
         {
             case ACTION_TARGET_TYPE.SINGLE:
             case ACTION_TARGET_TYPE.ALL:
