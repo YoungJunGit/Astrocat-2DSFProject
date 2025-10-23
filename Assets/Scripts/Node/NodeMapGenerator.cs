@@ -115,22 +115,22 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 			if(!isCompleted) return;
 			if(noMapOperation) return;
 
-			RectTransform canvas = mapCanvas.GetComponent<RectTransform>();
-			float xLimit = Mathf.Abs(canvas.rect.width - backGround.rect.width) / 4;
-			float yLimit = mapAxis.y - 10;
-            if (Mouse.current.leftButton.wasPressedThisFrame){
-				oldMousePos = Mouse.current.position.ReadValue() - ((oldMousePos == Vector2.zero) ? mapParent.anchoredPosition : Vector2.zero);
-			}
-			else if(Mouse.current.leftButton.isPressed){
-				newMousePos.x -= (oldMousePos.x - Mouse.current.position.ReadValue().x) * mouseSensitive;
-				newMousePos.y -= (oldMousePos.y - Mouse.current.position.ReadValue().y) * mouseSensitive;
-				if(newMousePos.x > xLimit) newMousePos.x = xLimit;
-				if(newMousePos.x < -xLimit) newMousePos.x = -xLimit;
-				if(newMousePos.y > yLimit) newMousePos.y = yLimit;
-				if(newMousePos.y < yLimit-backGround.rect.width) newMousePos.y = yLimit - backGround.rect.width;
-				mapParent.anchoredPosition = newMousePos;
-				oldMousePos = Mouse.current.position.ReadValue();
-			}
+			//RectTransform canvas = mapCanvas.GetComponent<RectTransform>();
+			//float xLimit = Mathf.Abs(canvas.rect.width - backGround.rect.width) / 4;
+			//float yLimit = mapAxis.y - 10;
+   //         if (Mouse.current.leftButton.wasPressedThisFrame){
+			//	oldMousePos = Mouse.current.position.ReadValue() - ((oldMousePos == Vector2.zero) ? mapParent.anchoredPosition : Vector2.zero);
+			//}
+			//else if(Mouse.current.leftButton.isPressed){
+			//	newMousePos.x -= (oldMousePos.x - Mouse.current.position.ReadValue().x) * mouseSensitive;
+			//	newMousePos.y -= (oldMousePos.y - Mouse.current.position.ReadValue().y) * mouseSensitive;
+			//	if(newMousePos.x > xLimit) newMousePos.x = xLimit;
+			//	if(newMousePos.x < -xLimit) newMousePos.x = -xLimit;
+			//	if(newMousePos.y > yLimit) newMousePos.y = yLimit;
+			//	if(newMousePos.y < yLimit-backGround.rect.width) newMousePos.y = yLimit - backGround.rect.width;
+			//	mapParent.anchoredPosition = newMousePos;
+			//	oldMousePos = Mouse.current.position.ReadValue();
+			//}
 
 			if(Gamepad.current != null){
 				if(Gamepad.current.leftStick.ReadValue().y > 0.3f) movementUpDown(true);
@@ -472,25 +472,27 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 			pathsRectTransform.Add(path.rectTransform);
 		}
 
-		/*------------------------------------------------------------
-		Generate background
-		------------------------------------------------------------*/
-		void generateBackground(){
-			GameObject bg = Instantiate(backgroundPref, mapParent);
-			RectTransform rectTransform = bg.gameObject.GetComponent<RectTransform>();
-			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, mapWidth + (backgroundPadding * 2));
-			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, mapHeight + (backgroundPadding * 2));
-			Vector2 pos = rectTransform.anchoredPosition;
-			rectTransform.anchoredPosition = new Vector2(pos.x, pos.y - ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) - backgroundPadding);
-			mapAxis = rectTransform .anchoredPosition;
-			bg.transform.SetAsFirstSibling();
-			backGround = bg.GetComponent<RectTransform>();
-		}
-
-		/*------------------------------------------------------------
-		Hide unvisited nodes
-		------------------------------------------------------------*/
-		void hideEmpty(){
+	#region 배경 생성
+	/*------------------------------------------------------------
+	Generate background
+	------------------------------------------------------------*/
+	void generateBackground()
+	{
+		GameObject bg = Instantiate(backgroundPref, mapParent);
+		RectTransform rectTransform = bg.gameObject.GetComponent<RectTransform>();
+		rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, mapWidth + (backgroundPadding * 2));
+		rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, mapHeight + (backgroundPadding * 2));
+		Vector2 pos = rectTransform.anchoredPosition;
+		rectTransform.anchoredPosition = new Vector2(pos.x, pos.y - ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) - backgroundPadding);
+		mapAxis = rectTransform.anchoredPosition;
+		bg.transform.SetAsFirstSibling();
+		backGround = bg.GetComponent<RectTransform>();
+	}
+	#endregion
+	/*------------------------------------------------------------
+	Hide unvisited nodes
+	------------------------------------------------------------*/
+	void hideEmpty(){
 			for(int i = 0; i < floorNum; i++){
 				for(int j = 0; j < routeNum; j++){
 					if(!map[i,j].connected) map[i,j].gameObject.SetActive(false);

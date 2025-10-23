@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 1573159808
+  seed: 1278726784
   floorNum: 10
   routeNum: 8
   normalNodeSize: 80
@@ -35,7 +35,7 @@ MonoBehaviour:
   passedPathColor: {r: 1, g: 1, b: 1, a: 1}
   pathWidth: 4
   paddingBetweenNodes: 0
-  backgroundPref: {fileID: 4695275133454352915, guid: 7e506f1f8f4f9fd468964fccf21845d4, type: 3}
+  backgroundPref: {fileID: 0}
   backgroundPadding: 80
   mouseSensitive: 1
   gamepadSensitive: 2
