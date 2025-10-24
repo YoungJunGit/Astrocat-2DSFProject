@@ -9,6 +9,7 @@ public class UnitSelectorController : ScriptableObject
     public InputHandler InputHandler => inputHandler;
 
     private UnityAction confirm;
+    private UnityAction cancle;
     private UnityAction<int> select;
 
     private int _selectedUnitIndex;
@@ -17,18 +18,20 @@ public class UnitSelectorController : ScriptableObject
 
     private int _maxUnitCount;
 
-    public void Initialize(UnityAction confirm, UnityAction<int> select)
+    public void Initialize(UnityAction confirm, UnityAction cancle, UnityAction<int> select)
     {
         _selectedUnitIndex              = 0;
         _previousEnemySelectionIndex    = 0;
         _previousPlayerSelectionIndex   = 0;
         this.confirm    = confirm;
+        this.cancle     = cancle;
         this.select     = select;
     }
 
     public void Prepare()
     {
         inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
+        inputHandler.OnSelectUnitSelectionCancle  += () => cancle();
     }
 
     public void UpdateIndex(int maxUnitCount, SIDE side)

@@ -24,6 +24,7 @@ public class GameScene : AbstractScene
     [SerializeField] private CombatManager combatManager;
     [SerializeField] private UnitManager unitManager;
     [SerializeField] private QTEManager qteManager;
+    [SerializeField] private SelectorManager selectorManager;
 
     [Header("Service Locator Register")]
     [SerializeField] private UnitActionExecuter unitActionExecuter;
@@ -48,6 +49,7 @@ public class GameScene : AbstractScene
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(dialogueManager)
             .Register(unitManager)
+            .Register(selectorManager as ISelectorManager)
             .Register(inputHandler)
             .Register(damageFactory)
             .Register(unitActionFactory)
@@ -63,6 +65,7 @@ public class GameScene : AbstractScene
         combatManager.Init();
         unitManager.Init();
         qteManager.Init();
+        selectorManager.Init();
 
         inputHandler.Init();
 

@@ -8,19 +8,14 @@ using UnityEngine;
 public class UnitManager : ScriptableObject
 {
     [SerializeField] private ScriptableListBaseUnit currentUnitList = null;
-
-    [SerializeField] private UnitSelector unitSelector;
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
 
     private List<BaseUnit> unitList = new List<BaseUnit>();
 
-    public IUnitSelector UnitSelector => unitSelector;
-
     public void Init()
     {
         spawner.Init();
-        unitSelector.Init(currentUnitList);
     }
 
     public void Prepare()

@@ -4,42 +4,37 @@ using System.Collections.Generic;
 using DataEnum;
 using TMPro;
 
-public interface IUnitSelector
-{
-    public UniTask SelectTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy, SIDE side);
-    public void SelectRandomTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy);
-}
-
 [CreateAssetMenu(fileName = "UnitSelector", menuName = "GameScene/UnitSelector", order = 1)]
-public class UnitSelector : ScriptableObject , IUnitSelector
+public class UnitSelector : BaseSelector
 {
     [SerializeField] private UnitSelectorController controller;
     [SerializeField] private UnitSelectorObject unitSelectArrowPrefab;
-    private ScriptableListBaseUnit _units;
+    private UnitManager _unitManager;
     private List<UnitSelectorObject> arrowList = new();
-
-    private UnitSelectorObject unitSelectArrow;
     private ITarget<BaseUnit> _bag;
     private ITargetStrategy _strategy;
     private SIDE _side;
     private bool isConfirmed;
+    private bool isCancled;
 
-    public void Init(ScriptableListBaseUnit units)
+    public override void Init()
     {
-        _units      = units;
         _side       = SIDE.NONE;
         isConfirmed = false;
         arrowList.Clear();
-        controller.Initialize(() => isConfirmed = true, SetUnitSelectArrow);
+        controller.Initialize(() => isConfirmed = true, () => isCancled = true, SetUnitSelectArrow);
+
+        ServiceLocator.For(this).Get(out _unitManager);
     }
 
-    public async UniTask SelectTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy, SIDE side)
+    public async UniTask<bool> SelectTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy, SIDE side)
     {
         _bag        = bag;
         _strategy   = strategy;
         _side       = side;
         isConfirmed = false;
-        controller.UpdateIndex(_units.GetUnits(side).Count, side);
+        isCancled   = false;
+        controller.UpdateIndex(_unitManager.GetUnit(side).Count, side);
 
         switch (strategy)
         {
@@ -50,7 +45,7 @@ public class UnitSelector : ScriptableObject , IUnitSelector
                     CreateUnitSelectArrow(bag, strategy, controller.GetSelectionIndex(_side));
                     controller.Prepare();
                     controller.OnStartSelect(side);
-                    await UniTask.WaitUntil(() => isConfirmed == true);
+                    await UniTask.WaitUntil(() => isConfirmed == true || isCancled == true);
                     controller.OnEndSelect(side);
                     DestroyUnitSelectArrow();
                 }
@@ -60,19 +55,26 @@ public class UnitSelector : ScriptableObject , IUnitSelector
                 {
                     CreateUnitSelectArrow(bag, strategy, controller.GetSelectionIndex(_side));
                     controller.Prepare();
-                    await UniTask.WaitUntil(() => isConfirmed == true);
+                    await UniTask.WaitUntil(() => isConfirmed == true || isCancled == true);
                     DestroyUnitSelectArrow();
                 }
                 break;
             case RandomTargetStratgy:
-                strategy.SelectTarget(_units.GetUnits(_side), bag);
+                strategy.SelectTarget(_unitManager.GetUnit(_side), bag);
                 break;
         }
+
+        return !isCancled;
     }
 
-    public void SelectRandomTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy)
+    public bool SelectRandomTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy)
     {
-        strategy.SelectTarget(_units.GetPlayerUnits(), bag);
+        strategy.SelectTarget(_unitManager.GetPlayerUnits(), bag);
+
+        if(bag.Targets.Count == 0) 
+            return false;
+
+        return true;
     }
 
     private void SetUnitSelectArrow(int targetIndex)
@@ -83,7 +85,7 @@ public class UnitSelector : ScriptableObject , IUnitSelector
 
     private void CreateUnitSelectArrow(ITarget<BaseUnit> bag, ITargetStrategy strategy, int targetIndex)
     {
-        strategy.SelectTarget(_units.GetUnits(_side), bag, targetIndex);
+        strategy.SelectTarget(_unitManager.GetUnit(_side), bag, targetIndex);
 
         foreach(var target in bag.Targets)
         {

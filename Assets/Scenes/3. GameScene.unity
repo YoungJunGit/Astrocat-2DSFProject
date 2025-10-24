@@ -186,6 +186,7 @@ MonoBehaviour:
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
   unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
   qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
+  selectorManager: {fileID: 11400000, guid: b3670eb98c9cab141866b57a52ccef58, type: 2}
   unitActionExecuter: {fileID: 11400000, guid: ef3fa3b1869ee0245a386f002e7ebdcb, type: 2}
   damageFactory: {fileID: 11400000, guid: 840102ba6981ac64c81bc20a98d8c779, type: 2}
   inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}

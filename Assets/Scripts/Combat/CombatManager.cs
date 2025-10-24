@@ -4,14 +4,19 @@ using Cysharp.Threading.Tasks;
 using DataEnum;
 using UnityEngine;
 
+public class CombatSelectionContext
+{
+    public IUnitAction Action;
+    public ITarget<BaseUnit> Target;
+}
+
 [CreateAssetMenu(fileName = "CombatManager", menuName = "GameScene/CombatManager", order = 1)]
 public class CombatManager : ScriptableObject
 {
-    [SerializeField] private ActionSelector actionSelector;
     [SerializeField] private EventHandler combatEventHandler;
     [SerializeField] private TimelineManager timelineManagerPrefab;
 
-    private UnitManager unitManager;
+    private UnitManager _unitManager;
     private TimelineManager _timelineManager;
     private BaseUnit currentTurnUnit;
 
@@ -20,7 +25,8 @@ public class CombatManager : ScriptableObject
 
     public bool executed;
 
-    private IUnitActionExecuter actionExecuter;
+    private ISelectorManager _selectorManager;
+    private IUnitActionExecuter _actionExecuter;
     private ISoundService _soundService;
 
     public void Init()
@@ -28,67 +34,48 @@ public class CombatManager : ScriptableObject
         _timelineManager = Instantiate(timelineManagerPrefab);
 
         ServiceLocator.For(this)
-                      .Get(out actionExecuter)
-                      .Get(out unitManager);
+                      .Get(out _actionExecuter)
+                      .Get(out _unitManager)
+                      .Get(out _selectorManager)
+                      .Get(out _soundService);
 
-        actionSelector.Init();
         _timelineManager.Init();
     }
 
     public void CreateObjects()
     {
-        _timelineManager.CreateTimeline(unitManager.GetAllUnits());
+        _timelineManager.CreateTimeline(_unitManager.GetAllUnits());
     }
 
     public void Prepare()
     {
-        _timelineManager.Prepare(unitManager.GetAllUnits());
+        _timelineManager.Prepare(_unitManager.GetAllUnits());
         DequeueCurrentUnit.Register(_timelineManager.Pop);
 
-        foreach (BaseUnit unit in unitManager.GetAllUnits())
+        foreach (BaseUnit unit in _unitManager.GetAllUnits())
         {
             unit.m_FinishedDying += OnCharacterDie;
         }
-
-        actionSelector.Init();
-        
-        ServiceLocator.For(this)
-            .Get(out actionExecuter)
-            .Get(out _soundService);
-
-
     }
 
     public async UniTask StartCombat()
     {
-        while (unitManager.GetEnemyUnits().Count != 0 && unitManager.GetPlayerUnits().Count != 0)
+        while (_unitManager.GetEnemyUnits().Count != 0 && _unitManager.GetPlayerUnits().Count != 0)
         {
-            currentTurnUnit = DequeueCurrentUnit.Call(unitManager.GetAllUnits());
+            currentTurnUnit = DequeueCurrentUnit.Call(_unitManager.GetAllUnits());
 
             Debug.Log($"{currentTurnUnit.GetStat().GetData().Name}'s turn");
 
-            // Step 1 : Select Action
-            IUnitAction selectedAction = null;
-            if (currentTurnUnit is PlayerUnit player)
-                selectedAction = await actionSelector.SelectAction(player);
-            else if (currentTurnUnit is EnemyUnit enemy)
-                selectedAction = actionSelector.SelectAction(enemy);
+            var context = new CombatSelectionContext();
+            // Step 1 : Add Selections
+            _selectorManager.AddSelectorExecuter(new ActionSelectorExecutor(currentTurnUnit, (action) => context.Action = action));
+            _selectorManager.AddSelectorExecuter(new UnitSelectorExecutor(currentTurnUnit, context, (bag) => context.Target = bag));
 
-            // Step 2 : Select Target
-            ITarget<BaseUnit> target = new TargetFactory().CreateTarget(selectedAction.Action_Type);
-            ITargetStrategy targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(selectedAction.Action_Type, selectedAction.Target_Filter);
-            if (currentTurnUnit is PlayerUnit)
-            {
-                await unitManager.UnitSelector.SelectTarget(target, targetStrategy, selectedAction.Target_Type);
-            }
-            else if (currentTurnUnit is EnemyUnit)
-            {
-                targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(ACTION_TARGET_TYPE.RANDOM, selectedAction.Target_Filter);
-                unitManager.UnitSelector.SelectRandomTarget(target, targetStrategy);
-            }
+            // Step 2 : Execute Selections
+            await _selectorManager.ExecuteAll();
 
-            // Step 3 : Execute Action
-            await actionExecuter.ExecuteRequest(currentTurnUnit, selectedAction, target);
+            // Step 3 : Execute Action to Target
+            await _actionExecuter.ExecuteRequest(currentTurnUnit, context.Action, context.Target);
 
             OnTernEnd?.Invoke();
             ApplyCrowdControl();
@@ -106,7 +93,7 @@ public class CombatManager : ScriptableObject
     {
         _timelineManager.DeleteBanners(unit);
         if (currentTurnUnit == unit)
-            currentTurnUnit = DequeueCurrentUnit.Call(unitManager.GetAllUnits());
+            currentTurnUnit = DequeueCurrentUnit.Call(_unitManager.GetAllUnits());
     }
 
     public void OnFainting()
@@ -121,7 +108,7 @@ public class CombatManager : ScriptableObject
 
     public void ApplyCrowdControl()
     {
-        var units = unitManager.GetAllUnits();
+        var units = _unitManager.GetAllUnits();
 
         foreach (var unit in units)
         {
