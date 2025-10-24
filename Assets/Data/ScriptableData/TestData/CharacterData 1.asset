@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c43536f6196f5e4b98ca162b250e2d9, type: 3}
-  m_Name: CharacterData
+  m_Name: CharacterData 1
   m_EditorClassIdentifier: 
   json: {fileID: 4900000, guid: 6f088fda71f1b9a48a4be73769a115fd, type: 3}
   decryptToggle: 0
@@ -20,7 +20,7 @@ MonoBehaviour:
     kind: 0
     index: 1001
     Side: 1
-    Name: Character_Name_1001
+    Name: Rifleman
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -55,7 +55,7 @@ MonoBehaviour:
     kind: 0
     index: 1002
     Side: 1
-    Name: Character_Name_1002
+    Name: Sniperman
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -75,7 +75,7 @@ MonoBehaviour:
     kind: 0
     index: 1003
     Side: 1
-    Name: Character_Name_1003
+    Name: Commissar
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -95,7 +95,7 @@ MonoBehaviour:
     kind: 1
     index: 2001
     Side: 2
-    Name: Monster_Name_2001
+    Name: Rifleman Penguin
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -109,13 +109,13 @@ MonoBehaviour:
     Element_Charge_Rate: []
     Element_Charge_Resist: 0
     Overload_Rate: []
-    Asset_File: penguin_Rfleman
+    Asset_File: penguin_Rifleman
   - code: 10012002
     table: 10
     kind: 1
     index: 2002
     Side: 2
-    Name: Monster_Name_2002
+    Name: Berserker Penguin
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -129,13 +129,13 @@ MonoBehaviour:
     Element_Charge_Rate: []
     Element_Charge_Resist: 0
     Overload_Rate: []
-    Asset_File: penguin_Sniper
+    Asset_File: penguin_Berserker
   - code: 10102003
     table: 10
     kind: 1
     index: 2003
     Side: 2
-    Name: Monster_Name_2003
+    Name: Commander Penguin
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -155,7 +155,7 @@ MonoBehaviour:
     kind: 1
     index: 2004
     Side: 2
-    Name: Monster_Name_2004
+    Name: Sniper Penguin
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -169,4 +169,4 @@ MonoBehaviour:
     Element_Charge_Rate: []
     Element_Charge_Resist: 0
     Overload_Rate: []
-    Asset_File: penguin_Berserker
+    Asset_File: penguin_Sniper

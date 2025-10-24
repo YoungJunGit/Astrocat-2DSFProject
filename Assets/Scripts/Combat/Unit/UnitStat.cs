@@ -19,14 +19,12 @@ public class UnitStat
     public Action OnDie;
     
     public string Name { get => _baseData.Name; }
-    public ELEMENT_TYPE WeakType { get => _baseData.Weak_Type; }
-    public ELEMENT_TYPE ResistType { get => _baseData.Resist_Type; }
 
     public ELEMENT_TYPE _currentCondition = ELEMENT_TYPE.NONE;
 
     public double DefaultAttack { get => _baseData.Default_Attack; }
-    public float Max_HP         { get => (float)_baseData.Default_HP; }
-    public int Max_AP           { get => 9; }
+    public float Max_HP         { get => (float)_baseData.Max_HP; }
+    public int Max_AP           { get => _baseData.Max_SP; }
     public float Default_Speed  { get => (float)_baseData.Default_Speed; }
     public float Cur_HP         { get => _curHp; }
     public int Cur_AP           { get => _curAp; }
@@ -43,8 +41,8 @@ public class UnitStat
         _baseData = baseData;
         priority = index;
         
-        _curHp = (float)baseData.Default_HP;
-        _curAp = baseData.Default_AP;
+        _curHp = (float)baseData.Max_HP;
+        _curAp = baseData.Default_SP;
         _curSpeed = (float)baseData.Default_Speed;
     }
 
@@ -66,10 +64,7 @@ public class UnitStat
         }
     }
 
-    public string[] GetSkillsID()
-    {
-        return new string[] { _baseData.Skill1_ID, _baseData.Skill2_ID, _baseData.Skill3_ID };
-    }
+    public string[] GetSkillsID() => _baseData.Skill_ID;
 
     public void GetHealed(float value)
     {

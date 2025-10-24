@@ -12,8 +12,8 @@ using UnityEngine.SceneManagement;
 
 public class GameScene : AbstractScene
 {
-    [Header("Data Settings")] 
-    [SerializeField] private EntityDataCreator dataCreator;
+    [Header("Data Settings")]
+    [SerializeField] private DataHandler dataHandler;
     [SerializeField] private string[] playerUnitID;
     [SerializeField] private string[] enemyUnitID;
     private List<EntityData> entityData = null;
@@ -46,6 +46,7 @@ public class GameScene : AbstractScene
     protected override void BindObjects()
     {
         ServiceLocator.ForSceneOf(this)
+            .Register(dataHandler)
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(dialogueManager)
             .Register(unitManager)
@@ -58,7 +59,7 @@ public class GameScene : AbstractScene
 
     protected override async UniTask InitializeObjects()
     {
-        entityData = dataCreator.CreateEntityDataWithID(playerUnitID.ToList(), enemyUnitID.ToList());
+        entityData = new EntityDataCreator().CreateEntityData(dataHandler.CharacterData, playerUnitID.ToList(), enemyUnitID.ToList());
 
         hudManager.Init();
         dialogueManager.Init();
