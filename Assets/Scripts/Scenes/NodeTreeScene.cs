@@ -7,6 +7,10 @@ public class NodeTreeScene : AbstractScene
     
     [SerializeField]
     NodeMapGenerator nodeMapGenerator;
+    [SerializeField]
+    private ParticleSystem starParticle;
+    [SerializeField]
+    private Camera Camera3D;
     
     protected override void BindObjects()
     {
@@ -20,12 +24,13 @@ public class NodeTreeScene : AbstractScene
 
     protected async override UniTask CreateObjects()
     {
-        
+        Instantiate(starParticle);
+        Instantiate(Camera3D);
     }
 
     protected override void PrepareGame()
     {
-        
+        GameObject.Find("MainCamera").SetActive(false);
     }
 
     protected async override UniTask BeginGame()

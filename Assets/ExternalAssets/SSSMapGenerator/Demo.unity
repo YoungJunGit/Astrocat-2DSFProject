@@ -148,13 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562d91423c0233e4598de89d10d12faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skipNodeProcessing: 0
+  skipNodeProcessing: 1
   playOnAwake: 1
   makeStart: 1
   isOffset: 1
   showText: 1
   crossable: 0
-  allRandom: 0
+  allRandom: 1
   randomizeSeed: 1
   seed: 0
   floorNum: 15

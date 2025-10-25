@@ -197,8 +197,8 @@ namespace S3MG{
 		Processing each node
 		------------------------------------------------------------*/
 		void handleStart(){
-			Debug.Log("Start the game");
-		}
+            Debug.Log("Start the game");
+        }
 
 		void handleCamp(){
 			Debug.Log("Open a camp");

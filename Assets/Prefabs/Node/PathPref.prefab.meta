@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f902e890fbfbeac4ea3cf6ed178ecbca
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292505
+  packageName: SSSMapGenerator
+  packageVersion: 1.0.2
+  assetPath: Assets/SSSMapGenerator/Prefab/PathPref.prefab
+  uploadId: 706674
