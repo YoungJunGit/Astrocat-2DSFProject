@@ -89,7 +89,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     private RectTransform backGround;
     Vector2 oldMousePos;
     Vector2 newMousePos;
-    List<RectTransform> pathsRectTransform = new List<RectTransform>();
+    List<RectTransform> pathsRectTransform;
 
     /*------------------------------------------------------------
     Executed when the value in the inspector is changed:Implemented to initialize when added because serializable classes like FixedNodeData and MapNodeData cannot use constructors
@@ -192,6 +192,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         if (dataCheckBeforeGeneration()) return;
 
         UpdatePublisher.SubscribeObserver(this);
+        pathsRectTransform = new List<RectTransform>();
 
         if (randomizeSeed) seed = Mathf.FloorToInt(Random.value * int.MaxValue);
         Random.InitState(seed);
