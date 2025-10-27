@@ -25,6 +25,8 @@ public abstract class AbstractScene : MonoBehaviour
     protected ISceneHandler sceneHandler;
     protected BackgroundManager backgroundManager;
 
+    public ISceneHandler SceneHandler { get => sceneHandler; }
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
     {

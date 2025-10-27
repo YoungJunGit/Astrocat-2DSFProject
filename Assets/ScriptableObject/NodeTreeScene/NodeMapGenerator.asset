@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 1573159808
+  seed: 1891511296
   floorNum: 10
   routeNum: 8
   normalNodeSize: 80
@@ -34,7 +34,7 @@ MonoBehaviour:
   pathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   passedPathColor: {r: 1, g: 1, b: 1, a: 1}
   pathWidth: 4
-  paddingBetweenNodes: 0
+  paddingBetweenNodes: 1
   backgroundPref: {fileID: 4695275133454352915, guid: 7e506f1f8f4f9fd468964fccf21845d4, type: 3}
   backgroundPadding: 80
   mouseSensitive: 1
@@ -51,14 +51,16 @@ MonoBehaviour:
     appearedOn: 5
   - nodeData: {fileID: 11400000, guid: 202bb7210f15c3242b4446d6344aa29d, type: 2}
     appearedOn: 7
+  - nodeData: {fileID: 11400000, guid: 746af2345292ba2499a488a54567948e, type: 2}
+    appearedOn: 9
   mapNodeData:
   - nodeData: {fileID: 11400000, guid: e9b6002ed4bcd454993e0c31d3781c46, type: 2}
     serializable: 1
-    chance: 1
+    chance: 0.5
     appearedAfter: 1
     reverseAppearedAfter: 0
   - nodeData: {fileID: 11400000, guid: 159dd5fd5ef5e3c4682342bc74b01392, type: 2}
     serializable: 1
     chance: 0.5
-    appearedAfter: 2
+    appearedAfter: 1
     reverseAppearedAfter: 0

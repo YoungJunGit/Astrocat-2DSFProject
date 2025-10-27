@@ -6,7 +6,7 @@ public enum BACKGROUND
 {
     None,
     Title,
-    IcePlanet
+    IcePlanet,
 }
 
 [CreateAssetMenu(fileName = "BackgroundContainer", menuName = "Backgrounds/BackgroundContainer")]
