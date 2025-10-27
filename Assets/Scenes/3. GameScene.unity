@@ -173,7 +173,6 @@ MonoBehaviour:
   changeSceneOnEndGame: 1
   changeSceneIndex: 1
   dataHandler: {fileID: 11400000, guid: 9d14d65fcd79e1348bc607487b911110, type: 2}
-  dataCreator: {fileID: 11400000, guid: 14c099d250c80944a88340265862554b, type: 2}
   playerUnitID:
   - 10001001
   - 10001002
@@ -237,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24837b69b8b5a4b44b4b41d4be215bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestType: 0
 --- !u!114 &1732112617
 MonoBehaviour:
   m_ObjectHideFlags: 0

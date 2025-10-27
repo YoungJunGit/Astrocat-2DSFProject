@@ -6,13 +6,15 @@ public class CrowdControlFactory
     {
         switch (crowdControlType)
         {
+            case CrowdControlType.Stun:
+                return new StunCC();
             case CrowdControlType.Burn:
                 return new BurnCC();
-            case CrowdControlType.Oppression:
-                return new OppressionCC(); 
-            case CrowdControlType.Expose:
+            case CrowdControlType.Suppression:
+                return new SuppressionCC();
+            case CrowdControlType.Exposure:
                 return new ExposeCC();
-            case CrowdControlType.Flood:
+            case CrowdControlType.Overload:
                 return new FloodCC();
             case CrowdControlType.Confusion:
                 return new ConfusionCC();

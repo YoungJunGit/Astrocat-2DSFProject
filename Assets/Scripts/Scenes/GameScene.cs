@@ -128,7 +128,7 @@ public class GameScene : AbstractScene
         if (debugMode)
         {
             ForDebugging();
-            combatManager.OnTernEnd += ccTester.SetCCOnRendomUnit;
+            combatManager.OnTernEnd += ccTester.SetCCOnRandomUnit;
         }
     }
 

@@ -78,7 +78,6 @@ public class CombatManager : ScriptableObject
             await _actionExecuter.ExecuteRequest(currentTurnUnit, context.Action, context.Target);
 
             OnTernEnd?.Invoke();
-            ApplyCrowdControl();
 
             await UniTask.WaitUntil(() => combatEventHandler.IsEventEmpty());
             await UniTask.WaitForSeconds(1);
@@ -104,15 +103,5 @@ public class CombatManager : ScriptableObject
     public void OnExtraTurn()
     {
         //_timeline.Actions.ExtraButton();
-    }
-
-    public void ApplyCrowdControl()
-    {
-        var units = _unitManager.GetAllUnits();
-
-        foreach (var unit in units)
-        {
-            unit.GetCrowdControlManager().ApplyCrowdControl();
-        }
     }
 }

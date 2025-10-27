@@ -18,20 +18,17 @@ public class BaseUnit : MonoBehaviour
     [SerializeField, ShowIf("HasSupporter"), Required]
     protected SupporterUnit _supporterUnit;
 
-    [SerializeField] 
-    private UNIT_TYPE unit_Type;
-    [SerializeField] 
-    private bool HasSupporter = false;
+    [SerializeField] private UNIT_TYPE unit_Type;
+    [SerializeField] private bool HasSupporter = false;
 
     private List<Buff> buffList = new List<Buff>();
     private UnitStat _stat;
-    private CrowdControlManager _crowdControlManager = new();
     private ISoundService _soundService;
 
     [HideInInspector] 
     public UnitAttachments attachments;
     public UnitCombatInfo combatInfo;
-    public Action<Buff> m_AddBuff;
+    public CrowdControlUnit crowdControlUnit;
     public Action<BaseUnit> m_FinishedDying;
 
     public bool unSelectable = false;
@@ -51,8 +48,6 @@ public class BaseUnit : MonoBehaviour
         ServiceLocator.For(this)
             .Get(out damageFactory)
             .Get(out _soundService);
-
-        _crowdControlManager.Init(this, damageFactory);
 
         if (HasSupporter)
             _supporterUnit.Initialize();
@@ -128,7 +123,6 @@ public class BaseUnit : MonoBehaviour
     }
 
     public AnimationHandler GetAnimationHandler()       => _animHandler;
-    public CrowdControlManager GetCrowdControlManager() => _crowdControlManager;
     public UnitStat GetStat()                           => _stat;
     public UNIT_TYPE GetUnitType()                      => unit_Type;
 }

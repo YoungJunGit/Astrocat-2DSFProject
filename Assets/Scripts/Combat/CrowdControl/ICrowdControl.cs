@@ -1,19 +1,34 @@
+using static CrowdControlManager;
+
 public interface ICrowdControl
 {
-    public void ApplyCrowdControl(BaseUnit target);
+    public CCContext Context { get; }
+    public void ApplyCrowdControl(CCContext context);
+}
+
+public class StunCC : ICrowdControl
+{
+    public CCContext Context { get; }
+    public void ApplyCrowdControl(CCContext context)
+    {
+
+    }
 }
 
 public class BurnCC : ICrowdControl
 {
-    public void ApplyCrowdControl(BaseUnit target)
+    public CCContext Context { get; }
+    private double baseDmg;
+    public void ApplyCrowdControl(CCContext context)
     {
         
     }
 }
 
-public class OppressionCC : ICrowdControl
+public class SuppressionCC : ICrowdControl
 {
-    public void ApplyCrowdControl(BaseUnit target)
+    public CCContext Context { get; }
+    public void ApplyCrowdControl(CCContext context)
     {
         
     }
@@ -21,7 +36,8 @@ public class OppressionCC : ICrowdControl
 
 public class ExposeCC : ICrowdControl
 {
-    public void ApplyCrowdControl(BaseUnit target)
+    public CCContext Context { get; }
+    public void ApplyCrowdControl(CCContext context)
     {
         
     }
@@ -29,7 +45,8 @@ public class ExposeCC : ICrowdControl
 
 public class FloodCC : ICrowdControl
 {
-    public void ApplyCrowdControl(BaseUnit target)
+    public CCContext Context { get; }
+    public void ApplyCrowdControl(CCContext context)
     {
         
     }
@@ -37,7 +54,8 @@ public class FloodCC : ICrowdControl
 
 public class ConfusionCC : ICrowdControl
 {
-    public void ApplyCrowdControl(BaseUnit target)
+    public CCContext Context { get; }
+    public void ApplyCrowdControl(CCContext context)
     {
         
     }
