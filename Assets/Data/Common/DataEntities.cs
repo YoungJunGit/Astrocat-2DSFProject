@@ -67,28 +67,29 @@ namespace DataEntity
         public string English;
     }
 
-    /*추가*/
-    #endregion
-
-    #region[기본]
+    [Serializable]
     public class EntityData
     {
+        public string code;
+        public string table;
+        public string kind;
+        public string index;
         public SIDE Side = SIDE.NONE;
-        public string ID;
         public string Name;
-        public double Default_HP = 0.0f;
+        public double Max_HP = 0.0f;
+        public int Max_SP = 0;
         public double Default_Attack = 0.0f;
         public double Default_Defense = 0.0f;
-        public int Default_AP = 0;
+        public int Default_SP = 0;
         public double Default_Speed = 0.0f;
-        public string Skill1_ID;
-        public string Skill2_ID;
-        public string Skill3_ID;
-        public ELEMENT_TYPE Weak_Type = ELEMENT_TYPE.NONE;
-        public ELEMENT_TYPE Resist_Type = ELEMENT_TYPE.NONE;
+        public double Critical_Chance = 0.0f;
+        public double Critical_Damage_Rate = 0.0f;
+        public double Counter_Damage_Rate = 0.0f;
+        public string[] Skill_ID;
+        public double[] Element_Charge_Rate;
+        public double Element_Charge_Resist = 0.0f;
+        public double[] Overload_Rate;
         public string Asset_File;
     }
-
-    /*추가*/
     #endregion
 }

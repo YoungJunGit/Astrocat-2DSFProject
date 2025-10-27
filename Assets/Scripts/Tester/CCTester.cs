@@ -5,18 +5,14 @@ using Random = UnityEngine.Random;
 
 public class CCTester : MonoBehaviour
 {
-    UnitManager unitManager;
-
-    public void SetCCOnRendomUnit()
+    [SerializeField] CrowdControlType TestType;
+    public void SetCCOnRandomUnit()
     {
-        if (unitManager == null)
-            ServiceLocator.For(this).Get(out unitManager);
-        
-        Debug.Log($"Set CC");
+        UnitManager unitManager;
+        ServiceLocator.For(this).Get(out unitManager);
         
         var units = unitManager.GetAllUnits();
         
-        units[Random.Range(0, units.Count)].GetCrowdControlManager()
-            .AddCrowdControl((CrowdControlType)Random.Range(0, Enum.GetValues(typeof(CrowdControlType)).Length));
+        //units[Random.Range(0, units.Count)].GetCrowdControlManager().AddCrowdControl(TestType);
     }
 }

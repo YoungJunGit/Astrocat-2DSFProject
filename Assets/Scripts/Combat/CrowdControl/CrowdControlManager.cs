@@ -2,59 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class CrowdControlManager
+[CreateAssetMenu(fileName = "CrowdControlManager", menuName = "Manager/CrowdControlManager", order = 1)]
+public class CrowdControlManager : ScriptableObject
 {
     public enum CrowdControlType
     {
+        Stun,
         Burn,
-        Oppression,
-        Expose,
-        Flood,
         Confusion,
+        Exposure,
+        Suppression,
+        Overload,
     }
-
+    public record CCContext(DamageFactory DamageFactory, BaseUnit Target, BaseUnit Caster)
+    {
+        public DamageFactory DamageFactory { get; } = DamageFactory;
+        public BaseUnit Target { get; } = Target;
+        public BaseUnit Caster { get; } = Caster;
+    }
     
-    private HashSet<ICrowdControl> _crowdControlList = new();
-    private BaseUnit _target;
     private DamageFactory _damageFactory;
     
-    public void Init(BaseUnit target, DamageFactory damageFactory)
+    public void Init()
     {
-        _target = target;
-        _damageFactory = damageFactory;
+        ServiceLocator.For(this).Get(out _damageFactory);
     }
     
-    public void AddCrowdControl(CrowdControlType crowdControlType)
+    public void AddCrowdControl(CrowdControlType crowdControlType, BaseUnit target, BaseUnit caster)
     {
+        var context = new CCContext(_damageFactory, target, caster);
         var crowdControl = CrowdControlFactory.CreateCrowdControl(crowdControlType);
         if (crowdControl == null)
             return;
 
-        _crowdControlList.Add(crowdControl);
-        
-        Debug.Log($"{_target} get {crowdControlType}\nCrowdControl List: \n{ToString()}");
+        crowdControl.ApplyCrowdControl(context);
+
+        target.crowdControlUnit.Add(crowdControl); // TODO : 중첩 상태이상 업데이트
     }
 
-    public void ApplyCrowdControl()
+    public bool RemoveCrowdControl(CrowdControlType type, BaseUnit target)
     {
-        if (_target == null || _crowdControlList.Count <= 0)
-            return;
-        
-        foreach (var crowdControl in _crowdControlList)
+        switch(type)
         {
-            // TODO : Calculate CC damage
-            crowdControl.ApplyCrowdControl(_target);
+            case CrowdControlType.Stun:
+                return target.crowdControlUnit.Remove<StunCC>();
+            case CrowdControlType.Burn:
+                return target.crowdControlUnit.Remove<BurnCC>();
+            case CrowdControlType.Suppression:
+                return target.crowdControlUnit.Remove<SuppressionCC>();
+            case CrowdControlType.Exposure:
+                return target.crowdControlUnit.Remove<ExposeCC>();
+            case CrowdControlType.Overload:
+                return target.crowdControlUnit.Remove<FloodCC>();
+            case CrowdControlType.Confusion:
+                return target.crowdControlUnit.Remove<ConfusionCC>();
         }
-    }
 
-    private string ToString()
-    {
-        string result = $"";
-        foreach (var crowdControl in _crowdControlList)
-        {
-            result += $"\n{crowdControl.GetType().Name}";
-        }
-        return result;
+        return false;
     }
 }

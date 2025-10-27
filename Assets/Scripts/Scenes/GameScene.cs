@@ -12,8 +12,8 @@ using UnityEngine.SceneManagement;
 
 public class GameScene : AbstractScene
 {
-    [Header("Data Settings")] 
-    [SerializeField] private EntityDataCreator dataCreator;
+    [Header("Data Settings")]
+    [SerializeField] private DataHandler dataHandler;
     [SerializeField] private string[] playerUnitID;
     [SerializeField] private string[] enemyUnitID;
     private List<EntityData> entityData = null;
@@ -24,6 +24,7 @@ public class GameScene : AbstractScene
     [SerializeField] private CombatManager combatManager;
     [SerializeField] private UnitManager unitManager;
     [SerializeField] private QTEManager qteManager;
+    [SerializeField] private SelectorManager selectorManager;
 
     [Header("Service Locator Register")]
     [SerializeField] private UnitActionExecuter unitActionExecuter;
@@ -45,9 +46,11 @@ public class GameScene : AbstractScene
     protected override void BindObjects()
     {
         ServiceLocator.ForSceneOf(this)
+            .Register(dataHandler)
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(dialogueManager)
             .Register(unitManager)
+            .Register(selectorManager as ISelectorManager)
             .Register(inputHandler)
             .Register(damageFactory)
             .Register(unitActionFactory)
@@ -56,13 +59,14 @@ public class GameScene : AbstractScene
 
     protected override async UniTask InitializeObjects()
     {
-        entityData = dataCreator.CreateEntityDataWithID(playerUnitID.ToList(), enemyUnitID.ToList());
+        entityData = new EntityDataCreator().CreateEntityData(dataHandler.CharacterData, playerUnitID.ToList(), enemyUnitID.ToList());
 
         hudManager.Init();
         dialogueManager.Init();
         combatManager.Init();
         unitManager.Init();
         qteManager.Init();
+        selectorManager.Init();
 
         inputHandler.Init();
 
@@ -124,7 +128,7 @@ public class GameScene : AbstractScene
         if (debugMode)
         {
             ForDebugging();
-            combatManager.OnTernEnd += ccTester.SetCCOnRendomUnit;
+            combatManager.OnTernEnd += ccTester.SetCCOnRandomUnit;
         }
     }
 

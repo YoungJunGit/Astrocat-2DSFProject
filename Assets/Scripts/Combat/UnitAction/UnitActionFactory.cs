@@ -1,43 +1,31 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using DataEnum;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ActionFactory", menuName = "GameScene/ActionFactory", order = 3)]
 class UnitActionFactory : ScriptableObject
 {
-    [SerializeField] private UnitManager _unitManager;
-
     private Dictionary<string, SkillAttackAction> _skillDictionary = new()
     {
-        {"20010001", null} // TODO : ADD Skill here
+        {"20010001", new Skill_Taunt()} // TODO : ADD Skill here
     };
 
-    public async UniTask<BaseAttackAction> CreatePlayerBaseAttackAction(BaseUnit unit)
+    public BaseAttackAction CreatePlayerBaseAttackAction(BaseUnit unit)
     {
-        await _unitManager.GetEnemyUnitBySelector();
-
-        BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit);
-
-        return attackAction;
+        return CreateBaseAttackActionByUnitType(unit, SIDE.ENEMY);
     }
 
-    public async UniTask<BaseAttackAction> CreateEnemyBaseAttackAction(BaseUnit unit)
+    public BaseAttackAction CreateEnemyBaseAttackAction(BaseUnit unit)
     {
         // TODO : Must change method of selecting player unit
-        _unitManager.GetRandomPlayerUnitBySelector();
 
-        BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit);
-
-        return attackAction;
+        return CreateBaseAttackActionByUnitType(unit, SIDE.PLAYER);
     }
 
-    public async UniTask<BaseBuffAction> CreatePlayerBaseBuffAction(BaseUnit unit)
+    public BaseBuffAction CreatePlayerBaseBuffAction(BaseUnit unit)
     {
-        await _unitManager.GetPlayerUnitBySelector();
-
-        BaseBuffAction buffAction = new BaseBuffAction();
-
-        return buffAction;
+        return new BaseBuffAction(SIDE.PLAYER);
     }
 
     public SkillAttackAction CreateSkillAttackAction(BaseUnit unit, string skillID)
@@ -54,14 +42,14 @@ class UnitActionFactory : ScriptableObject
         return skillAction;
     }
 
-    private BaseAttackAction CreateBaseAttackActionByUnitType(BaseUnit unit)
+    private BaseAttackAction CreateBaseAttackActionByUnitType(BaseUnit unit, SIDE side)
     {
         switch (unit.GetUnitType())
         {
             case DataEnum.UNIT_TYPE.MELEE:
-                return new MeleeAttack();
+                return new MeleeAttack(side);
             case DataEnum.UNIT_TYPE.RANGE:
-                return new RangeAttack();
+                return new RangeAttack(side);
         }
 
         return null;

@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b292a8af42819d043b9ed79c6f645dc7, type: 3}
-  m_Name: EntityDataCreator
+  m_Script: {fileID: 11500000, guid: 13fb2e2708318064f86878eb76b8fca3, type: 3}
+  m_Name: DataHandler
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 18de617c5aa922d4baee756e9b2d3e78, type: 2}
-  enemyData: {fileID: 11400000, guid: 77e9c76324547a84e8ab6cda19ad43a5, type: 2}
+  characterData: {fileID: 11400000, guid: 29400e4e7c920704c826c57465a10961, type: 2}

@@ -2,52 +2,106 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using System.Collections.Generic;
 using DataEnum;
+using TMPro;
 
 [CreateAssetMenu(fileName = "UnitSelector", menuName = "GameScene/UnitSelector", order = 1)]
-class UnitSelector : ScriptableObject
+public class UnitSelector : BaseSelector
 {
-    [SerializeField] private InputHandler inputHandler;
     [SerializeField] private UnitSelectorController controller;
     [SerializeField] private UnitSelectorObject unitSelectArrowPrefab;
-    private UnitSelectorObject unitSelectArrow;
-    private ScriptableListBaseUnit _units;
-    private SIDE side;
+    private UnitManager _unitManager;
+    private List<UnitSelectorObject> arrowList = new();
+    private ITarget<BaseUnit> _bag;
+    private ITargetStrategy _strategy;
+    private SIDE _side;
     private bool isConfirmed;
+    private bool isCancled;
 
-    public void Init(ScriptableListBaseUnit units)
+    public override void Init()
     {
-        _units = units;
-        side = SIDE.NONE;
+        _side       = SIDE.NONE;
         isConfirmed = false;
-        controller.Initialize(() => isConfirmed = true, 
-            (index) => unitSelectArrow.transform.SetParent(_units.GetUnits(side)[index].attachments.GetUnitSelectArrowPos(), false));
+        arrowList.Clear();
+        controller.Initialize(() => isConfirmed = true, () => isCancled = true, SetUnitSelectArrow);
+
+        ServiceLocator.For(this).Get(out _unitManager);
     }
 
-    public async UniTask<BaseUnit> SelectUnit(SIDE side)
+    public async UniTask<bool> SelectTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy, SIDE side)
     {
-        controller.Prepare(side, _units.GetUnits(side).Count);
-        this.side = side;
+        _bag        = bag;
+        _strategy   = strategy;
+        _side       = side;
         isConfirmed = false;
+        isCancled   = false;
+        controller.UpdateIndex(_unitManager.GetUnit(side).Count, side);
 
-        int selectIndex = controller.GetSelectionIndex(side);
-        unitSelectArrow = Instantiate(unitSelectArrowPrefab, _units.GetUnits(side)[selectIndex].attachments.GetUnitSelectArrowPos(), false);
-        unitSelectArrow.Set(side);
-
-        using (var inputDisposer = new InputDisposer(controller.InputHandler, InputHandler.InputState.SelectUnit))
+        switch (strategy)
         {
-            controller.OnStartSelect(side);
-            await UniTask.WaitUntil(() => isConfirmed == true);
-            controller.OnEndSelect(side);
+            case SingleTargetStrategy:
+            case SplashTargetStrategy:
+                using (var inputDisposer = new InputDisposer(controller.InputHandler, InputHandler.InputState.SelectUnit))
+                {
+                    CreateUnitSelectArrow(bag, strategy, controller.GetSelectionIndex(_side));
+                    controller.Prepare();
+                    controller.OnStartSelect(side);
+                    await UniTask.WaitUntil(() => isConfirmed == true || isCancled == true);
+                    controller.OnEndSelect(side);
+                    DestroyUnitSelectArrow();
+                }
+                break;
+            case AllTargetStrategy:
+                using (var inputDisposer = new InputDisposer(controller.InputHandler, InputHandler.InputState.SelectUnit))
+                {
+                    CreateUnitSelectArrow(bag, strategy, controller.GetSelectionIndex(_side));
+                    controller.Prepare();
+                    await UniTask.WaitUntil(() => isConfirmed == true || isCancled == true);
+                    DestroyUnitSelectArrow();
+                }
+                break;
+            case RandomTargetStratgy:
+                strategy.SelectTarget(_unitManager.GetUnit(_side), bag);
+                break;
         }
 
-        Destroy(unitSelectArrow.gameObject);
-
-        return _units.GetUnits(side)[controller.GetSelectionIndex(side)];
+        return !isCancled;
     }
 
-    public BaseUnit SelectRandomUnit(SIDE side)
+    public bool SelectRandomTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy)
     {
-        int randomIndex = Random.Range(0, _units.GetUnits(side).Count);
-        return _units.GetUnits(side)[randomIndex];
+        strategy.SelectTarget(_unitManager.GetPlayerUnits(), bag);
+
+        if(bag.Targets.Count == 0) 
+            return false;
+
+        return true;
+    }
+
+    private void SetUnitSelectArrow(int targetIndex)
+    {
+        DestroyUnitSelectArrow();
+        CreateUnitSelectArrow(_bag, _strategy, targetIndex);
+    }
+
+    private void CreateUnitSelectArrow(ITarget<BaseUnit> bag, ITargetStrategy strategy, int targetIndex)
+    {
+        strategy.SelectTarget(_unitManager.GetUnit(_side), bag, targetIndex);
+
+        foreach(var target in bag.Targets)
+        {
+            UnitSelectorObject arrow = Instantiate(unitSelectArrowPrefab, target.attachments.GetUnitSelectArrowPos(), false);
+            bool IsSelectable = strategy.Filter == null || !strategy.Filter(target);
+            arrow.Init(_side, IsSelectable);
+            arrowList.Add(arrow);
+        }
+    }
+
+    private void DestroyUnitSelectArrow()
+    {
+        foreach(var arrow in arrowList)
+        {
+            Destroy(arrow.gameObject);
+        }
+        arrowList.Clear();
     }
 }

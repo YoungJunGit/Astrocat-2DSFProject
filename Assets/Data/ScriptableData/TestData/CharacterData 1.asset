@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c43536f6196f5e4b98ca162b250e2d9, type: 3}
+  m_Name: CharacterData 1
+  m_EditorClassIdentifier: 
+  json: {fileID: 4900000, guid: 6f088fda71f1b9a48a4be73769a115fd, type: 3}
+  decryptToggle: 0
+  data:
+  - code: 10001001
+    table: 10
+    kind: 0
+    index: 1001
+    Side: 1
+    Name: Rifleman
+    Max_HP: 100
+    Max_SP: 9
+    Default_Attack: 40
+    Default_Defense: 10
+    Default_SP: 3
+    Default_Speed: 10
+    Critical_Chance: 0.3
+    Critical_Damage_Rate: 1.3
+    Counter_Damage_Rate: 1.3
+    Skill_ID:
+    - 20010001
+    - 20010002
+    - 20010003
+    Element_Charge_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    Element_Charge_Resist: 1
+    Overload_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    Asset_File: player_Rifleman
+  - code: 10001002
+    table: 10
+    kind: 0
+    index: 1002
+    Side: 1
+    Name: Sniperman
+    Max_HP: 100
+    Max_SP: 9
+    Default_Attack: 40
+    Default_Defense: 10
+    Default_SP: 3
+    Default_Speed: 10
+    Critical_Chance: 0.3
+    Critical_Damage_Rate: 1.3
+    Counter_Damage_Rate: 1.3
+    Skill_ID: []
+    Element_Charge_Rate: []
+    Element_Charge_Resist: 0
+    Overload_Rate: []
+    Asset_File: player_Sniper
+  - code: 10001003
+    table: 10
+    kind: 0
+    index: 1003
+    Side: 1
+    Name: Commissar
+    Max_HP: 100
+    Max_SP: 9
+    Default_Attack: 40
+    Default_Defense: 10
+    Default_SP: 3
+    Default_Speed: 10
+    Critical_Chance: 0.3
+    Critical_Damage_Rate: 1.3
+    Counter_Damage_Rate: 1.3
+    Skill_ID: []
+    Element_Charge_Rate: []
+    Element_Charge_Resist: 0
+    Overload_Rate: []
+    Asset_File: player_Commissar
+  - code: 10102001
+    table: 10
+    kind: 1
+    index: 2001
+    Side: 2
+    Name: Rifleman Penguin
+    Max_HP: 100
+    Max_SP: 9
+    Default_Attack: 40
+    Default_Defense: 10
+    Default_SP: 3
+    Default_Speed: 10
+    Critical_Chance: 0.3
+    Critical_Damage_Rate: 1.3
+    Counter_Damage_Rate: 1
+    Skill_ID: []
+    Element_Charge_Rate: []
+    Element_Charge_Resist: 0
+    Overload_Rate: []
+    Asset_File: penguin_Rifleman
+  - code: 10012002
+    table: 10
+    kind: 1
+    index: 2002
+    Side: 2
+    Name: Berserker Penguin
+    Max_HP: 100
+    Max_SP: 9
+    Default_Attack: 40
+    Default_Defense: 10
+    Default_SP: 3
+    Default_Speed: 10
+    Critical_Chance: 0.3
+    Critical_Damage_Rate: 1.3
+    Counter_Damage_Rate: 1
+    Skill_ID: []
+    Element_Charge_Rate: []
+    Element_Charge_Resist: 0
+    Overload_Rate: []
+    Asset_File: penguin_Berserker
+  - code: 10102003
+    table: 10
+    kind: 1
+    index: 2003
+    Side: 2
+    Name: Commander Penguin
+    Max_HP: 100
+    Max_SP: 9
+    Default_Attack: 40
+    Default_Defense: 10
+    Default_SP: 3
+    Default_Speed: 10
+    Critical_Chance: 0.3
+    Critical_Damage_Rate: 1.3
+    Counter_Damage_Rate: 1
+    Skill_ID: []
+    Element_Charge_Rate: []
+    Element_Charge_Resist: 0
+    Overload_Rate: []
+    Asset_File: penguin_Commander
+  - code: 10012004
+    table: 10
+    kind: 1
+    index: 2004
+    Side: 2
+    Name: Sniper Penguin
+    Max_HP: 100
+    Max_SP: 9
+    Default_Attack: 40
+    Default_Defense: 10
+    Default_SP: 3
+    Default_Speed: 10
+    Critical_Chance: 0.3
+    Critical_Damage_Rate: 1.3
+    Counter_Damage_Rate: 1
+    Skill_ID: []
+    Element_Charge_Rate: []
+    Element_Charge_Resist: 0
+    Overload_Rate: []
+    Asset_File: penguin_Sniper

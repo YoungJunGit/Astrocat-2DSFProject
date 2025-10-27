@@ -55,6 +55,15 @@ namespace DataEnum
         MOVE
     }
 
+    public enum ACTION_TARGET_TYPE
+    {
+        NONE = 0,
+        SINGLE,
+        ALL,
+        RANDOM,
+        SPLASH
+    }
+
     /*Ãß°¡*/
     #endregion
 }

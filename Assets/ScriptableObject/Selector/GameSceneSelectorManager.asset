@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6727fd92890775942a8a19a382d72412, type: 3}
+  m_Name: GameSceneSelectorManager
+  m_EditorClassIdentifier: 
+  _inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
+  _selectorList:
+  - {fileID: 11400000, guid: 5fb1648dfc12e0d4881c1a7b50932813, type: 2}
+  - {fileID: 11400000, guid: d4696c4828b72dc4aa29a30bd0cb7d1e, type: 2}

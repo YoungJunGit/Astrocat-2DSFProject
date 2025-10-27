@@ -172,20 +172,21 @@ MonoBehaviour:
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
   changeSceneOnEndGame: 1
   changeSceneIndex: 1
-  dataCreator: {fileID: 11400000, guid: 14c099d250c80944a88340265862554b, type: 2}
+  dataHandler: {fileID: 11400000, guid: 9d14d65fcd79e1348bc607487b911110, type: 2}
   playerUnitID:
-  - 10010001
-  - 10010002
-  - 
+  - 10001001
+  - 10001002
+  - 10001003
   enemyUnitID:
-  - 3001001
-  - 3001002
-  - 
+  - 10102001
+  - 10012002
+  - 10102003
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
   dialogueManager: {fileID: 11400000, guid: a9c4d3a688e42c147bd8d307a5cb2de2, type: 2}
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
   unitManager: {fileID: 11400000, guid: abc66dd6e42afcc458ecbf90edc683ca, type: 2}
   qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
+  selectorManager: {fileID: 11400000, guid: b3670eb98c9cab141866b57a52ccef58, type: 2}
   unitActionExecuter: {fileID: 11400000, guid: ef3fa3b1869ee0245a386f002e7ebdcb, type: 2}
   damageFactory: {fileID: 11400000, guid: 840102ba6981ac64c81bc20a98d8c779, type: 2}
   inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
@@ -235,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24837b69b8b5a4b44b4b41d4be215bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestType: 0
 --- !u!114 &1732112617
 MonoBehaviour:
   m_ObjectHideFlags: 0

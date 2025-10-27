@@ -9,6 +9,7 @@ public class UnitSelectorController : ScriptableObject
     public InputHandler InputHandler => inputHandler;
 
     private UnityAction confirm;
+    private UnityAction cancle;
     private UnityAction<int> select;
 
     private int _selectedUnitIndex;
@@ -17,33 +18,34 @@ public class UnitSelectorController : ScriptableObject
 
     private int _maxUnitCount;
 
-    public void Initialize(UnityAction confirm, UnityAction<int> select)
+    public void Initialize(UnityAction confirm, UnityAction cancle, UnityAction<int> select)
     {
         _selectedUnitIndex              = 0;
         _previousEnemySelectionIndex    = 0;
         _previousPlayerSelectionIndex   = 0;
         this.confirm    = confirm;
+        this.cancle     = cancle;
         this.select     = select;
     }
 
-    public void Prepare(SIDE side, int maxUnitCount)
+    public void Prepare()
+    {
+        inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
+        inputHandler.OnSelectUnitSelectionCancle  += () => cancle();
+    }
+
+    public void UpdateIndex(int maxUnitCount, SIDE side)
     {
         _maxUnitCount = maxUnitCount;
 
-        if (side == SIDE.ENEMY)
-        {
+        if(side == SIDE.ENEMY)
             _previousEnemySelectionIndex = _previousEnemySelectionIndex > _maxUnitCount - 1 ? _maxUnitCount - 1 : _previousEnemySelectionIndex;
-        }
-        else if(side == SIDE.PLAYER)
-        {
+        else if (side == SIDE.PLAYER)
             _previousPlayerSelectionIndex = _previousPlayerSelectionIndex > _maxUnitCount - 1 ? _maxUnitCount - 1 : _previousPlayerSelectionIndex;
-        }
     }
 
     public void OnStartSelect(SIDE side)
     {
-        inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
-
         if (side == SIDE.ENEMY)
         {
             _selectedUnitIndex = _previousEnemySelectionIndex;
@@ -66,8 +68,11 @@ public class UnitSelectorController : ScriptableObject
 
     private void OnUnitSelect(int value)
     {
+        int temp = _selectedUnitIndex;
         _selectedUnitIndex = Mathf.Clamp(_selectedUnitIndex + value, 0, _maxUnitCount - 1);
-        select(_selectedUnitIndex);
+
+        if(_selectedUnitIndex != temp)
+            select(_selectedUnitIndex);
     }
 
     public int GetSelectionIndex(SIDE side)
