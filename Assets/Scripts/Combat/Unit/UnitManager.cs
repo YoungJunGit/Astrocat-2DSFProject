@@ -8,18 +8,14 @@ using UnityEngine;
 public class UnitManager : ScriptableObject
 {
     [SerializeField] private ScriptableListBaseUnit currentUnitList = null;
-
-    [SerializeField] private UnitSelector unitSelector;
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
 
-    private BaseUnit _selectedUnit;
     private List<BaseUnit> unitList = new List<BaseUnit>();
 
     public void Init()
     {
         spawner.Init();
-        unitSelector.Init(currentUnitList);
     }
 
     public void Prepare()
@@ -56,23 +52,6 @@ public class UnitManager : ScriptableObject
         
         return enemyUnit;
     }
-
-    public async UniTask GetEnemyUnitBySelector()
-    {
-        _selectedUnit = await unitSelector.SelectUnit(SIDE.ENEMY);
-    }
-    
-    public async UniTask GetPlayerUnitBySelector()
-    {
-        _selectedUnit = await unitSelector.SelectUnit(SIDE.PLAYER);
-    }
-
-    public void GetRandomPlayerUnitBySelector()
-    {
-        _selectedUnit = unitSelector.SelectRandomUnit(SIDE.PLAYER);
-    }
-
-    public BaseUnit SelectedUnit => _selectedUnit;
 
     public List<BaseUnit> GetEnemyUnits()
     {

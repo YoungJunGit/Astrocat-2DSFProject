@@ -43,7 +43,7 @@ class PlayerBaseAttackAction
                     targetStat._currentCondition = _caster.GetStat().ResistType;
                 }
                 else */
-                targetStat._currentCondition = _caster.GetStat().ResistType;
+                // targetStat._currentCondition = _caster.GetStat().ResistType;
                 break;
 
             case ELEMENT_TYPE.FIRE:

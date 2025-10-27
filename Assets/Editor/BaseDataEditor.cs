@@ -62,7 +62,7 @@ public class MonsterDataEditor : BaseDataEditor<MonsterDataEntity>
 }
 
 [CustomEditor(typeof(PlayerData))]
-public class CharacterDataEditor : BaseDataEditor<CharacterDataEntity>
+public class PlayerDataEditor : BaseDataEditor<CharacterDataEntity>
 {
 
 }
@@ -75,6 +75,12 @@ public class SkillDataEditor : BaseDataEditor<SkillDataEntity>
 
 [CustomEditor(typeof(StringData))]
 public class StringDataEditor : BaseDataEditor<StringDataEntity>
+{
+
+}
+
+[CustomEditor(typeof(CharacterData))]
+public class CharacterDataEditor : BaseDataEditor<EntityData>
 {
 
 }

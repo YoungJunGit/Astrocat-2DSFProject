@@ -1,11 +1,13 @@
-using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using DataEnum;
 using NaughtyAttributes;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "ActionSelector", menuName = "GameScene/ActionSelector", order = 1)]
-class ActionSelector : ScriptableObject
+public class ActionSelector : BaseSelector
 {
     [FormerlySerializedAs("_actionFactory")] [SerializeField] private UnitActionFactory unitActionFactory;
     [SerializeField] private ActionSelectionButtons selectorPrefab;
@@ -18,7 +20,7 @@ class ActionSelector : ScriptableObject
     private int _selectedActionType;
     private int _selectedSkillIndex;
 
-    public void Init()
+    public override void Init()
     {
         selector = Instantiate(selectorPrefab);
         selector.gameObject.SetActive(false);
@@ -31,7 +33,7 @@ class ActionSelector : ScriptableObject
         ServiceLocator.For(this).Get(out _soundService);
     }
 
-    public async UniTask<IUnitAction> SelectAction(PlayerUnit playerUnit)
+    public async UniTask SelectAction(PlayerUnit playerUnit, Action<IUnitAction> onSelected)
     {
         Debug.Log($"{playerUnit.GetStat().Name} : Select Action");
         
@@ -57,9 +59,7 @@ class ActionSelector : ScriptableObject
                         selector.gameObject.SetActive(false);
 
                         selectActionComplete = true;
-                        unitAction = await unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
-
-                        _soundService.PlayEffectSound("Player_Shoot");
+                        unitAction = unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
                         break;
                     case 2:
                         _soundService.PlayEffectSound("Start_Menu");
@@ -76,7 +76,7 @@ class ActionSelector : ScriptableObject
                         if (skillName.Count == 0)
                         {
                             selector.gameObject.SetActive(false);
-                            return null;
+                            return;
                         }
 
                         selector.EnableSkillSelectionButtons(skillName.ToArray());
@@ -101,19 +101,18 @@ class ActionSelector : ScriptableObject
                 }
             }
         }
-        
-        return unitAction;
+
+        if(unitAction != null)
+            onSelected?.Invoke(unitAction);
     }
 
-    public async UniTask<IUnitAction> SelectAction(EnemyUnit enemyUnit)
+    public void SelectAction(EnemyUnit enemyUnit, Action<IUnitAction> onSelected)
     {
         // TODO : Add Other Actions
         //_selectedActionType = Random.Range(0, 3);
+        IUnitAction unitAction = unitActionFactory.CreateEnemyBaseAttackAction(enemyUnit);
 
-        IUnitAction unitAction = null;
-
-        unitAction = await unitActionFactory.CreateEnemyBaseAttackAction(enemyUnit);
-
-        return unitAction;
+        if(unitAction != null)
+            onSelected?.Invoke(unitAction);
     }    
 }

@@ -5,31 +5,31 @@ using UnityEngine;
 
 public interface IUnitActionExecuter
 {
-    public UniTask ExecuteRequest(BaseUnit caster, IUnitAction action);
+    public UniTask ExecuteRequest(BaseUnit caster, IUnitAction action, ITarget<BaseUnit> target = null);
 }
 
 [CreateAssetMenu(fileName = "UnitActionExecuter", menuName = "GameScene/UnitActionExecuter")]
 public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
 {
-    UnitManager _unitManager;
     DialogueManager _dialogueManager;
     DamageFactory _damageFactory;
+    ISoundService _soundService;
     IParryingApplier _parryingApplier;
     InputHandler _inputHandler;
 
     public void Init()
     {
         ServiceLocator.For(this)
-            .Get(out _unitManager)
             .Get(out _dialogueManager)
             .Get(out _damageFactory)
+            .Get(out _soundService)
             .Get(out _parryingApplier)
             .Get(out _inputHandler);
     }
     
-    public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action)
+    public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action, ITarget<BaseUnit> target)
     {
-        var context = new UnitActionContext(caster, _unitManager, _dialogueManager, _damageFactory, _parryingApplier, _inputHandler);
+        var context = new UnitActionContext(caster, target, _dialogueManager, _damageFactory, _soundService, _parryingApplier, _inputHandler);
         var cts = new CancellationTokenSource();
         var unitActionEvent = new UnitActionEvent();
         
