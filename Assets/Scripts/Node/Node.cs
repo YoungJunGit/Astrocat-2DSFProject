@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Node : MonoBehaviour, IUpdateObserver, IDisposable
+public class Node : MonoBehaviour, IUpdateObserver
 {
 
     [SerializeField] public int floor { get; set; }
@@ -279,15 +279,13 @@ public class Node : MonoBehaviour, IUpdateObserver, IDisposable
 
     private void ChangeScene(int sceneNum)
     {
-        using(IDisposable dispose = this)
-        {
-            AsyncOperation asyncOperation = null;
-            asyncOperation = SceneManager.LoadSceneAsync(sceneNum);
-            asyncOperation.allowSceneActivation = true;
-        }
+        AsyncOperation asyncOperation = null;
+        UpdatePublisher.DiscribeObserver(this);
+        asyncOperation = SceneManager.LoadSceneAsync(sceneNum);
+        asyncOperation.allowSceneActivation = true;
     }
 
-    public void Dispose()
+    private void OnDestroy()
     {
         UpdatePublisher.DiscribeObserver(this);
     }
