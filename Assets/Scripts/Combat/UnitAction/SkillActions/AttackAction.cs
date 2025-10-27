@@ -22,6 +22,9 @@ class MeleeAttack : BaseAttackAction
 {
     public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
+        if (context.Caster is EnemyUnit)
+            await unitAction.ShowAttackMessage(context);
+
         var inputDisposer = new InputDisposer(context.InputHandler, InputHandler.InputState.Parry);
 
         // Save Position
@@ -32,7 +35,7 @@ class MeleeAttack : BaseAttackAction
         Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
         context.Caster.combatInfo.targetPos = (Vector2)context.unitManager.SelectedUnit.attachments.GetMeleeHitPos().position + offset;
 
-        context.Caster.GetAnimationHandler().attack += () => { unitAction.DamageEvent(context); };
+        context.Caster.GetAnimationHandler().Attack += () => { unitAction.DamageEvent(context); };
         context.Caster.combatInfo.actionList.Add("FinishedAction", () => { unitAction.OnFinishedAction(context); });
         context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
 
@@ -53,8 +56,11 @@ class RangeAttack : BaseAttackAction
 {
     public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
+        if (context.Caster is EnemyUnit)
+            await unitAction.ShowAttackMessage(context);
+
         BaseBullet bullet = null;
-        context.Caster.GetAnimationHandler().attack += () => { bullet = ShootBullet(context, unitAction); };
+        context.Caster.GetAnimationHandler().Attack += () => { bullet = ShootBullet(context, unitAction); };
         context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.ATTACK);
 
         try

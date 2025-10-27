@@ -6,18 +6,11 @@ using UnityEngine;
 class UnitActionFactory : ScriptableObject
 {
     [SerializeField] private UnitManager _unitManager;
-    [SerializeField] private DialogueManager dialogueManager;
-    [SerializeField] private UnitSelector _unitSelector;
 
     private Dictionary<string, SkillAttackAction> _skillDictionary = new()
     {
-        {"test", null} // TODO : ADD Skill here
+        {"20010001", null} // TODO : ADD Skill here
     };
-    
-    public void Init()
-    {
-        _unitSelector.Init();
-    }
 
     public async UniTask<BaseAttackAction> CreatePlayerBaseAttackAction(BaseUnit unit)
     {
@@ -35,8 +28,6 @@ class UnitActionFactory : ScriptableObject
 
         BaseAttackAction attackAction = CreateBaseAttackActionByUnitType(unit);
 
-        await dialogueManager.ShowAttackWarningDialogue(unit);
-
         return attackAction;
     }
 
@@ -52,6 +43,7 @@ class UnitActionFactory : ScriptableObject
     public SkillAttackAction CreateSkillAttackAction(BaseUnit unit, string skillID)
     {
         SkillAttackAction skillAction = null;
+        Debug.Log($"Find SkillID : {skillID}" );
         _skillDictionary.TryGetValue(skillID, out skillAction);
 
         if (skillAction == null)

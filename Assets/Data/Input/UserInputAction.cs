@@ -126,6 +126,15 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectionCancle"",
+                    ""type"": ""Button"",
+                    ""id"": ""19890508-e15b-48f2-9f50-3779ee921eb9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -293,6 +302,17 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""action"": ""Touch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d46055f-2031-4af2-914e-be08815042cb"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectionCancle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -457,6 +477,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         m_SelectUnit_PlayerSelectionMove = m_SelectUnit.FindAction("PlayerSelectionMove", throwIfNotFound: true);
         m_SelectUnit_Touch = m_SelectUnit.FindAction("Touch", throwIfNotFound: true);
         m_SelectUnit_SelectionConfirm = m_SelectUnit.FindAction("SelectionConfirm", throwIfNotFound: true);
+        m_SelectUnit_SelectionCancle = m_SelectUnit.FindAction("SelectionCancle", throwIfNotFound: true);
         // SelectAction
         m_SelectAction = asset.FindActionMap("SelectAction", throwIfNotFound: true);
         m_SelectAction_BaseAttack = m_SelectAction.FindAction("BaseAttack", throwIfNotFound: true);
@@ -555,6 +576,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_SelectUnit_PlayerSelectionMove;
     private readonly InputAction m_SelectUnit_Touch;
     private readonly InputAction m_SelectUnit_SelectionConfirm;
+    private readonly InputAction m_SelectUnit_SelectionCancle;
     /// <summary>
     /// Provides access to input actions defined in input action map "SelectUnit".
     /// </summary>
@@ -582,6 +604,10 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "SelectUnit/SelectionConfirm".
         /// </summary>
         public InputAction @SelectionConfirm => m_Wrapper.m_SelectUnit_SelectionConfirm;
+        /// <summary>
+        /// Provides access to the underlying input action "SelectUnit/SelectionCancle".
+        /// </summary>
+        public InputAction @SelectionCancle => m_Wrapper.m_SelectUnit_SelectionCancle;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -620,6 +646,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
             @SelectionConfirm.started += instance.OnSelectionConfirm;
             @SelectionConfirm.performed += instance.OnSelectionConfirm;
             @SelectionConfirm.canceled += instance.OnSelectionConfirm;
+            @SelectionCancle.started += instance.OnSelectionCancle;
+            @SelectionCancle.performed += instance.OnSelectionCancle;
+            @SelectionCancle.canceled += instance.OnSelectionCancle;
         }
 
         /// <summary>
@@ -643,6 +672,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
             @SelectionConfirm.started -= instance.OnSelectionConfirm;
             @SelectionConfirm.performed -= instance.OnSelectionConfirm;
             @SelectionConfirm.canceled -= instance.OnSelectionConfirm;
+            @SelectionCancle.started -= instance.OnSelectionCancle;
+            @SelectionCancle.performed -= instance.OnSelectionCancle;
+            @SelectionCancle.canceled -= instance.OnSelectionCancle;
         }
 
         /// <summary>
@@ -1034,6 +1066,13 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSelectionConfirm(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectionCancle" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectionCancle(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "SelectAction" which allows adding and removing callbacks.

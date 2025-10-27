@@ -31,11 +31,6 @@ public class CrowdControlManager
         if (crowdControl == null)
             return;
 
-        if (TryUpdateExistingCrowdControl(crowdControl))
-            return;
-
-        crowdControl.Count = 1;
-        
         _crowdControlList.Add(crowdControl);
         
         Debug.Log($"{_target} get {crowdControlType}\nCrowdControl List: \n{ToString()}");
@@ -52,23 +47,13 @@ public class CrowdControlManager
             crowdControl.ApplyCrowdControl(_target);
         }
     }
-    
-    private bool TryUpdateExistingCrowdControl(ICrowdControl crowdControl)
-    {
-        if (_crowdControlList.TryGetValue(crowdControl, out ICrowdControl existing))
-        {
-            existing.Count += 1;
-            return true;
-        }
-        return false;
-    }
 
     private string ToString()
     {
         string result = $"";
         foreach (var crowdControl in _crowdControlList)
         {
-            result += $"\n{crowdControl.GetType().Name} : {crowdControl.Count}";
+            result += $"\n{crowdControl.GetType().Name}";
         }
         return result;
     }

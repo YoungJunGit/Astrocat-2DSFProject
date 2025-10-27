@@ -1,9 +1,6 @@
 using DataEnum;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "UnitSelectorController", menuName = "GameScene/UnitSelectorController", order = 1)]
 public class UnitSelectorController : ScriptableObject
@@ -14,8 +11,6 @@ public class UnitSelectorController : ScriptableObject
     private UnityAction confirm;
     private UnityAction<int> select;
 
-    private SIDE side;
-
     private int _selectedUnitIndex;
     private int _previousEnemySelectionIndex;
     private int _previousPlayerSelectionIndex;
@@ -24,7 +19,6 @@ public class UnitSelectorController : ScriptableObject
 
     public void Initialize(UnityAction confirm, UnityAction<int> select)
     {
-        side                            = SIDE.NONE;
         _selectedUnitIndex              = 0;
         _previousEnemySelectionIndex    = 0;
         _previousPlayerSelectionIndex   = 0;
@@ -48,8 +42,6 @@ public class UnitSelectorController : ScriptableObject
 
     public void OnStartSelect(SIDE side)
     {
-        this.side = side;
-
         inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
 
         if (side == SIDE.ENEMY)
@@ -64,20 +56,18 @@ public class UnitSelectorController : ScriptableObject
         }
     }
 
-    public void OnEndSelect()
+    public void OnEndSelect(SIDE side)
     {
-        inputHandler.OnSelectUnitSelectionConfirm = null;
-
         if (side == SIDE.ENEMY)
-        {
             _previousEnemySelectionIndex = _selectedUnitIndex;
-            inputHandler.OnSelectUnitEnemySelectionMove = null;
-        }
         else if (side == SIDE.PLAYER)
-        {
             _previousPlayerSelectionIndex = _selectedUnitIndex;
-            inputHandler.OnSelectUnitPlayerSelectionMove = null;
-        }
+    }
+
+    private void OnUnitSelect(int value)
+    {
+        _selectedUnitIndex = Mathf.Clamp(_selectedUnitIndex + value, 0, _maxUnitCount - 1);
+        select(_selectedUnitIndex);
     }
 
     public int GetSelectionIndex(SIDE side)
@@ -88,11 +78,5 @@ public class UnitSelectorController : ScriptableObject
             return _previousEnemySelectionIndex;
         else
             return 0;
-    }
-
-    private void OnUnitSelect(int value)
-    {
-        _selectedUnitIndex = Mathf.Clamp(_selectedUnitIndex + value, 0, _maxUnitCount - 1);
-        select(_selectedUnitIndex);
     }
 }

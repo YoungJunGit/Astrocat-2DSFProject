@@ -14,9 +14,10 @@ class ActionSelector : ScriptableObject
     private ActionSelectionButtons selector;
     private ISoundService _soundService;
 
+    List<string> skillName = new();
     private int _selectedActionType;
     private int _selectedSkillIndex;
-    
+
     public void Init()
     {
         selector = Instantiate(selectorPrefab);
@@ -24,13 +25,12 @@ class ActionSelector : ScriptableObject
         
         selector.Init();
         
-        selector.OnBaisicSelection += (index) => _selectedActionType = index;
+        selector.OnBasicSelection += (index) => _selectedActionType = index;
         selector.OnSkillSelection += (index) => _selectedSkillIndex = index;
 
         ServiceLocator.For(this).Get(out _soundService);
     }
-    
-    List<string> skillName = new();
+
     public async UniTask<IUnitAction> SelectAction(PlayerUnit playerUnit)
     {
         Debug.Log($"{playerUnit.GetStat().Name} : Select Action");
@@ -41,59 +41,66 @@ class ActionSelector : ScriptableObject
 
         _selectedActionType = 0;
 
+        IUnitAction unitAction = null;
+        bool selectActionComplete = false;
         using (var inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectAction))
         {
-            await UniTask.WaitUntil(() => _selectedActionType != 0);
-        }
+            while (selectActionComplete != true)
+            {
+                await UniTask.WaitUntil(() => _selectedActionType != 0);
 
-        IUnitAction unitAction = null;
-        switch (_selectedActionType)
-        {
-            case 1:
-                _soundService.PlayEffectSound("Click");
-                Debug.Log("Click Sound");
-                selector.gameObject.SetActive(false);
-                unitAction = await unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
-
-                _soundService.PlayEffectSound("Player_Shoot");
-                // For Debugging
-                //unitAction = await _actionFactory.CreatePlayerBaseBuffAction(playerUnit);
-                break;
-            case 2:
-                _soundService.PlayEffectSound("Start_Menu");
-                var skillID = playerUnit.GetStat().GetSkillsID();
-                
-                skillName.Clear();
-                foreach (var skill in skillID)
+                switch (_selectedActionType)
                 {
-                    CombatUtils.UnitSkillNameDictionary.TryGetValue(skill, out var name);
-                    
-                    if (name != null)
-                        skillName.Add(name);
-                }
+                    case 1:
+                        _soundService.PlayEffectSound("Click");
+                        Debug.Log("Click Sound");
+                        selector.gameObject.SetActive(false);
 
-                if (skillName.Count == 0)
-                {
-                    selector.gameObject.SetActive(false);
-                    return null;
-                }
-                
-                selector.EnableSkillSelectionButtons(skillName.ToArray());
-                
-                _selectedSkillIndex = 0;
-                await UniTask.WaitUntil(() => _selectedSkillIndex != 0);
-                
-                unitAction = unitActionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
+                        selectActionComplete = true;
+                        unitAction = await unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
 
-                selector.gameObject.SetActive(false);
-                selector.DisableSkillSelectionButtons();
-                break;
-            case 3:
-                _soundService.PlayEffectSound("Item_Select");
-                // TODO : Use Item
-                break;
+                        _soundService.PlayEffectSound("Player_Shoot");
+                        break;
+                    case 2:
+                        _soundService.PlayEffectSound("Start_Menu");
+                        var skillID = playerUnit.GetStat().GetSkillsID();
+
+                        skillName.Clear();
+                        foreach (var skill in skillID)
+                        {
+                            CombatUtils.UnitSkillNameDictionary.TryGetValue(skill, out var name);
+
+                            if (name != null)
+                                skillName.Add(name);
+                        }
+                        if (skillName.Count == 0)
+                        {
+                            selector.gameObject.SetActive(false);
+                            return null;
+                        }
+
+                        selector.EnableSkillSelectionButtons(skillName.ToArray());
+
+                        _selectedSkillIndex = 0;
+                        await UniTask.WaitUntil(() => _selectedSkillIndex != 0 || _selectedActionType != 2);
+
+                        if (_selectedSkillIndex != 0)
+                        {
+                            unitAction = unitActionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
+                            selector.gameObject.SetActive(false);
+                            selectActionComplete = true;
+                        }
+
+                        selector.DisableSkillSelectionButtons();
+                        break;
+                    case 3:
+                        selectActionComplete = true;
+                        _soundService.PlayEffectSound("Item_Select");
+                        // TODO : Use Item
+                        break;
+                }
+            }
         }
-
         
         return unitAction;
     }

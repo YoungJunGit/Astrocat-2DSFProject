@@ -46,6 +46,7 @@ public class GameScene : AbstractScene
     {
         ServiceLocator.ForSceneOf(this)
             .Register(unitActionExecuter as IUnitActionExecuter)
+            .Register(dialogueManager)
             .Register(unitManager)
             .Register(inputHandler)
             .Register(damageFactory)
