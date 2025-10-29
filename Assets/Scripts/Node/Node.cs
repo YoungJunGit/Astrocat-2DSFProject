@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using S3MG;
 using System;
 using System.Collections.Generic;
@@ -18,16 +18,16 @@ public class Node : MonoBehaviour, IUpdateObserver
 
     [SerializeField] public bool connected { get; set; } = false;
     [SerializeField] public bool visited { get; set; } = false;
-
+    [SerializeField] public bool isActive { get; set; } = false;
     [SerializeField] public float xPos { get; set; }
     [SerializeField] public float yPos { get; set; }
 
     [SerializeField] public NodeData.Type? nodeType { get; set; } = null;
 
-    [SerializeField] Image nodeImage;
-    [SerializeField] Button nodeButton;
-    [SerializeField] Image visitImage;
-    [SerializeField] TextMeshProUGUI nodeText;
+    [SerializeField] SpriteRenderer nodeImage;
+    //[SerializeField] Button nodeButton;
+    [SerializeField] SpriteRenderer visitImage;
+    [SerializeField] TextMesh nodeText;
     [SerializeField] AudioSource AS;
 
     [SerializeField] float lerpDuration = 0.8f;
@@ -54,12 +54,33 @@ public class Node : MonoBehaviour, IUpdateObserver
         UpdatePublisher.SubscribeObserver(this);
     }
 
+    private void OnMouseEnter()
+    {
+        if (!isActive || visited) return;
+        UpdatePublisher.DiscribeObserver(this);
+        nodeImage.color = Color.red;   
+    }
+
+    private void OnMouseExit()
+    {
+        if (!isActive || visited) return;
+        nodeImage.color = defaultColor;
+        UpdatePublisher.SubscribeObserver(this);
+    }
+
+    private void OnMouseDown()
+    {
+        if (!isActive || visited) return;
+        onButton = true;
+        UpdatePublisher.SubscribeObserver(this);
+    }
+
     /*------------------------------------------------------------
     Called once per frame, Executed when the GameObject and component are enabled
     ------------------------------------------------------------*/
     public void ObserverUpdate(float dt)
     {
-        if (!nodeButton.enabled || visited) return;
+        if(!isActive || visited) return;
 
         float t = (Time.time - lerpStartTime) / lerpDuration;
         if (t > 1f)
@@ -89,7 +110,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     ------------------------------------------------------------*/
     public void enableButton()
     {
-        nodeButton.enabled = true;
+        isActive = true;
     }
 
     /*------------------------------------------------------------
@@ -97,7 +118,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     ------------------------------------------------------------*/
     public void disableButton()
     {
-        nodeButton.enabled = false;
+        isActive = false;
     }
 
     /*------------------------------------------------------------
@@ -105,7 +126,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     ------------------------------------------------------------*/
     public void passedNode()
     {
-        disableButton();
+        //disableButton();
         if (visited)
         {
             nodeImage.color = defaultColor;
@@ -123,10 +144,12 @@ public class Node : MonoBehaviour, IUpdateObserver
     ------------------------------------------------------------*/
     void fillUp()
     {
+        Color color = visitImage.color;
         if (elapsedTime < fillTime)
         {
             float amountValue = Mathf.Lerp(0f, 1.0f, elapsedTime / fillTime);
-            visitImage.fillAmount = amountValue;
+            color.a = amountValue;
+            visitImage.color = color;
             elapsedTime += Time.deltaTime;
         }
         else
@@ -141,7 +164,9 @@ public class Node : MonoBehaviour, IUpdateObserver
     ------------------------------------------------------------*/
     void fillReset()
     {
-        visitImage.fillAmount = 0;
+        Color color = visitImage.color;
+        color.a = 0.0f;
+        visitImage.color = color;
         elapsedTime = 0f;
     }
 

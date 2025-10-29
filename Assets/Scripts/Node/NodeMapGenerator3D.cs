@@ -1,145 +1,109 @@
-﻿using System.Collections.Generic;
+﻿using S3MG;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NodeMapGenerator_3D", menuName = "Map/3D Node Map Generator")]
-public class NodeMapGenerator3D : MonoBehaviour
+[CreateAssetMenu(menuName = "CreateNodeMapGenerator3D", fileName = "NodeMapGenerator3D")]
+public class NodeMapGenerator3D : ScriptableObject
 {
     [Header("Map Settings")]
-    public int floorCount = 5;
-    public int routeCount = 4;
-    public float floorSpacing = 3f;
-    public float routeSpacing = 2f;
-    public float heightOffset = 0.5f;
-
-    [Header("Prefabs")]
     public GameObject nodePrefab;
+    public int floorCount = 5;
+    public int routeCount = 3;
+    public float xSpacing = 4f;
+    public float zSpacing = 3f;
+    public float yRandomOffset = 0.2f;
 
-    [Header("Debug")]
-    public bool showConnections = true;
+    [Header("Node Visual Settings")]
+    public Sprite defaultSprite;
+    public Sprite startSprite;
+    public Sprite finalSprite;
 
-    [HideInInspector] public List<List<Node3D>> nodes = new List<List<Node3D>>();
+    [HideInInspector] public List<Node3D> allNodes = new List<Node3D>();
     [HideInInspector] public Node3D nowNode;
+    [HideInInspector] public bool skipNodeProcessing = false;
 
-    void Start()
+    private Transform parentTransform;
+
+    /// <summary>
+    /// ScriptableObject는 MonoBehaviour가 아니므로 직접 실행할 때 부모 Transform을 받아야 함
+    /// </summary>
+    public void GenerateMap(Transform parent)
     {
-        GenerateMap();
-    }
+        parentTransform = parent;
+        allNodes.Clear();
 
-    public void GenerateMap()
-    {
-        ClearOldNodes();
-
-        for (int floor = 0; floor < floorCount; floor++)
+        for (int f = 0; f < floorCount; f++)
         {
-            List<Node3D> floorNodes = new List<Node3D>();
-
-            for (int route = 0; route < routeCount; route++)
+            for (int r = 0; r < routeCount; r++)
             {
-                Vector3 position = new Vector3(
-                    route * routeSpacing,
-                    floor * heightOffset,
-                    floor * floorSpacing
-                );
-
-                GameObject nodeObj = Instantiate(nodePrefab, position, Quaternion.identity, transform);
+                Vector3 pos = new Vector3(r * xSpacing, Random.Range(-yRandomOffset, yRandomOffset), f * zSpacing);
+                GameObject nodeObj = Instantiate(nodePrefab, pos, Quaternion.identity, parentTransform);
                 Node3D node = nodeObj.GetComponent<Node3D>();
+
+                node.floor = f;
+                node.route = r;
                 node.Init(this);
+                allNodes.Add(node);
 
-                node.floor = floor;
-                node.route = route;
-
-                // 간단한 타입 지정
-                if (floor == 0)
-                    node.SetNodeType("Start");
-                else if (floor == floorCount - 1)
-                    node.SetNodeType("Boss");
+                // 노드 타입 및 스프라이트 설정
+                if (f == 0 && r == routeCount / 2)
+                {
+                    node.SetNodeData(startSprite ? startSprite : defaultSprite, NodeData.Type.Start, "Start");
+                }
+                else if (f == floorCount - 1)
+                {
+                    node.SetNodeData(finalSprite ? finalSprite : defaultSprite, NodeData.Type.Final, "Final");
+                }
                 else
-                    node.SetNodeType("Normal");
-
-                floorNodes.Add(node);
+                {
+                    node.SetNodeData(defaultSprite, NodeData.Type.Enemy, $"Node_{f}_{r}");
+                }
             }
-
-            nodes.Add(floorNodes);
         }
 
         ConnectNodes();
-
-        // 첫 노드 활성화
-        foreach (Node3D start in nodes[0])
-            start.HighlightAsConnected();
     }
 
-    void ConnectNodes()
+    private void ConnectNodes()
     {
-        for (int floor = 0; floor < floorCount - 1; floor++)
+        for (int i = 0; i < allNodes.Count; i++)
         {
-            List<Node3D> currentFloor = nodes[floor];
-            List<Node3D> nextFloor = nodes[floor + 1];
+            Node3D node = allNodes[i];
+            if (node.floor >= floorCount - 1) continue;
 
-            foreach (Node3D current in currentFloor)
+            foreach (Node3D next in allNodes)
             {
-                int connections = Random.Range(1, 3);
-                for (int i = 0; i < connections; i++)
+                if (next.floor == node.floor + 1 && Mathf.Abs(next.route - node.route) <= 1)
                 {
-                    Node3D target = nextFloor[Random.Range(0, nextFloor.Count)];
-                    if (!current.nextNodes.Contains(target))
-                    {
-                        current.nextNodes.Add(target);
-                        target.prevNodes.Add(current);
-                    }
+                    node.nextNodes.Add(next);
+                    next.prevNodes.Add(node);
                 }
             }
         }
     }
 
-    void ClearOldNodes()
+    public void PaintPath(Node3D node)
     {
-        foreach (Transform child in transform)
-            DestroyImmediate(child.gameObject);
-        nodes.Clear();
-    }
-
-    // 노드를 클릭했을 때 실행되는 핵심 로직
-    public void OnNodeClicked(Node3D clickedNode)
-    {
-        // 1️⃣ 모든 노드 색상 초기화
-        foreach (var floor in nodes)
+        foreach (Node3D next in node.nextNodes)
         {
-            foreach (var n in floor)
-            {
-                n.DisableNode();
-            }
-        }
-
-        // 2️⃣ 현재 노드 표시
-        clickedNode.SelectNode();
-        nowNode = clickedNode;
-
-        // 3️⃣ 연결된 노드만 활성화 표시
-        foreach (Node3D next in clickedNode.nextNodes)
-        {
-            next.HighlightAsConnected();
+            Debug.DrawLine(node.transform.position, next.transform.position, Color.yellow, 3f);
         }
     }
 
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
+    public void ToNextNode()
     {
-        if (!showConnections || nodes == null) return;
+        Debug.Log("Proceeding to next node");
+    }
 
-        Gizmos.color = Color.cyan;
-        foreach (var floorNodes in nodes)
+    public void PassedSameFloor(Node3D node)
+    {
+        foreach (Node3D n in allNodes)
         {
-            foreach (var node in floorNodes)
+            if (n.floor == node.floor && !n.visited)
             {
-                if (node == null) continue;
-                foreach (var next in node.nextNodes)
-                {
-                    if (next != null)
-                        Gizmos.DrawLine(node.transform.position, next.transform.position);
-                }
+                var sr = n.GetComponent<SpriteRenderer>();
+                if (sr) sr.color = Color.gray;
             }
         }
     }
-#endif
 }
