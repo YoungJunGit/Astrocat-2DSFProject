@@ -430,6 +430,56 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "SelectPlanet",
+            "id": "7c2968f1-a2f9-4918-ae9d-40eafa3454b2",
+            "actions": [
+                {
+                    "name": "MoveToPlanet",
+                    "type": "Button",
+                    "id": "bf4ff40a-9192-4c73-a10f-3101203d7c50",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "895f5530-3200-4c7b-a0b4-c9aa09ddcdbb",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveToPlanet",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "2fe4d8e5-8f90-483f-81b6-54606d18673c",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveToPlanet",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "91eb6dd1-9fd7-45d5-ad9a-5dcf97154bd4",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveToPlanet",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
         }
     ],
     "controlSchemes": [

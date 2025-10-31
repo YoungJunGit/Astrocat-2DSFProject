@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 1170918272
+  seed: 1651192320
   floorNum: 10
   routeNum: 3
   normalNodeSize: 1
@@ -39,6 +39,7 @@ MonoBehaviour:
   backgroundPadding: 80
   mouseSensitive: 1
   gamepadSensitive: 2
+  cameraPref: {fileID: 7454520194946596864, guid: 3ccc1905d13358d4d85bf95ebc534d3f, type: 3}
   startNodeData: {fileID: 11400000, guid: a5dd8b8215095554389f88a22f71c641, type: 2}
   finalNodeData:
   - {fileID: 11400000, guid: a4deefdba6121ec43ba0d2508d9264d6, type: 2}

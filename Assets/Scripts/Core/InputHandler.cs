@@ -3,9 +3,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using static UserInputAction;
 
 [CreateAssetMenu(fileName = "InputHandler", menuName = "Core/InputHandler", order = 1)]
-public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions, UserInputAction.ISelectActionActions, UserInputAction.IQTEActions, UserInputAction.IParryActions
+public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions, UserInputAction.ISelectActionActions, UserInputAction.IQTEActions, UserInputAction.IParryActions, UserInputAction.ISelectPlanetActions
 {
     private UserInputAction _userInputAction;
 
@@ -15,7 +16,8 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
         SelectUnit,
         SelectAction,
         QTE,
-        Parry
+        Parry,
+        SelectPlanet
     }
 
     private InputState _currentInputState = InputState.None;
@@ -42,6 +44,10 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
                 case InputState.Parry:
                     DisposeParryActions();
                     break;
+                case InputState.SelectPlanet:
+                    DisposeOnSelectPlanetActions();
+                    break;
+
             }
 
             _currentInputState = value;
@@ -67,6 +73,10 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
                     _userInputAction.Disable();
                     _userInputAction.Parry.Enable();
                     break;
+                case InputState.SelectPlanet:
+                    _userInputAction.Disable();
+                    _userInputAction.SelectPlanet.Enable();
+                    break;
             }
         }
     }
@@ -80,6 +90,7 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
             _userInputAction.SelectAction.SetCallbacks(this);
             _userInputAction.QTE.SetCallbacks(this);
             _userInputAction.Parry.SetCallbacks(this);
+            _userInputAction.SelectPlanet.SetCallbacks(this);
         }
 
         CurrentInputState = InputState.None;
@@ -199,5 +210,22 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
         OnParry = null;
     }
 
+    #endregion
+
+    #region[Action - SelectPlanet]
+
+    public event Action<float> OnMoveToPlanetAction;
+    public void OnMoveToPlanet(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            OnMoveToPlanetAction?.Invoke(context.ReadValue<float>());
+        }
+    }
+
+    private void DisposeOnSelectPlanetActions()
+    {
+        OnMoveToPlanetAction = null;
+    }
     #endregion
 }

@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using S3MG;
+using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -70,6 +71,14 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [Header("▼Mouse Drag Sensitivity and Gamepad Movement Sensitivity")]
     [SerializeField, Range(1, 3)] public float mouseSensitive = 1.0f;
     [SerializeField, Range(1, 6)] public float gamepadSensitive = 2.0f;
+
+    [Header("Camera Control")]
+    [SerializeField] private GameObject cameraPref;
+    List<Node> showNodes;
+    private int showNodesIndex = 0;
+    Camera cam;
+    InputHandler inputHandler;
+    Vector3 velocity = Vector3.zero;
 
     [Header("▼Data for Each Node : Set ScriptableObject Data")]
     [SerializeField] public NodeData startNodeData;
@@ -168,7 +177,12 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         if (dataCheckBeforeGeneration()) return;
 
         UpdatePublisher.SubscribeObserver(this);
+        cam = Instantiate(cameraPref).GetComponent<Camera>();
         pathsTransform = new List<Transform>();
+        showNodes = new List<Node>();
+        ServiceLocator.ForSceneOf(this).Get(out inputHandler);
+        inputHandler.CurrentInputState = InputHandler.InputState.SelectPlanet;
+        inputHandler.OnMoveToPlanetAction += ShowActiveNode;
 
         if (randomizeSeed) seed = Mathf.FloorToInt(Random.value * int.MaxValue);
         Random.InitState(seed);
@@ -752,6 +766,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         if (makeStart)
         {
             startNode.enableButton();
+            showNodes.Add(startNode);
             if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(startNode.gameObject);
         }
         else
@@ -759,9 +774,12 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             for (int i = 0; i < activeRouteNodeArray.Length; i++)
             {
                 activeRouteNodeArray[i].enableButton();
+                showNodes.Add(activeRouteNodeArray[i]);
             }
             if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(activeRouteNodeArray[0].gameObject);
         }
+
+        ShowActiveNode(0);
     }
 
     /*------------------------------------------------------------
@@ -805,10 +823,13 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     public void toNextNode()
     {
         if (nowNode == finalNode) return;
+        showNodes.Clear();
         for (int i = 0; i < nowNode.nextNodes.Count; i++)
         {
             nowNode.nextNodes[i].enableButton();
+            showNodes.Add(nowNode.nextNodes[i]);
         }
+        ShowActiveNode(0);
         if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(nowNode.nextNodes[0].gameObject);
     }
 
@@ -877,6 +898,26 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         isCompleted = false;
         noMapOperation = false;
         init();
+    }
+
+    /*--------------------------------
+    Show Active Nodes
+    ---------------------------------*/
+    private void ShowActiveNode(float index)
+    {
+        Node node;
+        if(index < 0)
+        {
+            showNodesIndex = (showNodesIndex + (int)index + showNodes.Count) % showNodes.Count;
+            node = showNodes[showNodesIndex];            
+        }
+        else
+        {
+            showNodesIndex = (showNodesIndex + (int)index) % showNodes.Count;
+            node = showNodes[showNodesIndex];
+        }
+        Vector3 targetPos = new Vector3(node.transform.position.x, node.transform.position.y, cam.transform.position.z);
+        cam.transform.position = Vector3.Lerp(cam.transform.position, targetPos, 1.0f);
     }
 
     private void OnDestroy()

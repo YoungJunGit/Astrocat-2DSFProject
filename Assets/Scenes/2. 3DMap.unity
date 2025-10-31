@@ -155,7 +155,7 @@ MonoBehaviour:
   changeSceneIndex: 3
   nodeMapGenerator: {fileID: 11400000, guid: 1231ec5061e781a46a16c54a329c2a47, type: 2}
   starParticle: {fileID: 1823356267444299069, guid: 467b1b0e524ca9942a3ebe203c45596c, type: 3}
-  Camera3D: {fileID: 6126173252168107069, guid: 3ccc1905d13358d4d85bf95ebc534d3f, type: 3}
+  inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
 --- !u!4 &124130403
 Transform:
   m_ObjectHideFlags: 0
