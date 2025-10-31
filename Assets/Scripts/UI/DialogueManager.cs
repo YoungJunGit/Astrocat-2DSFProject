@@ -20,13 +20,13 @@ public class DialogueManager : ScriptableObject
     {
         Dialogue dialogue = dialogueCanvas.GetComponentInChildren<AttackWarningDialogue>(true);
 
-        dialogue.textComp.text = dialogue.textComp.text.Replace("{Name}", unit.GetStat().GetData().Name);
+        dialogue.textComp.text = dialogue.textComp.text.Replace("{Name}", unit.GetStat().Name);
         string attackType = unit.GetUnitType() == DataEnum.UNIT_TYPE.MELEE ? "[Melee]" : "[Range]";
         dialogue.textComp.text = dialogue.textComp.text.Replace("{AttackType}", attackType);
 
         await dialogue.ShowDialogue();
 
-        dialogue.textComp.text = dialogue.textComp.text.Replace(unit.GetStat().GetData().Name, "{Name}");
+        dialogue.textComp.text = dialogue.textComp.text.Replace(unit.GetStat().Name, "{Name}");
         dialogue.textComp.text = dialogue.textComp.text.Replace(attackType, "{AttackType}");
 
         return true;

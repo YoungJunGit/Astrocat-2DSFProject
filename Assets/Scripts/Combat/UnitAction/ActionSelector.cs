@@ -63,7 +63,7 @@ public class ActionSelector : BaseSelector
                         break;
                     case 2:
                         _soundService.PlayEffectSound("Start_Menu");
-                        var skillID = playerUnit.GetStat().GetSkillsID();
+                        var skillID = playerUnit.GetStat().SkillsID;
 
                         skillName.Clear();
                         foreach (var skill in skillID)

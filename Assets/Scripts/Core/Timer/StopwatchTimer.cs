@@ -2,7 +2,7 @@ public class StopwatchTimer : Timer
 {
     public StopwatchTimer() : base(0) { }
 
-    public override void Tick(float dt)
+    protected override void Tick(float dt)
     {
         if (IsRunning)
         {

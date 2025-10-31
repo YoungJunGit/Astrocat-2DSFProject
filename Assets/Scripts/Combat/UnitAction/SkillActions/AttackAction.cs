@@ -96,7 +96,7 @@ class RangeAttack : BaseAttackAction
 
     private BaseBullet ShootBullet(IUnitActionContext context, IUnitActionEvent unitAction, BaseUnit target)
     {
-        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().GetData().Asset_File);
+        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().AssetFileName);
         BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
         if (bullet != null)
         {

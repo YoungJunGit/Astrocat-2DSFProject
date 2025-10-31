@@ -12,10 +12,12 @@ public class TimelineManager : MonoBehaviour
     [SerializeField] private IntVariable MaxBannerIndex;
 
     private TimelineManagerModel _timelineManagerModel;
+    private TimelinePublisher _timelinePublisher;
 
     public void Init()
     {
         _timelineManagerModel = new TimelineManagerModel();
+        _timelinePublisher    = new TimelinePublisher();
     }
 
     public void CreateTimeline(List<BaseUnit> units)
@@ -39,6 +41,11 @@ public class TimelineManager : MonoBehaviour
                                             }
                                         })
                                         .AddTo(this);
+        _timelineManagerModel.CurRound.Subscribe(round =>
+                                      {
+                                          _timelinePublisher.UpdateTimeline(round);
+                                      })
+                                      .AddTo(this);
     }
 
     public BaseUnit Pop(List<BaseUnit> unitList)

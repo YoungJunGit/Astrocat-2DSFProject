@@ -1,14 +1,10 @@
 using System;
+using UnityEngine;
 
 public abstract class Timer : IUpdateObserver
 {
     protected float _initialTime;
     protected float Time { get; set; }
-    public bool IsRunning { get; set; }
-    public float Progress => Time / _initialTime;
-
-    public Action OnTimerStart = delegate { };
-    public Action OnTimerStop = delegate { };
 
     protected Timer(float initTime)
     {
@@ -17,6 +13,19 @@ public abstract class Timer : IUpdateObserver
 
         UpdatePublisher.SubscribeObserver(this);
     }
+
+    protected abstract void Tick(float dt);
+
+    public void ObserverUpdate(float dt)
+    {
+        Tick(dt);
+    }
+
+    public Action OnTimerStart = delegate { };
+    public Action OnTimerStop = delegate { };
+
+    public bool IsRunning { get; set; }
+    public float Remain => Time / _initialTime;
 
     public void Start()
     {
@@ -39,11 +48,59 @@ public abstract class Timer : IUpdateObserver
 
     public void Resume() => IsRunning = true;
     public void Pause() => IsRunning = false;
+}
 
-    public abstract void Tick(float dt);
+public class TimelineTimer : IUpdateTimeline
+{
+    protected int _initialDuration;
+    protected int Duration { get; set; }
 
-    public void ObserverUpdate(float dt)
+    public TimelineTimer(int duration)
     {
-        Tick(dt);
+        _initialDuration = duration;
+        IsRunning = false;
+
+        TimelinePublisher.SubscribeObserver(this);
+
+        OnTimerStop += () => TimelinePublisher.DiscribeObserver(this);
+    }
+
+    public void TimelineUpdate(int round)
+    {
+        if (IsRunning && Duration >= 1)
+        {
+            Duration--;
+        }
+
+        if (IsRunning && Duration < 1)
+        {
+            Stop();
+        }
+    }
+
+    public Action OnTimerStart = delegate { };
+    public Action OnTimerStop = delegate { };
+
+    public bool IsRunning   { get; set; }
+    public float Remain => Duration;
+
+    public void Start()
+    {
+        Duration = _initialDuration;
+
+        if (!IsRunning)
+        {
+            IsRunning = true;
+            OnTimerStart.Invoke();
+        }
+    }
+
+    public void Stop()
+    {
+        if (IsRunning)
+        {
+            IsRunning = false;
+            OnTimerStop.Invoke();
+        }
     }
 }
