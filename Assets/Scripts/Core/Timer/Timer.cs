@@ -67,14 +67,14 @@ public class TimelineTimer : IUpdateTimeline
 
     public void TimelineUpdate(int round)
     {
-        if (IsRunning && Duration >= 1)
-        {
-            Duration--;
-        }
-
         if (IsRunning && Duration < 1)
         {
             Stop();
+        }
+
+        if (IsRunning && Duration >= 1)
+        {
+            Duration--;
         }
     }
 
@@ -102,5 +102,12 @@ public class TimelineTimer : IUpdateTimeline
             IsRunning = false;
             OnTimerStop.Invoke();
         }
+    }
+
+    public void Reset() => Duration = _initialDuration;
+    public void Reset(int initDuration)
+    {
+        _initialDuration = initDuration;
+        Duration = _initialDuration;
     }
 }

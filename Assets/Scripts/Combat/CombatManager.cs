@@ -64,7 +64,7 @@ public class CombatManager : ScriptableObject
         {
             currentTurnUnit = DequeueCurrentUnit.Call(_unitManager.GetAllUnits());
 
-            Debug.Log($"{currentTurnUnit.GetStat().Name}'s turn");
+            Debug.Log($"{currentTurnUnit.GetStat().coreStat.Name}'s turn");
 
             var context = new CombatSelectionContext();
             // Step 1 : Add Selections

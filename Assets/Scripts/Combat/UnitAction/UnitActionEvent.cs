@@ -44,7 +44,7 @@ public class UnitActionEvent : IUnitActionEvent
 
     public void DamageEvent(IUnitActionContext context, BaseUnit target)
     {
-        float damage = context.DamageFactory.CreateNormalDamage(context.Caster.GetStat().Attack, target.attachments.GetHitBox().bounds);
+        float damage = context.DamageFactory.CreateNormalDamage(context.Caster.GetStat().modifierStat.Attack, target.attachments.GetHitBox().bounds);
         target.GetStat().GetDamaged(damage);
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public interface IUnitAction
 {
-    public ACTION_TARGET_TYPE Action_Type { get; }
+    public TARGET_TYPE Action_Type { get; }
     public SIDE Target_Type { get; }
     public Func<BaseUnit, bool> Target_Filter { get; }
     public UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken);

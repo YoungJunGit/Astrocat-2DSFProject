@@ -16,6 +16,16 @@ namespace Utils
             float clampedChance = Mathf.Clamp(chance, range.x, range.y);
             return Random.Range(range.x, range.y) < clampedChance ? true : false;
         }
+
+        public static T SafeGet<T>(T[] array, int index, T defaultValue = default)
+        {
+            if (array == null || index < 0 || index >= array.Length)
+            {
+                Debug.LogError("Error : Argument Out Of Range!");
+                return defaultValue;
+            }
+            return array[index];
+        }
     }
 
     public static class TargetExtensions

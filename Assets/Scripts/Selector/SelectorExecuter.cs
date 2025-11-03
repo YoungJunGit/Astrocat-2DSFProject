@@ -63,7 +63,7 @@ public class UnitSelectorExecutor : SelectorExecutor<UnitSelector>
         }
         else if (_currentUnit is EnemyUnit)
         {
-            targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(ACTION_TARGET_TYPE.RANDOM, _context.Action.Target_Filter);
+            targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(TARGET_TYPE.RANDOM, _context.Action.Target_Filter);
             isSelected = selector.SelectRandomTarget(target, targetStrategy);
         }
 

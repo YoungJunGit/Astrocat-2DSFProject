@@ -1,45 +1,101 @@
 namespace DataEnum
 {
     #region[DT 관련]
-    public enum ELEMENT_TYPE
-    {
-        NONE = 0,
-        FIRE,
-        GRAVITY,
-        RADIATION,
-        HOLY,
-        VOID
-    }
-    
-    public enum TARGET_TYPE
-    {
-        NONE = 0,
-        ENEMY_SINGLE,
-        ENEMY_ALL,
-        SELF,
-        ALLY_SINGLE,
-        ALLY_ALL
-    }
 
-    public enum EFFECT_TYPE
-    {
-        NONE = 0,
-        DAMAGE,
-        OFFENSIVE_POWER,
-        DEFENSIVE_POWER,
-        CLEANSE
-    }
-
-    /*추가*/
-    #endregion
-
-    #region[기본]
     public enum SIDE
     {
         NONE = 0,
         PLAYER,
         ENEMY
     }
+
+    public enum TARGET_TYPE
+    {
+        NONE = 0,
+        SINGLE,
+        ALL,
+        RANDOM,
+        SPLASH
+    }
+
+    public enum ELEMENT_TYPE
+    {
+        NONE = 0,
+        PHYSICAL,
+        FIRE,
+        RADIATION,
+        GRAVITY,
+        VOID,
+        HOLY,
+    }
+
+    public enum ELEMENT_STATUS_CATEGORY
+    {
+        NONE = 0,
+        STUN,
+        BURN,
+        CONTAMINATION,
+        SUPPRESS,
+        STRANGE,
+        WEAKNESS,
+        OVERHEAT,
+        EXPOSURE,
+        BIND,
+        CORRODE,
+        DOMINATE,
+        CHAOS
+    }
+
+    public enum SKILL_TYPE
+    {
+        NONE = 0,
+        PASSIVE_SKILL,
+        ATTACK_SKILL,
+        HEAL_SKILL,
+        SUPPORT_SKILL
+    }
+
+    public enum SKILL_ELEMENT_RATE
+    {
+        NONE = 0,
+        MINOR,
+        STANDARD,
+        GRAND
+    }
+
+    public enum BUFF_TYPE
+    {
+        NONE = 0,
+        MAX_HP,
+        MAX_SP,
+        ATTACK,
+        DEFENSE,
+        SPEED,
+        CRITICAL_CHANCE,
+        CRITICAL_DAMAGE_RATE,
+        COUNTER_DAMAGE_RATE,
+        PHYSICAL_GAUGE_EFFICIENCY,
+        FIRE_GAUGE_EFFICIENCY,
+        RADIATION_GAUGE_EFFICIENCY,
+        GRAVITY_GAUGE_EFFICIENCY,
+        VOID_GAUGE_EFFICIENCY,
+        HOLY_GAUGE_EFFICIENCY,
+        ELEMENT_GAUGE_RESISTANCE,
+        PHYSICAL_OVERLOAD_RATE,
+        FIRE_OVERLOAD_RATE,
+        RADIATION_OVERLOAD_RATE,
+        GRAVITY_OVERLOAD_RATE,
+        VOID_OVERLOAD_RATE,
+        HOLY_OVERLOAD_RATE,
+        DAMAGE_MULTIPLIER,
+        DAMAGE_TAKEN_MULTIPLIER,
+        SP_CONSUMPTION_RATE
+    }
+
+    /*추가*/
+    #endregion
+
+    #region[기본]
 
     public enum UNIT_TYPE
     {
@@ -53,15 +109,6 @@ namespace DataEnum
         NONE = 0,
         ATTACK,
         MOVE
-    }
-
-    public enum ACTION_TARGET_TYPE
-    {
-        NONE = 0,
-        SINGLE,
-        ALL,
-        RANDOM,
-        SPLASH
     }
 
     /*추가*/

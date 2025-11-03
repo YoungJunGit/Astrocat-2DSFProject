@@ -21,14 +21,14 @@ public sealed class ListTarget<TUnit> : ITarget<TUnit>
 
 public class TargetFactory
 {
-    public ITarget<BaseUnit> CreateTarget(ACTION_TARGET_TYPE type)
+    public ITarget<BaseUnit> CreateTarget(TARGET_TYPE type)
     {
         switch (type)
         {
-            case ACTION_TARGET_TYPE.SINGLE:
-            case ACTION_TARGET_TYPE.ALL:
-            case ACTION_TARGET_TYPE.RANDOM:
-            case ACTION_TARGET_TYPE.SPLASH:
+            case TARGET_TYPE.SINGLE:
+            case TARGET_TYPE.ALL:
+            case TARGET_TYPE.RANDOM:
+            case TARGET_TYPE.SPLASH:
                 return new ListTarget<BaseUnit>();
         }
 

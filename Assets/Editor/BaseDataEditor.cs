@@ -9,11 +9,11 @@ using UnityEngine;
 /// <typeparam name="T"></typeparam>
 public class BaseDataEditor<T> : Editor
 {
-    private BaseData<T> _target;
+    private BaseDataScriptableObject<T> _target;
 
     private void OnEnable()
     {
-        _target = (BaseData<T>)target;
+        _target = (BaseDataScriptableObject<T>)target;
     }
 
     public override void OnInspectorGUI()
@@ -55,32 +55,32 @@ public class BaseDataEditor<T> : Editor
     }
 }
 
-[CustomEditor(typeof(MonsterData))]
-public class MonsterDataEditor : BaseDataEditor<MonsterDataEntity>
+[CustomEditor(typeof(EntityDataScriptableObject))]
+public class EntityDataEditor : BaseDataEditor<EntityData>
 {
 
 }
 
-[CustomEditor(typeof(PlayerData))]
-public class PlayerDataEditor : BaseDataEditor<CharacterDataEntity>
+[CustomEditor(typeof(SkillDataScriptableObject))]
+public class SkillDataEditor : BaseDataEditor<SkillData>
 {
 
 }
 
-[CustomEditor(typeof(SkillData))]
-public class SkillDataEditor : BaseDataEditor<SkillDataEntity>
+[CustomEditor(typeof(BuffDataScriptableObject))]
+public class BuffDataEditor : BaseDataEditor<BuffData>
 {
 
 }
 
-[CustomEditor(typeof(StringData))]
-public class StringDataEditor : BaseDataEditor<StringDataEntity>
+[CustomEditor(typeof(ElementStatusDataScriptableObject))]
+public class ElementStatusDataEditor : BaseDataEditor<ElementStatusData>
 {
 
 }
 
-[CustomEditor(typeof(CharacterData))]
-public class CharacterDataEditor : BaseDataEditor<EntityData>
+[CustomEditor(typeof(StringDataScriptableObject))]
+public class StringDataEditor : BaseDataEditor<StringData>
 {
 
 }

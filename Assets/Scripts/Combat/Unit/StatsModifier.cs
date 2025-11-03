@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using static UnitStat;
+using DataEnum;
 
 public class BasicStatModifier<T> : StatModifier
 {

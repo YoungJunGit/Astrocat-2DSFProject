@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static UnitStat;
+using DataEnum;
 
 public interface IQuery { }
 
