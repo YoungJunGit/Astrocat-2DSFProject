@@ -21,6 +21,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     [SerializeField] public bool isActive { get; set; } = false;
     [SerializeField] public float xPos { get; set; }
     [SerializeField] public float yPos { get; set; }
+    [SerializeField] public float zPos { get; set; }
 
     [SerializeField] public NodeData.Type? nodeType { get; set; } = null;
 

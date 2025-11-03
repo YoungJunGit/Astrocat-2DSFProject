@@ -74,6 +74,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 
     [Header("Camera Control")]
     [SerializeField] private GameObject cameraPref;
+    [SerializeField] private float cameraPositionZOffset;
     List<Node> showNodes;
     private int showNodesIndex = 0;
     Camera cam;
@@ -339,13 +340,16 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 node.floor = i;
                 node.route = j;
                 node.xPos = (routeDistance * j) + (normalNodeSize * j) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2));
-                node.yPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
+                //node.yPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
+                node.zPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
                 if (isOffset)
                 {
                     node.xPos += Random.Range(-routeDistance * 0.9f / 2, routeDistance * 0.9f / 2 + 1);
-                    node.yPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
+                    //node.yPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
+                    node.zPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
                 }
-                node.transform.position = new Vector3(node.xPos, node.yPos,0);
+                //node.transform.position = new Vector3(node.xPos, node.yPos,0);
+                node.transform.position = new Vector3(node.xPos, node.yPos,node.zPos);
                 map[i, j] = node;
                 map[i, j].gameObject.name = $"{i},{j}";
             }
@@ -355,7 +359,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         finalNode.Init(this);
 
         setNodeSize(finalNode, finalNodeSize);
-        finalNode.transform.position = new Vector3(0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? 10 : 0),0);
+        //finalNode.transform.position = new Vector3(0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? 10 : 0),0);
+        finalNode.transform.position = new Vector3(0, 0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? 10 : 0));
         finalNode.gameObject.name = $"Final Node";
         finalNode.connected = true;
 
@@ -484,15 +489,15 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         SpriteRenderer path = Instantiate(pathImagePref, mapParent.transform);
         path.color = pathColor;
 
-        float distance = Vector2.Distance(start.transform.position, end.transform.position);
+        float distance = Vector3.Distance(start.transform.position, end.transform.position);
         //distance -= (distance > paddingBetweenNodes * 2) ? paddingBetweenNodes * 2 : distance;
-        path.size = new Vector2(path.size.x, distance*2);
+        path.size = new Vector2(path.size.x, distance*3);
         //path.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, distance);
 
         path.transform.position = (start.position + end.position) / 2;
 
-        float angle = Mathf.Atan2(end.transform.position.y - start.transform.position.y, end.transform.position.x - start.transform.position.x) * Mathf.Rad2Deg - 90;
-        path.transform.rotation = Quaternion.Euler(0, 0, angle);
+        float angle = Mathf.Atan2(end.transform.position.z - start.transform.position.z, end.transform.position.x - start.transform.position.x) * Mathf.Rad2Deg - 90;
+        path.transform.rotation = Quaternion.Euler(90, 0, angle);
 
         path.transform.SetAsFirstSibling();
 
@@ -916,7 +921,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             showNodesIndex = (showNodesIndex + (int)index) % showNodes.Count;
             node = showNodes[showNodesIndex];
         }
-        Vector3 targetPos = new Vector3(node.transform.position.x, node.transform.position.y, cam.transform.position.z);
+        Vector3 targetPos = new Vector3(node.transform.position.x, node.transform.position.y, node.transform.position.z - cameraPositionZOffset);
         cam.transform.position = Vector3.Lerp(cam.transform.position, targetPos, 1.0f);
     }
 
