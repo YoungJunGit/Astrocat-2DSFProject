@@ -1,5 +1,7 @@
-using System.Collections.Generic;
+using DG.Tweening;
 using S3MG;
+using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -38,9 +40,9 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [Header("▼Map Basic Settings")]
     [SerializeField, Range(1, 128)] public int floorNum = 15;
     [SerializeField, Range(1, 32)] public int routeNum = 7;
-    [SerializeField, Range(32, 256)] public float normalNodeSize = 80;
-    [SerializeField, Range(32, 256)] public float startNodeSize = 160;
-    [SerializeField, Range(32, 256)] public float finalNodeSize = 160;
+    [SerializeField, Range(1, 256)] public float normalNodeSize = 80;
+    [SerializeField, Range(1, 256)] public float startNodeSize = 160;
+    [SerializeField, Range(1, 256)] public float finalNodeSize = 160;
     [SerializeField] public float floorDistance = 80;
     [SerializeField] public float routeDistance = 80;
 
@@ -48,14 +50,14 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField, Range(1, 20)] public int activeRouteNum = 4;
     Node[] activeRouteNodeArray;
 
-    private GameObject mapCanvas;
-    RectTransform mapParent;
+    private GameObject mapField;
+    private GameObject mapParent;
 
     [Header("▼Node Prefab: ButtonPrefab with Node class")]
     [SerializeField] public Node nodePref;
 
     [Header("▼Path Settings : Prefab is not required, Custom Prefab with settings like shaders is also acceptable")]
-    [SerializeField] public Image pathImagePref;
+    [SerializeField] public SpriteRenderer pathImagePref;
     [SerializeField] public Color pathColor = Color.gray;
     [SerializeField] public Color passedPathColor = Color.white;
     [SerializeField, Range(0, 16)] public float pathWidth = 4f;
@@ -71,6 +73,14 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField, Range(1, 3)] public float mouseSensitive = 1.0f;
     [SerializeField, Range(1, 6)] public float gamepadSensitive = 2.0f;
 
+    [Header("Camera Control")]
+    [SerializeField] private GameObject cameraPref;
+    [SerializeField] private float cameraPositionZOffset;
+    List<Node> showNodes;
+    private int showNodesIndex = 0;
+    Camera cam;
+    InputHandler inputHandler;
+
     [Header("▼Data for Each Node : Set ScriptableObject Data")]
     [SerializeField] public NodeData startNodeData;
     [SerializeField] public NodeData[] finalNodeData;
@@ -82,14 +92,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     Node startNode;
     Node finalNode;
     Node[,] map;
-    float mapWidth;
-    float mapHeight;
-    Vector2 mapAxis;
     bool isCompleted = false;
-    private RectTransform backGround;
-    Vector2 oldMousePos;
-    Vector2 newMousePos;
-    List<RectTransform> pathsRectTransform;
+    List<Transform> pathsTransform;
 
     /*------------------------------------------------------------
     Executed when the value in the inspector is changed:Implemented to initialize when added because serializable classes like FixedNodeData and MapNodeData cannot use constructors
@@ -120,69 +124,51 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         if (!isCompleted) return;
         if (noMapOperation) return;
 
-        RectTransform canvas = mapCanvas.GetComponent<RectTransform>();
-        float xLimit = Mathf.Abs(canvas.rect.width - backGround.rect.width) / 4;
-        float yLimit = mapAxis.y - 10;
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            oldMousePos = Mouse.current.position.ReadValue() - ((oldMousePos == Vector2.zero) ? mapParent.anchoredPosition : Vector2.zero);
-        }
-        else if (Mouse.current.leftButton.isPressed)
-        {
-            newMousePos.x -= (oldMousePos.x - Mouse.current.position.ReadValue().x) * mouseSensitive;
-            newMousePos.y -= (oldMousePos.y - Mouse.current.position.ReadValue().y) * mouseSensitive;
-            if (newMousePos.x > xLimit) newMousePos.x = xLimit;
-            if (newMousePos.x < -xLimit) newMousePos.x = -xLimit;
-            if (newMousePos.y > yLimit) newMousePos.y = yLimit;
-            if (newMousePos.y < yLimit - backGround.rect.width) newMousePos.y = yLimit - backGround.rect.width;
-            mapParent.anchoredPosition = newMousePos;
-            oldMousePos = Mouse.current.position.ReadValue();
-        }
+        //RectTransform canvas = mapCanvas.GetComponent<RectTransform>();
+        //float xLimit = Mathf.Abs(canvas.rect.width - backGround.rect.width) / 4;
+        //float yLimit = mapAxis.y - 10;
+        //if (Mouse.current.leftButton.wasPressedThisFrame)
+        //{
+        //    oldMousePos = Mouse.current.position.ReadValue() - ((oldMousePos == Vector2.zero) ? mapParent.anchoredPosition : Vector2.zero);
+        //}
+        //else if (Mouse.current.leftButton.isPressed)
+        //{
+        //    newMousePos.x -= (oldMousePos.x - Mouse.current.position.ReadValue().x) * mouseSensitive;
+        //    newMousePos.y -= (oldMousePos.y - Mouse.current.position.ReadValue().y) * mouseSensitive;
+        //    if (newMousePos.x > xLimit) newMousePos.x = xLimit;
+        //    if (newMousePos.x < -xLimit) newMousePos.x = -xLimit;
+        //    if (newMousePos.y > yLimit) newMousePos.y = yLimit;
+        //    if (newMousePos.y < yLimit - backGround.rect.width) newMousePos.y = yLimit - backGround.rect.width;
+        //    mapParent.anchoredPosition = newMousePos;
+        //    oldMousePos = Mouse.current.position.ReadValue();
+        //}
 
-        if (Gamepad.current != null)
-        {
-            if (Gamepad.current.leftStick.ReadValue().y > 0.3f) movementUpDown(true);
-            if (Gamepad.current.leftStick.ReadValue().y < -0.3f) movementUpDown(false);
-            if (Gamepad.current.leftStick.ReadValue().x < -0.3f) movementLeftRight(true);
-            if (Gamepad.current.leftStick.ReadValue().x > 0.3f) movementLeftRight(false);
-        }
-    }
-
-    /*------------------------------------------------------------
-    Gamepad left-right movement
-    ------------------------------------------------------------*/
-    void movementLeftRight(bool vector)
-    {
-        if (vector)
-        {
-            newMousePos.x += gamepadSensitive;
-            if (newMousePos.x > mapWidth / 2) newMousePos.x = mapWidth / 2;
-        }
-        else
-        {
-            newMousePos.x -= gamepadSensitive;
-            if (newMousePos.x < -mapWidth / 2) newMousePos.x = -mapWidth / 2;
-        }
-        mapParent.anchoredPosition = newMousePos;
+        //if (Gamepad.current != null)
+        //{
+        //    if (Gamepad.current.leftStick.ReadValue().y > 0.3f) movementUpDown(true);
+        //    if (Gamepad.current.leftStick.ReadValue().y < -0.3f) movementUpDown(false);
+        //    if (Gamepad.current.leftStick.ReadValue().x < -0.3f) movementLeftRight(true);
+        //    if (Gamepad.current.leftStick.ReadValue().x > 0.3f) movementLeftRight(false);
+        //}
     }
 
     /*------------------------------------------------------------
     Gamepad up-down movement
     ------------------------------------------------------------*/
-    void movementUpDown(bool vector)
-    {
-        if (vector)
-        {
-            newMousePos.y -= gamepadSensitive;
-            if (newMousePos.y > Screen.height / 2) newMousePos.y = Screen.height / 2;
-        }
-        else
-        {
-            newMousePos.y += gamepadSensitive;
-            if (newMousePos.y < -(mapHeight + backgroundPadding * 2) - Screen.height / 4) newMousePos.y = -(mapHeight + backgroundPadding * 2) - Screen.height / 4;
-        }
-        mapParent.anchoredPosition = newMousePos;
-    }
+    //void movementUpDown(bool vector)
+    //{
+    //    if (vector)
+    //    {
+    //        newMousePos.y -= gamepadSensitive;
+    //        if (newMousePos.y > Screen.height / 2) newMousePos.y = Screen.height / 2;
+    //    }
+    //    else
+    //    {
+    //        newMousePos.y += gamepadSensitive;
+    //        if (newMousePos.y < -(mapHeight + backgroundPadding * 2) - Screen.height / 4) newMousePos.y = -(mapHeight + backgroundPadding * 2) - Screen.height / 4;
+    //    }
+    //    mapParent.anchoredPosition = newMousePos;
+    //}
 
     /*------------------------------------------------------------
     Initialization
@@ -192,7 +178,12 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         if (dataCheckBeforeGeneration()) return;
 
         UpdatePublisher.SubscribeObserver(this);
-        pathsRectTransform = new List<RectTransform>();
+        cam = Instantiate(cameraPref).GetComponent<Camera>();
+        pathsTransform = new List<Transform>();
+        showNodes = new List<Node>();
+        ServiceLocator.ForSceneOf(this).Get(out inputHandler);
+        inputHandler.CurrentInputState = InputHandler.InputState.SelectPlanet;
+        inputHandler.OnMoveToPlanetAction += ShowActiveNode;
 
         if (randomizeSeed) seed = Mathf.FloorToInt(Random.value * int.MaxValue);
         Random.InitState(seed);
@@ -204,7 +195,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         {
             connectingNodes(activeRouteNodeArray[i]);
         }
-        if (backgroundPref != null) generateBackground();
+
         hideEmpty();
         setNode();
         activeNodeSelect();
@@ -302,35 +293,21 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     ------------------------------------------------------------*/
     void preGenerated()
     {
-        mapCanvas = new GameObject("Map Canvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
-        var canvas = mapCanvas.GetComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceCamera;
+        mapField = new GameObject("Map Field");
+        mapField.transform.position = new Vector3 (0, 0, 0);
 
-        GameObject parentObject = new GameObject("Parent");
-        parentObject.layer = LayerMask.NameToLayer("UI");
-        mapParent = parentObject.AddComponent<RectTransform>();
-        mapParent.SetParent(mapCanvas.transform);
-        mapParent.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
-        mapParent.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
-        mapParent.anchorMin = new Vector2(0.5f, 0.5f);
-        mapParent.anchorMax = new Vector2(0.5f, 0.5f);
-        mapParent.pivot = new Vector2(0.5f, 0.5f);
-        Vector2 pos = mapParent.anchoredPosition;
-        pos.x = 0;
-        pos.y = -Screen.height / 2 + ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) + backgroundPadding;
-        mapParent.anchoredPosition = pos;
-        mapParent.SetAsFirstSibling();
-
-        oldMousePos = newMousePos = mapParent.anchoredPosition;
+        mapParent = new GameObject("Parent");
+        mapParent.layer = LayerMask.NameToLayer("UI");
+        mapParent.transform.SetParent(mapField.transform);
+        mapParent.transform.SetAsFirstSibling();
 
         if (pathImagePref == null)
         {
             GameObject pathObject = new GameObject("Path");
-            pathObject.AddComponent<RectTransform>();
             Image image = pathObject.AddComponent<Image>();
             image.raycastTarget = false;
             pathObject.layer = LayerMask.NameToLayer("UI");
-            pathImagePref = pathObject.GetComponent<Image>();
+            pathImagePref = pathObject.GetComponent<SpriteRenderer>();
         }
     }
 
@@ -343,11 +320,11 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 
         if (makeStart)
         {
-            startNode = Instantiate(nodePref, mapParent);
+            startNode = Instantiate(nodePref, mapParent.transform);
             startNode.Init(this);
 
             setNodeSize(startNode, startNodeSize);
-            startNode.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            startNode.transform.position = new Vector3(0, 0,0);
             startNode.gameObject.name = $"Start Node";
             startNode.connected = true;
         }
@@ -356,43 +333,39 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         {
             for (int j = 0; j < routeNum; j++)
             {
-                Node node = Instantiate(nodePref, mapParent);
+                Node node = Instantiate(nodePref, mapParent.transform);
                 node.Init(this);
 
                 setNodeSize(node, normalNodeSize);
                 node.floor = i;
                 node.route = j;
                 node.xPos = (routeDistance * j) + (normalNodeSize * j) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2));
-                node.yPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
+                //node.yPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
+                node.zPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
                 if (isOffset)
                 {
                     node.xPos += Random.Range(-routeDistance * 0.9f / 2, routeDistance * 0.9f / 2 + 1);
-                    node.yPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
+                    //node.yPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
+                    node.zPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
                 }
-                node.GetComponent<RectTransform>().anchoredPosition = new Vector2(node.xPos, node.yPos);
+                //node.transform.position = new Vector3(node.xPos, node.yPos,0);
+                node.transform.position = new Vector3(node.xPos, node.yPos,node.zPos);
                 map[i, j] = node;
                 map[i, j].gameObject.name = $"{i},{j}";
             }
         }
 
-        finalNode = Instantiate(nodePref, mapParent);
+        finalNode = Instantiate(nodePref, mapParent.transform);
         finalNode.Init(this);
 
         setNodeSize(finalNode, finalNodeSize);
-        finalNode.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? (startNodeSize / 2) + (normalNodeSize / 2) : 0));
+        //finalNode.transform.position = new Vector3(0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? 10 : 0),0);
+        finalNode.transform.position = new Vector3(0, 0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? 10 : 0));
         finalNode.gameObject.name = $"Final Node";
         finalNode.connected = true;
 
-        mapWidth = (routeNum * normalNodeSize) + (routeNum * routeDistance);
-        mapHeight = finalNode.GetComponent<RectTransform>().anchoredPosition.y + ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) + finalNodeSize / 2;
-
-        if (mapHeight + backgroundPadding * 2 < Screen.height)
-        {
-            Vector2 pos = mapParent.anchoredPosition;
-            pos.y = -(mapHeight + backgroundPadding * 2) / 2 + ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) + backgroundPadding;
-            mapParent.anchoredPosition = pos;
-            oldMousePos = newMousePos = mapParent.anchoredPosition;
-        }
+        //mapWidth = (routeNum * normalNodeSize) + (routeNum * routeDistance);
+        //mapHeight = finalNode.transform.position.y + ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) + finalNodeSize / 2;
     }
 
     /*------------------------------------------------------------
@@ -400,9 +373,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     ------------------------------------------------------------*/
     void setNodeSize(Node target, float size)
     {
-        RectTransform rectTransform = target.gameObject.GetComponent<RectTransform>();
-        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size);
-        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size);
+        target.transform.localScale = new Vector2 (size, size);
     }
 
     /*------------------------------------------------------------
@@ -471,7 +442,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 {
                     startNode.nextNodes.Add(node);
                     node.prevNodes.Add(startNode);
-                    drawPath(startNode.GetComponent<RectTransform>(), node.GetComponent<RectTransform>());
+                    drawPath(startNode.transform, node.transform);
                 }
             }
 
@@ -482,7 +453,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             {
                 if (node.nextNodes[i] == nextNode) haveNode = true;
             }
-            if (!haveNode) drawPath(node.GetComponent<RectTransform>(), nextNode.GetComponent<RectTransform>());
+            if (!haveNode) drawPath(node.transform, nextNode.transform);
 
             node.nextNodes.Add(nextNode);
             nextNode.prevNodes.Add(node);
@@ -496,7 +467,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             {
                 if (node.nextNodes[i] == finalNode) haveFinalNode = true;
             }
-            if (!haveFinalNode) drawPath(node.GetComponent<RectTransform>(), finalNode.GetComponent<RectTransform>());
+            if (!haveFinalNode) drawPath(node.transform, finalNode.transform);
 
             node.nextNodes.Add(finalNode);
             finalNode.prevNodes.Add(node);
@@ -505,7 +476,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             {
                 startNode.nextNodes.Add(node);
                 node.prevNodes.Add(startNode);
-                drawPath(startNode.GetComponent<RectTransform>(), node.GetComponent<RectTransform>());
+                drawPath(startNode.transform, node.transform);
             }
         }
     }
@@ -513,44 +484,42 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     /*------------------------------------------------------------
     Draw paths
     ------------------------------------------------------------*/
-    void drawPath(RectTransform start, RectTransform end)
+    void drawPath(Transform start, Transform end)
     {
-        Image path = Instantiate(pathImagePref, mapParent);
+        SpriteRenderer path = Instantiate(pathImagePref, mapParent.transform);
         path.color = pathColor;
 
-        float distance = Vector2.Distance(start.anchoredPosition, end.anchoredPosition);
-        distance -= (distance > paddingBetweenNodes * 2) ? paddingBetweenNodes * 2 : distance;
-        path.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, pathWidth);
-        path.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, distance);
+        float distance = Vector3.Distance(start.transform.position, end.transform.position);
+        //distance -= (distance > paddingBetweenNodes * 2) ? paddingBetweenNodes * 2 : distance;
+        path.size = new Vector2(path.size.x, distance*3);
+        //path.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, distance);
 
-        path.rectTransform.pivot = new Vector2(0.5f, 0.5f);
+        path.transform.position = (start.position + end.position) / 2;
 
-        path.rectTransform.position = (start.position + end.position) / 2;
-
-        float angle = Mathf.Atan2(end.anchoredPosition.y - start.anchoredPosition.y, end.anchoredPosition.x - start.anchoredPosition.x) * Mathf.Rad2Deg - 90;
-        path.rectTransform.rotation = Quaternion.Euler(0, 0, angle);
+        float angle = Mathf.Atan2(end.transform.position.z - start.transform.position.z, end.transform.position.x - start.transform.position.x) * Mathf.Rad2Deg - 90;
+        path.transform.rotation = Quaternion.Euler(90, 0, angle);
 
         path.transform.SetAsFirstSibling();
 
-        pathsRectTransform.Add(path.rectTransform);
+        pathsTransform.Add(path.transform);
     }
 
     #region 배경 생성
     /*------------------------------------------------------------
 	Generate background
 	------------------------------------------------------------*/
-    void generateBackground()
-    {
-        GameObject bg = Instantiate(backgroundPref, mapParent);
-        RectTransform rectTransform = bg.gameObject.GetComponent<RectTransform>();
-        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, mapWidth + (backgroundPadding * 2));
-        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, mapHeight + (backgroundPadding * 2));
-        Vector2 pos = rectTransform.anchoredPosition;
-        rectTransform.anchoredPosition = new Vector2(pos.x, pos.y - ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) - backgroundPadding);
-        mapAxis = rectTransform.anchoredPosition;
-        bg.transform.SetAsFirstSibling();
-        backGround = bg.GetComponent<RectTransform>();
-    }
+    //void generateBackground()
+    //{
+    //    GameObject bg = Instantiate(backgroundPref, mapParent);
+    //    RectTransform rectTransform = bg.gameObject.GetComponent<RectTransform>();
+    //    rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, mapWidth + (backgroundPadding * 2));
+    //    rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, mapHeight + (backgroundPadding * 2));
+    //    Vector2 pos = rectTransform.anchoredPosition;
+    //    rectTransform.anchoredPosition = new Vector2(pos.x, pos.y - ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) - backgroundPadding);
+    //    mapAxis = rectTransform.anchoredPosition;
+    //    bg.transform.SetAsFirstSibling();
+    //    backGround = bg.GetComponent<RectTransform>();
+    //}
     #endregion
     /*------------------------------------------------------------
 	Hide unvisited nodes
@@ -801,6 +770,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 
         if (makeStart)
         {
+            startNode.enableButton();
+            showNodes.Add(startNode);
             if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(startNode.gameObject);
         }
         else
@@ -808,9 +779,12 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             for (int i = 0; i < activeRouteNodeArray.Length; i++)
             {
                 activeRouteNodeArray[i].enableButton();
+                showNodes.Add(activeRouteNodeArray[i]);
             }
             if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(activeRouteNodeArray[0].gameObject);
         }
+
+        ShowActiveNode(0);
     }
 
     /*------------------------------------------------------------
@@ -820,12 +794,12 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     {
         if (!makeStart && node.floor == 0) return;
 
-        foreach (RectTransform path in pathsRectTransform)
+        foreach (Transform path in pathsTransform)
         {
-            float distance = Vector2.Distance(path.position, (nowNode.GetComponent<RectTransform>().position + node.GetComponent<RectTransform>().position) / 2);
+            float distance = Vector2.Distance(path.position, (nowNode.transform.position + node.transform.position) / 2);
             if (Mathf.Approximately(distance, 0) || distance < 0.01f)
             {
-                path.GetComponent<Image>().color = passedPathColor;
+                path.GetComponent<SpriteRenderer>().color = passedPathColor;
                 break;
             }
         }
@@ -854,10 +828,13 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     public void toNextNode()
     {
         if (nowNode == finalNode) return;
+        showNodes.Clear();
         for (int i = 0; i < nowNode.nextNodes.Count; i++)
         {
             nowNode.nextNodes[i].enableButton();
+            showNodes.Add(nowNode.nextNodes[i]);
         }
+        ShowActiveNode(0);
         if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(nowNode.nextNodes[0].gameObject);
     }
 
@@ -867,7 +844,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     public void activeMap()
     {
         noMapOperation = false;
-        mapCanvas.SetActive(true);
+        mapField.SetActive(true);
 
         UpdatePublisher.SubscribeObserver(this);
     }
@@ -878,7 +855,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     public void inactiveMap()
     {
         noMapOperation = true;
-        mapCanvas.SetActive(false);
+        mapField.SetActive(false);
 
         UpdatePublisher.DiscribeObserver(this);
     }
@@ -909,11 +886,11 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 }
             }
         }
-        if (pathsRectTransform != null)
+        if (pathsTransform != null)
         {
-            for (int i = 0; i < pathsRectTransform.Count; i++)
+            for (int i = 0; i < pathsTransform.Count; i++)
             {
-                pathsRectTransform[i] = null;
+                pathsTransform[i] = null;
             }
         }
         mapParent = null;
@@ -921,11 +898,32 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         startNode = null;
         finalNode = null;
         map = null;
-        pathsRectTransform = new List<RectTransform>();
+        pathsTransform = new List<Transform>();
         nowNode = null;
         isCompleted = false;
         noMapOperation = false;
         init();
+    }
+
+    /*--------------------------------
+    Show Active Nodes
+    ---------------------------------*/
+    private void ShowActiveNode(float index)
+    {
+        Node node;
+        if(index < 0)
+        {
+            showNodesIndex = (showNodesIndex + (int)index + showNodes.Count) % showNodes.Count;
+            node = showNodes[showNodesIndex];            
+        }
+        else
+        {
+            showNodesIndex = (showNodesIndex + (int)index) % showNodes.Count;
+            node = showNodes[showNodesIndex];
+        }
+        Vector3 targetPos = new Vector3(node.transform.position.x, cam.transform.position.y, node.transform.position.z - cameraPositionZOffset);
+        //cam.transform.position = Vector3.Lerp(cam.transform.position, targetPos, 1.0f);
+        cam.transform.DOMove(targetPos, 1.0f).SetEase(Ease.OutCirc);
     }
 
     private void OnDestroy()

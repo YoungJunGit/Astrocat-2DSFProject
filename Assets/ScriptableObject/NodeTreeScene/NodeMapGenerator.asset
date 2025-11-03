@@ -20,25 +20,27 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 1891511296
+  seed: 1318043520
   floorNum: 10
-  routeNum: 8
-  normalNodeSize: 80
-  startNodeSize: 160
-  finalNodeSize: 160
-  floorDistance: 80
-  routeDistance: 80
+  routeNum: 3
+  normalNodeSize: 1
+  startNodeSize: 1.5
+  finalNodeSize: 1.5
+  floorDistance: 10
+  routeDistance: 10
   activeRouteNum: 3
-  nodePref: {fileID: 2233898142981473485, guid: d930a38253f29b3489870b8b3ee32fe5, type: 3}
-  pathImagePref: {fileID: 5878281430672081569, guid: f902e890fbfbeac4ea3cf6ed178ecbca, type: 3}
+  nodePref: {fileID: 4277126375888947395, guid: 2faf1f81fd3ed7f45a7113c1123ce3b6, type: 3}
+  pathImagePref: {fileID: 6119643253783005637, guid: 4b11199aa7ee2a847a0acaa0af34d065, type: 3}
   pathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   passedPathColor: {r: 1, g: 1, b: 1, a: 1}
-  pathWidth: 4
-  paddingBetweenNodes: 1
+  pathWidth: 1
+  paddingBetweenNodes: 80
   backgroundPref: {fileID: 4695275133454352915, guid: 7e506f1f8f4f9fd468964fccf21845d4, type: 3}
   backgroundPadding: 80
   mouseSensitive: 1
   gamepadSensitive: 2
+  cameraPref: {fileID: 7454520194946596864, guid: 3ccc1905d13358d4d85bf95ebc534d3f, type: 3}
+  cameraPositionZOffset: 8
   startNodeData: {fileID: 11400000, guid: a5dd8b8215095554389f88a22f71c641, type: 2}
   finalNodeData:
   - {fileID: 11400000, guid: a4deefdba6121ec43ba0d2508d9264d6, type: 2}
