@@ -1,3 +1,4 @@
+using DG.Tweening;
 using S3MG;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -79,7 +80,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     private int showNodesIndex = 0;
     Camera cam;
     InputHandler inputHandler;
-    Vector3 velocity = Vector3.zero;
 
     [Header("▼Data for Each Node : Set ScriptableObject Data")]
     [SerializeField] public NodeData startNodeData;
@@ -921,8 +921,9 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             showNodesIndex = (showNodesIndex + (int)index) % showNodes.Count;
             node = showNodes[showNodesIndex];
         }
-        Vector3 targetPos = new Vector3(node.transform.position.x, node.transform.position.y, node.transform.position.z - cameraPositionZOffset);
-        cam.transform.position = Vector3.Lerp(cam.transform.position, targetPos, 1.0f);
+        Vector3 targetPos = new Vector3(node.transform.position.x, cam.transform.position.y, node.transform.position.z - cameraPositionZOffset);
+        //cam.transform.position = Vector3.Lerp(cam.transform.position, targetPos, 1.0f);
+        cam.transform.DOMove(targetPos, 1.0f).SetEase(Ease.OutCirc);
     }
 
     private void OnDestroy()
