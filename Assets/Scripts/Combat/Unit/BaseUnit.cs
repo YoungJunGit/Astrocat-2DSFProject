@@ -34,6 +34,7 @@ public class BaseUnit : MonoBehaviour
     {
         _stat       = new UnitStat(data, index);
         combatInfo  = new UnitCombatInfo();
+        crowdControlUnit = new CrowdControlUnit();
         attachments = GetComponent<UnitAttachments>();
         _animHandler.Init();
 

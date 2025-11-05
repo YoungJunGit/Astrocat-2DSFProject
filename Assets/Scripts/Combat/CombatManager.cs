@@ -21,7 +21,6 @@ public class CombatManager : ScriptableObject
     private BaseUnit currentTurnUnit;
 
     private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit = new();
-    public Action OnTernEnd;
 
     public bool executed;
 
@@ -76,8 +75,6 @@ public class CombatManager : ScriptableObject
 
             // Step 3 : Execute Action to Target
             await _actionExecuter.ExecuteRequest(currentTurnUnit, context.Action, context.Target);
-
-            OnTernEnd?.Invoke();
 
             await UniTask.WaitUntil(() => combatEventHandler.IsEventEmpty());
             await UniTask.WaitForSeconds(1);

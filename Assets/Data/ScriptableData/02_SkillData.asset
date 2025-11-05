@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d45c337aa6ccd42479a9db58efbc9407, type: 3}
-  m_Name: SkillData
+  m_Name: 02_SkillData
   m_EditorClassIdentifier: 
   json: {fileID: 4900000, guid: d27bcc37c0b34bd48b5510aa5be5e50e, type: 3}
   decryptToggle: 0

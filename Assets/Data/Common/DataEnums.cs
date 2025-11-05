@@ -37,6 +37,7 @@ namespace DataEnum
         CONTAMINATION,
         SUPPRESS,
         STRANGE,
+        SILENCE,
         WEAKNESS,
         OVERHEAT,
         EXPOSURE,

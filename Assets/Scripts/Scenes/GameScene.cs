@@ -25,6 +25,7 @@ public class GameScene : AbstractScene
     [SerializeField] private UnitManager unitManager;
     [SerializeField] private QTEManager qteManager;
     [SerializeField] private SelectorManager selectorManager;
+    [SerializeField] private CrowdControlManager crowdControlManager;
 
     [Header("Service Locator Register")]
     [SerializeField] private UnitActionExecuter unitActionExecuter;
@@ -38,7 +39,6 @@ public class GameScene : AbstractScene
     [Header("Tester")]
     [SerializeField] private InputTester inputTester;
     [SerializeField] private QTETester qteTester;
-    [SerializeField] private CCTester ccTester;
     [SerializeField] private BackgroundChanger backgroundChanger;
 
     protected override int SceneIdx { get; } = 3;
@@ -54,12 +54,13 @@ public class GameScene : AbstractScene
             .Register(inputHandler)
             .Register(damageFactory)
             .Register(unitActionFactory)
-            .Register(parryingApplier as IParryingApplier);
+            .Register(parryingApplier as IParryingApplier)
+            .Register(crowdControlManager);
     }
 
     protected override async UniTask InitializeObjects()
     {
-        entityData = new EntityDataCreator().CreateEntityData(dataHandler.CharacterData, playerUnitID.ToList(), enemyUnitID.ToList());
+        entityData = new EntityDataCreator().CreateEntityData(dataHandler.EntityData, playerUnitID.ToList(), enemyUnitID.ToList());
 
         hudManager.Init();
         dialogueManager.Init();
@@ -67,6 +68,7 @@ public class GameScene : AbstractScene
         unitManager.Init();
         qteManager.Init();
         selectorManager.Init();
+        crowdControlManager.Init();
 
         inputHandler.Init();
 
@@ -128,7 +130,6 @@ public class GameScene : AbstractScene
         if (debugMode)
         {
             ForDebugging();
-            combatManager.OnTernEnd += ccTester.SetCCOnRandomUnit;
         }
     }
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2c72e0362d523344b719b7aa3817ee8, type: 3}
-  m_Name: StringData
+  m_Name: 99_StringData
   m_EditorClassIdentifier: 
   json: {fileID: 4900000, guid: f683a9e0230685e438d31201c7976887, type: 3}
   decryptToggle: 0
