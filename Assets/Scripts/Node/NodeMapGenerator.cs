@@ -76,10 +76,13 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [Header("Camera Control")]
     [SerializeField] private GameObject cameraPref;
     [SerializeField] private float cameraPositionZOffset;
+    [SerializeField] private float camSpeed;
     List<Node> showNodes;
     private int showNodesIndex = 0;
     Camera cam;
     InputHandler inputHandler;
+    CharacterController characterController;
+    Vector3 direction;
 
     [Header("▼Data for Each Node : Set ScriptableObject Data")]
     [SerializeField] public NodeData startNodeData;
@@ -117,73 +120,21 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     }
 
     /*------------------------------------------------------------
-    Called once per frame, Executed when the GameObject and component are enabled
-    ------------------------------------------------------------*/
-    public void ObserverUpdate(float dt)
-    {
-        if (!isCompleted) return;
-        if (noMapOperation) return;
-
-        //RectTransform canvas = mapCanvas.GetComponent<RectTransform>();
-        //float xLimit = Mathf.Abs(canvas.rect.width - backGround.rect.width) / 4;
-        //float yLimit = mapAxis.y - 10;
-        //if (Mouse.current.leftButton.wasPressedThisFrame)
-        //{
-        //    oldMousePos = Mouse.current.position.ReadValue() - ((oldMousePos == Vector2.zero) ? mapParent.anchoredPosition : Vector2.zero);
-        //}
-        //else if (Mouse.current.leftButton.isPressed)
-        //{
-        //    newMousePos.x -= (oldMousePos.x - Mouse.current.position.ReadValue().x) * mouseSensitive;
-        //    newMousePos.y -= (oldMousePos.y - Mouse.current.position.ReadValue().y) * mouseSensitive;
-        //    if (newMousePos.x > xLimit) newMousePos.x = xLimit;
-        //    if (newMousePos.x < -xLimit) newMousePos.x = -xLimit;
-        //    if (newMousePos.y > yLimit) newMousePos.y = yLimit;
-        //    if (newMousePos.y < yLimit - backGround.rect.width) newMousePos.y = yLimit - backGround.rect.width;
-        //    mapParent.anchoredPosition = newMousePos;
-        //    oldMousePos = Mouse.current.position.ReadValue();
-        //}
-
-        //if (Gamepad.current != null)
-        //{
-        //    if (Gamepad.current.leftStick.ReadValue().y > 0.3f) movementUpDown(true);
-        //    if (Gamepad.current.leftStick.ReadValue().y < -0.3f) movementUpDown(false);
-        //    if (Gamepad.current.leftStick.ReadValue().x < -0.3f) movementLeftRight(true);
-        //    if (Gamepad.current.leftStick.ReadValue().x > 0.3f) movementLeftRight(false);
-        //}
-    }
-
-    /*------------------------------------------------------------
-    Gamepad up-down movement
-    ------------------------------------------------------------*/
-    //void movementUpDown(bool vector)
-    //{
-    //    if (vector)
-    //    {
-    //        newMousePos.y -= gamepadSensitive;
-    //        if (newMousePos.y > Screen.height / 2) newMousePos.y = Screen.height / 2;
-    //    }
-    //    else
-    //    {
-    //        newMousePos.y += gamepadSensitive;
-    //        if (newMousePos.y < -(mapHeight + backgroundPadding * 2) - Screen.height / 4) newMousePos.y = -(mapHeight + backgroundPadding * 2) - Screen.height / 4;
-    //    }
-    //    mapParent.anchoredPosition = newMousePos;
-    //}
-
-    /*------------------------------------------------------------
     Initialization
     ------------------------------------------------------------*/
     public void init()
     {
         if (dataCheckBeforeGeneration()) return;
-
         UpdatePublisher.SubscribeObserver(this);
         cam = Instantiate(cameraPref).GetComponent<Camera>();
+        characterController = cam.GetComponent<CharacterController>();
         pathsTransform = new List<Transform>();
         showNodes = new List<Node>();
         ServiceLocator.ForSceneOf(this).Get(out inputHandler);
+        ServiceLocator.ForSceneOf(this).Register(cam);
         inputHandler.CurrentInputState = InputHandler.InputState.SelectPlanet;
         inputHandler.OnMoveToPlanetAction += ShowActiveNode;
+        inputHandler.OnControlSpaceshipAction += (_direction) => direction = _direction;
 
         if (randomizeSeed) seed = Mathf.FloorToInt(Random.value * int.MaxValue);
         Random.InitState(seed);
@@ -200,6 +151,17 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         setNode();
         activeNodeSelect();
         isCompleted = true;
+    }
+
+    public void ObserverUpdate(float dt)
+    {
+        if (!isCompleted) return;
+        if (noMapOperation) return;
+
+        if(cam != null)
+        {
+            characterController.Move(direction * camSpeed);
+        }
     }
 
     /*------------------------------------------------------------
@@ -504,23 +466,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         pathsTransform.Add(path.transform);
     }
 
-    #region 배경 생성
-    /*------------------------------------------------------------
-	Generate background
-	------------------------------------------------------------*/
-    //void generateBackground()
-    //{
-    //    GameObject bg = Instantiate(backgroundPref, mapParent);
-    //    RectTransform rectTransform = bg.gameObject.GetComponent<RectTransform>();
-    //    rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, mapWidth + (backgroundPadding * 2));
-    //    rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, mapHeight + (backgroundPadding * 2));
-    //    Vector2 pos = rectTransform.anchoredPosition;
-    //    rectTransform.anchoredPosition = new Vector2(pos.x, pos.y - ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) - backgroundPadding);
-    //    mapAxis = rectTransform.anchoredPosition;
-    //    bg.transform.SetAsFirstSibling();
-    //    backGround = bg.GetComponent<RectTransform>();
-    //}
-    #endregion
     /*------------------------------------------------------------
 	Hide unvisited nodes
 	------------------------------------------------------------*/
@@ -845,7 +790,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     {
         noMapOperation = false;
         mapField.SetActive(true);
-
         UpdatePublisher.SubscribeObserver(this);
     }
 
@@ -856,7 +800,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     {
         noMapOperation = true;
         mapField.SetActive(false);
-
         UpdatePublisher.DiscribeObserver(this);
     }
 
@@ -911,10 +854,10 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     private void ShowActiveNode(float index)
     {
         Node node;
-        if(index < 0)
+        if (index < 0)
         {
             showNodesIndex = (showNodesIndex + (int)index + showNodes.Count) % showNodes.Count;
-            node = showNodes[showNodesIndex];            
+            node = showNodes[showNodesIndex];
         }
         else
         {
@@ -930,6 +873,5 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     {
         UpdatePublisher.DiscribeObserver(this);
     }
-
     // TODO : Map local save
 }

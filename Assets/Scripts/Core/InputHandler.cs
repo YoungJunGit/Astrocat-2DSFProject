@@ -47,7 +47,6 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
                 case InputState.SelectPlanet:
                     DisposeOnSelectPlanetActions();
                     break;
-
             }
 
             _currentInputState = value;
@@ -215,6 +214,7 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     #region[Action - SelectPlanet]
 
     public event Action<float> OnMoveToPlanetAction;
+    public event Action<Vector3> OnControlSpaceshipAction;
     public void OnMoveToPlanet(InputAction.CallbackContext context)
     {
         if(context.performed)
@@ -223,9 +223,19 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
         }
     }
 
+    public void OnControlSpaceship(InputAction.CallbackContext context)
+    {
+        if(context.performed || context.canceled)
+        {
+            OnControlSpaceshipAction?.Invoke(context.ReadValue<Vector3>());
+        }
+    }
+
     private void DisposeOnSelectPlanetActions()
     {
         OnMoveToPlanetAction = null;
+        OnControlSpaceshipAction = null;
     }
+
     #endregion
 }

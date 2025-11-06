@@ -43,6 +43,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     float elapsedTime = 0f;
 
     NodeMapGenerator _mapGenerator;
+    Camera _3DCamera;
     //ISceneHandler _sceneHandler = new SceneHandler();
 
     /*------------------------------------------------------------
@@ -52,6 +53,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     {
         _mapGenerator = mapGenerator;
         currentColor = defaultColor;
+        ServiceLocator.ForSceneOf(this).Get(out _3DCamera);
         UpdatePublisher.SubscribeObserver(this);
     }
 
@@ -81,6 +83,10 @@ public class Node : MonoBehaviour, IUpdateObserver
     ------------------------------------------------------------*/
     public void ObserverUpdate(float dt)
     {
+        if(_3DCamera != null)
+        {
+            transform.LookAt(_3DCamera.transform.position);
+        }
         if(!isActive || visited) return;
 
         float t = (Time.time - lerpStartTime) / lerpDuration;
