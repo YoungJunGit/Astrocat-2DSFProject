@@ -106,17 +106,17 @@ public sealed class SplashTargetStrategy : ITargetStrategy
 
 public class TargetStrategyFactory
 {
-    public ITargetStrategy CreateTargetStrategy(ACTION_TARGET_TYPE type, Func<BaseUnit, bool> filter)
+    public ITargetStrategy CreateTargetStrategy(TARGET_TYPE type, Func<BaseUnit, bool> filter)
     {
         switch (type)
         {
-            case ACTION_TARGET_TYPE.SINGLE:
+            case TARGET_TYPE.SINGLE:
                 return new SingleTargetStrategy(filter);
-            case ACTION_TARGET_TYPE.ALL:
+            case TARGET_TYPE.ALL:
                 return new AllTargetStrategy(filter);
-            case ACTION_TARGET_TYPE.RANDOM:
+            case TARGET_TYPE.RANDOM:
                 return new RandomTargetStratgy(filter);
-            case ACTION_TARGET_TYPE.SPLASH:
+            case TARGET_TYPE.SPLASH:
                 return new SplashTargetStrategy(1, 1, filter);
         }
 

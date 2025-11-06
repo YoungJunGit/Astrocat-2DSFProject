@@ -5,91 +5,83 @@ namespace DataEntity
 {
     #region[DT ฐüทร]
     [Serializable]
-    public class CharacterDataEntity
+    public class EntityData
     {
-        public string       Character_ID;
-        public string       Char_Name;
-        public double       Char_Default_HP         = 0.0f;
-        public double       Char_Default_Attack     = 0.0f;
-        public double       Char_Default_Defense    = 0.0f;
-        public int          Char_Default_AP         = 0;
-        public double       Char_Default_Speed      = 0.0f;
-        public string       Skill1_ID;
-        public string       Skill2_ID;
-        public string       Skill3_ID;
-        public ELEMENT_TYPE Weak_Type               = ELEMENT_TYPE.NONE;
-        public ELEMENT_TYPE Resist_Type             = ELEMENT_TYPE.NONE;
-        public string       Asset_File;
+        public string   code;
+        public string   table;
+        public string   kind;
+        public string   index;
+        public SIDE     Side                    = SIDE.NONE;
+        public string   Name;
+        public double   Max_HP                  = 0.0f;
+        public int      Max_SP                  = 0;
+        public double   Default_Attack          = 0.0f;
+        public double   Default_Defense         = 0.0f;
+        public int      Default_SP              = 0;
+        public double   Default_Speed           = 0.0f;
+        public double   Critical_Chance         = 0.0f;
+        public double   Critical_Damage_Rate    = 0.0f;
+        public double   Counter_Damage_Rate     = 0.0f;
+        public string[] Skill_ID;
+        public double[] Element_Charge_Rate;
+        public double   Element_Charge_Resist   = 0.0f;
+        public double[] Overload_Rate;
+        public string   Asset_File;
     }
 
     [Serializable]
-    public class MonsterDataEntity
+    public class SkillData
     {
-        public string       Mob_ID;
-        public string       Mob_Name;
-        public double       Mob_Default_HP          = 0.0f;
-        public double       Mob_Default_Attack      = 0.0f;
-        public double       Mob_Default_Defense     = 0.0f;
-        public int          Mob_Default_AP          = 0;
-        public double       Mob_Default_Speed       = 0.0f; 
-        public string       Skill1_ID;
-        public string       Skill2_ID;
-        public string       Skill3_ID;
-        public ELEMENT_TYPE Weak_Type               = ELEMENT_TYPE.NONE;
-        public ELEMENT_TYPE Resist_Type             = ELEMENT_TYPE.NONE;
-        public string       Asset_File;
+        public string               Skill_ID;
+        public string               table;
+        public string               kind;
+        public string               index;
+        public string               Skill_Name;
+        public string               Skill_Desc;
+        public ELEMENT_TYPE         Element_Type        = ELEMENT_TYPE.NONE;
+        public SKILL_TYPE           Skill_Type          = SKILL_TYPE.NONE;
+        public SIDE                 Skill_Side          = SIDE.NONE;
+        public TARGET_TYPE          Skill_Target_Type   = TARGET_TYPE.NONE;
+        public int                  Skill_Cost_SP       = 0;
+        public double               Skill_ATK_Rate      = 0.0f;
+        public int                  Skill_Hit_Count     = 0;
+        public int                  Skill_Duration_Turn = 0;
+        public SKILL_ELEMENT_RATE   Skill_Element_Rate  = SKILL_ELEMENT_RATE.NONE;
+        public string[]             Buff_ID;
+        public double[]             Buff_Value;
+        public string               QTE_ID;
     }
 
     [Serializable]
-    public class SkillDataEntity
+    public class BuffData
     {
-        public string       Skill_ID;
-        public string       Skill_Name;
-        public int          Skill_CostAP             = 0;
-        public string       Skill_EffectDesc;
-        public EFFECT_TYPE  Effect1_Type             = EFFECT_TYPE.NONE;
-        public double       Effect1_Chance           = 0.0f;
-        public int          Effect1_Duration_Turns   = 0;
-        public TARGET_TYPE  Effect1_Target_Type      = TARGET_TYPE.NONE;
-        public double       Effect1_Value            = 0.0f;
-        public EFFECT_TYPE  Effect2_Type             = EFFECT_TYPE.NONE;
-        public double       Effect2_Chance           = 0.0f;
-        public int          Effect2_Duration_Turns   = 0;
-        public TARGET_TYPE  Effect2_Target_Type      = TARGET_TYPE.NONE;
-        public double       Effect2_Value            = 0.0f;
+        public string    Buff_ID;
+        public string    table;
+        public string    kind;
+        public string    index;
+        public BUFF_TYPE Buff_Type = BUFF_TYPE.NONE;
     }
 
     [Serializable]
-    public class StringDataEntity
+    public class ElementStatusData
+    {
+        public string                   Element_Status_ID;
+        public string                   table;
+        public string                   kind;
+        public string                   index;
+        public string                   Element_Status_Name;
+        public ELEMENT_STATUS_CATEGORY  Element_Status_Category = ELEMENT_STATUS_CATEGORY.NONE;
+        public string                   Buff_Table_ID;
+        public double                   Buff_Value              = 0.0f;
+    }
+
+    [Serializable]
+    public class StringData
     {
         public string String_ID;
         public string Korean;
         public string English;
     }
 
-    [Serializable]
-    public class EntityData
-    {
-        public string code;
-        public string table;
-        public string kind;
-        public string index;
-        public SIDE Side = SIDE.NONE;
-        public string Name;
-        public double Max_HP = 0.0f;
-        public int Max_SP = 0;
-        public double Default_Attack = 0.0f;
-        public double Default_Defense = 0.0f;
-        public int Default_SP = 0;
-        public double Default_Speed = 0.0f;
-        public double Critical_Chance = 0.0f;
-        public double Critical_Damage_Rate = 0.0f;
-        public double Counter_Damage_Rate = 0.0f;
-        public string[] Skill_ID;
-        public double[] Element_Charge_Rate;
-        public double Element_Charge_Resist = 0.0f;
-        public double[] Overload_Rate;
-        public string Asset_File;
-    }
     #endregion
 }

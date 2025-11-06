@@ -36,7 +36,7 @@ class UnitActionFactory : ScriptableObject
 
         if (skillAction == null)
         {
-            Debug.Log($"{unit.GetStat().Name} : {skillID} Skill is not registered");
+            Debug.Log($"{unit.GetStat().coreStat.Name} : {skillID} Skill is not registered");
         }
         
         return skillAction;

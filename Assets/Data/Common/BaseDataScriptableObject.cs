@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// 건들지 말 것
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class BaseData<T> : ScriptableObject
+public class BaseDataScriptableObject<T> : ScriptableObject
 {
     [SerializeField]
     private TextAsset json;

@@ -7,7 +7,7 @@ using UnityEngine;
 class BaseBuffAction : IUnitAction
 {
     public SIDE Target_Type { get; } 
-    public virtual ACTION_TARGET_TYPE Action_Type { get; } = ACTION_TARGET_TYPE.SINGLE;
+    public virtual TARGET_TYPE Action_Type { get; } = TARGET_TYPE.SINGLE;
     public virtual Func<BaseUnit, bool> Target_Filter { get; } = null;
 
     public BaseBuffAction(SIDE side) { Target_Type = side; }

@@ -12,7 +12,7 @@ using Object = UnityEngine.Object;
 class BaseAttackAction : IUnitAction
 {
     public SIDE Target_Type { get; }
-    public virtual ACTION_TARGET_TYPE Action_Type { get; } = ACTION_TARGET_TYPE.SINGLE;
+    public virtual TARGET_TYPE Action_Type { get; } = TARGET_TYPE.SINGLE;
     public virtual Func<BaseUnit, bool> Target_Filter { get; } = null;
 
     public BaseAttackAction(SIDE side) { Target_Type = side; }
@@ -22,7 +22,7 @@ class BaseAttackAction : IUnitAction
         unitAction.OnStartAction(context);
 
         await UniTask.WaitUntil(() => context.Caster.combatInfo.isFinishedAction, cancellationToken: cancellationToken.Token);
-        Debug.Log($"{context.Caster.GetStat().Name} : Action was finished.");
+        Debug.Log($"{context.Caster.GetStat().coreStat.Name} : Action was finished.");
     }
 }
 
@@ -58,7 +58,7 @@ class MeleeAttack : BaseAttackAction
             }
             catch (OperationCanceledException)
             {
-                Debug.Log($"{context.Caster.GetStat().Name} : Action was canceled.");
+                Debug.Log($"{context.Caster.GetStat().coreStat.Name} : Action was canceled.");
             }
 
             inputDisposer.Dispose();
@@ -89,14 +89,14 @@ class RangeAttack : BaseAttackAction
             catch (OperationCanceledException)
             {
                 bullet?.Dispose();
-                Debug.Log($"{context.Caster.GetStat().Name} : Action was canceled.");
+                Debug.Log($"{context.Caster.GetStat().coreStat.Name} : Action was canceled.");
             }
         }
     }
 
     private BaseBullet ShootBullet(IUnitActionContext context, IUnitActionEvent unitAction, BaseUnit target)
     {
-        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().GetData().Asset_File);
+        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().coreStat.AssetFileName);
         BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
         if (bullet != null)
         {

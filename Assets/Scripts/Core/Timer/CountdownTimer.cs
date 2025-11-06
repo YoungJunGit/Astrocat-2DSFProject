@@ -4,7 +4,7 @@ public class CountdownTimer : Timer
 {
     public CountdownTimer(float initTime) : base(initTime) { }
 
-    public override void Tick(float dt)
+    protected override void Tick(float dt)
     {
         if (IsRunning && Time >= 0)
         {

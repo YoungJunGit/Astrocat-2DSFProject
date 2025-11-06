@@ -27,7 +27,7 @@ public class PlayerHUD : BaseHUD
 
     public override void Initialize(BaseUnit unit)
     {
-        unitName.text = unit.GetStat().GetData().Name;
+        unitName.text = unit.GetStat().coreStat.Name;
         ap_BoxList = ap_Panel.GetComponentsInChildren<Image>();
 
         unit.GetStat().OnHPChanged += OnHPChanged;

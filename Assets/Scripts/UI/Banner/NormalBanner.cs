@@ -6,10 +6,10 @@ public class NormalBanner : Banner
 {
     public void Init(UnitStat stat, int index, int round)
     {
-        _sprites = AssetLoader.LoadImgAsset(stat.GetData().Asset_File);
+        _sprites = AssetLoader.LoadImgAsset(stat.coreStat.AssetFileName);
         _bannerImg.sprite = _sprites[0];
-        _priorityImg.sprite = stat.GetData().Side == SIDE.PLAYER ? _prioritySprites[stat.Priority] : _prioritySprites[stat.Priority + 3];
-        _myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(stat.GetData().Asset_File);
+        _priorityImg.sprite = stat.coreStat.Side == SIDE.PLAYER ? _prioritySprites[stat.Priority] : _prioritySprites[stat.Priority + 3];
+        _myAnimator.runtimeAnimatorController = AssetLoader.LoadAnimAsset(stat.coreStat.AssetFileName);
 
         _bannerViewModel = new BannerViewModel(stat, index, round);
 

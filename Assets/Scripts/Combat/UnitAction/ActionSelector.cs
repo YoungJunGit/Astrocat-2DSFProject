@@ -35,7 +35,7 @@ public class ActionSelector : BaseSelector
 
     public async UniTask SelectAction(PlayerUnit playerUnit, Action<IUnitAction> onSelected)
     {
-        Debug.Log($"{playerUnit.GetStat().Name} : Select Action");
+        Debug.Log($"{playerUnit.GetStat().coreStat.Name} : Select Action");
         
         selector.transform.position = playerUnit.attachments.GetActionSelectorPos().position;
         selector.GetComponent<Canvas>().sortingLayerName = layerName;
@@ -63,7 +63,7 @@ public class ActionSelector : BaseSelector
                         break;
                     case 2:
                         _soundService.PlayEffectSound("Start_Menu");
-                        var skillID = playerUnit.GetStat().GetSkillsID();
+                        var skillID = playerUnit.GetStat().coreStat.SkillsID;
 
                         skillName.Clear();
                         foreach (var skill in skillID)
