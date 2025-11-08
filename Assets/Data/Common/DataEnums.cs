@@ -27,6 +27,7 @@ namespace DataEnum
         GRAVITY,
         VOID,
         HOLY,
+        ETC
     }
 
     public enum ELEMENT_STATUS_CATEGORY

@@ -9,7 +9,8 @@ public class AttackWarningDialogue : Dialogue
     {
         string text = textComp.text;
         textComp.text = "";
-        textComp.DOText(text, duration);
+        Tween t = textComp.DOText(text, duration);
+
 
         bool isFadeComplete = await GetComponent<Fade>().FadeAnimation(null, duration);
 

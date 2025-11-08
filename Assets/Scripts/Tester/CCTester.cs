@@ -4,45 +4,116 @@ using DataEnum;
 using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
+using UnityEditor.TextCore.Text;
+using UnityEditor;
+using System.Linq;
+using UnityEditor.Overlays;
+using Unity.VisualScripting.FullSerializer;
+using Sirenix.Utilities;
 
 public class CCTester : MonoBehaviour
 {
-    [SerializeField] Button btn;
-    [SerializeField] ELEMENT_STATUS_CATEGORY TestType;
+    enum CCSide
+    {
+        PlayerToEnemy,
+        EnemyToPlayer
+    }
+    CrowdControlManager crowdControlManager;
+    UnitManager unitManager;
 
-    private static readonly Dictionary<ELEMENT_STATUS_CATEGORY,
-       Action<CrowdControlManager, BaseUnit, BaseUnit>> _table =
-       new()
-       {
-            { ELEMENT_STATUS_CATEGORY.STUN, static (mgr, t, c) => mgr.AddCrowdControl<Stun>(t, c) },
-            { ELEMENT_STATUS_CATEGORY.BURN, static (mgr, t, c) => mgr.AddCrowdControl<Burn>(t, c) },
-       };
+    [SerializeField] Button addCrowdCtrlBtn;
+    [SerializeField] Button rmvCrowdCtrlBtn;
+    [SerializeField] Button debugCrowdCtrlsBtn;
+    [SerializeField] ELEMENT_TYPE element_Type;
+
+    [FoldoutGroup("Add"), SerializeField] CCSide targetSide;
+    [FoldoutGroup("Add"), SerializeField] bool targetIsRandom = false;
+    [FoldoutGroup("Add"), HideIf("targetIsRandom"), SerializeField] int enemyIndex;
+    [FoldoutGroup("Add"), HideIf("targetIsRandom"), SerializeField] int playerIndex;
+
+    [FoldoutGroup("Remove"), SerializeField] SIDE removeSide;
+    [FoldoutGroup("Remove"), SerializeField] int removeIndex;
+
+    [FoldoutGroup("Debug"), SerializeField] ELEMENT_TYPE[] elementsToPrint;
+    [FoldoutGroup("Debug"), SerializeField] bool printAll;
+    [FoldoutGroup("Debug"), HideIf("printAll"), SerializeField] SIDE debugSide;
+    [FoldoutGroup("Debug"), HideIf("printAll"), SerializeField] int debugIndex;
 
     private void Awake()
     {
-        btn.onClick.AddListener(() => SetCCOnRandomUnit());
-    }
-
-    public void SetCCOnRandomUnit()
-    {
-        CrowdControlManager crowdControlManager;
-        UnitManager unitManager;
         ServiceLocator.For(this)
             .Get(out unitManager)
             .Get(out crowdControlManager);
-        
+
+        addCrowdCtrlBtn.onClick.AddListener(() => SetCCOnUnit());
+        rmvCrowdCtrlBtn.onClick.AddListener(() => RemoveCCOnUnit());
+        debugCrowdCtrlsBtn.onClick.AddListener(() => DebugCC());
+    }
+
+    public void SetCCOnUnit()
+    {
         var enemyUnits = unitManager.GetEnemyUnits();
         var playerUnits = unitManager.GetPlayerUnits();
 
-        var target = enemyUnits[Random.Range(0, enemyUnits.Count)];
-        var caster = playerUnits[Random.Range(0, playerUnits.Count)];
+        enemyIndex = targetIsRandom ? Random.Range(0, enemyUnits.Count) : enemyIndex;
+        playerIndex = targetIsRandom ? Random.Range(0, playerUnits.Count) : playerIndex;
+        var target = enemyUnits[enemyIndex];
+        var caster = playerUnits[playerIndex];
 
-        if (!_table.TryGetValue(TestType, out var call))
+        if (targetSide == CCSide.PlayerToEnemy)
+            crowdControlManager.AddCrowdControl(element_Type, target, caster);
+        else
+            crowdControlManager.AddCrowdControl(element_Type, caster, target);
+    }
+
+    public void RemoveCCOnUnit()
+    {
+        var units = unitManager.GetUnit(removeSide);
+        var target = units[removeIndex];
+
+        crowdControlManager.RemoveCrowdControl(element_Type, target);
+    }
+
+    public void DebugCC()
+    {
+        if(printAll)
         {
-            Debug.LogWarning($"No mapping for {TestType}");
-            return;
+            var units = unitManager.GetAllUnits();
+            foreach (var unit in units)
+            {
+                string str = ToString(elementsToPrint, unit);
+                Debug.Log(str);
+            }
+        }
+        else
+        {
+            var units = unitManager.GetUnit(debugSide);
+            string str = ToString(elementsToPrint, units[debugIndex]);
+            Debug.Log(str);
+        }
+    }
+
+    public string ToString(ELEMENT_TYPE[] element_Type, BaseUnit unit)
+    {
+        string str1 = $"{unit.GetStat().coreStat.Name}'s CC List\n";
+
+        string str2 = "";
+        foreach (var element in element_Type)
+        {
+            str2 += $"{element.ToString()} : ";
+            IReadOnlyList<ICrowdControl> crowdControls = unit.crowdControlUnit.EffectDictionary[element];
+
+            int index = 0;
+            foreach (var c in crowdControls)
+            {
+                str2 += $"{c.GetType()}";
+                if(!(++index == crowdControls.Count))
+                    str2 += ", ";
+            }
+            str2 += "\n";
         }
 
-        call(crowdControlManager, target, caster);
+        return str1 + str2;
     }
 }

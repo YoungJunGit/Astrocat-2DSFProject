@@ -163,9 +163,9 @@ GameObject:
   - component: {fileID: 1082678758224106236}
   - component: {fileID: 4978429908181697494}
   - component: {fileID: 6086613758383382135}
-  - component: {fileID: 2010626627746695132}
+  - component: {fileID: 2897497443284133330}
   m_Layer: 5
-  m_Name: DialogueCanvas
+  m_Name: CombatTextCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
---- !u!114 &2010626627746695132
+--- !u!114 &2897497443284133330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8416498070609961622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfb1483c45703bf45943e600b1d3c38d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b439e95177c2fa4c804a7c650ca70fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8892958696800983321
@@ -369,10 +369,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa650ec342c5d1478e2fdbabb237e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeIn: 1
+  autoStart: 0
+  Fade_Setting: 2
   fadeInDuration: 0.5
   fadeInCurve: 6
-  fadeOut: 0
   fadeOutDuration: 0.5
   fadeOutCurve: 6
   startDelay: 3

@@ -20,7 +20,7 @@ public class GameScene : AbstractScene
 
     [Header("Manager Settings")]
     [SerializeField] private HUDManager hudManager;
-    [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private TextManager textManager;
     [SerializeField] private CombatManager combatManager;
     [SerializeField] private UnitManager unitManager;
     [SerializeField] private QTEManager qteManager;
@@ -48,7 +48,7 @@ public class GameScene : AbstractScene
         ServiceLocator.ForSceneOf(this)
             .Register(dataHandler)
             .Register(unitActionExecuter as IUnitActionExecuter)
-            .Register(dialogueManager)
+            .Register(textManager as ICombatTextManager)
             .Register(unitManager)
             .Register(selectorManager as ISelectorManager)
             .Register(inputHandler)
@@ -63,7 +63,7 @@ public class GameScene : AbstractScene
         entityData = new EntityDataCreator().CreateEntityData(dataHandler.EntityData, playerUnitID.ToList(), enemyUnitID.ToList());
 
         hudManager.Init();
-        dialogueManager.Init();
+        textManager.Init();
         combatManager.Init();
         unitManager.Init();
         qteManager.Init();
