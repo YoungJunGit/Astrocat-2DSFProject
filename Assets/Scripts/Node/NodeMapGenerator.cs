@@ -1,6 +1,9 @@
+using Cysharp.Threading.Tasks;
+using Cysharp.Threading.Tasks.Triggers;
 using DG.Tweening;
 using S3MG;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -73,13 +76,16 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField, Range(1, 3)] public float mouseSensitive = 1.0f;
     [SerializeField, Range(1, 6)] public float gamepadSensitive = 2.0f;
 
-    [Header("Camera Control")]
+    [Header("▼Camera Control")]
     [SerializeField] private GameObject cameraPref;
+    [SerializeField] private GameObject planetSelectorPref;
+    [SerializeField] private float cameraPositionYOffset;
     [SerializeField] private float cameraPositionZOffset;
     [SerializeField] private float camSpeed;
     List<Node> showNodes;
     private int showNodesIndex = 0;
     Camera cam;
+    GameObject planetSelector;
     InputHandler inputHandler;
     CharacterController characterController;
     Vector3 direction;
@@ -127,6 +133,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         if (dataCheckBeforeGeneration()) return;
         UpdatePublisher.SubscribeObserver(this);
         cam = Instantiate(cameraPref).GetComponent<Camera>();
+        planetSelector = Instantiate(planetSelectorPref);
         characterController = cam.GetComponent<CharacterController>();
         pathsTransform = new List<Transform>();
         showNodes = new List<Node>();
@@ -864,9 +871,10 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             showNodesIndex = (showNodesIndex + (int)index) % showNodes.Count;
             node = showNodes[showNodesIndex];
         }
-        Vector3 targetPos = new Vector3(node.transform.position.x, cam.transform.position.y, node.transform.position.z - cameraPositionZOffset);
+        Vector3 targetPos = new Vector3(node.transform.position.x, cameraPositionYOffset, node.transform.position.z - cameraPositionZOffset);
         //cam.transform.position = Vector3.Lerp(cam.transform.position, targetPos, 1.0f);
         cam.transform.DOMove(targetPos, 1.0f).SetEase(Ease.OutCirc);
+        planetSelector.transform.position = new Vector3(node.transform.position.x, node.transform.position.y+3, node.transform.position.z);
     }
 
     private void OnDestroy()
