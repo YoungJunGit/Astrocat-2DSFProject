@@ -1,28 +1,38 @@
+using DataEnum;
+using ObservableCollections;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using R3;
 using static CrowdControlManager;
+using Unity.VisualScripting;
 
 public class CrowdControlUnit
 {
-    private readonly HashSet<ICrowdControl> _effectList;
-    public IReadOnlyCollection<ICrowdControl> EffectList => _effectList;
+    private readonly Dictionary<ELEMENT_TYPE, ObservableList<ICrowdControl>> _effectDictionary = new()
+        {
+            {ELEMENT_TYPE.PHYSICAL, new ObservableList<ICrowdControl>() },
+            {ELEMENT_TYPE.FIRE, new ObservableList<ICrowdControl>() },
+            {ELEMENT_TYPE.RADIATION, new ObservableList<ICrowdControl>() },
+            {ELEMENT_TYPE.GRAVITY, new ObservableList<ICrowdControl>() },
+            {ELEMENT_TYPE.VOID, new ObservableList<ICrowdControl>() },
+            {ELEMENT_TYPE.HOLY, new ObservableList<ICrowdControl>() },
+            {ELEMENT_TYPE.ETC, new ObservableList<ICrowdControl>() }
+        };
 
-    public CrowdControlUnit() 
-    { 
-        _effectList = new HashSet<ICrowdControl>();
+    public IReadOnlyDictionary<ELEMENT_TYPE, IReadOnlyObservableList<ICrowdControl>> EffectDictionary =>
+        _effectDictionary.ToDictionary(kv => kv.Key, kv => (IReadOnlyObservableList<ICrowdControl>)kv.Value);
+
+    public ELEMENT_TYPE Previous_Element_Type { get; set; }
+
+    public void Add(ELEMENT_TYPE elementType, ICrowdControl c)
+    {
+        _effectDictionary[elementType].Add(c);
     }
 
-    public bool Add(ICrowdControl c)
+    public void Remove(ELEMENT_TYPE elementType, ICrowdControl c)
     {
-        if(c != null)
-            return _effectList.Add(c);
-        return false;
-    }
-
-    public bool Remove<T>() where T : ICrowdControl
-    {
-        if (_effectList.RemoveWhere(element => element is T) > 0)
-            return true;
-        return false;
+        _effectDictionary[elementType].Remove(c);
     }
 }

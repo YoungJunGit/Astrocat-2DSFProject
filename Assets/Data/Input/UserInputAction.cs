@@ -566,6 +566,45 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Skip"",
+            ""id"": ""0a87805b-a317-44f6-a7c0-966946d4158a"",
+            ""actions"": [
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e6f1dc1-2edd-446e-9c59-fac4ea862172"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8fd7ca05-2882-4610-8700-0b05f24eb104"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7756d9af-8013-4016-8cbe-3eb5eba64240"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -608,6 +647,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         // SelectPlanet
         m_SelectPlanet = asset.FindActionMap("SelectPlanet", throwIfNotFound: true);
         m_SelectPlanet_MoveToPlanet = m_SelectPlanet.FindAction("MoveToPlanet", throwIfNotFound: true);
+        // Skip
+        m_Skip = asset.FindActionMap("Skip", throwIfNotFound: true);
+        m_Skip_Skip = m_Skip.FindAction("Skip", throwIfNotFound: true);
     }
 
     ~@UserInputAction()
@@ -617,6 +659,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_QTE.enabled, "This will cause a leak and performance issues, UserInputAction.QTE.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Parry.enabled, "This will cause a leak and performance issues, UserInputAction.Parry.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_SelectPlanet.enabled, "This will cause a leak and performance issues, UserInputAction.SelectPlanet.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Skip.enabled, "This will cause a leak and performance issues, UserInputAction.Skip.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1234,6 +1277,102 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="SelectPlanetActions" /> instance referencing this action map.
     /// </summary>
     public SelectPlanetActions @SelectPlanet => new SelectPlanetActions(this);
+
+    // Skip
+    private readonly InputActionMap m_Skip;
+    private List<ISkipActions> m_SkipActionsCallbackInterfaces = new List<ISkipActions>();
+    private readonly InputAction m_Skip_Skip;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Skip".
+    /// </summary>
+    public struct SkipActions
+    {
+        private @UserInputAction m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public SkipActions(@UserInputAction wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Skip/Skip".
+        /// </summary>
+        public InputAction @Skip => m_Wrapper.m_Skip_Skip;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Skip; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="SkipActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(SkipActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="SkipActions" />
+        public void AddCallbacks(ISkipActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SkipActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SkipActionsCallbackInterfaces.Add(instance);
+            @Skip.started += instance.OnSkip;
+            @Skip.performed += instance.OnSkip;
+            @Skip.canceled += instance.OnSkip;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="SkipActions" />
+        private void UnregisterCallbacks(ISkipActions instance)
+        {
+            @Skip.started -= instance.OnSkip;
+            @Skip.performed -= instance.OnSkip;
+            @Skip.canceled -= instance.OnSkip;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="SkipActions.UnregisterCallbacks(ISkipActions)" />.
+        /// </summary>
+        /// <seealso cref="SkipActions.UnregisterCallbacks(ISkipActions)" />
+        public void RemoveCallbacks(ISkipActions instance)
+        {
+            if (m_Wrapper.m_SkipActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="SkipActions.AddCallbacks(ISkipActions)" />
+        /// <seealso cref="SkipActions.RemoveCallbacks(ISkipActions)" />
+        /// <seealso cref="SkipActions.UnregisterCallbacks(ISkipActions)" />
+        public void SetCallbacks(ISkipActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SkipActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SkipActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="SkipActions" /> instance referencing this action map.
+    /// </summary>
+    public SkipActions @Skip => new SkipActions(this);
     private int m_PCSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1363,5 +1502,20 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMoveToPlanet(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Skip" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="SkipActions.AddCallbacks(ISkipActions)" />
+    /// <seealso cref="SkipActions.RemoveCallbacks(ISkipActions)" />
+    public interface ISkipActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Skip" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSkip(InputAction.CallbackContext context);
     }
 }

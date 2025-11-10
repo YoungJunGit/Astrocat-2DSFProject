@@ -23,11 +23,6 @@ class UnitActionFactory : ScriptableObject
         return CreateBaseAttackActionByUnitType(unit, SIDE.PLAYER);
     }
 
-    public BaseBuffAction CreatePlayerBaseBuffAction(BaseUnit unit)
-    {
-        return new BaseBuffAction(SIDE.PLAYER);
-    }
-
     public SkillAttackAction CreateSkillAttackAction(BaseUnit unit, string skillID)
     {
         SkillAttackAction skillAction = null;

@@ -180,7 +180,7 @@ public class UnitStat
 
     public Action<float, float> OnHPChanged;
     public Action<int, int> OnAPChanged;
-    public Action<float> OnDamaged;
+    public Action<IDamage> OnDamaged;
     public Action<float> OnHealed;
     public Action OnDie;
 
@@ -200,11 +200,11 @@ public class UnitStat
         OnAPChanged?.Invoke(_curAp, modifierStat.MaxSP);
     }
 
-    public void GetDamaged(float value)     
+    public void GetDamaged(IDamage damage)     
     {
-        _curHp = Mathf.Clamp(_curHp - value, 0f, modifierStat.MaxHP);
+        _curHp = Mathf.Clamp(_curHp - damage.Value, 0f, modifierStat.MaxHP);
         OnHPChanged.Invoke(_curHp, modifierStat.MaxHP);
-        OnDamaged.Invoke(value);
+        OnDamaged.Invoke(damage);
 
         if (_curHp <= 0f)
         {

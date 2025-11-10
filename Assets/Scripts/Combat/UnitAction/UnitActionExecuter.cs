@@ -11,8 +11,7 @@ public interface IUnitActionExecuter
 [CreateAssetMenu(fileName = "UnitActionExecuter", menuName = "GameScene/UnitActionExecuter")]
 public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
 {
-    DialogueManager _dialogueManager;
-    DamageFactory _damageFactory;
+    ICombatTextManager _textManager;
     ISoundService _soundService;
     IParryingApplier _parryingApplier;
     InputHandler _inputHandler;
@@ -20,8 +19,7 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
     public void Init()
     {
         ServiceLocator.For(this)
-            .Get(out _dialogueManager)
-            .Get(out _damageFactory)
+            .Get(out _textManager)
             .Get(out _soundService)
             .Get(out _parryingApplier)
             .Get(out _inputHandler);
@@ -29,7 +27,7 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
     
     public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action, ITarget<BaseUnit> target)
     {
-        var context = new UnitActionContext(caster, target, _dialogueManager, _damageFactory, _soundService, _parryingApplier, _inputHandler);
+        var context = new UnitActionContext(caster, target, _textManager, _soundService, _parryingApplier, _inputHandler);
         var cts = new CancellationTokenSource();
         var unitActionEvent = new UnitActionEvent();
         

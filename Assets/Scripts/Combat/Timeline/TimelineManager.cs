@@ -14,10 +14,14 @@ public class TimelineManager : MonoBehaviour
     private TimelineManagerModel _timelineManagerModel;
     private TimelinePublisher _timelinePublisher;
 
+    ICombatTextManager textManager;
+
     public void Init()
     {
         _timelineManagerModel = new TimelineManagerModel();
         _timelinePublisher    = new TimelinePublisher();
+
+        ServiceLocator.For(this).Get(out textManager);
     }
 
     public void CreateTimeline(List<BaseUnit> units)
@@ -41,9 +45,12 @@ public class TimelineManager : MonoBehaviour
                                             }
                                         })
                                         .AddTo(this);
-        _timelineManagerModel.CurRound.Subscribe(round =>
+
+        _timelineManagerModel.CurRound.DistinctUntilChanged()
+                                      .Subscribe(round =>
                                       {
                                           _timelinePublisher.UpdateTimeline(round);
+                                          textManager.ShowNextRoundText(round);
                                       })
                                       .AddTo(this);
     }

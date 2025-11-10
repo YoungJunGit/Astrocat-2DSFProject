@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c961b61d89b25d44aaeae7bc4e8f3a8, type: 3}
-  m_Name: CombatDialogueManager
+  m_Script: {fileID: 11500000, guid: a04213392b4a411da7567dc9a9dbfd2d, type: 3}
+  m_Name: CrowdControlManager
   m_EditorClassIdentifier: 
-  dialogueCanvasPref: {fileID: 2010626627746695132, guid: 51d998b76e25c334f97ea2947e58fb00, type: 3}

@@ -14,6 +14,6 @@ public class TitleManager : ScriptableObject
 
     public void CreateObejct()
     {
-        titleCanvas.LoadUI();
+        
     }
 }

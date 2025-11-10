@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e50fce7181daf4cbd976a6272f0d9f, type: 3}
+  m_Name: 03_BuffData
+  m_EditorClassIdentifier: 
+  json: {fileID: 4900000, guid: f43b2b5d95df1f44686b241fec24e18d, type: 3}
+  decryptToggle: 0
+  data:
+  - Buff_ID: 30001001
+    table: 30
+    kind: 0
+    index: 1001
+    Buff_Type: 1
+  - Buff_ID: 30001002
+    table: 30
+    kind: 0
+    index: 1002
+    Buff_Type: 2
+  - Buff_ID: 30001003
+    table: 30
+    kind: 0
+    index: 1003
+    Buff_Type: 3
+  - Buff_ID: 30001004
+    table: 30
+    kind: 0
+    index: 1004
+    Buff_Type: 4
+  - Buff_ID: 30001005
+    table: 30
+    kind: 0
+    index: 1005
+    Buff_Type: 5
+  - Buff_ID: 30001006
+    table: 30
+    kind: 0
+    index: 1006
+    Buff_Type: 6
+  - Buff_ID: 30001007
+    table: 30
+    kind: 0
+    index: 1007
+    Buff_Type: 7
+  - Buff_ID: 30001008
+    table: 30
+    kind: 0
+    index: 1008
+    Buff_Type: 8
+  - Buff_ID: 30001009
+    table: 30
+    kind: 0
+    index: 1009
+    Buff_Type: 9
+  - Buff_ID: 30001010
+    table: 30
+    kind: 0
+    index: 1010
+    Buff_Type: 10
+  - Buff_ID: 30001011
+    table: 30
+    kind: 0
+    index: 1011
+    Buff_Type: 11
+  - Buff_ID: 30001012
+    table: 30
+    kind: 0
+    index: 1012
+    Buff_Type: 12
+  - Buff_ID: 30001013
+    table: 30
+    kind: 0
+    index: 1013
+    Buff_Type: 13
+  - Buff_ID: 30001014
+    table: 30
+    kind: 0
+    index: 1014
+    Buff_Type: 14
+  - Buff_ID: 30001015
+    table: 30
+    kind: 0
+    index: 1015
+    Buff_Type: 15
+  - Buff_ID: 30001016
+    table: 30
+    kind: 0
+    index: 1016
+    Buff_Type: 16
+  - Buff_ID: 30001017
+    table: 30
+    kind: 0
+    index: 1017
+    Buff_Type: 17
+  - Buff_ID: 30001018
+    table: 30
+    kind: 0
+    index: 1018
+    Buff_Type: 18
+  - Buff_ID: 30001019
+    table: 30
+    kind: 0
+    index: 1019
+    Buff_Type: 19
+  - Buff_ID: 30001020
+    table: 30
+    kind: 0
+    index: 1020
+    Buff_Type: 20
+  - Buff_ID: 30001021
+    table: 30
+    kind: 0
+    index: 1021
+    Buff_Type: 21
+  - Buff_ID: 30001022
+    table: 30
+    kind: 0
+    index: 1022
+    Buff_Type: 22
+  - Buff_ID: 30001023
+    table: 30
+    kind: 0
+    index: 1023
+    Buff_Type: 23
+  - Buff_ID: 30001024
+    table: 30
+    kind: 0
+    index: 1024
+    Buff_Type: 24
+  - Buff_ID: 30001025
+    table: 30
+    kind: 0
+    index: 1025
+    Buff_Type: 25
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0
+  - Buff_ID: 0
+    table: 
+    kind: 
+    index: 
+    Buff_Type: 0

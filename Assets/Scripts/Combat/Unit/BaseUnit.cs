@@ -1,11 +1,11 @@
 using DataEntity;
 using DataEnum;
 using DataHashAnim;
-using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using System;
-using Unity.VisualScripting;
+using System.Linq;
+using ObservableCollections;
+using R3;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Sirenix.OdinInspector;
@@ -23,27 +23,45 @@ public class BaseUnit : MonoBehaviour
 
     private UnitStat _stat;
     private ISoundService _soundService;
+    private ICombatTextManager _textManager;
 
     [HideInInspector] 
     public UnitAttachments attachments;
     public UnitCombatInfo combatInfo;
     public CrowdControlUnit crowdControlUnit;
     public Action<BaseUnit> m_FinishedDying;
-    
+
+    DisposableBag d;
+
     public virtual void Initialize(EntityData data, int index)
     {
         _stat       = new UnitStat(data, index);
         combatInfo  = new UnitCombatInfo();
+        crowdControlUnit = new CrowdControlUnit();
         attachments = GetComponent<UnitAttachments>();
         _animHandler.Init();
 
-        ServiceLocator.For(this).Get(out _soundService);
+        ServiceLocator.For(this)
+            .Get(out _soundService)
+            .Get(out _textManager);
+
+        // Add들만 합치기 (키 포함)
+        var addStream = crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveAdd().Select(ev => new { Element = kv.Key, ev.Value, ev.Index })).Merge();
+
+        // Remove들만 합치기 (키 포함)
+        var removeStream = crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveRemove().Select(ev => new { Element = kv.Key, ev.Value, ev.Index })).Merge();
+
+        var removeSub = removeStream.Subscribe(ev =>
+            {
+                Debug.Log($"Removed CC\nElement : {ev.Element}, Name : {ev.Value.GetType()}, Index : {ev.Index}");
+            }
+        ).AddTo(this); 
 
         if (HasSupporter)
             _supporterUnit.Initialize();
     }
 
-    public void OnDamaged(float value)
+    public void OnDamaged(IDamage damage)
     {
         attachments.GetSpriteRenderer().color = Color.red;
         attachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);
@@ -55,6 +73,8 @@ public class BaseUnit : MonoBehaviour
         {
             _supporterUnit.OnDamaged();
         }
+
+        _textManager.OnDamage(this, damage);
     }
 
     public void OnHealed(float value)

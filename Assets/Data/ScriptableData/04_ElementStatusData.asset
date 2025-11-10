@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4952f4b016aae4daadb087b804b7dd, type: 3}
+  m_Name: 04_ElementStatusData
+  m_EditorClassIdentifier: 
+  json: {fileID: 4900000, guid: 6f7e69d53c91f2b47a294c48b42d0621, type: 3}
+  decryptToggle: 0
+  data:
+  - Element_Status_ID: 40011001
+    table: 40
+    kind: 1
+    index: 1001
+    Element_Status_Name: ELEMENT_STATUS_NAME_STUN
+    Element_Status_Category: 1
+    Buff_Table_ID: '-'
+    Buff_Value: 0
+  - Element_Status_ID: 40011002
+    table: 40
+    kind: 1
+    index: 1002
+    Element_Status_Name: ELEMENT_STATUS_NAME_BURN
+    Element_Status_Category: 2
+    Buff_Table_ID: '-'
+    Buff_Value: 0
+  - Element_Status_ID: 40011003
+    table: 40
+    kind: 1
+    index: 1003
+    Element_Status_Name: ELEMENT_STATUS_NAME_CONTAMINATION
+    Element_Status_Category: 3
+    Buff_Table_ID: 30001024
+    Buff_Value: 1.3
+  - Element_Status_ID: 40011004
+    table: 40
+    kind: 1
+    index: 1004
+    Element_Status_Name: ELEMENT_STATUS_NAME_SUPPRESS
+    Element_Status_Category: 4
+    Buff_Table_ID: 30001005
+    Buff_Value: 0.85
+  - Element_Status_ID: 40011005
+    table: 40
+    kind: 1
+    index: 1005
+    Element_Status_Name: ELEMENT_STATUS_NAME_STRANGE
+    Element_Status_Category: 5
+    Buff_Table_ID: '-'
+    Buff_Value: 0
+  - Element_Status_ID: 40011006
+    table: 40
+    kind: 1
+    index: 1006
+    Element_Status_Name: ELEMENT_STATUS_NAME_SILENCE
+    Element_Status_Category: 6
+    Buff_Table_ID: '-'
+    Buff_Value: 0
+  - Element_Status_ID: 40022001
+    table: 40
+    kind: 2
+    index: 2001
+    Element_Status_Name: ELEMENT_STATUS_NAME_WEAKNESS
+    Element_Status_Category: 1
+    Buff_Table_ID: 30001023
+    Buff_Value: 0.8
+  - Element_Status_ID: 40022002
+    table: 40
+    kind: 2
+    index: 2002
+    Element_Status_Name: ELEMENT_STATUS_NAME_OVERHEAT
+    Element_Status_Category: 7
+    Buff_Table_ID: '-'
+    Buff_Value: 0
+  - Element_Status_ID: 40022003
+    table: 40
+    kind: 2
+    index: 2003
+    Element_Status_Name: ELEMENT_STATUS_NAME_EXPOSURE
+    Element_Status_Category: 3
+    Buff_Table_ID: 30001024
+    Buff_Value: 1.3
+  - Element_Status_ID: 40022004
+    table: 40
+    kind: 2
+    index: 2004
+    Element_Status_Name: ELEMENT_STATUS_NAME_BIND
+    Element_Status_Category: 4
+    Buff_Table_ID: 30001005
+    Buff_Value: 0.7
+  - Element_Status_ID: 40022005
+    table: 40
+    kind: 2
+    index: 2005
+    Element_Status_Name: ELEMENT_STATUS_NAME_CORRODE
+    Element_Status_Category: 8
+    Buff_Table_ID: '-'
+    Buff_Value: 0
+  - Element_Status_ID: 40022006
+    table: 40
+    kind: 2
+    index: 2006
+    Element_Status_Name: ELEMENT_STATUS_NAME_DOMINATE
+    Element_Status_Category: 6
+    Buff_Table_ID: 30001003
+    Buff_Value: 0.7
+  - Element_Status_ID: 40033001
+    table: 40
+    kind: 3
+    index: 3001
+    Element_Status_Name: ELEMENT_STATUS_NAME_CHAOS
+    Element_Status_Category: 9
+    Buff_Table_ID: 30001015
+    Buff_Value: 0.7
