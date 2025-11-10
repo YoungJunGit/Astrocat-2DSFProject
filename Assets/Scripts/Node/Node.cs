@@ -53,8 +53,9 @@ public class Node : MonoBehaviour, IUpdateObserver
     {
         _mapGenerator = mapGenerator;
         currentColor = defaultColor;
-        ServiceLocator.ForSceneOf(this).Get(out _3DCamera);
-        ServiceLocator.ForSceneOf(this).Get(out _scene);
+        ServiceLocator.ForSceneOf(this)
+            .Get(out _3DCamera)
+            .Get(out _scene);
         UpdatePublisher.SubscribeObserver(this);
     }
 

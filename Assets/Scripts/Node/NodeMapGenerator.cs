@@ -89,6 +89,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     InputHandler inputHandler;
     CharacterController characterController;
     Vector3 direction;
+    private InputDisposer inputDisposer;
 
     [Header("▼Data for Each Node : Set ScriptableObject Data")]
     [SerializeField] public NodeData startNodeData;
@@ -139,7 +140,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         showNodes = new List<Node>();
         ServiceLocator.ForSceneOf(this).Get(out inputHandler);
         ServiceLocator.ForSceneOf(this).Register(cam);
-        inputHandler.CurrentInputState = InputHandler.InputState.SelectPlanet;
+        inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectPlanet);
         inputHandler.OnMoveToPlanetAction += ShowActiveNode;
         inputHandler.OnControlSpaceshipAction += (_direction) => direction = _direction;
 
@@ -879,6 +880,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 
     private void OnDestroy()
     {
+        inputDisposer.Dispose();
         UpdatePublisher.DiscribeObserver(this);
     }
     // TODO : Map local save
