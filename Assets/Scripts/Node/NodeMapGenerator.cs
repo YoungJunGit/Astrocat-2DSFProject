@@ -82,13 +82,15 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField] private float cameraPositionYOffset;
     [SerializeField] private float cameraPositionZOffset;
     [SerializeField] private float camSpeed;
+    [SerializeField] private float smoothTime;
     List<Node> showNodes;
     private int showNodesIndex = 0;
     Camera cam;
     GameObject planetSelector;
     InputHandler inputHandler;
-    CharacterController characterController;
     Vector3 direction;
+    Vector3 targetPosition;
+    Vector3 velocity = Vector3.zero;
     private InputDisposer inputDisposer;
 
     [Header("▼Data for Each Node : Set ScriptableObject Data")]
@@ -135,7 +137,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         UpdatePublisher.SubscribeObserver(this);
         cam = Instantiate(cameraPref).GetComponent<Camera>();
         planetSelector = Instantiate(planetSelectorPref);
-        characterController = cam.GetComponent<CharacterController>();
         pathsTransform = new List<Transform>();
         showNodes = new List<Node>();
         ServiceLocator.ForSceneOf(this).Get(out inputHandler);
@@ -168,7 +169,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 
         if(cam != null)
         {
-            characterController.Move(direction * camSpeed);
+            targetPosition += direction * camSpeed * Time.deltaTime;
+            cam.transform.position = Vector3.SmoothDamp(cam.transform.position, targetPosition, ref velocity,smoothTime);
         }
     }
 
@@ -784,7 +786,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         showNodes.Clear();
         for (int i = 0; i < nowNode.nextNodes.Count; i++)
         {
-            nowNode.nextNodes[i].enableButton();
             showNodes.Add(nowNode.nextNodes[i]);
         }
         ShowActiveNode(0);
@@ -861,6 +862,9 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     ---------------------------------*/
     private void ShowActiveNode(float index)
     {
+        foreach (var nodes in showNodes)
+            nodes.disableButton();
+
         Node node;
         if (index < 0)
         {
@@ -872,10 +876,11 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             showNodesIndex = (showNodesIndex + (int)index) % showNodes.Count;
             node = showNodes[showNodesIndex];
         }
+        node.enableButton();
         Vector3 targetPos = new Vector3(node.transform.position.x, cameraPositionYOffset, node.transform.position.z - cameraPositionZOffset);
-        //cam.transform.position = Vector3.Lerp(cam.transform.position, targetPos, 1.0f);
         cam.transform.DOMove(targetPos, 1.0f).SetEase(Ease.OutCirc);
         planetSelector.transform.position = new Vector3(node.transform.position.x, node.transform.position.y+3, node.transform.position.z);
+        targetPosition = targetPos;
     }
 
     private void OnDestroy()
