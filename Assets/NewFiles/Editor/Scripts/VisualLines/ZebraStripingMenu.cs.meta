@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 35fcd676fbbc40e4c9459e219c70d08c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 335844
+  packageName: New Folders 3
+  packageVersion: 1.0
+  assetPath: Assets/NewFiles/Editor/Scripts/VisualLines/ZebraStripingMenu.cs
+  uploadId: 812304

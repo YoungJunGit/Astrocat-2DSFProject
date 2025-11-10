@@ -16,7 +16,7 @@ namespace VolFx
         [Tooltip("Pixel roundness")]
         public ClampedFloatParameter         m_Roundness = new ClampedFloatParameter(0f, 0f, 1f);
         [Tooltip("Grid color")]
-        public NoInterpColorParameter        m_Color     = new NoInterpColorParameter(Color.black);
+        public NoInterpColorParameter        m_Color     = new NoInterpColorParameter(Color.clear);
         [Tooltip("Palette texture (just set of colors in image format)")]
         public Texture2DParameter            m_Palette  = new Texture2DParameter(null, false);
         

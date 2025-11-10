@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 25d72ae8ef562244dbd1c11bb2d9f6c9
+timeCreated: 1697796347
+AssetOrigin:
+  serializedVersion: 1
+  productId: 339380
+  packageName: Watercolor - Art Painting Stilization Effect
+  packageVersion: 1.1.2
+  assetPath: Assets/Watercolor/Runtime/Common/VolFxPass.cs
+  uploadId: 804654
