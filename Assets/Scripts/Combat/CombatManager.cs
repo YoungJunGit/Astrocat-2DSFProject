@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Cysharp.Threading.Tasks;
 using DataEnum;
 using UnityEngine;
@@ -16,7 +17,6 @@ public class CombatManager : ScriptableObject
     [SerializeField] private EventHandler combatEventHandler;
     [SerializeField] private TimelineManager timelineManagerPrefab;
 
-    private UnitManager _unitManager;
     private TimelineManager _timelineManager;
     private BaseUnit currentTurnUnit;
 
@@ -24,8 +24,10 @@ public class CombatManager : ScriptableObject
 
     public bool executed;
 
-    private ISelectorManager _selectorManager;
+    private UnitManager _unitManager;
     private IUnitActionExecuter _actionExecuter;
+    private ICombatTextManager _textManager;
+    private ISelectorManager _selectorManager;
     private ISoundService _soundService;
 
     public void Init()
@@ -33,8 +35,9 @@ public class CombatManager : ScriptableObject
         _timelineManager = Instantiate(timelineManagerPrefab);
 
         ServiceLocator.For(this)
-                      .Get(out _actionExecuter)
                       .Get(out _unitManager)
+                      .Get(out _actionExecuter)
+                      .Get(out _textManager)
                       .Get(out _selectorManager)
                       .Get(out _soundService);
 
@@ -62,6 +65,8 @@ public class CombatManager : ScriptableObject
         while (_unitManager.GetEnemyUnits().Count != 0 && _unitManager.GetPlayerUnits().Count != 0)
         {
             currentTurnUnit = DequeueCurrentUnit.Call(_unitManager.GetAllUnits());
+
+            await UniTask.WaitUntil(() => !_textManager.IsTextOn);
 
             Debug.Log($"{currentTurnUnit.GetStat().coreStat.Name}'s turn");
 

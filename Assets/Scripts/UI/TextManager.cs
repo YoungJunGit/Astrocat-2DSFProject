@@ -8,7 +8,9 @@ using Utils;
 
 public interface ICombatTextManager
 {
-    public UniTask<bool> ShowAttackWarningText(BaseUnit unit);
+    public bool IsTextOn { get; }
+    public UniTask ShowNextRoundText(int round);
+    public UniTask ShowAttackWarningText(BaseUnit unit);
     public void OnDamage(BaseUnit target, IDamage damage);
 }
 
@@ -26,25 +28,40 @@ public class TextManager : ScriptableObject , ICombatTextManager
     {
         textCanvas = Instantiate(textCanvasPref);
 
-        ServiceLocator.For(this).Get(out inputHandler);
+        ServiceLocator.For(this)
+            .Get(out inputHandler);
     }
 
     #region[Combat Text]
-    public async UniTask<bool> ShowAttackWarningText(BaseUnit unit)
+    public bool IsTextOn { get; private set; } = false;
+
+    public async UniTask ShowNextRoundText(int round)
     {
-        Dialogue attackWarningText = textCanvas.GetComponentInChildren<AttackWarningDialogue>(true);
+        BaseText nextRoundText = textCanvas.GetComponentInChildren<NextRoundText>(true);
+
+        nextRoundText.textComp.text = nextRoundText.textComp.text.Replace("{Count}", round.ToString());
+
+        IsTextOn = true;
+        await nextRoundText.ShowText(inputHandler);
+        IsTextOn = false;
+
+        nextRoundText.textComp.text = nextRoundText.textComp.text.Replace(round.ToString(), "{Count}");
+    }
+
+    public async UniTask ShowAttackWarningText(BaseUnit unit)
+    {
+        BaseText attackWarningText = textCanvas.GetComponentInChildren<AttackWarningText>(true);
 
         attackWarningText.textComp.text = attackWarningText.textComp.text.Replace("{Name}", unit.GetStat().coreStat.Name);
         string attackType = unit.GetUnitType() == DataEnum.UNIT_TYPE.MELEE ? "[Melee]" : "[Range]";
         attackWarningText.textComp.text = attackWarningText.textComp.text.Replace("{AttackType}", attackType);
         
-        await attackWarningText.ShowDialogue();
+        await attackWarningText.ShowText(inputHandler);
 
         attackWarningText.textComp.text = attackWarningText.textComp.text.Replace(unit.GetStat().coreStat.Name, "{Name}");
         attackWarningText.textComp.text = attackWarningText.textComp.text.Replace(attackType, "{AttackType}");
-
-        return true;
     }
+
     public void OnDamage(BaseUnit target, IDamage damage)
     {
         IDamageValueDisplayer displayer;

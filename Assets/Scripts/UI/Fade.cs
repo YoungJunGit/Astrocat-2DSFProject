@@ -4,6 +4,7 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,18 +61,17 @@ public class Fade : MonoBehaviour
     private void Start()
     {
         if (autoStart)
-            FadeAnimation().Forget();
+            FadeAnimation();
     }
 
-    public async UniTask<bool> FadeAnimation(Action OnFinishEvent = null, float offSetStartDelay = 0f)
+    public Tween FadeAnimation(float offSetStartDelay = 0f, Action OnFinishEvent = null)
     {
         ui = GetComponent<CanvasGroup>();
-        bool isComplete = false;
 
         TweenParams tweenParams = new TweenParams()
             .SetDelay(startDelay + offSetStartDelay)
             .SetLoops(loops)
-            .OnComplete(() => isComplete = true);
+            .OnComplete(() => { OnFinishEvent?.Invoke(); });
 
         bool doIn = Fade_Setting.HasFlag(FADE_SETTING.FADEIN);
         bool doOut = Fade_Setting.HasFlag(FADE_SETTING.FADEOUT);
@@ -100,9 +100,7 @@ public class Fade : MonoBehaviour
                               .SetAs(tweenParams);
         }
 
-        await UniTask.WaitUntil(() => isComplete);
-        OnFinishEvent?.Invoke();
-        return true;
+        return _running;
     }
 
     private void OnDestroy()

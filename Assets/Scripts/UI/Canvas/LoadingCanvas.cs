@@ -41,6 +41,6 @@ public class LoadingCanvas : MonoBehaviour
         _loadingBar.value = 1f;
         _loadingCircle.SetActive(false);
         _FinishedLoadingText.SetActive(true);
-        _glowEffect.FadeAnimation().Forget();
+        _glowEffect.FadeAnimation();
     }
 }
