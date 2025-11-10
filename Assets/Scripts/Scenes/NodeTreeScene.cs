@@ -15,7 +15,8 @@ public class NodeTreeScene : AbstractScene
     protected override void BindObjects()
     {
         ServiceLocator.ForSceneOf(this)
-            .Register(inputHandler);
+            .Register(inputHandler)
+            .Register(this as AbstractScene);
     }
 
     protected async override UniTask InitializeObjects()

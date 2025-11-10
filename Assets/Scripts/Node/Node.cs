@@ -43,7 +43,8 @@ public class Node : MonoBehaviour, IUpdateObserver
     float elapsedTime = 0f;
 
     NodeMapGenerator _mapGenerator;
-    //ISceneHandler _sceneHandler = new SceneHandler();
+    Camera _3DCamera;
+    AbstractScene _scene;
 
     /*------------------------------------------------------------
     Executed only once when MonoBehaviour is created, Will work if the GameObject is active even if the component is disabled
@@ -52,6 +53,9 @@ public class Node : MonoBehaviour, IUpdateObserver
     {
         _mapGenerator = mapGenerator;
         currentColor = defaultColor;
+        ServiceLocator.ForSceneOf(this)
+            .Get(out _3DCamera)
+            .Get(out _scene);
         UpdatePublisher.SubscribeObserver(this);
     }
 
@@ -81,6 +85,10 @@ public class Node : MonoBehaviour, IUpdateObserver
     ------------------------------------------------------------*/
     public void ObserverUpdate(float dt)
     {
+        if(_3DCamera != null)
+        {
+            transform.LookAt(_3DCamera.transform.position);
+        }
         if(!isActive || visited) return;
 
         float t = (Time.time - lerpStartTime) / lerpDuration;
@@ -271,10 +279,11 @@ public class Node : MonoBehaviour, IUpdateObserver
         Debug.Log("Execute trap");
     }
 
-    void handleEnemy()
+    async void handleEnemy()
     {
         Debug.Log("적 스테이지로 진입");
-        ChangeScene(3);
+        await _scene.SceneHandler.FadeScreen();
+        _scene.SceneHandler.LoadingScreen(3);
     }
 
     void handleMiddle()
@@ -301,14 +310,6 @@ public class Node : MonoBehaviour, IUpdateObserver
     void handleRandom()
     {
         Debug.Log("Execute random process");
-    }
-
-    private void ChangeScene(int sceneNum)
-    {
-        AsyncOperation asyncOperation = null;
-        UpdatePublisher.DiscribeObserver(this);
-        asyncOperation = SceneManager.LoadSceneAsync(sceneNum);
-        asyncOperation.allowSceneActivation = true;
     }
 
     private void OnDestroy()

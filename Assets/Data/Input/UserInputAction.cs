@@ -529,6 +529,15 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ControlSpaceship"",
+                    ""type"": ""Value"",
+                    ""id"": ""68b76da2-4efa-4df2-a79d-b04b6cfcea11"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -546,7 +555,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""2fe4d8e5-8f90-483f-81b6-54606d18673c"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -557,11 +566,88 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""91eb6dd1-9fd7-45d5-ad9a-5dcf97154bd4"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MoveToPlanet"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""3D Vector"",
+                    ""id"": ""c21db17f-c846-4de7-af30-d659ecb97b67"",
+                    ""path"": ""3DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ControlSpaceship"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""5621eb78-485c-4d65-8097-62cfe946b6d3"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ControlSpaceship"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b902bfaa-3634-4d20-aabf-a15d109f618f"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ControlSpaceship"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""26932014-1504-442e-848f-c4145b178b26"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ControlSpaceship"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""02b9fb93-0af3-4404-8950-322b6a3b0aed"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ControlSpaceship"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""forward"",
+                    ""id"": ""1d4c09c2-ee74-44f6-b664-c8f1e5777d48"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ControlSpaceship"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""backward"",
+                    ""id"": ""1eb040c7-002e-423f-83a5-e92670624f19"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ControlSpaceship"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -647,6 +733,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         // SelectPlanet
         m_SelectPlanet = asset.FindActionMap("SelectPlanet", throwIfNotFound: true);
         m_SelectPlanet_MoveToPlanet = m_SelectPlanet.FindAction("MoveToPlanet", throwIfNotFound: true);
+        m_SelectPlanet_ControlSpaceship = m_SelectPlanet.FindAction("ControlSpaceship", throwIfNotFound: true);
         // Skip
         m_Skip = asset.FindActionMap("Skip", throwIfNotFound: true);
         m_Skip_Skip = m_Skip.FindAction("Skip", throwIfNotFound: true);
@@ -1186,6 +1273,7 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_SelectPlanet;
     private List<ISelectPlanetActions> m_SelectPlanetActionsCallbackInterfaces = new List<ISelectPlanetActions>();
     private readonly InputAction m_SelectPlanet_MoveToPlanet;
+    private readonly InputAction m_SelectPlanet_ControlSpaceship;
     /// <summary>
     /// Provides access to input actions defined in input action map "SelectPlanet".
     /// </summary>
@@ -1201,6 +1289,10 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "SelectPlanet/MoveToPlanet".
         /// </summary>
         public InputAction @MoveToPlanet => m_Wrapper.m_SelectPlanet_MoveToPlanet;
+        /// <summary>
+        /// Provides access to the underlying input action "SelectPlanet/ControlSpaceship".
+        /// </summary>
+        public InputAction @ControlSpaceship => m_Wrapper.m_SelectPlanet_ControlSpaceship;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1230,6 +1322,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
             @MoveToPlanet.started += instance.OnMoveToPlanet;
             @MoveToPlanet.performed += instance.OnMoveToPlanet;
             @MoveToPlanet.canceled += instance.OnMoveToPlanet;
+            @ControlSpaceship.started += instance.OnControlSpaceship;
+            @ControlSpaceship.performed += instance.OnControlSpaceship;
+            @ControlSpaceship.canceled += instance.OnControlSpaceship;
         }
 
         /// <summary>
@@ -1244,6 +1339,9 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
             @MoveToPlanet.started -= instance.OnMoveToPlanet;
             @MoveToPlanet.performed -= instance.OnMoveToPlanet;
             @MoveToPlanet.canceled -= instance.OnMoveToPlanet;
+            @ControlSpaceship.started -= instance.OnControlSpaceship;
+            @ControlSpaceship.performed -= instance.OnControlSpaceship;
+            @ControlSpaceship.canceled -= instance.OnControlSpaceship;
         }
 
         /// <summary>
@@ -1502,6 +1600,13 @@ public partial class @UserInputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMoveToPlanet(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ControlSpaceship" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnControlSpaceship(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Skip" which allows adding and removing callbacks.
