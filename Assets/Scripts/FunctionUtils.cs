@@ -11,10 +11,9 @@ namespace Utils
             return Random.Range(range.x, range.y) < clampedChance ? true : false;
         }
 
-        public static bool MakeChance(Vector2 range, float chance)
+        public static bool MakeChance(float chance)
         {
-            float clampedChance = Mathf.Clamp(chance, range.x, range.y);
-            return Random.Range(range.x, range.y) < clampedChance ? true : false;
+            return Random.value < Mathf.Clamp01(chance);
         }
 
         public static T SafeGet<T>(T[] array, int index, T defaultValue = default)

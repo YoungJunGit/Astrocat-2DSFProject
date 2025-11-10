@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e340388923771b44298216121431349b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 335844
+  packageName: New Folders 3
+  packageVersion: 1.0
+  assetPath: Assets/NewFiles/Editor/Scripts/Colors/FolderCustomizer.cs
+  uploadId: 812304

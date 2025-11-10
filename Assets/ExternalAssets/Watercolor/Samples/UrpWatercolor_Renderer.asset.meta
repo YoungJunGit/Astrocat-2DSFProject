@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4d628262b0ac22a45941033739cb181e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 339380
+  packageName: Watercolor - Art Painting Stilization Effect
+  packageVersion: 1.1.2
+  assetPath: Assets/Watercolor/Samples/UrpWatercolor_Renderer.asset
+  uploadId: 804654

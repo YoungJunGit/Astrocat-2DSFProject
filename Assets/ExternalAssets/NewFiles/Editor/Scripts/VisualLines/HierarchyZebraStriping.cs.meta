@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2cf2a04cfb25c34428beb22fbda94a2e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 335844
+  packageName: New Folders 3
+  packageVersion: 1.0
+  assetPath: Assets/NewFiles/Editor/Scripts/VisualLines/HierarchyZebraStriping.cs
+  uploadId: 812304

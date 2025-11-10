@@ -1,0 +1,22 @@
+{
+  "name": "com.roluplay.newfiles",
+  "version": "1.0.0",
+  "displayName": "NewFiles: Editor Enhancement Suite",
+  "description": "A comprehensive suite of tools designed to enhance visual organization, readability, and navigation within the Unity Editor. Features include folder/GameObject customization, zebra striping, and a quick access toolbar.",
+  "unity": "2021.3",
+  "author": {
+    "name": "Roluplay",
+    "email": "coldagsala@gmail.com"
+  },
+  "keywords": [
+    "editor",
+    "productivity",
+    "organization",
+    "customization",
+    "qol",
+    "folders",
+    "icons",
+    "hierarchy",
+    "colors"
+  ]
+}

@@ -27,6 +27,7 @@ namespace DataEnum
         GRAVITY,
         VOID,
         HOLY,
+        ETC
     }
 
     public enum ELEMENT_STATUS_CATEGORY
@@ -37,6 +38,7 @@ namespace DataEnum
         CONTAMINATION,
         SUPPRESS,
         STRANGE,
+        SILENCE,
         WEAKNESS,
         OVERHEAT,
         EXPOSURE,

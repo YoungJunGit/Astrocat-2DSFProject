@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6a4c28f197d9b40b3af929db1bd9c7, type: 3}
+  m_Name: NewFilesSettings
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  enableDebugLog: 0
+  showTooltips: 1
+  useAltClick: 1
+  useCtrlClick: 0
+  useShiftClick: 0
+  colorOpacity: 0.561
+  showColorPreview: 1
+  animateColorChanges: 1
+  enableCache: 1
+  maxCachedFolders: 500
+  lazyLoading: 1
+  autoBackup: 1
+  backupFrequencyDays: 7
+  maxBackups: 5
+  enableQuickAccessBar: 1
+  quickAccessBarHeight: 20
+  quickAccessItemWidth: 120
+  maxQuickAccessItems: 20
+  showQuickAccessTooltips: 1
+  autoSortQuickAccess: 1
+  quickAccessBackgroundOpacity: 0.3
+  quickAccessItemBackgroundOpacity: 0.3
+  predefinedIconPaths: []
+  enableZebraStriping: 0
+  zebraLightColor: {r: 1, g: 1, b: 1, a: 0.05}
+  zebraDarkColor: {r: 0, g: 0, b: 0, a: 0.05}
+  zebraStripingOpacity: 0.055
+  zebraOnlyFolders: 1
+  enableHierarchyIcons: 1
+  hierarchyColorOpacity: 0.2

@@ -566,6 +566,45 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Skip",
+            "id": "0a87805b-a317-44f6-a7c0-966946d4158a",
+            "actions": [
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "6e6f1dc1-2edd-446e-9c59-fac4ea862172",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8fd7ca05-2882-4610-8700-0b05f24eb104",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7756d9af-8013-4016-8cbe-3eb5eba64240",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

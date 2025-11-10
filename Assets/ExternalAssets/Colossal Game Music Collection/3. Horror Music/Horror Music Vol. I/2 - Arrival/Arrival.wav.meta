@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: d0b96ace04cdb6c40a1724441b176a61
+timeCreated: 1491210033
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88190
+  packageName: Colossal Game Music Collection
+  packageVersion: 2.0
+  assetPath: Assets/Colossal Game Music Collection/3. Horror Music/Horror Music Vol.
+    I/2 - Arrival/Arrival.wav
+  uploadId: 257671

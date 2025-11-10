@@ -79,6 +79,10 @@ namespace DataEntity
     public class StringData
     {
         public string String_ID;
+        public string table;
+        public string kind;
+        public string index;
+        public string String_Key_Value;
         public string Korean;
         public string English;
     }

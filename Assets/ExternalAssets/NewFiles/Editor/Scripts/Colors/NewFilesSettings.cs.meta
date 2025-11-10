@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6f6a4c28f197d9b40b3af929db1bd9c7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 335844
+  packageName: New Folders 3
+  packageVersion: 1.0
+  assetPath: Assets/NewFiles/Editor/Scripts/Colors/NewFilesSettings.cs
+  uploadId: 812304

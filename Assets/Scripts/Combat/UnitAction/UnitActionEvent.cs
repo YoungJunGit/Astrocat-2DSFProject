@@ -17,7 +17,7 @@ public class UnitActionEvent : IUnitActionEvent
 {
     public async UniTask ShowAttackMessage(IUnitActionContext context)
     {
-        await context.DialogueManager.ShowAttackWarningDialogue(context.Caster);
+        await context.TextManager.ShowAttackWarningText(context.Caster);
     }
 
     public bool TryGetSingle(IUnitActionContext context, out BaseUnit value)
@@ -44,7 +44,7 @@ public class UnitActionEvent : IUnitActionEvent
 
     public void DamageEvent(IUnitActionContext context, BaseUnit target)
     {
-        float damage = context.DamageFactory.CreateNormalDamage(context.Caster.GetStat().modifierStat.Attack, target.attachments.GetHitBox().bounds);
+        IDamage damage = DamageFactory.CreateNormalDamage<NormalDamageCalculator>(context.Caster, target);
         target.GetStat().GetDamaged(damage);
     }
 }

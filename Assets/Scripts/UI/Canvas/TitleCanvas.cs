@@ -5,10 +5,5 @@ using UnityEngine.UI;
 
 public class TitleCanvas : MonoBehaviour
 {
-    [SerializeField] private Image glow;
 
-    public void LoadUI()
-    {
-        glow.GetComponent<Fade>().FadeAnimation().Forget();
-    }
 }

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using static UserInputAction;
 
 [CreateAssetMenu(fileName = "InputHandler", menuName = "Core/InputHandler", order = 1)]
-public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions, UserInputAction.ISelectActionActions, UserInputAction.IQTEActions, UserInputAction.IParryActions, UserInputAction.ISelectPlanetActions
+public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions, UserInputAction.ISelectActionActions, UserInputAction.IQTEActions, UserInputAction.IParryActions, UserInputAction.ISelectPlanetActions, UserInputAction.ISkipActions
 {
     private UserInputAction _userInputAction;
 
@@ -17,7 +17,8 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
         SelectAction,
         QTE,
         Parry,
-        SelectPlanet
+        SelectPlanet,
+        Skip
     }
 
     private InputState _currentInputState = InputState.None;
@@ -46,6 +47,9 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
                     break;
                 case InputState.SelectPlanet:
                     DisposeOnSelectPlanetActions();
+                    break;
+                case InputState.Skip:
+                    DisposeOnSkipActions();
                     break;
             }
 
@@ -76,6 +80,10 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
                     _userInputAction.Disable();
                     _userInputAction.SelectPlanet.Enable();
                     break;
+                case InputState.Skip:
+                    _userInputAction.Disable();
+                    _userInputAction.Skip.Enable();
+                    break;
             }
         }
     }
@@ -90,6 +98,7 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
             _userInputAction.QTE.SetCallbacks(this);
             _userInputAction.Parry.SetCallbacks(this);
             _userInputAction.SelectPlanet.SetCallbacks(this);
+            _userInputAction.Skip.SetCallbacks(this);
         }
 
         CurrentInputState = InputState.None;
@@ -235,6 +244,22 @@ public class InputHandler : ScriptableObject, UserInputAction.ISelectUnitActions
     {
         OnMoveToPlanetAction = null;
         OnControlSpaceshipAction = null;
+    }
+
+    #endregion
+
+    #region[Action - Skip]
+
+    public event Action OnSkipSkip;
+    public void OnSkip(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+            OnSkipSkip?.Invoke();
+    }
+
+    public void DisposeOnSkipActions()
+    {
+        OnSkipSkip = null;
     }
 
     #endregion

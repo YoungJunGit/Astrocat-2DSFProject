@@ -140,8 +140,8 @@ TextureImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 271730
-  packageName: Pixelation Fx
-  packageVersion: 1.5.3
-  assetPath: Assets/Pixelation/Runtime/Pixelation/Palettes/pix-windows-95-256-colours-1x.png
-  uploadId: 777000
+  productId: 300643
+  packageName: VolFx - VFX Toolkit (Post Processing, Timeline Tracks, Shaders, Tools)
+  packageVersion: 2.10.1
+  assetPath: Assets/ExternalAssets/Pixelation/Runtime/Pixelation/Palettes/pix-windows-95-256-colours-1x.png
+  uploadId: 807516

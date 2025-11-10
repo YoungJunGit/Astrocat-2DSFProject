@@ -1,0 +1,17 @@
+﻿[
+    {
+        "QTE_ID": "50001001",
+        "table": "50",
+        "kind": "0",
+        "index": "1001",
+        "QTE_Result_Perfect_Value": 1.5,
+        "QTE_Result_Success_Value": 1.3,
+        "QTE_Result_Fail_Value": 1.0
+    },
+    {
+        "QTE_ID": "50011002",
+        "table": "50",
+        "kind": "1",
+        "index": "1002"
+    }
+]

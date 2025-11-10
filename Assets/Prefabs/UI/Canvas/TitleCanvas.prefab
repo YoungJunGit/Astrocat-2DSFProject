@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d970391e82aa5954e87e36534ea2f88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glow: {fileID: 9008071171746443461}
 --- !u!1001 &821228455880567638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,10 +126,6 @@ PrefabInstance:
     - target: {fileID: 532477449482341823, guid: bed8e7689c25b9e4da471b9a63e718b6, type: 3}
       propertyPath: m_Name
       value: GlowText
-      objectReference: {fileID: 0}
-    - target: {fileID: 1100268251533074676, guid: bed8e7689c25b9e4da471b9a63e718b6, type: 3}
-      propertyPath: fadeInOutDelay
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8880431810449335951, guid: bed8e7689c25b9e4da471b9a63e718b6, type: 3}
       propertyPath: m_Pivot.x
@@ -222,14 +217,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8880431810449335951, guid: bed8e7689c25b9e4da471b9a63e718b6, type: 3}
   m_PrefabInstance: {fileID: 821228455880567638}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9008071171746443461 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8531664792293088147, guid: bed8e7689c25b9e4da471b9a63e718b6, type: 3}
-  m_PrefabInstance: {fileID: 821228455880567638}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

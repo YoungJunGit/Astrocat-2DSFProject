@@ -11,8 +11,8 @@ MonoImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 271730
-  packageName: Pixelation Fx
-  packageVersion: 1.5.3
-  assetPath: Assets/Pixelation/Runtime/Pixelation/PixelationVol.cs
-  uploadId: 777000
+  productId: 300643
+  packageName: VolFx - VFX Toolkit (Post Processing, Timeline Tracks, Shaders, Tools)
+  packageVersion: 2.10.1
+  assetPath: Assets/ExternalAssets/Pixelation/Runtime/Pixelation/PixelationVol.cs
+  uploadId: 807516

@@ -20,11 +20,12 @@ public class GameScene : AbstractScene
 
     [Header("Manager Settings")]
     [SerializeField] private HUDManager hudManager;
-    [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private TextManager textManager;
     [SerializeField] private CombatManager combatManager;
     [SerializeField] private UnitManager unitManager;
     [SerializeField] private QTEManager qteManager;
     [SerializeField] private SelectorManager selectorManager;
+    [SerializeField] private CrowdControlManager crowdControlManager;
 
     [Header("Service Locator Register")]
     [SerializeField] private UnitActionExecuter unitActionExecuter;
@@ -38,7 +39,6 @@ public class GameScene : AbstractScene
     [Header("Tester")]
     [SerializeField] private InputTester inputTester;
     [SerializeField] private QTETester qteTester;
-    [SerializeField] private CCTester ccTester;
     [SerializeField] private BackgroundChanger backgroundChanger;
 
     protected override int SceneIdx { get; } = 3;
@@ -48,25 +48,27 @@ public class GameScene : AbstractScene
         ServiceLocator.ForSceneOf(this)
             .Register(dataHandler)
             .Register(unitActionExecuter as IUnitActionExecuter)
-            .Register(dialogueManager)
+            .Register(textManager as ICombatTextManager)
             .Register(unitManager)
             .Register(selectorManager as ISelectorManager)
             .Register(inputHandler)
             .Register(damageFactory)
             .Register(unitActionFactory)
-            .Register(parryingApplier as IParryingApplier);
+            .Register(parryingApplier as IParryingApplier)
+            .Register(crowdControlManager);
     }
 
     protected override async UniTask InitializeObjects()
     {
-        entityData = new EntityDataCreator().CreateEntityData(dataHandler.CharacterData, playerUnitID.ToList(), enemyUnitID.ToList());
+        entityData = new EntityDataCreator().CreateEntityData(dataHandler.EntityData, playerUnitID.ToList(), enemyUnitID.ToList());
 
         hudManager.Init();
-        dialogueManager.Init();
+        textManager.Init();
         combatManager.Init();
         unitManager.Init();
         qteManager.Init();
         selectorManager.Init();
+        crowdControlManager.Init();
 
         inputHandler.Init();
 
@@ -128,7 +130,6 @@ public class GameScene : AbstractScene
         if (debugMode)
         {
             ForDebugging();
-            combatManager.OnTernEnd += ccTester.SetCCOnRandomUnit;
         }
     }
 
