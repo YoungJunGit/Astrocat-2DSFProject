@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 1976011264
+  seed: 189895952
   floorNum: 10
   routeNum: 3
   normalNodeSize: 1
@@ -44,6 +44,11 @@ MonoBehaviour:
   cameraPositionYOffset: 6
   cameraPositionZOffset: 8
   camSpeed: 7
+  limitMinX: -20
+  limitMaxX: 20
+  limitMinY: -2
+  limitMaxY: 25
+  limitMinZ: -8
   smoothTime: 1.2
   startNodeData: {fileID: 11400000, guid: a5dd8b8215095554389f88a22f71c641, type: 2}
   finalNodeData:

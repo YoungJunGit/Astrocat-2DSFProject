@@ -77,11 +77,17 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField, Range(1, 6)] public float gamepadSensitive = 2.0f;
 
     [Header("▼Camera Control")]
-    [SerializeField] private GameObject cameraPref;
-    [SerializeField] private GameObject planetSelectorPref;
-    [SerializeField] private float cameraPositionYOffset;
-    [SerializeField] private float cameraPositionZOffset;
-    [SerializeField] private float camSpeed;
+    [SerializeField] private GameObject cameraPref;         // 3D 카메라 프리팹
+    [SerializeField] private GameObject planetSelectorPref; // 행성 선택
+    [SerializeField] private float cameraPositionYOffset;   // 노드와 카메라의 Y좌표 값 차이
+    [SerializeField] private float cameraPositionZOffset;   // 노드와 카메라의 Z좌표 값 차이
+    [SerializeField] private float camSpeed;                // 카메라 이동 속도
+    [SerializeField] private float limitMinX;
+    [SerializeField] private float limitMaxX;
+    [SerializeField] private float limitMinY;
+    [SerializeField] private float limitMaxY;
+    [SerializeField] private float limitMinZ;
+    private float limitMaxZ;
     [SerializeField] private float smoothTime;
     List<Node> showNodes;
     private int showNodesIndex = 0;
@@ -89,7 +95,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     GameObject planetSelector;
     InputHandler inputHandler;
     Vector3 direction;
-    Vector3 targetPosition;
+    Vector3 targetPosition = Vector3.zero;
     Vector3 velocity = Vector3.zero;
     private InputDisposer inputDisposer;
 
@@ -167,10 +173,13 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         if (!isCompleted) return;
         if (noMapOperation) return;
 
-        if(cam != null)
+        if (cam != null)
         {
             targetPosition += direction * camSpeed * Time.deltaTime;
-            cam.transform.position = Vector3.SmoothDamp(cam.transform.position, targetPosition, ref velocity,smoothTime);
+            targetPosition.x = Mathf.Clamp(targetPosition.x, limitMinX, limitMaxX);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, limitMinY, limitMaxY);
+            targetPosition.z = Mathf.Clamp(targetPosition.z, limitMinZ, limitMaxZ);
+            cam.transform.position = Vector3.SmoothDamp(cam.transform.position, targetPosition, ref velocity, smoothTime);
         }
     }
 
@@ -266,7 +275,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     void preGenerated()
     {
         mapField = new GameObject("Map Field");
-        mapField.transform.position = new Vector3 (0, 0, 0);
+        mapField.transform.position = new Vector3(0, 0, 0);
 
         mapParent = new GameObject("Parent");
         mapParent.layer = LayerMask.NameToLayer("UI");
@@ -296,7 +305,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             startNode.Init(this);
 
             setNodeSize(startNode, startNodeSize);
-            startNode.transform.position = new Vector3(0, 0,0);
+            startNode.transform.position = new Vector3(0, 0, 0);
             startNode.gameObject.name = $"Start Node";
             startNode.connected = true;
         }
@@ -321,7 +330,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                     node.zPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
                 }
                 //node.transform.position = new Vector3(node.xPos, node.yPos,0);
-                node.transform.position = new Vector3(node.xPos, node.yPos,node.zPos);
+                node.transform.position = new Vector3(node.xPos, node.yPos, node.zPos);
                 map[i, j] = node;
                 map[i, j].gameObject.name = $"{i},{j}";
             }
@@ -335,6 +344,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         finalNode.transform.position = new Vector3(0, 0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? 10 : 0));
         finalNode.gameObject.name = $"Final Node";
         finalNode.connected = true;
+        limitMaxZ = finalNode.transform.position.z - cameraPositionZOffset;
 
         //mapWidth = (routeNum * normalNodeSize) + (routeNum * routeDistance);
         //mapHeight = finalNode.transform.position.y + ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) + finalNodeSize / 2;
@@ -345,7 +355,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     ------------------------------------------------------------*/
     void setNodeSize(Node target, float size)
     {
-        target.transform.localScale = new Vector2 (size, size);
+        target.transform.localScale = new Vector2(size, size);
     }
 
     /*------------------------------------------------------------
@@ -463,7 +473,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 
         float distance = Vector3.Distance(start.transform.position, end.transform.position);
         //distance -= (distance > paddingBetweenNodes * 2) ? paddingBetweenNodes * 2 : distance;
-        path.size = new Vector2(path.size.x, distance*3);
+        path.size = new Vector2(path.size.x, distance * 3);
         //path.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, distance);
 
         path.transform.position = (start.position + end.position) / 2;
@@ -879,7 +889,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         node.enableButton();
         Vector3 targetPos = new Vector3(node.transform.position.x, cameraPositionYOffset, node.transform.position.z - cameraPositionZOffset);
         cam.transform.DOMove(targetPos, 1.0f).SetEase(Ease.OutCirc);
-        planetSelector.transform.position = new Vector3(node.transform.position.x, node.transform.position.y+3, node.transform.position.z);
+        planetSelector.transform.position = new Vector3(node.transform.position.x, node.transform.position.y + 3, node.transform.position.z);
         targetPosition = targetPos;
     }
 
