@@ -3,6 +3,7 @@ using DataEntity;
 using DataEnum;
 using System;
 using Utils;
+using ObservableCollections;
 
 public class CoreStat
 {
@@ -168,42 +169,42 @@ public class ModifierStat
 
 public class UnitStat
 {
-    public readonly CoreStat coreStat;
-    public readonly ModifierStat modifierStat;
+    public readonly CoreStat CoreStat;
+    public readonly ModifierStat ModifierStat;
 
     private float _curHp;
-    private int   _curAp;
+    private int   _curSP;
     private int   _priority;
     public float HP     { get => _curHp; }
-    public int SP       { get => _curAp; }
+    public int SP       { get => _curSP; }
     public int Priority { get => _priority; }
 
     public Action<float, float> OnHPChanged;
-    public Action<int, int> OnAPChanged;
+    public Action<int, int> OnSPChanged;
     public Action<IDamage> OnDamaged;
     public Action<float> OnHealed;
     public Action OnDie;
 
-    public UnitStat(EntityData baseData, int index)
+    public UnitStat(EntityData baseData, int priority)
     {
-        coreStat = new CoreStat(baseData);
-        modifierStat = new ModifierStat(baseData);
+        CoreStat = new CoreStat(baseData);
+        ModifierStat = new ModifierStat(baseData);
         
         _curHp = (float)baseData.Max_HP;
-        _curAp = baseData.Default_SP;
-        _priority = index;
+        _curSP = baseData.Default_SP;
+        _priority = priority;
     }
 
     public void OnPrepareCombat()
     {
-        OnHPChanged.Invoke(_curHp, modifierStat.MaxHP);
-        OnAPChanged?.Invoke(_curAp, modifierStat.MaxSP);
+        OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
+        OnSPChanged?.Invoke(_curSP, ModifierStat.MaxSP);
     }
 
-    public void GetDamaged(IDamage damage)     
+    public void GetDamaged(IDamage damage)
     {
-        _curHp = Mathf.Clamp(_curHp - damage.Value, 0f, modifierStat.MaxHP);
-        OnHPChanged.Invoke(_curHp, modifierStat.MaxHP);
+        _curHp = Mathf.Clamp(_curHp - damage.Value, 0f, ModifierStat.MaxHP);
+        OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
         OnDamaged.Invoke(damage);
 
         if (_curHp <= 0f)
@@ -214,31 +215,31 @@ public class UnitStat
 
     public void GetHealed(float value)
     {
-        _curHp = Mathf.Clamp(_curHp + value, 0f, modifierStat.MaxHP);
-        OnHPChanged.Invoke(_curHp, modifierStat.MaxHP);
+        _curHp = Mathf.Clamp(_curHp + value, 0f, ModifierStat.MaxHP);
+        OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
         OnHealed.Invoke(value);
     }
 
     public void OnNormalAttack()
     {
-        _curAp = Mathf.Clamp(_curAp + 1, 0, modifierStat.MaxSP);
-        OnAPChanged.Invoke(_curAp, modifierStat.MaxSP);
+        _curSP = Mathf.Clamp(_curSP + 1, 0, ModifierStat.MaxSP);
+        OnSPChanged.Invoke(_curSP, ModifierStat.MaxSP);
     }
 
     public void OnSkillAttack(int value)
     {
-        _curAp = Mathf.Clamp(_curAp - value, 0, modifierStat.MaxSP);
-        OnAPChanged.Invoke(_curAp, modifierStat.MaxSP);
+        _curSP = Mathf.Clamp(_curSP - value, 0, ModifierStat.MaxSP);
+        OnSPChanged.Invoke(_curSP, ModifierStat.MaxSP);
     }
 
     public int CompareTo(UnitStat other)
     {
-        if (this.modifierStat.Speed > other.modifierStat.Speed) { return -1; }
-        else if (this.modifierStat.Speed < other.modifierStat.Speed) { return 1; }
+        if (this.ModifierStat.Speed > other.ModifierStat.Speed) { return -1; }
+        else if (this.ModifierStat.Speed < other.ModifierStat.Speed) { return 1; }
         else
         {
-            if (this.coreStat.Side < other.coreStat.Side) { return -1; }
-            else if (this.coreStat.Side > other.coreStat.Side) { return 1; }
+            if (this.CoreStat.Side < other.CoreStat.Side) { return -1; }
+            else if (this.CoreStat.Side > other.CoreStat.Side) { return 1; }
             else
             {
                 if (this._priority < other._priority) { return -1; }
@@ -246,4 +247,21 @@ public class UnitStat
             }
         }
     }
+
+    #region[Observable]
+    private ObservableDictionary<ELEMENT_TYPE, int> ceList = new()
+    {
+        { ELEMENT_TYPE.PHYSICAL,  0 },
+        { ELEMENT_TYPE.FIRE,      0 },
+        { ELEMENT_TYPE.RADIATION, 0 },
+        { ELEMENT_TYPE.GRAVITY,   0 },
+        { ELEMENT_TYPE.VOID,      0 },
+        { ELEMENT_TYPE.HOLY,      0 },
+        { ELEMENT_TYPE.ETC,       0 },
+    };
+    public IReadOnlyObservableDictionary<ELEMENT_TYPE, int> CEList => ceList;
+
+    public void OnAddCE(ELEMENT_TYPE type) => ceList[type]++;
+    public void OnSetCE(ELEMENT_TYPE type, int value) => ceList[type] = value;
+    #endregion
 }

@@ -5,23 +5,8 @@ public interface ICrowdControl
 {
     public bool isUpgrade { get; }
     public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context);
+    public void ApplyCrowdControl(CCContext context = null);
     public void Dispose();
-}
-
-public interface IEveryTurnBased
-{
-    public void Apply();
-}
-
-public interface ITimeBased
-{
-    public TimelineTimer Timer { get; set; }
-}
-
-public interface IContantBased
-{
-    public BasicStatModifier<float> modifier { get; set; }
 }
 
 public class Stun : ICrowdControl
@@ -218,7 +203,10 @@ public class Chaos : ICrowdControl
     public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
-
+        if(context != null)
+            Debug.Log($"Add Chaos!");
+        else
+            Debug.Log($"Update Chaos!");
     }
 
     public void Dispose()

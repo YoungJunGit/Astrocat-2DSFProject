@@ -29,7 +29,6 @@ public class GameScene : AbstractScene
 
     [Header("Service Locator Register")]
     [SerializeField] private UnitActionExecuter unitActionExecuter;
-    [SerializeField] private DamageFactory damageFactory;
 
     [Header("etc")]
     [SerializeField] private InputHandler inputHandler;
@@ -49,10 +48,9 @@ public class GameScene : AbstractScene
             .Register(dataHandler)
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(textManager as ICombatTextManager)
-            .Register(unitManager)
+            .Register(unitManager as IUnitManager)
             .Register(selectorManager as ISelectorManager)
             .Register(inputHandler)
-            .Register(damageFactory)
             .Register(unitActionFactory)
             .Register(parryingApplier as IParryingApplier)
             .Register(crowdControlManager);

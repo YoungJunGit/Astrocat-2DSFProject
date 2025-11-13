@@ -12,26 +12,36 @@ public class PlayerHUD : BaseHUD
     [Header("AP")]
     [SerializeField] private TMP_Text ap_Text;
     [SerializeField] private GameObject ap_Panel;
+    [SerializeField] private GameObject ap_Box;
     [SerializeField] private Color ActivateColor;
     [SerializeField] private Color DeactivateColor;
-
-    private Image[] ap_BoxList;
 
     [Space(10f)]
     [SerializeField] private Image statusBox;
     [SerializeField] private TMP_Text unitName;
     [SerializeField] private Color DieColor;
 
-    [Header("HP Tween")]
-    [SerializeField] private float hpTweenDuration = 0.5f;
+    private List<Image> ap_BoxList = new List<Image>();
+
+    protected override void UpdateIconBoxSize<T>(List<T> iconList)
+    {
+
+    }
 
     public override void Initialize(BaseUnit unit)
     {
-        unitName.text = unit.GetStat().coreStat.Name;
-        ap_BoxList = ap_Panel.GetComponentsInChildren<Image>();
+        base.Initialize(unit);
 
-        unit.GetStat().OnHPChanged += OnHPChanged;
-        unit.GetStat().OnAPChanged += OnAPChanged;
+        unitName.text = unit.GetStat().CoreStat.Name;
+
+        for(int i = 0; i < unit.GetStat().ModifierStat.MaxSP; i++)
+        {
+            var img = Instantiate(ap_Box, ap_Panel.transform).GetComponent<Image>();
+            ap_BoxList.Add(img);
+        }
+
+        unit.GetStat().OnHPChanged += this.OnHPChanged;
+        unit.GetStat().OnSPChanged += this.OnSPChanged;
     }
 
     public override void OnHPChanged(float curHp, float maxHp)
@@ -49,21 +59,16 @@ public class PlayerHUD : BaseHUD
             statusBox.color = DieColor;
         }
         else
+        {
             statusBox.color = Color.white;
+        }
     }
 
-    public void OnAPChanged(int curAp, int maxAp)
+    public void OnSPChanged(int curAp, int maxAp)
     {
         foreach (var box in ap_BoxList.Select((value, index) => (value, index)))
         {
-            if (box.index < curAp)
-            {
-                box.value.color = ActivateColor;
-            }
-            else
-            {
-                box.value.color = DeactivateColor;
-            }
+            box.value.color = box.index < curAp ? ActivateColor : DeactivateColor;
         }
 
         ap_Text.text = $"{curAp}/{maxAp}";

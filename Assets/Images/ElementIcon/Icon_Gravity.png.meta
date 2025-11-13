@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6dc3407b1b5208645b5519f655164884
+guid: 0e5beb948297a644daa8ede771c8b559
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -100,15 +100,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon_Gravity_0
+      name: Icon_Gravity
       rect:
         serializedVersion: 2
-        x: 15
-        y: 15
-        width: 482
-        height: 482
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1e8eb91c708c9c54a925e21ec2254612
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Icon_Gravity_0: -8008318868508421301
+      Icon_Gravity: -8008318868508421301
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,51 +11,46 @@ using DG.Tweening;
 using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(UnitAttachments))]
-public class BaseUnit : MonoBehaviour
+public abstract class BaseUnit : MonoBehaviour
 {
     [SerializeField, Required]
     private AnimationHandler _animHandler;
     [SerializeField, ShowIf("HasSupporter"), Required]
     protected SupporterUnit _supporterUnit;
 
-    [SerializeField] private UNIT_TYPE unit_Type;
+    [SerializeField] private UNIT_TYPE _unitType;
     [SerializeField] private bool HasSupporter = false;
 
-    private UnitStat _stat;
-    private ISoundService _soundService;
-    private ICombatTextManager _textManager;
+    protected UnitStat _stat;
+    protected ISoundService _soundService;
+    protected ICombatTextManager _textManager;
 
     [HideInInspector] 
-    public UnitAttachments attachments;
-    public UnitCombatInfo combatInfo;
+    public UnitAttachments Attachments;
+    public UnitCombatInfo CombatInfo;
     public CrowdControlUnit crowdControlUnit;
     public Action<BaseUnit> m_FinishedDying;
 
     DisposableBag d;
 
-    public virtual void Initialize(EntityData data, int index)
+    public void Initialize(EntityData data, int priority)
     {
-        _stat       = new UnitStat(data, index);
-        combatInfo  = new UnitCombatInfo();
+        CombatInfo       = new UnitCombatInfo();
         crowdControlUnit = new CrowdControlUnit();
-        attachments = GetComponent<UnitAttachments>();
+        Attachments      = GetComponent<UnitAttachments>();
+
+        _stat            = new UnitStat(data, priority);
+
         _animHandler.Init();
 
         ServiceLocator.For(this)
             .Get(out _soundService)
             .Get(out _textManager);
 
-        // Add들만 합치기 (키 포함)
-        var addStream = crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveAdd().Select(ev => new { Element = kv.Key, ev.Value, ev.Index })).Merge();
+        // Replace들만 합치기 (키 포함)
+        var replaceStream = crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveReplace()).Merge();
 
-        // Remove들만 합치기 (키 포함)
-        var removeStream = crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveRemove().Select(ev => new { Element = kv.Key, ev.Value, ev.Index })).Merge();
-
-        var removeSub = removeStream.Subscribe(ev =>
-            {
-                Debug.Log($"Removed CC\nElement : {ev.Element}, Name : {ev.Value.GetType()}, Index : {ev.Index}");
-            }
-        ).AddTo(this); 
+        
 
         if (HasSupporter)
             _supporterUnit.Initialize();
@@ -63,8 +58,8 @@ public class BaseUnit : MonoBehaviour
 
     public void OnDamaged(IDamage damage)
     {
-        attachments.GetSpriteRenderer().color = Color.red;
-        attachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);
+        Attachments.GetSpriteRenderer().color = Color.red;
+        Attachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);
 
         if(this is PlayerUnit)
             _animHandler.ChangeAnimation(AnimCombat.HIT);
@@ -84,20 +79,30 @@ public class BaseUnit : MonoBehaviour
 
     public async virtual UniTask OnDie()
     {
-        _animHandler.ChangeAnimation(AnimCombat.DEATH);
+        if (HasSupporter)
+            _supporterUnit.OnDie(CombatInfo).Forget();
 
-        if(HasSupporter)
+        PlayDeathSound();
+
+        using (var eventDisposer = new EventDisposer(new CombatEvent("DeathEvent")))
         {
-            _supporterUnit.OnDie(combatInfo).Forget();
+            Attachments.GetSpriteRenderer().sortingLayerName = "Actor";
+
+            bool isFinishedEvent = false;
+            _animHandler.ChangeAnimation(AnimCombat.DEATH);
+            CombatInfo.actionList.Add("OnFinishedDeath",
+                () => OnFinshedDeath(() => isFinishedEvent = true)
+            );
+
+            await UniTask.WaitUntil(() => isFinishedEvent);
+            Attachments.GetSpriteRenderer().sortingLayerName = "Character";
         }
-        if (this is PlayerUnit) {
-            _soundService.PlayEffectSound("Die");
-            _soundService.PlayEffectSound("Hover", 2f);
-        }
-        else _soundService.PlayEffectSound("Die");
     }
 
     public AnimationHandler GetAnimationHandler()       => _animHandler;
     public UnitStat GetStat()                           => _stat;
-    public UNIT_TYPE GetUnitType()                      => unit_Type;
+    public UNIT_TYPE GetUnitType()                      => _unitType;
+
+    public abstract void OnFinshedDeath(Action done);
+    public abstract void PlayDeathSound();
 }

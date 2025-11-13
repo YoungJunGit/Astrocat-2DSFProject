@@ -52,13 +52,13 @@ public class TextManager : ScriptableObject , ICombatTextManager
     {
         BaseText attackWarningText = textCanvas.GetComponentInChildren<AttackWarningText>(true);
 
-        attackWarningText.textComp.text = attackWarningText.textComp.text.Replace("{Name}", unit.GetStat().coreStat.Name);
+        attackWarningText.textComp.text = attackWarningText.textComp.text.Replace("{Name}", unit.GetStat().CoreStat.Name);
         string attackType = unit.GetUnitType() == DataEnum.UNIT_TYPE.MELEE ? "[Melee]" : "[Range]";
         attackWarningText.textComp.text = attackWarningText.textComp.text.Replace("{AttackType}", attackType);
         
         await attackWarningText.ShowText(inputHandler);
 
-        attackWarningText.textComp.text = attackWarningText.textComp.text.Replace(unit.GetStat().coreStat.Name, "{Name}");
+        attackWarningText.textComp.text = attackWarningText.textComp.text.Replace(unit.GetStat().CoreStat.Name, "{Name}");
         attackWarningText.textComp.text = attackWarningText.textComp.text.Replace(attackType, "{AttackType}");
     }
 
@@ -78,7 +78,7 @@ public class TextManager : ScriptableObject , ICombatTextManager
         }
 
         IDamageValueDisplayInvoker displayInvoker = new DamageValueDisplayInvoker();
-        displayInvoker.Invoke(displayer, damage.Value, target.attachments.GetHitBox().bounds, container);
+        displayInvoker.Invoke(displayer, damage.Value, target.Attachments.GetHitBox().bounds, container);
     }
     #endregion
 }

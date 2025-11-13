@@ -8,7 +8,7 @@ public class OnFinished : StateMachineBehaviour
     {
         CountdownTimer eventTimer = new CountdownTimer(stateInfo.length);
 
-        UnitCombatInfo info = animator.GetComponentInParent<BaseUnit>().combatInfo;
+        UnitCombatInfo info = animator.GetComponentInParent<BaseUnit>().CombatInfo;
         foreach (var eventName in EventsToCall)
         {
             if (info.actionList.TryGetValue(eventName, out var action))

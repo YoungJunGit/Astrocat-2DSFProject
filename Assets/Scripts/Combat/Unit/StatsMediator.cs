@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
+using ObservableCollections;
 using DataEnum;
 
 public interface IQuery { }
-
 public class Query<T> : IQuery
 {
     public readonly BUFF_TYPE BuffType;
@@ -18,14 +18,14 @@ public class Query<T> : IQuery
 
 public class StatsMediator
 {
-    private readonly LinkedList<StatModifier> modifiers = new LinkedList<StatModifier>();
+    private readonly List<StatModifier> modifiers = new List<StatModifier>();
 
     public event System.EventHandler<IQuery> Queries;
     public void PerformQuery<T>(object sender, Query<T> query) => Queries?.Invoke(sender, query);
 
     public void AddModifier(StatModifier modifier)
     {
-        modifiers.AddLast(modifier);
+        modifiers.Add(modifier);
         Queries += modifier.Handle;
 
         modifier.OnDispose += _ =>

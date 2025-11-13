@@ -6,22 +6,14 @@ public class StatusCanvas : MonoBehaviour
     [SerializeField] Transform _playerStatusPanel;
     [SerializeField] Transform _enemyStatusPanel;
 
-    public void SetPlayerHUD(PlayerHUD playerHud)
+    public void SetPlayerHUD(PlayerHUD playerHud, int index)
     {
         playerHud.transform.SetParent(_playerStatusPanel, false);
     }
 
-    public void SetEnemyHUD(EnemyHUD enemyHud, Transform transform)
+    public void SetEnemyHUD(EnemyHUD enemyHud, Transform statusTransform, Transform buffBoxTransform, int index)
     {
         enemyHud.transform.SetParent(_enemyStatusPanel, false);
-
-        if (transform != null)
-        {
-            enemyHud.AttachHUD(transform);
-        }
-        else
-        {
-            Debug.LogWarning($"StatusPosition is not set Properly!!!");
-        }
+        enemyHud.AttachHUD(statusTransform, buffBoxTransform);
     }
 }
