@@ -3,20 +3,27 @@ using static CrowdControlManager;
 
 public interface ICrowdControl
 {
-    public bool isUpgrade { get; }
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context = null);
     public void Dispose();
 }
 
+public abstract class BasicCrowdControl : ICrowdControl
+{
+    public abstract void ApplyCrowdControl(CCContext context);
+    public abstract void Dispose();
+}
+
+public abstract class EnhancedCrowdContrl : ICrowdControl
+{
+    public abstract void ApplyCrowdControl(CCContext context);
+    public abstract void Dispose();
+}
+
 public class Stun : ICrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
-        Context = context;
-        Debug.Log($"{Context.Target} Stunned by {Context.Caster}");
+        
     }
 
     public void Dispose()
@@ -27,15 +34,8 @@ public class Stun : ICrowdControl
 
 public class Burn : ICrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-    private float damageValue;
-
     public void ApplyCrowdControl(CCContext context)
     {
-        Context = context;
-        Debug.Log($"{Context.Target} Burned by {Context.Caster}");
-
         
     }
 
@@ -47,8 +47,6 @@ public class Burn : ICrowdControl
 
 public class Contamination : ICrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
         
@@ -62,8 +60,6 @@ public class Contamination : ICrowdControl
 
 public class Suppress : ICrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
         
@@ -77,8 +73,6 @@ public class Suppress : ICrowdControl
 
 public class Strange : ICrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
         
@@ -92,9 +86,6 @@ public class Strange : ICrowdControl
 
 public class Silence : ICrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-
     public void ApplyCrowdControl(CCContext context)
     {
         
@@ -108,12 +99,9 @@ public class Silence : ICrowdControl
 
 public class Weakness : ICrowdControl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
-        Context = context;
-        Debug.Log($"{Context.Target} Weakness by {Context.Caster}");
+        
     }
 
     public void Dispose()
@@ -124,8 +112,6 @@ public class Weakness : ICrowdControl
 
 public class Overheat : ICrowdControl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
 
@@ -139,8 +125,6 @@ public class Overheat : ICrowdControl
 
 public class Exposure : ICrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
 
@@ -154,8 +138,6 @@ public class Exposure : ICrowdControl
 
 public class Bind : ICrowdControl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
 
@@ -169,8 +151,6 @@ public class Bind : ICrowdControl
 
 public class Corrode : ICrowdControl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
 
@@ -184,8 +164,6 @@ public class Corrode : ICrowdControl
 
 public class Dominate : ICrowdControl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
 
@@ -199,8 +177,6 @@ public class Dominate : ICrowdControl
 
 public class Chaos : ICrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
     public void ApplyCrowdControl(CCContext context)
     {
         if(context != null)

@@ -252,9 +252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animHandler: {fileID: 5052415058350787849}
   _supporterUnit: {fileID: 0}
-  unit_Type: 2
+  _unitType: 2
   HasSupporter: 0
-  attachments: {fileID: 0}
+  Attachments: {fileID: 0}
 --- !u!114 &4270882971710658285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +272,7 @@ MonoBehaviour:
   MeleeHitPos: {fileID: 6498671988788935670}
   UnitSelectArrowPos: {fileID: 5413111644192717139}
   StatusPos: {fileID: 0}
+  BuffBoxPos: {fileID: 0}
   ActionSelectorPos: {fileID: 280474867065531113}
   BulletSpawnPos: {fileID: 4860540986922662947}
 --- !u!1 &7419600691652150722

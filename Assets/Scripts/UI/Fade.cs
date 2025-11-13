@@ -56,7 +56,6 @@ public class Fade : MonoBehaviour
     private int loops = 1;
 
     private CanvasGroup ui;
-    private Tween _running;
 
     private void Start()
     {
@@ -76,36 +75,32 @@ public class Fade : MonoBehaviour
         bool doIn = Fade_Setting.HasFlag(FADE_SETTING.FADEIN);
         bool doOut = Fade_Setting.HasFlag(FADE_SETTING.FADEOUT);
 
+        Tween running = null;
         if (doOut && !doIn)
         {
             ui.alpha = 0f;
-            _running = ui.DOFade(1f, fadeOutDuration)
+            running = ui.DOFade(1f, fadeOutDuration)
                          .SetEase(fadeOutCurve)
                          .SetAs(tweenParams);
         }
         else if(!doOut && doIn)
         {
             ui.alpha = 1f;
-            _running = ui.DOFade(0f, fadeInDuration)
+            running = ui.DOFade(0f, fadeInDuration)
                          .SetEase(fadeInCurve)
                          .SetAs(tweenParams);
         }
         else if(doOut && doIn)
         {
             ui.alpha = 0f;
-            _running = DOTween.Sequence()
+            running = DOTween.Sequence()
                               .Append(ui.DOFade(1f, fadeOutDuration).SetEase(fadeOutCurve))
                               .AppendInterval(fadeInOutDelay)
                               .Append(ui.DOFade(0f, fadeInDuration).SetEase(fadeInCurve))
-                              .SetAs(tweenParams);
+                              .SetAs(tweenParams)
+                              .SetLink(gameObject, LinkBehaviour.KillOnDestroy);
         }
 
-        return _running;
-    }
-
-    private void OnDestroy()
-    {
-        if (_running != null)
-            _running.Kill();
+        return running;
     }
 }

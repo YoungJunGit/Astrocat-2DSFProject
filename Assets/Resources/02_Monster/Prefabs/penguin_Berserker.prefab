@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animHandler: {fileID: 7322455768656537500}
   _supporterUnit: {fileID: 0}
-  unit_Type: 1
+  _unitType: 1
   HasSupporter: 0
   Attachments: {fileID: 0}
 --- !u!114 &508295957208057898

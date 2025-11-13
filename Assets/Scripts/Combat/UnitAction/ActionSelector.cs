@@ -3,6 +3,7 @@ using DataEnum;
 using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -55,11 +56,11 @@ public class ActionSelector : BaseSelector
                 {
                     case 1:
                         _soundService.PlayEffectSound("Click");
-                        Debug.Log("Click Sound");
                         selector.gameObject.SetActive(false);
 
                         selectActionComplete = true;
                         unitAction = unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
+                        Debug.Log(unitAction);
                         break;
                     case 2:
                         _soundService.PlayEffectSound("Start_Menu");

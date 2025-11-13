@@ -30,8 +30,7 @@ public class CrowdControlUnit
     {
         if(elementType != ELEMENT_TYPE.ETC)
             Previous_Element_Type = elementType;
-        
-
+    
         _effectDictionary[elementType].Add(c);
     }
     
