@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 189895952
+  seed: 1642367488
   floorNum: 10
   routeNum: 3
   normalNodeSize: 1
@@ -33,12 +33,6 @@ MonoBehaviour:
   pathImagePref: {fileID: 6119643253783005637, guid: 4b11199aa7ee2a847a0acaa0af34d065, type: 3}
   pathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   passedPathColor: {r: 1, g: 1, b: 1, a: 1}
-  pathWidth: 1
-  paddingBetweenNodes: 80
-  backgroundPref: {fileID: 4695275133454352915, guid: 7e506f1f8f4f9fd468964fccf21845d4, type: 3}
-  backgroundPadding: 80
-  mouseSensitive: 1
-  gamepadSensitive: 2
   cameraPref: {fileID: 7454520194946596864, guid: 3ccc1905d13358d4d85bf95ebc534d3f, type: 3}
   planetSelectorPref: {fileID: 3407096067947001916, guid: 6b5c31b56b6b4b349af6ffca3d5efc96, type: 3}
   cameraPositionYOffset: 6

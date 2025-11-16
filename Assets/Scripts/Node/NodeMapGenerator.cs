@@ -63,18 +63,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField] public SpriteRenderer pathImagePref;
     [SerializeField] public Color pathColor = Color.gray;
     [SerializeField] public Color passedPathColor = Color.white;
-    [SerializeField, Range(0, 16)] public float pathWidth = 4f;
-    [SerializeField, Range(0, 256)] public float paddingBetweenNodes = 0;
-
-    [Header("▼Background Prefab : Prefab is not required, Image Prefab with 9-slice scaling")]
-    [SerializeField] public GameObject backgroundPref;
-
-    [Header("▼Padding Between Background and Map")]
-    [SerializeField, Range(0, 160)] public float backgroundPadding = 80;
-
-    [Header("▼Mouse Drag Sensitivity and Gamepad Movement Sensitivity")]
-    [SerializeField, Range(1, 3)] public float mouseSensitive = 1.0f;
-    [SerializeField, Range(1, 6)] public float gamepadSensitive = 2.0f;
 
     [Header("▼Camera Control")]
     [SerializeField] private GameObject cameraPref;         // 3D 카메라 프리팹
