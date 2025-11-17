@@ -70,6 +70,9 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField] private float cameraPositionYOffset;   // 노드와 카메라의 Y좌표 값 차이
     [SerializeField] private float cameraPositionZOffset;   // 노드와 카메라의 Z좌표 값 차이
     [SerializeField] private float camSpeed;                // 카메라 이동 속도
+    [SerializeField] private float camAngleX;               // 카메라 앵클
+    [SerializeField] private float camAngleY;               // 카메라 앵클
+    [SerializeField] private float camAngleZ;               // 카메라 앵클
     [SerializeField] private float limitMinX;
     [SerializeField] private float limitMaxX;
     [SerializeField] private float limitMinY;
@@ -130,6 +133,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         if (dataCheckBeforeGeneration()) return;
         UpdatePublisher.SubscribeObserver(this);
         cam = Instantiate(cameraPref).GetComponent<Camera>();
+        cam.transform.rotation = Quaternion.Euler(camAngleX, camAngleY, camAngleZ);
         planetSelector = Instantiate(planetSelectorPref);
         pathsTransform = new List<Transform>();
         showNodes = new List<Node>();
