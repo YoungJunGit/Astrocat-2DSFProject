@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HUDManager", menuName = "GameScene/HUDManager", order = 2)]
 public class HUDManager : ScriptableObject
 {
-    [SerializeField] private ScriptableListBaseUnit unitList = null;
-
     [SerializeField] private PlayerHUD playerHUDPrefab;
     [SerializeField] private EnemyHUD enemyHUDPrefab;
 
@@ -16,14 +14,19 @@ public class HUDManager : ScriptableObject
     Dictionary<PlayerUnit, PlayerHUD> playerHudDic = new Dictionary<PlayerUnit, PlayerHUD>();
     Dictionary<EnemyUnit, EnemyHUD> enemyHudDic = new Dictionary<EnemyUnit, EnemyHUD>();
 
+    IUnitManager _unitManager;
+
     public void Init()
     {
         statusCanvas = Instantiate(statusCanvasPref);
+        
+        ServiceLocator.For(this)
+            .Get(out _unitManager);
     }
 
     public void Prepare()
     {
-        foreach(BaseUnit unit in unitList)
+        foreach(BaseUnit unit in _unitManager.GetAllUnits())
         {
             // For initializing unit's HUD
             unit.GetStat().OnPrepareCombat();
@@ -35,7 +38,7 @@ public class HUDManager : ScriptableObject
         PlayerHUD hud = Instantiate(playerHUDPrefab).GetComponent<PlayerHUD>();
         hud.Initialize(unit);
         playerHudDic.Add(unit, hud);
-        statusCanvas.SetPlayerHUD(hud);
+        statusCanvas.SetPlayerHUD(hud, unit.GetStat().Priority);
 
         return hud;
     }
@@ -45,7 +48,7 @@ public class HUDManager : ScriptableObject
         EnemyHUD hud = Instantiate(enemyHUDPrefab).GetComponent<EnemyHUD>();
         hud.Initialize(unit);
         enemyHudDic.Add(unit, hud);
-        statusCanvas.SetEnemyHUD(hud, unit.attachments.GetStatusPosition());
+        statusCanvas.SetEnemyHUD(hud, unit.Attachments.GetStatusPosition(), unit.Attachments.GetBuffBoxPosition(), unit.GetStat().Priority);
 
         return hud;
     }

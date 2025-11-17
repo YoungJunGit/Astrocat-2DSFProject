@@ -6,7 +6,7 @@ public class ResetState : StateMachineBehaviour
     {
         AnimationHandler handler = animator.GetComponent<AnimationHandler>();
         handler.resetTimer = new CountdownTimer(stateInfo.length);
-        handler.resetTimer.OnTimerStop += handler.ResetAnimation;
+        handler.resetTimer.OnTimerStop += () => { handler.ResetAnimation(); handler.resetTimer.Dispose(); };
         handler.resetTimer.Start();
     }
 }

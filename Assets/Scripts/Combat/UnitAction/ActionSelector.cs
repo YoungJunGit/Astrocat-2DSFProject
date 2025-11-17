@@ -3,6 +3,7 @@ using DataEnum;
 using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -35,9 +36,9 @@ public class ActionSelector : BaseSelector
 
     public async UniTask SelectAction(PlayerUnit playerUnit, Action<IUnitAction> onSelected)
     {
-        Debug.Log($"{playerUnit.GetStat().coreStat.Name} : Select Action");
+        Debug.Log($"{playerUnit.GetStat().CoreStat.Name} : Select Action");
         
-        selector.transform.position = playerUnit.attachments.GetActionSelectorPos().position;
+        selector.transform.position = playerUnit.Attachments.GetActionSelectorPos().position;
         selector.GetComponent<Canvas>().sortingLayerName = layerName;
         selector.gameObject.SetActive(true);
 
@@ -55,15 +56,15 @@ public class ActionSelector : BaseSelector
                 {
                     case 1:
                         _soundService.PlayEffectSound("Click");
-                        Debug.Log("Click Sound");
                         selector.gameObject.SetActive(false);
 
                         selectActionComplete = true;
                         unitAction = unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
+                        Debug.Log(unitAction);
                         break;
                     case 2:
                         _soundService.PlayEffectSound("Start_Menu");
-                        var skillID = playerUnit.GetStat().coreStat.SkillsID;
+                        var skillID = playerUnit.GetStat().CoreStat.SkillsID;
 
                         skillName.Clear();
                         foreach (var skill in skillID)

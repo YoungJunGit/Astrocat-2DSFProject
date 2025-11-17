@@ -20,7 +20,7 @@ public class OnMoveState : StateMachineBehaviour
             float duration = endEvent.time - startEvent.time;
             AnimationHandler handler = animator.GetComponent<AnimationHandler>();
             BaseUnit unit = animator.GetComponentInParent<BaseUnit>();
-            Vector2 pos = isRetreat ? unit.combatInfo.startPos : unit.combatInfo.targetPos;
+            Vector2 pos = isRetreat ? unit.CombatInfo.startPos : unit.CombatInfo.targetPos;
             handler.Move += () => unit.transform.DOMove(pos, duration).SetEase(moveCurve);
         }    
     }

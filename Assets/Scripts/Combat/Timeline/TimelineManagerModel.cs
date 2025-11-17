@@ -10,7 +10,7 @@ public class TimelineManagerModel
     private readonly TimelineModel _timelineModel;
 
     public IReadOnlyObservableList<IBanner> BannerList => _timelineModel.BannerList;
-    public ReadOnlyReactiveProperty<int> CurRound           => _timelineModel.curRound.ToReadOnlyReactiveProperty();
+    public ReadOnlyReactiveProperty<int> CurRound      => _timelineModel.curRound.ToReadOnlyReactiveProperty();
 
     public TimelineManagerModel()
     {

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EventHandler", menuName = "GameScene/EventHandler", order = 1)]
-public class EventHandler : ScriptableObject
+public class EventHandler
 {
     private static List<IEvent> _events = new List<IEvent>();
 
@@ -18,5 +17,5 @@ public class EventHandler : ScriptableObject
         _events.Remove(@event);
     }
 
-    public bool IsEventEmpty() => _events.Count == 0;
+    public static bool IsEventEmpty() => _events.Count == 0;
 }

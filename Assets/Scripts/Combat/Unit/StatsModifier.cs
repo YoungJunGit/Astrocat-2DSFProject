@@ -1,13 +1,14 @@
 using UnityEngine;
 using System;
 using DataEnum;
+using static TimelinePublisher;
 
-public class BasicStatModifier<T> : StatModifier
+public class BasicStatModifier<T, TValue> : StatModifier
 {
-    private readonly BUFF_TYPE type;
-    private readonly Func<T, T> operation;
+    private readonly T type;
+    private readonly Func<TValue, TValue> operation = delegate { return default; };
 
-    public BasicStatModifier(BUFF_TYPE type, int duration, Func<T, T> operation) : base(duration)
+    public BasicStatModifier(T type, Func<TValue, TValue> operation, EffectTimer timer = null) : base(timer)
     {
         this.type = type;
         this.operation = operation;
@@ -15,7 +16,7 @@ public class BasicStatModifier<T> : StatModifier
 
     public override void Handle(object sender, IQuery query)
     {
-        if(query is Query<T> typedQuery && typedQuery.BuffType == type)
+        if(query is Query<T, TValue> typedQuery && type.Equals(typedQuery.BuffType))
         {
             typedQuery.Value = operation(typedQuery.Value);
         }
@@ -24,16 +25,23 @@ public class BasicStatModifier<T> : StatModifier
 
 public abstract class StatModifier : IDisposable
 {
-    private readonly TimelineTimer _timer;
+    private readonly EffectTimer _timer;
+    public EffectTimer GetTimer()
+    {
+        if (_timer != null)
+            return _timer;
+        else
+            return null;
+    }
     public bool MarkedForRemoval { get; set; }
     public event Action<StatModifier> OnDispose = delegate { };
 
-    protected StatModifier(int duration)
+    protected StatModifier(EffectTimer timer)
     {
-        if (duration <= 0) return;
+        if (timer == null) return;
 
-        _timer = new TimelineTimer(duration);
-        _timer.OnTimerStop += Dispose;
+        _timer = timer;
+        _timer.OnTimerStop += () => { Dispose(); };
         _timer.Start();
     }
 
@@ -42,5 +50,6 @@ public abstract class StatModifier : IDisposable
     public void Dispose()
     {
         OnDispose.Invoke(this);
+        _timer.Dispose();
     }
 }

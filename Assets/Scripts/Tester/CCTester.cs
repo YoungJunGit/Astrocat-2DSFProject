@@ -20,7 +20,7 @@ public class CCTester : MonoBehaviour
         EnemyToPlayer
     }
     CrowdControlManager crowdControlManager;
-    UnitManager unitManager;
+    IUnitManager unitManager;
 
     [SerializeField] Button addCrowdCtrlBtn;
     [SerializeField] Button rmvCrowdCtrlBtn;
@@ -72,7 +72,7 @@ public class CCTester : MonoBehaviour
         var units = unitManager.GetUnit(removeSide);
         var target = units[removeIndex];
 
-        crowdControlManager.RemoveCrowdControl(element_Type, target);
+        CrowdControlManager.RemoveCrowdControl(element_Type, target);
     }
 
     public void DebugCC()
@@ -96,7 +96,7 @@ public class CCTester : MonoBehaviour
 
     public string ToString(ELEMENT_TYPE[] element_Type, BaseUnit unit)
     {
-        string str1 = $"{unit.GetStat().coreStat.Name}'s CC List\n";
+        string str1 = $"{unit.GetStat().CoreStat.Name}'s CC List\n";
 
         string str2 = "";
         foreach (var element in element_Type)

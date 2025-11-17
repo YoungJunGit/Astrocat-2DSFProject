@@ -9,7 +9,7 @@ public class UnitSelector : BaseSelector
 {
     [SerializeField] private UnitSelectorController controller;
     [SerializeField] private UnitSelectorObject unitSelectArrowPrefab;
-    private UnitManager _unitManager;
+    private IUnitManager _unitManager;
     private List<UnitSelectorObject> arrowList = new();
     private ITarget<BaseUnit> _bag;
     private ITargetStrategy _strategy;
@@ -89,7 +89,7 @@ public class UnitSelector : BaseSelector
 
         foreach(var target in bag.Targets)
         {
-            UnitSelectorObject arrow = Instantiate(unitSelectArrowPrefab, target.attachments.GetUnitSelectArrowPos(), false);
+            UnitSelectorObject arrow = Instantiate(unitSelectArrowPrefab, target.Attachments.GetUnitSelectArrowPos(), false);
             bool IsSelectable = strategy.Filter == null || !strategy.Filter(target);
             arrow.Init(_side, IsSelectable);
             arrowList.Add(arrow);

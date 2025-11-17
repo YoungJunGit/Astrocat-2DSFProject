@@ -10,8 +10,8 @@ public class NormalDamageCalculator : ICalculator
 {
     public IDamage Calculate(BaseUnit caster, BaseUnit target)
     {
-        float damage = caster.GetStat().modifierStat.Attack;
-        bool isCritical = FunctionUtils.MakeChance(caster.GetStat().modifierStat.CriticalChance);
+        float damage = caster.GetStat().ModifierStat.Attack;
+        bool isCritical = FunctionUtils.MakeChance(caster.GetStat().ModifierStat.CriticalChance);
 
         // TODO : calculate value using specific formula
 

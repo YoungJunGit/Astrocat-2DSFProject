@@ -13,6 +13,8 @@ public class UnitAttachments : MonoBehaviour
     private Transform UnitSelectArrowPos;
     [SerializeField, ShowIf("IsEnemy"), Required] 
     private Transform StatusPos;
+    [SerializeField, ShowIf("IsEnemy"), Required]
+    private Transform BuffBoxPos;
     [SerializeField, ShowIf("IsPlayer"), Required] 
     private Transform ActionSelectorPos;
     [SerializeField, ShowIf("@this.IsRange || this.IsSupporterUnit"), Required] 
@@ -22,6 +24,7 @@ public class UnitAttachments : MonoBehaviour
     public BoxCollider2D GetHitBox() => HitBox;
     public Transform GetMeleeHitPos() => MeleeHitPos;
     public Transform GetStatusPosition() => StatusPos;
+    public Transform GetBuffBoxPosition() => BuffBoxPos;
     public Transform GetUnitSelectArrowPos() => UnitSelectArrowPos;
     public Transform GetActionSelectorPos() => ActionSelectorPos;
     public Transform GetBulletSpawnPos() => BulletSpawnPos;
