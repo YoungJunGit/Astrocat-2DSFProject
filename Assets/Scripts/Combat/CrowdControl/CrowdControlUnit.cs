@@ -24,15 +24,31 @@ public class CrowdControlUnit
     public IReadOnlyDictionary<ELEMENT_TYPE, IReadOnlyObservableList<ICrowdControl>> EffectDictionary =>
         _effectDictionary.ToDictionary(kv => kv.Key, kv => (IReadOnlyObservableList<ICrowdControl>)kv.Value);
 
-    public ELEMENT_TYPE Previous_Element_Type { get; set; }
+    public ELEMENT_TYPE Previous_Element_Type { get; set; } = ELEMENT_TYPE.NONE;
 
     public void Add(ELEMENT_TYPE elementType, ICrowdControl c)
     {
+        if(elementType != ELEMENT_TYPE.ETC)
+            Previous_Element_Type = elementType;
+    
         _effectDictionary[elementType].Add(c);
+    }
+    
+    public void Replace(ELEMENT_TYPE elementType, ICrowdControl oldValue, ICrowdControl newValue)
+    {
+        if (elementType != ELEMENT_TYPE.ETC)
+            Previous_Element_Type = elementType;
+
+        int index = _effectDictionary[elementType].IndexOf(oldValue);
+        _effectDictionary[elementType][index] = newValue;
+
+        oldValue.Dispose();
     }
 
     public void Remove(ELEMENT_TYPE elementType, ICrowdControl c)
     {
         _effectDictionary[elementType].Remove(c);
+
+        c.Dispose();
     }
 }

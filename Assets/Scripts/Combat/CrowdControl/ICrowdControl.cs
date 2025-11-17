@@ -1,37 +1,24 @@
+using System.Collections.Generic;
+using DataEnum;
 using UnityEngine;
 using static CrowdControlManager;
 
 public interface ICrowdControl
 {
-    public bool isUpgrade { get; }
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context);
+    public void ApplyCrowdControl(CCContext context = null);
     public void Dispose();
 }
 
-public interface IEveryTurnBased
+public abstract class CrowdControlBase : ICrowdControl
 {
-    public void Apply();
-}
+    protected List<IEffectable> effectList { get; }
 
-public interface ITimeBased
-{
-    public TimelineTimer Timer { get; set; }
-}
-
-public interface IContantBased
-{
-    public BasicStatModifier<float> modifier { get; set; }
-}
-
-public class Stun : ICrowdControl
-{
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
+    public void ApplyCrowdControl(CCContext context = null)
     {
-        Context = context;
-        Debug.Log($"{Context.Target} Stunned by {Context.Caster}");
+        foreach (var effect in effectList)
+        {
+            effect.Apply(new EffectContext(context.Target, context.Caster));
+        }
     }
 
     public void Dispose()
@@ -40,189 +27,77 @@ public class Stun : ICrowdControl
     }
 }
 
-public class Burn : ICrowdControl
+public interface IBasicCrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-    private float damageValue;
 
-    public void ApplyCrowdControl(CCContext context)
-    {
-        Context = context;
-        Debug.Log($"{Context.Target} Burned by {Context.Caster}");
-
-        
-    }
-
-    public void Dispose()
-    {
-        
-    }
 }
 
-public class Contamination : ICrowdControl
+public interface IEnhancedCrowdContrl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
 
-    public void Dispose()
-    {
-        
-    }
 }
 
-public class Suppress : ICrowdControl
+public class Stun : CrowdControlBase, IBasicCrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Strange : ICrowdControl
+public class Burn : CrowdControlBase, IBasicCrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Silence : ICrowdControl
+public class Contamination : CrowdControlBase, IBasicCrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Weakness : ICrowdControl
+public class Suppress : CrowdControlBase, IBasicCrowdControl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
-        Context = context;
-        Debug.Log($"{Context.Target} Weakness by {Context.Caster}");
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Overheat : ICrowdControl
+public class Strange : CrowdControlBase, IBasicCrowdControl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Exposure : ICrowdControl
+public class Silence : CrowdControlBase, IBasicCrowdControl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Bind : ICrowdControl
+public class Weakness : CrowdControlBase, IEnhancedCrowdContrl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Corrode : ICrowdControl
+public class Overheat : CrowdControlBase, IEnhancedCrowdContrl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Dominate : ICrowdControl
+public class Exposure : CrowdControlBase, IEnhancedCrowdContrl
 {
-    public bool isUpgrade { get; } = true;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Chaos : ICrowdControl
+public class Bind : CrowdControlBase, IEnhancedCrowdContrl
 {
-    public bool isUpgrade { get; } = false;
-    public CCContext Context { get; set; }
-    public void ApplyCrowdControl(CCContext context)
-    {
+    
+}
 
-    }
+public class Corrode : CrowdControlBase, IEnhancedCrowdContrl
+{
+    
+}
 
-    public void Dispose()
-    {
-        
-    }
+public class Dominate : CrowdControlBase, IEnhancedCrowdContrl
+{
+    
+}
+
+public class Chaos : CrowdControlBase, IEnhancedCrowdContrl
+{
+    
 }

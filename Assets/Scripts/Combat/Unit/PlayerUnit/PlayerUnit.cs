@@ -1,31 +1,18 @@
 using Cysharp.Threading.Tasks;
-using DataEntity;
-using DataEnum;
-using DG.Tweening;
-using UnityEngine;
+using System;
 
 public class PlayerUnit : BaseUnit
 {
-    public async override UniTask OnDie()
+    public override void OnFinshedDeath(Action done)
     {
-        attachments.GetSpriteRenderer().sortingLayerName = "Actor";
+        gameObject.SetActive(false);
+        m_FinishedDying.Invoke(this);
+        done();
+    }
 
-        using (var eventDisposer = new EventDisposer(new CombatEvent("DeathEvent")))
-        {
-            bool isFinishedEvent = false;
-
-            base.OnDie();
-            combatInfo.actionList.Add("OnFinishedDeath", () =>
-                {
-                    gameObject.SetActive(false);
-                    m_FinishedDying.Invoke(this);
-                    isFinishedEvent = true;
-                }
-            );
-
-            await UniTask.WaitUntil(() => isFinishedEvent);
-        }
-
-        attachments.GetSpriteRenderer().sortingLayerName = "Character";
+    public override void PlayDeathSound()
+    {
+        _soundService.PlayEffectSound("Die");
+        _soundService.PlayEffectSound("Hover", 2f);
     }
 }

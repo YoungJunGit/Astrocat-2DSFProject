@@ -1,12 +1,20 @@
+using AssetInventory;
 using DataEntity;
 using DataEnum;
+using Language.Lua;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static AYellowpaper.SerializedCollections.SerializedDictionarySample;
+
+public interface ICrowdControlManager
+{
+    public void AddCrowdControl(ELEMENT_TYPE element_type, BaseUnit target, BaseUnit caster);
+}
 
 [CreateAssetMenu(fileName = "CrowdControlManager", menuName = "Manager/CrowdControlManager", order = 1)]
-public class CrowdControlManager : ScriptableObject
+public class CrowdControlManager : ScriptableObject, ICrowdControlManager
 {
     private readonly Dictionary<Type, string> _crowdControlIDs = new()
     {
@@ -34,70 +42,124 @@ public class CrowdControlManager : ScriptableObject
         { ELEMENT_TYPE.HOLY, (ELEMENT_STATUS_CATEGORY.SILENCE, ELEMENT_STATUS_CATEGORY.DOMINATE) },
     };
 
-    public record CCContext(ElementStatusData Data, DamageFactory DamageFactory, BaseUnit Target, BaseUnit Caster)
+    public record CCContext(ElementStatusData Data, BaseUnit Target, BaseUnit Caster)
     {
         public ElementStatusData Data { get; } = Data;
-        public DamageFactory DamageFactory { get; } = DamageFactory;
         public BaseUnit Target { get; } = Target;
         public BaseUnit Caster { get; } = Caster;
     }
 
-    private DamageFactory _damageFactory;
-    private DataHandler dataHandler;
+    private DataHandler _dataHandler;
 
     public void Init()
     {
-        ServiceLocator.For(this).Get(out _damageFactory);
-        ServiceLocator.For(this).Get(out dataHandler);
+        ServiceLocator.For(this).Get(out _dataHandler);
     }
 
     public void AddCrowdControl(ELEMENT_TYPE element_type, BaseUnit target, BaseUnit caster)
     {
-        ELEMENT_STATUS_CATEGORY category = _elementDic[element_type].Basic;
+        Action updateChaos = null;
+        var previousElement = target.crowdControlUnit.Previous_Element_Type;
+        if (previousElement != element_type && previousElement != ELEMENT_TYPE.NONE)
+        {
+            // Check element type dictionary
+            if (target.crowdControlUnit.EffectDictionary.TryGetValue(ELEMENT_TYPE.ETC, out var chaosList))
+            {
+                // If Chaos Element_Status_Effect not exist
+                if (chaosList.Count == 0)
+                {
+                    var crowdControl = CrowdControlFactory.CreateCC(ELEMENT_STATUS_CATEGORY.CHAOS);
+                    target.crowdControlUnit.Add(ELEMENT_TYPE.ETC, crowdControl);
+                    var context = CreateContext(crowdControl, (target, caster));
+
+                    if (crowdControl != null && context != null)
+                    {
+                        updateChaos = () => crowdControl.ApplyCrowdControl(context);
+                    }
+                }
+                // If Chaos Element_Status_Effect already exists -> Save Update Action
+                else
+                {
+                    if (chaosList[0] != null)
+                    {
+                        updateChaos = () => chaosList[0].ApplyCrowdControl();
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"There is no Element Type Such as : {element_type}");
+            }
+        }
+
+        // Check element type dictionary
         if (target.crowdControlUnit.EffectDictionary.TryGetValue(element_type, out var list))
         {
-            if (list != null && list.Count > 0 && list.FirstOrDefault(e => !e.isUpgrade) is ICrowdControl found)
+            ICrowdControl crowdControl;
+            CCContext context;
+            // If Basic Element_Status_Effect exists
+            if (list.Count > 0 && list.FirstOrDefault(e => e is IBasicCrowdControl) is ICrowdControl found)
             {
-                target.crowdControlUnit.Remove(element_type, found);
-                category = _elementDic[element_type].Enhanced;
+                ELEMENT_STATUS_CATEGORY category = _elementDic[element_type].Enhanced;
+                crowdControl = CrowdControlFactory.CreateCC(category);
+                target.crowdControlUnit.Replace(element_type, found, crowdControl);
+                context = CreateContext(crowdControl, (target, caster));
             }
+            // If Basic Element_Status_Effect not exist
+            else
+            {
+                ELEMENT_STATUS_CATEGORY category = _elementDic[element_type].Basic;
+                crowdControl = CrowdControlFactory.CreateCC(category);
+                target.crowdControlUnit.Add(element_type, crowdControl);
+                context = CreateContext(crowdControl, (target, caster));
+            }
+
+            if (crowdControl != null && context != null)
+                crowdControl.ApplyCrowdControl(context);
         }
         else
         {
             Debug.LogWarning($"There is no Element Type Such as : {element_type}");
         }
 
-        ICrowdControl crowdControl = CrowdControlFactory.CreateCC(category);
-        target.crowdControlUnit.Add(element_type, crowdControl);
-        var tmp = target.crowdControlUnit.EffectDictionary[element_type][0];
-        
-        if (!_crowdControlIDs.TryGetValue(crowdControl.GetType(), out var ID))
-        {
-            Debug.LogWarning($"No type found in dictionary : {crowdControl.GetType()}");
-            return;
-        }
-
-        var data = dataHandler.FindElementStatusData(ID);
-
-        if (data == null)
-        {
-            Debug.LogWarning($"No Data found from this ID : {ID}");
-            return;
-        }
-
-        var context = new CCContext(data, _damageFactory, target, caster);
-
-        crowdControl.ApplyCrowdControl(context);
+        // Update Chaos Effect
+        updateChaos?.Invoke();
     }
 
-    public void RemoveCrowdControl(ELEMENT_TYPE element_type, BaseUnit target)
+    public static void DecreaseCrowdControl(ELEMENT_TYPE element_type, BaseUnit target)
+    {
+        
+    }
+
+    public static void RemoveCrowdControl(ELEMENT_TYPE element_type, BaseUnit target)
     {
         if (target.crowdControlUnit.EffectDictionary.TryGetValue(element_type, out var foundList))
         {
-            for(var i = foundList.Count - 1; i >= 0; i--)
+            for (var i = foundList.Count - 1; i >= 0; i--)
             {
                 target.crowdControlUnit.Remove(element_type, foundList[i]);
             }
         }
+    }
+
+    private CCContext CreateContext(ICrowdControl cc, (BaseUnit target, BaseUnit caster) unit)
+    {
+        if (!_crowdControlIDs.TryGetValue(cc.GetType(), out var ID))
+        {
+            Debug.LogWarning($"No type found in dictionary : {cc.GetType()}");
+            return null;
+        }
+
+        var data = _dataHandler.FindElementStatusData(ID);
+
+        if (data == null)
+        {
+            Debug.LogWarning($"No Data found from this ID : {ID}");
+            return null;
+        }
+
+        var context = new CCContext(data, unit.target, unit.caster);
+
+        return context;
     }
 }

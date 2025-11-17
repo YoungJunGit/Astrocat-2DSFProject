@@ -4,8 +4,16 @@ using DataEntity;
 using DataEnum;
 using UnityEngine;
 
+public interface IUnitManager
+{
+    public List<BaseUnit> GetEnemyUnits();
+    public List<BaseUnit> GetPlayerUnits();
+    public List<BaseUnit> GetUnit(SIDE side);
+    public List<BaseUnit> GetAllUnits();
+}
+
 [CreateAssetMenu(fileName = "UnitManager", menuName = "GameScene/UnitManager", order = 2)]
-public class UnitManager : ScriptableObject
+public class UnitManager : ScriptableObject , IUnitManager
 {
     [SerializeField] private ScriptableListBaseUnit currentUnitList = null;
     [SerializeField] private EntitySpawner spawner;

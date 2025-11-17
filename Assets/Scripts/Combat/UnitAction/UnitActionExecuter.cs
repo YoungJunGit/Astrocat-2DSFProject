@@ -37,7 +37,7 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
         }
         catch (OperationCanceledException)
         {
-            Debug.Log($"{caster.GetStat().coreStat.Name} : Action was canceled.");
+            Debug.Log($"{caster.GetStat().CoreStat.Name} : Action was canceled.");
         }
         finally
         {

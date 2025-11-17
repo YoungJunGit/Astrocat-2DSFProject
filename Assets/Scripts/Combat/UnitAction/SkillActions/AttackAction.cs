@@ -21,8 +21,8 @@ class BaseAttackAction : IUnitAction
     {
         unitAction.OnStartAction(context);
 
-        await UniTask.WaitUntil(() => context.Caster.combatInfo.isFinishedAction, cancellationToken: cancellationToken.Token);
-        Debug.Log($"{context.Caster.GetStat().coreStat.Name} : Action was finished.");
+        await UniTask.WaitUntil(() => context.Caster.CombatInfo.isFinishedAction, cancellationToken: cancellationToken.Token);
+        Debug.Log($"{context.Caster.GetStat().CoreStat.Name} : Action was finished.");
     }
 }
 
@@ -41,15 +41,15 @@ class MeleeAttack : BaseAttackAction
             var inputDisposer = new InputDisposer(context.InputHandler, InputHandler.InputState.Parry);
 
             // Save Position
-            context.Caster.combatInfo.startPos = (Vector2)context.Caster.transform.position;
+            context.Caster.CombatInfo.startPos = (Vector2)context.Caster.transform.position;
 
             // Identify target's postition
-            float xOffset = context.Caster.attachments.GetHitBox().size.x / 2;
+            float xOffset = context.Caster.Attachments.GetHitBox().size.x / 2;
             Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
-            context.Caster.combatInfo.targetPos = (Vector2)target.attachments.GetMeleeHitPos().position + offset;
+            context.Caster.CombatInfo.targetPos = (Vector2)target.Attachments.GetMeleeHitPos().position + offset;
 
             context.Caster.GetAnimationHandler().Attack += () => { unitAction.DamageEvent(context, target); };
-            context.Caster.combatInfo.actionList.Add("FinishedAction", () => { unitAction.OnFinishedAction(context); });
+            context.Caster.CombatInfo.actionList.Add("FinishedAction", () => { unitAction.OnFinishedAction(context); });
             context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
 
             try
@@ -58,7 +58,7 @@ class MeleeAttack : BaseAttackAction
             }
             catch (OperationCanceledException)
             {
-                Debug.Log($"{context.Caster.GetStat().coreStat.Name} : Action was canceled.");
+                Debug.Log($"{context.Caster.GetStat().CoreStat.Name} : Action was canceled.");
             }
 
             inputDisposer.Dispose();
@@ -89,19 +89,19 @@ class RangeAttack : BaseAttackAction
             catch (OperationCanceledException)
             {
                 bullet?.Dispose();
-                Debug.Log($"{context.Caster.GetStat().coreStat.Name} : Action was canceled.");
+                Debug.Log($"{context.Caster.GetStat().CoreStat.Name} : Action was canceled.");
             }
         }
     }
 
     private BaseBullet ShootBullet(IUnitActionContext context, IUnitActionEvent unitAction, BaseUnit target)
     {
-        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().coreStat.AssetFileName);
-        BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().CoreStat.AssetFileName);
+        BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
         if (bullet != null)
         {
             context.SoundService.PlayEffectSound("Player_Shoot");
-            bullet.Initialize(target.attachments.GetHitBox(), () => { unitAction.DamageEvent(context, target); unitAction.OnFinishedAction(context); });
+            bullet.Initialize(target.Attachments.GetHitBox(), () => { unitAction.DamageEvent(context, target); unitAction.OnFinishedAction(context); });
             return bullet;
         }
         return null;

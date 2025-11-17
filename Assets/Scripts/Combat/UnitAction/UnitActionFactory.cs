@@ -31,10 +31,16 @@ class UnitActionFactory : ScriptableObject
 
         if (skillAction == null)
         {
-            Debug.Log($"{unit.GetStat().coreStat.Name} : {skillID} Skill is not registered");
+            Debug.Log($"{unit.GetStat().CoreStat.Name} : {skillID} Skill is not registered");
         }
         
         return skillAction;
+    }
+
+    public IUnitAction CreateParryingAction(BaseUnit defender, ParryingApplier.ParryType parryType)
+    {
+        // TODO
+        return default;
     }
 
     private BaseAttackAction CreateBaseAttackActionByUnitType(BaseUnit unit, SIDE side)
@@ -48,11 +54,5 @@ class UnitActionFactory : ScriptableObject
         }
 
         return null;
-    }
-
-    public IUnitAction CreateParryingAction(BaseUnit defender, ParryingApplier.ParryType parryType)
-    {
-        // TODO
-        return default;
     }
 }

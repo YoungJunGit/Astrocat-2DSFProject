@@ -32,14 +32,14 @@ public class UnitActionEvent : IUnitActionEvent
 
     public void OnStartAction(IUnitActionContext context)
     {
-        context.Caster.combatInfo.isFinishedAction = false;
-        context.Caster.attachments.GetSpriteRenderer().sortingLayerName = "Actor";
+        context.Caster.CombatInfo.isFinishedAction = false;
+        context.Caster.Attachments.GetSpriteRenderer().sortingLayerName = "Actor";
     }
 
     public void OnFinishedAction(IUnitActionContext context)
     {
-        context.Caster.combatInfo.isFinishedAction = true;
-        context.Caster.attachments.GetSpriteRenderer().sortingLayerName = "Character";
+        context.Caster.CombatInfo.isFinishedAction = true;
+        context.Caster.Attachments.GetSpriteRenderer().sortingLayerName = "Character";
     }
 
     public void DamageEvent(IUnitActionContext context, BaseUnit target)

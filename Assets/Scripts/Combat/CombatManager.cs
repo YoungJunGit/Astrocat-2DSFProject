@@ -14,7 +14,6 @@ public class CombatSelectionContext
 [CreateAssetMenu(fileName = "CombatManager", menuName = "GameScene/CombatManager", order = 1)]
 public class CombatManager : ScriptableObject
 {
-    [SerializeField] private EventHandler combatEventHandler;
     [SerializeField] private TimelineManager timelineManagerPrefab;
 
     private TimelineManager _timelineManager;
@@ -24,7 +23,7 @@ public class CombatManager : ScriptableObject
 
     public bool executed;
 
-    private UnitManager _unitManager;
+    private IUnitManager _unitManager;
     private IUnitActionExecuter _actionExecuter;
     private ICombatTextManager _textManager;
     private ISelectorManager _selectorManager;
@@ -68,7 +67,7 @@ public class CombatManager : ScriptableObject
 
             await UniTask.WaitUntil(() => !_textManager.IsTextOn);
 
-            Debug.Log($"{currentTurnUnit.GetStat().coreStat.Name}'s turn");
+            Debug.Log($"{currentTurnUnit.GetStat().CoreStat.Name}'s turn");
 
             var context = new CombatSelectionContext();
             // Step 1 : Add Selections
@@ -81,7 +80,7 @@ public class CombatManager : ScriptableObject
             // Step 3 : Execute Action to Target
             await _actionExecuter.ExecuteRequest(currentTurnUnit, context.Action, context.Target);
 
-            await UniTask.WaitUntil(() => combatEventHandler.IsEventEmpty());
+            await UniTask.WaitUntil(() => EventHandler.IsEventEmpty());
             await UniTask.WaitForSeconds(1);
         }
 

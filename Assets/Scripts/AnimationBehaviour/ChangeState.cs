@@ -10,7 +10,7 @@ public class ChangeState : StateMachineBehaviour
     {
         AnimationHandler handler = animator.GetComponent<AnimationHandler>();
         handler.animTimer = new CountdownTimer(stateInfo.length);
-        handler.animTimer.OnTimerStop += () => handler.ChangeAnimation(state);
+        handler.animTimer.OnTimerStop += () => { handler.ChangeAnimation(state); handler.animTimer.Dispose(); };
         handler.animTimer.Start();
     }
 }

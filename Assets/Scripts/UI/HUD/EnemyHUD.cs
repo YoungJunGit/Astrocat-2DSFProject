@@ -1,34 +1,40 @@
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.PlayerLoop;
-using DG.Tweening;
+using UnityEngine.UI;
 
 public class EnemyHUD : BaseHUD, IUpdateObserver
 {
     [Space(10f)]
-    [SerializeField] private Vector3 posOffset;
-    private RectTransform rectTransform;
-    private Transform statusPos;
-    private UnitStat stat;
+    [SerializeField] private Vector3 statusPosOffset;
+    [SerializeField] private Vector3 buffBoxPosOffset;
+    private RectTransform _statusRectTransform;
+    private Transform _statusPos;
+    private Transform _buffBoxPos;
 
     [HideInInspector] public Vector3 spawnPos;
 
-    [Header("HP Tween")]
-    [SerializeField] private float hpTweenDuration = 0.5f; 
+    protected override void UpdateIconBoxSize<T>(List<T> iconList)
+    {
+
+    }
 
     public override void Initialize(BaseUnit unit)
     {
-        rectTransform = GetComponent<RectTransform>();
-        stat = unit.GetStat();
-        stat.OnHPChanged += OnHPChanged;
+        base.Initialize(unit);
+
+        _statusRectTransform = GetComponent<RectTransform>();
+        unit.GetStat().OnHPChanged += OnHPChanged;
     }
 
-    public void AttachHUD(Transform statusPos)
+    public void AttachHUD(Transform statusPos, Transform buffBoxPos)
     {
-        this.statusPos = statusPos;
+        _statusPos = statusPos;
+        _buffBoxPos = buffBoxPos;
         UpdatePublisher.SubscribeObserver(this);
     }
 
@@ -46,14 +52,14 @@ public class EnemyHUD : BaseHUD, IUpdateObserver
         {
             UpdatePublisher.DiscribeObserver(this);
             gameObject.SetActive(false);
-
         }
     }
 
     public void ObserverUpdate(float dt)
     {
         gameObject.SetActive(true);
-        rectTransform.position = Camera.main.WorldToScreenPoint(statusPos.position + posOffset);
+        _statusRectTransform.position = Camera.main.WorldToScreenPoint(_statusPos.position + statusPosOffset);
+        _buffBoxRectTransform.position = Camera.main.WorldToScreenPoint(_buffBoxPos.position + buffBoxPosOffset);
     }
 
     private void OnDestroy()

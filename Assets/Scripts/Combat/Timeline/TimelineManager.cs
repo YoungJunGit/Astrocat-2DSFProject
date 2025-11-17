@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class TimelineManager : MonoBehaviour
 {
+    [SerializeField] private GameObject bannerArea;
     [SerializeField] private Banner bannerPrefab;
     [SerializeField] private IntVariable MaxBannerIndex;
 
@@ -49,7 +50,7 @@ public class TimelineManager : MonoBehaviour
         _timelineManagerModel.CurRound.DistinctUntilChanged()
                                       .Subscribe(round =>
                                       {
-                                          _timelinePublisher.UpdateTimeline(round);
+                                          _timelinePublisher.UpdateRoundObservers(round);
                                           textManager.ShowNextRoundText(round);
                                       })
                                       .AddTo(this);
@@ -66,7 +67,7 @@ public class TimelineManager : MonoBehaviour
         foreach (var unit in units)
         {
             NormalBanner banner = Instantiate(bannerPrefab).GetComponent<NormalBanner>();
-            banner.transform.SetParent(transform, false);
+            banner.transform.SetParent(bannerArea.transform, false);
             _timelineManagerModel.AddBanner(banner, unit);
         }
     }
