@@ -123,6 +123,10 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 if (node.nodeData == null) node.init();
             }
         }
+        if(cam != null)
+        {
+            cam.transform.rotation = Quaternion.Euler(camAngleX, camAngleY, camAngleZ);
+        }
     }
 
     /*------------------------------------------------------------

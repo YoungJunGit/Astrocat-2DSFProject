@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 1289155968
+  seed: 923745664
   floorNum: 10
   routeNum: 3
   normalNodeSize: 1
@@ -35,10 +35,10 @@ MonoBehaviour:
   passedPathColor: {r: 1, g: 1, b: 1, a: 1}
   cameraPref: {fileID: 7454520194946596864, guid: 3ccc1905d13358d4d85bf95ebc534d3f, type: 3}
   planetSelectorPref: {fileID: 3407096067947001916, guid: 6b5c31b56b6b4b349af6ffca3d5efc96, type: 3}
-  cameraPositionYOffset: 6
-  cameraPositionZOffset: 8
-  camSpeed: 7
-  camAngleX: 30
+  cameraPositionYOffset: 4.5
+  cameraPositionZOffset: 6.77
+  camSpeed: 10
+  camAngleX: 25.2
   camAngleY: 0
   camAngleZ: 0
   limitMinX: -20
