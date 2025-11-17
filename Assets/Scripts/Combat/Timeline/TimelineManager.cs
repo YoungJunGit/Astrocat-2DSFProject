@@ -50,7 +50,7 @@ public class TimelineManager : MonoBehaviour
         _timelineManagerModel.CurRound.DistinctUntilChanged()
                                       .Subscribe(round =>
                                       {
-                                          _timelinePublisher.UpdateTimeline(round);
+                                          _timelinePublisher.UpdateRoundObservers(round);
                                           textManager.ShowNextRoundText(round);
                                       })
                                       .AddTo(this);

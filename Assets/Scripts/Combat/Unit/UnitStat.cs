@@ -4,7 +4,9 @@ using DataEnum;
 using System;
 using Utils;
 using ObservableCollections;
+using R3;
 
+#region [Core Stat]
 public class CoreStat
 {
     private readonly EntityData _baseData;
@@ -18,7 +20,9 @@ public class CoreStat
     public string AssetFileName => _baseData.Asset_File;
     public string[] SkillsID => _baseData.Skill_ID;
 }
+#endregion
 
+#region [Modifier Stat]
 public class ModifierStat
 {
     private readonly EntityData _baseData;
@@ -33,12 +37,19 @@ public class ModifierStat
 
     public float PercentageValue(BUFF_TYPE type, float defaultValue = 1.0f)
     {
-        var q = new Query<float>(type, defaultValue);
+        var q = new Query<BUFF_TYPE, float>(type, defaultValue);
         _mediator.PerformQuery(this, q);
         return Mathf.Max(0.0f, q.Value);
     }
 
-    #region [Final Value]
+    public int ControlEffectValue(ELEMENT_TYPE type)
+    {
+        var q = new Query<ELEMENT_TYPE, int>(type, 0);
+        _mediator.PerformQuery(this, q);
+        return Mathf.Max(0, q.Value);
+    }
+
+    #region [DT-Value]
     public float MaxHP
     {
         get
@@ -162,15 +173,17 @@ public class ModifierStat
         float value = PercentageValue((BUFF_TYPE)((int)BUFF_TYPE.PHYSICAL_OVERLOAD_RATE + (int)type) - 1, overload_rate);
         return Mathf.Max(0.0f, value);
     }
-
-
     #endregion
 }
+#endregion
 
 public class UnitStat
 {
     public readonly CoreStat CoreStat;
     public readonly ModifierStat ModifierStat;
+
+    private readonly ObservableDictionary<BUFF_TYPE, IconInfo> _buffIconInfoDic = new();
+    private readonly ObservableDictionary<ELEMENT_TYPE, IconInfo> _elementIconInfoDic = new();
 
     private float _curHp;
     private int   _curSP;
@@ -189,7 +202,7 @@ public class UnitStat
     {
         CoreStat = new CoreStat(baseData);
         ModifierStat = new ModifierStat(baseData);
-        
+
         _curHp = (float)baseData.Max_HP;
         _curSP = baseData.Default_SP;
         _priority = priority;
@@ -247,21 +260,4 @@ public class UnitStat
             }
         }
     }
-
-    #region[Observable]
-    private ObservableDictionary<ELEMENT_TYPE, int> ceList = new()
-    {
-        { ELEMENT_TYPE.PHYSICAL,  0 },
-        { ELEMENT_TYPE.FIRE,      0 },
-        { ELEMENT_TYPE.RADIATION, 0 },
-        { ELEMENT_TYPE.GRAVITY,   0 },
-        { ELEMENT_TYPE.VOID,      0 },
-        { ELEMENT_TYPE.HOLY,      0 },
-        { ELEMENT_TYPE.ETC,       0 },
-    };
-    public IReadOnlyObservableDictionary<ELEMENT_TYPE, int> CEList => ceList;
-
-    public void OnAddCE(ELEMENT_TYPE type) => ceList[type]++;
-    public void OnSetCE(ELEMENT_TYPE type, int value) => ceList[type] = value;
-    #endregion
 }

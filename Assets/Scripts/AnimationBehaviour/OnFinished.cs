@@ -13,7 +13,7 @@ public class OnFinished : StateMachineBehaviour
         {
             if (info.actionList.TryGetValue(eventName, out var action))
             {
-                eventTimer.OnTimerStop += action;
+                eventTimer.OnTimerStop += () => { action(); eventTimer.Dispose(); };
                 info.actionList.Remove(eventName);
             }
         }

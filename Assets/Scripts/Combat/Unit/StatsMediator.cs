@@ -4,12 +4,12 @@ using ObservableCollections;
 using DataEnum;
 
 public interface IQuery { }
-public class Query<T> : IQuery
+public class Query<T, TValue> : IQuery
 {
-    public readonly BUFF_TYPE BuffType;
-    public T Value;
+    public readonly T BuffType;
+    public TValue Value;
 
-    public Query(BUFF_TYPE BuffType, T Value)
+    public Query(T BuffType, TValue Value)
     {
         this.BuffType = BuffType;
         this.Value = Value;
@@ -21,7 +21,7 @@ public class StatsMediator
     private readonly List<StatModifier> modifiers = new List<StatModifier>();
 
     public event System.EventHandler<IQuery> Queries;
-    public void PerformQuery<T>(object sender, Query<T> query) => Queries?.Invoke(sender, query);
+    public void PerformQuery<T, TValue>(object sender, Query<T, TValue> query) => Queries?.Invoke(sender, query);
 
     public void AddModifier(StatModifier modifier)
     {

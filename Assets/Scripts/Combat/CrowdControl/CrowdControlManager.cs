@@ -98,7 +98,7 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
             ICrowdControl crowdControl;
             CCContext context;
             // If Basic Element_Status_Effect exists
-            if (list.Count > 0 && list.FirstOrDefault(e => e is BasicCrowdControl) is ICrowdControl found)
+            if (list.Count > 0 && list.FirstOrDefault(e => e is IBasicCrowdControl) is ICrowdControl found)
             {
                 ELEMENT_STATUS_CATEGORY category = _elementDic[element_type].Enhanced;
                 crowdControl = CrowdControlFactory.CreateCC(category);
@@ -124,6 +124,11 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
 
         // Update Chaos Effect
         updateChaos?.Invoke();
+    }
+
+    public static void DecreaseCrowdControl(ELEMENT_TYPE element_type, BaseUnit target)
+    {
+        
     }
 
     public static void RemoveCrowdControl(ELEMENT_TYPE element_type, BaseUnit target)

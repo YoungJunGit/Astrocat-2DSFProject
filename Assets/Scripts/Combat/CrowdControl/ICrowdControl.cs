@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using DataEnum;
 using UnityEngine;
 using static CrowdControlManager;
 
@@ -7,23 +9,16 @@ public interface ICrowdControl
     public void Dispose();
 }
 
-public abstract class BasicCrowdControl : ICrowdControl
+public abstract class CrowdControlBase : ICrowdControl
 {
-    public abstract void ApplyCrowdControl(CCContext context);
-    public abstract void Dispose();
-}
+    protected List<IEffectable> effectList { get; }
 
-public abstract class EnhancedCrowdContrl : ICrowdControl
-{
-    public abstract void ApplyCrowdControl(CCContext context);
-    public abstract void Dispose();
-}
-
-public class Stun : ICrowdControl
-{
-    public void ApplyCrowdControl(CCContext context)
+    public void ApplyCrowdControl(CCContext context = null)
     {
-        
+        foreach (var effect in effectList)
+        {
+            effect.Apply(new EffectContext(context.Target, context.Caster));
+        }
     }
 
     public void Dispose()
@@ -32,161 +27,77 @@ public class Stun : ICrowdControl
     }
 }
 
-public class Burn : ICrowdControl
+public interface IBasicCrowdControl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
 
-    public void Dispose()
-    {
-        
-    }
 }
 
-public class Contamination : ICrowdControl
+public interface IEnhancedCrowdContrl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
 
-    public void Dispose()
-    {
-        
-    }
 }
 
-public class Suppress : ICrowdControl
+public class Stun : CrowdControlBase, IBasicCrowdControl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Strange : ICrowdControl
+public class Burn : CrowdControlBase, IBasicCrowdControl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Silence : ICrowdControl
+public class Contamination : CrowdControlBase, IBasicCrowdControl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Weakness : ICrowdControl
+public class Suppress : CrowdControlBase, IBasicCrowdControl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-        
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Overheat : ICrowdControl
+public class Strange : CrowdControlBase, IBasicCrowdControl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Exposure : ICrowdControl
+public class Silence : CrowdControlBase, IBasicCrowdControl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Bind : ICrowdControl
+public class Weakness : CrowdControlBase, IEnhancedCrowdContrl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Corrode : ICrowdControl
+public class Overheat : CrowdControlBase, IEnhancedCrowdContrl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Dominate : ICrowdControl
+public class Exposure : CrowdControlBase, IEnhancedCrowdContrl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-
-    }
-
-    public void Dispose()
-    {
-        
-    }
+    
 }
 
-public class Chaos : ICrowdControl
+public class Bind : CrowdControlBase, IEnhancedCrowdContrl
 {
-    public void ApplyCrowdControl(CCContext context)
-    {
-        if(context != null)
-            Debug.Log($"Add Chaos!");
-        else
-            Debug.Log($"Update Chaos!");
-    }
+    
+}
 
-    public void Dispose()
-    {
-        
-    }
+public class Corrode : CrowdControlBase, IEnhancedCrowdContrl
+{
+    
+}
+
+public class Dominate : CrowdControlBase, IEnhancedCrowdContrl
+{
+    
+}
+
+public class Chaos : CrowdControlBase, IEnhancedCrowdContrl
+{
+    
 }
