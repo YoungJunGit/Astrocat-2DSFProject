@@ -98,7 +98,10 @@ namespace DataEnum
         DAMAGE_TAKEN_MULTIPLIER,
         SP_CONSUMPTION_RATE,
         DAMAGE_EACH_TURN,
-        HEAL_EACH_TURN
+        HEAL_EACH_TURN,
+        STUN,
+        STRANGE,
+        SILENCE
     }
 
     /*Ãß°¡*/

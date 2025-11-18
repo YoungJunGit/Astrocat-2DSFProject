@@ -19,9 +19,9 @@ public interface IEnhancedCrowdControl { }
 
 public abstract class CrowdControlBase : ICrowdControl
 {
-    private List<IEffectable> effectList;
+    protected List<IEffectable> effectList;
 
-    public void ApplyCrowdControl(CCContext context)
+    public virtual void ApplyCrowdControl(CCContext context)
     {
         effectList = CreateCombatEffect(context.effectManager, context.Data);
         List<EffectInfo> list = new List<EffectInfo>();
@@ -53,7 +53,7 @@ public class Stun : CrowdControlBase, IBasicCrowdControl
     {
         list.Add(new EffectInfo
         (
-            "StunID",
+            "30001032",
             data.Element_Status_Name, 
             0.0f, 
             data.Element_Status_Duration_Turn
@@ -117,7 +117,7 @@ public class Strange : CrowdControlBase, IBasicCrowdControl
     {
         list.Add(new EffectInfo
         (
-            "StrangeID",
+            "30001033",
             data.Element_Status_Name,
             0.0f,
             data.Element_Status_Duration_Turn
@@ -133,7 +133,7 @@ public class Silence : CrowdControlBase, IBasicCrowdControl
     {
         list.Add(new EffectInfo
         (
-            "SilenceID",
+            "30001034",
             data.Element_Status_Name,
             0.0f,
             data.Element_Status_Duration_Turn
@@ -149,7 +149,7 @@ public class Weakness : CrowdControlBase, IEnhancedCrowdControl
     {
         list.Add(new EffectInfo
         (
-            "StunID",
+            "30001032",
             data.Element_Status_Name,
             0.0f,
             data.Element_Status_Duration_Turn
@@ -218,7 +218,20 @@ public class Corrode : CrowdControlBase, IEnhancedCrowdControl
 
     public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
     {
-        throw new System.NotImplementedException();
+        list.Add(new EffectInfo
+        (
+            "30001033",
+            data.Element_Status_Name,
+            0.0f,
+            data.Element_Status_Duration_Turn
+        ));
+        list.Add(new EffectInfo
+        (
+            data.Buff_Table_ID,
+            data.Element_Status_Name,
+            (float)data.Element_Status_Value[0],
+            data.Element_Status_Duration_Turn
+        ));
     }
 }
 
@@ -228,16 +241,42 @@ public class Dominate : CrowdControlBase, IEnhancedCrowdControl
 
     public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
     {
-        throw new System.NotImplementedException();
+        list.Add(new EffectInfo
+        (
+            "30001034",
+            data.Element_Status_Name,
+            0.0f,
+            data.Element_Status_Duration_Turn
+        ));
+        list.Add(new EffectInfo
+        (
+            data.Buff_Table_ID,
+            data.Element_Status_Name,
+            (float)data.Element_Status_Value[0],
+            data.Element_Status_Duration_Turn
+        ));
     }
 }
 
-public class Chaos : CrowdControlBase, IEnhancedCrowdControl
+public class Chaos : ICrowdControl
 {
-    public override string ID => "40033001";
+    public string ID => "40033001";
 
-    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    
+    private CCContext context;
+
+    public void ApplyCrowdControl(CCContext context = null)
     {
-        throw new System.NotImplementedException();
+        this.context = context;
+    }
+
+    public void Dispose()
+    {
+        
+    }
+
+    public EffectInfo CreateEffectInfoList(string ID, float value, int duration, string name)
+    {
+        return new EffectInfo(ID, name, value, duration);
     }
 }

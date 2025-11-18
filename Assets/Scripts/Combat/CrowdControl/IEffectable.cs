@@ -34,9 +34,9 @@ public abstract class BaseModiferEffect<T> : BaseEffect
 {
     protected BasicStatModifier<T, int> modifier;
 
-    public override void Apply(EffectContext context)
+    public override void Apply(EffectInfo info, EffectContext context)
     {
-        base.Apply(context);
+        base.Apply(info, context);
         modifier = CreateModifier();
         context.Target.GetStat().ModifierStat.Mediator.AddModifier(modifier);
     }
