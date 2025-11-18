@@ -1,20 +1,32 @@
 using System.Collections.Generic;
+using DataEntity;
 using DataEnum;
 using UnityEngine;
+using UnityEngine.LightTransport;
 using static CrowdControlManager;
+using static CombatEffectManager;
 
 public interface ICrowdControl
 {
+    public string ID { get; }
     public void ApplyCrowdControl(CCContext context = null);
     public void Dispose();
 }
 
+public interface IBasicCrowdControl { }
+
+public interface IEnhancedCrowdControl { }
+
 public abstract class CrowdControlBase : ICrowdControl
 {
-    protected List<IEffectable> effectList { get; }
+    private List<IEffectable> effectList;
 
-    public void ApplyCrowdControl(CCContext context = null)
+    public void ApplyCrowdControl(CCContext context)
     {
+        effectList = CreateCombatEffect(context.effectManager, context.Data);
+        List<EffectInfo> list = new List<EffectInfo>();
+        CreateEffectInfoList(context.Data, list);
+
         foreach (var effect in effectList)
         {
             effect.Apply(new EffectContext(context.Target, context.Caster));
@@ -23,81 +35,209 @@ public abstract class CrowdControlBase : ICrowdControl
 
     public void Dispose()
     {
-        
+        foreach (var effect in effectList)
+        {
+            effect.Dispose();
+        }
     }
-}
 
-public interface IBasicCrowdControl
-{
-
-}
-
-public interface IEnhancedCrowdContrl
-{
-
+    public abstract string ID { get; }
+    public abstract void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list);
 }
 
 public class Stun : CrowdControlBase, IBasicCrowdControl
 {
-    
+    public override string ID => "40011001";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            "StunID",
+            data.Element_Status_Name, 
+            0.0f, 
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
 public class Burn : CrowdControlBase, IBasicCrowdControl
 {
-    
+    public override string ID => "40011002";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            data.Buff_Table_ID, 
+            data.Element_Status_Name, 
+            (float)data.Element_Status_Value[0], 
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
 public class Contamination : CrowdControlBase, IBasicCrowdControl
 {
-    
+    public override string ID => "40011003";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            data.Buff_Table_ID,
+            data.Element_Status_Name,
+            (float)data.Element_Status_Value[0],
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
 public class Suppress : CrowdControlBase, IBasicCrowdControl
 {
-    
+    public override string ID => "40011004";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            data.Buff_Table_ID,
+            data.Element_Status_Name,
+            (float)data.Element_Status_Value[0],
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
 public class Strange : CrowdControlBase, IBasicCrowdControl
 {
-    
+    public override string ID => "40011005";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            "StrangeID",
+            data.Element_Status_Name,
+            0.0f,
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
 public class Silence : CrowdControlBase, IBasicCrowdControl
 {
-    
+    public override string ID => "40011006";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            "SilenceID",
+            data.Element_Status_Name,
+            0.0f,
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
-public class Weakness : CrowdControlBase, IEnhancedCrowdContrl
+public class Weakness : CrowdControlBase, IEnhancedCrowdControl
 {
-    
+    public override string ID => "40022001";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            "StunID",
+            data.Element_Status_Name,
+            0.0f,
+            data.Element_Status_Duration_Turn
+        ));
+        list.Add(new EffectInfo
+        (
+            data.Buff_Table_ID,
+            data.Element_Status_Name,
+            (float)data.Element_Status_Value[0],
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
-public class Overheat : CrowdControlBase, IEnhancedCrowdContrl
+public class Overheat : CrowdControlBase, IEnhancedCrowdControl
 {
-    
+    public override string ID => "40022002";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            data.Buff_Table_ID,
+            data.Element_Status_Name,
+            (float)data.Element_Status_Value[0],
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
-public class Exposure : CrowdControlBase, IEnhancedCrowdContrl
+public class Exposure : CrowdControlBase, IEnhancedCrowdControl
 {
-    
+    public override string ID => "40022003";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            data.Buff_Table_ID,
+            data.Element_Status_Name,
+            (float)data.Element_Status_Value[0],
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
-public class Bind : CrowdControlBase, IEnhancedCrowdContrl
+public class Bind : CrowdControlBase, IEnhancedCrowdControl
 {
-    
+    public override string ID => "40022004";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        list.Add(new EffectInfo
+        (
+            data.Buff_Table_ID,
+            data.Element_Status_Name,
+            (float)data.Element_Status_Value[0],
+            data.Element_Status_Duration_Turn
+        ));
+    }
 }
 
-public class Corrode : CrowdControlBase, IEnhancedCrowdContrl
+public class Corrode : CrowdControlBase, IEnhancedCrowdControl
 {
-    
+    public override string ID => "40022005";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        throw new System.NotImplementedException();
+    }
 }
 
-public class Dominate : CrowdControlBase, IEnhancedCrowdContrl
+public class Dominate : CrowdControlBase, IEnhancedCrowdControl
 {
-    
+    public override string ID => "40022006";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        throw new System.NotImplementedException();
+    }
 }
 
-public class Chaos : CrowdControlBase, IEnhancedCrowdContrl
+public class Chaos : CrowdControlBase, IEnhancedCrowdControl
 {
-    
+    public override string ID => "40033001";
+
+    public override void CreateEffectInfoList(ElementStatusData data, List<EffectInfo> list)
+    {
+        throw new System.NotImplementedException();
+    }
 }

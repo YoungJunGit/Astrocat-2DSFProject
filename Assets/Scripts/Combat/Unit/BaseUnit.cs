@@ -29,6 +29,7 @@ public abstract class BaseUnit : MonoBehaviour
     public UnitAttachments Attachments;
     public UnitCombatInfo CombatInfo;
     public CrowdControlUnit crowdControlUnit;
+    public CombatEffectUnit combatEffectUnit;
     public Action<BaseUnit> m_FinishedDying;
 
     DisposableBag d;
@@ -37,6 +38,7 @@ public abstract class BaseUnit : MonoBehaviour
     {
         CombatInfo       = new UnitCombatInfo();
         crowdControlUnit = new CrowdControlUnit();
+        combatEffectUnit = new CombatEffectUnit();
         Attachments      = GetComponent<UnitAttachments>();
 
         _stat            = new UnitStat(data, priority);

@@ -1,28 +1,33 @@
+using System;
 using System.Collections.Generic;
 using DataEnum;
+using JetBrains.Annotations;
 using UnityEngine;
-
-public record EffectContext(BaseUnit Target, BaseUnit Caster)
-{
-    public BaseUnit Target { get; } = Target;
-    public BaseUnit Caster { get; } = Caster;
-}
+using static CombatEffectManager;
 
 public interface IEffectable
 {
-    public void Apply(EffectContext context);
+    public void Apply(EffectInfo info, EffectContext context);
     public void Dispose();
+    public event Action OnDispose;
 }
 
 public abstract class BaseEffect : IEffectable
 {
+    protected EffectInfo info;
     protected EffectContext context;
-    public virtual void Apply(EffectContext context)
+    public event Action OnDispose;
+
+    public virtual void Apply(EffectInfo info, EffectContext context)
     {
+        this.info = info;
         this.context = context;
     }
 
-    public abstract void Dispose();
+    public virtual void Dispose()
+    {
+        OnDispose?.Invoke();
+    }
 }
 
 public abstract class BaseModiferEffect<T> : BaseEffect
@@ -32,14 +37,15 @@ public abstract class BaseModiferEffect<T> : BaseEffect
     public override void Apply(EffectContext context)
     {
         base.Apply(context);
-        CreateModifier();
+        modifier = CreateModifier();
         context.Target.GetStat().ModifierStat.Mediator.AddModifier(modifier);
     }
 
     public override void Dispose()
     {
+        base.Dispose();
         modifier.Dispose();
     }
 
-    public abstract void CreateModifier();
+    public abstract BasicStatModifier<T, int> CreateModifier();
 }

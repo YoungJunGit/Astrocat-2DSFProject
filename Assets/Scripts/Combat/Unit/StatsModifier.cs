@@ -26,13 +26,6 @@ public class BasicStatModifier<T, TValue> : StatModifier
 public abstract class StatModifier : IDisposable
 {
     private readonly EffectTimer _timer;
-    public EffectTimer GetTimer()
-    {
-        if (_timer != null)
-            return _timer;
-        else
-            return null;
-    }
     public bool MarkedForRemoval { get; set; }
     public event Action<StatModifier> OnDispose = delegate { };
 

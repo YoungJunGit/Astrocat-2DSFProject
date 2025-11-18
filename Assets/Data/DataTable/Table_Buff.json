@@ -175,57 +175,10 @@
         "Buff_Type": 25
     },
     {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
-    },
-    {
-        "Buff_ID": "0"
+        "Buff_ID": "30001026",
+        "table": "30",
+        "kind": "0",
+        "index": "1026",
+        "Buff_Type": 26
     }
 ]

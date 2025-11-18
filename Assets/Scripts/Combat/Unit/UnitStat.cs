@@ -90,8 +90,7 @@ public class ModifierStat
     {
         get
         {
-            float value = (float)_baseData.Default_Speed * PercentageValue(BUFF_TYPE.SPEED);
-            return Mathf.Max(0.0f, value);
+            return (float)_baseData.Default_Speed * PercentageValue(BUFF_TYPE.SPEED);
         }
     }
 
@@ -99,8 +98,7 @@ public class ModifierStat
     {
         get
         {
-            float value = PercentageValue(BUFF_TYPE.CRITICAL_CHANCE, (float)_baseData.Critical_Chance);
-            return Mathf.Max(0.0f, value);
+            return PercentageValue(BUFF_TYPE.CRITICAL_CHANCE, (float)_baseData.Critical_Chance);
         }
     }
 
@@ -126,8 +124,7 @@ public class ModifierStat
     {
         get
         {
-            float value = PercentageValue(BUFF_TYPE.DAMAGE_MULTIPLIER);
-            return Mathf.Max(0.0f, value);
+            return PercentageValue(BUFF_TYPE.DAMAGE_MULTIPLIER);
         }
     }
 
@@ -135,8 +132,7 @@ public class ModifierStat
     {
         get
         {
-            float value = PercentageValue(BUFF_TYPE.DAMAGE_TAKEN_MULTIPLIER);
-            return Mathf.Max(0.0f, value);
+            return PercentageValue(BUFF_TYPE.DAMAGE_TAKEN_MULTIPLIER);
         }
     }
 
@@ -144,34 +140,29 @@ public class ModifierStat
     {
         get
         {
-            float value = PercentageValue(BUFF_TYPE.SP_CONSUMPTION_RATE);
-            return Mathf.Max(0.0f, value);
-        }
-    }
-
-    public float ElementChargeResist
-    {
-        get
-        {
-            float value = PercentageValue(BUFF_TYPE.ELEMENT_GAUGE_RESISTANCE, (float)_baseData.Element_Charge_Resist);
-            return Mathf.Min(value, 1.0f);
+            return PercentageValue(BUFF_TYPE.SP_CONSUMPTION_RATE);
         }
     }
 
     public float ElementChargeRate(ELEMENT_TYPE type)
     {
+        if (type == ELEMENT_TYPE.NONE || type == ELEMENT_TYPE.ETC) return -1;
         float element_charge_rate = (float)FunctionUtils.SafeGet(_baseData.Element_Charge_Rate, (int)(type - 1));
-        if (type == ELEMENT_TYPE.NONE || element_charge_rate == 0f) return -1;
-        float value = PercentageValue((BUFF_TYPE)((int)BUFF_TYPE.PHYSICAL_GAUGE_EFFICIENCY + (int)type) - 1, element_charge_rate);
-        return Mathf.Max(0.0f, value);
+        return PercentageValue((BUFF_TYPE)((int)BUFF_TYPE.PHYSICAL_GAUGE_EFFICIENCY + (int)type) - 1, element_charge_rate);
+    }
+
+    public float ElementChargeResist(ELEMENT_TYPE type)
+    {
+        if (type == ELEMENT_TYPE.NONE || type == ELEMENT_TYPE.ETC) return -1;
+        float element_charge_resist = (float)FunctionUtils.SafeGet(_baseData.Element_Charge_Resist, (int)(type - 1));
+        return PercentageValue((BUFF_TYPE)((int)BUFF_TYPE.PHYSICAL_GAUGE_RESISTANCE + (int)type) - 1, element_charge_resist);
     }
 
     public float OverloadRate(ELEMENT_TYPE type)
     {
+        if (type == ELEMENT_TYPE.NONE || type == ELEMENT_TYPE.ETC) return -1;
         float overload_rate = (float)FunctionUtils.SafeGet(_baseData.Overload_Rate, (int)(type - 1));
-        if (type == ELEMENT_TYPE.NONE || overload_rate == 0f) return -1;
-        float value = PercentageValue((BUFF_TYPE)((int)BUFF_TYPE.PHYSICAL_OVERLOAD_RATE + (int)type) - 1, overload_rate);
-        return Mathf.Max(0.0f, value);
+        return PercentageValue((BUFF_TYPE)((int)BUFF_TYPE.PHYSICAL_OVERLOAD_RATE + (int)type) - 1, overload_rate);
     }
     #endregion
 }

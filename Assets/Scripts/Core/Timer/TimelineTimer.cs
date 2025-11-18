@@ -3,25 +3,28 @@ using static TimelinePublisher;
 
 public abstract class TimelineTimer : IUpdateTimeline
 {
-    private PUBLISHER_TYPE type;
-
     protected int _initialDuration;
     protected int Duration { get; set; }
 
-    protected TimelineTimer(PUBLISHER_TYPE type, int duration)
+    protected TimelineTimer(int duration)
     {
-        this.type = type;
         _initialDuration = duration;
         IsRunning = false;
 
-        SubscribeObserver(type, this);
+        SubscribeObserver(this);
     }
 
     protected abstract void Update(int round);
+    protected abstract void OnEachTimer();
 
     public void TimelineUpdate(int round)
     {
         Update(round);
+    }
+
+    public void Operate()
+    {
+        OnEachTimer();
     }
 
     public Action OnTimerStart = delegate { };
@@ -59,6 +62,6 @@ public abstract class TimelineTimer : IUpdateTimeline
 
     public void Dispose()
     {
-        DiscribeObserver(type, this);
+        DiscribeObserver(this);
     }
 }

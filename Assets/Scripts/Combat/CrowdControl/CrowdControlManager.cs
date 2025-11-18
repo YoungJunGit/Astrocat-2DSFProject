@@ -16,22 +16,6 @@ public interface ICrowdControlManager
 [CreateAssetMenu(fileName = "CrowdControlManager", menuName = "Manager/CrowdControlManager", order = 1)]
 public class CrowdControlManager : ScriptableObject, ICrowdControlManager
 {
-    private readonly Dictionary<Type, string> _crowdControlIDs = new()
-    {
-        { typeof(Stun), "40011001"},
-        { typeof(Burn), "40011002"},
-        { typeof(Contamination), "40011003"},
-        { typeof(Suppress), "40011004"},
-        { typeof(Strange), "40011005"},
-        { typeof(Silence), "40011006"},
-        { typeof(Weakness), "40022001"},
-        { typeof(Overheat), "40022002"},
-        { typeof(Exposure), "40022003"},
-        { typeof(Bind), "40022004"},
-        { typeof(Corrode), "40022005"},
-        { typeof(Dominate), "40022006"},
-        { typeof(Chaos), "40033001"},
-    };
     private readonly Dictionary<ELEMENT_TYPE, (ELEMENT_STATUS_CATEGORY Basic, ELEMENT_STATUS_CATEGORY Enhanced)> _elementDic = new()
     {
         { ELEMENT_TYPE.PHYSICAL, (ELEMENT_STATUS_CATEGORY.STUN, ELEMENT_STATUS_CATEGORY.WEAKNESS) },
@@ -42,18 +26,22 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
         { ELEMENT_TYPE.HOLY, (ELEMENT_STATUS_CATEGORY.SILENCE, ELEMENT_STATUS_CATEGORY.DOMINATE) },
     };
 
-    public record CCContext(ElementStatusData Data, BaseUnit Target, BaseUnit Caster)
+    public record CCContext(ElementStatusData Data, ICombatEffectManager effectManager, BaseUnit Target, BaseUnit Caster)
     {
         public ElementStatusData Data { get; } = Data;
+        public ICombatEffectManager effectManager { get; } = effectManager;
         public BaseUnit Target { get; } = Target;
         public BaseUnit Caster { get; } = Caster;
     }
 
     private DataHandler _dataHandler;
+    private ICombatEffectManager _effectManager;
 
     public void Init()
     {
-        ServiceLocator.For(this).Get(out _dataHandler);
+        ServiceLocator.For(this)
+            .Get(out _dataHandler)
+            .Get(out _effectManager);
     }
 
     public void AddCrowdControl(ELEMENT_TYPE element_type, BaseUnit target, BaseUnit caster)
@@ -70,8 +58,7 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
                 {
                     var crowdControl = CrowdControlFactory.CreateCC(ELEMENT_STATUS_CATEGORY.CHAOS);
                     target.crowdControlUnit.Add(ELEMENT_TYPE.ETC, crowdControl);
-                    var context = CreateContext(crowdControl, (target, caster));
-
+                    var context = CreateContext(crowdControl, target, caster);
                     if (crowdControl != null && context != null)
                     {
                         updateChaos = () => crowdControl.ApplyCrowdControl(context);
@@ -80,7 +67,8 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
                 // If Chaos Element_Status_Effect already exists -> Save Update Action
                 else
                 {
-                    if (chaosList[0] != null)
+                    var context = CreateContext(chaosList[0], target, caster);
+                    if (chaosList[0] != null && context != null)
                     {
                         updateChaos = () => chaosList[0].ApplyCrowdControl();
                     }
@@ -96,14 +84,12 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
         if (target.crowdControlUnit.EffectDictionary.TryGetValue(element_type, out var list))
         {
             ICrowdControl crowdControl;
-            CCContext context;
             // If Basic Element_Status_Effect exists
             if (list.Count > 0 && list.FirstOrDefault(e => e is IBasicCrowdControl) is ICrowdControl found)
             {
                 ELEMENT_STATUS_CATEGORY category = _elementDic[element_type].Enhanced;
                 crowdControl = CrowdControlFactory.CreateCC(category);
                 target.crowdControlUnit.Replace(element_type, found, crowdControl);
-                context = CreateContext(crowdControl, (target, caster));
             }
             // If Basic Element_Status_Effect not exist
             else
@@ -111,9 +97,9 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
                 ELEMENT_STATUS_CATEGORY category = _elementDic[element_type].Basic;
                 crowdControl = CrowdControlFactory.CreateCC(category);
                 target.crowdControlUnit.Add(element_type, crowdControl);
-                context = CreateContext(crowdControl, (target, caster));
             }
 
+            var context = CreateContext(crowdControl, target, caster);
             if (crowdControl != null && context != null)
                 crowdControl.ApplyCrowdControl(context);
         }
@@ -142,23 +128,17 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
         }
     }
 
-    private CCContext CreateContext(ICrowdControl cc, (BaseUnit target, BaseUnit caster) unit)
+    private CCContext CreateContext(ICrowdControl cc, BaseUnit target, BaseUnit caster)
     {
-        if (!_crowdControlIDs.TryGetValue(cc.GetType(), out var ID))
+        var elementStatusData = _dataHandler.FindElementStatusData(cc.ID);
+
+        if(elementStatusData == null)
         {
-            Debug.LogWarning($"No type found in dictionary : {cc.GetType()}");
+            Debug.LogWarning($"No CC Data : {cc}");
             return null;
         }
 
-        var data = _dataHandler.FindElementStatusData(ID);
-
-        if (data == null)
-        {
-            Debug.LogWarning($"No Data found from this ID : {ID}");
-            return null;
-        }
-
-        var context = new CCContext(data, unit.target, unit.caster);
+        var context = new CCContext(elementStatusData, _effectManager, target, caster);
 
         return context;
     }
