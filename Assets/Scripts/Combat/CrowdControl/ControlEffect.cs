@@ -2,26 +2,41 @@ using System.Collections.Generic;
 using DataEnum;
 using static TimelinePublisher;
 
-public class StunEffect : BaseModiferEffect<ELEMENT_TYPE>
+public class StunEffect : BaseEffect<int>
 {
-    public override BasicStatModifier<ELEMENT_TYPE, int> CreateModifier()
+    protected override BasicStatModifier<int> CreateModifier()
     {
-        return new BasicStatModifier<ELEMENT_TYPE, int>(ELEMENT_TYPE.PHYSICAL, (v) => v++, new EffectTimer(1));
+        return new BasicStatModifier<int>(BUFF_TYPE.STUN, UPDATE_TYPE.TURN, (v) => v++, CreateTimer());
+    }
+
+    protected override EffectTimer CreateTimer()
+    {
+        return new EffectTimer(1);
     }
 }
 
-public class StrangeEffect : BaseModiferEffect<ELEMENT_TYPE>
+public class StrangeEffect : BaseEffect<int>
 {
-    public override BasicStatModifier<ELEMENT_TYPE, int> CreateModifier()
+    protected override BasicStatModifier<int> CreateModifier()
     {
-        return new BasicStatModifier<ELEMENT_TYPE, int>(ELEMENT_TYPE.VOID, (v) => v++, new EffectTimer(1));
+        return new BasicStatModifier<int>(BUFF_TYPE.STRANGE, UPDATE_TYPE.TURN, (v) => v++, CreateTimer());
+    }
+
+    protected override EffectTimer CreateTimer()
+    {
+        return new EffectTimer(1);
     }
 }
 
-public class SilenceEffect : BaseModiferEffect<ELEMENT_TYPE>
+public class SilenceEffect : BaseEffect<int>
 {
-    public override BasicStatModifier<ELEMENT_TYPE, int> CreateModifier()
+    protected override BasicStatModifier<int> CreateModifier()
     {
-        return new BasicStatModifier<ELEMENT_TYPE, int>(ELEMENT_TYPE.HOLY, (v) => v++, new EffectTimer(1));
+        return new BasicStatModifier<int>(BUFF_TYPE.SILENCE, UPDATE_TYPE.TURN, (v) => v++, CreateTimer());
+    }
+
+    protected override EffectTimer CreateTimer()
+    {
+        return new EffectTimer(1);
     }
 }

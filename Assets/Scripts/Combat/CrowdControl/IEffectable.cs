@@ -12,40 +12,33 @@ public interface IEffectable
     public event Action OnDispose;
 }
 
-public abstract class BaseEffect : IEffectable
+public abstract class BaseEffect<T> : IEffectable
 {
-    protected EffectInfo info;
-    protected EffectContext context;
-    public event Action OnDispose;
+    protected BasicStatModifier<T> modifier;
+    public event Action OnDispose = delegate { };
+    protected EffectInfo Info;
+    protected EffectContext Context;
 
     public virtual void Apply(EffectInfo info, EffectContext context)
     {
-        this.info = info;
-        this.context = context;
+        Info = info;
+        Context = context;
+        modifier = CreateModifier();
+
+        if(modifier.Timer != null)
+        {
+            modifier.Timer.OnTimerStop += () => { OnDispose.Invoke(); };
+        }
+
+        context.Target.GetStat().ModifierStat.Mediator.AddModifier(modifier);
     }
 
     public virtual void Dispose()
     {
-        OnDispose?.Invoke();
-    }
-}
-
-public abstract class BaseModiferEffect<T> : BaseEffect
-{
-    protected BasicStatModifier<T, int> modifier;
-
-    public override void Apply(EffectInfo info, EffectContext context)
-    {
-        base.Apply(info, context);
-        modifier = CreateModifier();
-        context.Target.GetStat().ModifierStat.Mediator.AddModifier(modifier);
-    }
-
-    public override void Dispose()
-    {
-        base.Dispose();
+        OnDispose.Invoke();
         modifier.Dispose();
     }
 
-    public abstract BasicStatModifier<T, int> CreateModifier();
+    protected abstract BasicStatModifier<T> CreateModifier();
+    protected virtual EffectTimer CreateTimer() { return null; }
 }

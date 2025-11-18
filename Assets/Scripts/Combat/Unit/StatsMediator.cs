@@ -2,35 +2,68 @@ using System.Collections.Generic;
 using UnityEngine;
 using ObservableCollections;
 using DataEnum;
+using static TimelinePublisher;
 
 public interface IQuery { }
-public class Query<T, TValue> : IQuery
+public class Query<TValue> : IQuery
 {
-    public readonly T BuffType;
+    public readonly BUFF_TYPE BuffType;
     public TValue Value;
 
-    public Query(T BuffType, TValue Value)
+    public Query(BUFF_TYPE BuffType, TValue Value)
     {
         this.BuffType = BuffType;
         this.Value = Value;
     }
 }
 
-public class StatsMediator
+public class StatsMediator : IUpdateTimeline
 {
-    private readonly List<StatModifier> modifiers = new List<StatModifier>();
+    private readonly Dictionary<UPDATE_TYPE, List<StatModifier>> modifiersDic = new()
+    {
+        { UPDATE_TYPE.NONE, new List<StatModifier>() },
+        { UPDATE_TYPE.ROUND, new List<StatModifier>() },
+        { UPDATE_TYPE.TURN, new List<StatModifier>() }
+    };
 
     public event System.EventHandler<IQuery> Queries;
-    public void PerformQuery<T, TValue>(object sender, Query<T, TValue> query) => Queries?.Invoke(sender, query);
+    public void PerformQuery<T>(object sender, Query<T> query) => Queries?.Invoke(sender, query);
+
+    public void OnStartTurn()
+    {
+        foreach(var list in modifiersDic)
+        {
+            foreach(var modifier in list.Value)
+            {
+                modifier.OnTurnUpdate();
+            }
+        }
+    }
+
+    public void RoundUpdate()
+    {
+        foreach (var modifier in modifiersDic[UPDATE_TYPE.ROUND])
+        {
+            modifier.Timer.UpdateTimer();
+        }
+    }
+
+    public void TurnUpdate()
+    {
+        foreach(var modifier in modifiersDic[UPDATE_TYPE.TURN])
+        {
+            modifier.Timer.UpdateTimer();
+        }
+    }
 
     public void AddModifier(StatModifier modifier)
     {
-        modifiers.Add(modifier);
+        modifiersDic[modifier.UpdateType].Add(modifier);
         Queries += modifier.Handle;
 
         modifier.OnDispose += _ =>
         {
-            modifiers.Remove(modifier);
+            modifiersDic[modifier.UpdateType].Remove(modifier);
             Queries -= modifier.Handle;
         };
     }

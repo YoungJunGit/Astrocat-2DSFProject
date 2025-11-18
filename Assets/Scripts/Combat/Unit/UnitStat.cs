@@ -37,14 +37,21 @@ public class ModifierStat
 
     public float PercentageValue(BUFF_TYPE type, float defaultValue = 1.0f)
     {
-        var q = new Query<BUFF_TYPE, float>(type, defaultValue);
+        var q = new Query<float>(type, defaultValue);
         _mediator.PerformQuery(this, q);
         return Mathf.Max(0.0f, q.Value);
     }
 
-    public int ControlEffectValue(ELEMENT_TYPE type)
+    public float DamageHealValue(BUFF_TYPE type)
     {
-        var q = new Query<ELEMENT_TYPE, int>(type, 0);
+        var q = new Query<float>(type, 0.0f);
+        _mediator.PerformQuery(this, q);
+        return Mathf.Max(0.0f, q.Value);
+    }
+
+    public int ControlEffectValue(BUFF_TYPE type)
+    {
+        var q = new Query<int>(type, 0);
         _mediator.PerformQuery(this, q);
         return Mathf.Max(0, q.Value);
     }

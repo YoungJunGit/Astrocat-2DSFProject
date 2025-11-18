@@ -3,18 +3,25 @@ using UnityEngine;
 
 public interface IUpdateTimeline
 {
-    void TimelineUpdate(int round);
-    void Operate();
+    void RoundUpdate();
+    void TurnUpdate();
 }
 
 public class TimelinePublisher
 {
+    public enum UPDATE_TYPE
+    {
+        NONE,
+        ROUND,
+        TURN
+    }
+
     private static List<IUpdateTimeline> _observers = new();
     public void UpdateRoundObservers(int round)
     {
         for (int i = _observers.Count - 1; i >= 0; --i)
         {
-            _observers[i].TimelineUpdate(round);
+            _observers[i].RoundUpdate();
         }
     }
 

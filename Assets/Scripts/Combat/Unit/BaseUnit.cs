@@ -36,11 +36,10 @@ public abstract class BaseUnit : MonoBehaviour
 
     public void Initialize(EntityData data, int priority)
     {
+        Attachments      = GetComponent<UnitAttachments>();
         CombatInfo       = new UnitCombatInfo();
         crowdControlUnit = new CrowdControlUnit();
         combatEffectUnit = new CombatEffectUnit();
-        Attachments      = GetComponent<UnitAttachments>();
-
         _stat            = new UnitStat(data, priority);
 
         _animHandler.Init();
@@ -52,7 +51,7 @@ public abstract class BaseUnit : MonoBehaviour
         // Replace들만 합치기 (키 포함)
         var replaceStream = crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveReplace()).Merge();
 
-        
+        TimelinePublisher.SubscribeObserver(_stat.ModifierStat.Mediator);
 
         if (HasSupporter)
             _supporterUnit.Initialize();
@@ -79,6 +78,11 @@ public abstract class BaseUnit : MonoBehaviour
         // TODO : Heal Logic
     }
 
+    public async virtual UniTask OnRevive()
+    {
+        // TODO : Revive Logic
+    }
+
     public async virtual UniTask OnDie()
     {
         if (HasSupporter)
@@ -99,6 +103,8 @@ public abstract class BaseUnit : MonoBehaviour
             await UniTask.WaitUntil(() => isFinishedEvent);
             Attachments.GetSpriteRenderer().sortingLayerName = "Character";
         }
+
+        TimelinePublisher.DiscribeObserver(_stat.ModifierStat.Mediator);
     }
 
     public AnimationHandler GetAnimationHandler()       => _animHandler;

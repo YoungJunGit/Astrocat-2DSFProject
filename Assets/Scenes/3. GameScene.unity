@@ -174,8 +174,8 @@ MonoBehaviour:
   dataHandler: {fileID: 11400000, guid: 9d14d65fcd79e1348bc607487b911110, type: 2}
   playerUnitID:
   - 10001001
-  - 10001002
-  - 10001003
+  - 
+  - 
   enemyUnitID:
   - 10102001
   - 10012002

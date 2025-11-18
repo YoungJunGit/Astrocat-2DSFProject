@@ -1,7 +1,7 @@
 using System;
 using static TimelinePublisher;
 
-public abstract class TimelineTimer : IUpdateTimeline
+public abstract class TimelineTimer
 {
     protected int _initialDuration;
     protected int Duration { get; set; }
@@ -10,22 +10,9 @@ public abstract class TimelineTimer : IUpdateTimeline
     {
         _initialDuration = duration;
         IsRunning = false;
-
-        SubscribeObserver(this);
     }
 
-    protected abstract void Update(int round);
-    protected abstract void OnEachTimer();
-
-    public void TimelineUpdate(int round)
-    {
-        Update(round);
-    }
-
-    public void Operate()
-    {
-        OnEachTimer();
-    }
+    public abstract void UpdateTimer();
 
     public Action OnTimerStart = delegate { };
     public Action OnTimerStop = delegate { };
@@ -58,10 +45,5 @@ public abstract class TimelineTimer : IUpdateTimeline
     {
         _initialDuration = initDuration;
         Duration = _initialDuration;
-    }
-
-    public void Dispose()
-    {
-        DiscribeObserver(this);
     }
 }

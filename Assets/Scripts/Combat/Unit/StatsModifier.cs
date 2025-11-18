@@ -3,12 +3,12 @@ using System;
 using DataEnum;
 using static TimelinePublisher;
 
-public class BasicStatModifier<T, TValue> : StatModifier
+public class BasicStatModifier<T> : StatModifier
 {
-    private readonly T type;
-    private readonly Func<TValue, TValue> operation = delegate { return default; };
+    private readonly BUFF_TYPE type;
+    private readonly Func<T, T> operation;
 
-    public BasicStatModifier(T type, Func<TValue, TValue> operation, EffectTimer timer = null) : base(timer)
+    public BasicStatModifier(BUFF_TYPE type, UPDATE_TYPE updateType, Func<T, T> operation, EffectTimer timer = null) : base(updateType, timer)
     {
         this.type = type;
         this.operation = operation;
@@ -16,7 +16,7 @@ public class BasicStatModifier<T, TValue> : StatModifier
 
     public override void Handle(object sender, IQuery query)
     {
-        if(query is Query<T, TValue> typedQuery && type.Equals(typedQuery.BuffType))
+        if(query is Query<T> typedQuery && operation != null && type.Equals(typedQuery.BuffType))
         {
             typedQuery.Value = operation(typedQuery.Value);
         }
@@ -26,13 +26,16 @@ public class BasicStatModifier<T, TValue> : StatModifier
 public abstract class StatModifier : IDisposable
 {
     private readonly EffectTimer _timer;
-    public bool MarkedForRemoval { get; set; }
+    public TimelineTimer Timer => _timer;
+    public UPDATE_TYPE UpdateType { get; } = UPDATE_TYPE.NONE;
     public event Action<StatModifier> OnDispose = delegate { };
+    public event Action OnTimelineUpdate = delegate { };
 
-    protected StatModifier(EffectTimer timer)
+    protected StatModifier(UPDATE_TYPE updateType, EffectTimer timer)
     {
         if (timer == null) return;
 
+        UpdateType = updateType;
         _timer = timer;
         _timer.OnTimerStop += () => { Dispose(); };
         _timer.Start();
@@ -40,9 +43,13 @@ public abstract class StatModifier : IDisposable
 
     public abstract void Handle(object sender, IQuery query);
 
+    public void OnTurnUpdate()
+    {
+        OnTimelineUpdate.Invoke();
+    }
+
     public void Dispose()
     {
         OnDispose.Invoke(this);
-        _timer.Dispose();
     }
 }

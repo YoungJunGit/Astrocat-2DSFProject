@@ -5,9 +5,7 @@ public class EffectTimer : TimelineTimer
 {
     public EffectTimer(int duration) : base(duration) { }
 
-    public Action OnEach = delegate { };
-
-    protected override void Update(int round)
+    public override void UpdateTimer()
     {
         if (IsRunning && Duration >= 1)
         {
@@ -18,11 +16,6 @@ public class EffectTimer : TimelineTimer
         {
             Stop();
         }
-    }
-
-    protected override void OnEachTimer()
-    {
-        OnEach.Invoke();
     }
 
     public void AddTimerDuration() => Duration++;

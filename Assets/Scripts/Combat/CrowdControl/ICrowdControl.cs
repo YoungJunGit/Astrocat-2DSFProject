@@ -19,17 +19,17 @@ public interface IEnhancedCrowdControl { }
 
 public abstract class CrowdControlBase : ICrowdControl
 {
-    protected List<IEffectable> effectList;
+    protected List<IEffectable> effectList = new();
 
     public virtual void ApplyCrowdControl(CCContext context)
     {
-        effectList = CreateCombatEffect(context.effectManager, context.Data);
         List<EffectInfo> list = new List<EffectInfo>();
         CreateEffectInfoList(context.Data, list);
 
-        foreach (var effect in effectList)
+        foreach (var effectInfo in list)
         {
-            effect.Apply(new EffectContext(context.Target, context.Caster));
+            var effect = context.effectManager.AddCombatEffect(CombatEffectUnit.COMBAT_EFFECT_TYPE.CC, effectInfo, new EffectContext(context.Target, context.Caster));
+            effectList.Add(effect);
         }
     }
 
@@ -69,7 +69,7 @@ public class Burn : CrowdControlBase, IBasicCrowdControl
     {
         list.Add(new EffectInfo
         (
-            data.Buff_Table_ID, 
+            "30001030", 
             data.Element_Status_Name, 
             (float)data.Element_Status_Value[0], 
             data.Element_Status_Duration_Turn
@@ -172,7 +172,7 @@ public class Overheat : CrowdControlBase, IEnhancedCrowdControl
     {
         list.Add(new EffectInfo
         (
-            data.Buff_Table_ID,
+            "30001030",
             data.Element_Status_Name,
             (float)data.Element_Status_Value[0],
             data.Element_Status_Duration_Turn
@@ -261,13 +261,23 @@ public class Dominate : CrowdControlBase, IEnhancedCrowdControl
 public class Chaos : ICrowdControl
 {
     public string ID => "40033001";
-
-    
+    private readonly Dictionary<ELEMENT_TYPE, string> chaosIDs = new Dictionary<ELEMENT_TYPE, string>()
+    {
+        { ELEMENT_TYPE.PHYSICAL, "30001015" },
+        { ELEMENT_TYPE.FIRE, "30001016" },
+        { ELEMENT_TYPE.RADIATION, "30001017" },
+        { ELEMENT_TYPE.GRAVITY, "30001018" },
+        { ELEMENT_TYPE.VOID, "30001019" },
+        { ELEMENT_TYPE.HOLY, "30001020" }
+    };
     private CCContext context;
 
     public void ApplyCrowdControl(CCContext context = null)
     {
         this.context = context;
+        var chaosEffectID = chaosIDs[context.Target.crowdControlUnit.Previous_Element_Type];
+        var effectInfo = CreateEffectInfoList(chaosEffectID, (float)context.Data.Element_Status_Value[0], context.Data.Element_Status_Duration_Turn, context.Data.Element_Status_Name);
+
     }
 
     public void Dispose()

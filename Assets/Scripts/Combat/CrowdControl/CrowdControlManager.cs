@@ -89,7 +89,7 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
             {
                 ELEMENT_STATUS_CATEGORY category = _elementDic[element_type].Enhanced;
                 crowdControl = CrowdControlFactory.CreateCC(category);
-                target.crowdControlUnit.Replace(element_type, found, crowdControl);
+                target.crowdControlUnit.Upgrade(element_type, found, crowdControl);
             }
             // If Basic Element_Status_Effect not exist
             else
