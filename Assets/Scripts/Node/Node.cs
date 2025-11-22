@@ -35,6 +35,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     [SerializeField] Color lerpColor = Color.gray;
     Color defaultColor = Color.white;
     Color currentColor;
+    bool isMousePointerOn = false;
     bool isForward = true;
     float lerpStartTime;
 
@@ -62,22 +63,22 @@ public class Node : MonoBehaviour, IUpdateObserver
     private void OnMouseEnter()
     {
         if (!isActive || visited) return;
-        UpdatePublisher.DiscribeObserver(this);
+        isMousePointerOn = true;
         nodeImage.color = Color.red;   
     }
 
     private void OnMouseExit()
     {
         if (!isActive || visited) return;
-        nodeImage.color = defaultColor;
-        UpdatePublisher.SubscribeObserver(this);
+        isMousePointerOn = false;
+        OnDefaultColor();
     }
 
     private void OnMouseDown()
     {
         if (!isActive || visited) return;
+        isMousePointerOn = false;
         onButton = true;
-        UpdatePublisher.SubscribeObserver(this);
     }
 
     /*------------------------------------------------------------
@@ -89,7 +90,7 @@ public class Node : MonoBehaviour, IUpdateObserver
         {
             transform.LookAt(_3DCamera.transform.position);
         }
-        if(!isActive || visited) return;
+        if(!isActive || visited || isMousePointerOn) return;
 
         float t = (Time.time - lerpStartTime) / lerpDuration;
         if (t > 1f)
@@ -146,6 +147,11 @@ public class Node : MonoBehaviour, IUpdateObserver
             onButton = false;
             fillReset();
         }
+    }
+
+    public void OnDefaultColor()
+    {
+        nodeImage.color = defaultColor;
     }
 
     /*------------------------------------------------------------

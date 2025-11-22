@@ -73,11 +73,11 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField] private float camAngleX;               // 카메라 앵클
     [SerializeField] private float camAngleY;               // 카메라 앵클
     [SerializeField] private float camAngleZ;               // 카메라 앵클
-    [SerializeField] private float limitMinX;
-    [SerializeField] private float limitMaxX;
+    private float limitMinX;
+    private float limitMaxX;
     [SerializeField] private float limitMinY;
     [SerializeField] private float limitMaxY;
-    [SerializeField] private float limitMinZ;
+    private float limitMinZ;
     private float limitMaxZ;
     [SerializeField] private float smoothTime;
     List<Node> showNodes;
@@ -340,6 +340,9 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         finalNode.transform.position = new Vector3(0, 0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? 10 : 0));
         finalNode.gameObject.name = $"Final Node";
         finalNode.connected = true;
+        limitMinX = -(routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2)) - routeDistance * 0.9f / 2;
+        limitMaxX = (routeDistance * (routeNum-1)) + (normalNodeSize * (routeNum - 1)) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2)) + routeDistance * 0.9f / 2 + 1;
+        limitMinZ = (makeStart) ? startNode.transform.position.z - cameraPositionZOffset : -cameraPositionZOffset;
         limitMaxZ = finalNode.transform.position.z - cameraPositionZOffset;
 
         //mapWidth = (routeNum * normalNodeSize) + (routeNum * routeDistance);
@@ -869,7 +872,10 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     private void ShowActiveNode(float index)
     {
         foreach (var nodes in showNodes)
+        {
+            nodes.OnDefaultColor();
             nodes.disableButton();
+        }
 
         Node node;
         if (index < 0)

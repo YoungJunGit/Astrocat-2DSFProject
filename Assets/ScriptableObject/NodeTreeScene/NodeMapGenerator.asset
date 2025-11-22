@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 923745664
+  seed: 1919035904
   floorNum: 10
   routeNum: 3
   normalNodeSize: 1
@@ -41,8 +41,8 @@ MonoBehaviour:
   camAngleX: 25.2
   camAngleY: 0
   camAngleZ: 0
-  limitMinX: -20
-  limitMaxX: 20
+  limitMinX: 0
+  limitMaxX: 0
   limitMinY: -2
   limitMaxY: 25
   limitMinZ: -8
