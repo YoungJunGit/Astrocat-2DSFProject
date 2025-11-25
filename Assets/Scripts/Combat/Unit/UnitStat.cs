@@ -49,13 +49,6 @@ public class ModifierStat
         return Mathf.Max(0.0f, q.Value);
     }
 
-    public int ControlEffectValue(BUFF_TYPE type)
-    {
-        var q = new Query<int>(type, 0);
-        _mediator.PerformQuery(this, q);
-        return Mathf.Max(0, q.Value);
-    }
-
     #region [DT-Value]
     public float MaxHP
     {

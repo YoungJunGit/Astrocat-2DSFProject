@@ -40,6 +40,8 @@ MonoBehaviour:
     - Assembly-CSharp-firstpass
     - AssetInventory.Examples
     - AYellowpaper.SerializedCollections
+    - Flexalon
+    - Flexalon.Samples
     - NaughtyAttributes.Core
     - NaughtyAttributes.Test
     - Obious.Soap.Example

@@ -25,7 +25,7 @@ public class CrowdControlUnit
 
     public ELEMENT_TYPE Previous_Element_Type { get; set; } = ELEMENT_TYPE.NONE;
 
-    private readonly Dictionary<Type, List<ICrowdControl>> _pendingDic = new();
+    private readonly Dictionary<ELEMENT_TYPE, List<ICrowdControl>> _pendingDic = new();
 
     public void Add(ELEMENT_TYPE elementType, ICrowdControl c)
     {
@@ -43,20 +43,21 @@ public class CrowdControlUnit
         int index = _effectDictionary[elementType].IndexOf(oldValue);
         _effectDictionary[elementType][index] = newValue;
 
-        _pendingDic[oldValue.GetType()].Add(oldValue);
+        _pendingDic.TryAdd(elementType, new List<ICrowdControl>());
+        _pendingDic[elementType].Add(oldValue);
     }
 
     public void Remove(ELEMENT_TYPE elementType, ICrowdControl c)
     {
         _effectDictionary[elementType].Remove(c);
 
-        if(_pendingDic.TryGetValue(c.GetType(), out var list))
+        if(_pendingDic.TryGetValue(elementType, out var list))
         {
             foreach(var cc in list)
             {
                 cc.Dispose();
             }
-            _pendingDic.Remove(c.GetType());
+            _pendingDic.Remove(elementType);
         }
 
         c.Dispose();

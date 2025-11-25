@@ -2,12 +2,21 @@ using DataEnum;
 using static CombatEffectManager;
 using static TimelinePublisher;
 
-public class BurnEffect : BaseEffect<float>
+public class BurnEffect : BaseEffect<float>, IStartTurnEffectProvider
 {
+    public string StartTurnKey => "FIRE_DOT";
+
     protected override BasicStatModifier<float> CreateModifier()
     {
-        var modifer = new BasicStatModifier<float>(BUFF_TYPE.DAMAGE_EACH_TURN, UPDATE_TYPE.ROUND, (v) => v + Info.Value);
-        modifer.OnTimelineUpdate += () => { OnEachTurn(); };
+        float value = Info.Value;
+
+        var modifer = new BasicStatModifier<float>(
+            BUFF_TYPE.DAMAGE_EACH_TURN, 
+            UPDATE_TYPE.ROUND, 
+            (v) => v + value
+        );
+
+        Context.Target.combatEffectUnit.AddOnStartTurnEffect(StartTurnKey, OnEachTurn);
         return modifer;
     }
 

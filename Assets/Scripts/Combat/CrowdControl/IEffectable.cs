@@ -12,6 +12,11 @@ public interface IEffectable
     public event Action OnDispose;
 }
 
+public interface IStartTurnEffectProvider
+{
+    string StartTurnKey { get; }
+}
+
 public abstract class BaseEffect<T> : IEffectable
 {
     protected BasicStatModifier<T> modifier;

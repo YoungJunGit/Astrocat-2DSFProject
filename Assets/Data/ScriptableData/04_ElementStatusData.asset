@@ -84,7 +84,7 @@ MonoBehaviour:
     index: 2002
     Buff_Table_ID: 30001025
     Element_Status_Value:
-    - 0.5
+    - 1.5
     Element_Status_Duration_Turn: 0
     Element_Status_Name: ELEMENT_STATUS_NAME_OVERHEAT
   - Element_Status_ID: 40022003

@@ -23,7 +23,9 @@ public class BurnDamageCalculator : ICalculator
 {
     public IDamage Calculate(BaseUnit caster, BaseUnit target)
     {
-        float damage = caster.GetStat().ModifierStat.Attack * target.GetStat().ModifierStat.DamageHealValue(DataEnum.BUFF_TYPE.DAMAGE_EACH_TURN);
+        float Value = target.GetStat().ModifierStat.DamageHealValue(DataEnum.BUFF_TYPE.DAMAGE_EACH_TURN);
+        Debug.Log(Value);
+        float damage = caster.GetStat().ModifierStat.Attack * Value;
         bool isCritical = false;
 
         return new Damage(damage, isCritical);

@@ -1,11 +1,13 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="VolFx.Samples.csproj" />
+  <Project Path="Flexalon.Editor.csproj" />
   <Project Path="Assembly-CSharp-Editor-firstpass.csproj" />
   <Project Path="Obvious.Soap.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="ScreenFx.csproj" />
   <Project Path="UniTask.TextMeshPro.csproj" />
+  <Project Path="Flexalon.csproj" />
   <Project Path="Obvious.Soap.Editor.csproj" />
   <Project Path="VolFx.csproj" />
   <Project Path="AssetInventory.Editor.csproj" />
@@ -22,10 +24,12 @@
   <Project Path="AYellowpaper.SerializedCollections.Editor.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Sirenix.OdinInspector.Modules.Unity.Addressables.csproj" />
+  <Project Path="Flexalon.Samples.Editor.csproj" />
   <Project Path="WatercolorFx.Runtime.csproj" />
   <Project Path="AllIn1SpriteShaderAssembly.csproj" />
   <Project Path="UniTask.DOTween.csproj" />
   <Project Path="CsvToScriptableObject.Editor.csproj" />
+  <Project Path="Flexalon.Samples.csproj" />
   <Project Path="UniTask.Editor.csproj" />
   <Project Path="ScreenFx.Editor.csproj" />
   <Project Path="Tools.Editor.csproj" />

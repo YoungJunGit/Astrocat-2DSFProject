@@ -3,6 +3,7 @@ using UnityEngine;
 using ObservableCollections;
 using DataEnum;
 using static TimelinePublisher;
+using System;
 
 public interface IQuery { }
 public class Query<TValue> : IQuery
@@ -25,20 +26,9 @@ public class StatsMediator : IUpdateTimeline
         { UPDATE_TYPE.ROUND, new List<StatModifier>() },
         { UPDATE_TYPE.TURN, new List<StatModifier>() }
     };
-
+    
     public event System.EventHandler<IQuery> Queries;
     public void PerformQuery<T>(object sender, Query<T> query) => Queries?.Invoke(sender, query);
-
-    public void OnStartTurn()
-    {
-        foreach(var list in modifiersDic)
-        {
-            foreach(var modifier in list.Value)
-            {
-                modifier.OnTurnUpdate();
-            }
-        }
-    }
 
     public void RoundUpdate()
     {

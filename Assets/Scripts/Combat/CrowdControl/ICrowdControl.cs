@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.LightTransport;
 using static CrowdControlManager;
 using static CombatEffectManager;
+using static CombatEffectUnit;
 
 public interface ICrowdControl
 {
@@ -28,7 +29,7 @@ public abstract class CrowdControlBase : ICrowdControl
 
         foreach (var effectInfo in list)
         {
-            var effect = context.effectManager.AddCombatEffect(CombatEffectUnit.COMBAT_EFFECT_TYPE.CC, effectInfo, new EffectContext(context.Target, context.Caster));
+            var effect = context.effectManager.AddCombatEffect(effectInfo, new EffectContext(context.Target, context.Caster));
             effectList.Add(effect);
         }
     }

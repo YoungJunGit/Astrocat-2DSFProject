@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using R3;
+using Unity.Collections;
+using Unity.VisualScripting;
 
 public class CombatEffectUnit
 {
@@ -13,26 +15,50 @@ public class CombatEffectUnit
         CC
     }
 
-    private readonly ObservableList<IEffectable> _ccEffectList = new();
-    private readonly ObservableList<IEffectable> _normalEffectList = new();
+    private readonly ObservableList<(string Name, IEffectable Value)> _normalEffectList = new();
 
-    public void Add(COMBAT_EFFECT_TYPE type, IEffectable combatEffect)
+    public IReadOnlyObservableList<(string Name, IEffectable Value)> NormalEffectList => _normalEffectList;
+
+    private readonly Dictionary<string, Action> onEachTurnList = new();
+
+    public void OnStartTurn()
     {
-        if(type == COMBAT_EFFECT_TYPE.NORMAL)
+        foreach(var action in onEachTurnList)
         {
-            _normalEffectList.Add(combatEffect);
-            combatEffect.OnDispose += () =>
-            {
-                _normalEffectList.Remove(combatEffect);
-            };
+            action.Value.Invoke();
         }
-        else
+    }
+
+    public void AddOnStartTurnEffect(string name, Action action)
+    {
+        onEachTurnList[name] = action;
+    }
+
+    public void Add(string name, IEffectable combatEffect)
+    {
+        _normalEffectList.Add((name, combatEffect));
+        combatEffect.OnDispose += () =>
         {
-            _ccEffectList.Add(combatEffect);
-            combatEffect.OnDispose += () =>
+            Remove(name, combatEffect);
+        };
+    }
+
+    public void Remove(string name, IEffectable combatEffect)
+    {
+        _normalEffectList.Remove((name, combatEffect));
+
+        if (combatEffect is IStartTurnEffectProvider provider)
+        {
+            string key = provider.StartTurnKey;
+
+            // 아직 같은 StartTurnKey를 가진 이펙트가 남아있는지 체크
+            bool stillExists = _normalEffectList.ToList().Any(e => e.Value is IStartTurnEffectProvider p && p.StartTurnKey == key);
+
+            // 하나도 남아있지 않다면 해당 키의 턴 시작 효과 제거
+            if (!stillExists)
             {
-                _ccEffectList.Remove(combatEffect);
-            };
+                onEachTurnList.Remove(key);
+            }
         }
     }
 }

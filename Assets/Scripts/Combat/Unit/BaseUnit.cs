@@ -60,7 +60,7 @@ public abstract class BaseUnit : MonoBehaviour
     public void OnDamaged(IDamage damage)
     {
         Attachments.GetSpriteRenderer().color = Color.red;
-        Attachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);
+        Attachments.GetSpriteRenderer().DOColor(Color.white, 0.25f);
 
         if(this is PlayerUnit)
             _animHandler.ChangeAnimation(AnimCombat.HIT);
