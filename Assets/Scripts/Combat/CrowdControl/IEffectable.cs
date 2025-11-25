@@ -34,7 +34,6 @@ public abstract class BaseEffect<T> : IEffectable
         {
             modifier.Timer.OnTimerStop += () => { OnDispose.Invoke(); };
         }
-
         context.Target.GetStat().ModifierStat.Mediator.AddModifier(modifier);
     }
 
