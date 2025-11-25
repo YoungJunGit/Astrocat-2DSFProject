@@ -5,13 +5,13 @@ using DataEnum;
 
 public class EntityDataCreator
 {
-    public List<EntityData> CreateEntityData(List<EntityData> entityData, List<string> playerCharacterID, List<string> enemyCharacterID)
+    public List<EntityData> CreateEntityData(DataHandler dataHandler, List<string> playerCharacterID, List<string> enemyCharacterID)
     {
         List<EntityData> poolData = new List<EntityData>();
         
         foreach (string id in playerCharacterID)
         {
-            EntityData entity = entityData.Find(element => element.code == id);
+            EntityData entity = dataHandler.FindEntityData(id);
             if (entity != null)
             {
                 poolData.Add(entity);
@@ -19,7 +19,7 @@ public class EntityDataCreator
         }
         foreach (string id in enemyCharacterID)
         {
-            EntityData entity = entityData.Find(element => element.code == id);
+            EntityData entity = dataHandler.FindEntityData(id);
             if (entity != null)
             {
                 poolData.Add(entity);

@@ -3,46 +3,35 @@ using UnityEngine;
 
 public interface IUpdateTimeline
 {
-    void TimelineUpdate(int round);
+    void RoundUpdate();
+    void TurnUpdate();
 }
 
 public class TimelinePublisher
 {
-    public enum PUBLISHER_TYPE
+    public enum UPDATE_TYPE
     {
+        NONE,
         ROUND,
         TURN
     }
 
-    private static Dictionary<PUBLISHER_TYPE, List<IUpdateTimeline>> _observers = new()
-    {
-        { PUBLISHER_TYPE.ROUND, new List<IUpdateTimeline>() },
-        { PUBLISHER_TYPE.TURN, new List<IUpdateTimeline>() }
-    };
-
+    private static List<IUpdateTimeline> _observers = new();
     public void UpdateRoundObservers(int round)
     {
-        for (int i = _observers[PUBLISHER_TYPE.ROUND].Count - 1; i >= 0; --i)
+        for (int i = _observers.Count - 1; i >= 0; --i)
         {
-            _observers[PUBLISHER_TYPE.ROUND][i].TimelineUpdate(round);
+            _observers[i].RoundUpdate();
         }
     }
 
-    public void UpdateTurnObservers()
+    public static void SubscribeObserver(IUpdateTimeline observer)
     {
-        for(int i = _observers[PUBLISHER_TYPE.TURN].Count - 1; i >= 0; --i)
-        {
-            _observers[PUBLISHER_TYPE.ROUND][i].TimelineUpdate(0);
-        }
+        _observers.Add(observer);
     }
 
-    public static void SubscribeObserver(PUBLISHER_TYPE type, IUpdateTimeline observer)
+    public static void DiscribeObserver(IUpdateTimeline observer)
     {
-        _observers[type].Add(observer);
-    }
-
-    public static void DiscribeObserver(PUBLISHER_TYPE type, IUpdateTimeline observer)
-    {
-        _observers[type].Remove(observer);
+        _observers.Remove(observer);
     }
 }

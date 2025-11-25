@@ -1,45 +1,48 @@
+using System;
 using System.Collections.Generic;
 using DataEnum;
+using JetBrains.Annotations;
 using UnityEngine;
-
-public record EffectContext(BaseUnit Target, BaseUnit Caster)
-{
-    public BaseUnit Target { get; } = Target;
-    public BaseUnit Caster { get; } = Caster;
-}
+using static CombatEffectManager;
 
 public interface IEffectable
 {
-    public void Apply(EffectContext context);
+    public void Apply(EffectInfo info, EffectContext context);
     public void Dispose();
+    public event Action OnDispose;
 }
 
-public abstract class BaseEffect : IEffectable
+public interface IStartTurnEffectProvider
 {
-    protected EffectContext context;
-    public virtual void Apply(EffectContext context)
-    {
-        this.context = context;
-    }
-
-    public abstract void Dispose();
+    string StartTurnKey { get; }
 }
 
-public abstract class BaseModiferEffect<T> : BaseEffect
+public abstract class BaseEffect<T> : IEffectable
 {
-    protected BasicStatModifier<T, int> modifier;
+    protected BasicStatModifier<T> modifier;
+    public event Action OnDispose = delegate { };
+    protected EffectInfo Info;
+    protected EffectContext Context;
 
-    public override void Apply(EffectContext context)
+    public virtual void Apply(EffectInfo info, EffectContext context)
     {
-        base.Apply(context);
-        CreateModifier();
+        Info = info;
+        Context = context;
+        modifier = CreateModifier();
+
+        if(modifier.Timer != null)
+        {
+            modifier.Timer.OnTimerStop += () => { OnDispose.Invoke(); };
+        }
         context.Target.GetStat().ModifierStat.Mediator.AddModifier(modifier);
     }
 
-    public override void Dispose()
+    public virtual void Dispose()
     {
+        OnDispose.Invoke();
         modifier.Dispose();
     }
 
-    public abstract void CreateModifier();
+    protected abstract BasicStatModifier<T> CreateModifier();
+    protected virtual EffectTimer CreateTimer() { return null; }
 }

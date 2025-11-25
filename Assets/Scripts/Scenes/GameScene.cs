@@ -26,6 +26,7 @@ public class GameScene : AbstractScene
     [SerializeField] private QTEManager qteManager;
     [SerializeField] private SelectorManager selectorManager;
     [SerializeField] private CrowdControlManager crowdControlManager;
+    [SerializeField] private CombatEffectManager combatEffectManager;
 
     [Header("Service Locator Register")]
     [SerializeField] private UnitActionExecuter unitActionExecuter;
@@ -53,12 +54,13 @@ public class GameScene : AbstractScene
             .Register(inputHandler)
             .Register(unitActionFactory)
             .Register(parryingApplier as IParryingApplier)
-            .Register(crowdControlManager);
+            .Register(crowdControlManager)
+            .Register(combatEffectManager as ICombatEffectManager);
     }
 
     protected override async UniTask InitializeObjects()
     {
-        entityData = new EntityDataCreator().CreateEntityData(dataHandler.EntityData, playerUnitID.ToList(), enemyUnitID.ToList());
+        entityData = new EntityDataCreator().CreateEntityData(dataHandler, playerUnitID.ToList(), enemyUnitID.ToList());
 
         hudManager.Init();
         textManager.Init();
@@ -67,6 +69,7 @@ public class GameScene : AbstractScene
         qteManager.Init();
         selectorManager.Init();
         crowdControlManager.Init();
+        combatEffectManager.Init();
 
         inputHandler.Init();
 
