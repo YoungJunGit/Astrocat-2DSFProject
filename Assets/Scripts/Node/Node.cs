@@ -19,6 +19,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     [SerializeField] public bool connected { get; set; } = false;
     [SerializeField] public bool visited { get; set; } = false;
     [SerializeField] public bool isActive { get; set; } = false;
+    [SerializeField] public int idx { get; set; } = 0;
     [SerializeField] public float xPos { get; set; }
     [SerializeField] public float yPos { get; set; }
     [SerializeField] public float zPos { get; set; }
@@ -26,7 +27,6 @@ public class Node : MonoBehaviour, IUpdateObserver
     [SerializeField] public NodeData.Type? nodeType { get; set; } = null;
 
     [SerializeField] SpriteRenderer nodeImage;
-    //[SerializeField] Button nodeButton;
     [SerializeField] SpriteRenderer visitImage;
     [SerializeField] TextMesh nodeText;
     [SerializeField] AudioSource AS;
