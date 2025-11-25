@@ -20,15 +20,15 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 923745664
-  floorNum: 10
-  routeNum: 3
+  seed: 783903040
+  floorNum: 15
+  routeNum: 5
   normalNodeSize: 1
   startNodeSize: 1.5
   finalNodeSize: 1.5
   floorDistance: 10
   routeDistance: 10
-  activeRouteNum: 3
+  activeRouteNum: 5
   nodePref: {fileID: 4277126375888947395, guid: 2faf1f81fd3ed7f45a7113c1123ce3b6, type: 3}
   pathImagePref: {fileID: 6119643253783005637, guid: 4b11199aa7ee2a847a0acaa0af34d065, type: 3}
   pathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -41,11 +41,8 @@ MonoBehaviour:
   camAngleX: 25.2
   camAngleY: 0
   camAngleZ: 0
-  limitMinX: -20
-  limitMaxX: 20
   limitMinY: -2
   limitMaxY: 25
-  limitMinZ: -8
   smoothTime: 1.2
   startNodeData: {fileID: 11400000, guid: a5dd8b8215095554389f88a22f71c641, type: 2}
   finalNodeData:

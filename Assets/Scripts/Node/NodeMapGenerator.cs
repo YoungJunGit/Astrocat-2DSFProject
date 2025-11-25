@@ -73,11 +73,11 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField] private float camAngleX;               // 카메라 앵클
     [SerializeField] private float camAngleY;               // 카메라 앵클
     [SerializeField] private float camAngleZ;               // 카메라 앵클
-    [SerializeField] private float limitMinX;
-    [SerializeField] private float limitMaxX;
+    private float limitMinX;
+    private float limitMaxX;
     [SerializeField] private float limitMinY;
     [SerializeField] private float limitMaxY;
-    [SerializeField] private float limitMinZ;
+    private float limitMinZ;
     private float limitMaxZ;
     [SerializeField] private float smoothTime;
     List<Node> showNodes;
@@ -103,6 +103,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     Node[,] map;
     bool isCompleted = false;
     List<Transform> pathsTransform;
+
+    public Node[,]Map => map;
 
     /*------------------------------------------------------------
     Executed when the value in the inspector is changed:Implemented to initialize when added because serializable classes like FixedNodeData and MapNodeData cannot use constructors
@@ -294,16 +296,19 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     void createMap()
     {
         map = new Node[floorNum, routeNum];
+        int index = 0;
 
         if (makeStart)
         {
             startNode = Instantiate(nodePref, mapParent.transform);
             startNode.Init(this);
 
+            startNode.idx = index;
             setNodeSize(startNode, startNodeSize);
             startNode.transform.position = new Vector3(0, 0, 0);
             startNode.gameObject.name = $"Start Node";
             startNode.connected = true;
+            index++;
         }
 
         for (int i = 0; i < floorNum; i++)
@@ -317,18 +322,17 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 node.floor = i;
                 node.route = j;
                 node.xPos = (routeDistance * j) + (normalNodeSize * j) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2));
-                //node.yPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
                 node.zPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
+                node.idx = index;
                 if (isOffset)
                 {
                     node.xPos += Random.Range(-routeDistance * 0.9f / 2, routeDistance * 0.9f / 2 + 1);
-                    //node.yPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
                     node.zPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
                 }
-                //node.transform.position = new Vector3(node.xPos, node.yPos,0);
                 node.transform.position = new Vector3(node.xPos, node.yPos, node.zPos);
                 map[i, j] = node;
                 map[i, j].gameObject.name = $"{i},{j}";
+                index++;
             }
         }
 
@@ -336,14 +340,14 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         finalNode.Init(this);
 
         setNodeSize(finalNode, finalNodeSize);
-        //finalNode.transform.position = new Vector3(0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? 10 : 0),0);
         finalNode.transform.position = new Vector3(0, 0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? 10 : 0));
         finalNode.gameObject.name = $"Final Node";
         finalNode.connected = true;
+        finalNode.idx = index;
+        limitMinX = -(routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2)) - routeDistance * 0.9f / 2;
+        limitMaxX = (routeDistance * (routeNum-1)) + (normalNodeSize * (routeNum - 1)) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2)) + routeDistance * 0.9f / 2 + 1;
+        limitMinZ = (makeStart) ? startNode.transform.position.z - cameraPositionZOffset : -cameraPositionZOffset;
         limitMaxZ = finalNode.transform.position.z - cameraPositionZOffset;
-
-        //mapWidth = (routeNum * normalNodeSize) + (routeNum * routeDistance);
-        //mapHeight = finalNode.transform.position.y + ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) + finalNodeSize / 2;
     }
 
     /*------------------------------------------------------------
@@ -468,9 +472,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         path.color = pathColor;
 
         float distance = Vector3.Distance(start.transform.position, end.transform.position);
-        //distance -= (distance > paddingBetweenNodes * 2) ? paddingBetweenNodes * 2 : distance;
         path.size = new Vector2(path.size.x, distance * 3);
-        //path.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, distance);
 
         path.transform.position = (start.position + end.position) / 2;
 
@@ -869,7 +871,10 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     private void ShowActiveNode(float index)
     {
         foreach (var nodes in showNodes)
+        {
+            nodes.OnDefaultColor();
             nodes.disableButton();
+        }
 
         Node node;
         if (index < 0)
