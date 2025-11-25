@@ -3,15 +3,12 @@ using static TimelinePublisher;
 
 public class EffectTimer : TimelineTimer
 {
-    public EffectTimer(PUBLISHER_TYPE type, int duration) : base(type, duration) { }
+    public EffectTimer(int duration) : base(duration) { }
 
-    public Action OnTimerCountDown = delegate { };
-
-    protected override void Update(int round)
+    public override void UpdateTimer()
     {
         if (IsRunning && Duration >= 1)
         {
-            OnTimerCountDown.Invoke();
             Duration--;
         }
 

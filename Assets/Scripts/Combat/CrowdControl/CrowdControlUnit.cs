@@ -20,11 +20,12 @@ public class CrowdControlUnit
             {ELEMENT_TYPE.HOLY, new ObservableList<ICrowdControl>() },
             {ELEMENT_TYPE.ETC, new ObservableList<ICrowdControl>() }
         };
-
     public IReadOnlyDictionary<ELEMENT_TYPE, IReadOnlyObservableList<ICrowdControl>> EffectDictionary =>
         _effectDictionary.ToDictionary(kv => kv.Key, kv => (IReadOnlyObservableList<ICrowdControl>)kv.Value);
 
     public ELEMENT_TYPE Previous_Element_Type { get; set; } = ELEMENT_TYPE.NONE;
+
+    private readonly Dictionary<ELEMENT_TYPE, List<ICrowdControl>> _pendingDic = new();
 
     public void Add(ELEMENT_TYPE elementType, ICrowdControl c)
     {
@@ -34,7 +35,7 @@ public class CrowdControlUnit
         _effectDictionary[elementType].Add(c);
     }
     
-    public void Replace(ELEMENT_TYPE elementType, ICrowdControl oldValue, ICrowdControl newValue)
+    public void Upgrade(ELEMENT_TYPE elementType, ICrowdControl oldValue, ICrowdControl newValue)
     {
         if (elementType != ELEMENT_TYPE.ETC)
             Previous_Element_Type = elementType;
@@ -42,12 +43,22 @@ public class CrowdControlUnit
         int index = _effectDictionary[elementType].IndexOf(oldValue);
         _effectDictionary[elementType][index] = newValue;
 
-        oldValue.Dispose();
+        _pendingDic.TryAdd(elementType, new List<ICrowdControl>());
+        _pendingDic[elementType].Add(oldValue);
     }
 
     public void Remove(ELEMENT_TYPE elementType, ICrowdControl c)
     {
         _effectDictionary[elementType].Remove(c);
+
+        if(_pendingDic.TryGetValue(elementType, out var list))
+        {
+            foreach(var cc in list)
+            {
+                cc.Dispose();
+            }
+            _pendingDic.Remove(elementType);
+        }
 
         c.Dispose();
     }

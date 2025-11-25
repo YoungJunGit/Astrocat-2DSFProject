@@ -29,16 +29,17 @@ public abstract class BaseUnit : MonoBehaviour
     public UnitAttachments Attachments;
     public UnitCombatInfo CombatInfo;
     public CrowdControlUnit crowdControlUnit;
+    public CombatEffectUnit combatEffectUnit;
     public Action<BaseUnit> m_FinishedDying;
 
     DisposableBag d;
 
     public void Initialize(EntityData data, int priority)
     {
+        Attachments      = GetComponent<UnitAttachments>();
         CombatInfo       = new UnitCombatInfo();
         crowdControlUnit = new CrowdControlUnit();
-        Attachments      = GetComponent<UnitAttachments>();
-
+        combatEffectUnit = new CombatEffectUnit();
         _stat            = new UnitStat(data, priority);
 
         _animHandler.Init();
@@ -50,7 +51,7 @@ public abstract class BaseUnit : MonoBehaviour
         // Replace들만 합치기 (키 포함)
         var replaceStream = crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveReplace()).Merge();
 
-        
+        TimelinePublisher.SubscribeObserver(_stat.ModifierStat.Mediator);
 
         if (HasSupporter)
             _supporterUnit.Initialize();
@@ -59,7 +60,7 @@ public abstract class BaseUnit : MonoBehaviour
     public void OnDamaged(IDamage damage)
     {
         Attachments.GetSpriteRenderer().color = Color.red;
-        Attachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);
+        Attachments.GetSpriteRenderer().DOColor(Color.white, 0.25f);
 
         if(this is PlayerUnit)
             _animHandler.ChangeAnimation(AnimCombat.HIT);
@@ -75,6 +76,11 @@ public abstract class BaseUnit : MonoBehaviour
     public void OnHealed(float value)
     {
         // TODO : Heal Logic
+    }
+
+    public async virtual UniTask OnRevive()
+    {
+        // TODO : Revive Logic
     }
 
     public async virtual UniTask OnDie()
@@ -97,6 +103,8 @@ public abstract class BaseUnit : MonoBehaviour
             await UniTask.WaitUntil(() => isFinishedEvent);
             Attachments.GetSpriteRenderer().sortingLayerName = "Character";
         }
+
+        TimelinePublisher.DiscribeObserver(_stat.ModifierStat.Mediator);
     }
 
     public AnimationHandler GetAnimationHandler()       => _animHandler;

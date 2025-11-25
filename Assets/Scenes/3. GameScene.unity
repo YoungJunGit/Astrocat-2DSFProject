@@ -174,12 +174,12 @@ MonoBehaviour:
   dataHandler: {fileID: 11400000, guid: 9d14d65fcd79e1348bc607487b911110, type: 2}
   playerUnitID:
   - 10001001
-  - 10001002
-  - 10001003
+  - 
+  - 
   enemyUnitID:
   - 10102001
-  - 10012002
-  - 10102003
+  - 
+  - 
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
   textManager: {fileID: 11400000, guid: 6ba557ebca91ea6489f20feb5e5ed850, type: 2}
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}
@@ -187,8 +187,8 @@ MonoBehaviour:
   qteManager: {fileID: 11400000, guid: d4c65610af98c884b8692e0ee6cd19e1, type: 2}
   selectorManager: {fileID: 11400000, guid: b3670eb98c9cab141866b57a52ccef58, type: 2}
   crowdControlManager: {fileID: 11400000, guid: e697fb910f0f28040aa62cc893ca580c, type: 2}
+  combatEffectManager: {fileID: 11400000, guid: 21409fa59b5766840b0e4c93d1e6a1f8, type: 2}
   unitActionExecuter: {fileID: 11400000, guid: ef3fa3b1869ee0245a386f002e7ebdcb, type: 2}
-  damageFactory: {fileID: 11400000, guid: 840102ba6981ac64c81bc20a98d8c779, type: 2}
   inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
   unitActionFactory: {fileID: 11400000, guid: 40274e07c72dafa4f8916905710eb3f4, type: 2}
   parryingApplier: {fileID: 11400000, guid: 5b3c094ceb8a6934cb198ef20c7ed20c, type: 2}

@@ -3,7 +3,7 @@ using System;
 
 namespace DataEntity
 {
-    #region[DT ฐüทร]
+    #region[DT]
     [Serializable]
     public class EntityData
     {
@@ -24,7 +24,7 @@ namespace DataEntity
         public double   Counter_Damage_Rate     = 0.0f;
         public string[] Skill_ID;
         public double[] Element_Charge_Rate;
-        public double   Element_Charge_Resist   = 0.0f;
+        public double[] Element_Charge_Resist;
         public double[] Overload_Rate;
         public string   Asset_File;
     }
@@ -65,14 +65,14 @@ namespace DataEntity
     [Serializable]
     public class ElementStatusData
     {
-        public string                   Element_Status_ID;
-        public string                   table;
-        public string                   kind;
-        public string                   index;
-        public string                   Element_Status_Name;
-        public ELEMENT_STATUS_CATEGORY  Element_Status_Category = ELEMENT_STATUS_CATEGORY.NONE;
-        public string                   Buff_Table_ID;
-        public double                   Buff_Value              = 0.0f;
+        public string   Element_Status_ID;
+        public string   table;
+        public string   kind;
+        public string   index;
+        public string   Buff_Table_ID;
+        public double[] Element_Status_Value;
+        public int      Element_Status_Duration_Turn = 0;
+        public string   Element_Status_Name;
     }
 
     [Serializable]

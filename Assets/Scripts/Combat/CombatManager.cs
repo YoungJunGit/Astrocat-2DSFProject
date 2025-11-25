@@ -67,6 +67,7 @@ public class CombatManager : ScriptableObject
 
             await UniTask.WaitUntil(() => !_textManager.IsTextOn);
 
+            currentTurnUnit.combatEffectUnit.OnStartTurn();
             Debug.Log($"{currentTurnUnit.GetStat().CoreStat.Name}'s turn");
 
             var context = new CombatSelectionContext();
