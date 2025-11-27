@@ -20,12 +20,12 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 783903040
+  seed: 459649088
   floorNum: 15
   routeNum: 5
   normalNodeSize: 1
   startNodeSize: 1.5
-  finalNodeSize: 1.5
+  finalNodeSize: 3
   floorDistance: 10
   routeDistance: 10
   activeRouteNum: 5
@@ -50,22 +50,33 @@ MonoBehaviour:
   fixedNodeData:
   - nodeData: {fileID: 11400000, guid: bd99df6ed73e951419a8f7c0b17b0725, type: 2}
     appearedOn: 1
-  - nodeData: {fileID: 11400000, guid: fe4b802f146f8a848af8268cfc156471, type: 2}
+  - nodeData: {fileID: 11400000, guid: 7b820e668358c864ba2207d645d9636b, type: 2}
     appearedOn: 3
-  - nodeData: {fileID: 11400000, guid: ab08df6943a7ce640b02f483aaf67ce5, type: 2}
+  - nodeData: {fileID: 11400000, guid: 549cfca8180a68a498300a7e915aad13, type: 2}
     appearedOn: 5
-  - nodeData: {fileID: 11400000, guid: 202bb7210f15c3242b4446d6344aa29d, type: 2}
+  - nodeData: {fileID: 11400000, guid: fe4b802f146f8a848af8268cfc156471, type: 2}
     appearedOn: 7
-  - nodeData: {fileID: 11400000, guid: 746af2345292ba2499a488a54567948e, type: 2}
+  - nodeData: {fileID: 11400000, guid: ab08df6943a7ce640b02f483aaf67ce5, type: 2}
     appearedOn: 9
+  - nodeData: {fileID: 11400000, guid: 202bb7210f15c3242b4446d6344aa29d, type: 2}
+    appearedOn: 11
+  - nodeData: {fileID: 11400000, guid: 41e49283036ed2a48b302a865d369054, type: 2}
+    appearedOn: 13
+  - nodeData: {fileID: 11400000, guid: 746af2345292ba2499a488a54567948e, type: 2}
+    appearedOn: 15
   mapNodeData:
   - nodeData: {fileID: 11400000, guid: e9b6002ed4bcd454993e0c31d3781c46, type: 2}
     serializable: 1
-    chance: 0.5
+    chance: 0.33
     appearedAfter: 1
     reverseAppearedAfter: 0
   - nodeData: {fileID: 11400000, guid: 159dd5fd5ef5e3c4682342bc74b01392, type: 2}
     serializable: 1
-    chance: 0.5
+    chance: 0.33
+    appearedAfter: 1
+    reverseAppearedAfter: 0
+  - nodeData: {fileID: 11400000, guid: 37cf0a421104e2742a937a32713a81fa, type: 2}
+    serializable: 1
+    chance: 0.33
     appearedAfter: 1
     reverseAppearedAfter: 0
