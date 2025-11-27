@@ -3,6 +3,7 @@ using S3MG;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Tymski;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -30,6 +31,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     [SerializeField] SpriteRenderer visitImage;
     [SerializeField] TextMesh nodeText;
     [SerializeField] AudioSource AS;
+    [SerializeField] SceneReference nextScene;
 
     [SerializeField] float lerpDuration = 0.8f;
     [SerializeField] Color lerpColor = Color.gray;
@@ -289,7 +291,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     {
         Debug.Log("적 스테이지로 진입");
         await _scene.SceneHandler.FadeScreen();
-        _scene.SceneHandler.LoadingScreen(3);
+        _scene.SceneHandler.LoadingScreen(nextScene);
     }
 
     void handleMiddle()

@@ -20,8 +20,8 @@ MonoBehaviour:
     kind: 0
     index: 1001
     Side: 1
-    Name: Character_Name_1001
-    Max_HP: 1000
+    Name: CHARACTER_NAME_1001
+    Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
     Default_Defense: 10
@@ -31,9 +31,15 @@ MonoBehaviour:
     Critical_Damage_Rate: 1.3
     Counter_Damage_Rate: 1.3
     Skill_ID:
-    - 20010001
-    - 20010002
-    - 20010003
+    - 20001001
+    - '
+
+      20012001'
+    - 20012002
+    - '
+
+      20012003'
+    - 20012004
     Element_Charge_Rate:
     - 1
     - 1
@@ -41,7 +47,13 @@ MonoBehaviour:
     - 1
     - 1
     - 1
-    Element_Charge_Resist: []
+    Element_Charge_Resist:
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
     Overload_Rate:
     - 1
     - 1
@@ -55,7 +67,7 @@ MonoBehaviour:
     kind: 0
     index: 1002
     Side: 1
-    Name: Character_Name_1002
+    Name: CHARACTER_NAME_1002
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -66,16 +78,34 @@ MonoBehaviour:
     Critical_Damage_Rate: 1.3
     Counter_Damage_Rate: 1.3
     Skill_ID: []
-    Element_Charge_Rate: []
-    Element_Charge_Resist: []
-    Overload_Rate: []
+    Element_Charge_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    Element_Charge_Resist:
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    Overload_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
     Asset_File: player_Sniper
   - code: 10001003
     table: 10
     kind: 0
     index: 1003
     Side: 1
-    Name: Character_Name_1003
+    Name: CHARACTER_NAME_1003
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -86,17 +116,35 @@ MonoBehaviour:
     Critical_Damage_Rate: 1.3
     Counter_Damage_Rate: 1.3
     Skill_ID: []
-    Element_Charge_Rate: []
-    Element_Charge_Resist: []
-    Overload_Rate: []
+    Element_Charge_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    Element_Charge_Resist:
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    Overload_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
     Asset_File: player_Commissar
-  - code: 10102001
+  - code: 10012001
     table: 10
     kind: 1
     index: 2001
     Side: 2
-    Name: Monster_Name_2001
-    Max_HP: 1000
+    Name: MONSTER_NAME_2001
+    Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
     Default_Defense: 10
@@ -106,16 +154,34 @@ MonoBehaviour:
     Critical_Damage_Rate: 1.3
     Counter_Damage_Rate: 1
     Skill_ID: []
-    Element_Charge_Rate: []
-    Element_Charge_Resist: []
-    Overload_Rate: []
-    Asset_File: penguin_Rfleman
+    Element_Charge_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    Element_Charge_Resist:
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    Overload_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    Asset_File: penguin_Rifleman
   - code: 10012002
     table: 10
     kind: 1
     index: 2002
     Side: 2
-    Name: Monster_Name_2002
+    Name: MONSTER_NAME_2002
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -126,16 +192,34 @@ MonoBehaviour:
     Critical_Damage_Rate: 1.3
     Counter_Damage_Rate: 1
     Skill_ID: []
-    Element_Charge_Rate: []
-    Element_Charge_Resist: []
-    Overload_Rate: []
+    Element_Charge_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    Element_Charge_Resist:
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    Overload_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
     Asset_File: penguin_Sniper
-  - code: 10102003
+  - code: 10012003
     table: 10
     kind: 1
     index: 2003
     Side: 2
-    Name: Monster_Name_2003
+    Name: MONSTER_NAME_2003
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -146,16 +230,34 @@ MonoBehaviour:
     Critical_Damage_Rate: 1.3
     Counter_Damage_Rate: 1
     Skill_ID: []
-    Element_Charge_Rate: []
-    Element_Charge_Resist: []
-    Overload_Rate: []
+    Element_Charge_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    Element_Charge_Resist:
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    Overload_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
     Asset_File: penguin_Commander
   - code: 10012004
     table: 10
     kind: 1
     index: 2004
     Side: 2
-    Name: Monster_Name_2004
+    Name: MONSTER_NAME_2004
     Max_HP: 100
     Max_SP: 9
     Default_Attack: 40
@@ -166,7 +268,25 @@ MonoBehaviour:
     Critical_Damage_Rate: 1.3
     Counter_Damage_Rate: 1
     Skill_ID: []
-    Element_Charge_Rate: []
-    Element_Charge_Resist: []
-    Overload_Rate: []
+    Element_Charge_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    Element_Charge_Resist:
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    - 0.3
+    Overload_Rate:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
     Asset_File: penguin_Berserker

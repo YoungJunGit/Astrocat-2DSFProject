@@ -108,6 +108,9 @@ MonoBehaviour:
   visitImage: {fileID: 8522515883788978824}
   nodeText: {fileID: 3121983241470783155}
   AS: {fileID: 4275981695006542834}
+  nextScene:
+    sceneAsset: {fileID: 102900000, guid: e2e863c22e659a44cbd68b8e8f3f164b, type: 3}
+    scenePath: Assets/Scenes/3. GameScene.unity
   lerpDuration: 0.8
   lerpColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!82 &4275981695006542834

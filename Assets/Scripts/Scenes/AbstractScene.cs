@@ -4,6 +4,7 @@ using Obvious.Soap;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Tymski;
 
 public abstract class AbstractScene : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public abstract class AbstractScene : MonoBehaviour
     [Space(20f)]
     [SerializeField] protected BoolVariable debugMode;
     [SerializeField] private bool changeSceneOnEndGame;
-    [SerializeField, ShowIf("changeSceneOnEndGame")] private int changeSceneIndex;
+    [SerializeField, ShowIf("changeSceneOnEndGame")] SceneReference changeScene;
 
     protected ISoundService soundService;
     protected ISceneHandler sceneHandler;
@@ -42,8 +43,8 @@ public abstract class AbstractScene : MonoBehaviour
             .Get(out backgroundManager)
             .Get(out soundService);
 
-        if (!SceneManager.GetSceneByName("Base").isLoaded)
-            await SceneManager.LoadSceneAsync("0. Base", LoadSceneMode.Additive);
+        if (!SceneManager.GetSceneByName("99. Base").isLoaded)
+            await SceneManager.LoadSceneAsync("99. Base", LoadSceneMode.Additive);
 
         backgroundManager.SetBackground(background_type, background_index);
 
@@ -59,7 +60,7 @@ public abstract class AbstractScene : MonoBehaviour
         if (changeSceneOnEndGame)
         {
             await sceneHandler.FadeScreen();
-            sceneHandler.LoadingScreen(changeSceneIndex);
+            sceneHandler.LoadingScreen(changeScene);
         }
     }
 
