@@ -5,6 +5,7 @@ using System;
 using Utils;
 using ObservableCollections;
 using R3;
+using System.Collections.Generic;
 
 #region [Core Stat]
 public class CoreStat
@@ -34,6 +35,8 @@ public class ModifierStat
 
     private readonly StatsMediator _mediator;
     public StatsMediator Mediator => _mediator;
+
+    
 
     public float PercentageValue(BUFF_TYPE type, float defaultValue = 1.0f)
     {

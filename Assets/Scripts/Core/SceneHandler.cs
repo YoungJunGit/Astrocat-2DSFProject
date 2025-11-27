@@ -1,6 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System;
+using Tymski;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -21,13 +22,14 @@ public class SceneHandler : ISceneHandler
     private enum ChangeMod
     {
         Int,
-        String
+        String,
     }
 
     private ChangeMod _changeMod;
 
     private int _sceneIndex;
     private string _sceneName;
+    private SceneReference _sceneReference;
 
     public async UniTask FadeScreen()
     {

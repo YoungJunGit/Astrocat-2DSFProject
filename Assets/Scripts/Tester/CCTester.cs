@@ -1,16 +1,9 @@
-using System;
 using UnityEngine;
 using DataEnum;
 using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
-using UnityEditor.TextCore.Text;
-using UnityEditor;
-using System.Linq;
-using UnityEditor.Overlays;
-using Unity.VisualScripting.FullSerializer;
-using Sirenix.Utilities;
 
 public class CCTester : MonoBehaviour
 {
