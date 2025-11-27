@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 783903040
+  seed: 402739008
   floorNum: 15
   routeNum: 5
   normalNodeSize: 1
@@ -58,14 +58,25 @@ MonoBehaviour:
     appearedOn: 7
   - nodeData: {fileID: 11400000, guid: 746af2345292ba2499a488a54567948e, type: 2}
     appearedOn: 9
+  - nodeData: {fileID: 11400000, guid: 06f77c8d830d87e4c8d6f02a61e39c98, type: 2}
+    appearedOn: 11
+  - nodeData: {fileID: 11400000, guid: 44386279cf9fdc4489e652dab5643442, type: 2}
+    appearedOn: 13
+  - nodeData: {fileID: 11400000, guid: 44386279cf9fdc4489e652dab5643442, type: 2}
+    appearedOn: 15
   mapNodeData:
   - nodeData: {fileID: 11400000, guid: e9b6002ed4bcd454993e0c31d3781c46, type: 2}
     serializable: 1
-    chance: 0.5
+    chance: 0.33
     appearedAfter: 1
     reverseAppearedAfter: 0
   - nodeData: {fileID: 11400000, guid: 159dd5fd5ef5e3c4682342bc74b01392, type: 2}
     serializable: 1
-    chance: 0.5
+    chance: 0.33
+    appearedAfter: 1
+    reverseAppearedAfter: 0
+  - nodeData: {fileID: 11400000, guid: 37cf0a421104e2742a937a32713a81fa, type: 2}
+    serializable: 1
+    chance: 0.33
     appearedAfter: 1
     reverseAppearedAfter: 0
