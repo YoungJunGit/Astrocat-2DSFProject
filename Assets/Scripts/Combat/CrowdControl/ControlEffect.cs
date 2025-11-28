@@ -2,41 +2,27 @@ using System.Collections.Generic;
 using DataEnum;
 using static TimelinePublisher;
 
-public class StunEffect : BaseEffect<int>
+public abstract class ControlEffect : BaseEffect<int>
 {
+    protected abstract BUFF_TYPE buffType { get; }
+
     protected override BasicStatModifier<int> CreateModifier()
     {
-        return new BasicStatModifier<int>(BUFF_TYPE.STUN, UPDATE_TYPE.TURN, (v) => v++, CreateTimer());
-    }
-
-    protected override EffectTimer CreateTimer()
-    {
-        return new EffectTimer(1);
+        return new BasicStatModifier<int>(buffType, UPDATE_TYPE.TURN, (v) => v++, new EffectTimer(1));
     }
 }
 
-public class StrangeEffect : BaseEffect<int>
+public class StunEffect : ControlEffect
 {
-    protected override BasicStatModifier<int> CreateModifier()
-    {
-        return new BasicStatModifier<int>(BUFF_TYPE.STRANGE, UPDATE_TYPE.TURN, (v) => v++, CreateTimer());
-    }
-
-    protected override EffectTimer CreateTimer()
-    {
-        return new EffectTimer(1);
-    }
+    protected override BUFF_TYPE buffType => BUFF_TYPE.STUN;
 }
 
-public class SilenceEffect : BaseEffect<int>
+public class StrangeEffect : ControlEffect
 {
-    protected override BasicStatModifier<int> CreateModifier()
-    {
-        return new BasicStatModifier<int>(BUFF_TYPE.SILENCE, UPDATE_TYPE.TURN, (v) => v++, CreateTimer());
-    }
+    protected override BUFF_TYPE buffType => BUFF_TYPE.STRANGE;
+}
 
-    protected override EffectTimer CreateTimer()
-    {
-        return new EffectTimer(1);
-    }
+public class SilenceEffect : ControlEffect
+{
+    protected override BUFF_TYPE buffType => BUFF_TYPE.SILENCE;
 }

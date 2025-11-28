@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 7696842326581041361, guid: 44960675879ef744abe562455d8a7906, type: 3}
   type: 9
-  nodeName: Wizard
+  nodeName: 
