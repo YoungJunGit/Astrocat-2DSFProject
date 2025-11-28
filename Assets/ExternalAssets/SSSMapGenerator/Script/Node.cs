@@ -26,7 +26,7 @@ namespace S3MG{
 		[SerializeField] public float xPos {get; set;}
 		[SerializeField] public float yPos {get; set;}
 
-		[SerializeField] public NodeData.Type? nodeType {get; set;} = null;
+		[SerializeField] public NodeType nodeType {get; set;} = NodeType.Empty;
 
 		[SerializeField] Image nodeImage;
 		[SerializeField] Button nodeButton;
@@ -76,7 +76,7 @@ namespace S3MG{
 		/*------------------------------------------------------------
 		Set image, type, and text on a node
 		------------------------------------------------------------*/
-		public void setNodeData(Sprite sprite, NodeData.Type? type, string text = ""){
+		public void setNodeData(Sprite sprite, NodeType type, string text = ""){
 			nodeImage.sprite = sprite;
 			nodeType = type;
 			nodeText.text = text;
@@ -139,9 +139,9 @@ namespace S3MG{
 		void entryStart(){
 			visited = true;
 
-			if(nodeType != NodeData.Type.Start) _mapGenerator.paintPath(this);
+			if(nodeType != NodeType.Start) _mapGenerator.paintPath(this);
 
-			if(nodeType != NodeData.Type.Start && nodeType != NodeData.Type.Final){
+			if(nodeType != NodeType.Start && nodeType != NodeType.Final){
 				_mapGenerator.passedSameFloor(this);
 			}
 			else{
@@ -155,34 +155,34 @@ namespace S3MG{
 			}
 			else{
 				switch(nodeType){
-					case NodeData.Type.Start:
+					case NodeType.Start:
 						handleStart();
 						break;
-					case NodeData.Type.Camp:
+					case NodeType.Camp:
 						handleCamp();
 						break;
-					case NodeData.Type.Shop:
+					case NodeType.Shop:
 						handleShop();
 						break;
-					case NodeData.Type.Event:
+					case NodeType.Event:
 						handleEvent();
 						break;
-					case NodeData.Type.Treasure:
+					case NodeType.Treasure:
 						handleTreasure();
 						break;
-					case NodeData.Type.Trap:
+					case NodeType.Trap:
 						handleTrap();
 						break;
-					case NodeData.Type.Enemy:
+					case NodeType.Enemy:
 						handleEnemy();
 						break;
-					case NodeData.Type.Middle:
+					case NodeType.Middle:
 						handleMiddle();
 						break;
-					case NodeData.Type.Final:
+					case NodeType.Final:
 						handleFinal();
 						break;
-					case NodeData.Type.Random:
+					case NodeType.Random:
 						handleRandom();
 						break;
 					default:

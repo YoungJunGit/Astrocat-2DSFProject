@@ -15,7 +15,9 @@ public class Node : MonoBehaviour, IUpdateObserver
     [SerializeField] public int route { get; set; }
 
     [SerializeField] public List<Node> prevNodes { get; set; } = new List<Node>();
+    [SerializeField] public List<int> prevNodesIdx { get; set; } = new List<int>();
     [SerializeField] public List<Node> nextNodes { get; set; } = new List<Node>();
+    [SerializeField] public List<int> nextNodesIdx { get; set; } = new List<int>();
 
     [SerializeField] public bool connected { get; set; } = false;
     [SerializeField] public bool visited { get; set; } = false;
@@ -25,7 +27,8 @@ public class Node : MonoBehaviour, IUpdateObserver
     [SerializeField] public float yPos { get; set; }
     [SerializeField] public float zPos { get; set; }
 
-    [SerializeField] public NodeData.Type? nodeType { get; set; } = null;
+    [SerializeField] public NodeType nodeType { get; set; }
+    [SerializeField] public string nodeName { get; set; }
 
     [SerializeField] SpriteRenderer nodeImage;
     [SerializeField] SpriteRenderer visitImage;
@@ -48,6 +51,8 @@ public class Node : MonoBehaviour, IUpdateObserver
     NodeMapGenerator _mapGenerator;
     Camera _3DCamera;
     AbstractScene _scene;
+
+    public TextMesh NodeText => nodeText;
 
     /*------------------------------------------------------------
     Executed only once when MonoBehaviour is created, Will work if the GameObject is active even if the component is disabled
@@ -110,7 +115,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     /*------------------------------------------------------------
     Set image, type, and text on a node
     ------------------------------------------------------------*/
-    public void setNodeData(Sprite sprite, NodeData.Type? type, string text = "")
+    public void setNodeData(Sprite sprite, NodeType type, string text = "")
     {
         nodeImage.sprite = sprite;
         nodeType = type;
@@ -194,9 +199,9 @@ public class Node : MonoBehaviour, IUpdateObserver
     {
         visited = true;
 
-        if (nodeType != NodeData.Type.Start) _mapGenerator.paintPath(this);
+        if (nodeType != NodeType.Start) _mapGenerator.paintPath(this);
 
-        if (nodeType != NodeData.Type.Start && nodeType != NodeData.Type.Final)
+        if (nodeType != NodeType.Start && nodeType != NodeType.Final)
         {
             _mapGenerator.passedSameFloor(this);
         }
@@ -215,34 +220,34 @@ public class Node : MonoBehaviour, IUpdateObserver
         {
             switch (nodeType)
             {
-                case NodeData.Type.Start:
+                case NodeType.Start:
                     handleStart();
                     break;
-                case NodeData.Type.Camp:
+                case NodeType.Camp:
                     handleCamp();
                     break;
-                case NodeData.Type.Shop:
+                case NodeType.Shop:
                     handleShop();
                     break;
-                case NodeData.Type.Event:
+                case NodeType.Event:
                     handleEvent();
                     break;
-                case NodeData.Type.Treasure:
+                case NodeType.Treasure:
                     handleTreasure();
                     break;
-                case NodeData.Type.Trap:
+                case NodeType.Trap:
                     handleTrap();
                     break;
-                case NodeData.Type.Enemy:
+                case NodeType.Enemy:
                     handleEnemy();
                     break;
-                case NodeData.Type.Middle:
+                case NodeType.Middle:
                     handleMiddle();
                     break;
-                case NodeData.Type.Final:
+                case NodeType.Final:
                     handleFinal();
                     break;
-                case NodeData.Type.Random:
+                case NodeType.Random:
                     handleRandom();
                     break;
                 default:
@@ -290,6 +295,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     async void handleEnemy()
     {
         Debug.Log("적 스테이지로 진입");
+        SaveLoadManager.SaveMap(_mapGenerator);
         await _scene.SceneHandler.FadeScreen();
         _scene.SceneHandler.LoadingScreen(nextScene);
     }

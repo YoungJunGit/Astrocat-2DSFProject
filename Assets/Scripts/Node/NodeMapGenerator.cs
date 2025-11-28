@@ -344,7 +344,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         finalNode.connected = true;
         finalNode.idx = index;
         limitMinX = -(routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2)) - routeDistance * 0.9f / 2;
-        limitMaxX = (routeDistance * (routeNum-1)) + (normalNodeSize * (routeNum - 1)) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2)) + routeDistance * 0.9f / 2 + 1;
+        limitMaxX = (routeDistance * (routeNum - 1)) + (normalNodeSize * (routeNum - 1)) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2)) + routeDistance * 0.9f / 2 + 1;
         limitMinZ = (makeStart) ? startNode.transform.position.z - cameraPositionZOffset : -cameraPositionZOffset;
         limitMaxZ = finalNode.transform.position.z - cameraPositionZOffset;
     }
@@ -422,7 +422,9 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 if (node.floor == 0)
                 {
                     startNode.nextNodes.Add(node);
+                    startNode.nextNodesIdx.Add(node.idx);
                     node.prevNodes.Add(startNode);
+                    node.prevNodesIdx.Add(startNode.idx);
                     drawPath(startNode.transform, node.transform);
                 }
             }
@@ -437,7 +439,9 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             if (!haveNode) drawPath(node.transform, nextNode.transform);
 
             node.nextNodes.Add(nextNode);
+            node.nextNodesIdx.Add(nextNode.idx);
             nextNode.prevNodes.Add(node);
+            nextNode.prevNodesIdx.Add(node.idx);
 
             connectingNodes(nextNode);
         }
@@ -451,12 +455,16 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             if (!haveFinalNode) drawPath(node.transform, finalNode.transform);
 
             node.nextNodes.Add(finalNode);
+            node.nextNodesIdx.Add(finalNode.idx);
             finalNode.prevNodes.Add(node);
+            finalNode.prevNodesIdx.Add(node.idx);
 
             if (floorNum == 1 && makeStart)
             {
                 startNode.nextNodes.Add(node);
+                startNode.nextNodesIdx.Add(node.idx);
                 node.prevNodes.Add(startNode);
+                node.prevNodesIdx.Add(startNode.idx);
                 drawPath(startNode.transform, node.transform);
             }
         }
@@ -590,7 +598,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         {
             for (int j = 0; j < routeNum; j++)
             {
-                if (map[i, j].connected && map[i, j].nodeType == null) tmp.Add(map[i, j]);
+                if (map[i, j].connected && map[i, j].nodeType == NodeType.Empty) tmp.Add(map[i, j]);
             }
         }
         return tmp;
@@ -665,14 +673,14 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         {
             for (int j = 0; j < routeNum; j++)
             {
-                if (map[i, j].nodeType != null) tmp.Add(map[i, j]);
+                if (map[i, j].nodeType != NodeType.Empty) tmp.Add(map[i, j]);
             }
         }
         for (int i = 0; i < tmp.Count; i++)
         {
             if (tmp[i].nextNodes.Count == 2 && tmp[i].nextNodes[0].nodeType == tmp[i].nextNodes[1].nodeType && tmp[i].nextNodes[0].xPos != tmp[i].nextNodes[1].xPos)
             {
-                tmp[i].nextNodes[0].setNodeData(null, null);
+                tmp[i].nextNodes[0].setNodeData(null, NodeType.Empty);
             }
             if (tmp[i].nextNodes.Count == 3)
             {
@@ -681,20 +689,20 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 Node third = tmp[i].nextNodes[2];
                 if (first.nodeType == second.nodeType && second.nodeType == third.nodeType && first.xPos != second.xPos && second.xPos != third.xPos)
                 {
-                    first.setNodeData(null, null);
-                    second.setNodeData(null, null);
+                    first.setNodeData(null, NodeType.Empty);
+                    second.setNodeData(null, NodeType.Empty);
                 }
                 if (first.nodeType == second.nodeType && first.xPos != second.xPos)
                 {
-                    first.setNodeData(null, null);
+                    first.setNodeData(null, NodeType.Empty);
                 }
                 if (first.nodeType == third.nodeType && first.xPos != third.xPos)
                 {
-                    first.setNodeData(null, null);
+                    first.setNodeData(null, NodeType.Empty);
                 }
                 if (second.nodeType == third.nodeType && second.xPos != third.xPos)
                 {
-                    second.setNodeData(null, null);
+                    second.setNodeData(null, NodeType.Empty);
                 }
             }
         }
@@ -726,7 +734,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         {
             for (int j = 0; j < routeNum; j++)
             {
-                if (map[i, j].connected && map[i, j].nodeType != null) map[i, j].disableButton();
+                if (map[i, j].connected && map[i, j].nodeType != NodeType.Empty) map[i, j].disableButton();
             }
         }
 

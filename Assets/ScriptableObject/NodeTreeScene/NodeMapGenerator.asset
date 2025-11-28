@@ -20,15 +20,15 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 573018176
-  floorNum: 15
-  routeNum: 5
+  seed: 180782608
+  floorNum: 10
+  routeNum: 3
   normalNodeSize: 1
   startNodeSize: 15
   finalNodeSize: 35
   floorDistance: 15
   routeDistance: 15
-  activeRouteNum: 5
+  activeRouteNum: 3
   nodePref: {fileID: 4277126375888947395, guid: 2faf1f81fd3ed7f45a7113c1123ce3b6, type: 3}
   pathImagePref: {fileID: 6119643253783005637, guid: 4b11199aa7ee2a847a0acaa0af34d065, type: 3}
   pathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

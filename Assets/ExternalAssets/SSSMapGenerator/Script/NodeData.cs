@@ -7,25 +7,26 @@ using UnityEngine;
 
 namespace S3MG{
 
-	[CreateAssetMenu(menuName = "S3MG/createNodeData", fileName = "NodeData")]
+    public enum NodeType
+    {
+        Empty,
+        Start,
+        Camp,
+        Shop,
+        Event,
+        Treasure,
+        Trap,
+        Enemy,
+        Middle,
+        Final,
+        Random,
+    }
+
+    [CreateAssetMenu(menuName = "S3MG/createNodeData", fileName = "NodeData")]
 	public class NodeData : ScriptableObject{
 
-		public enum Type{
-			Empty,
-			Start,
-			Camp,
-			Shop,
-			Event,
-			Treasure,
-			Trap,
-			Enemy,
-			Middle,
-			Final,
-			Random,
-		}
-
 		public Sprite sprite;
-		public Type type;
+		public NodeType type;
 		public string nodeName;
 	}
 }

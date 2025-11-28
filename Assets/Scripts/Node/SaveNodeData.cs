@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using S3MG;
+using UnityEngine;
 
 public class SaveNodeData
 {
@@ -7,16 +8,14 @@ public class SaveNodeData
     public int floor;
     public int route;
 
-    public List<int> nextNodeIds;
-    public List<int> prevNodeIds;
+    public List<int> nextNodeIds = new List<int>();
+    public List<int> prevNodeIds = new List<int>();
 
-    public NodeData.Type nodeType;
+    public NodeType nodeType;
     public string nodeName;
 
     public bool isVisited;
     public bool isActive;
 
-    public float xPos;
-    public float yPos;
-    public float zPos;
+    public Vector3 position = new Vector3(0,0,0);
 }

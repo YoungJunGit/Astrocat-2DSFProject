@@ -595,7 +595,7 @@ namespace S3MG{
 		List<Node> getUnassignedConnectedNodes(List<Node> tmp){
 			for(int i = 0; i < floorNum; i++){
 				for(int j = 0; j < routeNum; j++){
-					if(map[i,j].connected && map[i,j].nodeType == null) tmp.Add(map[i,j]);
+					if(map[i,j].connected && map[i,j].nodeType == NodeType.Empty) tmp.Add(map[i,j]);
 				}
 			}
 			return tmp;
@@ -656,29 +656,29 @@ namespace S3MG{
 			List<Node> tmp = new List<Node>();
 			for(int i = 0; i < floorNum; i++){
 				for(int j = 0; j < routeNum; j++){
-					if(map[i,j].nodeType != null) tmp.Add(map[i,j]);
+					if(map[i,j].nodeType != NodeType.Empty) tmp.Add(map[i,j]);
 				}
 			}
 			for(int i = 0; i < tmp.Count; i++){
 				if(tmp[i].nextNodes.Count == 2 && tmp[i].nextNodes[0].nodeType == tmp[i].nextNodes[1].nodeType && tmp[i].nextNodes[0].xPos != tmp[i].nextNodes[1].xPos){
-					tmp[i].nextNodes[0].setNodeData(null,null);
+					tmp[i].nextNodes[0].setNodeData(null,NodeType.Empty);
 				}
 				if(tmp[i].nextNodes.Count == 3){
 					Node first = tmp[i].nextNodes[0];
 					Node second = tmp[i].nextNodes[1];
 					Node third = tmp[i].nextNodes[2];
 					if(first.nodeType == second.nodeType && second.nodeType == third.nodeType && first.xPos != second.xPos && second.xPos != third.xPos){
-						first.setNodeData(null,null);
-						second.setNodeData(null,null);
+						first.setNodeData(null, NodeType.Empty);
+						second.setNodeData(null,NodeType.Empty);
 					}
 					if(first.nodeType == second.nodeType && first.xPos != second.xPos){
-						first.setNodeData(null,null);
+						first.setNodeData(null,NodeType.Empty);
 					}
 					if(first.nodeType == third.nodeType && first.xPos != third.xPos){
-						first.setNodeData(null,null);
+						first.setNodeData(null,NodeType.Empty);
 					}
 					if(second.nodeType == third.nodeType && second.xPos != third.xPos){
-						second.setNodeData(null,null);
+						second.setNodeData(null,NodeType.Empty);
 					}
 				}
 			}
@@ -704,7 +704,7 @@ namespace S3MG{
 			finalNode.disableButton();
 			for(int i = 0; i < floorNum; i++){
 				for(int j = 0; j < routeNum; j++){
-					if(map[i,j].connected && map[i,j].nodeType != null) map[i,j].disableButton();
+					if(map[i,j].connected && map[i,j].nodeType != NodeType.Empty) map[i,j].disableButton();
 				}
 			}
 
