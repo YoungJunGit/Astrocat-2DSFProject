@@ -310,28 +310,35 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             index++;
         }
 
-        for (int i = 0; i < floorNum; i++)
+        if(ES3.KeyExists("SaveMapData"))
         {
-            for (int j = 0; j < routeNum; j++)
+            LoadCreateMap();
+        }
+        else
+        {
+            for (int i = 0; i < floorNum; i++)
             {
-                Node node = Instantiate(nodePref, mapParent.transform);
-                node.Init(this);
-
-                setNodeSize(node, normalNodeSize);
-                node.floor = i;
-                node.route = j;
-                node.xPos = (routeDistance * j) + (normalNodeSize * j) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2));
-                node.zPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
-                node.idx = index;
-                if (isOffset)
+                for (int j = 0; j < routeNum; j++)
                 {
-                    node.xPos += Random.Range(-routeDistance * 0.9f / 2, routeDistance * 0.9f / 2 + 1);
-                    node.zPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
+                    Node node = Instantiate(nodePref, mapParent.transform);
+                    node.Init(this);
+
+                    setNodeSize(node, normalNodeSize);
+                    node.floor = i;
+                    node.route = j;
+                    node.xPos = (routeDistance * j) + (normalNodeSize * j) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2));
+                    node.zPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
+                    node.idx = index;
+                    if (isOffset)
+                    {
+                        node.xPos += Random.Range(-routeDistance * 0.9f / 2, routeDistance * 0.9f / 2 + 1);
+                        node.zPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
+                    }
+                    node.transform.position = new Vector3(node.xPos, node.yPos, node.zPos);
+                    map[i, j] = node;
+                    map[i, j].gameObject.name = $"{i},{j}";
+                    index++;
                 }
-                node.transform.position = new Vector3(node.xPos, node.yPos, node.zPos);
-                map[i, j] = node;
-                map[i, j].gameObject.name = $"{i},{j}";
-                index++;
             }
         }
 
@@ -348,6 +355,50 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         limitMinZ = (makeStart) ? startNode.transform.position.z - cameraPositionZOffset : -cameraPositionZOffset;
         limitMaxZ = finalNode.transform.position.z - cameraPositionZOffset;
     }
+
+    /// <summary>
+    /// Set Save Map Data
+    /// </summary>
+    private void LoadCreateMap()
+    {
+        if(ES3.KeyExists("SaveMapData"))
+        {
+            SaveMapData mapData = ES3.Load<SaveMapData>("SaveMapData");
+            List<SaveNodeData> nodes = mapData.saveNodeDatas;
+            int index = 0;
+
+            for (int i = 0; i < floorNum; i++)
+            {
+                for (int j = 0; j < routeNum; j++)
+                {
+                    Node node = Instantiate(nodePref, mapParent.transform);
+                    node.Init(this);
+                    setNodeSize(node, normalNodeSize);
+
+                    node.idx = nodes[index].idx;
+                    node.floor = nodes[index].floor;
+                    node.route = nodes[index].route;
+
+                    node.nextNodesIdx.AddRange(nodes[index].nextNodeIdx);
+                    node.prevNodesIdx.AddRange(nodes[index].prevNodeIdx);
+
+                    node.nodeType = nodes[index].nodeType;
+                    node.NodeText.text = nodes[index].nodeName;
+
+                    node.visited = nodes[index].isVisited;
+                    node.isActive = nodes[index].isActive;
+
+                    node.transform.position = nodes[index].position;
+
+                    map[i, j] = node;
+                    map[i, j].gameObject.name = $"{i},{j}";
+
+                    index++;
+                }
+            }
+        }
+    }
+
 
     /*------------------------------------------------------------
     Set node size

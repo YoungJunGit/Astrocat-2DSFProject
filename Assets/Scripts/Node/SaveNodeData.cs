@@ -8,8 +8,8 @@ public class SaveNodeData
     public int floor;
     public int route;
 
-    public List<int> nextNodeIds = new List<int>();
-    public List<int> prevNodeIds = new List<int>();
+    public List<int> nextNodeIdx = new List<int>();
+    public List<int> prevNodeIdx = new List<int>();
 
     public NodeType nodeType;
     public string nodeName;

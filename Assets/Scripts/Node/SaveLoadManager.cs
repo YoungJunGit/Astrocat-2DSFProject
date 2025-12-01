@@ -16,8 +16,8 @@ public static class SaveLoadManager
             n.floor = node.floor;
             n.route = node.route;
 
-            n.nextNodeIds.AddRange(node.nextNodesIdx);
-            n.prevNodeIds.AddRange(node.prevNodesIdx);
+            n.nextNodeIdx.AddRange(node.nextNodesIdx);
+            n.prevNodeIdx.AddRange(node.prevNodesIdx);
 
             n.nodeType = node.nodeType;
             n.nodeName = node.NodeText.text;
@@ -25,7 +25,7 @@ public static class SaveLoadManager
             n.isVisited = node.visited;
             n.isActive = node.isActive;
 
-            n.position = new Vector3(node.xPos, node.yPos, node.zPos);
+            n.position = node.transform.position;
 
             saveMap.saveNodeDatas.Add(n);
         }
