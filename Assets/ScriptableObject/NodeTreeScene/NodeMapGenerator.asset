@@ -20,12 +20,12 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 180782608
+  seed: 2146310912
   floorNum: 10
   routeNum: 3
   normalNodeSize: 1
-  startNodeSize: 15
-  finalNodeSize: 35
+  startNodeSize: 1.5
+  finalNodeSize: 1.5
   floorDistance: 15
   routeDistance: 15
   activeRouteNum: 3

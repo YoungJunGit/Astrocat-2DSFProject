@@ -5,6 +5,7 @@ using S3MG;
 public static class SaveLoadManager
 {
     const string MAP_KEY = "SaveMapData";
+    
     public static void SaveMap(NodeMapGenerator mapGenerator)
     {
         SaveMapData saveMap = new SaveMapData();
