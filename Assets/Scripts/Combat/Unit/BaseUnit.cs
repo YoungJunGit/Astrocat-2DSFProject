@@ -53,6 +53,8 @@ public abstract class BaseUnit : MonoBehaviour
 
         TimelinePublisher.SubscribeObserver(_stat.ModifierStat.Mediator);
 
+        
+
         if (HasSupporter)
             _supporterUnit.Initialize();
     }

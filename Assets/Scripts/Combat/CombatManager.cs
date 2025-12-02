@@ -70,6 +70,8 @@ public class CombatManager : ScriptableObject
             currentTurnUnit.combatEffectUnit.OnStartTurn();
             Debug.Log($"{currentTurnUnit.GetStat().CoreStat.Name}'s turn");
 
+            ForDebugControlEffect(currentTurnUnit, BUFF_TYPE.STUN);
+
             var context = new CombatSelectionContext();
             // Step 1 : Add Selections
             _selectorManager.AddSelectorExecuter(new ActionSelectorExecutor(currentTurnUnit, (action) => context.Action = action));
@@ -82,12 +84,23 @@ public class CombatManager : ScriptableObject
             await _actionExecuter.ExecuteRequest(currentTurnUnit, context.Action, context.Target);
 
             await UniTask.WaitUntil(() => EventHandler.IsEventEmpty());
+
+            currentTurnUnit.GetStat().ModifierStat.Mediator.TurnUpdate();
+
             await UniTask.WaitForSeconds(1);
         }
 
         DequeueCurrentUnit.UnregisterAll();
         // TODO: Check whether the enemy or the player wins
         // if()
+    }
+
+    private void ForDebugControlEffect(BaseUnit unit, BUFF_TYPE type)
+    {
+        Debug.Log($"{type} : {unit.GetStat().ModifierStat.ControlEffectsDic[type].CurrentValue}");
+
+        if(unit.GetStat().ModifierStat.ControlEffectsDic[type].CurrentValue > 0)
+            Debug.Log($"{unit.GetStat().CoreStat.Name} is under ControlEffect : {type}");
     }
 
     public void OnCharacterDie(BaseUnit unit)

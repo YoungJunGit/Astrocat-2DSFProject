@@ -21,7 +21,7 @@ MonoBehaviour:
     index: 1001
     Side: 1
     Name: CHARACTER_NAME_1001
-    Max_HP: 100
+    Max_HP: 10000
     Max_SP: 9
     Default_Attack: 40
     Default_Defense: 10
@@ -144,7 +144,7 @@ MonoBehaviour:
     index: 2001
     Side: 2
     Name: MONSTER_NAME_2001
-    Max_HP: 100
+    Max_HP: 10000
     Max_SP: 9
     Default_Attack: 40
     Default_Defense: 10

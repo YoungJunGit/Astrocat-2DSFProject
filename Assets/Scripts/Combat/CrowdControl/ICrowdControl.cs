@@ -154,13 +154,13 @@ public class Weakness : CrowdControlBase, IEnhancedCrowdControl
             0.0f,
             data.Element_Status_Duration_Turn
         ));
-        list.Add(new EffectInfo
-        (
-            data.Buff_Table_ID,
-            data.Element_Status_Name,
-            (float)data.Element_Status_Value[0],
-            data.Element_Status_Duration_Turn
-        ));
+        // list.Add(new EffectInfo
+        // (
+        //     data.Buff_Table_ID,
+        //     data.Element_Status_Name,
+        //     (float)data.Element_Status_Value[0],
+        //     data.Element_Status_Duration_Turn
+        // ));
     }
 }
 

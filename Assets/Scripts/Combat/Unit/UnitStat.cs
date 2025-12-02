@@ -6,6 +6,8 @@ using Utils;
 using ObservableCollections;
 using R3;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 #region [Core Stat]
 public class CoreStat
@@ -31,14 +33,43 @@ public class ModifierStat
     {
         _baseData = baseData;
         _mediator = new StatsMediator();
+
+        _mediator.ModifierChanged += () =>
+        {
+            RefreshControlEffects(BUFF_TYPE.STUN);
+            RefreshControlEffects(BUFF_TYPE.STRANGE);
+            RefreshControlEffects(BUFF_TYPE.SILENCE);
+        };
     }
 
     private readonly StatsMediator _mediator;
     public StatsMediator Mediator => _mediator;
 
-    
+    private readonly Dictionary<BUFF_TYPE, ReactiveProperty<int>> _controlEffectsDic = new()
+    {
+        { BUFF_TYPE.STUN, new ReactiveProperty<int>(0) },
+        { BUFF_TYPE.STRANGE, new ReactiveProperty<int>(0) },
+        { BUFF_TYPE.SILENCE, new ReactiveProperty<int>(0) }
+    };
+    public IReadOnlyDictionary<BUFF_TYPE, ReadOnlyReactiveProperty<int>> ControlEffectsDic => 
+        _controlEffectsDic.ToDictionary(kv => kv.Key, kv => kv.Value.ToReadOnlyReactiveProperty());
 
-    public float PercentageValue(BUFF_TYPE type, float defaultValue = 1.0f)
+    private void RefreshControlEffects(BUFF_TYPE type)
+    {
+        _controlEffectsDic[type].Value = ControlEffect(type);
+    }
+
+    private int ControlEffect(BUFF_TYPE type)
+    {
+        if (type != BUFF_TYPE.STUN && type != BUFF_TYPE.STRANGE && type != BUFF_TYPE.SILENCE)
+            return -1;
+
+        var q = new Query<int>(type, 0);
+        _mediator.PerformQuery(this, q);
+        return q.Value;
+    }
+
+    private float PercentageValue(BUFF_TYPE type, float defaultValue = 1.0f)
     {
         var q = new Query<float>(type, defaultValue);
         _mediator.PerformQuery(this, q);

@@ -8,7 +8,7 @@ public abstract class ControlEffect : BaseEffect<int>
 
     protected override BasicStatModifier<int> CreateModifier()
     {
-        return new BasicStatModifier<int>(buffType, UPDATE_TYPE.TURN, (v) => v++, new EffectTimer(1));
+        return new BasicStatModifier<int>(buffType, UPDATE_TYPE.TURN, (v) => v + 1, new EffectTimer(1));
     }
 }
 

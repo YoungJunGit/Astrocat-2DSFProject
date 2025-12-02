@@ -30,19 +30,21 @@ public class StatsMediator : IUpdateTimeline
     public event System.EventHandler<IQuery> Queries;
     public void PerformQuery<T>(object sender, Query<T> query) => Queries?.Invoke(sender, query);
 
+    public event Action ModifierChanged = delegate { };
+
     public void RoundUpdate()
     {
-        foreach (var modifier in modifiersDic[UPDATE_TYPE.ROUND])
+        for (int i = modifiersDic[UPDATE_TYPE.ROUND].Count - 1; i >= 0; i--)
         {
-            modifier.Timer.UpdateTimer();
+            modifiersDic[UPDATE_TYPE.ROUND][i].Timer.UpdateTimer();
         }
     }
 
     public void TurnUpdate()
     {
-        foreach(var modifier in modifiersDic[UPDATE_TYPE.TURN])
+        for(int i = modifiersDic[UPDATE_TYPE.TURN].Count - 1; i >= 0; i--)
         {
-            modifier.Timer.UpdateTimer();
+            modifiersDic[UPDATE_TYPE.TURN][i].Timer.UpdateTimer();
         }
     }
 
@@ -51,10 +53,14 @@ public class StatsMediator : IUpdateTimeline
         modifiersDic[modifier.UpdateType].Add(modifier);
         Queries += modifier.Handle;
 
+        ModifierChanged();
+
         modifier.OnDispose += _ =>
         {
             modifiersDic[modifier.UpdateType].Remove(modifier);
             Queries -= modifier.Handle;
+
+            ModifierChanged();
         };
     }
 }
