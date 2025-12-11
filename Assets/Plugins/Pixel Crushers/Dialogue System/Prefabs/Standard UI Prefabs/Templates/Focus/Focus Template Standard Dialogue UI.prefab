@@ -926,10 +926,10 @@ Animator:
   m_GameObject: {fileID: 124950}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 62b8011547f389344ba48f87b2ada51c, type: 2}
+  m_Controller: {fileID: 9100000, guid: e51d1c30558a6b649859042d8e7d768e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   focusAnimationTrigger: Focus
   unfocusAnimationTrigger: Unfocus
   onlyShowNPCPortraits: 0
-  useAnimatedPortraits: 0
+  useAnimatedPortraits: 1
   usePortraitNativeSize: 1
   waitForOpen: 0
   waitForClose: 0
@@ -2959,6 +2959,7 @@ GameObject:
   - component: {fileID: 11440850}
   - component: {fileID: 11464562}
   - component: {fileID: 22548902}
+  - component: {fileID: 8164063624179972461}
   m_Layer: 5
   m_Name: Portrait Image
   m_TagString: Untagged
@@ -3055,6 +3056,28 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!95 &8164063624179972461
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164852}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &165838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3304,6 +3327,7 @@ GameObject:
   - component: {fileID: 11488448}
   - component: {fileID: 11479490}
   - component: {fileID: 22536114}
+  - component: {fileID: 4504353037257221423}
   m_Layer: 5
   m_Name: Portrait Image
   m_TagString: Untagged
@@ -3400,6 +3424,28 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!95 &4504353037257221423
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178082}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d6f20386f27cfd4186a86c5e3e9da6d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &179398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3578,7 +3624,7 @@ MonoBehaviour:
   focusAnimationTrigger: Focus
   unfocusAnimationTrigger: Unfocus
   onlyShowNPCPortraits: 0
-  useAnimatedPortraits: 0
+  useAnimatedPortraits: 1
   usePortraitNativeSize: 1
   waitForOpen: 0
   waitForClose: 0
