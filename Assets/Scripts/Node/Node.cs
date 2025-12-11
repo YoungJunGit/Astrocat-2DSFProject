@@ -211,6 +211,7 @@ public class Node : MonoBehaviour, IUpdateObserver
         }
 
         _mapGenerator.nowNode = this;
+        _mapGenerator.nowNodeIdx = idx;
 
         if (_mapGenerator.skipNodeProcessing)
         {
@@ -256,6 +257,9 @@ public class Node : MonoBehaviour, IUpdateObserver
             }
         }
 
+        // 노드 클릭 시, 맵 데이터 저장
+        SaveLoadManager.SaveMap(_mapGenerator);
+
     }
 
     /*------------------------------------------------------------
@@ -295,7 +299,6 @@ public class Node : MonoBehaviour, IUpdateObserver
     async void handleEnemy()
     {
         Debug.Log("적 스테이지로 진입");
-        SaveLoadManager.SaveMap(_mapGenerator);
         await _scene.SceneHandler.FadeScreen();
         _scene.SceneHandler.LoadingScreen(nextScene);
     }

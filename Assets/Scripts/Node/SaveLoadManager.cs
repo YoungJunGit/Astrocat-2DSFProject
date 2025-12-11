@@ -25,7 +25,8 @@ public static class SaveLoadManager
 
             n.isVisited = node.visited;
             n.isActive = node.isActive;
-
+            n.isConnected = node.connected;
+            saveMap.nowNodeIdx = mapGenerator.nowNodeIdx;
             n.position = node.transform.position;
 
             saveMap.saveNodeDatas.Add(n);
