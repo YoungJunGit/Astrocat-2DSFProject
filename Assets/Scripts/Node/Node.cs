@@ -311,6 +311,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     void handleMiddle()
     {
         Debug.Log("Midpoint");
+        _mapGenerator.toNextNode();
     }
 
     void handleFinal()
@@ -332,6 +333,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     void handleRandom()
     {
         Debug.Log("Execute random process");
+        _mapGenerator.toNextNode();
     }
 
     private void OnDestroy()
