@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using Cysharp.Threading.Tasks;
 using DataEnum;
@@ -67,27 +68,49 @@ public class CombatManager : ScriptableObject
 
             await UniTask.WaitUntil(() => !_textManager.IsTextOn);
 
-            currentTurnUnit.combatEffectUnit.OnStartTurn();
+            currentTurnUnit.CEUnit.OnStartTurn();
             Debug.Log($"{currentTurnUnit.GetStat().CoreStat.Name}'s turn");
 
-            var context = new CombatSelectionContext();
-            // Step 1 : Add Selections
-            _selectorManager.AddSelectorExecuter(new ActionSelectorExecutor(currentTurnUnit, (action) => context.Action = action));
-            _selectorManager.AddSelectorExecuter(new UnitSelectorExecutor(currentTurnUnit, context, (bag) => context.Target = bag));
+            ForDebugControlEffect(currentTurnUnit, ELEMENT_TYPE.PHYSICAL);
 
-            // Step 2 : Execute Selections
-            await _selectorManager.ExecuteAll();
+            if (currentTurnUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.PHYSICAL].CurrentValue <= 0)
+            {
+                var context = new CombatSelectionContext();
+                // Step 1 : Add Selections
+                _selectorManager.AddSelectorExecuter(new ActionSelectorExecutor(currentTurnUnit, (action) => context.Action = action));
+                _selectorManager.AddSelectorExecuter(new UnitSelectorExecutor(currentTurnUnit, context, (bag) => context.Target = bag));
 
-            // Step 3 : Execute Action to Target
-            await _actionExecuter.ExecuteRequest(currentTurnUnit, context.Action, context.Target);
+                // Step 2 : Execute Selections
+                await _selectorManager.ExecuteAll();
+
+                // Step 3 : Execute Action to Target
+                await _actionExecuter.ExecuteRequest(currentTurnUnit, context.Action, context.Target);
+            }
 
             await UniTask.WaitUntil(() => EventHandler.IsEventEmpty());
             await UniTask.WaitForSeconds(1);
+
+            currentTurnUnit.TurnUpdate();
         }
 
         DequeueCurrentUnit.UnregisterAll();
         // TODO: Check whether the enemy or the player wins
         // if()
+    }
+
+    private void ForDebugControlEffect(BaseUnit unit, ELEMENT_TYPE type)
+    {
+        var controlCount = unit.CCUnit.EffectsCountDic[type].CurrentValue;
+        if (controlCount > 0)
+        {
+            string str = $"[{type}]\nStun : {unit.CCUnit.EffectsCountDic[type].CurrentValue}";
+            var cc = unit.CCUnit.GetNonStackCC(type);
+            if (cc != null && cc is AttributeControl ca)
+            {
+                str += $"\nWeakness : {ca.Effect.TimerTmp.Remain}";
+            }
+            Debug.Log(str);
+        }
     }
 
     public void OnCharacterDie(BaseUnit unit)

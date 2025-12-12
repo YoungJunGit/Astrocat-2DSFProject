@@ -14,6 +14,7 @@ public class NormalDamageCalculator : ICalculator
         bool isCritical = FunctionUtils.MakeChance(caster.GetStat().ModifierStat.CriticalChance);
 
         // TODO : calculate value using specific formula
+        damage = damage * target.GetStat().ModifierStat.DamageTakenMultiplier;
 
         return new Damage(damage, isCritical);
     }

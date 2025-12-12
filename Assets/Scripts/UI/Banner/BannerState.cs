@@ -1,5 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public interface IBannerState
 {
@@ -32,8 +34,24 @@ public class BannerDestroy : IBannerState
 
 public class BannerFaint : IBannerState
 {
+    private readonly bool isFade;
+    public BannerFaint(bool isFade)
+    {
+        this.isFade = isFade;
+    }
     public void PlayState(Transform transform)
     {
-        
+        float value;
+        if(isFade)
+            value = 0.7f;
+        else
+            value = 1f;
+
+        var imgs = transform.GetComponentsInChildren<Image>();
+
+        foreach(var img in imgs)
+        {
+            img.DOFade(value, 0.5f);
+        }
     }
 }

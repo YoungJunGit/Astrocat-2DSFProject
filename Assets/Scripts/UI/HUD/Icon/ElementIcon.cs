@@ -7,8 +7,8 @@ public class ElementIcon : BaseIcon<ELEMENT_TYPE>
 {
     protected override ELEMENT_TYPE[] CountableIconList { get; } = new ELEMENT_TYPE[]
     {
-        ELEMENT_TYPE.PHYSICAL,
-        ELEMENT_TYPE.VOID,
-        ELEMENT_TYPE.HOLY
+        ELEMENT_TYPE.FIRE,
+        ELEMENT_TYPE.RADIATION,
+        ELEMENT_TYPE.GRAVITY
     };
 }

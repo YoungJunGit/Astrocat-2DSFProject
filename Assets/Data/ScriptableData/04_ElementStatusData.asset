@@ -75,7 +75,7 @@ MonoBehaviour:
     index: 2001
     Buff_Table_ID: 30001023
     Element_Status_Value:
-    - 1.3
+    - 0.3
     Element_Status_Duration_Turn: 1
     Element_Status_Name: ELEMENT_STATUS_NAME_WEAKNESS
   - Element_Status_ID: 40022002
@@ -84,7 +84,7 @@ MonoBehaviour:
     index: 2002
     Buff_Table_ID: 30001025
     Element_Status_Value:
-    - 1.5
+    - 0.7
     Element_Status_Duration_Turn: 0
     Element_Status_Name: ELEMENT_STATUS_NAME_OVERHEAT
   - Element_Status_ID: 40022003

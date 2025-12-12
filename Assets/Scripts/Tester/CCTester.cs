@@ -65,7 +65,7 @@ public class CCTester : MonoBehaviour
         var units = unitManager.GetUnit(removeSide);
         var target = units[removeIndex];
 
-        CrowdControlManager.RemoveCrowdControl(element_Type, target);
+        crowdControlManager.RemoveCrowdControl(element_Type, target);
     }
 
     public void DebugCC()
@@ -95,13 +95,13 @@ public class CCTester : MonoBehaviour
         foreach (var element in element_Type)
         {
             str2 += $"{element.ToString()} : ";
-            IReadOnlyList<ICrowdControl> crowdControls = unit.crowdControlUnit.EffectDictionary[element];
+            IReadOnlyList<ELEMENT_STATUS_CATEGORY> ccList = unit.CCUnit.CurrentEffects[element];
 
             int index = 0;
-            foreach (var c in crowdControls)
+            foreach (var cc in ccList)
             {
-                str2 += $"{c.GetType()}";
-                if(!(++index == crowdControls.Count))
+                str2 += $"{cc}";
+                if(!(++index == ccList.Count))
                     str2 += ", ";
             }
             str2 += "\n";

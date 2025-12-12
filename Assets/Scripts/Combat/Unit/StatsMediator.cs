@@ -18,7 +18,7 @@ public class Query<TValue> : IQuery
     }
 }
 
-public class StatsMediator : IUpdateTimeline
+public class StatsMediator : IUpdatable
 {
     private readonly Dictionary<UPDATE_TYPE, List<StatModifier>> modifiersDic = new()
     {
@@ -30,19 +30,19 @@ public class StatsMediator : IUpdateTimeline
     public event System.EventHandler<IQuery> Queries;
     public void PerformQuery<T>(object sender, Query<T> query) => Queries?.Invoke(sender, query);
 
-    public void RoundUpdate()
+    public void OnRoundUpdate()
     {
-        foreach (var modifier in modifiersDic[UPDATE_TYPE.ROUND])
+        for (int i = modifiersDic[UPDATE_TYPE.ROUND].Count - 1; i >= 0; i--)
         {
-            modifier.Timer.UpdateTimer();
+            modifiersDic[UPDATE_TYPE.ROUND][i].Timer.UpdateTimer();
         }
     }
 
-    public void TurnUpdate()
+    public void OnTurnUpdate()
     {
-        foreach(var modifier in modifiersDic[UPDATE_TYPE.TURN])
+        for(int i = modifiersDic[UPDATE_TYPE.TURN].Count - 1; i >= 0; i--)
         {
-            modifier.Timer.UpdateTimer();
+            modifiersDic[UPDATE_TYPE.TURN][i].Timer.UpdateTimer();
         }
     }
 

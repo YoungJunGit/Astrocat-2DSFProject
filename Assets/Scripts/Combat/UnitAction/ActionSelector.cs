@@ -63,40 +63,40 @@ public class ActionSelector : BaseSelector
                         Debug.Log(unitAction);
                         break;
                     case 2:
-                        _soundService.PlayEffectSound("Start_Menu");
-                        var skillID = playerUnit.GetStat().CoreStat.SkillsID;
+                        // _soundService.PlayEffectSound("Start_Menu");
+                        // var skillID = playerUnit.GetStat().CoreStat.SkillsID;
 
-                        skillName.Clear();
-                        foreach (var skill in skillID)
-                        {
-                            CombatUtils.UnitSkillNameDictionary.TryGetValue(skill, out var name);
+                        // skillName.Clear();
+                        // foreach (var skill in skillID)
+                        // {
+                        //     CombatUtils.UnitSkillNameDictionary.TryGetValue(skill, out var name);
 
-                            if (name != null)
-                                skillName.Add(name);
-                        }
-                        if (skillName.Count == 0)
-                        {
-                            selector.gameObject.SetActive(false);
-                            return;
-                        }
+                        //     if (name != null)
+                        //         skillName.Add(name);
+                        // }
+                        // if (skillName.Count == 0)
+                        // {
+                        //     selector.gameObject.SetActive(false);
+                        //     return;
+                        // }
 
-                        selector.EnableSkillSelectionButtons(skillName.ToArray());
+                        // selector.EnableSkillSelectionButtons(skillName.ToArray());
 
-                        _selectedSkillIndex = 0;
-                        await UniTask.WaitUntil(() => _selectedSkillIndex != 0 || _selectedActionType != 2);
+                        // _selectedSkillIndex = 0;
+                        // await UniTask.WaitUntil(() => _selectedSkillIndex != 0 || _selectedActionType != 2);
 
-                        if (_selectedSkillIndex != 0)
-                        {
-                            unitAction = unitActionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
-                            selector.gameObject.SetActive(false);
-                            selectActionComplete = true;
-                        }
+                        // if (_selectedSkillIndex != 0)
+                        // {
+                        //     unitAction = unitActionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
+                        //     selector.gameObject.SetActive(false);
+                        //     selectActionComplete = true;
+                        // }
 
-                        selector.DisableSkillSelectionButtons();
+                        // selector.DisableSkillSelectionButtons();
                         break;
                     case 3:
-                        selectActionComplete = true;
-                        _soundService.PlayEffectSound("Item_Select");
+                        // _soundService.PlayEffectSound("Item_Select");
+                        // selectActionComplete = true;
                         // TODO : Use Item
                         break;
                 }

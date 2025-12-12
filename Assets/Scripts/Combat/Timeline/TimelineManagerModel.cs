@@ -11,6 +11,7 @@ public class TimelineManagerModel
 
     public IReadOnlyObservableList<IBanner> BannerList => _timelineModel.BannerList;
     public ReadOnlyReactiveProperty<int> CurRound      => _timelineModel.curRound.ToReadOnlyReactiveProperty();
+    public IBanner GetBanner(UnitStat stat)            => BannerList.ToList().Find(b => b.CompareStat(stat));
 
     public TimelineManagerModel()
     {
