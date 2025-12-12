@@ -69,7 +69,6 @@ public class GameScene : AbstractScene
         qteManager.Init();
         selectorManager.Init();
         crowdControlManager.Init();
-        combatEffectManager.Init();
 
         inputHandler.Init();
 

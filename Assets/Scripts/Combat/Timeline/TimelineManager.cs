@@ -5,6 +5,7 @@ using R3;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using DataEnum;
 
 public class TimelineManager : MonoBehaviour
 {
@@ -54,6 +55,30 @@ public class TimelineManager : MonoBehaviour
                                           textManager.ShowNextRoundText(round);
                                       })
                                       .AddTo(this);
+        foreach(var unit in units)
+        {
+            unit.CCUnit.EffectsCountDic[ELEMENT_TYPE.PHYSICAL].DistinctUntilChanged()
+                .Subscribe(count =>
+                {
+                    if(count > 0)
+                    {
+                        var list = _timelineManagerModel.BannerList.Where(b => b.CompareStat(unit.GetStat())).ToList();
+                        foreach(var banner in list)
+                        {
+                            banner.SetState(new BannerFaint(true));
+                        }
+                    }
+                    else
+                    {
+                        var list = _timelineManagerModel.BannerList.Where(b => b.CompareStat(unit.GetStat())).ToList();
+                        foreach (var banner in list)
+                        {
+                            banner.SetState(new BannerFaint(false));
+                        }
+                    }
+                })
+                .AddTo(this);
+        }
     }
 
     public BaseUnit Pop(List<BaseUnit> unitList)

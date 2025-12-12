@@ -9,9 +9,16 @@ using R3;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
+
+public interface IUpdatable
+{
+    public void OnRoundUpdate();
+    public void OnTurnUpdate();
+}
 
 [RequireComponent(typeof(UnitAttachments))]
-public abstract class BaseUnit : MonoBehaviour
+public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 {
     [SerializeField, Required]
     private AnimationHandler _animHandler;
@@ -28,9 +35,11 @@ public abstract class BaseUnit : MonoBehaviour
     [HideInInspector] 
     public UnitAttachments Attachments;
     public UnitCombatInfo CombatInfo;
-    public CrowdControlUnit crowdControlUnit;
-    public CombatEffectUnit combatEffectUnit;
+    public CrowdControlUnit CCUnit;
+    public CombatEffectUnit CEUnit;
     public Action<BaseUnit> m_FinishedDying;
+
+    private readonly List<IUpdatable> _updatableList = new();
 
     DisposableBag d;
 
@@ -38,8 +47,8 @@ public abstract class BaseUnit : MonoBehaviour
     {
         Attachments      = GetComponent<UnitAttachments>();
         CombatInfo       = new UnitCombatInfo();
-        crowdControlUnit = new CrowdControlUnit();
-        combatEffectUnit = new CombatEffectUnit();
+        CCUnit = new CrowdControlUnit();
+        CEUnit = new CombatEffectUnit();
         _stat            = new UnitStat(data, priority);
 
         _animHandler.Init();
@@ -48,12 +57,10 @@ public abstract class BaseUnit : MonoBehaviour
             .Get(out _soundService)
             .Get(out _textManager);
 
-        // Replace들만 합치기 (키 포함)
-        var replaceStream = crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveReplace()).Merge();
+        TimelinePublisher.SubscribeObserver(this);
 
-        TimelinePublisher.SubscribeObserver(_stat.ModifierStat.Mediator);
-
-        
+        _updatableList.Add(_stat.ModifierStat.Mediator);
+        _updatableList.Add(CCUnit);
 
         if (HasSupporter)
             _supporterUnit.Initialize();
@@ -106,7 +113,23 @@ public abstract class BaseUnit : MonoBehaviour
             Attachments.GetSpriteRenderer().sortingLayerName = "Character";
         }
 
-        TimelinePublisher.DiscribeObserver(_stat.ModifierStat.Mediator);
+        TimelinePublisher.DiscribeObserver(this);
+    }
+
+    public void RoundUpdate()
+    {
+        foreach(var updatable in _updatableList)
+        {
+            updatable.OnRoundUpdate();
+        }
+    }
+
+    public void TurnUpdate()
+    {
+        foreach (var updatable in _updatableList)
+        {
+            updatable.OnTurnUpdate();
+        }
     }
 
     public AnimationHandler GetAnimationHandler()       => _animHandler;

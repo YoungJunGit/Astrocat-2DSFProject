@@ -3,26 +3,18 @@ using DataEnum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public interface ICrowdControlManager
 {
     public void AddCrowdControl(ELEMENT_TYPE element_type, BaseUnit target, BaseUnit caster);
+    public void RemoveCrowdControl(ELEMENT_TYPE element_type, BaseUnit target);
 }
 
 [CreateAssetMenu(fileName = "CrowdControlManager", menuName = "Manager/CrowdControlManager", order = 1)]
 public class CrowdControlManager : ScriptableObject, ICrowdControlManager
 {
-    private readonly Dictionary<ELEMENT_TYPE, (ELEMENT_STATUS_CATEGORY Basic, ELEMENT_STATUS_CATEGORY Enhanced)> _elementDic = new()
-    {
-        { ELEMENT_TYPE.PHYSICAL, (ELEMENT_STATUS_CATEGORY.STUN, ELEMENT_STATUS_CATEGORY.WEAKNESS) },
-        { ELEMENT_TYPE.FIRE, (ELEMENT_STATUS_CATEGORY.BURN, ELEMENT_STATUS_CATEGORY.OVERHEAT) },
-        { ELEMENT_TYPE.RADIATION, (ELEMENT_STATUS_CATEGORY.CONTAMINATION, ELEMENT_STATUS_CATEGORY.EXPOSURE) },
-        { ELEMENT_TYPE.GRAVITY, (ELEMENT_STATUS_CATEGORY.SUPPRESS, ELEMENT_STATUS_CATEGORY.BIND) },
-        { ELEMENT_TYPE.VOID, (ELEMENT_STATUS_CATEGORY.STRANGE, ELEMENT_STATUS_CATEGORY.CORRODE) },
-        { ELEMENT_TYPE.HOLY, (ELEMENT_STATUS_CATEGORY.SILENCE, ELEMENT_STATUS_CATEGORY.DOMINATE) },
-    };
-
     public record CCContext(ElementStatusData Data, ICombatEffectManager effectManager, BaseUnit Target, BaseUnit Caster)
     {
         public ElementStatusData Data { get; } = Data;
@@ -43,85 +35,100 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
 
     public void AddCrowdControl(ELEMENT_TYPE element_type, BaseUnit target, BaseUnit caster)
     {
-        Action updateChaos = null;
-        var previousElement = target.crowdControlUnit.Previous_Element_Type;
+        var previousElement = target.CCUnit.Previous_Element_Type;
         if (previousElement != element_type && previousElement != ELEMENT_TYPE.NONE)
         {
-            // Check element type dictionary
-            if (target.crowdControlUnit.EffectDictionary.TryGetValue(ELEMENT_TYPE.ETC, out var chaosList))
+            #region [Chaos상태이상 저장]
+            var chaos = target.CCUnit.GetNonStackCC(ELEMENT_TYPE.ETC) as IChaos;
+            // If Chaos Element_Status_Effect not exist
+            if (chaos == null)
             {
-                // If Chaos Element_Status_Effect not exist
-                if (chaosList.Count == 0)
+                target.CCUnit.Add(ELEMENT_TYPE.ETC);
+                var crowdControl = CrowdControlFactory.CreateCC(ELEMENT_STATUS_CATEGORY.CHAOS);
+                target.CCUnit.AddNonStackCC(ELEMENT_TYPE.ETC, crowdControl);
+                var context = CreateContext(crowdControl, target, caster);
+                if (context != null)
                 {
-                    var crowdControl = CrowdControlFactory.CreateCC(ELEMENT_STATUS_CATEGORY.CHAOS);
-                    target.crowdControlUnit.Add(ELEMENT_TYPE.ETC, crowdControl);
-                    var context = CreateContext(crowdControl, target, caster);
-                    if (crowdControl != null && context != null)
-                    {
-                        updateChaos = () => crowdControl.ApplyCrowdControl(context);
-                    }
-                }
-                // If Chaos Element_Status_Effect already exists -> Save Update Action
-                else
-                {
-                    var context = CreateContext(chaosList[0], target, caster);
-                    if (chaosList[0] != null && context != null)
-                    {
-                        updateChaos = () => chaosList[0].ApplyCrowdControl();
-                    }
+                    crowdControl.ApplyCrowdControl(context);
                 }
             }
+            // If Chaos Element_Status_Effect already exists -> Save Update Action
             else
             {
-                Debug.LogWarning($"There is no Element Type Such as : {element_type}");
+                chaos.ReapplyCrowdControl(target.CCUnit.Previous_Element_Type);
             }
+            #endregion
         }
 
         // Check element type dictionary
-        if (target.crowdControlUnit.EffectDictionary.TryGetValue(element_type, out var list))
+        if (target.CCUnit.CurrentEffects.TryGetValue(element_type, out var list))
         {
-            ICrowdControl crowdControl;
+            #region [상태이상 정보만 저장]
+            ELEMENT_STATUS_CATEGORY category;
             // If Basic Element_Status_Effect exists
-            if (list.Count > 0 && list.FirstOrDefault(e => e is IBasicCrowdControl) is ICrowdControl found)
+            if (list.Count > 0 && list.ToList().Exists(e => e == ElementStatusRuleTable.GetBasic(element_type)))
             {
-                ELEMENT_STATUS_CATEGORY category = _elementDic[element_type].Enhanced;
-                crowdControl = CrowdControlFactory.CreateCC(category);
-                target.crowdControlUnit.Upgrade(element_type, found, crowdControl);
+                category = ElementStatusRuleTable.GetEnhanced(element_type);
             }
             // If Basic Element_Status_Effect not exist
             else
             {
-                ELEMENT_STATUS_CATEGORY category = _elementDic[element_type].Basic;
-                crowdControl = CrowdControlFactory.CreateCC(category);
-                target.crowdControlUnit.Add(element_type, crowdControl);
+                category = ElementStatusRuleTable.GetBasic(element_type);
             }
+            target.CCUnit.Add(element_type);
+            #endregion
 
+            #region [ICrowdControl 저장]
+            ICrowdControl crowdControl = CrowdControlFactory.CreateCC(category);
             var context = CreateContext(crowdControl, target, caster);
-            if (crowdControl != null && context != null)
-                crowdControl.ApplyCrowdControl(context);
+            if (context != null)
+            {
+                // 스택기반 상태이상 저장
+                if (ElementStatusRuleTable.IsStackableElement(element_type))
+                {
+                    crowdControl.ApplyCrowdControl(context);
+                    target.CCUnit.AddStackCC(element_type, crowdControl);
+                }
+                // 지속턴기반 상태이상 저장
+                else
+                {
+                    var ac = target.CCUnit.GetNonStackCC(element_type) as AttributeControl;
+                    // 만약 AttributeControl 상태이상이 저장되어있지 않은 상태라면 저장하기
+                    if (ac == null)
+                    {
+                        crowdControl.ApplyCrowdControl(context);
+                        target.CCUnit.AddNonStackCC(element_type, crowdControl);
+                    }
+                    // 만약 AttributeControl 상태이상이 저장되어있다면 
+                    else
+                    {
+                        // 새로 추가될 예정이었던 상태이상이 중첩 상태이상이라면 Duration++
+                        if(crowdControl is AttributeControl)
+                        {
+                            ac.AddDuration();
+                        }
+                    }
+                }
+            }
+            #endregion
         }
         else
         {
             Debug.LogWarning($"There is no Element Type Such as : {element_type}");
         }
-
-        // Update Chaos Effect
-        updateChaos?.Invoke();
     }
 
-    public static void DecreaseCrowdControl(ELEMENT_TYPE element_type, BaseUnit target)
+    public void RemoveCrowdControl(ELEMENT_TYPE element_type, BaseUnit target)
     {
-        
-    }
+        target.CCUnit.Remove(element_type);
 
-    public static void RemoveCrowdControl(ELEMENT_TYPE element_type, BaseUnit target)
-    {
-        if (target.crowdControlUnit.EffectDictionary.TryGetValue(element_type, out var foundList))
+        if(ElementStatusRuleTable.IsStackableElement(element_type))
         {
-            for (var i = foundList.Count - 1; i >= 0; i--)
-            {
-                target.crowdControlUnit.Remove(element_type, foundList[i]);
-            }
+            target.CCUnit.RemoveStackCC(element_type);
+        }
+        else
+        {
+            target.CCUnit.RemoveNonStackCC(element_type);
         }
     }
 
@@ -129,7 +136,7 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
     {
         var elementStatusData = _dataHandler.FindElementStatusData(cc.ID);
 
-        if(elementStatusData == null)
+        if (elementStatusData == null)
         {
             Debug.LogWarning($"No CC Data : {cc}");
             return null;

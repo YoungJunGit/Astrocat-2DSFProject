@@ -27,38 +27,34 @@ public abstract class BaseHUD : MonoBehaviour
 
     public virtual void Initialize(BaseUnit unit)
     {
-        var addStream = unit.crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveAdd().Select(_ => new { Element = kv.Key, List = kv.Value})).Merge();
-        var removeStream = unit.crowdControlUnit.EffectDictionary.Select(kv => kv.Value.ObserveRemove().Select(_ => new { Element = kv.Key, List = kv.Value})).Merge();
+        var stream = unit.CCUnit.EffectsCountDic.Select(kv => kv.Value.Select(_ => new { Element = kv.Key, Count = kv.Value })).Merge();
 
-        addStream.Subscribe(value =>
+        stream.Subscribe(value =>
             {
                 var icon = _ccIconList.Find(e => e.IconType == value.Element);
-                // Update Exist Icon
-                if (icon != null)
-                {
-                    
-                }
-                // Create Icon
-                else
-                {
-                    icon = CreateIcon(_ccIconList, _crowdControlRectTransform);
-                    icon.Init(value.Element, value.List.Count);
-                    icon.enabled = true;
-                }
-            }
-        );
 
-        removeStream.Subscribe(value =>
-            {
-                if(value.List.Count == 0)
+                // 삭제
+                if (value.Count.CurrentValue <= 0)
                 {
-                    var icon = _ccIconList.Find(e => e.IconType == value.Element);
                     if (icon != null)
                     {
                         _ccIconList.Remove(icon);
                         Destroy(icon.gameObject);
                     }
+                    return;
                 }
+
+                // 생성
+                if (icon == null)
+                {
+                    icon = CreateIcon(_ccIconList, _crowdControlRectTransform);
+                    icon.Init(value.Element, value.Count.CurrentValue);
+                    icon.enabled = true;
+                    return;
+                }
+
+                // 갱신 (이게 핵심)
+                icon.UpdateIcon(value.Count.CurrentValue);
             }
         );
     }

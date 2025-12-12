@@ -6,6 +6,7 @@ using UnityEngine;
 using R3;
 using Unity.Collections;
 using Unity.VisualScripting;
+using DataEnum;
 
 public class CombatEffectUnit
 {
@@ -16,7 +17,6 @@ public class CombatEffectUnit
     }
 
     private readonly ObservableList<(string Name, IEffectable Value)> _normalEffectList = new();
-
     public IReadOnlyObservableList<(string Name, IEffectable Value)> NormalEffectList => _normalEffectList;
 
     private readonly Dictionary<string, Action> onEachTurnList = new();
