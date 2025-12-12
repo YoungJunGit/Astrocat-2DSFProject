@@ -108,6 +108,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     private const string MAP_KEY = "SaveMapData";
 
     public Node[,] Map => map;
+    private List<List<Node>> _map;
 
     /*------------------------------------------------------------
     Executed when the value in the inspector is changed:Implemented to initialize when added because serializable classes like FixedNodeData and MapNodeData cannot use constructors
@@ -295,6 +296,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     void createMap()
     {
         map = new Node[floorNum, routeNum];
+
         int index = 0;
 
         if (makeStart)
@@ -452,6 +454,22 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         }
     }
 
+    private void LoadConnectInfo()
+    {
+        foreach(var node in map)
+        {
+            foreach(var nextNodeIdx in node.nextNodesIdx)
+            {
+                foreach(var nextNode in map)
+                {
+                    if(nextNodeIdx == nextNode.idx)
+                    {
+                        node.nextNodes.Add(nextNode);
+                    }
+                }
+            }
+        }
+    }
 
     /*------------------------------------------------------------
     Set node size
@@ -489,7 +507,11 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                         {
                             if(index == nextNode.idx)
                             {
-                                nodes.Enqueue(nextNode);
+                                if (nextNode.nodeType != NodeType.Empty)
+                                {
+                                    nodes.Enqueue(nextNode);
+                                    tmp.Clear();
+                                }
                             }
                         }
                     }
@@ -497,30 +519,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 else
                 {
                     tmp.Add(node);
-                }
-            }
-            // 층을 돌아다니면서 이미 방문한 노드가 있다면 패스
-            for(int i = 0; i < floorNum;i++)
-            {
-                for(int j = 0;j < routeNum;j++)
-                {
-                    // 현재 노드가 방문했던 노드라면 그 노드 패스
-                    if (map[i, j].visited)
-                    {
-                        passedSameFloor(map[i, j]);
-                        break;
-                    }
-                    // 한 층을 다 방문하고 방문한 적이 없던 층이라면 그 층부터 시작
-                    else if (j == routeNum - 1 && map[i,j].visited == false)
-                    {
-                        for(int k = 0;k < routeNum;k++)
-                        {
-                            if(map[i,k].nodeType != NodeType.Empty)
-                                tmp.Add(map[i, k]);
-                        }
-                        activeRouteNodeArray = tmp.ToArray();
-                        return;
-                    }
                 }
             }
         }

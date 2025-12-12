@@ -274,26 +274,31 @@ public class Node : MonoBehaviour, IUpdateObserver
     void handleCamp()
     {
         Debug.Log("Open a camp");
+        _mapGenerator.toNextNode();
     }
 
     void handleShop()
     {
         Debug.Log("Open a shop");
+        _mapGenerator.toNextNode();
     }
 
     void handleEvent()
     {
         Debug.Log("Execute event");
+        _mapGenerator.toNextNode();
     }
 
     void handleTreasure()
     {
         Debug.Log("Obtain treasure");
+        _mapGenerator.toNextNode();
     }
 
     void handleTrap()
     {
         Debug.Log("Execute trap");
+        _mapGenerator.toNextNode();
     }
 
     async void handleEnemy()
