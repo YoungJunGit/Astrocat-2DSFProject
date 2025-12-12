@@ -16,6 +16,7 @@ public class SaveNodeData
 
     public bool isVisited;
     public bool isActive;
+    public bool isConnected;
 
     public Vector3 position = new Vector3(0,0,0);
 }

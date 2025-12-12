@@ -211,6 +211,7 @@ public class Node : MonoBehaviour, IUpdateObserver
         }
 
         _mapGenerator.nowNode = this;
+        _mapGenerator.nowNodeIdx = idx;
 
         if (_mapGenerator.skipNodeProcessing)
         {
@@ -256,6 +257,9 @@ public class Node : MonoBehaviour, IUpdateObserver
             }
         }
 
+        // 노드 클릭 시, 맵 데이터 저장
+        SaveLoadManager.SaveMap(_mapGenerator);
+
     }
 
     /*------------------------------------------------------------
@@ -270,32 +274,36 @@ public class Node : MonoBehaviour, IUpdateObserver
     void handleCamp()
     {
         Debug.Log("Open a camp");
+        _mapGenerator.toNextNode();
     }
 
     void handleShop()
     {
         Debug.Log("Open a shop");
+        _mapGenerator.toNextNode();
     }
 
     void handleEvent()
     {
         Debug.Log("Execute event");
+        _mapGenerator.toNextNode();
     }
 
     void handleTreasure()
     {
         Debug.Log("Obtain treasure");
+        _mapGenerator.toNextNode();
     }
 
     void handleTrap()
     {
         Debug.Log("Execute trap");
+        _mapGenerator.toNextNode();
     }
 
     async void handleEnemy()
     {
         Debug.Log("적 스테이지로 진입");
-        SaveLoadManager.SaveMap(_mapGenerator);
         await _scene.SceneHandler.FadeScreen();
         _scene.SceneHandler.LoadingScreen(nextScene);
     }

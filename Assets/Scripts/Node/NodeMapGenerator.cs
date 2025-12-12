@@ -4,6 +4,8 @@ using DG.Tweening;
 using S3MG;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.VisualScripting.Antlr3.Runtime;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -96,14 +98,17 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField] public MapNodeData[] mapNodeData;
 
     [SerializeField] public Node nowNode { get; set; }
+    public int nowNodeIdx { get; set; }
 
     Node startNode;
     Node finalNode;
     Node[,] map;
     bool isCompleted = false;
     List<Transform> pathsTransform;
+    private const string MAP_KEY = "SaveMapData";
 
-    public Node[,]Map => map;
+    public Node[,] Map => map;
+    private List<List<Node>> _map;
 
     /*------------------------------------------------------------
     Executed when the value in the inspector is changed:Implemented to initialize when added because serializable classes like FixedNodeData and MapNodeData cannot use constructors
@@ -124,7 +129,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 if (node.nodeData == null) node.init();
             }
         }
-        if(cam != null)
+        if (cam != null)
         {
             cam.transform.rotation = Quaternion.Euler(camAngleX, camAngleY, camAngleZ);
         }
@@ -154,11 +159,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         preGenerated();
         createMap();
         selectFirstNode();
-        for (int i = 0; i < activeRouteNodeArray.Length; i++)
-        {
-            connectingNodes(activeRouteNodeArray[i]);
-        }
-
+        SetPaths();
         hideEmpty();
         setNode();
         activeNodeSelect();
@@ -295,6 +296,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     void createMap()
     {
         map = new Node[floorNum, routeNum];
+
         int index = 0;
 
         if (makeStart)
@@ -310,7 +312,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             index++;
         }
 
-        if(ES3.KeyExists("SaveMapData"))
+        if (ES3.KeyExists(MAP_KEY))
         {
             LoadCreateMap();
         }
@@ -356,14 +358,66 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         limitMaxZ = finalNode.transform.position.z - cameraPositionZOffset;
     }
 
+    private void SetPaths()
+    {
+        // 저장된 맵 데이터가 있다면 기존 길 정보 부르기
+        if(ES3.KeyExists(MAP_KEY))
+        {
+            LoadPaths();
+        }
+        // 새로 길 생성
+        else
+        {
+            for (int i = 0; i < activeRouteNodeArray.Length; i++)
+            {
+                connectingNodes(activeRouteNodeArray[i]);
+            }
+        }
+    }
+
+    private void LoadPaths()
+    {
+        Queue<Node> temp  = new Queue<Node>();
+        if (makeStart)
+        {
+            for(int i = 0;i < routeNum;i++)
+            {
+                drawPath(startNode.transform, map[0,i].transform);
+            }
+        }
+
+        for(int i = 0;i < routeNum;i++)
+        {
+            temp.Enqueue(map[0, i]);
+        }
+
+        while (temp.Count > 0)
+        {
+            Node currentNode = temp.Dequeue();
+
+            foreach(var nextNodeIdx in currentNode.nextNodesIdx)
+            {
+                foreach(var nextNode in map)
+                {
+                    if(nextNode.idx == nextNodeIdx)
+                    {
+                        Debug.Log("길 생성");
+                        drawPath(currentNode.transform, nextNode.transform);
+                        temp.Enqueue(nextNode);
+                    }
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// Set Save Map Data
     /// </summary>
     private void LoadCreateMap()
     {
-        if(ES3.KeyExists("SaveMapData"))
+        if (ES3.KeyExists(MAP_KEY))
         {
-            SaveMapData mapData = ES3.Load<SaveMapData>("SaveMapData");
+            SaveMapData mapData = ES3.Load<SaveMapData>(MAP_KEY);
             List<SaveNodeData> nodes = mapData.saveNodeDatas;
             int index = 0;
 
@@ -387,7 +441,8 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 
                     node.visited = nodes[index].isVisited;
                     node.isActive = nodes[index].isActive;
-
+                    node.connected = nodes[index].isConnected;
+                    nowNodeIdx = mapData.nowNodeIdx;
                     node.transform.position = nodes[index].position;
 
                     map[i, j] = node;
@@ -399,6 +454,22 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         }
     }
 
+    private void LoadConnectInfo()
+    {
+        foreach(var node in map)
+        {
+            foreach(var nextNodeIdx in node.nextNodesIdx)
+            {
+                foreach(var nextNode in map)
+                {
+                    if(nextNodeIdx == nextNode.idx)
+                    {
+                        node.nextNodes.Add(nextNode);
+                    }
+                }
+            }
+        }
+    }
 
     /*------------------------------------------------------------
     Set node size
@@ -414,17 +485,57 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     void selectFirstNode()
     {
         List<Node> tmp = new List<Node>();
-        for (int i = 0; i < routeNum; i++)
+        if (ES3.KeyExists(MAP_KEY))
         {
-            tmp.Add(map[0, i]);
+            Queue<Node> nodes = new Queue<Node>();
+
+            for(int i = 0; i<routeNum;i++)
+            {
+                nodes.Enqueue(map[0, i]);
+            }
+
+            while(nodes.Count > 0)
+            {
+                Node node = nodes.Dequeue();
+                // 노드를 방문한 적이 있다면
+                if(node.visited)
+                {
+                    // 큐에 방문한 노드와 연결된 다음 노드 인큐
+                    foreach(var index in node.nextNodesIdx)
+                    {
+                        foreach(var nextNode in map)
+                        {
+                            if(index == nextNode.idx)
+                            {
+                                if (nextNode.nodeType != NodeType.Empty)
+                                {
+                                    nodes.Enqueue(nextNode);
+                                    tmp.Clear();
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    tmp.Add(node);
+                }
+            }
         }
-
-        if (activeRouteNum < 1) activeRouteNum = 1;
-        if (activeRouteNum > routeNum) activeRouteNum = routeNum;
-
-        for (int i = 0; i < routeNum - activeRouteNum; i++)
+        else
         {
-            tmp.RemoveAt(Random.Range(0, tmp.Count));
+            for (int i = 0; i < routeNum; i++)
+            {
+                tmp.Add(map[0, i]);
+            }
+
+            if (activeRouteNum < 1) activeRouteNum = 1;
+            if (activeRouteNum > routeNum) activeRouteNum = routeNum;
+
+            for (int i = 0; i < routeNum - activeRouteNum; i++)
+            {
+                tmp.RemoveAt(Random.Range(0, tmp.Count));
+            }
         }
 
         activeRouteNodeArray = tmp.ToArray();
@@ -527,9 +638,12 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     void drawPath(Transform start, Transform end)
     {
         SpriteRenderer path = Instantiate(pathImagePref, mapParent.transform);
-        path.color = pathColor;
+        if (end.GetComponent<Node>().visited)
+            path.color = passedPathColor;
+        else
+            path.color = pathColor;
 
-        float distance = Vector3.Distance(start.transform.position, end.transform.position);
+            float distance = Vector3.Distance(start.transform.position, end.transform.position);
         path.size = new Vector2(path.size.x, distance * 3);
 
         path.transform.position = (start.position + end.position) / 2;
@@ -568,35 +682,53 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 
         List<Node> tmp = new List<Node>();
         tmp = getUnassignedConnectedNodes(tmp);
-        float totalChance = 0;
-        for (int i = 0; i < mapNodeData.Length; i++)
-        {
-            totalChance += mapNodeData[i].chance;
-        }
 
-        if (allRandom)
+        if (ES3.KeyExists(MAP_KEY))
         {
-            randomlyAssignNode(tmp, totalChance);
+            foreach (var node in map)
+            {
+                foreach (var mapNodeData in mapNodeData)
+                {
+                    if (node.NodeText.text == mapNodeData.nodeData.nodeName)
+                    {
+                        node.setNodeData(mapNodeData.nodeData.sprite, mapNodeData.nodeData.type, mapNodeData.nodeData.nodeName);
+                    }
+                }
+            }
         }
         else
         {
-            int loopCount = 0;
-            while (true)
+            float totalChance = 0;
+            for (int i = 0; i < mapNodeData.Length; i++)
             {
-                loopCount++;
-                applyRulesAndAssignNode(tmp, totalChance);
-                duplicateBranchBackToNull();
-                tmp.Clear();
-                tmp = getUnassignedConnectedNodes(tmp);
-                if (tmp.Count > 0 && loopCount > 100)
-                {
-                    randomlyAssignNode(tmp, totalChance);
-                    Debug.Log($"The outer loop exceeded 100 iterations, so assigning a random node.");
-                }
-                if (tmp.Count == 0 || loopCount > 100) break;
+                totalChance += mapNodeData[i].chance;
             }
-            // Debug.Log($"Outer loop：{loopCount}");
+
+            if (allRandom)
+            {
+                randomlyAssignNode(tmp, totalChance);
+            }
+            else
+            {
+                int loopCount = 0;
+                while (true)
+                {
+                    loopCount++;
+                    applyRulesAndAssignNode(tmp, totalChance);
+                    duplicateBranchBackToNull();
+                    tmp.Clear();
+                    tmp = getUnassignedConnectedNodes(tmp);
+                    if (tmp.Count > 0 && loopCount > 100)
+                    {
+                        randomlyAssignNode(tmp, totalChance);
+                        Debug.Log($"The outer loop exceeded 100 iterations, so assigning a random node.");
+                    }
+                    if (tmp.Count == 0 || loopCount > 100) break;
+                }
+                // Debug.Log($"Outer loop：{loopCount}");
+            }
         }
+
 
         for (int i = 0; i < fixedNodeData.Length; i++)
         {
@@ -789,13 +921,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             }
         }
 
-        if (makeStart)
-        {
-            startNode.enableButton();
-            showNodes.Add(startNode);
-            if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(startNode.gameObject);
-        }
-        else
+        if(ES3.KeyExists(MAP_KEY))
         {
             for (int i = 0; i < activeRouteNodeArray.Length; i++)
             {
@@ -803,6 +929,24 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 showNodes.Add(activeRouteNodeArray[i]);
             }
             if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(activeRouteNodeArray[0].gameObject);
+        }
+        else
+        {
+            if (makeStart)
+            {
+                startNode.enableButton();
+                showNodes.Add(startNode);
+                if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(startNode.gameObject);
+            }
+            else
+            {
+                for (int i = 0; i < activeRouteNodeArray.Length; i++)
+                {
+                    activeRouteNodeArray[i].enableButton();
+                    showNodes.Add(activeRouteNodeArray[i]);
+                }
+                if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(activeRouteNodeArray[0].gameObject);
+            }
         }
 
         ShowActiveNode(0);
@@ -814,6 +958,11 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     public void paintPath(Node node)
     {
         if (!makeStart && node.floor == 0) return;
+        foreach(var prevNode in map)
+        {
+            if(nowNodeIdx == prevNode.idx)
+                nowNode = prevNode;
+        }
 
         foreach (Transform path in pathsTransform)
         {

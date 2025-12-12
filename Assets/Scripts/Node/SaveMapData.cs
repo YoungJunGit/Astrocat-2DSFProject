@@ -6,4 +6,5 @@ using UnityEngine;
 public class SaveMapData
 {
     public List<SaveNodeData> saveNodeDatas = new List<SaveNodeData>();
+    public int nowNodeIdx = 0;
 }
