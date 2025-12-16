@@ -407,6 +407,13 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                     }
                 }
             }
+
+            // 마지막 층 노드라면
+            if(currentNode.floor >= floorNum - 1)
+            {
+                currentNode.nextNodes.Add(finalNode);
+                drawPath(currentNode.transform, finalNode.transform);
+            }
         }
     }
 
@@ -454,23 +461,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         }
     }
 
-    private void LoadConnectInfo()
-    {
-        foreach(var node in map)
-        {
-            foreach(var nextNodeIdx in node.nextNodesIdx)
-            {
-                foreach(var nextNode in map)
-                {
-                    if(nextNodeIdx == nextNode.idx)
-                    {
-                        node.nextNodes.Add(nextNode);
-                    }
-                }
-            }
-        }
-    }
-
     /*------------------------------------------------------------
     Set node size
     ------------------------------------------------------------*/
@@ -500,8 +490,11 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 // 노드를 방문한 적이 있다면
                 if(node.visited)
                 {
+                    // 큐와 리스트 초기화
+                    nodes.Clear();
+                    tmp.Clear();
                     // 큐에 방문한 노드와 연결된 다음 노드 인큐
-                    foreach(var index in node.nextNodesIdx)
+                    foreach (var index in node.nextNodesIdx)
                     {
                         foreach(var nextNode in map)
                         {
@@ -510,10 +503,15 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                                 if (nextNode.nodeType != NodeType.Empty)
                                 {
                                     nodes.Enqueue(nextNode);
-                                    tmp.Clear();
                                 }
                             }
                         }
+                    }
+
+                    // 마지막 층 노드라면
+                    if(node.floor >= floorNum - 1)
+                    {
+                        tmp.Add(finalNode);
                     }
                 }
                 else
@@ -999,9 +997,21 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     {
         if (nowNode == finalNode) return;
         showNodes.Clear();
-        for (int i = 0; i < nowNode.nextNodes.Count; i++)
+        for (int i = 0; i < nowNode.nextNodesIdx.Count; i++)
         {
-            showNodes.Add(nowNode.nextNodes[i]);
+            foreach(var node in map)
+            {
+                if(node.idx == nowNode.nextNodesIdx[i])
+                {
+                    showNodes.Add(node);
+                    break;
+                }
+            }
+
+            if(nowNode.floor >= floorNum - 1)
+            {
+                showNodes.Add(finalNode);
+            }
         }
         ShowActiveNode(0);
         if (Gamepad.current != null) EventSystem.current.SetSelectedGameObject(nowNode.nextNodes[0].gameObject);
