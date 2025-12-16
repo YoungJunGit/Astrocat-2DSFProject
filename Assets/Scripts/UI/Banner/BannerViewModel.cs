@@ -7,6 +7,7 @@ public class BannerViewModel
 
     public ReadOnlyReactiveProperty<int> ReactiveIndex => _bannerModel.reactiveIndex.ToReadOnlyReactiveProperty();
     public ReadOnlyReactiveProperty<int> ReactiveRound => _bannerModel.reactiveRound.ToReadOnlyReactiveProperty();
+    public UnitStat Stat => _bannerModel.Stat;
 
     public BannerViewModel(UnitStat stat, int index, int round)
     {

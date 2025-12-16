@@ -9,13 +9,6 @@ public interface IUpdateTimeline
 
 public class TimelinePublisher
 {
-    public enum UPDATE_TYPE
-    {
-        NONE,
-        ROUND,
-        TURN
-    }
-
     private static List<IUpdateTimeline> _observers = new();
     public void UpdateRoundObservers(int round)
     {

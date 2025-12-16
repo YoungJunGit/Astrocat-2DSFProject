@@ -1,9 +1,10 @@
 using DataEnum;
 using static CombatEffectManager;
-using static TimelinePublisher;
 
 public abstract class DamageEffect : BaseEffect<float>, IStartTurnEffectProvider
 {
+    protected DamageEffect(EffectTrait trait) : base(trait) { }
+
     public abstract string StartTurnKey { get; }
 
     protected override BasicStatModifier<float> CreateModifier()
@@ -28,8 +29,9 @@ public abstract class DamageEffect : BaseEffect<float>, IStartTurnEffectProvider
     }
 }
 
-public class BurnEffect : DamageEffect, IStackableEffect
+public class BurnEffect : DamageEffect
 {
+    public BurnEffect(EffectTrait trait) : base(trait) { }
     public override string StartTurnKey => "FIRE_DOT";
     public override BUFF_TYPE buffType => BUFF_TYPE.DAMAGE_EACH_TURN;
 }

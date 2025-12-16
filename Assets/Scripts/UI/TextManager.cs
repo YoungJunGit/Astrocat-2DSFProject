@@ -11,6 +11,7 @@ public interface ICombatTextManager
     public bool IsTextOn { get; }
     public UniTask ShowNextRoundText(int round);
     public UniTask ShowAttackWarningText(BaseUnit unit);
+    public UniTask ShowSelfAttackText(BaseUnit unit);
     public void OnDamage(BaseUnit target, IDamage damage);
 }
 
@@ -60,6 +61,17 @@ public class TextManager : ScriptableObject , ICombatTextManager
 
         attackWarningText.textComp.text = attackWarningText.textComp.text.Replace(unit.GetStat().CoreStat.Name, "{Name}");
         attackWarningText.textComp.text = attackWarningText.textComp.text.Replace(attackType, "{AttackType}");
+    }
+
+    public async UniTask ShowSelfAttackText(BaseUnit unit)
+    {
+        BaseText selfAttackText = textCanvas.GetComponentInChildren<SelfAttackText>(true);
+
+        selfAttackText.textComp.text = selfAttackText.textComp.text.Replace("{Name}", unit.GetStat().CoreStat.Name);
+
+        await selfAttackText.ShowText(inputHandler);
+
+        selfAttackText.textComp.text = selfAttackText.textComp.text.Replace(unit.GetStat().CoreStat.Name, "{Name}");
     }
 
     public void OnDamage(BaseUnit target, IDamage damage)

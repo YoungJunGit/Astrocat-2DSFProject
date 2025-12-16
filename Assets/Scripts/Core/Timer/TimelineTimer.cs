@@ -1,5 +1,5 @@
 using System;
-using static TimelinePublisher;
+using DataEnum;
 
 public abstract class TimelineTimer
 {

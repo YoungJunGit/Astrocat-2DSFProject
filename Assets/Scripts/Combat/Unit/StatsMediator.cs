@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using ObservableCollections;
 using DataEnum;
-using static TimelinePublisher;
 using System;
 
 public interface IQuery { }
@@ -26,7 +25,8 @@ public class StatsMediator : IUpdatable
         { UPDATE_TYPE.ROUND, new List<StatModifier>() },
         { UPDATE_TYPE.TURN, new List<StatModifier>() }
     };
-    
+
+    public event Action OnStatChanged;
     public event System.EventHandler<IQuery> Queries;
     public void PerformQuery<T>(object sender, Query<T> query) => Queries?.Invoke(sender, query);
 
@@ -51,10 +51,13 @@ public class StatsMediator : IUpdatable
         modifiersDic[modifier.UpdateType].Add(modifier);
         Queries += modifier.Handle;
 
+        OnStatChanged?.Invoke();
+
         modifier.OnDispose += _ =>
         {
             modifiersDic[modifier.UpdateType].Remove(modifier);
             Queries -= modifier.Handle;
+            OnStatChanged?.Invoke();
         };
     }
 }

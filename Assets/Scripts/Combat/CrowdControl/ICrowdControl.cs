@@ -24,10 +24,6 @@ public interface AttributeControl
     public IEffectable Effect { get; }
     public void AddDuration();
 }
-public interface ActionControl
-{
-    public int Count { get; }
-}
 
 public abstract class CrowdControlBase : ICrowdControl
 {
@@ -198,19 +194,20 @@ public class Bind : AttributeCrowdControlBase, IEnhancedCrowdControl
     }
 }
 
-public class Corrode : AttributeCrowdControlBase, IEnhancedCrowdControl
+public class Corrode : CrowdControlBase, IEnhancedCrowdControl
 {
     public override string ID => "40022005";
-    protected override string EffectID => "Corrode";
+    public int Count = 0;
 
-    public override EffectInfo CreateEffectInfoList(ElementStatusData data)
+    public override void ApplyCrowdControl(CCContext context)
     {
-        return new EffectInfo
-        (
-            data.Element_Status_Name,
-            (float)data.Element_Status_Value[0],
-            data.Element_Status_Duration_Turn
-        );
+        base.ApplyCrowdControl(context);
+        Count++;
+    }
+
+    public void AddCountStack()
+    {
+        Count++;
     }
 }
 

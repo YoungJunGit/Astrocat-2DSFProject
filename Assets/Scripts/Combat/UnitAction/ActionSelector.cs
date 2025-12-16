@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Utils;
+using static ActionSelectionButtons;
 
 [CreateAssetMenu(fileName = "ActionSelector", menuName = "GameScene/ActionSelector", order = 1)]
 public class ActionSelector : BaseSelector
@@ -36,7 +38,24 @@ public class ActionSelector : BaseSelector
 
     public async UniTask SelectAction(PlayerUnit playerUnit, Action<IUnitAction> onSelected)
     {
+        selector.OnSelectStart();
         Debug.Log($"{playerUnit.GetStat().CoreStat.Name} : Select Action");
+        IUnitAction unitAction = null;
+
+        if(playerUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.HOLY].CurrentValue > 0)
+        {
+            selector.DisableInteraction(ActionSelectType.Skill);
+        }
+
+        IUnitAction strangeUnitAction = null;
+        if(playerUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.VOID].CurrentValue > 0)
+        {
+            float chance = (float)playerUnit.CCUnit.GetNonStackCC(ELEMENT_TYPE.VOID).CCData.Element_Status_Value[0];
+            if (FunctionUtils.MakeChance(chance))
+            {
+                strangeUnitAction = unitActionFactory.CreateSelfAttackAction();
+            }
+        }
         
         selector.transform.position = playerUnit.Attachments.GetActionSelectorPos().position;
         selector.GetComponent<Canvas>().sortingLayerName = layerName;
@@ -44,7 +63,7 @@ public class ActionSelector : BaseSelector
 
         _selectedActionType = 0;
 
-        IUnitAction unitAction = null;
+        IUnitAction normalUnitAction = null;
         bool selectActionComplete = false;
         using (var inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectAction))
         {
@@ -59,40 +78,40 @@ public class ActionSelector : BaseSelector
                         selector.gameObject.SetActive(false);
 
                         selectActionComplete = true;
-                        unitAction = unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
-                        Debug.Log(unitAction);
+                        normalUnitAction = unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
+                        Debug.Log(normalUnitAction);
                         break;
                     case 2:
-                        // _soundService.PlayEffectSound("Start_Menu");
-                        // var skillID = playerUnit.GetStat().CoreStat.SkillsID;
+                        _soundService.PlayEffectSound("Start_Menu");
+                        var skillID = playerUnit.GetStat().CoreStat.SkillsID;
 
-                        // skillName.Clear();
-                        // foreach (var skill in skillID)
-                        // {
-                        //     CombatUtils.UnitSkillNameDictionary.TryGetValue(skill, out var name);
+                        skillName.Clear();
+                        foreach (var skill in skillID)
+                        {
+                            CombatUtils.UnitSkillNameDictionary.TryGetValue(skill, out var name);
 
-                        //     if (name != null)
-                        //         skillName.Add(name);
-                        // }
-                        // if (skillName.Count == 0)
-                        // {
-                        //     selector.gameObject.SetActive(false);
-                        //     return;
-                        // }
+                            if (name != null)
+                                skillName.Add(name);
+                        }
+                        if (skillName.Count == 0)
+                        {
+                            selector.gameObject.SetActive(false);
+                            return;
+                        }
 
-                        // selector.EnableSkillSelectionButtons(skillName.ToArray());
+                        selector.EnableSkillSelectionButtons(skillName.ToArray());
 
-                        // _selectedSkillIndex = 0;
-                        // await UniTask.WaitUntil(() => _selectedSkillIndex != 0 || _selectedActionType != 2);
+                        _selectedSkillIndex = 0;
+                        await UniTask.WaitUntil(() => _selectedSkillIndex != 0 || _selectedActionType != 2);
 
-                        // if (_selectedSkillIndex != 0)
-                        // {
-                        //     unitAction = unitActionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
-                        //     selector.gameObject.SetActive(false);
-                        //     selectActionComplete = true;
-                        // }
+                        if (_selectedSkillIndex != 0)
+                        {
+                            normalUnitAction = unitActionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
+                            selector.gameObject.SetActive(false);
+                            selectActionComplete = true;
+                        }
 
-                        // selector.DisableSkillSelectionButtons();
+                        selector.DisableSkillSelectionButtons();
                         break;
                     case 3:
                         // _soundService.PlayEffectSound("Item_Select");
@@ -103,8 +122,16 @@ public class ActionSelector : BaseSelector
             }
         }
 
-        if(unitAction != null)
-            onSelected?.Invoke(unitAction);
+        if(strangeUnitAction != null)
+        {
+            unitAction = strangeUnitAction;
+        }
+        else
+        {
+            unitAction = normalUnitAction;
+        }
+
+        onSelected?.Invoke(unitAction);
     }
 
     public void SelectAction(EnemyUnit enemyUnit, Action<IUnitAction> onSelected)
@@ -113,7 +140,21 @@ public class ActionSelector : BaseSelector
         //_selectedActionType = Random.Range(0, 3);
         IUnitAction unitAction = unitActionFactory.CreateEnemyBaseAttackAction(enemyUnit);
 
-        if(unitAction != null)
+        if (enemyUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.HOLY].CurrentValue > 0)
+        {
+            // TODO : 몬스터가 스킬 사용하지 못하도록 해야 함
+        }
+
+        if (enemyUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.VOID].CurrentValue > 0)
+        {
+            float chance = (float)enemyUnit.CCUnit.GetNonStackCC(ELEMENT_TYPE.VOID).CCData.Element_Status_Value[0];
+            if (FunctionUtils.MakeChance(chance))
+            {
+                unitAction = unitActionFactory.CreateSelfAttackAction();
+            }
+        }
+
+        if (unitAction != null)
             onSelected?.Invoke(unitAction);
     }    
 }

@@ -21,7 +21,7 @@ public class TimelineManager : MonoBehaviour
     public void Init()
     {
         _timelineManagerModel = new TimelineManagerModel();
-        _timelinePublisher    = new TimelinePublisher();
+        _timelinePublisher = new TimelinePublisher();
 
         ServiceLocator.For(this).Get(out textManager);
     }
@@ -31,6 +31,7 @@ public class TimelineManager : MonoBehaviour
         while (_timelineManagerModel.BannerList.Count < MaxBannerIndex && units != null && units.Count > 0)
         {
             CreateBanners(units);
+            _timelineManagerModel.SortBanners();
         }
     }
 
@@ -38,32 +39,33 @@ public class TimelineManager : MonoBehaviour
     {
         // Data Bindings
         _timelineManagerModel.BannerList.ObserveRemove()
-                                        .Subscribe(_ => 
-                                        {
-                                            if (_timelineManagerModel.BannerList.Count < MaxBannerIndex)
-                                            {
-                                                CreateBanners(units);
-                                                _timelineManagerModel.SortBanners();
-                                            }
-                                        })
-                                        .AddTo(this);
+            .Subscribe(Banner =>
+            {
+                if (_timelineManagerModel.BannerList.Count < MaxBannerIndex)
+                {
+                    CreateBanners(units);
+                    _timelineManagerModel.SortBanners();
+                }
+            })
+            .AddTo(this);
 
         _timelineManagerModel.CurRound.DistinctUntilChanged()
-                                      .Subscribe(round =>
-                                      {
-                                          _timelinePublisher.UpdateRoundObservers(round);
-                                          textManager.ShowNextRoundText(round);
-                                      })
-                                      .AddTo(this);
-        foreach(var unit in units)
+            .Subscribe(round =>
+            {
+                _timelinePublisher.UpdateRoundObservers(round);
+                textManager.ShowNextRoundText(round);
+            })
+            .AddTo(this);
+
+        foreach (var unit in units)
         {
             unit.CCUnit.EffectsCountDic[ELEMENT_TYPE.PHYSICAL].DistinctUntilChanged()
                 .Subscribe(count =>
                 {
-                    if(count > 0)
+                    if (count > 0)
                     {
                         var list = _timelineManagerModel.BannerList.Where(b => b.CompareStat(unit.GetStat())).ToList();
-                        foreach(var banner in list)
+                        foreach (var banner in list)
                         {
                             banner.SetState(new BannerFaint(true));
                         }
@@ -94,6 +96,8 @@ public class TimelineManager : MonoBehaviour
             NormalBanner banner = Instantiate(bannerPrefab).GetComponent<NormalBanner>();
             banner.transform.SetParent(bannerArea.transform, false);
             _timelineManagerModel.AddBanner(banner, unit);
+
+            unit.GetStat().ModifierStat.Mediator.OnStatChanged += () => _timelineManagerModel.SortBanners();
         }
     }
 
@@ -103,6 +107,8 @@ public class TimelineManager : MonoBehaviour
         foreach (var banner in bannersToRemove)
         {
             _timelineManagerModel.RemoveBanner(banner);
+
+            unit.GetStat().ModifierStat.Mediator.OnStatChanged -= () => _timelineManagerModel.SortBanners();
         }
     }
 }

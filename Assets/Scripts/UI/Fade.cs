@@ -7,53 +7,19 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static FadeSetting;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class Fade : MonoBehaviour
 {
-    [Flags]
-    enum FADE_SETTING
-    {
-        NONE = 0,
-        FADEOUT = 1 << 0,
-        FADEIN = 1 << 1,
-        ALL = FADEIN | FADEOUT,
-    }
+    [SerializeField]
+    bool autoStart = false;
 
-    [SerializeField] bool autoStart = false;
-    [EnumToggleButtons, SerializeField] FADE_SETTING Fade_Setting;
+    [SerializeField]
+    private bool OverrideSetting = false;
 
-    private bool ShowFadeIn => (Fade_Setting & FADE_SETTING.FADEIN) != 0;
-    private bool ShowFadeOut => (Fade_Setting & FADE_SETTING.FADEOUT) != 0;
-    private bool ShowAll => Fade_Setting == FADE_SETTING.ALL;
-
-    [BoxGroup("FadeIn Setting")]
-    [ShowIf("@ShowFadeIn"), SerializeField] 
-    private float fadeInDuration = 1f;
-
-    [BoxGroup("FadeIn Setting")]
-    [ShowIf("@ShowFadeIn"), SerializeField]
-    private Ease fadeInCurve = Ease.Linear;
-
-    [BoxGroup("FadeOut Setting")]
-    [ShowIf("@ShowFadeOut"), SerializeField]
-    private float fadeOutDuration = 1f;
-
-    [BoxGroup("FadeOut Setting")]
-    [ShowIf("@ShowFadeOut"), SerializeField]
-    private Ease fadeOutCurve = Ease.Linear;
-
-    [BoxGroup("Delay Setting")]
-    [ShowIf("@(Fade_Setting != FADE_SETTING.NONE)"), SerializeField]
-    private float startDelay = 0f;
-
-    [BoxGroup("Delay Setting")]
-    [ShowIf("@ShowAll"), SerializeField]
-    private float fadeInOutDelay = 3f;
-
-    [BoxGroup("Loop Setting")]
-    [ShowIf("@ShowAll"), PropertyTooltip("If this set to -1, loop infinitely"), SerializeField] 
-    private int loops = 1;
+    [HideIf("@OverrideSetting"), SerializeField]
+    FadeSetting Setting;
 
     private CanvasGroup ui;
 
@@ -63,42 +29,55 @@ public class Fade : MonoBehaviour
             FadeAnimation();
     }
 
-    public Tween FadeAnimation(float offSetStartDelay = 0f, Action OnFinishEvent = null)
+    public Tween FadeAnimation(Action OnFinishEvent = null, FadeSetting setting = null)
     {
+        if(OverrideSetting == true)
+        {
+            if(setting != null)
+            {
+                Setting = setting;
+            }
+            else
+            {
+                Debug.LogWarning("Fade Failed!!!");
+                return null;
+            }
+        }
+
         ui = GetComponent<CanvasGroup>();
 
         TweenParams tweenParams = new TweenParams()
-            .SetDelay(startDelay + offSetStartDelay)
-            .SetLoops(loops)
+            .SetDelay(Setting.StartDelay)
+            .SetLoops(Setting.Loops)
             .OnComplete(() => { OnFinishEvent?.Invoke(); });
 
-        bool doIn = Fade_Setting.HasFlag(FADE_SETTING.FADEIN);
-        bool doOut = Fade_Setting.HasFlag(FADE_SETTING.FADEOUT);
+        bool doIn = Setting.Fade_Setting.HasFlag(FADE_SETTING.FADEIN);
+        bool doOut = Setting.Fade_Setting.HasFlag(FADE_SETTING.FADEOUT);
 
         Tween running = null;
         if (doOut && !doIn)
         {
             ui.alpha = 0f;
-            running = ui.DOFade(1f, fadeOutDuration)
-                         .SetEase(fadeOutCurve)
-                         .SetAs(tweenParams);
+            running = ui.DOFade(1f, Setting.FadeOutDuration)
+                .SetEase(Setting.FadeOutCurve)
+                .SetAs(tweenParams);
         }
         else if(!doOut && doIn)
         {
             ui.alpha = 1f;
-            running = ui.DOFade(0f, fadeInDuration)
-                         .SetEase(fadeInCurve)
-                         .SetAs(tweenParams);
+            running = ui.DOFade(0f, Setting.FadeInDuration)
+                .SetEase(Setting.FadeInCurve)
+                .SetAs(tweenParams);
         }
         else if(doOut && doIn)
         {
             ui.alpha = 0f;
             running = DOTween.Sequence()
-                              .Append(ui.DOFade(1f, fadeOutDuration).SetEase(fadeOutCurve))
-                              .AppendInterval(fadeInOutDelay)
-                              .Append(ui.DOFade(0f, fadeInDuration).SetEase(fadeInCurve))
-                              .SetAs(tweenParams)
-                              .SetLink(gameObject, LinkBehaviour.KillOnDestroy);
+                .Append(ui.DOFade(1f, Setting.FadeOutDuration).SetEase(Setting.FadeOutCurve))
+                .AppendInterval(Setting.FadeInOutDelay)
+                .Append(ui.DOFade(0f, Setting.FadeInDuration).SetEase(Setting.FadeInCurve))
+                .SetAs(tweenParams)
+                .SetLink(gameObject, LinkBehaviour.KillOnDestroy);
         }
 
         return running;

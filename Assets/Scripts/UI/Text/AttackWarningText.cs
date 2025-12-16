@@ -1,30 +1,42 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class AttackWarningText : BaseText
 {
     [SerializeField] bool animateText = false;
-    [SerializeField] float duration = 1.0f;
+
+    [ShowIf("@animateText"), SerializeField] 
+    float textDuration = 1.0f;
+
+    [SerializeField] FadeSetting fadeSetting;
+
     public async override UniTask<bool> ShowText(InputHandler inputHandler)
     {
-        var InputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.Skip);
+        bool isFadeComplete = false;
+        Tween textTween = null;
+        Tween fadeTween = null;
 
         if (animateText)
         {
             string text = textComp.text;
             textComp.text = "";
-            Tween t = textComp.DOText(text, duration);
-
-            inputHandler.OnSkipSkip += () => { t.Complete(); inputHandler.DisposeOnSkipActions(); };
+            textTween = textComp.DOText(text, textDuration);
         }
 
-        bool isFadeComplete = false;
-        GetComponent<Fade>().FadeAnimation(duration, () => isFadeComplete = true);
+        fadeTween = GetComponent<Fade>().FadeAnimation(() => isFadeComplete = true, fadeSetting);
 
-        await UniTask.WaitUntil(() => isFadeComplete);
+        using (new InputDisposer(inputHandler, InputHandler.InputState.Skip))
+        {
+            if (textTween != null)
+                inputHandler.OnSkipSkip += () => { textTween.Complete(); };
 
-        InputDisposer.Dispose();
+            if (fadeTween != null)
+                inputHandler.OnSkipSkip += () => { fadeTween.Goto(0f, true); inputHandler.DisposeOnSkipActions(); };
+
+            await UniTask.WaitUntil(() => isFadeComplete);
+        }
 
         return isFadeComplete;
     }
