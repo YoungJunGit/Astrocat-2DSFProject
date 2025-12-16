@@ -123,6 +123,13 @@ namespace DataEnum
         MOVE
     }
 
+    public enum UPDATE_TYPE
+    {
+        NONE,
+        ROUND,
+        TURN
+    }
+
     /*Ãß°¡*/
     #endregion
 }

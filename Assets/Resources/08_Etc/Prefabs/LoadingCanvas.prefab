@@ -564,14 +564,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  Fade_Setting: 3
-  fadeInDuration: 1
-  fadeInCurve: 1
-  fadeOutDuration: 1
-  fadeOutCurve: 1
-  startDelay: 0
-  fadeInOutDelay: 0
-  loops: -1
+  OverrideSetting: 0
+  Setting:
+    fade_Setting: 3
+    fadeInDuration: 1
+    fadeInCurve: 1
+    fadeOutDuration: 1
+    fadeOutCurve: 1
+    startDelay: 0
+    fadeInOutDelay: 0
+    loops: -1
 --- !u!114 &7717458410727114294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,7 +733,7 @@ RectTransform:
   m_Father: {fileID: 8760529824823767602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: -16}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -789,7 +791,7 @@ RectTransform:
   m_Father: {fileID: 5304202751270060886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -25, y: 0}
   m_SizeDelta: {x: 15, y: 0}
   m_Pivot: {x: 0, y: 0.5}

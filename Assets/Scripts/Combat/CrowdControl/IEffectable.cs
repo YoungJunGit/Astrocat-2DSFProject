@@ -4,12 +4,19 @@ using DataEnum;
 using JetBrains.Annotations;
 using UnityEngine;
 using static CombatEffectManager;
-using static TimelinePublisher;
+
+public enum EffectTrait
+{
+    None = 0,
+    Duration,
+    Stackable
+}
 
 public interface IEffectable
 {
     public void Apply(EffectInfo info, EffectContext context);
     public void Dispose();
+    public EffectTrait Trait { get; }
     public void ResetTimerInternal(int? newDuration = null);
     public void ExtendTimerInternal(int amount);
     public event Action OnDispose;
@@ -23,16 +30,17 @@ public interface IStartTurnEffectProvider
     public string StartTurnKey { get; }
     public void OnEachTurn();
 }
-public interface IStackableEffect{ }
-public interface IDurationEffect{ }
 
 public abstract class BaseEffect<T> : IEffectable
 {
+    private readonly EffectTrait trait;
     protected BasicStatModifier<T> modifier;
     protected EffectInfo Info;
     protected EffectContext Context;
-
     public event Action OnDispose = delegate { };
+
+    public BaseEffect(EffectTrait trait) => this.trait = trait;
+    public EffectTrait Trait => trait;
 
     protected EffectTimer Timer => modifier?.Timer as EffectTimer;
 
@@ -41,7 +49,7 @@ public abstract class BaseEffect<T> : IEffectable
 
     protected EffectTimer CreateTimer()
     {
-        if (Info.Duration <= 0 && this is IDurationEffect)
+        if (Info.Duration <= 0 && trait != EffectTrait.Duration)
             return null;
 
         return new EffectTimer(Info.Duration);

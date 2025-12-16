@@ -9,6 +9,7 @@ public interface IBanner
 {
     int Index { get; set; }
     int Round { get; set; }
+    UnitStat Stat { get; }
     void SetState(IBannerState newState);
     int CompareTo(IBanner other);
     bool CompareStat(UnitStat otherStat);
@@ -39,6 +40,7 @@ public abstract class Banner : MonoBehaviour, IBanner
         get { return _bannerViewModel.ReactiveRound.CurrentValue; }
         set { _bannerViewModel.SetRound(value); }
     }
+    public UnitStat Stat => _bannerViewModel.Stat;
 
     public int CompareTo(IBanner other)         => _bannerViewModel.CompareTo((other as Banner)._bannerViewModel);
     public bool CompareStat(UnitStat otherStat) => _bannerViewModel.CompareStat(otherStat);

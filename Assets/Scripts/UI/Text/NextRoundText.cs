@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class NextRoundText : BaseText
 {
-    [SerializeField] float duration = 2.0f;
+    [SerializeField] FadeSetting fadeSetting;
+
     public async override UniTask<bool> ShowText(InputHandler inputHandler)
     {
         bool isFadeComplete = false;
-        Tween t = GetComponent<Fade>().FadeAnimation(duration, () => isFadeComplete = true);
+        Tween t = GetComponent<Fade>().FadeAnimation(() => isFadeComplete = true, fadeSetting);
 
         using (new InputDisposer(inputHandler, InputHandler.InputState.Skip))
         {
-            inputHandler.OnSkipSkip += () => { t.Goto(0f, true); inputHandler.DisposeOnSkipActions(); };
+            inputHandler.OnSkipSkip += () => { t.Complete(); inputHandler.DisposeOnSkipActions(); };
             await UniTask.WaitUntil(() => isFadeComplete);
         }
 

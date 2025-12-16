@@ -9,6 +9,26 @@ using UnityEngine;
 using Utils;
 using Object = UnityEngine.Object;
 
+class SelfAttackAction : IUnitAction
+{
+    public SIDE Target_Type { get; }
+    public TARGET_TYPE Action_Type { get; } = TARGET_TYPE.SINGLE;
+    public Func<BaseUnit, bool> Target_Filter { get; } = null;
+    public async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
+    {
+        await unitAction.ShowSelfAttackMessage(context);
+
+        var cc = context.Caster.CCUnit.GetNonStackCC(ELEMENT_TYPE.VOID);
+
+        float value = (float)context.Caster.CCUnit.GetNonStackCC(ELEMENT_TYPE.VOID).CCData.Element_Status_Value[1];
+
+        var modifer = new BasicStatModifier<float>(BUFF_TYPE.ATTACK, UPDATE_TYPE.NONE, (v) => v + value);
+        context.Caster.GetStat().ModifierStat.Mediator.AddModifier(modifer);
+        unitAction.DamageEvent(context.Caster, context.Caster);
+        modifer.Dispose();
+    }
+}
+
 class BaseAttackAction : IUnitAction
 {
     public SIDE Target_Type { get; }
@@ -26,17 +46,16 @@ class BaseAttackAction : IUnitAction
     }
 }
 
-class MeleeAttack : BaseAttackAction
+class MeleeAttackAction : BaseAttackAction
 {
-    public MeleeAttack(SIDE side) : base(side) { }
+    public MeleeAttackAction(SIDE side) : base(side) { }
 
     public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
         if (context.Caster is EnemyUnit)
-            await unitAction.ShowAttackMessage(context);
+            await unitAction.ShowAttackWarningMessage(context);
 
-        BaseUnit target;
-        if (unitAction.TryGetSingle(context, out target))
+        if (unitAction.TryGetSingle(context, out var target))
         {
             var inputDisposer = new InputDisposer(context.InputHandler, InputHandler.InputState.Parry);
 
@@ -48,7 +67,7 @@ class MeleeAttack : BaseAttackAction
             Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
             context.Caster.CombatInfo.targetPos = (Vector2)target.Attachments.GetMeleeHitPos().position + offset;
 
-            context.Caster.GetAnimationHandler().Attack += () => { unitAction.DamageEvent(context, target); };
+            context.Caster.GetAnimationHandler().Attack += () => { unitAction.DamageEvent(context.Caster, target); };
             context.Caster.CombatInfo.actionList.Add("FinishedAction", () => { unitAction.OnFinishedAction(context); });
             context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
 
@@ -66,17 +85,16 @@ class MeleeAttack : BaseAttackAction
     }
 }
 
-class RangeAttack : BaseAttackAction 
+class RangeAttackAction : BaseAttackAction 
 {
-    public RangeAttack(SIDE side) : base(side) { }
+    public RangeAttackAction(SIDE side) : base(side) { }
 
     public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
         if (context.Caster is EnemyUnit)
-            await unitAction.ShowAttackMessage(context);
+            await unitAction.ShowAttackWarningMessage(context);
 
-        BaseUnit target;
-        if (unitAction.TryGetSingle(context, out target))
+        if (unitAction.TryGetSingle(context, out var target))
         {
             BaseBullet bullet = null;
             context.Caster.GetAnimationHandler().Attack += () => { bullet = ShootBullet(context, unitAction, target); };
@@ -101,7 +119,7 @@ class RangeAttack : BaseAttackAction
         if (bullet != null)
         {
             context.SoundService.PlayEffectSound("Player_Shoot");
-            bullet.Initialize(target.Attachments.GetHitBox(), () => { unitAction.DamageEvent(context, target); unitAction.OnFinishedAction(context); });
+            bullet.Initialize(target.Attachments.GetHitBox(), () => { unitAction.DamageEvent(context.Caster, target); unitAction.OnFinishedAction(context); });
             return bullet;
         }
         return null;

@@ -1,7 +1,6 @@
 using UnityEngine;
 using System;
 using DataEnum;
-using static TimelinePublisher;
 
 public class BasicStatModifier<T> : StatModifier
 {

@@ -48,7 +48,7 @@ MonoBehaviour:
     index: 1004
     Buff_Table_ID: 30001005
     Element_Status_Value:
-    - 0.85
+    - -0.2
     Element_Status_Duration_Turn: 0
     Element_Status_Name: ELEMENT_STATUS_NAME_SUPPRESS
   - Element_Status_ID: 40011005
@@ -57,7 +57,8 @@ MonoBehaviour:
     index: 1005
     Buff_Table_ID: '-'
     Element_Status_Value:
-    - 0.7
+    - 0.3
+    - 0
     Element_Status_Duration_Turn: 1
     Element_Status_Name: ELEMENT_STATUS_NAME_STRANGE
   - Element_Status_ID: 40011006
@@ -102,7 +103,7 @@ MonoBehaviour:
     index: 2004
     Buff_Table_ID: '-'
     Element_Status_Value:
-    - 1.5
+    - -0.5
     Element_Status_Duration_Turn: 0
     Element_Status_Name: ELEMENT_STATUS_NAME_BIND
   - Element_Status_ID: 40022005
@@ -111,7 +112,8 @@ MonoBehaviour:
     index: 2005
     Buff_Table_ID: 30001003
     Element_Status_Value:
-    - 1.3
+    - 1
+    - 1.5
     Element_Status_Duration_Turn: 1
     Element_Status_Name: ELEMENT_STATUS_NAME_CORRODE
   - Element_Status_ID: 40022006
@@ -120,7 +122,7 @@ MonoBehaviour:
     index: 2006
     Buff_Table_ID: 30001003
     Element_Status_Value:
-    - 0.7
+    - -0.5
     Element_Status_Duration_Turn: 1
     Element_Status_Name: ELEMENT_STATUS_NAME_DOMINATE
   - Element_Status_ID: 40033001

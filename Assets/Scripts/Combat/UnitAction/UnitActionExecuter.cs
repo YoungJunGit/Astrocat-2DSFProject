@@ -24,16 +24,19 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
             .Get(out _parryingApplier)
             .Get(out _inputHandler);
     }
-    
+
     public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action, ITarget<BaseUnit> target)
     {
         var context = new UnitActionContext(caster, target, _textManager, _soundService, _parryingApplier, _inputHandler);
         var cts = new CancellationTokenSource();
         var unitActionEvent = new UnitActionEvent();
-        
+
         try
         {
-            await action.Execute(context, unitActionEvent, cts);
+            if (action != null)
+            {
+                await action.Execute(context, unitActionEvent, cts);
+            }
         }
         catch (OperationCanceledException)
         {

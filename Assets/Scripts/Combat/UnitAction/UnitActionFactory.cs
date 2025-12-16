@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ActionFactory", menuName = "GameScene/ActionFactory", order = 3)]
 class UnitActionFactory : ScriptableObject
 {
-    private Dictionary<string, SkillAttackAction> _skillDictionary = new()
+    private Dictionary<string, SkillAction> _skillDictionary = new()
     {
         {"20010001", new Skill_Taunt()} // TODO : ADD Skill here
     };
@@ -23,9 +23,9 @@ class UnitActionFactory : ScriptableObject
         return CreateBaseAttackActionByUnitType(unit, SIDE.PLAYER);
     }
 
-    public SkillAttackAction CreateSkillAttackAction(BaseUnit unit, string skillID)
+    public SkillAction CreateSkillAttackAction(BaseUnit unit, string skillID)
     {
-        SkillAttackAction skillAction = null;
+        SkillAction skillAction = null;
         Debug.Log($"Find SkillID : {skillID}" );
         _skillDictionary.TryGetValue(skillID, out skillAction);
 
@@ -35,6 +35,11 @@ class UnitActionFactory : ScriptableObject
         }
         
         return skillAction;
+    }
+
+    public SelfAttackAction CreateSelfAttackAction()
+    {
+        return new SelfAttackAction();
     }
 
     public IUnitAction CreateParryingAction(BaseUnit defender, ParryingApplier.ParryType parryType)
@@ -48,9 +53,9 @@ class UnitActionFactory : ScriptableObject
         switch (unit.GetUnitType())
         {
             case DataEnum.UNIT_TYPE.MELEE:
-                return new MeleeAttack(side);
+                return new MeleeAttackAction(side);
             case DataEnum.UNIT_TYPE.RANGE:
-                return new RangeAttack(side);
+                return new RangeAttackAction(side);
         }
 
         return null;
