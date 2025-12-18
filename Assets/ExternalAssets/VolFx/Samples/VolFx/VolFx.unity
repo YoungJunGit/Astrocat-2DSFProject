@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 79506624}
   - component: {fileID: 79506625}
   m_Layer: 4
-  m_Name: Background - processed by Background  Fx
+  m_Name: "\u25BA Background - processed by Background  Fx"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 347837257}
   - component: {fileID: 347837258}
   m_Layer: 1
-  m_Name: Character - processed by Character Fx
+  m_Name: "\u25BA Character - processed by Character Fx"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 482852573}
   - component: {fileID: 482852575}
   m_Layer: 5
-  m_Name: UI - processed by Ui Fx
+  m_Name: "\u25BA UI - processed by Ui Fx"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 796523418}
   - component: {fileID: 796523419}
   m_Layer: 0
-  m_Name: Main - Full screen pros process  MainFx
+  m_Name: "\u25BA Main - Full screen pros process  MainFx"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1202,8 +1202,9 @@ GameObject:
   m_Component:
   - component: {fileID: 947248831}
   - component: {fileID: 947248832}
+  - component: {fileID: 947248833}
   m_Layer: 0
-  m_Name: SetUrpOnStart
+  m_Name: SetUrp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1252,6 +1253,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &947248833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947248830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5126b23331eb488997471e4afe5e8b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1037203460
 GameObject:
   m_ObjectHideFlags: 0

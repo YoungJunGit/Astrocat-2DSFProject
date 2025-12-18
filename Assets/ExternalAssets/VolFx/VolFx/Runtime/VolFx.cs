@@ -360,6 +360,8 @@ namespace VolFx
                         camDesc.colorFormat = _owner._format.Value.ToGraphicsFormat();
                     
                     passData._camDepth = resData.activeDepthTexture;
+                    builder.UseTexture(passData._camDepth, AccessFlags.ReadWrite);
+
                     passData._cam      = camData.camera;
 
                     passData._selfTarget = _isSelfTarget();
@@ -1219,6 +1221,9 @@ namespace VolFx
             _passes.Destroy();
         }
         
+#if UNITY_RENDER_GRAPH
+        [Obsolete]
+#endif
         public override void SetupRenderPasses(ScriptableRenderer renderer, in RenderingData renderingData)
         {
             _execution.ConfigureInput(ScriptableRenderPassInput.Color);

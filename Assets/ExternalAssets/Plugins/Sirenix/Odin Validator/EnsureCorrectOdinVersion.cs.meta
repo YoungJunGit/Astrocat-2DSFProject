@@ -14,6 +14,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 227861
   packageName: Odin Validator
-  packageVersion: 3.3.1.13
-  assetPath: Assets/Plugins/Sirenix/Odin Validator/EnsureCorrectOdinVersion.cs
-  uploadId: 758279
+  packageVersion: 4.0.1.2
+  assetPath: Assets/ExternalAssets/Plugins/Sirenix/Odin Validator/EnsureCorrectOdinVersion.cs
+  uploadId: 835512

@@ -35,6 +35,7 @@ namespace ScreenFx
             {
                 if (s_Instance == null)
                 {
+                    #pragma warning disable CS0618
                     s_Instance = FindObjectOfType<ScreenFxPool>();
                     if (s_Instance == null)
                     {

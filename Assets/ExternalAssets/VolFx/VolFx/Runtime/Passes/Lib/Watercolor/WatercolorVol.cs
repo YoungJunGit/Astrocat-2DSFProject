@@ -29,11 +29,11 @@ namespace VolFx
         public CurveParameter m_Focus = new CurveParameter(new CurveValue(AnimationCurve.Linear(0, 1, 1, 1)), false);
         
         [Header("⊹₊ Animation ₊‧︵‿˚‧")]
-        public ClampedIntParameter m_Fps = new ClampedIntParameter(3, 0, 14);
+        public ClampedIntParameter   m_Fps = new ClampedIntParameter(3, 0, 14);
         [Tooltip("Motion animation of watercolor flow")]
         public ClampedFloatParameter m_Motion = new ClampedFloatParameter(0, -1, 1);
         [Tooltip("Use smooth interpolation")]
-        public BoolParameter       m_Smooth = new BoolParameter(true, false);
+        public BoolParameter         m_Smooth = new BoolParameter(true, false);
         [InspectorName("Contour")]
         [Tooltip("Contour deviation range (updated each frame applied randomly on Contour parameter)")]
         public ClampedFloatParameter m_ContourDeviation = new ClampedFloatParameter(0, 0, 1);

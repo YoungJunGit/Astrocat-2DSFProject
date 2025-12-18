@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _active: 1
   _shader: {fileID: 4800000, guid: 37430ae71ba54bd390a4ca51906fd972, type: 3}
-  _ditherTex: {fileID: 2800000, guid: e470306b2a0935842a3dc6bdc1f3e813, type: 3}
+  _maskScale: 0
+  _maskTex: {fileID: 2800000, guid: 88a3d604a839e254b914fc85e80a88c6, type: 3}
 --- !u!114 &-8517561346783428979
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -271,6 +272,21 @@ MonoBehaviour:
   _fps: 60
   _scale: 0.5
   _hdr: 0
+--- !u!114 &-7519534638024787470
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d93f1809b0d8d949803e8bb60f44915, type: 3}
+  m_Name: Comics
+  m_EditorClassIdentifier: 
+  _active: 1
+  _shader: {fileID: 4800000, guid: f97628ee99a0e10418407fba82d232cb, type: 3}
+  _ditherTex: {fileID: 2800000, guid: e470306b2a0935842a3dc6bdc1f3e813, type: 3}
 --- !u!114 &-6718439891295309787
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -285,6 +301,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _active: 1
   _shader: {fileID: 4800000, guid: f3f2512ee1fe3774ba15927559ebdd5d, type: 3}
+--- !u!114 &-4489833879492871121
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7479e16a933e7f946b0d6fbbdd506f6c, type: 3}
+  m_Name: Warp
+  m_EditorClassIdentifier: 
+  _active: 1
+  _shader: {fileID: 4800000, guid: c8ad0a2f4d91daa428cc0448e8687944, type: 3}
+  _maskPower: 2
 --- !u!114 &-4087369987367878777
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -313,6 +344,20 @@ MonoBehaviour:
   _velocityDefault: {x: 0, y: 0, z: 0}
   _textureDefault: {fileID: 2800000, guid: 9d5d64ece5c9f1e4e8a7a7c731f76c51, type: 3}
   _shadeDefault: 0
+--- !u!114 &-3497589594812239238
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc333b15d5e54546b9236a93044a3ee, type: 3}
+  m_Name: Jpeg
+  m_EditorClassIdentifier: 
+  _active: 1
+  _shader: {fileID: 4800000, guid: c87cb70bbf7424448b290759a6e27a96, type: 3}
 --- !u!114 &-2444572399665932362
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -850,9 +895,11 @@ MonoBehaviour:
     - {fileID: 8136809060951887187}
     - {fileID: 5751908815294258515}
     - {fileID: 6224388432119938236}
-    - {fileID: 2419187290011588430}
     - {fileID: -8519829960866941013}
     - {fileID: -6718439891295309787}
+    - {fileID: -4489833879492871121}
+    - {fileID: -3497589594812239238}
+    - {fileID: -7519534638024787470}
   _blitShader: {fileID: 4800000, guid: a8a709d9db2241741ab3032b946ef258, type: 3}
 --- !u!114 &4910309748227860240
 MonoBehaviour:

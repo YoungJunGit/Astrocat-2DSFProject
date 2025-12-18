@@ -25,6 +25,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 324429
   packageName: The Complete UI Sound Effects Library
-  packageVersion: 1.0
-  assetPath: Assets/CelerisLab/CompleteUISFX/miscellaneous_and_unique_ui/buff_applied_13.wav
-  uploadId: 781407
+  packageVersion: 1.0.1
+  assetPath: Assets/ExternalAssets/CelerisLab/CompleteUISFX/miscellaneous_and_unique_ui/buff_applied_13.wav
+  uploadId: 792348
