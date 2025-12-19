@@ -16,7 +16,7 @@ public record Damage(float Value, bool IsCritical) : IDamage
 [CreateAssetMenu(fileName = "DamageFactory", menuName = "GameScene/DamageFactory")]
 public class DamageFactory : ScriptableObject
 {
-    public static IDamage CreateNormalDamage<T>(BaseUnit caster, BaseUnit target) where T : ICalculator, new()
+    public static IDamage CreateDamage<T>(BaseUnit caster, BaseUnit target) where T : ICalculator, new()
     {
         ICalculator calculator = new T();
 

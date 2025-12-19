@@ -108,7 +108,7 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
                     // 잠식 상태이상 로직 - 예외처리
                     if  (crowdControl is Corrode && cc is Corrode corrodeCC)
                     {
-                        corrodeCC.AddCountStack();
+                        corrodeCC.IncreaseStack();
                     }
                 }
             }

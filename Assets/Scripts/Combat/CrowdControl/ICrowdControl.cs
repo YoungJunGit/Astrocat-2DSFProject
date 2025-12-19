@@ -7,6 +7,7 @@ using static CombatEffectManager;
 using static CombatEffectUnit;
 using System.Linq;
 using System;
+using R3;
 
 public interface ICrowdControl
 {
@@ -197,18 +198,21 @@ public class Bind : AttributeCrowdControlBase, IEnhancedCrowdControl
 public class Corrode : CrowdControlBase, IEnhancedCrowdControl
 {
     public override string ID => "40022005";
-    public int Count = 0;
+    public int Count { get; private set; } = 1;
+    public event Action OnDispose = delegate { };
 
     public override void ApplyCrowdControl(CCContext context)
     {
         base.ApplyCrowdControl(context);
-        Count++;
     }
 
-    public void AddCountStack()
+    public override void Dispose()
     {
-        Count++;
+        OnDispose.Invoke();
     }
+
+    public void IncreaseStack() => Count++;
+    public void DecreaseStack() => Count--;
 }
 
 public class Dominate : AttributeCrowdControlBase, IEnhancedCrowdControl

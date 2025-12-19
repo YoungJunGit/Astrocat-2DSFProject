@@ -77,11 +77,23 @@ public class CrowdControlUnit : IUpdatable
         _nonStackableCC.TryGetValue(type, out var pending);
         _nonStackableCC[type] = cc;
 
+        // 스택형 상태이상의 OnDispose로직
         if (cc is AttributeControl ac)
         {
             _pendingNonStackableCC[type] = pending;
             ac.Effect.OnDispose += () => 
             { 
+                _nonStackableCC[type] = _pendingNonStackableCC[type];
+                _pendingNonStackableCC.Remove(type);
+            };
+        }
+
+        // 공허 속성 상태이상의 OnDispose로직
+        if (cc is Corrode corrodeCC)
+        {
+            _pendingNonStackableCC[type] = pending;
+            corrodeCC.OnDispose += () =>
+            {
                 _nonStackableCC[type] = _pendingNonStackableCC[type];
                 _pendingNonStackableCC.Remove(type);
             };
@@ -111,6 +123,7 @@ public class CrowdControlUnit : IUpdatable
     // Not Using
     public void OnRoundUpdate() { }
 
+    // This method operate every turn
     public void OnTurnUpdate()
     {
         Reduce(ELEMENT_TYPE.PHYSICAL);
@@ -119,6 +132,7 @@ public class CrowdControlUnit : IUpdatable
         Reduce(ELEMENT_TYPE.ETC);
     }
 
+    // 지속 턴이 존재하는 상태이상 감소 로직
     private void Reduce(ELEMENT_TYPE elementType)
     {
         if (_effectsCountDic[elementType].Value <= 0)
@@ -126,11 +140,27 @@ public class CrowdControlUnit : IUpdatable
 
         _effectsCountDic[elementType].Value--;
 
+        // 잠식 상태이상 감소 로직
+        if (elementType == ELEMENT_TYPE.VOID)
+        {
+            var cc = GetNonStackCC(elementType);
+            if(cc != null && cc is Corrode corrodeCC)
+            {
+                corrodeCC.DecreaseStack();
+                if(corrodeCC.Count <= 0)
+                {
+                    corrodeCC.Dispose();
+                }
+            }
+        }
+
+        // 상태이상 정보 감소 후 갱신
         if (!ReduceCurrentEffects(elementType))
         {
             Debug.Log("Unexpected Error Ocurred!!!");
         }
 
+        // 만약 상태이상 Count가 0이 되면 상태이상 컨테이너에서 상태이상 제거
         if (_effectsCountDic[elementType].Value <= 0)
         {
             _nonStackableCC.Remove(elementType);

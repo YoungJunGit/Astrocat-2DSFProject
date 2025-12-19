@@ -50,7 +50,7 @@ public class UnitActionEvent : IUnitActionEvent
 
     public void DamageEvent(BaseUnit caster, BaseUnit target)
     {
-        IDamage damage = DamageFactory.CreateNormalDamage<NormalDamageCalculator>(caster, target);
+        IDamage damage = DamageFactory.CreateDamage<NormalDamageCalculator>(caster, target);
         target.GetStat().GetDamaged(damage);
     }
 }
