@@ -31,7 +31,7 @@ Shader "AllIn1SpriteShader/AllIn1SpriteShaderSRPBatch"
 		_OutlineTexYSpeed("Texture scroll speed Y", Range(-50,50)) = 0 //21
 
         [Space]
-		_OutlineDistortTex("Outline Distortion Texture", 2D) = "white" {} //22
+		[NoScaleOffset]_OutlineDistortTex("Outline Distortion Texture", 2D) = "white" {} //22
 		_OutlineDistortAmount("Outline Distortion Amount", Range(0,2)) = 0.5 //23
 		_OutlineDistortTexXSpeed("Distortion scroll speed X", Range(-50,50)) = 5 //24
 		_OutlineDistortTexYSpeed("Distortion scroll speed Y", Range(-50,50)) = 5 //25
@@ -242,6 +242,8 @@ Shader "AllIn1SpriteShader/AllIn1SpriteShaderSRPBatch"
 		_DistortTex_ScaleAndTiling("Distort Tex - Scale and Tiling", Vector) = (1, 1, 0, 0) //177
 		_OverlayTex_ScaleAndTiling("Overlay Tex - Scale and Tiling", Vector) = (1, 1, 0, 0) //178
 		/**/
+    	
+    	_GlitchSpeed("Glitch Speed", Range(0.0, 100)) = 20 //179
 
         _ZTestMode ("Z Test Mode", Float) = 4
     	_CullingOption ("Culling Option", float) = 0
@@ -338,7 +340,5 @@ Shader "AllIn1SpriteShader/AllIn1SpriteShaderSRPBatch"
     }
 
 	Fallback "AllIn1SpriteShader/AllIn1SpriteShader"
-
-	CustomEditor "AllIn1SpriteShaderMaterialInspector"
-	//Fallback "Sprites/Default" //Remove fallback so that any shader error is obvious to the user
+	CustomEditor "AllIn1SpriteShader.AllIn1SpriteShaderMaterialInspector"
 }
