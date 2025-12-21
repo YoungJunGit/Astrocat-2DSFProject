@@ -51,6 +51,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     NodeMapGenerator _mapGenerator;
     Camera _3DCamera;
     AbstractScene _scene;
+    MapDataFactory _mapDataFactory;
 
     public TextMesh NodeText => nodeText;
 
@@ -60,10 +61,11 @@ public class Node : MonoBehaviour, IUpdateObserver
     public void Init(NodeMapGenerator mapGenerator)
     {
         _mapGenerator = mapGenerator;
+        _mapDataFactory = new MapDataFactory();
         currentColor = defaultColor;
         ServiceLocator.ForSceneOf(this)
-            .Get(out _3DCamera)
             .Get(out _scene);
+        _3DCamera = mapGenerator.Cam;
         UpdatePublisher.SubscribeObserver(this);
     }
 
@@ -213,6 +215,9 @@ public class Node : MonoBehaviour, IUpdateObserver
         _mapGenerator.nowNode = this;
         _mapGenerator.nowNodeIdx = idx;
 
+        // 노드 클릭 시, 맵 데이터 저장
+        _mapDataFactory.SaveLastMapData(_mapGenerator);
+
         if (_mapGenerator.skipNodeProcessing)
         {
             _mapGenerator.toNextNode();
@@ -256,10 +261,6 @@ public class Node : MonoBehaviour, IUpdateObserver
                     break;
             }
         }
-
-        // 노드 클릭 시, 맵 데이터 저장
-        SaveLoadManager.SaveMap(_mapGenerator);
-
     }
 
     /*------------------------------------------------------------
@@ -268,36 +269,42 @@ public class Node : MonoBehaviour, IUpdateObserver
     void handleStart()
     {
         Debug.Log("게임 시작");
+        _mapDataFactory.SaveCompletedMapData();
         _mapGenerator.toNextNode();
     }
 
     void handleCamp()
     {
         Debug.Log("Open a camp");
+        _mapDataFactory.SaveCompletedMapData();
         _mapGenerator.toNextNode();
     }
 
     void handleShop()
     {
         Debug.Log("Open a shop");
+        _mapDataFactory.SaveCompletedMapData();
         _mapGenerator.toNextNode();
     }
 
     void handleEvent()
     {
         Debug.Log("Execute event");
+        _mapDataFactory.SaveCompletedMapData();
         _mapGenerator.toNextNode();
     }
 
     void handleTreasure()
     {
         Debug.Log("Obtain treasure");
+        _mapDataFactory.SaveCompletedMapData();
         _mapGenerator.toNextNode();
     }
 
     void handleTrap()
     {
         Debug.Log("Execute trap");
+        _mapDataFactory.SaveCompletedMapData();
         _mapGenerator.toNextNode();
     }
 
@@ -311,6 +318,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     void handleMiddle()
     {
         Debug.Log("Midpoint");
+        _mapDataFactory.SaveCompletedMapData();
         _mapGenerator.toNextNode();
     }
 
@@ -333,6 +341,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     void handleRandom()
     {
         Debug.Log("Execute random process");
+        _mapDataFactory.SaveCompletedMapData();
         _mapGenerator.toNextNode();
     }
 

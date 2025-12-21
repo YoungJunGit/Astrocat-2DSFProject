@@ -1,11 +1,6 @@
-using Cysharp.Threading.Tasks;
-using Cysharp.Threading.Tasks.Triggers;
 using DG.Tweening;
 using S3MG;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Unity.VisualScripting.Antlr3.Runtime;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -55,7 +50,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     Node[] activeRouteNodeArray;
 
     private GameObject mapField;
-    private GameObject mapParent;
+    public GameObject mapParent { private set; get; }
 
     [Header("▼Node Prefab: ButtonPrefab with Node class")]
     [SerializeField] public Node nodePref;
@@ -105,10 +100,10 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     Node[,] map;
     bool isCompleted = false;
     List<Transform> pathsTransform;
-    private const string MAP_KEY = "SaveMapData";
+    MapDataFactory _mapDataFactory;
 
     public Node[,] Map => map;
-    private List<List<Node>> _map;
+    public Camera Cam => cam;
 
     /*------------------------------------------------------------
     Executed when the value in the inspector is changed:Implemented to initialize when added because serializable classes like FixedNodeData and MapNodeData cannot use constructors
@@ -148,10 +143,10 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         pathsTransform = new List<Transform>();
         showNodes = new List<Node>();
         ServiceLocator.ForSceneOf(this).Get(out inputHandler);
-        ServiceLocator.ForSceneOf(this).Register(cam);
         inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectPlanet);
         inputHandler.OnMoveToPlanetAction += ShowActiveNode;
         inputHandler.OnControlSpaceshipAction += (_direction) => direction = _direction;
+        _mapDataFactory = new MapDataFactory();
 
         if (randomizeSeed) seed = Mathf.FloorToInt(Random.value * int.MaxValue);
         Random.InitState(seed);
@@ -312,9 +307,9 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             index++;
         }
 
-        if (ES3.KeyExists(MAP_KEY))
+        if (_mapDataFactory.IsKeyExist())
         {
-            LoadCreateMap();
+            _mapDataFactory.LoadLastMapData(this);
         }
         else
         {
@@ -361,7 +356,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     private void SetPaths()
     {
         // 저장된 맵 데이터가 있다면 기존 길 정보 부르기
-        if(ES3.KeyExists(MAP_KEY))
+        if(_mapDataFactory.IsKeyExist())
         {
             LoadPaths();
         }
@@ -417,54 +412,10 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         }
     }
 
-    /// <summary>
-    /// Set Save Map Data
-    /// </summary>
-    private void LoadCreateMap()
-    {
-        if (ES3.KeyExists(MAP_KEY))
-        {
-            SaveMapData mapData = ES3.Load<SaveMapData>(MAP_KEY);
-            List<SaveNodeData> nodes = mapData.saveNodeDatas;
-            int index = 0;
-
-            for (int i = 0; i < floorNum; i++)
-            {
-                for (int j = 0; j < routeNum; j++)
-                {
-                    Node node = Instantiate(nodePref, mapParent.transform);
-                    node.Init(this);
-                    setNodeSize(node, normalNodeSize);
-
-                    node.idx = nodes[index].idx;
-                    node.floor = nodes[index].floor;
-                    node.route = nodes[index].route;
-
-                    node.nextNodesIdx.AddRange(nodes[index].nextNodeIdx);
-                    node.prevNodesIdx.AddRange(nodes[index].prevNodeIdx);
-
-                    node.nodeType = nodes[index].nodeType;
-                    node.NodeText.text = nodes[index].nodeName;
-
-                    node.visited = nodes[index].isVisited;
-                    node.isActive = nodes[index].isActive;
-                    node.connected = nodes[index].isConnected;
-                    nowNodeIdx = mapData.nowNodeIdx;
-                    node.transform.position = nodes[index].position;
-
-                    map[i, j] = node;
-                    map[i, j].gameObject.name = $"{i},{j}";
-
-                    index++;
-                }
-            }
-        }
-    }
-
     /*------------------------------------------------------------
     Set node size
     ------------------------------------------------------------*/
-    void setNodeSize(Node target, float size)
+    public void setNodeSize(Node target, float size)
     {
         target.transform.localScale = new Vector2(size, size);
     }
@@ -475,7 +426,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     void selectFirstNode()
     {
         List<Node> tmp = new List<Node>();
-        if (ES3.KeyExists(MAP_KEY))
+        if (_mapDataFactory.IsKeyExist())
         {
             Queue<Node> nodes = new Queue<Node>();
 
@@ -681,7 +632,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         List<Node> tmp = new List<Node>();
         tmp = getUnassignedConnectedNodes(tmp);
 
-        if (ES3.KeyExists(MAP_KEY))
+        if (_mapDataFactory.IsKeyExist())
         {
             foreach (var node in map)
             {
@@ -919,7 +870,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             }
         }
 
-        if(ES3.KeyExists(MAP_KEY))
+        if(_mapDataFactory.IsKeyExist())
         {
             for (int i = 0; i < activeRouteNodeArray.Length; i++)
             {
@@ -958,7 +909,9 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         if (!makeStart && node.floor == 0) return;
         foreach(var prevNode in map)
         {
-            if(nowNodeIdx == prevNode.idx)
+            if(nowNodeIdx == 0)
+                nowNode = startNode;
+            else if(nowNodeIdx == prevNode.idx)
                 nowNode = prevNode;
         }
 
