@@ -9,6 +9,9 @@ using DG.Tweening;
 
 public class PlayerHUD : BaseHUD
 {
+    [Header("Image")]
+    [SerializeField] private Image characterImg;
+    
     [Header("AP")]
     [SerializeField] private TMP_Text ap_Text;
     [SerializeField] private GameObject ap_Panel;
@@ -16,16 +19,10 @@ public class PlayerHUD : BaseHUD
     [SerializeField] private Color ActivateColor;
     [SerializeField] private Color DeactivateColor;
 
-    [Space(10f)]
-    [SerializeField] private Image statusBox;
-    [SerializeField] private Color DieColor;
+    [Space(10.0f)]
+    [SerializeField] private CanvasGroup ui;
 
     private List<Image> ap_BoxList = new List<Image>();
-
-    protected override void UpdateIconBoxSize<T>(List<T> iconList)
-    {
-
-    }
 
     public override void Initialize(BaseUnit unit)
     {
@@ -43,21 +40,15 @@ public class PlayerHUD : BaseHUD
 
     public override void OnHPChanged(float curHp, float maxHp)
     {
-        float targetValue= curHp / maxHp;
-        hp_Text.text = $"{curHp}/{maxHp}";
-
-        hp_Slider.DOKill();
-
-        hp_Slider.direction = Slider.Direction.RightToLeft;
-        hp_Slider.DOValue(targetValue, hpTweenDuration);
+        base.OnHPChanged(curHp, maxHp);
 
         if (curHp <= 0)
         {
-            statusBox.color = DieColor;
+            ui.alpha = 0.5f;
         }
         else
         {
-            statusBox.color = Color.white;
+            ui.alpha = 1.0f;
         }
     }
 

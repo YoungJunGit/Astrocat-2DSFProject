@@ -7,6 +7,8 @@ using ObservableCollections;
 using R3;
 using System.Collections.Generic;
 using DataEnum;
+using DG.Tweening;
+using System;
 
 public abstract class BaseHUD : MonoBehaviour
 {
@@ -14,12 +16,13 @@ public abstract class BaseHUD : MonoBehaviour
     [SerializeField] protected RectTransform _effectBoxRectTransform;
 
     [Header("Icons")]
-    [SerializeField] protected GameObject statusIconPrefab;
+    [SerializeField] private GameObject CCIconPrefab;
+    [SerializeField] private GameObject BuffIconPrefab;
 
     [Header("HP"), Space(10f)]
-    [SerializeField] protected TMP_Text hp_Text;
-    [SerializeField] protected Slider hp_Slider;
-    [SerializeField] protected float hpTweenDuration = 0.5f;
+    [SerializeField] private TMP_Text hp_Text;
+    [SerializeField] private Image hp_Image;
+    [SerializeField] private float hpTweenDuration = 0.5f;
 
     private List<ElementIcon> _ccIconList = new();
     private List<BuffIcon> _buffIconList = new();
@@ -58,14 +61,21 @@ public abstract class BaseHUD : MonoBehaviour
         );
     }
 
+    public virtual void OnHPChanged(float curHp, float maxHp)
+    {
+        float targetValue = curHp / maxHp;
+        hp_Text.text = $"{curHp}/{maxHp}";
+
+        hp_Image.DOKill();
+        hp_Image.DOFillAmount(targetValue, hpTweenDuration);
+    }
+
     private T CreateIcon<T>(List<T> iconList, Transform parent)
     {
-        var icon = Instantiate(statusIconPrefab, parent, false).GetComponent<T>();
+        var objectToInstantiate = typeof(T) == typeof(ELEMENT_TYPE) ? CCIconPrefab : BuffIconPrefab;
+        var icon = Instantiate(objectToInstantiate, parent, false).GetComponent<T>();
         iconList.Add(icon);
-        UpdateIconBoxSize(iconList);
 
         return icon;
     }
-    protected abstract void UpdateIconBoxSize<T>(List<T> iconList);
-    public abstract void OnHPChanged(float curHp, float maxHp);
 }

@@ -12,23 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e01e3113b871749aa8c5d06ad5fc06, type: 3}
   m_Name: ElementIconContainer
   m_EditorClassIdentifier: 
-  IconSize: {x: 40, y: 40}
-  Offset:
-    OffsetMax: {x: 0, y: -15}
-    OffsetMin: {x: 20, y: 15}
   IconDic:
     _serializedList:
     - Key: 1
-      Value: {fileID: -8008318868508421301, guid: 6dc3407b1b5208645b5519f655164884, type: 3}
+      Value: {fileID: 917294059930464041, guid: 1a6ab035f9bb1294f9ec10132b934903, type: 3}
     - Key: 2
-      Value: {fileID: -6073374272139994016, guid: 5be37f9e4145c43489284587e8f817b0, type: 3}
+      Value: {fileID: 5977558423804470281, guid: 1a6ab035f9bb1294f9ec10132b934903, type: 3}
     - Key: 3
-      Value: {fileID: 6250408378827817749, guid: d4dadf6db06fc8d4eb6fc322273cf430, type: 3}
+      Value: {fileID: 7193409126045601889, guid: 1a6ab035f9bb1294f9ec10132b934903, type: 3}
     - Key: 4
-      Value: {fileID: -8008318868508421301, guid: 0e5beb948297a644daa8ede771c8b559, type: 3}
+      Value: {fileID: 6842593259500674880, guid: 1a6ab035f9bb1294f9ec10132b934903, type: 3}
     - Key: 5
-      Value: {fileID: -4963903812808475556, guid: 1b7e1e34094e94141816d4283e44b5e9, type: 3}
+      Value: {fileID: 2400303441228086333, guid: 1a6ab035f9bb1294f9ec10132b934903, type: 3}
     - Key: 6
-      Value: {fileID: 2638317935476153092, guid: f4432d3fe762c694c92a448ca813845f, type: 3}
+      Value: {fileID: -4251148692821105967, guid: 1a6ab035f9bb1294f9ec10132b934903, type: 3}
     - Key: 7
-      Value: {fileID: -1716774356227567966, guid: 3cba134a0e42ebd4baf23aad89f36102, type: 3}
+      Value: {fileID: 3817112003813887410, guid: 1a6ab035f9bb1294f9ec10132b934903, type: 3}
+  CountableIconList: 020000000300000004000000

@@ -176,9 +176,6 @@ public class UnitStat
     public readonly CoreStat CoreStat;
     public readonly ModifierStat ModifierStat;
 
-    private readonly ObservableDictionary<BUFF_TYPE, IconInfo> _buffIconInfoDic = new();
-    private readonly ObservableDictionary<ELEMENT_TYPE, IconInfo> _elementIconInfoDic = new();
-
     private float _curHp;
     private int   _curSP;
     private int   _priority;

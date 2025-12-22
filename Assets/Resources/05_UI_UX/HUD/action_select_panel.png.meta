@@ -1,28 +1,37 @@
 fileFormatVersion: 2
-guid: 1a6ab035f9bb1294f9ec10132b934903
+guid: 72233414da4539747948e211987d690f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 917294059930464041
-    second: CC_Icon_0
+      213: -5007650571944719265
+    second: action_select_panel_0
   - first:
-      213: 5977558423804470281
-    second: CC_Icon_1
+      213: -8092680602079938057
+    second: action_select_panel_1
   - first:
-      213: 7193409126045601889
-    second: CC_Icon_2
+      213: -388768278544116969
+    second: action_select_panel_2
   - first:
-      213: 6842593259500674880
-    second: CC_Icon_3
+      213: -3572436743390598584
+    second: action_select_panel_3
   - first:
-      213: 2400303441228086333
-    second: CC_Icon_4
+      213: 8791168412820430929
+    second: action_select_panel_4
   - first:
-      213: -4251148692821105967
-    second: CC_Icon_5
+      213: 1112379044627199488
+    second: action_select_panel_5
   - first:
-      213: 3817112003813887410
-    second: CC_Icon_6
+      213: -3922214315225645610
+    second: action_select_panel_6
+  - first:
+      213: -1908805511110216967
+    second: action_select_panel_7
+  - first:
+      213: 5735053378460190805
+    second: action_select_panel_8
+  - first:
+      213: -8950368153449728851
+    second: action_select_panel_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -93,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,13 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CC_Icon_0
+      name: action_select_panel_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 192
-        height: 192
+        x: 195
+        y: 995
+        width: 818
+        height: 710
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 92f2bb46612eabc00800000000000000
-      internalID: 917294059930464041
+      spriteID: f5c04f32650418ab0800000000000000
+      internalID: -5007650571944719265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CC_Icon_1
+      name: action_select_panel_1
       rect:
         serializedVersion: 2
-        x: 216
-        y: 0
-        width: 192
-        height: 192
+        x: 1119
+        y: 1355
+        width: 398
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 904620b47bd84f250800000000000000
-      internalID: 5977558423804470281
+      spriteID: 7f9b4588ed501bf80800000000000000
+      internalID: -8092680602079938057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CC_Icon_2
+      name: action_select_panel_2
       rect:
         serializedVersion: 2
-        x: 428
-        y: 0
-        width: 196
-        height: 192
+        x: 1643
+        y: 1355
+        width: 398
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1605002ec7f14d360800000000000000
-      internalID: 7193409126045601889
+      spriteID: 71310797f41da9af0800000000000000
+      internalID: -388768278544116969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CC_Icon_3
+      name: action_select_panel_3
       rect:
         serializedVersion: 2
-        x: 644
-        y: 0
-        width: 192
-        height: 192
+        x: 2175
+        y: 1291
+        width: 434
+        height: 430
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04f150fd056c5fe50800000000000000
-      internalID: 6842593259500674880
+      spriteID: 84a66af95b72c6ec0800000000000000
+      internalID: -3572436743390598584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CC_Icon_4
+      name: action_select_panel_4
       rect:
         serializedVersion: 2
-        x: 856
-        y: 0
-        width: 196
-        height: 192
+        x: 1119
+        y: 843
+        width: 398
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3c3c8f23479f4120800000000000000
-      internalID: 2400303441228086333
+      spriteID: 150ebc60811800a70800000000000000
+      internalID: 8791168412820430929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CC_Icon_5
+      name: action_select_panel_5
       rect:
         serializedVersion: 2
-        x: 1072
-        y: 0
-        width: 192
-        height: 192
+        x: 1643
+        y: 843
+        width: 398
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +252,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d2280599c2e005c0800000000000000
-      internalID: -4251148692821105967
+      spriteID: 006b792f8d6ff6f00800000000000000
+      internalID: 1112379044627199488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CC_Icon_6
+      name: action_select_panel_6
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 0
-        width: 192
-        height: 192
+        x: 2175
+        y: 779
+        width: 434
+        height: 430
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,8 +274,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2bdc43fb42b19f430800000000000000
-      internalID: 3817112003813887410
+      spriteID: 6ddf5007cde7199c0800000000000000
+      internalID: -3922214315225645610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action_select_panel_7
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 331
+        width: 398
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2b7fc308f8285e0800000000000000
+      internalID: -1908805511110216967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action_select_panel_8
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 331
+        width: 398
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558060f79a0079f40800000000000000
+      internalID: 5735053378460190805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action_select_panel_9
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 267
+        width: 434
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da4f8a4e597e9c380800000000000000
+      internalID: -8950368153449728851
       vertices: []
       indices: 
       edges: []
@@ -275,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 82e7f69e83283924bb5587a26245a62e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -283,17 +358,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      CC_Icon_0: 917294059930464041
-      CC_Icon_1: 5977558423804470281
-      CC_Icon_2: 7193409126045601889
-      CC_Icon_3: 6842593259500674880
-      CC_Icon_4: 2400303441228086333
-      CC_Icon_5: -4251148692821105967
-      CC_Icon_6: 3817112003813887410
+      action_select_panel_0: -5007650571944719265
+      action_select_panel_1: -8092680602079938057
+      action_select_panel_2: -388768278544116969
+      action_select_panel_3: -3572436743390598584
+      action_select_panel_4: 8791168412820430929
+      action_select_panel_5: 1112379044627199488
+      action_select_panel_6: -3922214315225645610
+      action_select_panel_7: -1908805511110216967
+      action_select_panel_8: 5735053378460190805
+      action_select_panel_9: -8950368153449728851
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

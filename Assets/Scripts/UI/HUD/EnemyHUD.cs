@@ -18,11 +18,6 @@ public class EnemyHUD : BaseHUD, IUpdateObserver
 
     [HideInInspector] public Vector3 spawnPos;
 
-    protected override void UpdateIconBoxSize<T>(List<T> iconList)
-    {
-
-    }
-
     public override void Initialize(BaseUnit unit)
     {
         base.Initialize(unit);
@@ -40,13 +35,7 @@ public class EnemyHUD : BaseHUD, IUpdateObserver
 
     public override void OnHPChanged(float curHp, float maxHp)
     {
-        float targetValue = curHp / maxHp;
-        hp_Text.text = $"{curHp}/{maxHp}";
-
-        hp_Slider.DOKill();
-
-        hp_Slider.direction = Slider.Direction.RightToLeft;
-        hp_Slider.DOValue(targetValue, hpTweenDuration);
+        base.OnHPChanged(curHp, maxHp);
 
         if (curHp <= 0)
         {

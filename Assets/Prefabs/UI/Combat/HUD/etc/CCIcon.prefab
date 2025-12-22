@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10, y: 15}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 9.7704, y: -12.6}
+  m_SizeDelta: {x: -19.5408, y: -6.6583}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1513706465551712727
 CanvasRenderer:
@@ -148,9 +148,8 @@ GameObject:
   - component: {fileID: 8519922095755830241}
   - component: {fileID: 506488666892706665}
   - component: {fileID: 517037845982738140}
-  - component: {fileID: 119627522578453946}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: CCIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +173,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 29, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8519922095755830241
 CanvasRenderer:
@@ -204,7 +203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6073374272139994016, guid: 5be37f9e4145c43489284587e8f817b0, type: 3}
+  m_Sprite: {fileID: 917294059930464041, guid: 1a6ab035f9bb1294f9ec10132b934903, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -221,26 +220,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6000020781682477188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc74840d9c6712349a8aebd43a232406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconContainerBase: {fileID: 11400000, guid: 695438d3f964b7449ae67d8096706d32, type: 2}
   count: {fileID: 8817311037174248264}
   iconImg: {fileID: 506488666892706665}
---- !u!114 &119627522578453946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6000020781682477188}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c0d8875d1b8ac4883bab289c6abc71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iconContainerBase: {fileID: 11400000, guid: f2c42f268bb31934c8940730bbec8f99, type: 2}
-  count: {fileID: 8817311037174248264}
-  iconImg: {fileID: 506488666892706665}
+  _iconContainer: {fileID: 11400000, guid: 695438d3f964b7449ae67d8096706d32, type: 2}

@@ -19,6 +19,7 @@ public class HUDManager : ScriptableObject
     public void Init()
     {
         statusCanvas = Instantiate(statusCanvasPref);
+        statusCanvas.Init();
         
         ServiceLocator.For(this)
             .Get(out _unitManager);
