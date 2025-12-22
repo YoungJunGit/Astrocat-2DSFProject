@@ -11,7 +11,7 @@ public class EnemyHUD : BaseHUD, IUpdateObserver
 {
     [Space(10f)]
     [SerializeField] private Vector3 statusPosOffset;
-    [SerializeField] private Vector3 buffBoxPosOffset;
+    [SerializeField] private Vector3 effectBoxPosOffset;
     private RectTransform _statusRectTransform;
     private Transform _statusPos;
     private Transform _buffBoxPos;
@@ -59,7 +59,7 @@ public class EnemyHUD : BaseHUD, IUpdateObserver
     {
         gameObject.SetActive(true);
         _statusRectTransform.position = Camera.main.WorldToScreenPoint(_statusPos.position + statusPosOffset);
-        _buffBoxRectTransform.position = Camera.main.WorldToScreenPoint(_buffBoxPos.position + buffBoxPosOffset);
+        _effectBoxRectTransform.position = Camera.main.WorldToScreenPoint(_buffBoxPos.position + effectBoxPosOffset);
     }
 
     private void OnDestroy()

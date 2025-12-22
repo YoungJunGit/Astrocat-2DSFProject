@@ -36,75 +36,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.03479004, y: -0.0000076293945}
   m_SizeDelta: {x: -9.9305, y: 4.7566}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &3499112418767599819
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3967331010587713193}
-  - component: {fileID: 215171585646844766}
-  - component: {fileID: 2234973230642412596}
-  m_Layer: 5
-  m_Name: CCPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3967331010587713193
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3499112418767599819}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2818255802048241641}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 42.5}
-  m_SizeDelta: {x: 175, y: 85}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &215171585646844766
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3499112418767599819}
-  m_CullTransparentMesh: 1
---- !u!114 &2234973230642412596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3499112418767599819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 7
-  m_StartCorner: 2
-  m_StartAxis: 0
-  m_CellSize: {x: 40, y: 40}
-  m_Spacing: {x: 5, y: 5}
-  m_Constraint: 0
-  m_ConstraintCount: 6
 --- !u!1 &3668130473941235128
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +307,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3030465889877236441}
-  - {fileID: 3967331010587713193}
   - {fileID: 4278206156891631320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -405,14 +335,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2608ab29ade044f43ab6dff82650722c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buffBoxRectTransform: {fileID: 4278206156891631320}
-  _crowdControlRectTransform: {fileID: 3967331010587713193}
+  _effectBoxRectTransform: {fileID: 4278206156891631320}
   statusIconPrefab: {fileID: 6000020781682477188, guid: a20b859dfaddbc74f9fd1b622d78da81, type: 3}
   hp_Text: {fileID: 1022801073456684004}
   hp_Slider: {fileID: 3319606366621633704}
   hpTweenDuration: 0.5
   statusPosOffset: {x: 0, y: 0.3, z: 0}
-  buffBoxPosOffset: {x: 0, y: 0, z: 0}
+  effectBoxPosOffset: {x: 0, y: 0, z: 0}
   spawnPos: {x: 0, y: 0, z: 0}
 --- !u!1 &5040532298731431401
 GameObject:

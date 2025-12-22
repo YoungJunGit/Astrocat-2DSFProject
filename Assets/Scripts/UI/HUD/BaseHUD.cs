@@ -11,8 +11,7 @@ using DataEnum;
 public abstract class BaseHUD : MonoBehaviour
 {
     [Header("RectTransforms")]
-    [SerializeField] protected RectTransform _buffBoxRectTransform;
-    [SerializeField] protected RectTransform _crowdControlRectTransform;
+    [SerializeField] protected RectTransform _effectBoxRectTransform;
 
     [Header("Icons")]
     [SerializeField] protected GameObject statusIconPrefab;
@@ -47,7 +46,7 @@ public abstract class BaseHUD : MonoBehaviour
                 // »ý¼º
                 if (icon == null)
                 {
-                    icon = CreateIcon(_ccIconList, _crowdControlRectTransform);
+                    icon = CreateIcon(_ccIconList, _effectBoxRectTransform);
                     icon.Init(value.Element, value.Count.CurrentValue);
                     icon.enabled = true;
                     return;

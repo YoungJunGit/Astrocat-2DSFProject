@@ -18,7 +18,6 @@ public class PlayerHUD : BaseHUD
 
     [Space(10f)]
     [SerializeField] private Image statusBox;
-    [SerializeField] private TMP_Text unitName;
     [SerializeField] private Color DieColor;
 
     private List<Image> ap_BoxList = new List<Image>();
@@ -31,8 +30,6 @@ public class PlayerHUD : BaseHUD
     public override void Initialize(BaseUnit unit)
     {
         base.Initialize(unit);
-
-        unitName.text = unit.GetStat().CoreStat.Name;
 
         for(int i = 0; i < unit.GetStat().ModifierStat.MaxSP; i++)
         {

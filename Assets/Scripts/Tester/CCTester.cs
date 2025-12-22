@@ -12,7 +12,7 @@ public class CCTester : MonoBehaviour
         PlayerToEnemy,
         EnemyToPlayer
     }
-    CrowdControlManager crowdControlManager;
+    ICrowdControlManager crowdControlManager;
     IUnitManager unitManager;
 
     [SerializeField] Button addCrowdCtrlBtn;
