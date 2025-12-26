@@ -22,6 +22,7 @@ public class RuntimeSceneInjector : MonoBehaviour
     {
         if (state == PlayModeStateChange.ExitingEditMode)
         {
+            #pragma warning disable CS0618
             // Find all RuntimeSceneInjector instances in open scenes
             var injectors = GameObject.FindObjectsOfType<RuntimeSceneInjector>();
             if (injectors.Length == 0) return;

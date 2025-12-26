@@ -9,6 +9,7 @@ namespace VolFx
 
         private void OnEnable()
         {
+            #pragma warning disable CS0618
             var hasMove = FindObjectOfType<Move>();
 
             if (hasMove)

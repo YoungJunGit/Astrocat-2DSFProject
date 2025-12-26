@@ -25,6 +25,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 324429
   packageName: The Complete UI Sound Effects Library
-  packageVersion: 1.0
-  assetPath: Assets/CelerisLab/CompleteUISFX/basic_interactions_and_navigation/button_click_12.wav
-  uploadId: 781407
+  packageVersion: 1.0.1
+  assetPath: Assets/ExternalAssets/CelerisLab/CompleteUISFX/basic_interactions_and_navigation/button_click_12.wav
+  uploadId: 792348

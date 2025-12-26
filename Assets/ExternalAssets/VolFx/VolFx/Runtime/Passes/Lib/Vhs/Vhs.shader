@@ -86,7 +86,7 @@ Shader "Hidden/Vol/Vhs"
 				vhs.a = c.a;
 				
 				// flickering
-				vhs.rgb += c.rgb - (rand(float3(i.uv.x, i.uv.y, _xScanline)) * _xScanline / 5) * _Flickering * _Glitch.rgb;
+				vhs.rgb += c.rgb - (rand(float3(i.uv.x, i.uv.y, _xScanline)) * _xScanline / 5) * _Flickering * _Glitch.rgb * _Glitch.a;
 				
 				// glow
 				fixed3 bleed = tex2D(_MainTex, i.uv + float2(0.01, 0) * _Bleed).rgb;

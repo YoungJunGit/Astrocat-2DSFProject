@@ -3,8 +3,8 @@ The Complete UI Sound Effects Library
 =====================================================
 
 Publisher: CelerisLab
-Support: apricot.business1@gmail.com
-Version: 1.0
+Support: apricots.business1@gmail.com
+Version: 1.0.1
 
 -----------------------------------------------------
 

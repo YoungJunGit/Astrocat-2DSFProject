@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2235384}
   - component: {fileID: 2235385}
+  - component: {fileID: 2235386}
   m_Layer: 0
   m_Name: SetUrp
   m_TagString: Untagged
@@ -171,6 +172,18 @@ MonoBehaviour:
   _onStart:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2235386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2235383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5126b23331eb488997471e4afe5e8b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &14771072
 GameObject:
   m_ObjectHideFlags: 0
@@ -3751,7 +3764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &911171988
 Transform:
   m_ObjectHideFlags: 0

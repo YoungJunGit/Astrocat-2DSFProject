@@ -40,6 +40,8 @@ MonoBehaviour:
     - Assembly-CSharp-firstpass
     - AssetInventory.Examples
     - AYellowpaper.SerializedCollections
+    - DOTween.Modules
+    - DOTweenPro.Scripts
     - Flexalon
     - Flexalon.Samples
     - NaughtyAttributes.Core
@@ -51,6 +53,7 @@ MonoBehaviour:
     - R3.Unity.TextMeshPro
     - R3.Unity.XRInteractionToolkit
     - ScreenFx
+    - ScreenFx.Samples
     - Sirenix.OdinInspector.Modules.Unity.Addressables
     - Tools.Runtime
     - UniTask
@@ -60,6 +63,7 @@ MonoBehaviour:
     - UniTask.TextMeshPro
     - VolFx
     - VolFx.Samples
+    - VolFx.Transitions
     - WatercolorFx.Runtime
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
