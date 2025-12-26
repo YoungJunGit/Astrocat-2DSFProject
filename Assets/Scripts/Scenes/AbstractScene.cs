@@ -27,6 +27,7 @@ public abstract class AbstractScene : MonoBehaviour
     protected BackgroundManager backgroundManager;
 
     public ISceneHandler SceneHandler { get => sceneHandler; }
+    protected MapDataFactory mapDataFactory;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
@@ -43,6 +44,7 @@ public abstract class AbstractScene : MonoBehaviour
             .Get(out backgroundManager)
             .Get(out soundService);
 
+        mapDataFactory = new MapDataFactory();
         if (!SceneManager.GetSceneByName("99. Base").isLoaded)
             await SceneManager.LoadSceneAsync("99. Base", LoadSceneMode.Additive);
 
