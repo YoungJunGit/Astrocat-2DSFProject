@@ -66,12 +66,14 @@ public class CombatManager : ScriptableObject
         {
             currentTurnUnit = DequeueCurrentUnit.Call(_unitManager.GetAllUnits());
 
+            currentTurnUnit.CEUnit.OnStartTurn();
+            await UniTask.WaitUntil(() => EventHandler.IsEventEmpty());
+
+            Debug.Log($"{currentTurnUnit.GetStat().CoreStat.Name}'s turn");
             await UniTask.WaitUntil(() => !_textManager.IsTextOn);
 
-            currentTurnUnit.CEUnit.OnStartTurn();
-            Debug.Log($"{currentTurnUnit.GetStat().CoreStat.Name}'s turn");
-
             ForDebugControlEffect(currentTurnUnit, ELEMENT_TYPE.PHYSICAL);
+            _selectorManager.UpdateActionSelector(currentTurnUnit);
 
             if (currentTurnUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.PHYSICAL].CurrentValue <= 0)
             {

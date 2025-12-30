@@ -17,6 +17,8 @@ public abstract class IconView<T> : MonoBehaviour
 
         if (IconContainer.IconDic.TryGetValue(type, out var sprite))
             iconImg.sprite = sprite;
+
+        UpdateIcon(count);
     }
 
     public void UpdateIcon(int count)

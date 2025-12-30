@@ -44,12 +44,12 @@ public class CrowdControlUnit : IUpdatable
     private readonly Dictionary<ELEMENT_TYPE, ICrowdControl> _pendingNonStackableCC = new();
 
     public ICrowdControl GetNonStackCC(ELEMENT_TYPE type) => _nonStackableCC.TryGetValue(type, out var cc) ? cc : null;
-    public ELEMENT_TYPE Previous_Element_Type { get; set; } = ELEMENT_TYPE.NONE;
+    public ELEMENT_TYPE Previous_CC_Type { get; private set; } = ELEMENT_TYPE.NONE;
 
     public void Add(ELEMENT_TYPE elementType, ELEMENT_STATUS_CATEGORY category)
     {
         if (elementType != ELEMENT_TYPE.ETC)
-            Previous_Element_Type = elementType;
+            Previous_CC_Type = elementType;
 
         _effectsCountDic[elementType].Value++;
         _currentEffects[elementType].Add(category);
@@ -61,7 +61,7 @@ public class CrowdControlUnit : IUpdatable
         _currentEffects[elementType].Clear();
 
         if (!CheckAnyEffects())
-            Previous_Element_Type = ELEMENT_TYPE.NONE;
+            Previous_CC_Type = ELEMENT_TYPE.NONE;
     }
 
     // 중첩이 가능한 상태이상 저장용
@@ -166,7 +166,7 @@ public class CrowdControlUnit : IUpdatable
             _nonStackableCC.Remove(elementType);
 
             if (!CheckAnyEffects())
-                Previous_Element_Type = ELEMENT_TYPE.NONE;
+                Previous_CC_Type = ELEMENT_TYPE.NONE;
         }
     }
 

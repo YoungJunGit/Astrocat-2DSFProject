@@ -28,8 +28,8 @@ class SelfAttackAction : IUnitAction
         var modifer = new BasicStatModifier<float>(BUFF_TYPE.ATTACK, UPDATE_TYPE.NONE, (v) => v + attackIncreaseRate);
         context.Caster.GetStat().ModifierStat.Mediator.AddModifier(modifer);
 
-        IDamage damage = DamageFactory.CreateDamage<StrangeDamageCalculator>(context.Caster, context.Caster);
-        context.Caster.GetStat().GetDamaged(damage);
+        IDamageInfo damage = DamageFactory.CreateDamage<StrangeDamageCalculator>(context.Caster, context.Caster);
+        context.Caster.GetDamage(damage);
 
         modifer.Dispose();
     }
@@ -45,6 +45,7 @@ class BaseAttackAction : IUnitAction
 
     public virtual async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = default)
     {
+        context.Caster.OnAttack();
         unitAction.OnStartAction(context);
 
         await UniTask.WaitUntil(() => context.Caster.CombatInfo.isFinishedAction, cancellationToken: cancellationToken.Token);
@@ -124,7 +125,6 @@ class RangeAttackAction : BaseAttackAction
         BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
         if (bullet != null)
         {
-            context.SoundService.PlayEffectSound("Player_Shoot");
             bullet.Initialize(target.Attachments.GetHitBox(), () => { unitAction.DamageEvent(context.Caster, target); unitAction.OnFinishedAction(context); });
             return bullet;
         }

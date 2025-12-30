@@ -94,7 +94,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 95a1f7f85a3284b419917895a21392ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -471,8 +471,11 @@ MonoBehaviour:
   _animHandler: {fileID: 1316542457625181986}
   _supporterUnit: {fileID: 0}
   _unitType: 2
+  hitBlendAmount: 0.75
+  hitBlendDuration: 0.25
   HasSupporter: 0
-  Attachments: {fileID: 0}
+  _soundContainer: {fileID: 11400000, guid: 9c6283887159aa24b8afb37cfa9f0762, type: 2}
+  My_Temp_Type: 0
 --- !u!114 &8303580816812213284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,5 +494,4 @@ MonoBehaviour:
   UnitSelectArrowPos: {fileID: 4968746072884941724}
   StatusPos: {fileID: 9136855789934232106}
   BuffBoxPos: {fileID: 8960175206361412108}
-  ActionSelectorPos: {fileID: 0}
   BulletSpawnPos: {fileID: 7590652976416351343}

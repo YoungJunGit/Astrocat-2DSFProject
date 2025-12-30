@@ -24,8 +24,8 @@ public abstract class DamageEffect : BaseEffect<float>, IStartTurnEffectProvider
 
     public void OnEachTurn()
     {
-        IDamage damage = DamageFactory.CreateDamage<BurnDamageCalculator>(Context.Caster, Context.Target);
-        Context.Target.GetStat().GetDamaged(damage);
+        IDamageInfo damage = DamageFactory.CreateDamage<BurnDamageCalculator>(Context.Caster, Context.Target);
+        Context.Target.GetDamage(damage);
     }
 }
 

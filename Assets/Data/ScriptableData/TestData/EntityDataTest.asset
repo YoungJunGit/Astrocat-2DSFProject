@@ -20,10 +20,10 @@ MonoBehaviour:
     kind: 0
     index: 1001
     Side: 1
-    Name: CHARACTER_NAME_1001
-    Max_HP: 10000
+    Name: "\uB77C\uC774\uD50C\uB9E8"
+    Max_HP: 3000
     Max_SP: 9
-    Default_Attack: 40
+    Default_Attack: 70
     Default_Defense: 10
     Default_SP: 3
     Default_Speed: 20
@@ -31,15 +31,11 @@ MonoBehaviour:
     Critical_Damage_Rate: 1.3
     Counter_Damage_Rate: 1.3
     Skill_ID:
-    - 20001001
-    - '
-
-      20012001'
-    - 20012002
-    - '
-
-      20012003'
-    - 20012004
+    - 20010001
+    - 20010002
+    - 20020001
+    - 20020002
+    - 20030001
     Element_Charge_Rate:
     - 1
     - 1
@@ -62,15 +58,16 @@ MonoBehaviour:
     - 1
     - 1
     Asset_File: player_Rifleman
+    Temp_Type: 1
   - code: 10001002
     table: 10
     kind: 0
     index: 1002
     Side: 1
-    Name: CHARACTER_NAME_1002
-    Max_HP: 100
+    Name: "\uC2A4\uB098\uC774\uD37C\uB9E8"
+    Max_HP: 3000
     Max_SP: 9
-    Default_Attack: 40
+    Default_Attack: 80
     Default_Defense: 10
     Default_SP: 3
     Default_Speed: 16
@@ -100,15 +97,16 @@ MonoBehaviour:
     - 1
     - 1
     Asset_File: player_Sniper
+    Temp_Type: 2
   - code: 10001003
     table: 10
     kind: 0
     index: 1003
     Side: 1
-    Name: CHARACTER_NAME_1003
-    Max_HP: 100
+    Name: "\uCEE4\uBBF8\uC0AC\uB974"
+    Max_HP: 3000
     Max_SP: 9
-    Default_Attack: 40
+    Default_Attack: 50
     Default_Defense: 10
     Default_SP: 3
     Default_Speed: 10
@@ -138,15 +136,16 @@ MonoBehaviour:
     - 1
     - 1
     Asset_File: player_Commissar
+    Temp_Type: 4
   - code: 10012001
     table: 10
     kind: 1
     index: 2001
     Side: 2
-    Name: MONSTER_NAME_2001
-    Max_HP: 10000
+    Name: "\uD3AD\uADC4 \uB77C\uC774\uD50C\uB9E8"
+    Max_HP: 3000
     Max_SP: 9
-    Default_Attack: 40
+    Default_Attack: 70
     Default_Defense: 10
     Default_SP: 3
     Default_Speed: 20
@@ -176,15 +175,16 @@ MonoBehaviour:
     - 1
     - 1
     Asset_File: penguin_Rifleman
+    Temp_Type: 5
   - code: 10012002
     table: 10
     kind: 1
     index: 2002
     Side: 2
-    Name: MONSTER_NAME_2002
-    Max_HP: 100
+    Name: "\uD3AD\uADC4 \uCEE4\uB9E8\uB354"
+    Max_HP: 3000
     Max_SP: 9
-    Default_Attack: 40
+    Default_Attack: 120
     Default_Defense: 10
     Default_SP: 3
     Default_Speed: 10
@@ -214,15 +214,16 @@ MonoBehaviour:
     - 1
     - 1
     Asset_File: penguin_Commander
+    Temp_Type: 6
   - code: 10012003
     table: 10
     kind: 1
     index: 2003
     Side: 2
-    Name: MONSTER_NAME_2003
-    Max_HP: 100
+    Name: "\uD3AD\uADC4 \uBC84\uC11C\uCEE4"
+    Max_HP: 3000
     Max_SP: 9
-    Default_Attack: 40
+    Default_Attack: 100
     Default_Defense: 10
     Default_SP: 3
     Default_Speed: 10
@@ -252,3 +253,4 @@ MonoBehaviour:
     - 1
     - 1
     Asset_File: penguin_Berserker
+    Temp_Type: 1

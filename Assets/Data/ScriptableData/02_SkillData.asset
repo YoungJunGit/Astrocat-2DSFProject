@@ -16,142 +16,182 @@ MonoBehaviour:
   decryptToggle: 0
   data:
   - Skill_ID: 20010001
-    Skill_Name: Skill_NAME_2001
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3001
-    Effect1_Type: 1
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 0
-    Effect1_Target_Type: 1
-    Effect1_Value: 0.5
-    Effect2_Type: 0
-    Effect2_Chance: 0
-    Effect2_Duration_Turns: 0
-    Effect2_Target_Type: 0
-    Effect2_Value: 0
+    table: 
+    kind: 
+    index: 
+    Skill_Name: "\uAC10\uC815 \uB864\uB7EC\uCF54\uC2A4\uD130"
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 1
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 
   - Skill_ID: 20010002
-    Skill_Name: Skill_NAME_2002
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3002
-    Effect1_Type: 1
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 0
-    Effect1_Target_Type: 2
-    Effect1_Value: 1
-    Effect2_Type: 0
-    Effect2_Chance: 0
-    Effect2_Duration_Turns: 0
-    Effect2_Target_Type: 0
-    Effect2_Value: 0
+    table: 
+    kind: 
+    index: 
+    Skill_Name: "\uD2B8\uB9AC\uD50C \uBC84\uC2A4\uD2B8"
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 
   - Skill_ID: 20020001
-    Skill_Name: Skill_NAME_2003
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3003
-    Effect1_Type: 1
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 0
-    Effect1_Target_Type: 2
-    Effect1_Value: 1.5
-    Effect2_Type: 0
-    Effect2_Chance: 0
-    Effect2_Duration_Turns: 0
-    Effect2_Target_Type: 0
-    Effect2_Value: 0
+    table: 
+    kind: 
+    index: 
+    Skill_Name: "\uC5D0\uC5B4\uB9AC\uC5B4 \uBC84\uC2A4\uD2B8"
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 
   - Skill_ID: 20020002
-    Skill_Name: Skill_NAME_2004
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3004
-    Effect1_Type: 1
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 0
-    Effect1_Target_Type: 1
-    Effect1_Value: 2
-    Effect2_Type: 0
-    Effect2_Chance: 0
-    Effect2_Duration_Turns: 0
-    Effect2_Target_Type: 0
-    Effect2_Value: 0
+    table: 
+    kind: 
+    index: 
+    Skill_Name: "\uC751\uAE09 \uCC98\uCE58"
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 
   - Skill_ID: 20030001
-    Skill_Name: Skill_NAME_2005
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3005
-    Effect1_Type: 2
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 3
-    Effect1_Target_Type: 3
-    Effect1_Value: 0.5
-    Effect2_Type: 0
-    Effect2_Chance: 0
-    Effect2_Duration_Turns: 0
-    Effect2_Target_Type: 0
-    Effect2_Value: 0
+    table: 
+    kind: 
+    index: 
+    Skill_Name: "\uC5B4\uADF8\uB85C ON"
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 
   - Skill_ID: 20030002
+    table: 
+    kind: 
+    index: 
     Skill_Name: Skill_NAME_2006
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3006
-    Effect1_Type: 1
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 0
-    Effect1_Target_Type: 1
-    Effect1_Value: 0.3
-    Effect2_Type: 1
-    Effect2_Chance: 1
-    Effect2_Duration_Turns: 3
-    Effect2_Target_Type: 1
-    Effect2_Value: 0.7
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 
   - Skill_ID: 20040001
+    table: 
+    kind: 
+    index: 
     Skill_Name: Skill_NAME_2007
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3007
-    Effect1_Type: 2
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 1
-    Effect1_Target_Type: 5
-    Effect1_Value: 0.3
-    Effect2_Type: 4
-    Effect2_Chance: 1
-    Effect2_Duration_Turns: 0
-    Effect2_Target_Type: 4
-    Effect2_Value: 0
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 
   - Skill_ID: 20040002
+    table: 
+    kind: 
+    index: 
     Skill_Name: Skill_NAME_2008
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3008
-    Effect1_Type: 1
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 0
-    Effect1_Target_Type: 1
-    Effect1_Value: 1.1
-    Effect2_Type: 1
-    Effect2_Chance: 1
-    Effect2_Duration_Turns: 3
-    Effect2_Target_Type: 1
-    Effect2_Value: 0.7
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 
   - Skill_ID: 20050001
+    table: 
+    kind: 
+    index: 
     Skill_Name: Skill_NAME_2009
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3009
-    Effect1_Type: 1
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 0
-    Effect1_Target_Type: 1
-    Effect1_Value: 1.5
-    Effect2_Type: 0
-    Effect2_Chance: 0
-    Effect2_Duration_Turns: 0
-    Effect2_Target_Type: 0
-    Effect2_Value: 0
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 
   - Skill_ID: 20050002
+    table: 
+    kind: 
+    index: 
     Skill_Name: Skill_NAME_2010
-    Skill_CostAP: 1
-    Skill_EffectDesc: Skill_EFFECT_DESCE_3010
-    Effect1_Type: 3
-    Effect1_Chance: 1
-    Effect1_Duration_Turns: 2
-    Effect1_Target_Type: 1
-    Effect1_Value: -0.5
-    Effect2_Type: 1
-    Effect2_Chance: 1
-    Effect2_Duration_Turns: 0
-    Effect2_Target_Type: 1
-    Effect2_Value: 1.5
+    Skill_Desc: 
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    Buff_Value: []
+    QTE_ID: 

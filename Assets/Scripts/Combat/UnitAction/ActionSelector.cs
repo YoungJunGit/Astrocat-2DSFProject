@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using DataEntity;
 using DataEnum;
 using NaughtyAttributes;
 using System;
@@ -13,39 +14,47 @@ using static ActionSelectionButtons;
 public class ActionSelector : BaseSelector
 {
     [FormerlySerializedAs("_actionFactory")] [SerializeField] private UnitActionFactory unitActionFactory;
-    [SerializeField] private ActionSelectionButtons selectorPrefab;
     [SerializeField] private InputHandler inputHandler;
-    [SerializeField, SortingLayer] private string layerName;
     private ActionSelectionButtons selector;
     private ISoundService _soundService;
+    private DataHandler _dataHandler;
 
-    List<string> skillName = new();
+    List<SkillData> skillDataList;
     private int _selectedActionType;
     private int _selectedSkillIndex;
+    private bool _selectActionComplete;
 
     public override void Init()
     {
-        selector = Instantiate(selectorPrefab);
-        selector.gameObject.SetActive(false);
-        
+        selector = GameObject.FindWithTag("ActionPanel").GetComponent<ActionSelectionButtons>();
         selector.Init();
         
         selector.OnBasicSelection += (index) => _selectedActionType = index;
         selector.OnSkillSelection += (index) => _selectedSkillIndex = index;
+        selector.OnSelectActionStart += () => _selectActionComplete = false;
+        selector.OnSelectActionEnd += () => _selectActionComplete = true;
 
-        ServiceLocator.For(this).Get(out _soundService);
+        ServiceLocator.For(this)
+            .Get(out _soundService)
+            .Get(out _dataHandler);
+    }
+
+    public void UpdateSelector(BaseUnit unit)
+    {
+        if (unit is PlayerUnit && unit.CCUnit.EffectsCountDic[ELEMENT_TYPE.HOLY].CurrentValue > 0)
+        {
+            selector.SetSkillBtnEffect(false);
+        }
+        else
+        {
+            selector.SetSkillBtnEffect(true);
+        }
     }
 
     public async UniTask SelectAction(PlayerUnit playerUnit, Action<IUnitAction> onSelected)
     {
-        selector.OnSelectStart();
         Debug.Log($"{playerUnit.GetStat().CoreStat.Name} : Select Action");
         IUnitAction unitAction = null;
-
-        if(playerUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.HOLY].CurrentValue > 0)
-        {
-            selector.DisableInteraction(ActionSelectType.Skill);
-        }
 
         IUnitAction strangeUnitAction = null;
         if(playerUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.VOID].CurrentValue > 0)
@@ -56,18 +65,13 @@ public class ActionSelector : BaseSelector
                 strangeUnitAction = unitActionFactory.CreateSelfAttackAction();
             }
         }
-        
-        selector.transform.position = playerUnit.Attachments.GetActionSelectorPos().position;
-        selector.GetComponent<Canvas>().sortingLayerName = layerName;
-        selector.gameObject.SetActive(true);
-
-        _selectedActionType = 0;
 
         IUnitAction normalUnitAction = null;
-        bool selectActionComplete = false;
+        _selectedActionType = 0;
+        selector.OnSelectStart();
         using (var inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectAction))
         {
-            while (selectActionComplete != true)
+            while (_selectActionComplete != true)
             {
                 await UniTask.WaitUntil(() => _selectedActionType != 0);
 
@@ -75,40 +79,32 @@ public class ActionSelector : BaseSelector
                 {
                     case 1:
                         _soundService.PlayEffectSound("Click");
-                        selector.gameObject.SetActive(false);
 
-                        selectActionComplete = true;
+                        selector.OnSelectEnd();
                         normalUnitAction = unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
-                        Debug.Log(normalUnitAction);
                         break;
                     case 2:
                         _soundService.PlayEffectSound("Start_Menu");
                         var skillID = playerUnit.GetStat().CoreStat.SkillsID;
 
-                        skillName.Clear();
+                        skillDataList.Clear();
                         foreach (var skill in skillID)
                         {
-                            CombatUtils.UnitSkillNameDictionary.TryGetValue(skill, out var name);
+                            var existSkill = _dataHandler.FindSkillData(skill);
 
-                            if (name != null)
-                                skillName.Add(name);
-                        }
-                        if (skillName.Count == 0)
-                        {
-                            selector.gameObject.SetActive(false);
-                            return;
+                            if (existSkill != null)
+                                skillDataList.Add(existSkill);
                         }
 
-                        selector.EnableSkillSelectionButtons(skillName.ToArray());
+                        selector.EnableSkillSelectionButtons(skillDataList.ToArray());
 
                         _selectedSkillIndex = 0;
                         await UniTask.WaitUntil(() => _selectedSkillIndex != 0 || _selectedActionType != 2);
 
                         if (_selectedSkillIndex != 0)
                         {
+                            selector.OnSelectEnd();
                             normalUnitAction = unitActionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
-                            selector.gameObject.SetActive(false);
-                            selectActionComplete = true;
                         }
 
                         selector.DisableSkillSelectionButtons();

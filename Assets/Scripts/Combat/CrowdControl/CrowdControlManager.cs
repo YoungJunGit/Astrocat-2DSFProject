@@ -35,7 +35,7 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
 
     public void AddCrowdControl(ELEMENT_TYPE element_type, BaseUnit target, BaseUnit caster)
     {
-        var previousElement = target.CCUnit.Previous_Element_Type;
+        var previousElement = target.CCUnit.Previous_CC_Type;
         if (previousElement != element_type && previousElement != ELEMENT_TYPE.NONE)
         {
             #region [Chaos상태이상 저장]
@@ -55,7 +55,7 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
             // If Chaos Element_Status_Effect already exists -> Save Update Action
             else
             {
-                chaos.ReapplyCrowdControl(target.CCUnit.Previous_Element_Type);
+                chaos.ReapplyCrowdControl(target.CCUnit.Previous_CC_Type);
             }
             #endregion
         }
@@ -63,7 +63,7 @@ public class CrowdControlManager : ScriptableObject, ICrowdControlManager
         #region [상태이상 정보만 저장]
         ELEMENT_STATUS_CATEGORY category;
         // If Same CC Stack Exist
-        if (target.CCUnit.Previous_Element_Type == element_type)
+        if (target.CCUnit.Previous_CC_Type == element_type)
         {
             category = ElementStatusRuleTable.GetEnhanced(element_type);
         }

@@ -51,7 +51,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -64,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -99,10 +99,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,10 +130,10 @@ TextureImporter:
       name: action_select_panel_0
       rect:
         serializedVersion: 2
-        x: 195
-        y: 995
-        width: 818
-        height: 710
+        x: 196
+        y: 996
+        width: 816
+        height: 708
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: action_select_panel_1
       rect:
         serializedVersion: 2
-        x: 1119
-        y: 1355
-        width: 398
-        height: 366
+        x: 1120
+        y: 1356
+        width: 396
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: action_select_panel_2
       rect:
         serializedVersion: 2
-        x: 1643
-        y: 1355
-        width: 398
-        height: 366
+        x: 1644
+        y: 1356
+        width: 396
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: action_select_panel_3
       rect:
         serializedVersion: 2
-        x: 2175
-        y: 1291
-        width: 434
-        height: 430
+        x: 2176
+        y: 1292
+        width: 432
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: action_select_panel_4
       rect:
         serializedVersion: 2
-        x: 1119
-        y: 843
-        width: 398
-        height: 366
+        x: 1120
+        y: 844
+        width: 396
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: action_select_panel_5
       rect:
         serializedVersion: 2
-        x: 1643
-        y: 843
-        width: 398
-        height: 366
+        x: 1644
+        y: 844
+        width: 396
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,10 +262,10 @@ TextureImporter:
       name: action_select_panel_6
       rect:
         serializedVersion: 2
-        x: 2175
-        y: 779
-        width: 434
-        height: 430
+        x: 2176
+        y: 780
+        width: 432
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,10 +284,10 @@ TextureImporter:
       name: action_select_panel_7
       rect:
         serializedVersion: 2
-        x: 1115
-        y: 331
-        width: 398
-        height: 366
+        x: 1116
+        y: 332
+        width: 396
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,10 +306,10 @@ TextureImporter:
       name: action_select_panel_8
       rect:
         serializedVersion: 2
-        x: 1639
-        y: 331
-        width: 398
-        height: 366
+        x: 1640
+        y: 332
+        width: 396
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: action_select_panel_9
       rect:
         serializedVersion: 2
-        x: 2175
-        y: 267
-        width: 434
-        height: 430
+        x: 2176
+        y: 268
+        width: 432
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 688100fca0caae249b3892d88aee042f
     internalID: 0
     vertices: []
     indices: 
@@ -358,7 +358,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       action_select_panel_0: -5007650571944719265
       action_select_panel_1: -8092680602079938057

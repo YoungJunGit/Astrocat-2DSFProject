@@ -11,7 +11,8 @@ public class PlayerHUD : BaseHUD
 {
     [Header("Image")]
     [SerializeField] private Image characterImg;
-    
+    [SerializeField] private CharacterPortraitInfo portraitInfo;
+
     [Header("AP")]
     [SerializeField] private TMP_Text ap_Text;
     [SerializeField] private GameObject ap_Panel;
@@ -21,12 +22,21 @@ public class PlayerHUD : BaseHUD
 
     [Space(10.0f)]
     [SerializeField] private CanvasGroup ui;
+    [SerializeField] private RectTransform _effectBoxRectTransform;
 
+    protected override RectTransform effectBoxRectTransform => _effectBoxRectTransform;
     private List<Image> ap_BoxList = new List<Image>();
 
     public override void Initialize(BaseUnit unit)
     {
         base.Initialize(unit);
+
+        if (!portraitInfo.CharacterProtraitDic.TryGetValue(unit.GetStat().CoreStat.AssetFileName, out var sprite))
+        {
+            throw new System.Exception("Character Portrait has not been assigned properly!!!");
+        }
+
+        characterImg.sprite = sprite;
 
         for(int i = 0; i < unit.GetStat().ModifierStat.MaxSP; i++)
         {
@@ -34,22 +44,7 @@ public class PlayerHUD : BaseHUD
             ap_BoxList.Add(img);
         }
 
-        unit.GetStat().OnHPChanged += this.OnHPChanged;
         unit.GetStat().OnSPChanged += this.OnSPChanged;
-    }
-
-    public override void OnHPChanged(float curHp, float maxHp)
-    {
-        base.OnHPChanged(curHp, maxHp);
-
-        if (curHp <= 0)
-        {
-            ui.alpha = 0.5f;
-        }
-        else
-        {
-            ui.alpha = 1.0f;
-        }
     }
 
     public void OnSPChanged(int curAp, int maxAp)
@@ -60,5 +55,10 @@ public class PlayerHUD : BaseHUD
         }
 
         ap_Text.text = $"{curAp}/{maxAp}";
+    }
+
+    public override void OnFinishedDying(BaseUnit me)
+    {
+        ui.alpha = 0.5f;
     }
 }

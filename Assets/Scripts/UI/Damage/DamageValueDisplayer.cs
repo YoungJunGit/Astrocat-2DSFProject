@@ -20,9 +20,12 @@ public abstract class DamageValueDisplayer : IDamageValueDisplayer
             );
         valueObject = Object.Instantiate(container.Value_Prefab, spawnBounds, Quaternion.identity);
 
-        string stringValue = value.ToString();
+        string stringValue = ((int)value).ToString();
         foreach (char c in stringValue)
         {
+            if(!char.IsDigit(c))
+                throw new System.Exception("DamageValue must include only digit!!!");
+
             int digit = c - '0';
 
             GameObject digit_object = Object.Instantiate(container.Digit_Prefab, valueObject.transform);

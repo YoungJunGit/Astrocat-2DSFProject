@@ -15,8 +15,6 @@ public class UnitAttachments : MonoBehaviour
     private Transform StatusPos;
     [SerializeField, ShowIf("IsEnemy"), Required]
     private Transform BuffBoxPos;
-    [SerializeField, ShowIf("IsPlayer"), Required] 
-    private Transform ActionSelectorPos;
     [SerializeField, ShowIf("@this.IsRange || this.IsSupporterUnit"), Required] 
     private Transform BulletSpawnPos;
 
@@ -26,7 +24,6 @@ public class UnitAttachments : MonoBehaviour
     public Transform GetStatusPosition() => StatusPos;
     public Transform GetBuffBoxPosition() => BuffBoxPos;
     public Transform GetUnitSelectArrowPos() => UnitSelectArrowPos;
-    public Transform GetActionSelectorPos() => ActionSelectorPos;
     public Transform GetBulletSpawnPos() => BulletSpawnPos;
 
     private bool IsUnit     => GetComponent<BaseUnit>() != null;

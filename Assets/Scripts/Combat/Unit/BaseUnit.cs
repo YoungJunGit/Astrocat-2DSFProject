@@ -26,36 +26,51 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
     protected SupporterUnit _supporterUnit;
 
     [SerializeField] private UNIT_TYPE _unitType;
+    [SerializeField] private float hitBlendAmount = 0.75f;
+    [SerializeField] private float hitBlendDuration = 0.25f;
     [SerializeField] private bool HasSupporter = false;
+
+    [SerializeField] 
+    private UnitSoundContainer _soundContainer;
+    public UnitSoundContainer SoundContainer => _soundContainer;
+    private UnitAttachments _attachments;
+    public UnitAttachments Attachments => _attachments;
 
     protected UnitStat _stat;
     protected ISoundService _soundService;
     protected ICombatTextManager _textManager;
+    protected ICrowdControlManager _crowdControlManager;
 
-    [HideInInspector] 
-    public UnitAttachments Attachments;
     public UnitCombatInfo CombatInfo;
     public CrowdControlUnit CCUnit;
     public CombatEffectUnit CEUnit;
+
     public Action<BaseUnit> m_FinishedDying;
 
     private readonly List<IUpdatable> _updatableList = new();
 
-    DisposableBag d;
+    // temp
+    public ELEMENT_TYPE My_Temp_Type;
+
+    private const string HIT_BLEND_TWEEN_ID = "HIT_BLEND";
 
     public void Initialize(EntityData data, int priority)
     {
-        Attachments      = GetComponent<UnitAttachments>();
-        CombatInfo       = new UnitCombatInfo();
+        _attachments = GetComponent<UnitAttachments>();
+        CombatInfo = new UnitCombatInfo();
         CCUnit = new CrowdControlUnit();
         CEUnit = new CombatEffectUnit();
-        _stat            = new UnitStat(data, priority);
+        _stat = new UnitStat(data, priority);
 
-        _animHandler.Init();
+        My_Temp_Type = data.Temp_Type;
+        Attachments.GetSpriteRenderer().material = new Material(Attachments.GetSpriteRenderer().material);
+
+        _animHandler.Init(_soundContainer);
 
         ServiceLocator.For(this)
             .Get(out _soundService)
-            .Get(out _textManager);
+            .Get(out _textManager)
+            .Get(out _crowdControlManager);
 
         TimelinePublisher.SubscribeObserver(this);
 
@@ -66,25 +81,67 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
             _supporterUnit.Initialize();
     }
 
-    public void OnDamaged(IDamage damage)
+    public void GetDamage(IDamageInfo damageInfo)
     {
-        Attachments.GetSpriteRenderer().color = Color.red;
-        Attachments.GetSpriteRenderer().DOColor(Color.white, 0.25f);
+        _stat.GetDamaged(damageInfo.DamageValue);
+        CombatInfo.LastAttacker = damageInfo.Attacker;
 
-        if(this is PlayerUnit)
+        var material = Attachments.GetSpriteRenderer().material;
+        DOTween.Kill(_stat.CoreStat.Name + HIT_BLEND_TWEEN_ID);
+        material.SetFloat("_HitEffectBlend", hitBlendAmount);
+        material.DOFloat(0.0f, "_HitEffectBlend", hitBlendDuration)
+            .SetEase(Ease.Linear)
+            .SetId(_stat.CoreStat.Name + HIT_BLEND_TWEEN_ID);
+
+        if (this is PlayerUnit)
+        {
             _animHandler.ChangeAnimation(AnimCombat.HIT);
+        }
 
-        if(HasSupporter)
+        if (HasSupporter)
         {
             _supporterUnit.OnDamaged();
         }
 
-        _textManager.OnDamage(this, damage);
+        _textManager.OnDamage(this, damageInfo);
+
+        if (_stat.HP <= 0f)
+        {
+            OnDie().Forget();
+            return;
+        }
+
+        if(damageInfo.ElementType != ELEMENT_TYPE.NONE)
+        {
+            _stat.IncreaseElementGauge(damageInfo.ElementType, damageInfo.ElementGaugeIncreaseValue);
+        }
     }
 
-    public void OnHealed(float value)
+    public void GetHeal(float value)
     {
+        _stat.GetHealed(value);
+
         // TODO : Heal Logic
+    }
+
+    public void OnAttack(int cost = 0)
+    {
+        if (cost == 0)
+        {
+            _stat.OnNormalAttack();
+        }
+        else
+        {
+            _stat.OnSkillAttack(cost);
+        }
+    }
+
+    public void OnElementGaugeFull(ELEMENT_TYPE elementType)
+    {
+        if(elementType != ELEMENT_TYPE.NONE && elementType != ELEMENT_TYPE.ETC)
+        {
+            _crowdControlManager.AddCrowdControl(elementType, this, CombatInfo.LastAttacker);
+        }
     }
 
     public async virtual UniTask OnRevive()
@@ -118,7 +175,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
     public void RoundUpdate()
     {
-        foreach(var updatable in _updatableList)
+        foreach (var updatable in _updatableList)
         {
             updatable.OnRoundUpdate();
         }
@@ -132,9 +189,9 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         }
     }
 
-    public AnimationHandler GetAnimationHandler()       => _animHandler;
-    public UnitStat GetStat()                           => _stat;
-    public UNIT_TYPE GetUnitType()                      => _unitType;
+    public AnimationHandler GetAnimationHandler() => _animHandler;
+    public UnitStat GetStat() => _stat;
+    public UNIT_TYPE GetUnitType() => _unitType;
 
     public abstract void OnFinshedDeath(Action done);
     public abstract void PlayDeathSound();

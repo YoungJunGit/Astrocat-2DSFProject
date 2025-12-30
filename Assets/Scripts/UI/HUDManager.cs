@@ -8,11 +8,10 @@ public class HUDManager : ScriptableObject
     [SerializeField] private PlayerHUD playerHUDPrefab;
     [SerializeField] private EnemyHUD enemyHUDPrefab;
 
-    [SerializeField] private StatusCanvas statusCanvasPref;
-    private StatusCanvas statusCanvas;
+    [SerializeField] private HUDCanvas statusCanvasPref;
+    private HUDCanvas statusCanvas;
 
-    Dictionary<PlayerUnit, PlayerHUD> playerHudDic = new Dictionary<PlayerUnit, PlayerHUD>();
-    Dictionary<EnemyUnit, EnemyHUD> enemyHudDic = new Dictionary<EnemyUnit, EnemyHUD>();
+    private Dictionary<BaseUnit, BaseHUD> unit_HUD_Dic = new Dictionary<BaseUnit, BaseHUD>();
 
     IUnitManager _unitManager;
 
@@ -31,6 +30,7 @@ public class HUDManager : ScriptableObject
         {
             // For initializing unit's HUD
             unit.GetStat().OnPrepareCombat();
+            unit_HUD_Dic[unit].OnElementGaugeFull += unit.OnElementGaugeFull;
         }
     }
 
@@ -38,7 +38,7 @@ public class HUDManager : ScriptableObject
     {
         PlayerHUD hud = Instantiate(playerHUDPrefab).GetComponent<PlayerHUD>();
         hud.Initialize(unit);
-        playerHudDic.Add(unit, hud);
+        unit_HUD_Dic.Add(unit, hud);
         statusCanvas.SetPlayerHUD(hud, unit.GetStat().Priority);
 
         return hud;
@@ -48,7 +48,7 @@ public class HUDManager : ScriptableObject
     {
         EnemyHUD hud = Instantiate(enemyHUDPrefab).GetComponent<EnemyHUD>();
         hud.Initialize(unit);
-        enemyHudDic.Add(unit, hud);
+        unit_HUD_Dic.Add(unit, hud);
         statusCanvas.SetEnemyHUD(hud, unit.Attachments.GetStatusPosition(), unit.Attachments.GetBuffBoxPosition(), unit.GetStat().Priority);
 
         return hud;

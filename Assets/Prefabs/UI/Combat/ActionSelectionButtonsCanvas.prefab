@@ -86,7 +86,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3138597416370976295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,11 +116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64611c417e70d144b981b30754c96f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicAttackButton: {fileID: 2442314518211614719}
-  skillButton: {fileID: 6549105982483355117}
-  useItemButton: {fileID: 6298263798713373308}
-  skillSelectionButtonsGO: {fileID: 6000933248305223533}
-  skillButtonGO: {fileID: 7079826893322143720, guid: b2d0d95a056a072429f907aefad64605, type: 3}
+  basicAttackBtn: {fileID: 0}
+  skillSelectBtn: {fileID: 0}
+  itemSelectBtn: {fileID: 0}
+  skillSelectionBtnPanel: {fileID: 0}
+  skillBtnGameObj: {fileID: 0}
 --- !u!1 &646762748580047540
 GameObject:
   m_ObjectHideFlags: 0

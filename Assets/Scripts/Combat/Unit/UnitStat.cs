@@ -8,6 +8,7 @@ using R3;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using ScreenFx;
 
 #region [Core Stat]
 public class CoreStat
@@ -51,6 +52,8 @@ public class ModifierStat
         _mediator.PerformQuery(this, q);
         return Mathf.Max(0.0f, q.Value);
     }
+
+    public float MaxEG => 100.0f;
 
     #region [DT-Value]
     public float MaxHP
@@ -176,18 +179,19 @@ public class UnitStat
     public readonly CoreStat CoreStat;
     public readonly ModifierStat ModifierStat;
 
+    private ELEMENT_TYPE _currentElementType = ELEMENT_TYPE.NONE;
     private float _curHp;
     private int   _curSP;
+    private float _curEG;
     private int   _priority;
     public float HP     { get => _curHp; }
     public int SP       { get => _curSP; }
+    public float EG { get => _curEG; }
     public int Priority { get => _priority; }
 
-    public Action<float, float> OnHPChanged;
-    public Action<int, int> OnSPChanged;
-    public Action<IDamage> OnDamaged;
-    public Action<float> OnHealed;
-    public Action OnDie;
+    public Action<float, float> OnHPChanged = delegate { };
+    public Action<int, int> OnSPChanged = delegate { };
+    public Action<ELEMENT_TYPE, bool, int, float, float> OnEGChanged = delegate { };
 
     public UnitStat(EntityData baseData, int priority)
     {
@@ -196,44 +200,53 @@ public class UnitStat
 
         _curHp = (float)baseData.Max_HP;
         _curSP = baseData.Default_SP;
+        _curEG = 0.0f;
         _priority = priority;
     }
 
     public void OnPrepareCombat()
     {
         OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
-        OnSPChanged?.Invoke(_curSP, ModifierStat.MaxSP);
+        OnSPChanged?.Invoke(SP, ModifierStat.MaxSP);
     }
 
-    public void GetDamaged(IDamage damage)
+    public void GetDamaged(float value) 
     {
-        _curHp = Mathf.Clamp(_curHp - damage.Value, 0f, ModifierStat.MaxHP);
+        _curHp = Mathf.Clamp(_curHp - value, 0f, ModifierStat.MaxHP);
         OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
-        OnDamaged.Invoke(damage);
-
-        if (_curHp <= 0f)
-        {
-            OnDie.Invoke();
-        }
     }
 
-    public void GetHealed(float value)
-    {
+    public void GetHealed(float value) 
+    { 
         _curHp = Mathf.Clamp(_curHp + value, 0f, ModifierStat.MaxHP);
         OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
-        OnHealed.Invoke(value);
     }
 
-    public void OnNormalAttack()
-    {
+    public void OnNormalAttack() 
+    { 
         _curSP = Mathf.Clamp(_curSP + 1, 0, ModifierStat.MaxSP);
         OnSPChanged.Invoke(_curSP, ModifierStat.MaxSP);
     }
 
-    public void OnSkillAttack(int value)
-    {
+    public void OnSkillAttack(int value) 
+    { 
         _curSP = Mathf.Clamp(_curSP - value, 0, ModifierStat.MaxSP);
         OnSPChanged.Invoke(_curSP, ModifierStat.MaxSP);
+    }
+
+    public void IncreaseElementGauge(ELEMENT_TYPE elementType, float value)
+    {
+        var finalValue = _curEG + value;
+        var isReset = _currentElementType != elementType;
+
+        if (isReset)
+        {
+            _currentElementType = elementType;
+            finalValue = value;
+        }
+        int fillCount = (int)finalValue / (int)ModifierStat.MaxEG;
+        _curEG = finalValue % ModifierStat.MaxEG;
+        OnEGChanged.Invoke(elementType, isReset, fillCount, _curEG, ModifierStat.MaxEG);
     }
 
     public int CompareTo(UnitStat other)
