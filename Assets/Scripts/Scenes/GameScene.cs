@@ -136,6 +136,7 @@ public class GameScene : AbstractScene
     protected override async UniTask BeginGame()
     {
         await combatManager.StartCombat();
+        mapDataFactory.SaveCompletedMapData();
     }
 
     private void ForDebugging()

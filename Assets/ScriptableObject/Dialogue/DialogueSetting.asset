@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7e32f8d8ddecd48ae2b4b63a35069b, type: 3}
+  m_Name: DialogueSetting
+  m_EditorClassIdentifier: 
+  dialogueManagerPref: {fileID: 4605834967882861955, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
+  riflemanPref: {fileID: 455900719253406514, guid: 8bfa56e5d9a08df42b30f2ef91e45430, type: 3}
+  firebatPref: {fileID: 5817316527005428888, guid: 695683c735301e34ab8147c7dae6ceb1, type: 3}

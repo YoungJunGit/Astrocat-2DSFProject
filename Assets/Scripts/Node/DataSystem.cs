@@ -1,25 +1,28 @@
-using System.Collections.Generic;
 using UnityEngine;
 using DataSystem;
+using System.Collections.Generic;
+using S3MG;
 
 namespace DataSystem
 {
     public interface ISaveMapData
     {
-        void SaveMapData(NodeMapGenerator mapGenerator);
+        void SaveLastMapData(NodeMapGenerator mapGenerator);
+        void SaveCompletedMapData();
     }
 
     public interface ILoadMapData
     {
-        void LoadMapData(NodeMapGenerator mapGenerator);
+        void LoadLastMapData(NodeMapGenerator mapGenerator);
     }
 }
 
 public class MapDataFactory : ISaveMapData, ILoadMapData
 {
-    private const string MAP_KEY = "SaveMapData";
+    private const string LAST_MAP_KEY = "SaveLastMapData";
+    private const string CURRENT_MAP_KEY = "SaveCurrentMapData";
 
-    public void SaveMapData(NodeMapGenerator mapGenerator)
+    public void SaveLastMapData(NodeMapGenerator mapGenerator)
     {
         SaveMapData saveMapData = new SaveMapData();
 
@@ -46,12 +49,68 @@ public class MapDataFactory : ISaveMapData, ILoadMapData
             saveMapData.saveNodeDatas.Add(n);
         }
 
-        ES3.Save(MAP_KEY, saveMapData);
+        ES3.Save(LAST_MAP_KEY, saveMapData);
         Debug.Log("맵 데이터 저장 완료");
     }
 
-    public void LoadMapData(NodeMapGenerator mapGenerator)
-    {
 
+    public void SaveCompletedMapData()
+    {
+        if(ES3.KeyExists(LAST_MAP_KEY))
+        {
+            SaveMapData SaveMapData = ES3.Load<SaveMapData>(LAST_MAP_KEY);
+            ES3.Save(CURRENT_MAP_KEY, SaveMapData);
+        }
+    }
+
+    public void LoadLastMapData(NodeMapGenerator mapGenerator)
+    {
+        if(IsKeyExist())
+        {
+            int floorNum = mapGenerator.floorNum;
+            int routeNum = mapGenerator.routeNum;
+            SaveMapData mapData = ES3.Load<SaveMapData>(CURRENT_MAP_KEY);
+            List<SaveNodeData> nodes = mapData.saveNodeDatas;
+            int index = 0;
+
+            for (int i = 0;i < floorNum;i++)
+            {
+                for(int j = 0;j < routeNum;j++)
+                {
+                    Node node = Object.Instantiate(mapGenerator.nodePref, mapGenerator.mapParent.transform);
+                    node.Init(mapGenerator);
+                    mapGenerator.setNodeSize(node, mapGenerator.normalNodeSize);
+
+                    node.idx = nodes[index].idx;
+                    node.floor = nodes[index].floor;
+                    node.route = nodes[index].route;
+
+                    node.nextNodesIdx.AddRange(nodes[index].nextNodeIdx);
+                    node.prevNodesIdx.AddRange(nodes[index].prevNodeIdx);
+
+                    node.nodeType = nodes[index].nodeType;
+                    node.NodeText.text = nodes[index].nodeName;
+
+                    node.visited = nodes[index].isVisited;
+                    node.isActive = nodes[index].isActive;
+                    node.connected = nodes[index].isConnected;
+                    mapGenerator.nowNodeIdx = mapData.nowNodeIdx;
+                    node.transform.position = nodes[index].position;
+
+                    mapGenerator.Map[i, j] = node;
+                    mapGenerator.Map[i, j].gameObject.name = $"{i},{j}";
+
+                    index++;
+                }
+            }
+        }
+    }
+
+    public bool IsKeyExist()
+    {
+        if (ES3.KeyExists(CURRENT_MAP_KEY))
+            return true;
+        else
+            return false;
     }
 }

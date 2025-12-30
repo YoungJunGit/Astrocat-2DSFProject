@@ -144,7 +144,7 @@ MonoBehaviour:
     index: 2001
     Side: 2
     Name: MONSTER_NAME_2001
-    Max_HP: 10000
+    Max_HP: 1
     Max_SP: 9
     Default_Attack: 40
     Default_Defense: 10
