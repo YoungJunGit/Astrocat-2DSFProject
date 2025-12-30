@@ -1,13 +1,5 @@
 fileFormatVersion: 2
 guid: dc2b4028669637b4abe83b63f9d9df4b
-ScriptedImporter:
-  internalIDToNameTable: []
-  externalObjects: {}
-  serializedVersion: 2
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
 AssetOrigin:
   serializedVersion: 1
   productId: 112535
@@ -16,3 +8,11 @@ AssetOrigin:
   assetPath: Assets/FunkyCode/Demos - SmartLighting2D/Demos - Shader Graph/Demo 1
     - SL2D Subshader/SL2DGraph_Sub.shadergraph
   uploadId: 541941
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}

@@ -7,22 +7,31 @@ using UnityEngine;
 [RequireComponent(typeof(UnitAttachments))]
 public class SupporterUnit : MonoBehaviour
 {
-    [SerializeField]
-    private AnimationHandler _supporterAnimationHandler;
+    [SerializeField] private string unitName = "Drone";
+    [SerializeField] private AnimationHandler _supporterAnimationHandler;
+    [SerializeField] private float hitBlendAmount = 0.75f;
+    [SerializeField] private float hitBlendDuration = 0.25f;
 
     [HideInInspector]
     public UnitAttachments supporterAttachments;
+
+    private const string HIT_BLEND_TWEEN_ID = "HIT_BLEND";
 
     public void Initialize()
     {
         _supporterAnimationHandler.Init();
         supporterAttachments = GetComponent<UnitAttachments>();
+        supporterAttachments.GetSpriteRenderer().material = new Material(supporterAttachments.GetSpriteRenderer().material);
     }
 
     public void OnDamaged()
     {
-        supporterAttachments.GetSpriteRenderer().color = Color.red;
-        supporterAttachments.GetSpriteRenderer().DOBlendableColor(Color.white, 0.25f);
+        var material = supporterAttachments.GetSpriteRenderer().material;
+        DOTween.Kill(unitName + HIT_BLEND_TWEEN_ID);
+        material.SetFloat("_HitEffectBlend", hitBlendAmount);
+        material.DOFloat(0.0f, "_HitEffectBlend", hitBlendDuration)
+            .SetEase(Ease.Linear)
+            .SetId(unitName + HIT_BLEND_TWEEN_ID);
     }
 
     public async UniTask OnDie(UnitCombatInfo combatInfo)

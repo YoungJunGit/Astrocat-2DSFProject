@@ -54,7 +54,7 @@ public class GameScene : AbstractScene
             .Register(inputHandler)
             .Register(unitActionFactory)
             .Register(parryingApplier as IParryingApplier)
-            .Register(crowdControlManager)
+            .Register(crowdControlManager as ICrowdControlManager)
             .Register(combatEffectManager as ICombatEffectManager);
     }
 

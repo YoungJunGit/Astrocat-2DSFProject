@@ -12,7 +12,7 @@ public interface ICombatTextManager
     public UniTask ShowNextRoundText(int round);
     public UniTask ShowAttackWarningText(BaseUnit unit);
     public UniTask ShowSelfAttackText(BaseUnit unit);
-    public void OnDamage(BaseUnit target, IDamage damage);
+    public void OnDamage(BaseUnit target, IDamageInfo damage);
 }
 
 [CreateAssetMenu(fileName = "TextManager", menuName = "Manager/TextManager", order = 1)]
@@ -74,7 +74,7 @@ public class TextManager : ScriptableObject , ICombatTextManager
         selfAttackText.textComp.text = selfAttackText.textComp.text.Replace(unit.GetStat().CoreStat.Name, "{Name}");
     }
 
-    public void OnDamage(BaseUnit target, IDamage damage)
+    public void OnDamage(BaseUnit target, IDamageInfo damage)
     {
         IDamageValueDisplayer displayer;
         DamageContainer container;
@@ -90,7 +90,7 @@ public class TextManager : ScriptableObject , ICombatTextManager
         }
 
         IDamageValueDisplayInvoker displayInvoker = new DamageValueDisplayInvoker();
-        displayInvoker.Invoke(displayer, damage.Value, target.Attachments.GetHitBox().bounds, container);
+        displayInvoker.Invoke(displayer, damage.DamageValue, target.Attachments.GetHitBox().bounds, container);
     }
     #endregion
 }

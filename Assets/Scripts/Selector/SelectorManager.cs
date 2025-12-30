@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using System.Linq;
 
 public interface ISelectorManager
 {
+    public void UpdateActionSelector(BaseUnit unit);
     public void AddSelectorExecuter(ISelectorExecutor executer);
     public UniTask ExecuteAll();
 }
@@ -12,7 +14,7 @@ public interface ISelectorManager
 public class SelectorManager : ScriptableObject , ISelectorManager
 {
     [SerializeField] private InputHandler   _inputHandler;
-    [SerializeField] private BaseSelector[] _selectorList;
+    [SerializeField] private List<BaseSelector> _selectorList;
 
     private LinkedList<ISelectorExecutor> _executors = new LinkedList<ISelectorExecutor>();
     private LinkedListNode<ISelectorExecutor> _current;
@@ -23,6 +25,18 @@ public class SelectorManager : ScriptableObject , ISelectorManager
         foreach (var selector in _selectorList)
         {
             selector.Init();
+        }
+    }
+
+    public void UpdateActionSelector(BaseUnit unit)
+    {
+        foreach(var selector in _selectorList)
+        {
+            if(selector is ActionSelector actionSelector)
+            {
+                actionSelector.UpdateSelector(unit);
+                break;
+            }
         }
     }
 

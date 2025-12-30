@@ -27,6 +27,9 @@ namespace DataEntity
         public double[] Element_Charge_Resist;
         public double[] Overload_Rate;
         public string   Asset_File;
+
+        // temp
+        public ELEMENT_TYPE Temp_Type;
     }
 
     [Serializable]

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 592864886840181407}
   - component: {fileID: 321738027307128560}
   - component: {fileID: 8917587683180729980}
+  - component: {fileID: 9178741960544355790}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -58,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 95a1f7f85a3284b419917895a21392ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,6 +125,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5815c219eff51458db52c9cd127119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9178741960544355790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154150853753209869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentShaderType: 3
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &666125472098773808
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,8 +317,11 @@ MonoBehaviour:
   _animHandler: {fileID: 8917587683180729980}
   _supporterUnit: {fileID: 1261400305574251050}
   _unitType: 2
+  hitBlendAmount: 0.75
+  hitBlendDuration: 0.25
   HasSupporter: 1
-  Attachments: {fileID: 0}
+  _soundContainer: {fileID: 11400000, guid: 7cb31a87aee300542a02729f6524ea3e, type: 2}
+  My_Temp_Type: 0
 --- !u!114 &3522655197104841802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +340,6 @@ MonoBehaviour:
   UnitSelectArrowPos: {fileID: 5275880455834478187}
   StatusPos: {fileID: 0}
   BuffBoxPos: {fileID: 0}
-  ActionSelectorPos: {fileID: 8151974234939720401}
   BulletSpawnPos: {fileID: 5709772750612602284}
 --- !u!1 &4259125568071417494
 GameObject:
@@ -398,6 +417,7 @@ GameObject:
   - component: {fileID: 1261400305574251050}
   - component: {fileID: 6380360462569105464}
   - component: {fileID: 7872718438940087394}
+  - component: {fileID: 3606451970763212586}
   m_Layer: 0
   m_Name: Sniper_Drone
   m_TagString: Untagged
@@ -444,7 +464,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 95a1f7f85a3284b419917895a21392ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -510,7 +530,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dab1683a27179940bd948f8d4d4d5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitName: Drone
   _supporterAnimationHandler: {fileID: 6380360462569105464}
+  hitBlendAmount: 0.75
+  hitBlendDuration: 0.25
   supporterAttachments: {fileID: 0}
 --- !u!114 &6380360462569105464
 MonoBehaviour:
@@ -542,8 +565,23 @@ MonoBehaviour:
   UnitSelectArrowPos: {fileID: 0}
   StatusPos: {fileID: 0}
   BuffBoxPos: {fileID: 0}
-  ActionSelectorPos: {fileID: 0}
   BulletSpawnPos: {fileID: 778606625547377055}
+--- !u!114 &3606451970763212586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159451040214171213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentShaderType: 3
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &8432471429420237439
 GameObject:
   m_ObjectHideFlags: 0

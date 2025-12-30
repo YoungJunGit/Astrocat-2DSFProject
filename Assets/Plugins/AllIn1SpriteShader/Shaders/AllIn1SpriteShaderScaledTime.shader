@@ -233,6 +233,8 @@
     	_OverlayTextureScrollXSpeed("Speed X Axis", Range(-5, 5)) = 0.25 //170
 		_OverlayTextureScrollYSpeed("Speed Y Axis", Range(-5, 5)) = 0.25 //171
 
+    	_GlitchSpeed("Glitch Speed", Range(0.0, 100)) = 20 //172
+
         _ZTestMode ("Z Test Mode", Float) = 4
     	_CullingOption ("Culling Option", float) = 0
 
@@ -551,7 +553,7 @@
 			#endif
 
 			#if GLITCH_ON
-			half _GlitchAmount, _GlitchSize;
+			half _GlitchAmount, _GlitchSize, _GlitchSpeed;
 			#endif
 
 			#if FLICKER_ON
@@ -871,9 +873,9 @@
 				#if GLITCH_ON
 				half2 uvGlitch = uvRect;
 				uvGlitch.y -= 0.5;
-				half lineNoise = pow(rand2CustomTime(floor(uvGlitch * half2(24., 19.) * _GlitchSize) * 4.0, randomSeed, globalUnscaledTime), 3.0) * _GlitchAmount
-					* pow(rand2CustomTime(floor(uvGlitch * half2(38., 14.) * _GlitchSize) * 4.0, randomSeed, globalUnscaledTime), 3.0);
-				col = tex2D(_MainTex, i.uv + half2(lineNoise * 0.02 * rand2CustomTime(half2(2.0, 1), randomSeed, globalUnscaledTime), 0)) * i.color;
+				half lineNoise = pow(rand2CustomTime(floor(uvGlitch * half2(24., 19.) * _GlitchSize) * 4.0, randomSeed, globalUnscaledTime, _GlitchSpeed), 3.0) * _GlitchAmount
+					* pow(rand2CustomTime(floor(uvGlitch * half2(38., 14.) * _GlitchSize) * 4.0, randomSeed, globalUnscaledTime, _GlitchSpeed), 3.0);
+				col = tex2D(_MainTex, i.uv + half2(lineNoise * 0.02 * rand2CustomTime(half2(2.0, 1), randomSeed, globalUnscaledTime, _GlitchSpeed), 0)) * i.color;
 				#endif
 
 				#if CHROMABERR_ON
@@ -1229,6 +1231,6 @@
             ENDCG
         }
     }
-	CustomEditor "AllIn1SpriteShaderMaterialInspector"
+	CustomEditor "AllIn1SpriteShader.AllIn1SpriteShaderMaterialInspector"
 	//Fallback "Sprites/Default"  //Remove fallback so that any shader error is obvious to the user
 }

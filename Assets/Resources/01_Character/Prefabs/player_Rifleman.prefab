@@ -253,8 +253,11 @@ MonoBehaviour:
   _animHandler: {fileID: 5052415058350787849}
   _supporterUnit: {fileID: 0}
   _unitType: 2
+  hitBlendAmount: 0.75
+  hitBlendDuration: 0.25
   HasSupporter: 0
-  Attachments: {fileID: 0}
+  _soundContainer: {fileID: 11400000, guid: d97e1783fe97af34095ac422e8700df8, type: 2}
+  My_Temp_Type: 0
 --- !u!114 &4270882971710658285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +276,6 @@ MonoBehaviour:
   UnitSelectArrowPos: {fileID: 5413111644192717139}
   StatusPos: {fileID: 0}
   BuffBoxPos: {fileID: 0}
-  ActionSelectorPos: {fileID: 280474867065531113}
   BulletSpawnPos: {fileID: 4860540986922662947}
 --- !u!1 &7419600691652150722
 GameObject:
@@ -349,6 +351,7 @@ GameObject:
   - component: {fileID: 3555847519751231425}
   - component: {fileID: 783435933234561218}
   - component: {fileID: 5052415058350787849}
+  - component: {fileID: 4641065688941651299}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -395,7 +398,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 95a1f7f85a3284b419917895a21392ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -461,3 +464,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5815c219eff51458db52c9cd127119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4641065688941651299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8620287506657276731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentShaderType: 3
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0

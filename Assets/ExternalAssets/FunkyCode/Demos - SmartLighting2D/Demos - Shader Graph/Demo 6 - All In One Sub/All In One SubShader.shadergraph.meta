@@ -1,13 +1,5 @@
 fileFormatVersion: 2
 guid: 2e43152af68c9124fa93d88508f2ea7c
-ScriptedImporter:
-  internalIDToNameTable: []
-  externalObjects: {}
-  serializedVersion: 2
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
 AssetOrigin:
   serializedVersion: 1
   productId: 112535
@@ -16,3 +8,11 @@ AssetOrigin:
   assetPath: Assets/FunkyCode/Demos - SmartLighting2D/Demos - Shader Graph/Demo 6
     - All In One Sub/All In One SubShader.shadergraph
   uploadId: 541941
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}

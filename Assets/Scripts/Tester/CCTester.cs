@@ -12,7 +12,7 @@ public class CCTester : MonoBehaviour
         PlayerToEnemy,
         EnemyToPlayer
     }
-    CrowdControlManager crowdControlManager;
+    ICrowdControlManager crowdControlManager;
     IUnitManager unitManager;
 
     [SerializeField] Button addCrowdCtrlBtn;
@@ -44,7 +44,7 @@ public class CCTester : MonoBehaviour
         debugCrowdCtrlsBtn.onClick.AddListener(() => DebugCC());
     }
 
-    public void SetCCOnUnit()
+    private void SetCCOnUnit()
     {
         var enemyUnits = unitManager.GetEnemyUnits();
         var playerUnits = unitManager.GetPlayerUnits();
@@ -60,7 +60,7 @@ public class CCTester : MonoBehaviour
             crowdControlManager.AddCrowdControl(element_Type, caster, target);
     }
 
-    public void RemoveCCOnUnit()
+    private void RemoveCCOnUnit()
     {
         var units = unitManager.GetUnit(removeSide);
         var target = units[removeIndex];
@@ -68,7 +68,7 @@ public class CCTester : MonoBehaviour
         crowdControlManager.RemoveCrowdControl(element_Type, target);
     }
 
-    public void DebugCC()
+    private void DebugCC()
     {
         if(printAll)
         {
@@ -87,7 +87,7 @@ public class CCTester : MonoBehaviour
         }
     }
 
-    public string ToString(ELEMENT_TYPE[] element_Type, BaseUnit unit)
+    private string ToString(ELEMENT_TYPE[] element_Type, BaseUnit unit)
     {
         string str1 = $"{unit.GetStat().CoreStat.Name}'s CC List\n";
 

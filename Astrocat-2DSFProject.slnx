@@ -25,8 +25,8 @@
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Flexalon.Samples.Editor.csproj" />
   <Project Path="Sirenix.OdinInspector.Modules.Unity.Addressables.csproj" />
-  <Project Path="WatercolorFx.Runtime.csproj" />
   <Project Path="AllIn1SpriteShaderAssembly.csproj" />
+  <Project Path="WatercolorFx.Runtime.csproj" />
   <Project Path="UniTask.DOTween.csproj" />
   <Project Path="CsvToScriptableObject.Editor.csproj" />
   <Project Path="Flexalon.Samples.csproj" />
