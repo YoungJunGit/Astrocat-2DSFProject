@@ -5,7 +5,7 @@ public class DialogueScene : AbstractScene
 {
     [Header("Dialogue System")]
     [SerializeField]
-    private GameObject DialogueManagerPref;
+    private DialogueManager dialogueManager;
 
     protected override int SceneIdx { get; } = 4;
 
@@ -16,12 +16,12 @@ public class DialogueScene : AbstractScene
 
     protected async override UniTask CreateObjects()
     {
-        Instantiate(DialogueManagerPref);
+
     }
 
     protected async override UniTask InitializeObjects()
     {
-        
+        dialogueManager.Init();
     }
 
     protected override void PrepareGame()

@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1551442902}
   - component: {fileID: 1551442903}
-  - component: {fileID: 1551442904}
   m_Layer: 0
   m_Name: DialogueScene
   m_TagString: Untagged
@@ -171,19 +170,7 @@ MonoBehaviour:
   changeScene:
     sceneAsset: {fileID: 102900000, guid: ad119d35a5a22ca499e23481f9051f9c, type: 3}
     scenePath: Assets/Scenes/1. NodeTree.unity
-  DialogueManagerPref: {fileID: 3694970617957098126, guid: fc4d6dc4a60a27f4cb146ce455136160, type: 3}
---- !u!114 &1551442904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551442901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f011d62f0aface4f81962ac148bcf62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 11400000, guid: 998c8635cbf1e344da0f951741400197, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
