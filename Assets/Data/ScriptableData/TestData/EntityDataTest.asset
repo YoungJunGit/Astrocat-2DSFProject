@@ -21,7 +21,7 @@ MonoBehaviour:
     index: 1001
     Side: 1
     Name: "\uB77C\uC774\uD50C\uB9E8"
-    Max_HP: 3000
+    Max_HP: 1
     Max_SP: 9
     Default_Attack: 70
     Default_Defense: 10
@@ -65,7 +65,7 @@ MonoBehaviour:
     index: 1002
     Side: 1
     Name: "\uC2A4\uB098\uC774\uD37C\uB9E8"
-    Max_HP: 3000
+    Max_HP: 1
     Max_SP: 9
     Default_Attack: 80
     Default_Defense: 10
@@ -104,7 +104,7 @@ MonoBehaviour:
     index: 1003
     Side: 1
     Name: "\uCEE4\uBBF8\uC0AC\uB974"
-    Max_HP: 3000
+    Max_HP: 1
     Max_SP: 9
     Default_Attack: 50
     Default_Defense: 10
@@ -143,9 +143,9 @@ MonoBehaviour:
     index: 2001
     Side: 2
     Name: "\uD3AD\uADC4 \uB77C\uC774\uD50C\uB9E8"
-    Max_HP: 3000
+    Max_HP: 1
     Max_SP: 9
-    Default_Attack: 70
+    Default_Attack: 120
     Default_Defense: 10
     Default_SP: 3
     Default_Speed: 20
@@ -182,7 +182,7 @@ MonoBehaviour:
     index: 2002
     Side: 2
     Name: "\uD3AD\uADC4 \uCEE4\uB9E8\uB354"
-    Max_HP: 3000
+    Max_HP: 1
     Max_SP: 9
     Default_Attack: 120
     Default_Defense: 10
@@ -221,7 +221,7 @@ MonoBehaviour:
     index: 2003
     Side: 2
     Name: "\uD3AD\uADC4 \uBC84\uC11C\uCEE4"
-    Max_HP: 3000
+    Max_HP: 1
     Max_SP: 9
     Default_Attack: 100
     Default_Defense: 10

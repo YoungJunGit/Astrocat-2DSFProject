@@ -130,6 +130,17 @@ namespace DataEnum
         TURN
     }
 
+    public enum ANIMATION
+    {
+        NONE = 0,
+        IDLE,
+        ATTACK,
+        HIT,
+        DEATH,
+        MOVE,
+        RETREAT
+    }
+
     /*Ãß°¡*/
     #endregion
 }

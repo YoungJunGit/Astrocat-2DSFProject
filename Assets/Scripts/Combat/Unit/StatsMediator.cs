@@ -27,7 +27,7 @@ public class StatsMediator : IUpdatable
     };
 
     public event Action OnStatChanged;
-    public event System.EventHandler<IQuery> Queries;
+    public event EventHandler<IQuery> Queries;
     public void PerformQuery<T>(object sender, Query<T> query) => Queries?.Invoke(sender, query);
 
     public void OnRoundUpdate()

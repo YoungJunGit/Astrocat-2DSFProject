@@ -54,15 +54,15 @@ public class ActionSelector : BaseSelector
     public async UniTask SelectAction(PlayerUnit playerUnit, Action<IUnitAction> onSelected)
     {
         Debug.Log($"{playerUnit.GetStat().CoreStat.Name} : Select Action");
-        IUnitAction unitAction = null;
 
-        IUnitAction strangeUnitAction = null;
         if(playerUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.VOID].CurrentValue > 0)
         {
             float chance = (float)playerUnit.CCUnit.GetNonStackCC(ELEMENT_TYPE.VOID).CCData.Element_Status_Value[0];
             if (FunctionUtils.MakeChance(chance))
             {
-                strangeUnitAction = unitActionFactory.CreateSelfAttackAction();
+                IUnitAction strangeUnitAction = unitActionFactory.CreateSelfAttackAction();
+                onSelected?.Invoke(strangeUnitAction);
+                return;
             }
         }
 
@@ -118,16 +118,7 @@ public class ActionSelector : BaseSelector
             }
         }
 
-        if(strangeUnitAction != null)
-        {
-            unitAction = strangeUnitAction;
-        }
-        else
-        {
-            unitAction = normalUnitAction;
-        }
-
-        onSelected?.Invoke(unitAction);
+        onSelected?.Invoke(normalUnitAction);
     }
 
     public void SelectAction(EnemyUnit enemyUnit, Action<IUnitAction> onSelected)

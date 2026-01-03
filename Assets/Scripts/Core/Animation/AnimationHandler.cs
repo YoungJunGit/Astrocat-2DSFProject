@@ -1,50 +1,105 @@
+using Cysharp.Threading.Tasks;
 using DataEnum;
-using DataHashAnim;
 using NaughtyAttributes;
 using System;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class AnimationHandler : MonoBehaviour
-{
+{    
     private Animator anim;
     public CountdownTimer animTimer;
     public CountdownTimer resetTimer;
-    private int currentAnimation;
-    private int previousAnimation;
+
+    private ANIMATION _currentAnimation;
+    private ANIMATION _previousAnimation;
 
     private UnitSoundContainer _soundContainer;
     private ISoundService soundService;
-
+    
     public void Init(UnitSoundContainer soundContainer = null)
     {
         _soundContainer = soundContainer;
         anim = GetComponent<Animator>();
-        currentAnimation = AnimCombat.IDLE;
+        _currentAnimation = ANIMATION.IDLE;
 
         ServiceLocator.For(this).Get(out soundService);
     }
 
-    public void ChangeAnimation(int animation, float fadeTime = 0f)
+    public async UniTask<bool> ChangeAnimationAsync(ANIMATION animation, float fadeTime = 0.0f, CancellationToken ct = default)
     {
-        previousAnimation = currentAnimation;
-        currentAnimation = animation;
-        anim.CrossFade(animation, fadeTime);
+        int stateHash = ChangeAnimation(animation, fadeTime);
+        
+        var token = ct != default ? ct : this.GetCancellationTokenOnDestroy();
+        return await WaitForAnimationFinished(0, stateHash, token);
     }
 
-    public void ChangeAnimation(string animation, float fadeTime = 0f)
+    public int ChangeAnimation(ANIMATION animation, float fadeTime = 0f)
     {
-        previousAnimation = currentAnimation;
-        currentAnimation = Animator.StringToHash(animation);
-        anim.CrossFade(animation, fadeTime);
+        int stateHash = 0;
+        switch (animation)
+        {
+            case ANIMATION.IDLE:
+                stateHash = AnimHash.Idle;
+                break;
+            case ANIMATION.ATTACK:
+                stateHash = AnimHash.Attack;
+                break;
+            case ANIMATION.HIT:
+                stateHash = AnimHash.Hit;
+                break;
+            case ANIMATION.DEATH:
+                stateHash = AnimHash.Death;
+                break;
+            case ANIMATION.MOVE:
+                stateHash = AnimHash.Move;
+                break;
+            case ANIMATION.RETREAT:
+                stateHash = AnimHash.Retreat;
+                break;
+        }
+
+        _previousAnimation = _currentAnimation;
+        _currentAnimation = animation;
+        anim.CrossFade(stateHash, fadeTime);
+
+        return stateHash;
     }
 
     public void ResetAnimation()
     {
-        anim.CrossFade(previousAnimation, 0f);
-        int animation = currentAnimation;
-        currentAnimation = previousAnimation;
-        previousAnimation = animation;
+        ChangeAnimation(_previousAnimation);
+        ANIMATION animation = _currentAnimation;
+        _currentAnimation = _previousAnimation;
+        _previousAnimation = animation;
+    }
+
+    private async UniTask<bool> WaitForAnimationFinished(int layerIndex, int stateHash, CancellationToken ct = default)
+    {
+        // 1) Wait until the animator actually enters the target state
+        //    (handles transition delay / cross-fade)
+        await UniTask.WaitUntil(() =>
+        {
+            var cur = anim.GetCurrentAnimatorStateInfo(layerIndex);
+            return cur.fullPathHash == stateHash;
+        }, cancellationToken: ct);
+
+        // 2) Wait until the target state finishes playing once
+        await UniTask.WaitUntil(() =>
+        {
+            if(anim.IsInTransition(layerIndex)) return false;
+
+            var cur = anim.GetCurrentAnimatorStateInfo(layerIndex);
+
+            bool leftTarget = (cur.fullPathHash != stateHash);
+            bool finished = (cur.fullPathHash == stateHash && cur.normalizedTime >= 1f);
+
+            return finished || leftTarget;
+        }, cancellationToken: ct);
+
+        return true;
     }
 
     #region[Event]

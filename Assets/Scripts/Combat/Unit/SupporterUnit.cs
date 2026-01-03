@@ -1,5 +1,5 @@
 using Cysharp.Threading.Tasks;
-using DataHashAnim;
+using DataEnum;
 using DG.Tweening;
 using System.Net.Mail;
 using UnityEngine;
@@ -40,20 +40,8 @@ public class SupporterUnit : MonoBehaviour
 
         using (var eventDisposer = new EventDisposer(new CombatEvent("SupporterDeathEvent")))
         {
-            bool isFinishedEvent = false;
-
-            _supporterAnimationHandler.ChangeAnimation(AnimCombat.DEATH, 0.25f);
-            combatInfo.actionList.Add("OnFinishedDeath_Supporter", () =>
-            {
-                supporterAttachments.GetSpriteRenderer().DOFade(0, 0.5f).OnComplete(() =>
-                {
-                    gameObject.SetActive(false);
-                    isFinishedEvent = true;
-                });
-            }
-            );
-
-            await UniTask.WaitUntil(() => isFinishedEvent);
+            await _supporterAnimationHandler.ChangeAnimationAsync(ANIMATION.DEATH, 0.25f);
+            gameObject.SetActive(false);
         }
 
         supporterAttachments.GetSpriteRenderer().sortingLayerName = "Character";
