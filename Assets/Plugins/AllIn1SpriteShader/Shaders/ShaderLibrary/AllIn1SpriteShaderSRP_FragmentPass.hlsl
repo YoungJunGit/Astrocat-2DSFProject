@@ -207,9 +207,9 @@ half4 frag(v2f i) : SV_Target
 #if GLITCH_ON
 	half2 uvGlitch = uvRect;
 	uvGlitch.y -= 0.5;
-	half lineNoise = pow(rand2(floor(uvGlitch * half2(24., 19.) * _GlitchSize) * 4.0, randomSeed), 3.0) * _GlitchAmount
-		* pow(rand2(floor(uvGlitch * half2(38., 14.) * _GlitchSize) * 4.0, randomSeed), 3.0);
-	col = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv + half2(lineNoise * 0.02 * rand2(half2(2.0, 1), randomSeed), 0)) * i.color;
+	half lineNoise = pow(rand2(floor(uvGlitch * half2(24., 19.) * _GlitchSize) * 4.0, randomSeed, _GlitchSpeed), 3.0) * _GlitchAmount
+		* pow(rand2(floor(uvGlitch * half2(38., 14.) * _GlitchSize) * 4.0, randomSeed, _GlitchSpeed), 3.0);
+	col = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv + half2(lineNoise * 0.02 * rand2(half2(2.0, 1), randomSeed, _GlitchSpeed), 0)) * i.color;
 #endif
 
 #if CHROMABERR_ON
@@ -289,14 +289,14 @@ half4 frag(v2f i) : SV_Target
 #endif
 
 #if GRADIENT_ON
-	half2 tiledUvGrad = half2(uvRect.x / _MainTex_ST.x, uvRect.y / _MainTex_ST.y);
+	half2 tiledUvGrad = half2(uvRect.x / _MainTex_ScaleAndTiling.x, uvRect.y / _MainTex_ScaleAndTiling.y);
 #if GRADIENT2COL_ON
 	_GradTopRightCol = _GradTopLeftCol;
 	_GradBotRightCol = _GradBotLeftCol;
 #endif
 #if RADIALGRADIENT_ON
 	half radialDist = 1 - length(tiledUvGrad - half2(0.5, 0.5));
-	radialDist *= (_MainTex_TexelSize.w / _MainTex_TexelSize.z);
+	radialDist *= (texelSize.w / texelSize.z);
 	radialDist = saturate(_GradBoostX * radialDist);
 	half4 gradientResult = lerp(_GradTopLeftCol, _GradBotLeftCol, radialDist);
 #else
@@ -405,7 +405,7 @@ half4 frag(v2f i) : SV_Target
 		half2 uvOutDist = uvRect;
 		uvOutDist.x += ((_Time.x + randomSeed) * _OutlineDistortTexXSpeed) % 1;
 		uvOutDist.y += ((_Time.x + randomSeed) * _OutlineDistortTexYSpeed) % 1;
-		half outDistortAmnt = (SAMPLE_TEXTURE2D(_OutlineDistortTex, sampler_OutlineDistortTex, TRANSFORM_TEX(uvOutDist, _OutlineDistortTex)).r - 0.5) * 0.2 * _OutlineDistortAmount;
+		half outDistortAmnt = (SAMPLE_TEXTURE2D(_OutlineDistortTex, sampler_OutlineDistortTex, CUSTOM_TRANSFORM_TEX(uvOutDist, _OutlineDistortTex_ScaleAndTiling)).r - 0.5) * 0.2 * _OutlineDistortAmount;
 		destUv.x += outDistortAmnt;
 		destUv.y += outDistortAmnt;
 	#endif
@@ -559,7 +559,7 @@ col.a *= _Alpha;
 #endif
 
 	col *= _Color;
-	#if !defined(HDRP_PASS)
+	#if !defined(HDRP_PASS) && UNITY_VERSION >= 60000000
 		col *= unity_SpriteColor;
 	#endif
 

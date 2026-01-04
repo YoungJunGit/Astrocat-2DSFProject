@@ -1,10 +1,9 @@
 using AYellowpaper.SerializedCollections;
-using DataEnum;
-using System;
 using UnityEngine;
 
-public class IconContainer<T> : IconContainerBase
+public abstract class IconContainer<T> : ScriptableObject
 {
     [SerializedDictionary("Icon Type", "Sprite")]
     public SerializedDictionary<T, Sprite> IconDic;
+    public T[] CountableIconList;
 }

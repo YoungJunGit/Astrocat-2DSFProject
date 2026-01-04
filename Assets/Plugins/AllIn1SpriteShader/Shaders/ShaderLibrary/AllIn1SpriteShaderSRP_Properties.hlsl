@@ -104,7 +104,7 @@ CBUFFER_START(UnityPerMaterial)
 			
 	half _ChromAberrAmount, _ChromAberrAlpha;
 			
-	half _GlitchAmount, _GlitchSize;
+	half _GlitchAmount, _GlitchSize, _GlitchSpeed;
 			
 	half _FlickerFreq, _FlickerPercent, _FlickerAlpha;
 			

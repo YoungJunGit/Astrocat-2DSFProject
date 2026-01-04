@@ -1,11 +1,9 @@
 using DataEnum;
-using NaughtyAttributes;
 using UnityEngine;
 
-public class BuffIcon : BaseIcon<BUFF_TYPE>
+public class BuffIcon : IconView<BUFF_TYPE>
 {
-    protected override BUFF_TYPE[] CountableIconList { get; } = new BUFF_TYPE[]
-    {
-        // TODO : Add Countable Buffs
-    };
+    [SerializeField]
+    private BuffIconContainer _iconContainer;
+    protected override IconContainer<BUFF_TYPE> IconContainer => _iconContainer;
 }

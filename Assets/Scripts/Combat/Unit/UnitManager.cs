@@ -30,9 +30,6 @@ public class UnitManager : ScriptableObject , IUnitManager
     {
         foreach (BaseUnit unit in currentUnitList)
         {
-            unit.GetStat().OnDamaged += unit.OnDamaged;
-            unit.GetStat().OnHealed += unit.OnHealed;
-            unit.GetStat().OnDie += () => { unit.OnDie().Forget(); };
             unit.m_FinishedDying += (deadUnit) => { currentUnitList.Remove(deadUnit); SetUnitPosition(); };
         }
     }

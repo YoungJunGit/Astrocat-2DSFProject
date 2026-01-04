@@ -13,10 +13,16 @@ public class AnimationHandler : MonoBehaviour
     private int currentAnimation;
     private int previousAnimation;
 
-    public void Init()
+    private UnitSoundContainer _soundContainer;
+    private ISoundService soundService;
+
+    public void Init(UnitSoundContainer soundContainer = null)
     {
+        _soundContainer = soundContainer;
         anim = GetComponent<Animator>();
         currentAnimation = AnimCombat.IDLE;
+
+        ServiceLocator.For(this).Get(out soundService);
     }
 
     public void ChangeAnimation(int animation, float fadeTime = 0f)
@@ -54,6 +60,7 @@ public class AnimationHandler : MonoBehaviour
         switch (state)
         {
             case UNIT_STATE.ATTACK:
+                soundService.PlayEffectSound(_soundContainer.AttackSound);
                 Attack?.Invoke();
                 Attack = null;
                 break;

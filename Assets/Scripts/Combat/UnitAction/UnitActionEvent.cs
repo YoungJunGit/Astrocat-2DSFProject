@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using DataEnum;
 using Michsky.UI.Shift;
 using System;
 using UnityEngine;
@@ -50,7 +51,7 @@ public class UnitActionEvent : IUnitActionEvent
 
     public void DamageEvent(BaseUnit caster, BaseUnit target)
     {
-        IDamage damage = DamageFactory.CreateNormalDamage<NormalDamageCalculator>(caster, target);
-        target.GetStat().GetDamaged(damage);
+        IDamageInfo damage = DamageFactory.CreateDamage<NormalDamageCalculator, NormalElementGaugeCalculator>(SKILL_ELEMENT_RATE.STANDARD, caster.My_Temp_Type, caster, target);
+        target.GetDamage(damage);
     }
 }

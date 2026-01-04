@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a0dcd7304ec114987b4d84f52ff28d, type: 3}
+  m_Name: ElementGaugeContainer
+  m_EditorClassIdentifier: 
+  GaugeSpriteList:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 8816516064872797388, guid: 8ffeb5d89fde1c84eaf39594c63caa41, type: 3}
+    - Key: 2
+      Value: {fileID: -6701292496650208077, guid: 8ffeb5d89fde1c84eaf39594c63caa41, type: 3}
+    - Key: 3
+      Value: {fileID: 7205068521050635719, guid: 8ffeb5d89fde1c84eaf39594c63caa41, type: 3}
+    - Key: 4
+      Value: {fileID: 1494822652179026892, guid: 8ffeb5d89fde1c84eaf39594c63caa41, type: 3}
+    - Key: 5
+      Value: {fileID: -1968777456039131097, guid: 8ffeb5d89fde1c84eaf39594c63caa41, type: 3}
+    - Key: 6
+      Value: {fileID: -9066093040304540208, guid: 8ffeb5d89fde1c84eaf39594c63caa41, type: 3}
+  GlowColorList:
+    _serializedList:
+    - Key: 1
+      Value: {r: 1, g: 1, b: 1, a: 1}
+    - Key: 2
+      Value: {r: 0.84313726, g: 0.14901961, b: 0.16862746, a: 1}
+    - Key: 3
+      Value: {r: 0, g: 1, b: 0, a: 1}
+    - Key: 4
+      Value: {r: 0.08627451, g: 0.46666667, b: 1, a: 1}
+    - Key: 5
+      Value: {r: 0.654902, g: 0.25882354, b: 1, a: 1}
+    - Key: 6
+      Value: {r: 1, g: 0.8509804, b: 0.23921569, a: 1}
+  customEase:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.7004738
+      outSlope: 2.7004738
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.040964548
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
