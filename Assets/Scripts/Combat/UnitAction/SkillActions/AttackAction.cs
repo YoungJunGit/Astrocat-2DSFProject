@@ -70,7 +70,7 @@ class MeleeAttackAction : BaseAttackAction
 
             // Identify target's postition
             float xOffset = context.Caster.Attachments.GetHitBox().size.x / 2;
-            Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
+            Vector2 offset = context.Caster is PlayerUnit ? new Vector2(-xOffset, 0f) : new Vector2(xOffset, 0f);
             context.Caster.CombatInfo.targetPos = (Vector2)target.Attachments.GetMeleeHitPos().position + offset;
 
             context.Caster.GetAnimationHandler().Attack += () => { unitAction.DamageEvent(context.Caster, target); };

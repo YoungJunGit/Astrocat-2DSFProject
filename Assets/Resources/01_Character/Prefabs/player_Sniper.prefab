@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 321738027307128560}
   - component: {fileID: 8917587683180729980}
   - component: {fileID: 9178741960544355790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5275880455834478187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnitSelectArrowPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8151974234939720401}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ActionSelectorPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6987533177550786384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttachmentsPositions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 8978287395051788729}
   - component: {fileID: 1515268381415279118}
   - component: {fileID: 3522655197104841802}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player_Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3902343393476236558}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -274,7 +274,7 @@ Transform:
   - {fileID: 6691643724994050651}
   - {fileID: 6987533177550786384}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!50 &8978287395051788729
 Rigidbody2D:
   serializedVersion: 5
@@ -350,7 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7409331925337517123}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MeleeHitPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 778606625547377055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sniper_Drone_BulletSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 6380360462569105464}
   - component: {fileID: 7872718438940087394}
   - component: {fileID: 3606451970763212586}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sniper_Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5314484421082610431}
   - component: {fileID: 3961806676366638132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HitBox
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5709772750612602284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

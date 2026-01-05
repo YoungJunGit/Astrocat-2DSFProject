@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3367563351936467486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MeleeHitPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3968548269702639063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7497190201703175899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ActionSelectorPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3396817234279424076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttachmentsPositions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8314612775632263780}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnitSelectArrowPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 6160719464916567062}
   - component: {fileID: 8967368278556425422}
   - component: {fileID: 147385286502507776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player_Commissar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2962802864022220146}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -194,7 +194,7 @@ Transform:
   - {fileID: 3711616435935124401}
   - {fileID: 3396817234279424076}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!50 &6160719464916567062
 Rigidbody2D:
   serializedVersion: 5
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 2407678220180187802}
   - component: {fileID: 7967794776125420296}
   - component: {fileID: 5888372867244447943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401416843127830639}
   - component: {fileID: 7659149158909256915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HitBox
   m_TagString: Player
   m_Icon: {fileID: 0}

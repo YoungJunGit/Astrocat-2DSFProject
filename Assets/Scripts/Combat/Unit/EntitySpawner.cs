@@ -18,8 +18,8 @@ public class EntitySpawner : ScriptableObject
 
     public PlayerUnit CreatePlayerUnit(EntityData entityData, int index)
     {
-        GameObject go = AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File);
-        BaseUnit unit = Instantiate(go, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
+        GameObject obj = AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File);
+        BaseUnit unit = Instantiate(obj).GetComponent<BaseUnit>();
         unit.Initialize(entityData, index);
         
         unit.transform.SetParent(_entityRoot);
@@ -29,8 +29,8 @@ public class EntitySpawner : ScriptableObject
 
     public EnemyUnit CreateEnemyUnit(EntityData entityData, int index)
     {
-        GameObject go = AssetLoader.LoadMonsterPrefabAsset(entityData.Asset_File);
-        BaseUnit unit = Instantiate(go, Vector2.zero, Quaternion.identity).GetComponent<BaseUnit>();
+        GameObject obj = AssetLoader.LoadMonsterPrefabAsset(entityData.Asset_File);
+        BaseUnit unit = Instantiate(obj).GetComponent<BaseUnit>();
         unit.Initialize(entityData, index);
 
         unit.transform.SetParent(_entityRoot);

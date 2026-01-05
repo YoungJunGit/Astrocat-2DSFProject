@@ -7,24 +7,36 @@ using TMPro;
 [CreateAssetMenu(fileName = "UnitSelector", menuName = "GameScene/UnitSelector", order = 1)]
 public class UnitSelector : BaseSelector
 {
-    [SerializeField] private UnitSelectorController controller;
     [SerializeField] private UnitSelectorObject unitSelectArrowPrefab;
+    private UnitSelectorController controller;
     private IUnitManager _unitManager;
+
     private List<UnitSelectorObject> arrowList = new();
     private ITarget<BaseUnit> _bag;
     private ITargetStrategy _strategy;
+
     private SIDE _side;
     private bool isConfirmed;
     private bool isCancled;
 
     public override void Init()
     {
+        InputHandler inputHandler;
+        ServiceLocator.For(this)
+            .Get(out inputHandler)
+            .Get(out _unitManager);
+
         _side       = SIDE.NONE;
         isConfirmed = false;
         arrowList.Clear();
-        controller.Initialize(() => isConfirmed = true, () => isCancled = true, SetUnitSelectArrow);
-
-        ServiceLocator.For(this).Get(out _unitManager);
+        
+        controller = new UnitSelectorController(
+            inputHandler,
+            _unitManager,
+            () => isConfirmed = true,
+            () => isCancled = true,
+            SetUnitSelectArrow
+        );
     }
 
     public async UniTask<bool> SelectTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy, SIDE side)
@@ -44,7 +56,7 @@ public class UnitSelector : BaseSelector
                 {
                     CreateUnitSelectArrow(bag, strategy, controller.GetSelectionIndex(_side));
                     controller.Prepare();
-                    controller.OnStartSelect(side);
+                    controller.OnStartSelect(side, strategy.Filter);
                     await UniTask.WaitUntil(() => isConfirmed == true || isCancled == true);
                     controller.OnEndSelect(side);
                     DestroyUnitSelectArrow();

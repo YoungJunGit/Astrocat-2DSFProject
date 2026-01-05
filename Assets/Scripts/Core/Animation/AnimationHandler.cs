@@ -30,6 +30,8 @@ public class AnimationHandler : MonoBehaviour
 
     public async UniTask<bool> ChangeAnimationAsync(ANIMATION animation, float fadeTime = 0.0f, CancellationToken ct = default)
     {
+        _previousAnimation = _currentAnimation;
+        _currentAnimation = animation;
         int stateHash = ChangeAnimation(animation, fadeTime);
         
         var token = ct != default ? ct : this.GetCancellationTokenOnDestroy();
@@ -71,9 +73,6 @@ public class AnimationHandler : MonoBehaviour
     public void ResetAnimation()
     {
         ChangeAnimation(_previousAnimation);
-        ANIMATION animation = _currentAnimation;
-        _currentAnimation = _previousAnimation;
-        _previousAnimation = animation;
     }
 
     private async UniTask<bool> WaitForAnimationFinished(int layerIndex, int stateHash, CancellationToken ct = default)

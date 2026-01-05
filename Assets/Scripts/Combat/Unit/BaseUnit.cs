@@ -45,7 +45,6 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
     public CombatEffectUnit CEUnit;
 
     public Action<BaseUnit> m_FinishedDying;
-
     private readonly List<IUpdatable> _updatableList = new();
 
     // temp
