@@ -1,0 +1,1079 @@
+fileFormatVersion: 2
+guid: 9eaaab6db262afd4d8d55d5e55d52de9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6750761209497837986
+    second: rifleman_explosion_0
+  - first:
+      213: 3782186986929287865
+    second: rifleman_explosion_1
+  - first:
+      213: 7586219763000261764
+    second: rifleman_explosion_2
+  - first:
+      213: -5445492423202219486
+    second: rifleman_explosion_3
+  - first:
+      213: -3825284990749136325
+    second: rifleman_explosion_4
+  - first:
+      213: 4302269460313822558
+    second: rifleman_explosion_5
+  - first:
+      213: -3122359610387412721
+    second: rifleman_explosion_6
+  - first:
+      213: 4164453551171168198
+    second: rifleman_explosion_7
+  - first:
+      213: 385537232563154632
+    second: rifleman_explosion_8
+  - first:
+      213: 5341509847259760072
+    second: rifleman_explosion_9
+  - first:
+      213: 5145935326065249936
+    second: rifleman_explosion_10
+  - first:
+      213: -1253890093303581115
+    second: rifleman_explosion_11
+  - first:
+      213: 6370219009214336965
+    second: rifleman_explosion_12
+  - first:
+      213: -2912773399010161221
+    second: rifleman_explosion_13
+  - first:
+      213: 4498426389734702211
+    second: rifleman_explosion_14
+  - first:
+      213: 4873589799448738830
+    second: rifleman_explosion_15
+  - first:
+      213: -2308738072377389680
+    second: rifleman_explosion_16
+  - first:
+      213: -2672743271555557336
+    second: rifleman_explosion_17
+  - first:
+      213: -5769351306811229905
+    second: rifleman_explosion_18
+  - first:
+      213: -4723387487303630761
+    second: rifleman_explosion_19
+  - first:
+      213: -5230117894240267949
+    second: rifleman_explosion_20
+  - first:
+      213: 4232833256515374115
+    second: rifleman_explosion_21
+  - first:
+      213: 2579314988952228925
+    second: rifleman_explosion_22
+  - first:
+      213: 3510573009445558914
+    second: rifleman_explosion_23
+  - first:
+      213: 386482787187040207
+    second: rifleman_explosion_24
+  - first:
+      213: -4606677603929912763
+    second: rifleman_explosion_25
+  - first:
+      213: -2685313607256793108
+    second: rifleman_explosion_26
+  - first:
+      213: -3238920296591950735
+    second: rifleman_explosion_27
+  - first:
+      213: 8953256751532485666
+    second: rifleman_explosion_28
+  - first:
+      213: -7237333343930599216
+    second: rifleman_explosion_29
+  - first:
+      213: -1292636528559065726
+    second: rifleman_explosion_30
+  - first:
+      213: -1983855835371793523
+    second: rifleman_explosion_31
+  - first:
+      213: -3549192172057186705
+    second: rifleman_explosion_32
+  - first:
+      213: -3237004901280423842
+    second: rifleman_explosion_33
+  - first:
+      213: 905831116055811012
+    second: rifleman_explosion_34
+  - first:
+      213: -7355582161919898926
+    second: rifleman_explosion_35
+  - first:
+      213: 7411011387288594226
+    second: rifleman_explosion_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rifleman_explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 190
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1ea9f8d858fad50800000000000000
+      internalID: 6750761209497837986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_1
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 47
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b2760696070d7430800000000000000
+      internalID: 3782186986929287865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_2
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 134
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48cbda15eaaa74960800000000000000
+      internalID: 7586219763000261764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_3
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 134
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a53f71e79bd64b0800000000000000
+      internalID: -5445492423202219486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_4
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 128
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3aa3c1719bd9eac0800000000000000
+      internalID: -3825284990749136325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_5
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 122
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e55540e974bb4bb30800000000000000
+      internalID: 4302269460313822558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_6
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 140
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f09c4d13a762ba4d0800000000000000
+      internalID: -3122359610387412721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_7
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 125
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c7eb29c07c1bc930800000000000000
+      internalID: 4164453551171168198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_8
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 92
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce2d920214b95500800000000000000
+      internalID: 385537232563154632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_9
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 134
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c54b22d7ead02a40800000000000000
+      internalID: 5341509847259760072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_10
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 59
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ec04b2ae80a6740800000000000000
+      internalID: 5145935326065249936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_11
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 125
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54632418a99499ee0800000000000000
+      internalID: -1253890093303581115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 110
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf49a12070976850800000000000000
+      internalID: 6370219009214336965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_13
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 122
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdcac0b600c397d0800000000000000
+      internalID: -2912773399010161221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_14
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 119
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c3160c7fe9d6e30800000000000000
+      internalID: 4498426389734702211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_15
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 95
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0cfb19e91872a340800000000000000
+      internalID: 4873589799448738830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_16
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 116
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d868494f6b5ffd0800000000000000
+      internalID: -2308738072377389680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_17
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 92
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8289d13c72288ead0800000000000000
+      internalID: -2672743271555557336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_18
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 101
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29b415cd852fefa0800000000000000
+      internalID: -5769351306811229905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_19
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 83
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7500eba1b18237eb0800000000000000
+      internalID: -4723387487303630761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_20
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 80
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 351156c4c73ea67b0800000000000000
+      internalID: -5230117894240267949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_21
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 71
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c0f089b6b0eba30800000000000000
+      internalID: 4232833256515374115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_22
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 74
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34965011519bc320800000000000000
+      internalID: 2579314988952228925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_23
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 77
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a93126d8f08b030800000000000000
+      internalID: 3510573009445558914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_24
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 71
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf161a1c001d5500800000000000000
+      internalID: 386482787187040207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_25
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 65
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a820f502bc110c0800000000000000
+      internalID: -4606677603929912763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_26
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 47
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef9fe86089dbbad0800000000000000
+      internalID: -2685313607256793108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_27
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 65
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c75d9962b0d03d0800000000000000
+      internalID: -3238920296591950735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_28
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 62
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c26f1449b504c70800000000000000
+      internalID: 8953256751532485666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_29
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 59
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d83de13ba3df8b90800000000000000
+      internalID: -7237333343930599216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_30
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 41
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285fa8b0de1af0ee0800000000000000
+      internalID: -1292636528559065726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_31
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 50
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83141fe0ade774e0800000000000000
+      internalID: -1983855835371793523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_32
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 56
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e2fe0268cbebec0800000000000000
+      internalID: -3549192172057186705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_33
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 44
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e506bf25139d313d0800000000000000
+      internalID: -3237004901280423842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_34
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 53
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3900bc998229c00800000000000000
+      internalID: 905831116055811012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_35
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 44
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da809acef8bbe990800000000000000
+      internalID: -7355582161919898926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_explosion_36
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 44
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23726bd679339d660800000000000000
+      internalID: 7411011387288594226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rifleman_explosion_0: 6750761209497837986
+      rifleman_explosion_1: 3782186986929287865
+      rifleman_explosion_10: 5145935326065249936
+      rifleman_explosion_11: -1253890093303581115
+      rifleman_explosion_12: 6370219009214336965
+      rifleman_explosion_13: -2912773399010161221
+      rifleman_explosion_14: 4498426389734702211
+      rifleman_explosion_15: 4873589799448738830
+      rifleman_explosion_16: -2308738072377389680
+      rifleman_explosion_17: -2672743271555557336
+      rifleman_explosion_18: -5769351306811229905
+      rifleman_explosion_19: -4723387487303630761
+      rifleman_explosion_2: 7586219763000261764
+      rifleman_explosion_20: -5230117894240267949
+      rifleman_explosion_21: 4232833256515374115
+      rifleman_explosion_22: 2579314988952228925
+      rifleman_explosion_23: 3510573009445558914
+      rifleman_explosion_24: 386482787187040207
+      rifleman_explosion_25: -4606677603929912763
+      rifleman_explosion_26: -2685313607256793108
+      rifleman_explosion_27: -3238920296591950735
+      rifleman_explosion_28: 8953256751532485666
+      rifleman_explosion_29: -7237333343930599216
+      rifleman_explosion_3: -5445492423202219486
+      rifleman_explosion_30: -1292636528559065726
+      rifleman_explosion_31: -1983855835371793523
+      rifleman_explosion_32: -3549192172057186705
+      rifleman_explosion_33: -3237004901280423842
+      rifleman_explosion_34: 905831116055811012
+      rifleman_explosion_35: -7355582161919898926
+      rifleman_explosion_36: 7411011387288594226
+      rifleman_explosion_4: -3825284990749136325
+      rifleman_explosion_5: 4302269460313822558
+      rifleman_explosion_6: -3122359610387412721
+      rifleman_explosion_7: 4164453551171168198
+      rifleman_explosion_8: 385537232563154632
+      rifleman_explosion_9: 5341509847259760072
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 6fc9569fce06d2744b369a737b7b8596
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4101314680391819137
+    second: commissar_debuff removal_0
+  - first:
+      213: 1400616436074241075
+    second: commissar_debuff removal_1
+  - first:
+      213: 3597203002743056990
+    second: commissar_debuff removal_2
+  - first:
+      213: -8378757768812847591
+    second: commissar_debuff removal_3
+  - first:
+      213: -9037950611598480006
+    second: commissar_debuff removal_4
+  - first:
+      213: -653861526390044971
+    second: commissar_debuff removal_5
+  - first:
+      213: -8678333029879659113
+    second: commissar_debuff removal_6
+  - first:
+      213: -3931355730800253731
+    second: commissar_debuff removal_7
+  - first:
+      213: -471809630791406616
+    second: commissar_debuff removal_8
+  - first:
+      213: 3465411906903484949
+    second: commissar_debuff removal_9
+  - first:
+      213: -5464255488536131707
+    second: commissar_debuff removal_10
+  - first:
+      213: -5626851241628207012
+    second: commissar_debuff removal_11
+  - first:
+      213: -2122864032020318032
+    second: commissar_debuff removal_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: commissar_debuff removal_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 131
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70a62327043517c0800000000000000
+      internalID: -4101314680391819137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_1
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 0
+        width: 170
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c57c25a3dff6310800000000000000
+      internalID: 1400616436074241075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_2
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 0
+        width: 173
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ae77b7215dbe130800000000000000
+      internalID: 3597203002743056990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_3
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 170
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e9ddaa33ca8bb80800000000000000
+      internalID: -8378757768812847591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_4
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 0
+        width: 173
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7de52acdcfb29280800000000000000
+      internalID: -9037950611598480006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_5
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 0
+        width: 170
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d60a33f7640de6f0800000000000000
+      internalID: -653861526390044971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_6
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 0
+        width: 170
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795cb7fc61e509780800000000000000
+      internalID: -8678333029879659113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_7
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 0
+        width: 170
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd464f3cac40179c0800000000000000
+      internalID: -3931355730800253731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_8
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 0
+        width: 170
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ebe11bf3abc379f0800000000000000
+      internalID: -471809630791406616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_9
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 0
+        width: 170
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a246fc4cd971030800000000000000
+      internalID: 3465411906903484949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_10
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 0
+        width: 137
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58743d385901b24b0800000000000000
+      internalID: -5464255488536131707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_11
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 0
+        width: 131
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58f8caab9869e1b0800000000000000
+      internalID: -5626851241628207012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_debuff removal_12
+      rect:
+        serializedVersion: 2
+        x: 2171
+        y: 0
+        width: 130
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8b9f809621a82e0800000000000000
+      internalID: -2122864032020318032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      commissar_debuff removal_0: -4101314680391819137
+      commissar_debuff removal_1: 1400616436074241075
+      commissar_debuff removal_10: -5464255488536131707
+      commissar_debuff removal_11: -5626851241628207012
+      commissar_debuff removal_12: -2122864032020318032
+      commissar_debuff removal_2: 3597203002743056990
+      commissar_debuff removal_3: -8378757768812847591
+      commissar_debuff removal_4: -9037950611598480006
+      commissar_debuff removal_5: -653861526390044971
+      commissar_debuff removal_6: -8678333029879659113
+      commissar_debuff removal_7: -3931355730800253731
+      commissar_debuff removal_8: -471809630791406616
+      commissar_debuff removal_9: 3465411906903484949
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 344cda5f2d1ed3e42a1e347fa67a2227
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3050784298099891005
+    second: flamethrower-eye_2_0
+  - first:
+      213: 6212383237205973729
+    second: flamethrower-eye_2_1
+  - first:
+      213: -6837297667480009679
+    second: flamethrower-eye_2_2
+  - first:
+      213: -4806345638542847927
+    second: flamethrower-eye_2_3
+  - first:
+      213: 4871383844058059941
+    second: flamethrower-eye_2_4
+  - first:
+      213: -9018772029184379099
+    second: flamethrower-eye_2_5
+  - first:
+      213: 3167578246169185668
+    second: flamethrower-eye_2_6
+  - first:
+      213: 8943000282300297895
+    second: flamethrower-eye_2_7
+  - first:
+      213: 8613044354740997538
+    second: flamethrower-eye_2_8
+  - first:
+      213: 3910260502229696795
+    second: flamethrower-eye_2_9
+  - first:
+      213: 6338490362037589094
+    second: flamethrower-eye_2_10
+  - first:
+      213: -4410848707088119379
+    second: flamethrower-eye_2_11
+  - first:
+      213: 8515405303773458021
+    second: flamethrower-eye_2_12
+  - first:
+      213: 7852193503868817673
+    second: flamethrower-eye_2_13
+  - first:
+      213: 5447525984871123443
+    second: flamethrower-eye_2_14
+  - first:
+      213: 5684742634671964742
+    second: flamethrower-eye_2_15
+  - first:
+      213: 2266763969414568125
+    second: flamethrower-eye_2_16
+  - first:
+      213: 4890114463784915106
+    second: flamethrower-eye_2_17
+  - first:
+      213: -1809287071539075133
+    second: flamethrower-eye_2_18
+  - first:
+      213: 3494701784929194241
+    second: flamethrower-eye_2_19
+  - first:
+      213: -1187837483324083321
+    second: flamethrower-eye_2_20
+  - first:
+      213: 8691036315827031339
+    second: flamethrower-eye_2_21
+  - first:
+      213: 5480174516775739202
+    second: flamethrower-eye_2_22
+  - first:
+      213: -3304697109140358009
+    second: flamethrower-eye_2_23
+  - first:
+      213: -6353759477887236697
+    second: flamethrower-eye_2_24
+  - first:
+      213: -7349643112558087534
+    second: flamethrower-eye_2_25
+  - first:
+      213: 5696266692476144255
+    second: flamethrower-eye_2_26
+  - first:
+      213: -5856372051546937971
+    second: flamethrower-eye_2_27
+  - first:
+      213: 3754068859818716088
+    second: flamethrower-eye_2_28
+  - first:
+      213: -8474421210130539113
+    second: flamethrower-eye_2_29
+  - first:
+      213: -8067216345705892654
+    second: flamethrower-eye_2_30
+  - first:
+      213: -395475588134932130
+    second: flamethrower-eye_2_31
+  - first:
+      213: 6631501687994836370
+    second: flamethrower-eye_2_32
+  - first:
+      213: 3109492577099567376
+    second: flamethrower-eye_2_33
+  - first:
+      213: 1132596467026219192
+    second: flamethrower-eye_2_34
+  - first:
+      213: 1665679311379467477
+    second: flamethrower-eye_2_35
+  - first:
+      213: -1207960998379817212
+    second: flamethrower-eye_2_36
+  - first:
+      213: 1481183917177718936
+    second: flamethrower-eye_2_37
+  - first:
+      213: 2834750270758454239
+    second: flamethrower-eye_2_38
+  - first:
+      213: 1043666922148552384
+    second: flamethrower-eye_2_39
+  - first:
+      213: 3735185645597462451
+    second: flamethrower-eye_2_40
+  - first:
+      213: -6430753838685781904
+    second: flamethrower-eye_2_41
+  - first:
+      213: 6738354606431102372
+    second: flamethrower-eye_2_42
+  - first:
+      213: 3967879284506302510
+    second: flamethrower-eye_2_43
+  - first:
+      213: -843545956630522605
+    second: flamethrower-eye_2_44
+  - first:
+      213: 4821129596714900578
+    second: flamethrower-eye_2_45
+  - first:
+      213: -8516721174219269551
+    second: flamethrower-eye_2_46
+  - first:
+      213: 7450510812062491709
+    second: flamethrower-eye_2_47
+  - first:
+      213: -6321020859831779561
+    second: flamethrower-eye_2_48
+  - first:
+      213: 1345258478182156742
+    second: flamethrower-eye_2_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flamethrower-eye_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b5596c720965a20800000000000000
+      internalID: 3050784298099891005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamethrower-eye_2_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ead04eb3a1d63650800000000000000
+      internalID: 6212383237205973729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamethrower-eye_2_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1344f3a3ff90d11a0800000000000000
+      internalID: -6837297667480009679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamethrower-eye_2_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940d7ea5b1e6c4db0800000000000000
+      internalID: -4806345638542847927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamethrower-eye_2_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a458a5ebc1aa9340800000000000000
+      internalID: 4871383844058059941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamethrower-eye_2_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5277c3a7f92e6d280800000000000000
+      internalID: -9018772029184379099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamethrower-eye_2_6
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d4b21e1af75fb20800000000000000
+      internalID: 3167578246169185668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamethrower-eye_2_7
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a23abcef5beb1c70800000000000000
+      internalID: 8943000282300297895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flamethrower-eye_2_8
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad450fe43ea78770800000000000000
+      internalID: 8613044354740997538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8184f8da8b7549f4897ffe188fce4e5f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      flamethrower-eye_2_0: 3050784298099891005
+      flamethrower-eye_2_1: 6212383237205973729
+      flamethrower-eye_2_2: -6837297667480009679
+      flamethrower-eye_2_3: -4806345638542847927
+      flamethrower-eye_2_4: 4871383844058059941
+      flamethrower-eye_2_5: -9018772029184379099
+      flamethrower-eye_2_6: 3167578246169185668
+      flamethrower-eye_2_7: 8943000282300297895
+      flamethrower-eye_2_8: 8613044354740997538
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

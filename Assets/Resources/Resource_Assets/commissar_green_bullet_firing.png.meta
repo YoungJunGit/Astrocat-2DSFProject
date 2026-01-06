@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: d86eec042ebffe44bb3150ecd38ff163
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2794832471936010574
+    second: commissar_green_bullet_firing_0
+  - first:
+      213: -5423978406244381809
+    second: commissar_green_bullet_firing_1
+  - first:
+      213: 943947576093440423
+    second: commissar_green_bullet_firing_2
+  - first:
+      213: 8728939423550622622
+    second: commissar_green_bullet_firing_3
+  - first:
+      213: 1576396896124732627
+    second: commissar_green_bullet_firing_4
+  - first:
+      213: -7025399261461561998
+    second: commissar_green_bullet_firing_5
+  - first:
+      213: -7559704746805415500
+    second: commissar_green_bullet_firing_6
+  - first:
+      213: -4065880872024261134
+    second: commissar_green_bullet_firing_7
+  - first:
+      213: -3048695585325076505
+    second: commissar_green_bullet_firing_8
+  - first:
+      213: 5034211696085331503
+    second: commissar_green_bullet_firing_9
+  - first:
+      213: -2058656347901057689
+    second: commissar_green_bullet_firing_10
+  - first:
+      213: -3001754132732586042
+    second: commissar_green_bullet_firing_11
+  - first:
+      213: 215308448332443647
+    second: commissar_green_bullet_firing_12
+  - first:
+      213: -8029993116059953961
+    second: commissar_green_bullet_firing_13
+  - first:
+      213: -8306722852593979265
+    second: commissar_green_bullet_firing_14
+  - first:
+      213: 1536694265968636023
+    second: commissar_green_bullet_firing_15
+  - first:
+      213: 2329573531892052552
+    second: commissar_green_bullet_firing_16
+  - first:
+      213: -3340938457083697444
+    second: commissar_green_bullet_firing_17
+  - first:
+      213: -6918407394934857426
+    second: commissar_green_bullet_firing_18
+  - first:
+      213: -3660548919410590198
+    second: commissar_green_bullet_firing_19
+  - first:
+      213: -637968500434340440
+    second: commissar_green_bullet_firing_20
+  - first:
+      213: -8786828977058707856
+    second: commissar_green_bullet_firing_21
+  - first:
+      213: -6945164342853919302
+    second: commissar_green_bullet_firing_22
+  - first:
+      213: 3723608096942685065
+    second: commissar_green_bullet_firing_23
+  - first:
+      213: -6457697778986795192
+    second: commissar_green_bullet_firing_24
+  - first:
+      213: -7971387799075760040
+    second: commissar_green_bullet_firing_25
+  - first:
+      213: 1830244296863778186
+    second: commissar_green_bullet_firing_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6f687aca2c639d0800000000000000
+      internalID: -2794832471936010574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_1
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b0a6280682ab4b0800000000000000
+      internalID: -5423978406244381809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_2
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a9f3a7b153991d00800000000000000
+      internalID: 943947576093440423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_3
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b43a6682c632970800000000000000
+      internalID: 8728939423550622622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_4
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d40b8aff9c70e510800000000000000
+      internalID: 1576396896124732627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_5
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27dba470894c08e90800000000000000
+      internalID: -7025399261461561998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_6
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b134d7f598861790800000000000000
+      internalID: -7559704746805415500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_7
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fd30fb83e61397c0800000000000000
+      internalID: -4065880872024261134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_8
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efa560948bd0b5d0800000000000000
+      internalID: -3048695585325076505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_9
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 92
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e684d7ddc1dd540800000000000000
+      internalID: 5034211696085331503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_10
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 0
+        width: 110
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76521c475fe2e63e0800000000000000
+      internalID: -2058656347901057689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_11
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 98
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c7d96f2580a756d0800000000000000
+      internalID: -3001754132732586042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_12
+      rect:
+        serializedVersion: 2
+        x: 2210
+        y: 0
+        width: 122
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fffeefb94edecf200800000000000000
+      internalID: 215308448332443647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_13
+      rect:
+        serializedVersion: 2
+        x: 2387
+        y: 98
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d41a604ecbbf8090800000000000000
+      internalID: -8029993116059953961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_14
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f703483939798bc80800000000000000
+      internalID: -8306722852593979265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_15
+      rect:
+        serializedVersion: 2
+        x: 2567
+        y: 80
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770b07b0b4f635510800000000000000
+      internalID: 1536694265968636023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_16
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 842f39ed8ce445020800000000000000
+      internalID: 2329573531892052552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_17
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd6a511ac2a92a1d0800000000000000
+      internalID: -3340938457083697444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_18
+      rect:
+        serializedVersion: 2
+        x: 3053
+        y: 0
+        width: 131
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21e87d2121ecff90800000000000000
+      internalID: -6918407394934857426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_19
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 71
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e7797f62e133dc0800000000000000
+      internalID: -3660548919410590198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_20
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 62
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a5f8b9670b7527f0800000000000000
+      internalID: -637968500434340440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_21
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 68
+        width: 59
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0768e489999ee0680800000000000000
+      internalID: -8786828977058707856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_22
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 71
+        width: 56
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd9b75c3d1dd9f90800000000000000
+      internalID: -6945164342853919302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_23
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 41
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98b790de5d9eca330800000000000000
+      internalID: 3723608096942685065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_24
+      rect:
+        serializedVersion: 2
+        x: 2186
+        y: 44
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84fb9a89516a166a0800000000000000
+      internalID: -6457697778986795192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_25
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 47
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858d43de701ff5190800000000000000
+      internalID: -7971387799075760040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_green_bullet_firing_26
+      rect:
+        serializedVersion: 2
+        x: 2597
+        y: 50
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8500cead75566910800000000000000
+      internalID: 1830244296863778186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      commissar_green_bullet_firing_0: -2794832471936010574
+      commissar_green_bullet_firing_1: -5423978406244381809
+      commissar_green_bullet_firing_10: -2058656347901057689
+      commissar_green_bullet_firing_11: -3001754132732586042
+      commissar_green_bullet_firing_12: 215308448332443647
+      commissar_green_bullet_firing_13: -8029993116059953961
+      commissar_green_bullet_firing_14: -8306722852593979265
+      commissar_green_bullet_firing_15: 1536694265968636023
+      commissar_green_bullet_firing_16: 2329573531892052552
+      commissar_green_bullet_firing_17: -3340938457083697444
+      commissar_green_bullet_firing_18: -6918407394934857426
+      commissar_green_bullet_firing_19: -3660548919410590198
+      commissar_green_bullet_firing_2: 943947576093440423
+      commissar_green_bullet_firing_20: -637968500434340440
+      commissar_green_bullet_firing_21: -8786828977058707856
+      commissar_green_bullet_firing_22: -6945164342853919302
+      commissar_green_bullet_firing_23: 3723608096942685065
+      commissar_green_bullet_firing_24: -6457697778986795192
+      commissar_green_bullet_firing_25: -7971387799075760040
+      commissar_green_bullet_firing_26: 1830244296863778186
+      commissar_green_bullet_firing_3: 8728939423550622622
+      commissar_green_bullet_firing_4: 1576396896124732627
+      commissar_green_bullet_firing_5: -7025399261461561998
+      commissar_green_bullet_firing_6: -7559704746805415500
+      commissar_green_bullet_firing_7: -4065880872024261134
+      commissar_green_bullet_firing_8: -3048695585325076505
+      commissar_green_bullet_firing_9: 5034211696085331503
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

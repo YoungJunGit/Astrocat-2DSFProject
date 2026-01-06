@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Comissar_Dialogue_Animator
+  m_Controller: {fileID: 9100000, guid: 8f58efc1cb8749a4083d069c62de5788, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 8b611e5f084350a45b656558d6b278a9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8359912e2b61572418eeffae2b2721b5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c706a087a37371546b067f5a258e87d0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dd7b64e658cf345489514fc646aa57e7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fc577f220f9b1434982cca27aeecfc90, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 470b4905afad93447837470ca985b123, type: 2}

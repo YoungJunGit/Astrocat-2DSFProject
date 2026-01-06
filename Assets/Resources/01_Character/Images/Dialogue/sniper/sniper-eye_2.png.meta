@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: bf5febb8866b9b8438ab42e359a229d7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1054802056715435292
+    second: sniper-eye_2_0
+  - first:
+      213: 6079443036764276096
+    second: sniper-eye_2_1
+  - first:
+      213: 6388333576300388459
+    second: sniper-eye_2_2
+  - first:
+      213: 5076100269081222595
+    second: sniper-eye_2_3
+  - first:
+      213: 6615289134410418941
+    second: sniper-eye_2_4
+  - first:
+      213: 1252796864308765507
+    second: sniper-eye_2_5
+  - first:
+      213: 3659668040898281261
+    second: sniper-eye_2_6
+  - first:
+      213: -8606127853199751670
+    second: sniper-eye_2_7
+  - first:
+      213: 1976298825566457529
+    second: sniper-eye_2_8
+  - first:
+      213: -3560775265871316124
+    second: sniper-eye_2_9
+  - first:
+      213: -5315726421715986713
+    second: sniper-eye_2_10
+  - first:
+      213: -6038557342703976371
+    second: sniper-eye_2_11
+  - first:
+      213: 8290905538868691106
+    second: sniper-eye_2_12
+  - first:
+      213: -8338648829223247782
+    second: sniper-eye_2_13
+  - first:
+      213: 1690411517046381840
+    second: sniper-eye_2_14
+  - first:
+      213: -393421301902382747
+    second: sniper-eye_2_15
+  - first:
+      213: -2732263255186275802
+    second: sniper-eye_2_16
+  - first:
+      213: -5651289985543896951
+    second: sniper-eye_2_17
+  - first:
+      213: 236810763287950166
+    second: sniper-eye_2_18
+  - first:
+      213: -8698135348908889012
+    second: sniper-eye_2_19
+  - first:
+      213: 1979353402640435943
+    second: sniper-eye_2_20
+  - first:
+      213: -4182150569128493549
+    second: sniper-eye_2_21
+  - first:
+      213: 508729286827334812
+    second: sniper-eye_2_22
+  - first:
+      213: -6482701590028660338
+    second: sniper-eye_2_23
+  - first:
+      213: -2589307562936762175
+    second: sniper-eye_2_24
+  - first:
+      213: -8521331851625319784
+    second: sniper-eye_2_25
+  - first:
+      213: -4501103620646058887
+    second: sniper-eye_2_26
+  - first:
+      213: 5416723895919943192
+    second: sniper-eye_2_27
+  - first:
+      213: 6250987776030709278
+    second: sniper-eye_2_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniper-eye_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e200253e179c51f0800000000000000
+      internalID: -1054802056715435292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper-eye_2_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0858e8e4b358e5450800000000000000
+      internalID: 6079443036764276096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper-eye_2_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60e5127a8be7a850800000000000000
+      internalID: 6388333576300388459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper-eye_2_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cdd9d6ec4ee17640800000000000000
+      internalID: 5076100269081222595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper-eye_2_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfac80f1b6a3ecb50800000000000000
+      internalID: 6615289134410418941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper-eye_2_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343e8d84c14d26110800000000000000
+      internalID: 1252796864308765507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper-eye_2_6
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f779581b0c9c230800000000000000
+      internalID: 3659668040898281261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper-eye_2_7
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a060f629054e09880800000000000000
+      internalID: -8606127853199751670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper-eye_2_8
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 400
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be09eb9f493d6b10800000000000000
+      internalID: 1976298825566457529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 99aec51850ef81e4691bbc8c395824c9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      sniper-eye_2_0: -1054802056715435292
+      sniper-eye_2_1: 6079443036764276096
+      sniper-eye_2_2: 6388333576300388459
+      sniper-eye_2_3: 5076100269081222595
+      sniper-eye_2_4: 6615289134410418941
+      sniper-eye_2_5: 1252796864308765507
+      sniper-eye_2_6: 3659668040898281261
+      sniper-eye_2_7: -8606127853199751670
+      sniper-eye_2_8: 1976298825566457529
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

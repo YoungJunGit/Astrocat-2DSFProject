@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 55b4fbcd1861d914fbbdf9ffdad6ac45
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1990012421322361352
+    second: rifleman_provoke_0
+  - first:
+      213: -6142026228965857826
+    second: rifleman_provoke_1
+  - first:
+      213: -6367670014476442110
+    second: rifleman_provoke_2
+  - first:
+      213: -4588601064450890023
+    second: rifleman_provoke_3
+  - first:
+      213: 2588432778872018412
+    second: rifleman_provoke_4
+  - first:
+      213: -3352738135554956795
+    second: rifleman_provoke_5
+  - first:
+      213: 3744962935236876235
+    second: rifleman_provoke_6
+  - first:
+      213: -5974297414944396667
+    second: rifleman_provoke_7
+  - first:
+      213: -6575566186003442631
+    second: rifleman_provoke_8
+  - first:
+      213: -334934676923415212
+    second: rifleman_provoke_9
+  - first:
+      213: 267408791282912967
+    second: rifleman_provoke_10
+  - first:
+      213: 1632890397199586512
+    second: rifleman_provoke_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rifleman_provoke_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 158
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f537701f3e0264e0800000000000000
+      internalID: -1990012421322361352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_1
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 0
+        width: 155
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5ab55cfa323caa0800000000000000
+      internalID: -6142026228965857826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_2
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 68
+        width: 113
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 206a934fbdd71a7a0800000000000000
+      internalID: -6367670014476442110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_3
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 0
+        width: 143
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6ec61b4a30250c0800000000000000
+      internalID: -4588601064450890023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_4
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 68
+        width: 113
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5d4a5f5e5fbe320800000000000000
+      internalID: 2588432778872018412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_5
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 0
+        width: 143
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5026755ed6ea871d0800000000000000
+      internalID: -3352738135554956795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_6
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 68
+        width: 113
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc75ccba2f7c8f330800000000000000
+      internalID: 3744962935236876235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_7
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 0
+        width: 143
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a64bf7728071da0800000000000000
+      internalID: -5974297414944396667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_8
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 68
+        width: 113
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 934d1368465eeb4a0800000000000000
+      internalID: -6575566186003442631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_9
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 0
+        width: 143
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45505079fa21a5bf0800000000000000
+      internalID: -334934676923415212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_10
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 0
+        width: 155
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ce0c3ef0e606b300800000000000000
+      internalID: 267408791282912967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_provoke_11
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 0
+        width: 158
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d45a323a2139a610800000000000000
+      internalID: 1632890397199586512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rifleman_provoke_0: -1990012421322361352
+      rifleman_provoke_1: -6142026228965857826
+      rifleman_provoke_10: 267408791282912967
+      rifleman_provoke_11: 1632890397199586512
+      rifleman_provoke_2: -6367670014476442110
+      rifleman_provoke_3: -4588601064450890023
+      rifleman_provoke_4: 2588432778872018412
+      rifleman_provoke_5: -3352738135554956795
+      rifleman_provoke_6: 3744962935236876235
+      rifleman_provoke_7: -5974297414944396667
+      rifleman_provoke_8: -6575566186003442631
+      rifleman_provoke_9: -334934676923415212
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

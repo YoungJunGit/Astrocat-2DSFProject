@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: c8d12b9c1df221e419da4010577e3712
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2995357863466634544
+    second: sniper_parrying_1_0
+  - first:
+      213: -5680746201936424417
+    second: sniper_parrying_1_1
+  - first:
+      213: 6884697298084399419
+    second: sniper_parrying_1_2
+  - first:
+      213: 391402996822739003
+    second: sniper_parrying_1_3
+  - first:
+      213: 8707065488444918281
+    second: sniper_parrying_1_4
+  - first:
+      213: 7720278644164525697
+    second: sniper_parrying_1_5
+  - first:
+      213: -3607791371693089139
+    second: sniper_parrying_1_6
+  - first:
+      213: 7345704481454538799
+    second: sniper_parrying_1_7
+  - first:
+      213: 982843332034738233
+    second: sniper_parrying_1_8
+  - first:
+      213: -2476249117654003157
+    second: sniper_parrying_1_9
+  - first:
+      213: 7993366056137908830
+    second: sniper_parrying_1_10
+  - first:
+      213: 1296940839215253148
+    second: sniper_parrying_1_11
+  - first:
+      213: -4786162956132228798
+    second: sniper_parrying_1_12
+  - first:
+      213: 2264909576758590639
+    second: sniper_parrying_1_13
+  - first:
+      213: 4631463509264415460
+    second: sniper_parrying_1_14
+  - first:
+      213: -6235370514825832181
+    second: sniper_parrying_1_15
+  - first:
+      213: -3298577887505095274
+    second: sniper_parrying_1_16
+  - first:
+      213: 4042997006217644388
+    second: sniper_parrying_1_17
+  - first:
+      213: -1063717849592756496
+    second: sniper_parrying_1_18
+  - first:
+      213: 2840030903487626295
+    second: sniper_parrying_1_19
+  - first:
+      213: -6373993608234993358
+    second: sniper_parrying_1_20
+  - first:
+      213: 854003748127706264
+    second: sniper_parrying_1_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniper_parrying_1_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 152
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d0a135b16a19920800000000000000
+      internalID: 2995357863466634544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_1
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 122
+        width: 83
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f121e6e5d6fe921b0800000000000000
+      internalID: -5680746201936424417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_2
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 35
+        width: 131
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b39896647bb5b8f50800000000000000
+      internalID: 6884697298084399419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_3
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 0
+        width: 155
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3884ada3fa8e6500800000000000000
+      internalID: 391402996822739003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_4
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 0
+        width: 155
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a82d20ee5b5d870800000000000000
+      internalID: 8707065488444918281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_5
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 0
+        width: 155
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ef578e580f32b60800000000000000
+      internalID: 7720278644164525697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_6
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 35
+        width: 131
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e9382ccdc8eedc0800000000000000
+      internalID: -3607791371693089139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_7
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 95
+        width: 83
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20c7128e4f21f560800000000000000
+      internalID: 7345704481454538799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_8
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 113
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938bacb9dc2c3ad00800000000000000
+      internalID: 982843332034738233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_9
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 95
+        width: 65
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22dbd61c8892add0800000000000000
+      internalID: -2476249117654003157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_10
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 89
+        width: 65
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52e3cfc3142eee60800000000000000
+      internalID: 7993366056137908830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_11
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 89
+        width: 65
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c964f1062d8aff110800000000000000
+      internalID: 1296940839215253148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_12
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 89
+        width: 65
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241ea9a4622249db0800000000000000
+      internalID: -4786162956132228798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_13
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 89
+        width: 65
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac731392439e6f10800000000000000
+      internalID: 2264909576758590639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_14
+      rect:
+        serializedVersion: 2
+        x: 2750
+        y: 104
+        width: 65
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eab3ebe583464040800000000000000
+      internalID: 4631463509264415460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_15
+      rect:
+        serializedVersion: 2
+        x: 2951
+        y: 116
+        width: 65
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b099cdc9d838779a0800000000000000
+      internalID: -6235370514825832181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_16
+      rect:
+        serializedVersion: 2
+        x: 3149
+        y: 128
+        width: 65
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695ec4f43e81932d0800000000000000
+      internalID: -3298577887505095274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_17
+      rect:
+        serializedVersion: 2
+        x: 3338
+        y: 140
+        width: 65
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469029f3b5c9b1830800000000000000
+      internalID: 4042997006217644388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_18
+      rect:
+        serializedVersion: 2
+        x: 3527
+        y: 152
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f608c9604aec31f0800000000000000
+      internalID: -1063717849592756496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_19
+      rect:
+        serializedVersion: 2
+        x: 2171
+        y: 104
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73cf2814f01d96720800000000000000
+      internalID: 2840030903487626295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_20
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 107
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239fa8c85960b87a0800000000000000
+      internalID: -6373993608234993358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_parrying_1_21
+      rect:
+        serializedVersion: 2
+        x: 2534
+        y: 107
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c010c52e70adb00800000000000000
+      internalID: 854003748127706264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sniper_parrying_1_0: 2995357863466634544
+      sniper_parrying_1_1: -5680746201936424417
+      sniper_parrying_1_10: 7993366056137908830
+      sniper_parrying_1_11: 1296940839215253148
+      sniper_parrying_1_12: -4786162956132228798
+      sniper_parrying_1_13: 2264909576758590639
+      sniper_parrying_1_14: 4631463509264415460
+      sniper_parrying_1_15: -6235370514825832181
+      sniper_parrying_1_16: -3298577887505095274
+      sniper_parrying_1_17: 4042997006217644388
+      sniper_parrying_1_18: -1063717849592756496
+      sniper_parrying_1_19: 2840030903487626295
+      sniper_parrying_1_2: 6884697298084399419
+      sniper_parrying_1_20: -6373993608234993358
+      sniper_parrying_1_21: 854003748127706264
+      sniper_parrying_1_3: 391402996822739003
+      sniper_parrying_1_4: 8707065488444918281
+      sniper_parrying_1_5: 7720278644164525697
+      sniper_parrying_1_6: -3607791371693089139
+      sniper_parrying_1_7: 7345704481454538799
+      sniper_parrying_1_8: 982843332034738233
+      sniper_parrying_1_9: -2476249117654003157
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

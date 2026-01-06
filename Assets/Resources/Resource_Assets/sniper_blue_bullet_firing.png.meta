@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: 65607562077b3974383e3c70134a0e6c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8852264418417793577
+    second: sniper_blue_bullet_firing_0
+  - first:
+      213: -983953929700903377
+    second: sniper_blue_bullet_firing_1
+  - first:
+      213: -9064446299473122513
+    second: sniper_blue_bullet_firing_2
+  - first:
+      213: 150730983432121235
+    second: sniper_blue_bullet_firing_3
+  - first:
+      213: -6308236959435311108
+    second: sniper_blue_bullet_firing_4
+  - first:
+      213: -6834077799839879725
+    second: sniper_blue_bullet_firing_5
+  - first:
+      213: -9155817952431031085
+    second: sniper_blue_bullet_firing_6
+  - first:
+      213: -2910525085082154065
+    second: sniper_blue_bullet_firing_7
+  - first:
+      213: -3619553301597297955
+    second: sniper_blue_bullet_firing_8
+  - first:
+      213: 8349937219945597000
+    second: sniper_blue_bullet_firing_9
+  - first:
+      213: -2777499334187032255
+    second: sniper_blue_bullet_firing_10
+  - first:
+      213: 7947553508038439395
+    second: sniper_blue_bullet_firing_11
+  - first:
+      213: -7760912424512247190
+    second: sniper_blue_bullet_firing_12
+  - first:
+      213: -4457978092992456785
+    second: sniper_blue_bullet_firing_13
+  - first:
+      213: -7208202379506506763
+    second: sniper_blue_bullet_firing_14
+  - first:
+      213: 1759979187190460246
+    second: sniper_blue_bullet_firing_15
+  - first:
+      213: 3152329849062537951
+    second: sniper_blue_bullet_firing_16
+  - first:
+      213: 9179266289102835465
+    second: sniper_blue_bullet_firing_17
+  - first:
+      213: -6157864247659288686
+    second: sniper_blue_bullet_firing_18
+  - first:
+      213: -6203526417071486203
+    second: sniper_blue_bullet_firing_19
+  - first:
+      213: -3156793972380566418
+    second: sniper_blue_bullet_firing_20
+  - first:
+      213: 2338562747986198972
+    second: sniper_blue_bullet_firing_21
+  - first:
+      213: -6075261662464924705
+    second: sniper_blue_bullet_firing_22
+  - first:
+      213: 2456699284598195473
+    second: sniper_blue_bullet_firing_23
+  - first:
+      213: 2695399663503029564
+    second: sniper_blue_bullet_firing_24
+  - first:
+      213: -140435878970877407
+    second: sniper_blue_bullet_firing_25
+  - first:
+      213: -2914331290142598665
+    second: sniper_blue_bullet_firing_26
+  - first:
+      213: 216111952330975464
+    second: sniper_blue_bullet_firing_27
+  - first:
+      213: -9182973019016439003
+    second: sniper_blue_bullet_firing_28
+  - first:
+      213: -1577299838224443377
+    second: sniper_blue_bullet_firing_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_0
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 176
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a5f95569f89da70800000000000000
+      internalID: 8852264418417793577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_1
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 0
+        width: 194
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f26f3d83d1b4852f0800000000000000
+      internalID: -983953929700903377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_2
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 0
+        width: 194
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2bec4abd1e943280800000000000000
+      internalID: -9064446299473122513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_3
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 0
+        width: 191
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39bed14e701871200800000000000000
+      internalID: 150730983432121235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_4
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 0
+        width: 191
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf73ed968e3a478a0800000000000000
+      internalID: -6308236959435311108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_5
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 0
+        width: 191
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd2925137a7821a0800000000000000
+      internalID: -6834077799839879725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_6
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 0
+        width: 191
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc3435f41000f080800000000000000
+      internalID: -9155817952431031085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_7
+      rect:
+        serializedVersion: 2
+        x: 2438
+        y: 0
+        width: 221
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab80d11bdcbb97d0800000000000000
+      internalID: -2910525085082154065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_8
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 0
+        width: 113
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd263bc0373c4cdc0800000000000000
+      internalID: -3619553301597297955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_9
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 182
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8488ba369afe0e370800000000000000
+      internalID: 8349937219945597000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_10
+      rect:
+        serializedVersion: 2
+        x: 3068
+        y: 86
+        width: 29
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141e5e542175479d0800000000000000
+      internalID: -2777499334187032255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_11
+      rect:
+        serializedVersion: 2
+        x: 3143
+        y: 0
+        width: 185
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e17a00cec16b4e60800000000000000
+      internalID: 7947553508038439395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_12
+      rect:
+        serializedVersion: 2
+        x: 3404
+        y: 104
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a280cd443bb4490800000000000000
+      internalID: -7760912424512247190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_13
+      rect:
+        serializedVersion: 2
+        x: 3479
+        y: 0
+        width: 179
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa716b63b841222c0800000000000000
+      internalID: -4457978092992456785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_14
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 113
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3a364602257fb90800000000000000
+      internalID: -7208202379506506763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_15
+      rect:
+        serializedVersion: 2
+        x: 3815
+        y: 0
+        width: 176
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65f6198feb3bc6810800000000000000
+      internalID: 1759979187190460246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_16
+      rect:
+        serializedVersion: 2
+        x: 4025
+        y: 0
+        width: 302
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdabb34cb435fbb20800000000000000
+      internalID: 3152329849062537951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_17
+      rect:
+        serializedVersion: 2
+        x: 4484
+        y: 0
+        width: 176
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f41bc5e0e436f70800000000000000
+      internalID: 9179266289102835465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_18
+      rect:
+        serializedVersion: 2
+        x: 4817
+        y: 0
+        width: 176
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 297a03fa71fda8aa0800000000000000
+      internalID: -6157864247659288686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_19
+      rect:
+        serializedVersion: 2
+        x: 5150
+        y: 0
+        width: 176
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50bc3b36795a8e9a0800000000000000
+      internalID: -6203526417071486203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_20
+      rect:
+        serializedVersion: 2
+        x: 5483
+        y: 0
+        width: 176
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c79278b90d034d0800000000000000
+      internalID: -3156793972380566418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_21
+      rect:
+        serializedVersion: 2
+        x: 3014
+        y: 62
+        width: 62
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1cda6dd6e347020800000000000000
+      internalID: 2338562747986198972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_22
+      rect:
+        serializedVersion: 2
+        x: 3068
+        y: 5
+        width: 23
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3aa33c4b550bba0800000000000000
+      internalID: -6075261662464924705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_23
+      rect:
+        serializedVersion: 2
+        x: 3356
+        y: 68
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1158e62bbf2f71220800000000000000
+      internalID: 2456699284598195473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_24
+      rect:
+        serializedVersion: 2
+        x: 3383
+        y: 65
+        width: 26
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c353ece86bbf76520800000000000000
+      internalID: 2695399663503029564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_25
+      rect:
+        serializedVersion: 2
+        x: 3404
+        y: 38
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a9838ef421d0ef0800000000000000
+      internalID: -140435878970877407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_26
+      rect:
+        serializedVersion: 2
+        x: 3404
+        y: 11
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f99e35e1273e87d0800000000000000
+      internalID: -2914331290142598665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_27
+      rect:
+        serializedVersion: 2
+        x: 3407
+        y: 89
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e86766fca8cff200800000000000000
+      internalID: 216111952330975464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_28
+      rect:
+        serializedVersion: 2
+        x: 3692
+        y: 35
+        width: 56
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52b578351b68f8080800000000000000
+      internalID: -9182973019016439003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_blue_bullet_firing_29
+      rect:
+        serializedVersion: 2
+        x: 3737
+        y: 17
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08d95e672e4c1ae0800000000000000
+      internalID: -1577299838224443377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sniper_blue_bullet_firing_0: 8852264418417793577
+      sniper_blue_bullet_firing_1: -983953929700903377
+      sniper_blue_bullet_firing_10: -2777499334187032255
+      sniper_blue_bullet_firing_11: 7947553508038439395
+      sniper_blue_bullet_firing_12: -7760912424512247190
+      sniper_blue_bullet_firing_13: -4457978092992456785
+      sniper_blue_bullet_firing_14: -7208202379506506763
+      sniper_blue_bullet_firing_15: 1759979187190460246
+      sniper_blue_bullet_firing_16: 3152329849062537951
+      sniper_blue_bullet_firing_17: 9179266289102835465
+      sniper_blue_bullet_firing_18: -6157864247659288686
+      sniper_blue_bullet_firing_19: -6203526417071486203
+      sniper_blue_bullet_firing_2: -9064446299473122513
+      sniper_blue_bullet_firing_20: -3156793972380566418
+      sniper_blue_bullet_firing_21: 2338562747986198972
+      sniper_blue_bullet_firing_22: -6075261662464924705
+      sniper_blue_bullet_firing_23: 2456699284598195473
+      sniper_blue_bullet_firing_24: 2695399663503029564
+      sniper_blue_bullet_firing_25: -140435878970877407
+      sniper_blue_bullet_firing_26: -2914331290142598665
+      sniper_blue_bullet_firing_27: 216111952330975464
+      sniper_blue_bullet_firing_28: -9182973019016439003
+      sniper_blue_bullet_firing_29: -1577299838224443377
+      sniper_blue_bullet_firing_3: 150730983432121235
+      sniper_blue_bullet_firing_4: -6308236959435311108
+      sniper_blue_bullet_firing_5: -6834077799839879725
+      sniper_blue_bullet_firing_6: -9155817952431031085
+      sniper_blue_bullet_firing_7: -2910525085082154065
+      sniper_blue_bullet_firing_8: -3619553301597297955
+      sniper_blue_bullet_firing_9: 8349937219945597000
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

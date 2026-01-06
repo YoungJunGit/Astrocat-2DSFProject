@@ -1,0 +1,1287 @@
+fileFormatVersion: 2
+guid: 733f72999e0325f4b9357c5116bb9f1b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1621336298321079382
+    second: commissar-dice_0
+  - first:
+      213: -3666463639307621241
+    second: commissar-dice_1
+  - first:
+      213: -5277465235017405393
+    second: commissar-dice_2
+  - first:
+      213: -1696714229152835236
+    second: commissar-dice_3
+  - first:
+      213: 3943771596474084233
+    second: commissar-dice_4
+  - first:
+      213: -9157205227982438327
+    second: commissar-dice_5
+  - first:
+      213: -7915518254761610310
+    second: commissar-dice_6
+  - first:
+      213: 6415018327386279251
+    second: commissar-dice_7
+  - first:
+      213: -795523568759689538
+    second: commissar-dice_8
+  - first:
+      213: 2670663680785842218
+    second: commissar-dice_9
+  - first:
+      213: 5872856613022209094
+    second: commissar-dice_10
+  - first:
+      213: 55423997855260192
+    second: commissar-dice_11
+  - first:
+      213: -1667080146011843799
+    second: commissar-dice_12
+  - first:
+      213: -4508386404078852548
+    second: commissar-dice_13
+  - first:
+      213: 3312315630722812401
+    second: commissar-dice_14
+  - first:
+      213: -2669194787058026232
+    second: commissar-dice_15
+  - first:
+      213: 3059351866077614255
+    second: commissar-dice_16
+  - first:
+      213: -4835571684759636591
+    second: commissar-dice_17
+  - first:
+      213: 5377797177476691424
+    second: commissar-dice_18
+  - first:
+      213: -6613116451677098416
+    second: commissar-dice_19
+  - first:
+      213: -8011006292873698419
+    second: commissar-dice_20
+  - first:
+      213: -6791933790553444552
+    second: commissar-dice_21
+  - first:
+      213: -586180213064794825
+    second: commissar-dice_22
+  - first:
+      213: -6519771981342620897
+    second: commissar-dice_23
+  - first:
+      213: 1480942753636613212
+    second: commissar-dice_24
+  - first:
+      213: 6741777444629557505
+    second: commissar-dice_25
+  - first:
+      213: -3724818384773768381
+    second: commissar-dice_26
+  - first:
+      213: 642376378046232983
+    second: commissar-dice_27
+  - first:
+      213: 2892689723696900772
+    second: commissar-dice_28
+  - first:
+      213: -2112299133810822617
+    second: commissar-dice_29
+  - first:
+      213: -1256773944227864821
+    second: commissar-dice_30
+  - first:
+      213: -7802864319313949761
+    second: commissar-dice_31
+  - first:
+      213: 4125550580750230017
+    second: commissar-dice_32
+  - first:
+      213: -2648879579004284995
+    second: commissar-dice_33
+  - first:
+      213: -8382785018881996579
+    second: commissar-dice_34
+  - first:
+      213: -6003358163216881097
+    second: commissar-dice_35
+  - first:
+      213: 4825397329932606780
+    second: commissar-dice_36
+  - first:
+      213: 5652352874123322209
+    second: commissar-dice_37
+  - first:
+      213: -4700168260196412770
+    second: commissar-dice_38
+  - first:
+      213: 7387205138123741094
+    second: commissar-dice_39
+  - first:
+      213: 2628025214767317795
+    second: commissar-dice_40
+  - first:
+      213: -7843761550572881905
+    second: commissar-dice_41
+  - first:
+      213: 4847385339127573923
+    second: commissar-dice_42
+  - first:
+      213: -4247084561677342128
+    second: commissar-dice_43
+  - first:
+      213: 6902802194575219005
+    second: commissar-dice_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: commissar-dice_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 419
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65cefdae5c4208610800000000000000
+      internalID: 1621336298321079382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_1
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 425
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78cee2deeba1e1dc0800000000000000
+      internalID: -3666463639307621241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_2
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 420
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2c6058745da2c6b0800000000000000
+      internalID: -5277465235017405393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_3
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 427
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c599efde56f0478e0800000000000000
+      internalID: -1696714229152835236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_4
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 421
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98bec1b3f571bb630800000000000000
+      internalID: 3943771596474084233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_5
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 429
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940c1c2bc521be080800000000000000
+      internalID: -9157205227982438327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_6
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 420
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab370d3e51e662290800000000000000
+      internalID: -7915518254761610310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_7
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 427
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35dca773e29b60950800000000000000
+      internalID: 6415018327386279251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_8
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 419
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebea0a1778bb5f4f0800000000000000
+      internalID: -795523568759689538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_9
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 425
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2007c7c77a101520800000000000000
+      internalID: 2670663680785842218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_10
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 420
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6441efb49f3908150800000000000000
+      internalID: 5872856613022209094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_11
+      rect:
+        serializedVersion: 2
+        x: 2319
+        y: 427
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02ed13815d7e4c000800000000000000
+      internalID: 55423997855260192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_12
+      rect:
+        serializedVersion: 2
+        x: 2443
+        y: 421
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9239bd490775dd8e0800000000000000
+      internalID: -1667080146011843799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_13
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 429
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c36eda2b37efe61c0800000000000000
+      internalID: -4508386404078852548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_14
+      rect:
+        serializedVersion: 2
+        x: 2843
+        y: 420
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f905394485b7fd20800000000000000
+      internalID: 3312315630722812401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_15
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 427
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 809f411bb7d15fad0800000000000000
+      internalID: -2669194787058026232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_16
+      rect:
+        serializedVersion: 2
+        x: 3243
+        y: 419
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa01c742050057a20800000000000000
+      internalID: 3059351866077614255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_17
+      rect:
+        serializedVersion: 2
+        x: 3519
+        y: 425
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 195f6f33c2994ecb0800000000000000
+      internalID: -4835571684759636591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_18
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 361
+        width: 69
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e5b8954a06c1aa40800000000000000
+      internalID: 5377797177476691424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_19
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 362
+        width: 69
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05eae7fff9d7934a0800000000000000
+      internalID: -6613116451677098416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_20
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 363
+        width: 69
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8328d3883033d090800000000000000
+      internalID: -8011006292873698419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_21
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 362
+        width: 69
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83fe614e3343eb1a0800000000000000
+      internalID: -6791933790553444552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_22
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 361
+        width: 69
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73df8e1b3387dd7f0800000000000000
+      internalID: -586180213064794825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_23
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 362
+        width: 69
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f13478b1ded1585a0800000000000000
+      internalID: -6519771981342620897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_24
+      rect:
+        serializedVersion: 2
+        x: 2668
+        y: 363
+        width: 69
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5cf23b869d5d8410800000000000000
+      internalID: 1480942753636613212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_25
+      rect:
+        serializedVersion: 2
+        x: 3068
+        y: 362
+        width: 69
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101b2edcdda9f8d50800000000000000
+      internalID: 6741777444629557505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_26
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 361
+        width: 69
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b17baf969ce4cc0800000000000000
+      internalID: -3724818384773768381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_27
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 216
+        width: 110
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7993c8199ed2ae800800000000000000
+      internalID: 642376378046232983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_28
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 257
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa60624af5e42820800000000000000
+      internalID: 2892689723696900772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_29
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 218
+        width: 110
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72237d5112b9fa2e0800000000000000
+      internalID: -2112299133810822617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_30
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 260
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0fd453a1ca0f8ee0800000000000000
+      internalID: -1256773944227864821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_31
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 220
+        width: 110
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbbc8b03e38a6b390800000000000000
+      internalID: -7802864319313949761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_32
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 263
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10226842566e04930800000000000000
+      internalID: 4125550580750230017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_33
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 218
+        width: 110
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbfc9a8ae0a4d3bd0800000000000000
+      internalID: -2648879579004284995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_34
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 260
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd88211707d5aab80800000000000000
+      internalID: -8382785018881996579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_35
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 216
+        width: 110
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a2406ce89cfaca0800000000000000
+      internalID: -6003358163216881097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_36
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 257
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d50c63e4147f240800000000000000
+      internalID: 4825397329932606780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_37
+      rect:
+        serializedVersion: 2
+        x: 2086
+        y: 218
+        width: 110
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1636747ddf0317e40800000000000000
+      internalID: 5652352874123322209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_38
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 260
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e925d62bed5a5ceb0800000000000000
+      internalID: -4700168260196412770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_39
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 220
+        width: 110
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a75ecc1fef948660800000000000000
+      internalID: 7387205138123741094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_40
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 263
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323c9fa420f987420800000000000000
+      internalID: 2628025214767317795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_41
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 218
+        width: 110
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f087c338d6c552390800000000000000
+      internalID: -7843761550572881905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_42
+      rect:
+        serializedVersion: 2
+        x: 3028
+        y: 260
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ada22c884f554340800000000000000
+      internalID: 4847385339127573923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_43
+      rect:
+        serializedVersion: 2
+        x: 3286
+        y: 216
+        width: 110
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a2d2ad7135f05c0800000000000000
+      internalID: -4247084561677342128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-dice_44
+      rect:
+        serializedVersion: 2
+        x: 3428
+        y: 257
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39517af50eabcf50800000000000000
+      internalID: 6902802194575219005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      commissar-dice_0: 1621336298321079382
+      commissar-dice_1: -3666463639307621241
+      commissar-dice_10: 5872856613022209094
+      commissar-dice_11: 55423997855260192
+      commissar-dice_12: -1667080146011843799
+      commissar-dice_13: -4508386404078852548
+      commissar-dice_14: 3312315630722812401
+      commissar-dice_15: -2669194787058026232
+      commissar-dice_16: 3059351866077614255
+      commissar-dice_17: -4835571684759636591
+      commissar-dice_18: 5377797177476691424
+      commissar-dice_19: -6613116451677098416
+      commissar-dice_2: -5277465235017405393
+      commissar-dice_20: -8011006292873698419
+      commissar-dice_21: -6791933790553444552
+      commissar-dice_22: -586180213064794825
+      commissar-dice_23: -6519771981342620897
+      commissar-dice_24: 1480942753636613212
+      commissar-dice_25: 6741777444629557505
+      commissar-dice_26: -3724818384773768381
+      commissar-dice_27: 642376378046232983
+      commissar-dice_28: 2892689723696900772
+      commissar-dice_29: -2112299133810822617
+      commissar-dice_3: -1696714229152835236
+      commissar-dice_30: -1256773944227864821
+      commissar-dice_31: -7802864319313949761
+      commissar-dice_32: 4125550580750230017
+      commissar-dice_33: -2648879579004284995
+      commissar-dice_34: -8382785018881996579
+      commissar-dice_35: -6003358163216881097
+      commissar-dice_36: 4825397329932606780
+      commissar-dice_37: 5652352874123322209
+      commissar-dice_38: -4700168260196412770
+      commissar-dice_39: 7387205138123741094
+      commissar-dice_4: 3943771596474084233
+      commissar-dice_40: 2628025214767317795
+      commissar-dice_41: -7843761550572881905
+      commissar-dice_42: 4847385339127573923
+      commissar-dice_43: -4247084561677342128
+      commissar-dice_44: 6902802194575219005
+      commissar-dice_5: -9157205227982438327
+      commissar-dice_6: -7915518254761610310
+      commissar-dice_7: 6415018327386279251
+      commissar-dice_8: -795523568759689538
+      commissar-dice_9: 2670663680785842218
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

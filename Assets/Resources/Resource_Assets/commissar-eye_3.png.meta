@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: b37722b5b2f4e914392aaa1c86e48174
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9121369016113350469
+    second: commissar-eye_3_0
+  - first:
+      213: 7885258095496875287
+    second: commissar-eye_3_1
+  - first:
+      213: -237337055544972357
+    second: commissar-eye_3_2
+  - first:
+      213: 5915901350994960331
+    second: commissar-eye_3_3
+  - first:
+      213: -2510520808621048636
+    second: commissar-eye_3_4
+  - first:
+      213: 6241687622057928418
+    second: commissar-eye_3_5
+  - first:
+      213: 6014346981156689147
+    second: commissar-eye_3_6
+  - first:
+      213: -5841497510615141807
+    second: commissar-eye_3_7
+  - first:
+      213: 7713313407436659180
+    second: commissar-eye_3_8
+  - first:
+      213: 5884804526792842552
+    second: commissar-eye_3_9
+  - first:
+      213: 6127385632525839675
+    second: commissar-eye_3_10
+  - first:
+      213: 749671136727536824
+    second: commissar-eye_3_11
+  - first:
+      213: 2068871906014832066
+    second: commissar-eye_3_12
+  - first:
+      213: -8831877443645640428
+    second: commissar-eye_3_13
+  - first:
+      213: 4982699171916500228
+    second: commissar-eye_3_14
+  - first:
+      213: -2001455871415643385
+    second: commissar-eye_3_15
+  - first:
+      213: -7427202052524992575
+    second: commissar-eye_3_16
+  - first:
+      213: -4446686254394722565
+    second: commissar-eye_3_17
+  - first:
+      213: 1916794701319907385
+    second: commissar-eye_3_18
+  - first:
+      213: -3574971709275964057
+    second: commissar-eye_3_19
+  - first:
+      213: -2403763005858861069
+    second: commissar-eye_3_20
+  - first:
+      213: 4676286355241791529
+    second: commissar-eye_3_21
+  - first:
+      213: -7921468474963887198
+    second: commissar-eye_3_22
+  - first:
+      213: -3303155037563784168
+    second: commissar-eye_3_23
+  - first:
+      213: 4607882893216900299
+    second: commissar-eye_3_24
+  - first:
+      213: 6471279850223318278
+    second: commissar-eye_3_25
+  - first:
+      213: 308632224040459927
+    second: commissar-eye_3_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: commissar-eye_3_0
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 405
+        width: 31
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb83f49f4336a6180800000000000000
+      internalID: -9121369016113350469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_1
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 409
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71d4d50c5701e6d60800000000000000
+      internalID: 7885258095496875287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 405
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb6438943fc4bcf0800000000000000
+      internalID: -237337055544972357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_3
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 405
+        width: 31
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcfde485fe0891250800000000000000
+      internalID: 5915901350994960331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_4
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 408
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc7ae830a6d82dd0800000000000000
+      internalID: -2510520808621048636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_5
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 405
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e627b782ddee9650800000000000000
+      internalID: 6241687622057928418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_6
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 405
+        width: 31
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf499c7c6b0477350800000000000000
+      internalID: 6014346981156689147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_7
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 406
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152b473b6f4deeea0800000000000000
+      internalID: -5841497510615141807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_8
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 405
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce9158b5da13b0b60800000000000000
+      internalID: 7713313407436659180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_9
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 405
+        width: 31
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d1910c9860ba150800000000000000
+      internalID: 5884804526792842552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_10
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 408
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3de88cb4c8d80550800000000000000
+      internalID: 6127385632525839675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_11
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 405
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4120b4ded576a00800000000000000
+      internalID: 749671136727536824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_12
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 405
+        width: 31
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5acc3890c16bc10800000000000000
+      internalID: 2068871906014832066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_13
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 409
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41177bf124ede6580800000000000000
+      internalID: -8831877443645640428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_14
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 405
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d47b45f7a162540800000000000000
+      internalID: 4982699171916500228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_15
+      rect:
+        serializedVersion: 2
+        x: 2155
+        y: 405
+        width: 31
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70396a63d766934e0800000000000000
+      internalID: -2001455871415643385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_16
+      rect:
+        serializedVersion: 2
+        x: 2185
+        y: 408
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7123095174de890800000000000000
+      internalID: -7427202052524992575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_17
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 405
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf6b03349623a42c0800000000000000
+      internalID: -4446686254394722565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_18
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 405
+        width: 31
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938268f00a2d99a10800000000000000
+      internalID: 1916794701319907385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_19
+      rect:
+        serializedVersion: 2
+        x: 2585
+        y: 406
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76df882eb26236ec0800000000000000
+      internalID: -3574971709275964057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_20
+      rect:
+        serializedVersion: 2
+        x: 2593
+        y: 405
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ffae87284e14aed0800000000000000
+      internalID: -2403763005858861069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_21
+      rect:
+        serializedVersion: 2
+        x: 2955
+        y: 405
+        width: 31
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92071300aa185e040800000000000000
+      internalID: 4676286355241791529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_22
+      rect:
+        serializedVersion: 2
+        x: 2985
+        y: 408
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab725a446a411290800000000000000
+      internalID: -7921468474963887198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_23
+      rect:
+        serializedVersion: 2
+        x: 2993
+        y: 405
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814f7f38ef5d822d0800000000000000
+      internalID: -3303155037563784168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_24
+      rect:
+        serializedVersion: 2
+        x: 3355
+        y: 405
+        width: 31
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4eac8e31d72ff30800000000000000
+      internalID: 4607882893216900299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_25
+      rect:
+        serializedVersion: 2
+        x: 3385
+        y: 409
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60534baccba9ec950800000000000000
+      internalID: 6471279850223318278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar-eye_3_26
+      rect:
+        serializedVersion: 2
+        x: 3393
+        y: 405
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79e9b206f5b784400800000000000000
+      internalID: 308632224040459927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      commissar-eye_3_0: -9121369016113350469
+      commissar-eye_3_1: 7885258095496875287
+      commissar-eye_3_10: 6127385632525839675
+      commissar-eye_3_11: 749671136727536824
+      commissar-eye_3_12: 2068871906014832066
+      commissar-eye_3_13: -8831877443645640428
+      commissar-eye_3_14: 4982699171916500228
+      commissar-eye_3_15: -2001455871415643385
+      commissar-eye_3_16: -7427202052524992575
+      commissar-eye_3_17: -4446686254394722565
+      commissar-eye_3_18: 1916794701319907385
+      commissar-eye_3_19: -3574971709275964057
+      commissar-eye_3_2: -237337055544972357
+      commissar-eye_3_20: -2403763005858861069
+      commissar-eye_3_21: 4676286355241791529
+      commissar-eye_3_22: -7921468474963887198
+      commissar-eye_3_23: -3303155037563784168
+      commissar-eye_3_24: 4607882893216900299
+      commissar-eye_3_25: 6471279850223318278
+      commissar-eye_3_26: 308632224040459927
+      commissar-eye_3_3: 5915901350994960331
+      commissar-eye_3_4: -2510520808621048636
+      commissar-eye_3_5: 6241687622057928418
+      commissar-eye_3_6: 6014346981156689147
+      commissar-eye_3_7: -5841497510615141807
+      commissar-eye_3_8: 7713313407436659180
+      commissar-eye_3_9: 5884804526792842552
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

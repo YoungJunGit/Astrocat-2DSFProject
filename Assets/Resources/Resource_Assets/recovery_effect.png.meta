@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: e7510e41df55c434fbafe22f2d728a76
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4848222620636221413
+    second: recovery_effect_0
+  - first:
+      213: 2648452897975274386
+    second: recovery_effect_1
+  - first:
+      213: -2472528801676048645
+    second: recovery_effect_2
+  - first:
+      213: 1594750156777926181
+    second: recovery_effect_3
+  - first:
+      213: -8818435352138196294
+    second: recovery_effect_4
+  - first:
+      213: 249560376844079614
+    second: recovery_effect_5
+  - first:
+      213: 348428020059544211
+    second: recovery_effect_6
+  - first:
+      213: -5036965138370316552
+    second: recovery_effect_7
+  - first:
+      213: -1830367166942874883
+    second: recovery_effect_8
+  - first:
+      213: -4643923538617268552
+    second: recovery_effect_9
+  - first:
+      213: -2197586695929355331
+    second: recovery_effect_10
+  - first:
+      213: -7120840339050192034
+    second: recovery_effect_11
+  - first:
+      213: -8196078993170968254
+    second: recovery_effect_12
+  - first:
+      213: 9179435457625614873
+    second: recovery_effect_13
+  - first:
+      213: 5591077809234354134
+    second: recovery_effect_14
+  - first:
+      213: -1987906765394200543
+    second: recovery_effect_15
+  - first:
+      213: 4238916278206180421
+    second: recovery_effect_16
+  - first:
+      213: -5229844086006198368
+    second: recovery_effect_17
+  - first:
+      213: 6246973641665898487
+    second: recovery_effect_18
+  - first:
+      213: -4544764762663725108
+    second: recovery_effect_19
+  - first:
+      213: 4814436674238679407
+    second: recovery_effect_20
+  - first:
+      213: 4229409409019700805
+    second: recovery_effect_21
+  - first:
+      213: -8042347307670153279
+    second: recovery_effect_22
+  - first:
+      213: 4847976689931371186
+    second: recovery_effect_23
+  - first:
+      213: -3160814808847091821
+    second: recovery_effect_24
+  - first:
+      213: 5566911654885991453
+    second: recovery_effect_25
+  - first:
+      213: -5353643191956252324
+    second: recovery_effect_26
+  - first:
+      213: -4407040884560808621
+    second: recovery_effect_27
+  - first:
+      213: 2506586205756043658
+    second: recovery_effect_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: recovery_effect_0
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 71
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b10f6f8a637a7bcb0800000000000000
+      internalID: -4848222620636221413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_1
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 74
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b8b2ce0e131c420800000000000000
+      internalID: 2648452897975274386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_2
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 98
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf64d27a720dfadd0800000000000000
+      internalID: -2472528801676048645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_3
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 59
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e2f3871d0b12610800000000000000
+      internalID: 1594750156777926181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_4
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 62
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba5e01f4cf9e9580800000000000000
+      internalID: -8818435352138196294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_5
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 65
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef1ddcb27dd967300800000000000000
+      internalID: 249560376844079614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_6
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 98
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a117d207dd5d400800000000000000
+      internalID: 348428020059544211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_7
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 104
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f63965c4ea191ab0800000000000000
+      internalID: -5036965138370316552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_8
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 83
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df2f4d562ca3996e0800000000000000
+      internalID: -1830367166942874883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_9
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 50
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b684ac65287d8fb0800000000000000
+      internalID: -4643923538617268552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_10
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 44
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db3a10a1b8a9081e0800000000000000
+      internalID: -2197586695929355331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_11
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 35
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5324a08071bd2d90800000000000000
+      internalID: -7120840339050192034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_12
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 41
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241d005949da14e80800000000000000
+      internalID: -8196078993170968254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_13
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 29
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91a666af9e7e36f70800000000000000
+      internalID: 9179435457625614873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_14
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 50
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df9bfa05af779d40800000000000000
+      internalID: 5591077809234354134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_15
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 47
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 128351a44598964e0800000000000000
+      internalID: -1987906765394200543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_16
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 26
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ca91375e7a3da30800000000000000
+      internalID: 4238916278206180421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_17
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 23
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af4cee338cdb67b0800000000000000
+      internalID: -5229844086006198368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_18
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 23
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f769b0ed65b1b650800000000000000
+      internalID: 6246973641665898487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_19
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 20
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc757bd0780cde0c0800000000000000
+      internalID: -4544764762663725108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_20
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 8
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f690c91b5a050d240800000000000000
+      internalID: 4814436674238679407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_21
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 23
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 546605af271e1ba30800000000000000
+      internalID: 4229409409019700805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_22
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 8
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7500edbb7d36090800000000000000
+      internalID: -8042347307670153279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_23
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2cbb22d19774340800000000000000
+      internalID: 4847976689931371186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_24
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 8
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 397ffd59da78224d0800000000000000
+      internalID: -3160814808847091821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_25
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 8
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d142675c7a4a14d40800000000000000
+      internalID: 5566911654885991453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_26
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 2
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c595249b1e904b5b0800000000000000
+      internalID: -5353643191956252324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_27
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 0
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355312d3aab07d2c0800000000000000
+      internalID: -4407040884560808621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recovery_effect_28
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 0
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a81bbf8afde29c220800000000000000
+      internalID: 2506586205756043658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      recovery_effect_0: -4848222620636221413
+      recovery_effect_1: 2648452897975274386
+      recovery_effect_10: -2197586695929355331
+      recovery_effect_11: -7120840339050192034
+      recovery_effect_12: -8196078993170968254
+      recovery_effect_13: 9179435457625614873
+      recovery_effect_14: 5591077809234354134
+      recovery_effect_15: -1987906765394200543
+      recovery_effect_16: 4238916278206180421
+      recovery_effect_17: -5229844086006198368
+      recovery_effect_18: 6246973641665898487
+      recovery_effect_19: -4544764762663725108
+      recovery_effect_2: -2472528801676048645
+      recovery_effect_20: 4814436674238679407
+      recovery_effect_21: 4229409409019700805
+      recovery_effect_22: -8042347307670153279
+      recovery_effect_23: 4847976689931371186
+      recovery_effect_24: -3160814808847091821
+      recovery_effect_25: 5566911654885991453
+      recovery_effect_26: -5353643191956252324
+      recovery_effect_27: -4407040884560808621
+      recovery_effect_28: 2506586205756043658
+      recovery_effect_3: 1594750156777926181
+      recovery_effect_4: -8818435352138196294
+      recovery_effect_5: 249560376844079614
+      recovery_effect_6: 348428020059544211
+      recovery_effect_7: -5036965138370316552
+      recovery_effect_8: -1830367166942874883
+      recovery_effect_9: -4643923538617268552
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

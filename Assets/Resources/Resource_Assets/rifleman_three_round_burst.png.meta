@@ -1,0 +1,2535 @@
+fileFormatVersion: 2
+guid: 18a09f5cfe7811d47b3e93f2c09a45e5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2448874800749561413
+    second: rifleman_three_round_burst_0
+  - first:
+      213: -5760730579167842230
+    second: rifleman_three_round_burst_1
+  - first:
+      213: 1113063018306618625
+    second: rifleman_three_round_burst_2
+  - first:
+      213: -3969441560642706093
+    second: rifleman_three_round_burst_3
+  - first:
+      213: -6941605684277839915
+    second: rifleman_three_round_burst_4
+  - first:
+      213: -2657063832622021725
+    second: rifleman_three_round_burst_5
+  - first:
+      213: 8239255443719573617
+    second: rifleman_three_round_burst_6
+  - first:
+      213: -9127343395274809632
+    second: rifleman_three_round_burst_7
+  - first:
+      213: -1641275219929263745
+    second: rifleman_three_round_burst_8
+  - first:
+      213: 7801561476144026008
+    second: rifleman_three_round_burst_9
+  - first:
+      213: 7290916567254555495
+    second: rifleman_three_round_burst_10
+  - first:
+      213: 6508943954693932858
+    second: rifleman_three_round_burst_11
+  - first:
+      213: -23603029598828946
+    second: rifleman_three_round_burst_12
+  - first:
+      213: -2743831102442687081
+    second: rifleman_three_round_burst_13
+  - first:
+      213: 5422874458527081744
+    second: rifleman_three_round_burst_14
+  - first:
+      213: -1642313211744141031
+    second: rifleman_three_round_burst_15
+  - first:
+      213: -5387538192272839007
+    second: rifleman_three_round_burst_16
+  - first:
+      213: 4626330837053152295
+    second: rifleman_three_round_burst_17
+  - first:
+      213: -5179397456292261206
+    second: rifleman_three_round_burst_18
+  - first:
+      213: 7567333580789979613
+    second: rifleman_three_round_burst_19
+  - first:
+      213: -5247684952855934889
+    second: rifleman_three_round_burst_20
+  - first:
+      213: -2566797197743656297
+    second: rifleman_three_round_burst_21
+  - first:
+      213: 2877900353696336712
+    second: rifleman_three_round_burst_22
+  - first:
+      213: 6318656700516950428
+    second: rifleman_three_round_burst_23
+  - first:
+      213: 69837191420235067
+    second: rifleman_three_round_burst_24
+  - first:
+      213: 2733556233914887212
+    second: rifleman_three_round_burst_25
+  - first:
+      213: 3491538465157334271
+    second: rifleman_three_round_burst_26
+  - first:
+      213: 9053027988939497785
+    second: rifleman_three_round_burst_27
+  - first:
+      213: -5711642264366273897
+    second: rifleman_three_round_burst_28
+  - first:
+      213: -4626391378540385544
+    second: rifleman_three_round_burst_29
+  - first:
+      213: -3942125462895855009
+    second: rifleman_three_round_burst_30
+  - first:
+      213: 8444780065240821672
+    second: rifleman_three_round_burst_31
+  - first:
+      213: 7342959284864774261
+    second: rifleman_three_round_burst_32
+  - first:
+      213: -3061190793759322667
+    second: rifleman_three_round_burst_33
+  - first:
+      213: -3412448775669273641
+    second: rifleman_three_round_burst_34
+  - first:
+      213: 1662608049419485117
+    second: rifleman_three_round_burst_35
+  - first:
+      213: 3863780951484146920
+    second: rifleman_three_round_burst_36
+  - first:
+      213: 3561697326119095407
+    second: rifleman_three_round_burst_37
+  - first:
+      213: -4790398902294544704
+    second: rifleman_three_round_burst_38
+  - first:
+      213: -1039246572865261321
+    second: rifleman_three_round_burst_39
+  - first:
+      213: -9108205458716623687
+    second: rifleman_three_round_burst_40
+  - first:
+      213: 443858266937111190
+    second: rifleman_three_round_burst_41
+  - first:
+      213: -7248492009895479485
+    second: rifleman_three_round_burst_42
+  - first:
+      213: -6230662658515842505
+    second: rifleman_three_round_burst_43
+  - first:
+      213: -7172230930973919646
+    second: rifleman_three_round_burst_44
+  - first:
+      213: 733353527937952298
+    second: rifleman_three_round_burst_45
+  - first:
+      213: -4534949014481606018
+    second: rifleman_three_round_burst_46
+  - first:
+      213: 8047434908129598346
+    second: rifleman_three_round_burst_47
+  - first:
+      213: -465526902425070759
+    second: rifleman_three_round_burst_48
+  - first:
+      213: 4046176830752822920
+    second: rifleman_three_round_burst_49
+  - first:
+      213: -2112820194791282507
+    second: rifleman_three_round_burst_50
+  - first:
+      213: 5411530467245427347
+    second: rifleman_three_round_burst_51
+  - first:
+      213: -7335571840440507876
+    second: rifleman_three_round_burst_52
+  - first:
+      213: 8148534184470435360
+    second: rifleman_three_round_burst_53
+  - first:
+      213: 4474452932051809426
+    second: rifleman_three_round_burst_54
+  - first:
+      213: 5883359611290728426
+    second: rifleman_three_round_burst_55
+  - first:
+      213: 1672969854013311147
+    second: rifleman_three_round_burst_56
+  - first:
+      213: 6542215188119936879
+    second: rifleman_three_round_burst_57
+  - first:
+      213: 1070116208047489829
+    second: rifleman_three_round_burst_58
+  - first:
+      213: 2823079781843469201
+    second: rifleman_three_round_burst_59
+  - first:
+      213: 55910241309031724
+    second: rifleman_three_round_burst_60
+  - first:
+      213: 7486573407243757321
+    second: rifleman_three_round_burst_61
+  - first:
+      213: -127154659499288902
+    second: rifleman_three_round_burst_62
+  - first:
+      213: 5870713955675499073
+    second: rifleman_three_round_burst_63
+  - first:
+      213: 4612981317118092378
+    second: rifleman_three_round_burst_64
+  - first:
+      213: 4075941073919450273
+    second: rifleman_three_round_burst_65
+  - first:
+      213: -5538355369843671712
+    second: rifleman_three_round_burst_66
+  - first:
+      213: 3694896082187525929
+    second: rifleman_three_round_burst_67
+  - first:
+      213: 2946231551500690132
+    second: rifleman_three_round_burst_68
+  - first:
+      213: -4354099759306422272
+    second: rifleman_three_round_burst_69
+  - first:
+      213: -7810379463097622748
+    second: rifleman_three_round_burst_70
+  - first:
+      213: 7156450518375116695
+    second: rifleman_three_round_burst_71
+  - first:
+      213: 7995909015495737283
+    second: rifleman_three_round_burst_72
+  - first:
+      213: -4684573675174143003
+    second: rifleman_three_round_burst_73
+  - first:
+      213: 6345061810268937948
+    second: rifleman_three_round_burst_74
+  - first:
+      213: 4093879299744384993
+    second: rifleman_three_round_burst_75
+  - first:
+      213: -4472506824313953639
+    second: rifleman_three_round_burst_76
+  - first:
+      213: 3707118853197559904
+    second: rifleman_three_round_burst_77
+  - first:
+      213: 8171309675599061641
+    second: rifleman_three_round_burst_78
+  - first:
+      213: 6235416039064342267
+    second: rifleman_three_round_burst_79
+  - first:
+      213: 396027998671188258
+    second: rifleman_three_round_burst_80
+  - first:
+      213: 5442842596153196305
+    second: rifleman_three_round_burst_81
+  - first:
+      213: 4616538478988322910
+    second: rifleman_three_round_burst_82
+  - first:
+      213: -2206590699536026575
+    second: rifleman_three_round_burst_83
+  - first:
+      213: -5059793570888497247
+    second: rifleman_three_round_burst_84
+  - first:
+      213: -8757607387996369458
+    second: rifleman_three_round_burst_85
+  - first:
+      213: 2651836383522577720
+    second: rifleman_three_round_burst_86
+  - first:
+      213: 1446256920040187951
+    second: rifleman_three_round_burst_87
+  - first:
+      213: -5824368205563223065
+    second: rifleman_three_round_burst_88
+  - first:
+      213: -8260907605415890679
+    second: rifleman_three_round_burst_89
+  - first:
+      213: 3951140907032035898
+    second: rifleman_three_round_burst_90
+  - first:
+      213: -5018981125305458618
+    second: rifleman_three_round_burst_91
+  - first:
+      213: 7666220734182551633
+    second: rifleman_three_round_burst_92
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_0
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 0
+        width: 161
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 546451618a62cf120800000000000000
+      internalID: 2448874800749561413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 161
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4078f55f06cd00b0800000000000000
+      internalID: -5760730579167842230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_2
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 0
+        width: 161
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1054acafae4627f00800000000000000
+      internalID: 1113063018306618625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_3
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 0
+        width: 161
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355283d7ee5b9e8c0800000000000000
+      internalID: -3969441560642706093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_4
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 0
+        width: 161
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d779c988667aaf90800000000000000
+      internalID: -6941605684277839915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_5
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 0
+        width: 191
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a3c60f9586302bd0800000000000000
+      internalID: -2657063832622021725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_6
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 80
+        width: 17
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170db903c27b75270800000000000000
+      internalID: 8239255443719573617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_7
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 152
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee13ad6a89255180800000000000000
+      internalID: -9127343395274809632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_8
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 125
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f71177122e40939e0800000000000000
+      internalID: -1641275219929263745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_9
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 83
+        width: 11
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891dfeef3d6b44c60800000000000000
+      internalID: 7801561476144026008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_10
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 119
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76bd73e2df98e2560800000000000000
+      internalID: 7290916567254555495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_11
+      rect:
+        serializedVersion: 2
+        x: 2027
+        y: 0
+        width: 155
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a37457a7a0a645a50800000000000000
+      internalID: 6508943954693932858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_12
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 101
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66832d6b252caff0800000000000000
+      internalID: -23603029598828946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_13
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 0
+        width: 161
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7953c375624fbe9d0800000000000000
+      internalID: -2743831102442687081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_14
+      rect:
+        serializedVersion: 2
+        x: 2531
+        y: 104
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015ab02a69be14b40800000000000000
+      internalID: 5422874458527081744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_15
+      rect:
+        serializedVersion: 2
+        x: 2534
+        y: 0
+        width: 191
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9114f04d5d45539e0800000000000000
+      internalID: -1642313211744141031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_16
+      rect:
+        serializedVersion: 2
+        x: 2813
+        y: 80
+        width: 17
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae2abbfe8e9b35b0800000000000000
+      internalID: -5387538192272839007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_17
+      rect:
+        serializedVersion: 2
+        x: 2852
+        y: 0
+        width: 152
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c1dfb8267043040800000000000000
+      internalID: 4626330837053152295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_18
+      rect:
+        serializedVersion: 2
+        x: 3077
+        y: 125
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2532384751f18b0800000000000000
+      internalID: -5179397456292261206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_19
+      rect:
+        serializedVersion: 2
+        x: 3083
+        y: 83
+        width: 11
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd91fdb5cc1940960800000000000000
+      internalID: 7567333580789979613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_20
+      rect:
+        serializedVersion: 2
+        x: 3092
+        y: 119
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7580cdbb65a7c27b0800000000000000
+      internalID: -5247684952855934889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_21
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 0
+        width: 155
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79275025c87e06cd0800000000000000
+      internalID: -2566797197743656297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_22
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 101
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b8a09bf1b50f720800000000000000
+      internalID: 2877900353696336712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_23
+      rect:
+        serializedVersion: 2
+        x: 3383
+        y: 0
+        width: 161
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9164fb9ac060b750800000000000000
+      internalID: 6318656700516950428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_24
+      rect:
+        serializedVersion: 2
+        x: 3623
+        y: 104
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3dc6ba3e8c18f000800000000000000
+      internalID: 69837191420235067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_25
+      rect:
+        serializedVersion: 2
+        x: 3626
+        y: 0
+        width: 191
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2c2d0869ea8fe520800000000000000
+      internalID: 2733556233914887212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_26
+      rect:
+        serializedVersion: 2
+        x: 3905
+        y: 80
+        width: 17
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4c05f2cbf647030800000000000000
+      internalID: 3491538465157334271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_27
+      rect:
+        serializedVersion: 2
+        x: 3944
+        y: 0
+        width: 152
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 931686eadf0d2ad70800000000000000
+      internalID: 9053027988939497785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_28
+      rect:
+        serializedVersion: 2
+        x: 4169
+        y: 125
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79a27544f9b2cb0b0800000000000000
+      internalID: -5711642264366273897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_29
+      rect:
+        serializedVersion: 2
+        x: 4175
+        y: 83
+        width: 11
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8faab2a8d81cbcfb0800000000000000
+      internalID: -4626391378540385544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_30
+      rect:
+        serializedVersion: 2
+        x: 4184
+        y: 119
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5af11c17c1ca49c0800000000000000
+      internalID: -3942125462895855009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_31
+      rect:
+        serializedVersion: 2
+        x: 4211
+        y: 0
+        width: 155
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8afaafa1ab2e13570800000000000000
+      internalID: 8444780065240821672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_32
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 101
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 570758e909e67e560800000000000000
+      internalID: 7342959284864774261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_33
+      rect:
+        serializedVersion: 2
+        x: 4478
+        y: 0
+        width: 158
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd874421377485d0800000000000000
+      internalID: -3061190793759322667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_34
+      rect:
+        serializedVersion: 2
+        x: 4715
+        y: 98
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db24002beb84a0d0800000000000000
+      internalID: -3412448775669273641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_35
+      rect:
+        serializedVersion: 2
+        x: 4742
+        y: 0
+        width: 167
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf7a5a4635c21710800000000000000
+      internalID: 1662608049419485117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_36
+      rect:
+        serializedVersion: 2
+        x: 5027
+        y: 0
+        width: 155
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4222fdd48ee9530800000000000000
+      internalID: 3863780951484146920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_37
+      rect:
+        serializedVersion: 2
+        x: 5300
+        y: 0
+        width: 155
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c89c0f8d0bd6130800000000000000
+      internalID: 3561697326119095407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_38
+      rect:
+        serializedVersion: 2
+        x: 5573
+        y: 0
+        width: 155
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ceff483495158db0800000000000000
+      internalID: -4790398902294544704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_39
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 50
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0f2568fbad391f0800000000000000
+      internalID: -1039246572865261321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_40
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bcfbe38467299180800000000000000
+      internalID: -9108205458716623687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_41
+      rect:
+        serializedVersion: 2
+        x: 2012
+        y: 41
+        width: 14
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692386bfdb6e82600800000000000000
+      internalID: 443858266937111190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_42
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 86
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3473ce0dbee286b90800000000000000
+      internalID: -7248492009895479485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_43
+      rect:
+        serializedVersion: 2
+        x: 2285
+        y: 80
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a4fd3d25d3889a0800000000000000
+      internalID: -6230662658515842505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_44
+      rect:
+        serializedVersion: 2
+        x: 2828
+        y: 50
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 266fa38e7fd177c90800000000000000
+      internalID: -7172230930973919646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_45
+      rect:
+        serializedVersion: 2
+        x: 3044
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2a658fe5256d2a00800000000000000
+      internalID: 733353527937952298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_46
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 41
+        width: 14
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ae05506ef9011c0800000000000000
+      internalID: -4534949014481606018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_47
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 86
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b942c696b3eaf60800000000000000
+      internalID: 8047434908129598346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_48
+      rect:
+        serializedVersion: 2
+        x: 3377
+        y: 80
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953d09bafbd1a89f0800000000000000
+      internalID: -465526902425070759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_49
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 50
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8861077d368e62830800000000000000
+      internalID: 4046176830752822920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_50
+      rect:
+        serializedVersion: 2
+        x: 4136
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8a13f1a31cda2e0800000000000000
+      internalID: -2112820194791282507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_51
+      rect:
+        serializedVersion: 2
+        x: 4196
+        y: 41
+        width: 14
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a0e57d94e991b40800000000000000
+      internalID: 5411530467245427347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_52
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 86
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c126f22d640d23a90800000000000000
+      internalID: -7335571840440507876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_53
+      rect:
+        serializedVersion: 2
+        x: 4469
+        y: 80
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026dc710ba8651170800000000000000
+      internalID: 8148534184470435360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_54
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 68
+        width: 71
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294372b2c33781e30800000000000000
+      internalID: 4474452932051809426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_55
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 68
+        width: 62
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae73dd42564e5a150800000000000000
+      internalID: 5883359611290728426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_56
+      rect:
+        serializedVersion: 2
+        x: 2189
+        y: 65
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba8866ce735973710800000000000000
+      internalID: 1672969854013311147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_57
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 65
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6fdd0c2d0e9aca50800000000000000
+      internalID: 6542215188119936879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_58
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 65
+        width: 38
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5230f018501d9de00800000000000000
+      internalID: 1070116208047489829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_59
+      rect:
+        serializedVersion: 2
+        x: 2501
+        y: 65
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1930e51ba189d2720800000000000000
+      internalID: 2823079781843469201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_60
+      rect:
+        serializedVersion: 2
+        x: 2741
+        y: 68
+        width: 71
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2df7887112a6c000800000000000000
+      internalID: 55910241309031724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_61
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 68
+        width: 62
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90766ab29d6a5e760800000000000000
+      internalID: 7486573407243757321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_62
+      rect:
+        serializedVersion: 2
+        x: 3281
+        y: 65
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab65209c2814c3ef0800000000000000
+      internalID: -127154659499288902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_63
+      rect:
+        serializedVersion: 2
+        x: 3326
+        y: 65
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a67f10d37f87150800000000000000
+      internalID: 5870713955675499073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_64
+      rect:
+        serializedVersion: 2
+        x: 3548
+        y: 65
+        width: 38
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a54665a311a940040800000000000000
+      internalID: 4612981317118092378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_65
+      rect:
+        serializedVersion: 2
+        x: 3593
+        y: 65
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac946cbfc6a09830800000000000000
+      internalID: 4075941073919450273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_66
+      rect:
+        serializedVersion: 2
+        x: 3833
+        y: 68
+        width: 71
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d3794722fc323b0800000000000000
+      internalID: -5538355369843671712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_67
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 68
+        width: 62
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f15cc0968e64330800000000000000
+      internalID: 3694896082187525929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_68
+      rect:
+        serializedVersion: 2
+        x: 4373
+        y: 65
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d22f3d7cfd13e820800000000000000
+      internalID: 2946231551500690132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_69
+      rect:
+        serializedVersion: 2
+        x: 4418
+        y: 65
+        width: 26
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0084de186512393c0800000000000000
+      internalID: -4354099759306422272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_70
+      rect:
+        serializedVersion: 2
+        x: 4640
+        y: 65
+        width: 38
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42f5f0d6245fb9390800000000000000
+      internalID: -7810379463097622748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_71
+      rect:
+        serializedVersion: 2
+        x: 4685
+        y: 65
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fa86874d1d05360800000000000000
+      internalID: 7156450518375116695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_72
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 8
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf77fca2ec27fe60800000000000000
+      internalID: 7995909015495737283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_73
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 5
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb5917ff0d0dfeb0800000000000000
+      internalID: -4684573675174143003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_74
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 38
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde1afe49103e0850800000000000000
+      internalID: 6345061810268937948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_75
+      rect:
+        serializedVersion: 2
+        x: 2285
+        y: 32
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7c696688160d830800000000000000
+      internalID: 4093879299744384993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_76
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 32
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992a1495db67ee1c0800000000000000
+      internalID: -4472506824313953639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_77
+      rect:
+        serializedVersion: 2
+        x: 2810
+        y: 8
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0687ef0b4f4527330800000000000000
+      internalID: 3707118853197559904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_78
+      rect:
+        serializedVersion: 2
+        x: 3077
+        y: 5
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9826bc34bd2566170800000000000000
+      internalID: 8171309675599061641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_79
+      rect:
+        serializedVersion: 2
+        x: 3347
+        y: 38
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe0433d9d5a88650800000000000000
+      internalID: 6235416039064342267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_80
+      rect:
+        serializedVersion: 2
+        x: 3377
+        y: 32
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221b7e5dd59fe7500800000000000000
+      internalID: 396027998671188258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_81
+      rect:
+        serializedVersion: 2
+        x: 3620
+        y: 32
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11f7318f08cd88b40800000000000000
+      internalID: 5442842596153196305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_82
+      rect:
+        serializedVersion: 2
+        x: 3902
+        y: 8
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e586504894d311040800000000000000
+      internalID: 4616538478988322910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_83
+      rect:
+        serializedVersion: 2
+        x: 4169
+        y: 5
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1347975237d9061e0800000000000000
+      internalID: -2206590699536026575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_84
+      rect:
+        serializedVersion: 2
+        x: 4439
+        y: 38
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7c2622e8008c9b0800000000000000
+      internalID: -5059793570888497247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_85
+      rect:
+        serializedVersion: 2
+        x: 4469
+        y: 32
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecdc32cfa7ab67680800000000000000
+      internalID: -8757607387996369458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_86
+      rect:
+        serializedVersion: 2
+        x: 4712
+        y: 32
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83dd15a04273dc420800000000000000
+      internalID: 2651836383522577720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_87
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 17
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2822f49103221410800000000000000
+      internalID: 1446256920040187951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_88
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 14
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e32352d9ffab2fa0800000000000000
+      internalID: -5824368205563223065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_89
+      rect:
+        serializedVersion: 2
+        x: 3347
+        y: 17
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 901fcd01d4c5b5d80800000000000000
+      internalID: -8260907605415890679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_90
+      rect:
+        serializedVersion: 2
+        x: 3620
+        y: 14
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32c82d88b545d630800000000000000
+      internalID: 3951140907032035898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_91
+      rect:
+        serializedVersion: 2
+        x: 4439
+        y: 17
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64027cb124ff85ab0800000000000000
+      internalID: -5018981125305458618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_three_round_burst_92
+      rect:
+        serializedVersion: 2
+        x: 4712
+        y: 14
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1507faee323e36a60800000000000000
+      internalID: 7666220734182551633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rifleman_three_round_burst_0: 2448874800749561413
+      rifleman_three_round_burst_1: -5760730579167842230
+      rifleman_three_round_burst_10: 7290916567254555495
+      rifleman_three_round_burst_11: 6508943954693932858
+      rifleman_three_round_burst_12: -23603029598828946
+      rifleman_three_round_burst_13: -2743831102442687081
+      rifleman_three_round_burst_14: 5422874458527081744
+      rifleman_three_round_burst_15: -1642313211744141031
+      rifleman_three_round_burst_16: -5387538192272839007
+      rifleman_three_round_burst_17: 4626330837053152295
+      rifleman_three_round_burst_18: -5179397456292261206
+      rifleman_three_round_burst_19: 7567333580789979613
+      rifleman_three_round_burst_2: 1113063018306618625
+      rifleman_three_round_burst_20: -5247684952855934889
+      rifleman_three_round_burst_21: -2566797197743656297
+      rifleman_three_round_burst_22: 2877900353696336712
+      rifleman_three_round_burst_23: 6318656700516950428
+      rifleman_three_round_burst_24: 69837191420235067
+      rifleman_three_round_burst_25: 2733556233914887212
+      rifleman_three_round_burst_26: 3491538465157334271
+      rifleman_three_round_burst_27: 9053027988939497785
+      rifleman_three_round_burst_28: -5711642264366273897
+      rifleman_three_round_burst_29: -4626391378540385544
+      rifleman_three_round_burst_3: -3969441560642706093
+      rifleman_three_round_burst_30: -3942125462895855009
+      rifleman_three_round_burst_31: 8444780065240821672
+      rifleman_three_round_burst_32: 7342959284864774261
+      rifleman_three_round_burst_33: -3061190793759322667
+      rifleman_three_round_burst_34: -3412448775669273641
+      rifleman_three_round_burst_35: 1662608049419485117
+      rifleman_three_round_burst_36: 3863780951484146920
+      rifleman_three_round_burst_37: 3561697326119095407
+      rifleman_three_round_burst_38: -4790398902294544704
+      rifleman_three_round_burst_39: -1039246572865261321
+      rifleman_three_round_burst_4: -6941605684277839915
+      rifleman_three_round_burst_40: -9108205458716623687
+      rifleman_three_round_burst_41: 443858266937111190
+      rifleman_three_round_burst_42: -7248492009895479485
+      rifleman_three_round_burst_43: -6230662658515842505
+      rifleman_three_round_burst_44: -7172230930973919646
+      rifleman_three_round_burst_45: 733353527937952298
+      rifleman_three_round_burst_46: -4534949014481606018
+      rifleman_three_round_burst_47: 8047434908129598346
+      rifleman_three_round_burst_48: -465526902425070759
+      rifleman_three_round_burst_49: 4046176830752822920
+      rifleman_three_round_burst_5: -2657063832622021725
+      rifleman_three_round_burst_50: -2112820194791282507
+      rifleman_three_round_burst_51: 5411530467245427347
+      rifleman_three_round_burst_52: -7335571840440507876
+      rifleman_three_round_burst_53: 8148534184470435360
+      rifleman_three_round_burst_54: 4474452932051809426
+      rifleman_three_round_burst_55: 5883359611290728426
+      rifleman_three_round_burst_56: 1672969854013311147
+      rifleman_three_round_burst_57: 6542215188119936879
+      rifleman_three_round_burst_58: 1070116208047489829
+      rifleman_three_round_burst_59: 2823079781843469201
+      rifleman_three_round_burst_6: 8239255443719573617
+      rifleman_three_round_burst_60: 55910241309031724
+      rifleman_three_round_burst_61: 7486573407243757321
+      rifleman_three_round_burst_62: -127154659499288902
+      rifleman_three_round_burst_63: 5870713955675499073
+      rifleman_three_round_burst_64: 4612981317118092378
+      rifleman_three_round_burst_65: 4075941073919450273
+      rifleman_three_round_burst_66: -5538355369843671712
+      rifleman_three_round_burst_67: 3694896082187525929
+      rifleman_three_round_burst_68: 2946231551500690132
+      rifleman_three_round_burst_69: -4354099759306422272
+      rifleman_three_round_burst_7: -9127343395274809632
+      rifleman_three_round_burst_70: -7810379463097622748
+      rifleman_three_round_burst_71: 7156450518375116695
+      rifleman_three_round_burst_72: 7995909015495737283
+      rifleman_three_round_burst_73: -4684573675174143003
+      rifleman_three_round_burst_74: 6345061810268937948
+      rifleman_three_round_burst_75: 4093879299744384993
+      rifleman_three_round_burst_76: -4472506824313953639
+      rifleman_three_round_burst_77: 3707118853197559904
+      rifleman_three_round_burst_78: 8171309675599061641
+      rifleman_three_round_burst_79: 6235416039064342267
+      rifleman_three_round_burst_8: -1641275219929263745
+      rifleman_three_round_burst_80: 396027998671188258
+      rifleman_three_round_burst_81: 5442842596153196305
+      rifleman_three_round_burst_82: 4616538478988322910
+      rifleman_three_round_burst_83: -2206590699536026575
+      rifleman_three_round_burst_84: -5059793570888497247
+      rifleman_three_round_burst_85: -8757607387996369458
+      rifleman_three_round_burst_86: 2651836383522577720
+      rifleman_three_round_burst_87: 1446256920040187951
+      rifleman_three_round_burst_88: -5824368205563223065
+      rifleman_three_round_burst_89: -8260907605415890679
+      rifleman_three_round_burst_9: 7801561476144026008
+      rifleman_three_round_burst_90: 3951140907032035898
+      rifleman_three_round_burst_91: -5018981125305458618
+      rifleman_three_round_burst_92: 7666220734182551633
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

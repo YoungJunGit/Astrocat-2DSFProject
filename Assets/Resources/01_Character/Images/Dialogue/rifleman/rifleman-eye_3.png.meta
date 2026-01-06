@@ -1,0 +1,434 @@
+fileFormatVersion: 2
+guid: 87284daeacd056f4d9fe0afb58ee099a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 765266823113449501
+    second: rifleman-eye_3_0
+  - first:
+      213: 7156777033357592543
+    second: rifleman-eye_3_1
+  - first:
+      213: -7004909828317870860
+    second: rifleman-eye_3_2
+  - first:
+      213: -3170555539945833060
+    second: rifleman-eye_3_3
+  - first:
+      213: -307626418048391370
+    second: rifleman-eye_3_4
+  - first:
+      213: 8863228647466473039
+    second: rifleman-eye_3_5
+  - first:
+      213: 561850605138199853
+    second: rifleman-eye_3_6
+  - first:
+      213: 3339997402394128783
+    second: rifleman-eye_3_7
+  - first:
+      213: 2518314884045730718
+    second: rifleman-eye_3_8
+  - first:
+      213: 444614116030452896
+    second: rifleman-eye_3_9
+  - first:
+      213: -8938023139622251165
+    second: rifleman-eye_3_10
+  - first:
+      213: -4553532918021906724
+    second: rifleman-eye_3_11
+  - first:
+      213: 1601461163190864858
+    second: rifleman-eye_3_12
+  - first:
+      213: 8103767873130849169
+    second: rifleman-eye_3_13
+  - first:
+      213: 298517860593596866
+    second: rifleman-eye_3_14
+  - first:
+      213: 8898597291643905635
+    second: rifleman-eye_3_15
+  - first:
+      213: 6256049001533228226
+    second: rifleman-eye_3_16
+  - first:
+      213: -942419323522506249
+    second: rifleman-eye_3_17
+  - first:
+      213: 7630661239234448890
+    second: rifleman-eye_3_18
+  - first:
+      213: -3087561897263916454
+    second: rifleman-eye_3_19
+  - first:
+      213: -8103954259910623117
+    second: rifleman-eye_3_20
+  - first:
+      213: 3885635164402100025
+    second: rifleman-eye_3_21
+  - first:
+      213: -4680936828397189395
+    second: rifleman-eye_3_22
+  - first:
+      213: -3358225004870013301
+    second: rifleman-eye_3_23
+  - first:
+      213: -77737280347944797
+    second: rifleman-eye_3_24
+  - first:
+      213: 5176059401590751321
+    second: rifleman-eye_3_25
+  - first:
+      213: -2485692405933221953
+    second: rifleman-eye_3_26
+  - first:
+      213: -5191180277374466133
+    second: rifleman-eye_3_27
+  - first:
+      213: 5455503733404350460
+    second: rifleman-eye_3_28
+  - first:
+      213: 5077459047726959260
+    second: rifleman-eye_3_29
+  - first:
+      213: 632836083152397367
+    second: rifleman-eye_3_30
+  - first:
+      213: 4307573136080581639
+    second: rifleman-eye_3_31
+  - first:
+      213: -4780654455222249214
+    second: rifleman-eye_3_32
+  - first:
+      213: 6897590159173592216
+    second: rifleman-eye_3_33
+  - first:
+      213: 6626845930563720560
+    second: rifleman-eye_3_34
+  - first:
+      213: 8019701067980491160
+    second: rifleman-eye_3_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rifleman-eye_3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d10a11efe16ce9a00800000000000000
+      internalID: 765266823113449501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman-eye_3_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd704f92bcaf15360800000000000000
+      internalID: 7156777033357592543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman-eye_3_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4887fef9f89ce90800000000000000
+      internalID: -7004909828317870860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman-eye_3_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9db1e4e88ceff3d0800000000000000
+      internalID: -3170555539945833060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman-eye_3_4
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63723b417671bbbf0800000000000000
+      internalID: -307626418048391370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman-eye_3_5
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f461e47de73800b70800000000000000
+      internalID: 8863228647466473039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman-eye_3_6
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d25c91806281cc700800000000000000
+      internalID: 561850605138199853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman-eye_3_7
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f81fd6001fd0a5e20800000000000000
+      internalID: 3339997402394128783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman-eye_3_8
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 300
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93ff106b0ad2f220800000000000000
+      internalID: 2518314884045730718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5f1b5778feb691647afe2558608e388f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":300.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      rifleman-eye_3_0: 765266823113449501
+      rifleman-eye_3_1: 7156777033357592543
+      rifleman-eye_3_2: -7004909828317870860
+      rifleman-eye_3_3: -3170555539945833060
+      rifleman-eye_3_4: -307626418048391370
+      rifleman-eye_3_5: 8863228647466473039
+      rifleman-eye_3_6: 561850605138199853
+      rifleman-eye_3_7: 3339997402394128783
+      rifleman-eye_3_8: 2518314884045730718
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
