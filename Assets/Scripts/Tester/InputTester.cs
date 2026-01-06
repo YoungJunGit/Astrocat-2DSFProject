@@ -13,14 +13,14 @@ public class InputTester : MonoBehaviour, IUpdateObserver
     {
         _inputHandler = inputHandler;
         
-        //_inputHandler.OnSelectUnitEnemySelectionMove += () => Debug.Log("Enemy Selection Move");
-        //_inputHandler.OnSelectUnitPlayerSelectionMove += () => Debug.Log("Player Selection Move");
-        _inputHandler.OnSelectUnitTouch += () => Debug.Log("Unit On Touch");
-        _inputHandler.OnSelectUnitSelectionConfirm += () => Debug.Log("Unit Selection Confirm");
+        // _inputHandler.OnSelectUnitEnemySelectionMove += () => Debug.Log("Enemy Selection Move");
+        // _inputHandler.OnSelectUnitPlayerSelectionMove += () => Debug.Log("Player Selection Move");
+        // _inputHandler.OnSelectUnitTouch += () => Debug.Log("Unit On Touch");
+        // _inputHandler.OnSelectUnitSelectionConfirm += () => Debug.Log("Unit Selection Confirm");
         
-        _inputHandler.OnSelectActionBaseAttack += () => Debug.Log("Base Attack Selected");
-        _inputHandler.OnSelectActionSkillSelect += () => Debug.Log("Skill Select Selected");
-        _inputHandler.OnSelectActionUseItem += () => Debug.Log("Use Item Selected");
+        // _inputHandler.OnSelectActionBaseAttack += () => Debug.Log("Base Attack Selected");
+        // _inputHandler.OnSelectActionSkillSelect += () => Debug.Log("Skill Select Selected");
+        // _inputHandler.OnSelectActionUseItem += () => Debug.Log("Use Item Selected");
         
         _inputHandler.OnQTEButtonA += () => Debug.Log("QTE Button A Pressed");
         

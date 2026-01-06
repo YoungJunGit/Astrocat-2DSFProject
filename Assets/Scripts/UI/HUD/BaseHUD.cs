@@ -85,7 +85,7 @@ public abstract class BaseHUD : MonoBehaviour
     public void OnHPChanged(float curHp, float maxHp)
     {
         float targetValue = curHp / maxHp;
-        hp_Text.text = $"{curHp}/{maxHp}";
+        hp_Text.text = $"{(int)curHp}/{(int)maxHp}";
 
         hp_Image.DOKill();
         hp_Image.DOFillAmount(targetValue, hp_Tween_Duration);

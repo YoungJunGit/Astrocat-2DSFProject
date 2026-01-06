@@ -1,6 +1,5 @@
 using DataEntity;
 using DataEnum;
-using DataHashAnim;
 using UnityEngine;
 using System;
 using System.Linq;
@@ -46,7 +45,6 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
     public CombatEffectUnit CEUnit;
 
     public Action<BaseUnit> m_FinishedDying;
-
     private readonly List<IUpdatable> _updatableList = new();
 
     // temp
@@ -95,7 +93,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
         if (this is PlayerUnit)
         {
-            _animHandler.ChangeAnimation(AnimCombat.HIT);
+            _animHandler.ChangeAnimation(ANIMATION.HIT);
         }
 
         if (HasSupporter)
@@ -160,13 +158,8 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         {
             Attachments.GetSpriteRenderer().sortingLayerName = "Actor";
 
-            bool isFinishedEvent = false;
-            _animHandler.ChangeAnimation(AnimCombat.DEATH);
-            CombatInfo.actionList.Add("OnFinishedDeath",
-                () => OnFinshedDeath(() => isFinishedEvent = true)
-            );
-
-            await UniTask.WaitUntil(() => isFinishedEvent);
+            await _animHandler.ChangeAnimationAsync(ANIMATION.DEATH);
+            await OnFinshedDeathAnim();
             Attachments.GetSpriteRenderer().sortingLayerName = "Character";
         }
 
@@ -193,6 +186,6 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
     public UnitStat GetStat() => _stat;
     public UNIT_TYPE GetUnitType() => _unitType;
 
-    public abstract void OnFinshedDeath(Action done);
-    public abstract void PlayDeathSound();
+    protected abstract UniTask OnFinshedDeathAnim();
+    protected abstract void PlayDeathSound();
 }

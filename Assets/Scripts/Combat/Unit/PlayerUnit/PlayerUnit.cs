@@ -3,16 +3,14 @@ using System;
 
 public class PlayerUnit : BaseUnit
 {
-    public override void OnFinshedDeath(Action done)
+    protected override async UniTask OnFinshedDeathAnim()
     {
         gameObject.SetActive(false);
         m_FinishedDying.Invoke(this);
-        done();
     }
 
-    public override void PlayDeathSound()
+    protected override void PlayDeathSound()
     {
         _soundService.PlayEffectSound("Die");
-        _soundService.PlayEffectSound("Hover", 2f);
     }
 }

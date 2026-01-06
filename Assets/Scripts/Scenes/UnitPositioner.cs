@@ -32,6 +32,7 @@ class UnitPositioner : ScriptableObject
     {
         Vector2 direction = box.pointEnd - box.pointStart;
         Vector2 targetPosition = box.pointStart + (direction / (count + 1)) * (index + 1);
+        targetPosition.x = -targetPosition.x;
         return targetPosition;
     }
 
@@ -39,7 +40,6 @@ class UnitPositioner : ScriptableObject
     {
         Vector2 direction = box.pointEnd - box.pointStart;
         Vector2 targetPosition = box.pointStart + (direction / (count + 1)) * (index + 1);
-        targetPosition.x = -targetPosition.x;
         return targetPosition;
     }
 }

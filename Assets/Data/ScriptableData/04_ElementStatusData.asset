@@ -57,7 +57,7 @@ MonoBehaviour:
     index: 1005
     Buff_Table_ID: '-'
     Element_Status_Value:
-    - 1
+    - 0.2
     - 0
     Element_Status_Duration_Turn: 1
     Element_Status_Name: ELEMENT_STATUS_NAME_STRANGE

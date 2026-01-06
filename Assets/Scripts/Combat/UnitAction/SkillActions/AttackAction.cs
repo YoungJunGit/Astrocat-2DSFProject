@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using DataEnum;
-using DataHashAnim;
 using Michsky.UI.Shift;
 using NUnit.Framework;
 using System;
@@ -71,12 +70,12 @@ class MeleeAttackAction : BaseAttackAction
 
             // Identify target's postition
             float xOffset = context.Caster.Attachments.GetHitBox().size.x / 2;
-            Vector2 offset = context.Caster is PlayerUnit ? new Vector2(xOffset, 0f) : new Vector2(-xOffset, 0f);
+            Vector2 offset = context.Caster is PlayerUnit ? new Vector2(-xOffset, 0f) : new Vector2(xOffset, 0f);
             context.Caster.CombatInfo.targetPos = (Vector2)target.Attachments.GetMeleeHitPos().position + offset;
 
             context.Caster.GetAnimationHandler().Attack += () => { unitAction.DamageEvent(context.Caster, target); };
             context.Caster.CombatInfo.actionList.Add("FinishedAction", () => { unitAction.OnFinishedAction(context); });
-            context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.MOVE);
+            context.Caster.GetAnimationHandler().ChangeAnimation(ANIMATION.MOVE);
 
             try
             {
@@ -105,7 +104,7 @@ class RangeAttackAction : BaseAttackAction
         {
             BaseBullet bullet = null;
             context.Caster.GetAnimationHandler().Attack += () => { bullet = ShootBullet(context, unitAction, target); };
-            context.Caster.GetAnimationHandler().ChangeAnimation(AnimCombat.ATTACK);
+            context.Caster.GetAnimationHandler().ChangeAnimation(ANIMATION.ATTACK);
 
             try
             {

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4055738903042692552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttachmentsPositions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 197994515436291843}
   - component: {fileID: 8266767524952552518}
   - component: {fileID: 1316542457625181986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7590652976416351343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9136855789934232106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StatusBoxPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085095853709932365}
   - component: {fileID: 9167674234745550215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HitBox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8960175206361412108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuffBoxPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4968746072884941724}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnitSelectArrowPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3660917172093270443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MeleeHitPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 3807887788672633224}
   - component: {fileID: 5573408595002535380}
   - component: {fileID: 8303580816812213284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: penguin_Commander
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6828229883078454044}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -428,7 +428,7 @@ Transform:
   - {fileID: 8250322118824034571}
   - {fileID: 4055738903042692552}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!50 &3807887788672633224
 Rigidbody2D:
   serializedVersion: 5

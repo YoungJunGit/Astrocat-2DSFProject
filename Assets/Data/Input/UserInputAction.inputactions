@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "UserInputAction",
     "maps": [
         {
@@ -57,7 +58,7 @@
                     "id": "4411170b-700d-43b0-a7d2-29563847632c",
                     "path": "1DAxis",
                     "interactions": "Press",
-                    "processors": "Clamp(min=-1,max=1),Invert",
+                    "processors": "Clamp(min=-1,max=1)",
                     "groups": "",
                     "action": "EnemySelectionMove",
                     "isComposite": true,
@@ -86,28 +87,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Positive",
-                    "id": "2acfd7a6-100e-48de-b2e5-5a6b2288f239",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";PC",
-                    "action": "EnemySelectionMove",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Positive",
-                    "id": "b8f00786-dd03-495b-9c8b-10690b16bf62",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";PC",
-                    "action": "EnemySelectionMove",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "Negative",
                     "id": "1cc86ba4-741d-4d89-89cd-f6e7a6192e78",
                     "path": "<Keyboard>/a",
@@ -122,6 +101,39 @@
                     "name": "Negative",
                     "id": "3e7680d4-9e88-4f85-97c6-39e604fd766b",
                     "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "EnemySelectionMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "aeec8a2a-1bc1-4333-8fd1-48883eaf7107",
+                    "path": "1DAxis",
+                    "interactions": "Press",
+                    "processors": "Clamp(min=-1,max=1),Invert",
+                    "groups": "",
+                    "action": "EnemySelectionMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Positive",
+                    "id": "b8f00786-dd03-495b-9c8b-10690b16bf62",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "EnemySelectionMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "2acfd7a6-100e-48de-b2e5-5a6b2288f239",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";PC",
@@ -156,7 +168,7 @@
                     "id": "54835484-af28-45c6-a792-508a205af995",
                     "path": "1DAxis",
                     "interactions": "Press",
-                    "processors": "Clamp(min=-1,max=1)",
+                    "processors": "Clamp(min=-1,max=1),Invert",
                     "groups": "",
                     "action": "PlayerSelectionMove",
                     "isComposite": true,

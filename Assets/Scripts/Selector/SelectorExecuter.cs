@@ -47,8 +47,8 @@ public class UnitSelectorExecutor : SelectorExecutor<UnitSelector>
     public UnitSelectorExecutor(BaseUnit unit, CombatSelectionContext context, Action<ITarget<BaseUnit>> onSelected)
     {
         _currentUnit = unit;
-        _context     = context;
-        _onSelected  = onSelected;
+        _context = context;
+        _onSelected = onSelected;
     }
 
     public override async UniTask<bool> Execute(UnitSelector selector)
@@ -57,14 +57,21 @@ public class UnitSelectorExecutor : SelectorExecutor<UnitSelector>
         ITargetStrategy targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(_context.Action.Action_Type, _context.Action.Target_Filter);
 
         bool isSelected = false;
-        if (_currentUnit is PlayerUnit)
+        if (_context.Action.Target_Type != SIDE.NONE)
         {
-            isSelected = await selector.SelectTarget(target, targetStrategy, _context.Action.Target_Type);
+            if (_currentUnit is PlayerUnit)
+            {
+                isSelected = await selector.SelectTarget(target, targetStrategy, _context.Action.Target_Type);
+            }
+            else if (_currentUnit is EnemyUnit)
+            {
+                targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(TARGET_TYPE.RANDOM, _context.Action.Target_Filter);
+                isSelected = selector.SelectRandomTarget(target, targetStrategy);
+            }
         }
-        else if (_currentUnit is EnemyUnit)
+        else
         {
-            targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(TARGET_TYPE.RANDOM, _context.Action.Target_Filter);
-            isSelected = selector.SelectRandomTarget(target, targetStrategy);
+            isSelected = true;
         }
 
         _onSelected?.Invoke(target);
