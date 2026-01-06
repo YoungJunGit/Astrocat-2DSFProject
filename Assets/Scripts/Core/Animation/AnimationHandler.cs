@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using DataEnum;
 using NaughtyAttributes;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using UnityEngine;
@@ -10,8 +11,6 @@ using UnityEngine.Rendering.PostProcessing;
 public class AnimationHandler : MonoBehaviour
 {    
     private Animator anim;
-    public CountdownTimer animTimer;
-    public CountdownTimer resetTimer;
 
     private ANIMATION _currentAnimation;
     private ANIMATION _previousAnimation;
@@ -102,6 +101,15 @@ public class AnimationHandler : MonoBehaviour
     }
 
     #region[Event]
+    [SerializeField]
+    private List <AnimationEventCombat> animationEvents = new();
+
+    public void OnAnimationEventTriggered(ANIMATION_EVENT eventType)
+    {
+        AnimationEventCombat matchingEvent = animationEvents.Find(e => e.eventType == eventType);
+        matchingEvent?.OnAnimationEvent?.Invoke();
+    }
+
     public event Action Attack;
     public event Action Move;
 

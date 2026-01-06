@@ -141,6 +141,14 @@ namespace DataEnum
         RETREAT
     }
 
+    public enum ANIMATION_EVENT
+    {
+        NONE = 0,
+        ATTACK,
+        MOVE,
+        PARRY
+    }
+
     /*Ãß°¡*/
     #endregion
 }
