@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 1
-  triggerTime: 0.596
+  triggerTime: 0.539
 --- !u!1102 &1814344554457196912
 AnimatorState:
   serializedVersion: 6

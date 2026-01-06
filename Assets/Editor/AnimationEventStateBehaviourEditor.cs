@@ -38,7 +38,7 @@ public class AnimationEventStateBehaviourEditor : Editor
                 isPreviewing = true;
             }
 
-            GUILayout.Label($"Previewing at {previewTime:F2}s", EditorStyles.helpBox);
+            GUILayout.Label($"{previewClip.name}: Previewing at {previewTime:F2}s", EditorStyles.helpBox);
         }
         else
         {
