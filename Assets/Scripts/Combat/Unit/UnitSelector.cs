@@ -56,7 +56,7 @@ public class UnitSelector : BaseSelector
                 {
                     CreateUnitSelectArrow(bag, strategy, controller.GetSelectionIndex(_side));
                     controller.Prepare();
-                    controller.OnStartSelect(side, strategy.Filter);
+                    controller.OnStartSelect(side, strategy.Filters);
                     await UniTask.WaitUntil(() => isConfirmed == true || isCancled == true);
                     controller.OnEndSelect(side);
                     DestroyUnitSelectArrow();
@@ -102,7 +102,7 @@ public class UnitSelector : BaseSelector
         foreach(var target in bag.Targets)
         {
             UnitSelectorObject arrow = Instantiate(unitSelectArrowPrefab, target.Attachments.GetUnitSelectArrowPos(), false);
-            bool IsSelectable = strategy.Filter == null || !strategy.Filter(target);
+            bool IsSelectable = !TargetFilterUtility.IsFiltered(strategy.Filters, target);
             arrow.Init(_side, IsSelectable);
             arrowList.Add(arrow);
         }

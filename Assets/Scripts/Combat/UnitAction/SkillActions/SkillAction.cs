@@ -14,7 +14,7 @@ public class SkillAction : IUnitAction
     {
         unitAction.OnStartAction(context);
 
-        //await UniTask.WaitUntil(() => context.Caster.combatInfo.isFinishedAction);
+        await UniTask.WaitUntil(() => context.Caster.CombatInfo.isFinishedAction);
     }
 }
 
@@ -22,7 +22,7 @@ public class Skill_Taunt : SkillAction
 {
     public override SIDE Target_Type { get; } = SIDE.ENEMY;
     public override TARGET_TYPE Action_Type { get; } = TARGET_TYPE.SINGLE;
-    public override Func<BaseUnit, bool> Target_Filter { get; } = null;
+    public override Func<BaseUnit, bool> Target_Filter { get; } = (unit) => unit.My_Temp_Type == ELEMENT_TYPE.VOID;
 
     public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = null)
     {

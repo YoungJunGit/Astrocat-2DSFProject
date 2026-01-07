@@ -5,17 +5,17 @@ using UnityEngine;
 
 public interface ITargetStrategy
 {
-    public Func<BaseUnit, bool> Filter { get; }
+    public Func<BaseUnit, bool>[] Filters { get; }
     public void SelectTarget(List<BaseUnit> units, ITarget<BaseUnit> bag, int index = 0);
 }
 
 public sealed class SingleTargetStrategy : ITargetStrategy
 {
-    public Func<BaseUnit, bool> Filter { get; }
+    public Func<BaseUnit, bool>[] Filters { get; }
 
-    public SingleTargetStrategy(Func<BaseUnit, bool> filter)
+    public SingleTargetStrategy(Func<BaseUnit, bool>[] filters)
     {
-        Filter = filter;
+        Filters = filters;
     }
 
     public void SelectTarget(List<BaseUnit> units, ITarget<BaseUnit> bag, int targetIndex)
@@ -29,11 +29,11 @@ public sealed class SingleTargetStrategy : ITargetStrategy
 
 public sealed class RandomTargetStratgy : ITargetStrategy
 {
-    public Func<BaseUnit, bool> Filter { get; }
+    public Func<BaseUnit, bool>[] Filters { get; }
 
-    public RandomTargetStratgy(Func<BaseUnit, bool> filter)
+    public RandomTargetStratgy(params Func<BaseUnit, bool>[] filters)
     {
-        Filter = filter;
+        Filters = filters;
     }
 
     public void SelectTarget(List<BaseUnit> units, ITarget<BaseUnit> bag, int index = 0)
@@ -45,7 +45,21 @@ public sealed class RandomTargetStratgy : ITargetStrategy
         foreach (var unit in units)
         {
             if (unit == null) continue;
-            if (Filter == null || !Filter(unit))
+
+            bool filtered = false;
+            if (Filters != null)
+            {
+                foreach (var filter in Filters)
+                {
+                    if (filter != null && filter(unit))
+                    {
+                        filtered = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!filtered)
                 pool.Add(unit);
         }
 
@@ -58,11 +72,11 @@ public sealed class RandomTargetStratgy : ITargetStrategy
 
 public sealed class AllTargetStrategy : ITargetStrategy
 {
-    public Func<BaseUnit, bool> Filter { get; }
+    public Func<BaseUnit, bool>[] Filters { get; }
 
-    public AllTargetStrategy(Func<BaseUnit, bool> filter)
+    public AllTargetStrategy(params Func<BaseUnit, bool>[] filters)
     {
-        Filter = filter;
+        Filters = filters;
     }
 
     public void SelectTarget(List<BaseUnit> units, ITarget<BaseUnit> bag, int index = 0)
@@ -81,13 +95,13 @@ public sealed class SplashTargetStrategy : ITargetStrategy
 {
     private readonly int _leftCount;
     private readonly int _rightCount;
-    public Func<BaseUnit, bool> Filter { get; }
+    public Func<BaseUnit, bool>[] Filters { get; }
 
-    public SplashTargetStrategy(int leftCount, int rightCount, Func<BaseUnit, bool> filter)
+    public SplashTargetStrategy(int leftCount, int rightCount, params Func<BaseUnit, bool>[] filters)
     {
         _leftCount  = Mathf.Max(0, leftCount);
         _rightCount = Mathf.Max(0, rightCount);
-        Filter     = filter;
+        Filters     = filters;
     }
 
     public void SelectTarget(List<BaseUnit> units, ITarget<BaseUnit> bag, int centerIndex)
@@ -101,25 +115,5 @@ public sealed class SplashTargetStrategy : ITargetStrategy
             if (unit == null) continue;
             bag.Add(unit);
         }
-    }
-}
-
-public class TargetStrategyFactory
-{
-    public ITargetStrategy CreateTargetStrategy(TARGET_TYPE type, Func<BaseUnit, bool> filter)
-    {
-        switch (type)
-        {
-            case TARGET_TYPE.SINGLE:
-                return new SingleTargetStrategy(filter);
-            case TARGET_TYPE.ALL:
-                return new AllTargetStrategy(filter);
-            case TARGET_TYPE.RANDOM:
-                return new RandomTargetStratgy(filter);
-            case TARGET_TYPE.SPLASH:
-                return new SplashTargetStrategy(1, 1, filter);
-        }
-
-        return null;
     }
 }

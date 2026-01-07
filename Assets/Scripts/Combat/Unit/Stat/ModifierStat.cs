@@ -1,32 +1,9 @@
 using UnityEngine;
 using DataEntity;
 using DataEnum;
-using System;
 using Utils;
-using ObservableCollections;
-using R3;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using ScreenFx;
 
-#region [Core Stat]
-public class CoreStat
-{
-    private readonly EntityData _baseData;
-    public CoreStat(EntityData baseData)
-    {
-        _baseData = baseData;
-    }
-
-    public SIDE Side => _baseData.Side;
-    public string Name => _baseData.Name;
-    public string AssetFileName => _baseData.Asset_File;
-    public string[] SkillsID => _baseData.Skill_ID;
-}
-#endregion
-
-#region [Modifier Stat]
 public class ModifierStat
 {
     private readonly EntityData _baseData;
@@ -171,97 +148,10 @@ public class ModifierStat
         return PercentageValue((BUFF_TYPE)((int)BUFF_TYPE.PHYSICAL_OVERLOAD_RATE + (int)type) - 1, overload_rate);
     }
     #endregion
-}
-#endregion
 
-public class UnitStat
-{
-    public readonly CoreStat CoreStat;
-    public readonly ModifierStat ModifierStat;
+    #region [Skill Related]
 
-    private ELEMENT_TYPE _currentElementType = ELEMENT_TYPE.NONE;
-    private float _curHp;
-    private int   _curSP;
-    private float _curEG;
-    private int   _priority;
-    public float HP     { get => _curHp; }
-    public int SP       { get => _curSP; }
-    public float EG { get => _curEG; }
-    public int Priority { get => _priority; }
+    public (int Count, string ForcedTargetID) TauntInfo { get; set; } = default;
 
-    public Action<float, float> OnHPChanged = delegate { };
-    public Action<int, int> OnSPChanged = delegate { };
-    public Action<ELEMENT_TYPE, bool, int, float, float> OnEGChanged = delegate { };
-
-    public UnitStat(EntityData baseData, int priority)
-    {
-        CoreStat = new CoreStat(baseData);
-        ModifierStat = new ModifierStat(baseData);
-
-        _curHp = (float)baseData.Max_HP;
-        _curSP = baseData.Default_SP;
-        _curEG = 0.0f;
-        _priority = priority;
-    }
-
-    public void OnPrepareCombat()
-    {
-        OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
-        OnSPChanged?.Invoke(SP, ModifierStat.MaxSP);
-    }
-
-    public void GetDamaged(float value) 
-    {
-        _curHp = Mathf.Clamp(_curHp - value, 0f, ModifierStat.MaxHP);
-        OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
-    }
-
-    public void GetHealed(float value) 
-    { 
-        _curHp = Mathf.Clamp(_curHp + value, 0f, ModifierStat.MaxHP);
-        OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
-    }
-
-    public void OnNormalAttack() 
-    { 
-        _curSP = Mathf.Clamp(_curSP + 1, 0, ModifierStat.MaxSP);
-        OnSPChanged.Invoke(_curSP, ModifierStat.MaxSP);
-    }
-
-    public void OnSkillAttack(int value) 
-    { 
-        _curSP = Mathf.Clamp(_curSP - value, 0, ModifierStat.MaxSP);
-        OnSPChanged.Invoke(_curSP, ModifierStat.MaxSP);
-    }
-
-    public void IncreaseElementGauge(ELEMENT_TYPE elementType, float value)
-    {
-        var finalValue = _curEG + value;
-        var isReset = _currentElementType != elementType;
-
-        if (isReset)
-        {
-            _currentElementType = elementType;
-            finalValue = value;
-        }
-        int fillCount = (int)finalValue / (int)ModifierStat.MaxEG;
-        _curEG = finalValue % ModifierStat.MaxEG;
-        OnEGChanged.Invoke(elementType, isReset, fillCount, _curEG, ModifierStat.MaxEG);
-    }
-
-    public int CompareTo(UnitStat other)
-    {
-        if (this.ModifierStat.Speed > other.ModifierStat.Speed) { return -1; }
-        else if (this.ModifierStat.Speed < other.ModifierStat.Speed) { return 1; }
-        else
-        {
-            if (this.CoreStat.Side < other.CoreStat.Side) { return -1; }
-            else if (this.CoreStat.Side > other.CoreStat.Side) { return 1; }
-            else
-            {
-                if (this._priority < other._priority) { return -1; }
-                else return 1;
-            }
-        }
-    }
+    #endregion
 }

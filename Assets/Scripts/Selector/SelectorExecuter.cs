@@ -53,25 +53,34 @@ public class UnitSelectorExecutor : SelectorExecutor<UnitSelector>
 
     public override async UniTask<bool> Execute(UnitSelector selector)
     {
-        ITarget<BaseUnit> target = new TargetFactory().CreateTarget(_context.Action.Action_Type);
-        ITargetStrategy targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(_context.Action.Action_Type, _context.Action.Target_Filter);
+        ITarget<BaseUnit> target = TargetFactory.CreateTarget(_context.Action.Action_Type);
+        ITargetStrategy targetStrategy;
 
-        bool isSelected = false;
-        if (_context.Action.Target_Type != SIDE.NONE)
+        // Force Attack
+        Func<BaseUnit, bool> forceFilter = null;
+        if (_currentUnit.GetStat().ModifierStat.TauntInfo.Count > 0)
         {
-            if (_currentUnit is PlayerUnit)
+            if(_context.Action.Action_Type == TARGET_TYPE.SINGLE || _context.Action.Action_Type == TARGET_TYPE.RANDOM)
             {
-                isSelected = await selector.SelectTarget(target, targetStrategy, _context.Action.Target_Type);
-            }
-            else if (_currentUnit is EnemyUnit)
-            {
-                targetStrategy = new TargetStrategyFactory().CreateTargetStrategy(TARGET_TYPE.RANDOM, _context.Action.Target_Filter);
-                isSelected = selector.SelectRandomTarget(target, targetStrategy);
+                forceFilter = (unit) => unit.GetStat().CoreStat.ID != _currentUnit.GetStat().ModifierStat.TauntInfo.ForcedTargetID;
             }
         }
-        else
+
+        targetStrategy = TargetStrategyFactory.CreateTargetStrategy(_context.Action.Action_Type, _context.Action.Target_Filter, forceFilter);
+
+        // Self Attack
+        if(_context.Action.Target_Type == SIDE.NONE)
+            return true;
+
+        bool isSelected = false;
+        if (_currentUnit is PlayerUnit)
         {
-            isSelected = true;
+            isSelected = await selector.SelectTarget(target, targetStrategy, _context.Action.Target_Type);
+        }
+        else if (_currentUnit is EnemyUnit)
+        {
+            targetStrategy = TargetStrategyFactory.CreateTargetStrategy(TARGET_TYPE.RANDOM, _context.Action.Target_Filter, forceFilter);
+            isSelected = selector.SelectRandomTarget(target, targetStrategy);
         }
 
         _onSelected?.Invoke(target);

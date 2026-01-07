@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Utils
 {
@@ -8,12 +9,12 @@ namespace Utils
         public static bool MakeChance(Vector2 range, int chance)
         {
             int clampedChance = Mathf.Clamp(chance, (int)range.x, (int)range.y);
-            return Random.Range(range.x, range.y) < clampedChance ? true : false;
+            return UnityEngine.Random.Range(range.x, range.y) < clampedChance ? true : false;
         }
 
         public static bool MakeChance(float chance)
         {
-            return Random.value < Mathf.Clamp01(chance);
+            return UnityEngine.Random.value < Mathf.Clamp01(chance);
         }
 
         public static T SafeGet<T>(T[] array, int index, T defaultValue = default)

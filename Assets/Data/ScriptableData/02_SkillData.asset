@@ -19,7 +19,7 @@ MonoBehaviour:
     table: 
     kind: 
     index: 
-    Skill_Name: "\uAC10\uC815 \uB864\uB7EC\uCF54\uC2A4\uD130"
+    Skill_Name: "\uD2B8\uB9AC\uD50C \uBC84\uC2A4\uD2B8"
     Skill_Desc: 
     Element_Type: 0
     Skill_Type: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     table: 
     kind: 
     index: 
-    Skill_Name: "\uD2B8\uB9AC\uD50C \uBC84\uC2A4\uD2B8"
+    Skill_Name: "\uC5D0\uC5B4\uB9AC\uC5B4 \uBC84\uC2A4\uD2B8"
     Skill_Desc: 
     Element_Type: 0
     Skill_Type: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
     table: 
     kind: 
     index: 
-    Skill_Name: "\uC5D0\uC5B4\uB9AC\uC5B4 \uBC84\uC2A4\uD2B8"
+    Skill_Name: "\uC751\uAE09 \uCC98\uCE58"
     Skill_Desc: 
     Element_Type: 0
     Skill_Type: 0
@@ -73,13 +73,13 @@ MonoBehaviour:
     table: 
     kind: 
     index: 
-    Skill_Name: "\uC751\uAE09 \uCC98\uCE58"
+    Skill_Name: "\uC5B4\uADF8\uB85C ON"
     Skill_Desc: 
     Element_Type: 0
     Skill_Type: 0
     Skill_Side: 0
     Skill_Target_Type: 0
-    Skill_Cost_SP: 0
+    Skill_Cost_SP: 2
     Skill_ATK_Rate: 0
     Skill_Hit_Count: 0
     Skill_Duration_Turn: 0

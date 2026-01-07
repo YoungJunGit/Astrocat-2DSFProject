@@ -1,6 +1,5 @@
 using DataEnum;
 using System.Collections.Generic;
-using UnityEngine;
 
 public interface ITarget<TUnit>
 {
@@ -17,21 +16,4 @@ public sealed class ListTarget<TUnit> : ITarget<TUnit>
     public void Add(TUnit unit) { if(unit != null) _list.Add(unit); }
     public void Remove(TUnit unit) => _list.Remove(unit);
     public void Clear() => _list.Clear();
-}
-
-public class TargetFactory
-{
-    public ITarget<BaseUnit> CreateTarget(TARGET_TYPE type)
-    {
-        switch (type)
-        {
-            case TARGET_TYPE.SINGLE:
-            case TARGET_TYPE.ALL:
-            case TARGET_TYPE.RANDOM:
-            case TARGET_TYPE.SPLASH:
-                return new ListTarget<BaseUnit>();
-        }
-
-        return null;
-    }
 }

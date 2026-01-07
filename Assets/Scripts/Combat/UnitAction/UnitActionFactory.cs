@@ -8,7 +8,7 @@ class UnitActionFactory : ScriptableObject
 {
     private Dictionary<string, SkillAction> _skillDictionary = new()
     {
-        {"20010001", new Skill_Taunt()} // TODO : ADD Skill here
+        {"20020002", new Skill_Taunt()} // TODO : ADD Skill here
     };
 
     public BaseAttackAction CreatePlayerBaseAttackAction(BaseUnit unit)

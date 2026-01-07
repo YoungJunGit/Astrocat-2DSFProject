@@ -13,9 +13,9 @@ public class UnitSelectorController
     private InputHandler _inputHandler;
     private IUnitManager _unitManager;
 
-    private UnityAction confirm;
-    private UnityAction cancle;
-    private UnityAction<int> select;
+    private Action confirm;
+    private Action cancle;
+    private Action<int> select;
 
     private int _selectedUnitIndex;
     private int _previousEnemySelectionIndex;
@@ -24,9 +24,9 @@ public class UnitSelectorController
     private int _maxUnitCount;
 
     private SIDE targetSide = SIDE.NONE;
-    private Func<BaseUnit, bool> _filter;
+    private Func<BaseUnit, bool>[] _filters;
 
-    public UnitSelectorController(InputHandler inputHandler, IUnitManager unitManager, UnityAction confirm, UnityAction cancle, UnityAction<int> select)
+    public UnitSelectorController(InputHandler inputHandler, IUnitManager unitManager, Action confirm, Action cancle, Action<int> select)
     {
         _inputHandler = inputHandler;
         _unitManager = unitManager;
@@ -38,7 +38,7 @@ public class UnitSelectorController
 
     public void Prepare()
     {
-        _inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
+        _inputHandler.OnSelectUnitSelectionConfirm += OnConfirm;
         _inputHandler.OnSelectUnitSelectionCancle += () => cancle();
     }
 
@@ -52,10 +52,10 @@ public class UnitSelectorController
             _previousPlayerSelectionIndex = _previousPlayerSelectionIndex > _maxUnitCount - 1 ? _maxUnitCount - 1 : _previousPlayerSelectionIndex;
     }
 
-    public void OnStartSelect(SIDE side, Func<BaseUnit, bool> filter)
+    public void OnStartSelect(SIDE side, Func<BaseUnit, bool>[] filters)
     {
         targetSide = side;
-        _filter = filter;
+        _filters = filters;
 
         if (side == SIDE.ENEMY)
         {
@@ -74,7 +74,7 @@ public class UnitSelectorController
     public void OnEndSelect(SIDE side)
     {
         targetSide = SIDE.NONE;
-        _filter = null;
+        _filters = null;
 
         if (side == SIDE.ENEMY)
             _previousEnemySelectionIndex = _selectedUnitIndex;
@@ -100,7 +100,7 @@ public class UnitSelectorController
             if (idx < 0)
                 return;
 
-            bool selectable = _filter == null || !_filter(unit);
+            bool selectable = !TargetFilterUtility.IsFiltered(_filters, unit);
 
             if (idx != _selectedUnitIndex)
             {
@@ -121,6 +121,11 @@ public class UnitSelectorController
 
         if (_selectedUnitIndex != temp)
             select(_selectedUnitIndex);
+    }
+
+    private void OnConfirm()
+    {
+        confirm();
     }
 
     public int GetSelectionIndex(SIDE side)

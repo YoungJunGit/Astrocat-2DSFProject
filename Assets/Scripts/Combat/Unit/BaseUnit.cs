@@ -77,6 +77,12 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
         if (HasSupporter)
             _supporterUnit.Initialize();
+
+        if(_stat.CoreStat.ID == "10012001")
+        {
+            _stat.ModifierStat.TauntInfo = (_stat.ModifierStat.TauntInfo.Count + 1, "10001001");
+        }
+
     }
 
     public void GetDamage(IDamageInfo damageInfo)
