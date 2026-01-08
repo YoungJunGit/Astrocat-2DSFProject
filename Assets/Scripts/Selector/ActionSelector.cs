@@ -78,8 +78,6 @@ public class ActionSelector : BaseSelector
                 switch (_selectedActionType)
                 {
                     case 1:
-                        _soundService.PlayEffectSound("Click");
-
                         selector.OnSelectEnd();
                         normalUnitAction = unitActionFactory.CreatePlayerBaseAttackAction(playerUnit);
                         break;

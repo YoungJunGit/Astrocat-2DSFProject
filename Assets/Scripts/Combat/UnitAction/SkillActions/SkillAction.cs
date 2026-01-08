@@ -26,10 +26,9 @@ public class Skill_Taunt : SkillAction
 
     public override async UniTask Execute(IUnitActionContext context, IUnitActionEvent unitAction, CancellationTokenSource cancellationToken = null)
     {
-        await base.Execute(context, unitAction, cancellationToken);
-
         Debug.Log("Taunt Enemy!");
 
+        await base.Execute(context, unitAction, cancellationToken);
         unitAction.OnFinishedAction(context);
     }
 }

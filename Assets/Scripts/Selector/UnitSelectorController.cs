@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
 using DataEnum;
-using R3;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using Utils;
 
 public class UnitSelectorController
 {
@@ -36,20 +33,23 @@ public class UnitSelectorController
         this.select = select;
     }
 
-    public void Prepare()
+    public void Prepare(int maxUnitCount, SIDE side)
     {
-        _inputHandler.OnSelectUnitSelectionConfirm += OnConfirm;
+        _inputHandler.OnSelectUnitSelectionConfirm += () => confirm();
         _inputHandler.OnSelectUnitSelectionCancle += () => cancle();
-    }
 
-    public void UpdateIndex(int maxUnitCount, SIDE side)
-    {
         _maxUnitCount = maxUnitCount;
 
         if (side == SIDE.ENEMY)
-            _previousEnemySelectionIndex = _previousEnemySelectionIndex > _maxUnitCount - 1 ? _maxUnitCount - 1 : _previousEnemySelectionIndex;
+        {
+            _previousEnemySelectionIndex = Mathf.Clamp(_previousEnemySelectionIndex, 0, maxUnitCount - 1);
+            select(_previousEnemySelectionIndex);
+        }
         else if (side == SIDE.PLAYER)
-            _previousPlayerSelectionIndex = _previousPlayerSelectionIndex > _maxUnitCount - 1 ? _maxUnitCount - 1 : _previousPlayerSelectionIndex;
+        {
+            _previousPlayerSelectionIndex = Mathf.Clamp(_previousPlayerSelectionIndex, 0, maxUnitCount - 1);
+            select(_previousPlayerSelectionIndex);
+        }
     }
 
     public void OnStartSelect(SIDE side, Func<BaseUnit, bool>[] filters)
@@ -86,15 +86,9 @@ public class UnitSelectorController
     {
         if (targetSide == SIDE.NONE) return;
 
-        Vector2 screen = Pointer.current.position.ReadValue();
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(screen);
-        LayerMask mask = LayerMask.GetMask("Character");
-        var hit = Physics2D.Raycast(mousePos, Vector2.zero, 100.0f, mask);
-
-        if (hit.collider)
+        if(RaycastExtensions.RaycastMouse(LayerMask.GetMask("Character"), out BaseUnit unit))
         {
             var unitList = _unitManager.GetUnit(targetSide);
-            var unit = hit.collider.GetComponentInParent<BaseUnit>();
 
             int idx = unitList.IndexOf(unit);
             if (idx < 0)
@@ -121,20 +115,5 @@ public class UnitSelectorController
 
         if (_selectedUnitIndex != temp)
             select(_selectedUnitIndex);
-    }
-
-    private void OnConfirm()
-    {
-        confirm();
-    }
-
-    public int GetSelectionIndex(SIDE side)
-    {
-        if (side == SIDE.PLAYER)
-            return _previousPlayerSelectionIndex;
-        else if (side == SIDE.ENEMY)
-            return _previousEnemySelectionIndex;
-        else
-            return 0;
     }
 }

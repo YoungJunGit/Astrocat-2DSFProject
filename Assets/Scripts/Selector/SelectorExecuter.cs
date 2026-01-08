@@ -58,18 +58,26 @@ public class UnitSelectorExecutor : SelectorExecutor<UnitSelector>
 
         // Force Attack
         Func<BaseUnit, bool> forceFilter = null;
+        Action onForceAttack = null;
         if (_currentUnit.GetStat().ModifierStat.TauntInfo.Count > 0)
         {
-            if(_context.Action.Action_Type == TARGET_TYPE.SINGLE || _context.Action.Action_Type == TARGET_TYPE.RANDOM)
+            if (_context.Action.Action_Type == TARGET_TYPE.SINGLE || _context.Action.Action_Type == TARGET_TYPE.RANDOM)
             {
                 forceFilter = (unit) => unit.GetStat().CoreStat.ID != _currentUnit.GetStat().ModifierStat.TauntInfo.ForcedTargetID;
+                var tauntInfo = _currentUnit.GetStat().ModifierStat.TauntInfo;
+                onForceAttack = () => {
+                    _currentUnit.GetStat().ModifierStat.TauntInfo = (Mathf.Max(tauntInfo.Count - 1, 0), tauntInfo.ForcedTargetID);
+                    
+                    if(_currentUnit.GetStat().ModifierStat.TauntInfo.Count <= 0)
+                        _currentUnit.GetStat().ModifierStat.TauntInfo = (0, string.Empty);
+                };
             }
         }
 
         targetStrategy = TargetStrategyFactory.CreateTargetStrategy(_context.Action.Action_Type, _context.Action.Target_Filter, forceFilter);
 
         // Self Attack
-        if(_context.Action.Target_Type == SIDE.NONE)
+        if (_context.Action.Target_Type == SIDE.NONE)
             return true;
 
         bool isSelected = false;
@@ -84,6 +92,9 @@ public class UnitSelectorExecutor : SelectorExecutor<UnitSelector>
         }
 
         _onSelected?.Invoke(target);
+
+        if(isSelected)
+            onForceAttack?.Invoke();
 
         return isSelected;
     }

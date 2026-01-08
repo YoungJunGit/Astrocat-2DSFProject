@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using DataEnum;
 using TMPro;
+using Utils;
 
 [CreateAssetMenu(fileName = "UnitSelector", menuName = "GameScene/UnitSelector", order = 1)]
 public class UnitSelector : BaseSelector
@@ -10,6 +11,7 @@ public class UnitSelector : BaseSelector
     [SerializeField] private UnitSelectorObject unitSelectArrowPrefab;
     private UnitSelectorController controller;
     private IUnitManager _unitManager;
+    private ISoundService _soundService;
 
     private List<UnitSelectorObject> arrowList = new();
     private ITarget<BaseUnit> _bag;
@@ -24,29 +26,29 @@ public class UnitSelector : BaseSelector
         InputHandler inputHandler;
         ServiceLocator.For(this)
             .Get(out inputHandler)
-            .Get(out _unitManager);
+            .Get(out _unitManager)
+            .Get(out _soundService);
 
-        _side       = SIDE.NONE;
+        _side = SIDE.NONE;
         isConfirmed = false;
         arrowList.Clear();
-        
+
         controller = new UnitSelectorController(
             inputHandler,
             _unitManager,
-            () => isConfirmed = true,
-            () => isCancled = true,
-            SetUnitSelectArrow
+            () => { ConfirmSelection(_bag, _strategy); },
+            () => { isCancled = true; DestroyUnitSelectArrow(); },
+            (value) => { SetUnitSelectArrow(_bag, _strategy, value); }
         );
     }
 
     public async UniTask<bool> SelectTarget(ITarget<BaseUnit> bag, ITargetStrategy strategy, SIDE side)
     {
-        _bag        = bag;
-        _strategy   = strategy;
-        _side       = side;
+        _bag = bag;
+        _strategy = strategy;
+        _side = side;
         isConfirmed = false;
-        isCancled   = false;
-        controller.UpdateIndex(_unitManager.GetUnit(side).Count, side);
+        isCancled = false;
 
         switch (strategy)
         {
@@ -54,21 +56,18 @@ public class UnitSelector : BaseSelector
             case SplashTargetStrategy:
                 using (var inputDisposer = new InputDisposer(controller.InputHandler, InputHandler.InputState.SelectUnit))
                 {
-                    CreateUnitSelectArrow(bag, strategy, controller.GetSelectionIndex(_side));
-                    controller.Prepare();
+                    controller.Prepare(_unitManager.GetUnit(side).Count, side);
                     controller.OnStartSelect(side, strategy.Filters);
                     await UniTask.WaitUntil(() => isConfirmed == true || isCancled == true);
                     controller.OnEndSelect(side);
-                    DestroyUnitSelectArrow();
                 }
                 break;
             case AllTargetStrategy:
                 using (var inputDisposer = new InputDisposer(controller.InputHandler, InputHandler.InputState.SelectUnit))
                 {
-                    CreateUnitSelectArrow(bag, strategy, controller.GetSelectionIndex(_side));
-                    controller.Prepare();
+                    controller.Prepare(_unitManager.GetUnit(side).Count, side);
+                    controller.InputHandler.OnSelectUnitTouch += () => ConfirmSelection(_bag, _strategy, true);
                     await UniTask.WaitUntil(() => isConfirmed == true || isCancled == true);
-                    DestroyUnitSelectArrow();
                 }
                 break;
             case RandomTargetStratgy:
@@ -83,23 +82,23 @@ public class UnitSelector : BaseSelector
     {
         strategy.SelectTarget(_unitManager.GetPlayerUnits(), bag);
 
-        if(bag.Targets.Count == 0) 
+        if (bag.Targets.Count == 0)
             return false;
 
         return true;
     }
 
-    private void SetUnitSelectArrow(int targetIndex)
+    private void SetUnitSelectArrow(ITarget<BaseUnit> bag, ITargetStrategy strategy, int targetIndex)
     {
+        _soundService.PlayEffectSound("Click");
         DestroyUnitSelectArrow();
-        CreateUnitSelectArrow(_bag, _strategy, targetIndex);
+        strategy.SelectTarget(_unitManager.GetUnit(_side), bag, targetIndex);
+        CreateUnitSelectArrow(_bag, _strategy);
     }
 
-    private void CreateUnitSelectArrow(ITarget<BaseUnit> bag, ITargetStrategy strategy, int targetIndex)
+    private void CreateUnitSelectArrow(ITarget<BaseUnit> bag, ITargetStrategy strategy)
     {
-        strategy.SelectTarget(_unitManager.GetUnit(_side), bag, targetIndex);
-
-        foreach(var target in bag.Targets)
+        foreach (var target in bag.Targets)
         {
             UnitSelectorObject arrow = Instantiate(unitSelectArrowPrefab, target.Attachments.GetUnitSelectArrowPos(), false);
             bool IsSelectable = !TargetFilterUtility.IsFiltered(strategy.Filters, target);
@@ -110,10 +109,48 @@ public class UnitSelector : BaseSelector
 
     private void DestroyUnitSelectArrow()
     {
-        foreach(var arrow in arrowList)
+        foreach (var arrow in arrowList)
         {
             Destroy(arrow.gameObject);
         }
         arrowList.Clear();
+    }
+
+    private void ConfirmSelection(ITarget<BaseUnit> bag, ITargetStrategy strategy, bool isTouch = false)
+    {
+        if(isTouch)
+        {
+            if(!RaycastExtensions.RaycastMouse(LayerMask.GetMask("Character"), out BaseUnit unit))
+                return;
+
+            if(!(unit.GetStat().CoreStat.Side == _side))
+                return;
+        }
+
+        if (strategy is SingleTargetStrategy)
+        {
+            var unit = TargetExtensions.SingleOrDefaultFast(bag);
+            bool IsSelectable = !TargetFilterUtility.IsFiltered(strategy.Filters, unit);
+
+            if (!IsSelectable)
+                return;
+        }
+        else if (strategy is AllTargetStrategy or SplashTargetStrategy)
+        {
+            bool IsSelectable = false;
+            foreach (var unit in bag.Targets)
+            {
+                IsSelectable = !TargetFilterUtility.IsFiltered(strategy.Filters, unit);
+                
+                if (IsSelectable)
+                    break;
+            }
+            
+            if(!IsSelectable)
+                return;
+        }
+
+        isConfirmed = true;
+        DestroyUnitSelectArrow();
     }
 }
