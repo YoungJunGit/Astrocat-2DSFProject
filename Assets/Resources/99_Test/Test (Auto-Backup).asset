@@ -119,28 +119,28 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: Alert
-      type: 0
-      typeString: 
-    - title: Initial Value
-      value: 
+      value: isDialogueOver
       type: 0
       typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
     - title: Description
-      value: 
+      value: "\uB300\uD654\uAC00 \uB05D\uB0AC\uB294\uAC00"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
   conversations:
   - id: 1
     fields:
     - title: Title
       value: test conver
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Description
       value: "\uD14C\uC2A4\uD2B8 \uB300\uD654"
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Actor
       value: 1
       type: 5
@@ -839,6 +839,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -848,14 +852,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["isDialogueOver"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 238.33157
-        y: 629.0664
+        x: 233.58801
+        y: 637.6511
         width: 160
         height: 30
     - id: 12
@@ -956,7 +960,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["isDialogueOver"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1119,7 +1123,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["isDialogueOver"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1573,7 +1577,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["isDialogueOver"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1792,14 +1796,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["isDialogueOver"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 1255.298
-        y: 614.04095
+        y: 616.64966
         width: 160
         height: 30
     - id: 29
@@ -2122,7 +2126,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["isDialogueOver"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2191,8 +2195,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 13.362841, y: 0}
-    canvasZoom: 1.0299987
+    canvasScrollPosition: {x: 850.94946, y: 53.016876}
+    canvasZoom: 1.0599986
   - id: 2
     fields:
     - title: Title

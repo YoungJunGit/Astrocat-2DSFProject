@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace PixelCrushers.DialogueSystem
 {
@@ -11,8 +12,14 @@ namespace PixelCrushers.DialogueSystem
     /// response button in the dialogue UI.
     /// </summary>
     [AddComponentMenu("")] // Use wrapper.
-    public class StandardUIResponseButton : MonoBehaviour, ISelectHandler
+    public class StandardUIResponseButton : MonoBehaviour, ISelectHandler, IPointerEnterHandler, IPointerExitHandler
     {
+        [Header("Button Images")]
+        [SerializeField]
+        private Sprite unselectedImage;
+        [SerializeField]
+        private Sprite selectedImage;
+        private Image image;
 
         [HelpBox("If Button's OnClick() event is empty, this Standard UI Response Button component will automatically assign its OnClick method at runtime. If Button's OnClick() event has other elements, you *must* manually assign the StandardUIResponseButton.OnClick method to it.", HelpBoxMessageType.Info)]
         public UnityEngine.UI.Button button;
@@ -95,6 +102,8 @@ namespace PixelCrushers.DialogueSystem
             {
                 button.onClick.AddListener(OnClick);
             }
+
+            image = GetComponent<Image>();
         }
 
         /// <summary>
@@ -144,6 +153,16 @@ namespace PixelCrushers.DialogueSystem
             {
                 DialogueManager.instance.conversationController.SetCurrentResponse(response);
             }
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            image.sprite = selectedImage;
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            image.sprite = unselectedImage;
         }
     }
 
