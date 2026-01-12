@@ -49,6 +49,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 11672
   packageName: Dialogue System for Unity
-  packageVersion: 2.2.61
-  assetPath: Assets/Gizmos/StringAsset Icon.png
-  uploadId: 804490
+  packageVersion: 2.2.64.1
+  assetPath: Assets/ExternalAssets/Gizmos/StringAsset Icon.png
+  uploadId: 843882

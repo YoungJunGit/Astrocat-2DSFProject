@@ -79,7 +79,7 @@ namespace AllIn1SpriteShader
             EditorGUILayout.Separator();
             DrawLine(Color.grey, 1, 3);
             GUILayout.Label("Light Effect", bigLabelStyle);
-            GenericEffect("Normal Map", "NORMALMAP_ON", 180, 181);
+            GenericEffect("Normal Map", "NORMALMAP_ON", 181, 182);
 
             EditorGUILayout.Separator();
             DrawLine(Color.grey, 1, 3);

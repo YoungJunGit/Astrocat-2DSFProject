@@ -14,18 +14,29 @@ v2f CombinedShapeLightVertex(Attributes v)
 	UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
 	#if BILBOARD_ON
-	half3 camRight = mul((half3x3)unity_CameraToWorld, half3(1,0,0));
-	half3 camUp = half3(0,1,0);
-	#if BILBOARDY_ON
-	camUp = mul((half3x3)unity_CameraToWorld, half3(0,1,0));
-	#endif
-	half3 localPos = v.vertex.x * camRight + v.vertex.y * camUp;
-	o.vertex = TransformObjectToHClip(localPos);
+		half3 camRight = mul((half3x3)unity_CameraToWorld, half3(1,0,0));
+		half3 camUp = half3(0,1,0);
+		#if BILBOARDY_ON
+			camUp = mul((half3x3)unity_CameraToWorld, half3(0,1,0));
+		#endif
+		half3 localPos = v.vertex.x * camRight + v.vertex.y * camUp;
+		#if UNITY_VERSION >= 60000000
+			localPos.xy *= unity_SpriteProps.xy;
+		#endif
+		o.vertex = TransformObjectToHClip(localPos);
 	#else
-	o.vertex = TransformObjectToHClip(v.vertex.xyz);
+		half3 localPos = v.vertex.xyz;
+		#if UNITY_VERSION >= 60000000
+			localPos.xy *= unity_SpriteProps.xy;
+		#endif
+		o.vertex = TransformObjectToHClip(localPos);
 	#endif
+
 	o.uv = /*TRANSFORM_TEX(v.uv, _MainTex);*/v.uv * _MainTex_ScaleAndTiling.xy + _MainTex_ScaleAndTiling.zw;
 	o.color = v.color;
+	#if UNITY_VERSION >= 60000000
+		o.color *= unity_SpriteColor;
+	#endif
 
 	half2 center = half2(0.5, 0.5);
 	#if ATLAS_ON

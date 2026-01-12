@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: Riflemen
+  actor: 
   persistentDataName: 
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
@@ -61,7 +61,7 @@ MonoBehaviour:
     customMenuPanel: {fileID: 0}
     customMenuPanelOffset: {x: 0, y: 0, z: 0}
     useMenuPanelFor: 0
-    portraitAnimatorController: {fileID: 9100000, guid: a1130e24fc6837548a5a1e2f2e29f990, type: 2}
+    portraitAnimatorController: {fileID: 0}
     setSubtitleColor: 0
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
