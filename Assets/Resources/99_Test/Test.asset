@@ -172,9 +172,11 @@ MonoBehaviour:
       cancelSubtitle:
         key: 27
         buttonName: 
+        inputAction: {fileID: 0}
       cancelConversation:
         key: 27
         buttonName: 
+        inputAction: {fileID: 0}
     nodeColor: 
     dialogueEntries:
     - id: 0
@@ -2191,8 +2193,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 13.362841, y: 0}
-    canvasZoom: 1.0299987
+    canvasScrollPosition: {x: 35.820984, y: 0}
+    canvasZoom: 0.6699987
   - id: 2
     fields:
     - title: Title
@@ -2234,9 +2236,11 @@ MonoBehaviour:
       cancelSubtitle:
         key: 27
         buttonName: 
+        inputAction: {fileID: 0}
       cancelConversation:
         key: 27
         buttonName: 
+        inputAction: {fileID: 0}
     nodeColor: 
     dialogueEntries:
     - id: 0
