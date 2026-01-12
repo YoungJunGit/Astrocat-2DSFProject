@@ -94,6 +94,7 @@ namespace PixelCrushers.DialogueSystem
         {
             if (button == null) button = GetComponent<UnityEngine.UI.Button>();
             if (button == null) Debug.LogWarning("Dialogue System: Response button '" + name + "' is missing a Unity UI Button component!", this);
+            image = GetComponent<Image>();
         }
 
         public virtual void Start()
@@ -102,8 +103,6 @@ namespace PixelCrushers.DialogueSystem
             {
                 button.onClick.AddListener(OnClick);
             }
-
-            image = GetComponent<Image>();
         }
 
         /// <summary>
@@ -161,6 +160,17 @@ namespace PixelCrushers.DialogueSystem
         }
 
         public void OnPointerExit(PointerEventData eventData)
+        {
+            image.sprite = unselectedImage;
+        }
+
+        //private void OnEnable()
+        //{
+        //    image = GetComponent<Image>();
+        //    image.sprite = unselectedImage;
+        //}
+
+        private void OnDisable()
         {
             image.sprite = unselectedImage;
         }
