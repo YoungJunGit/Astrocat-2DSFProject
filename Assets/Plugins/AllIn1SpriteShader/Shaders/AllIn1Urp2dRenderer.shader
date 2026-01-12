@@ -285,7 +285,11 @@ Shader "AllIn1SpriteShader/AllIn1Urp2dRenderer"
 
             HLSLPROGRAM
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-			#include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/Core2D.hlsl"
+			
+			#if UNITY_VERSION >= 202230
+				#include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/Core2D.hlsl"
+			#endif
+			
 			#include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/LightingUtility.hlsl"
 			
 			#pragma multi_compile_instancing
@@ -340,7 +344,9 @@ Shader "AllIn1SpriteShader/AllIn1Urp2dRenderer"
             #pragma fragment NormalsRenderingFragment
 			
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-			#include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/Core2D.hlsl"
+			#if UNITY_VERSION >= 202230
+				#include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/Core2D.hlsl"
+			#endif
 			#include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/NormalsRenderingShared.hlsl"
 
 			#include "ShaderLibrary/2DRenderer/AllIn1SpriteShader_2DRenderer_Structs.hlsl"
@@ -373,7 +379,7 @@ Shader "AllIn1SpriteShader/AllIn1Urp2dRenderer"
         {
 			Name "Main Pass"
 
-			Tags { "LightMode" = "Universal2D" }
+			Tags { "LightMode" = "Universal2D" } 
 
             HLSLPROGRAM
 			#pragma vertex CombinedShapeLightVertex 
@@ -455,6 +461,6 @@ Shader "AllIn1SpriteShader/AllIn1Urp2dRenderer"
         }
     }
 
-	FallBack "AllIn1SpriteShader/AllIn1SpriteShader"
+	//FallBack "AllIn1SpriteShader/AllIn1SpriteShader"
 	CustomEditor "AllIn1SpriteShader.AllIn12DRendererMaterialInspector"
 }

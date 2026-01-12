@@ -524,10 +524,15 @@ namespace PixelCrushers.DialogueSystem
         {
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button(new GUIContent("Learn About OpenAI Addon", "Visit the Asset Store page for the Addon for OpenAI"),
-                GUILayout.Width(190)))
+            if (GUILayout.Button(new GUIContent("OpenAI Addon", "Visit the Asset Store page for the Addon for OpenAI & Other Generative AI"),
+                GUILayout.Width(150)))
             {
                 Application.OpenURL("https://assetstore.unity.com/packages/tools/ai/dialogue-system-addon-for-openai-249287");
+            }
+            if (GUILayout.Button(new GUIContent("Procedural Dialogue", "Visit the Asset Store page for the Addon for Procedural Dialogue"),
+                GUILayout.Width(150)))
+            {
+                Application.OpenURL("https://assetstore.unity.com/packages/tools/behavior-ai/dialogue-system-for-unity-addon-for-procedural-dialogue-317822");
             }
             GUILayout.EndHorizontal();
 
@@ -540,12 +545,12 @@ namespace PixelCrushers.DialogueSystem
             }
             GUILayout.FlexibleSpace();
 
-            //#if EVALUATION_VERSION || ACADEMIC
+            #if EVALUATION_VERSION || ACADEMIC
             if (GUILayout.Button(new GUIContent("Buy", "Buy a license"), GUILayout.Width(70)))
             {
                 Application.OpenURL("https://assetstore.unity.com/packages/tools/ai/dialogue-system-for-unity-11672");
             }
-            //#endif
+            #endif
 
             if (GUILayout.Button(new GUIContent("Support", "Contact the developer for support"), GUILayout.Width(70)))
             {

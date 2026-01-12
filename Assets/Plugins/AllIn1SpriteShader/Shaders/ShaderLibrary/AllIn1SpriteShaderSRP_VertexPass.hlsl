@@ -15,15 +15,20 @@ v2f vert(appdata v)
 	#if BILBOARD_ON
 		half3 camRight = mul((half3x3)unity_CameraToWorld, half3(1,0,0));
 		half3 camUp = half3(0,1,0);
-	#if BILBOARDY_ON
-		camUp = mul((half3x3)unity_CameraToWorld, half3(0,1,0));
-	#endif
+		#if BILBOARDY_ON
+			camUp = mul((half3x3)unity_CameraToWorld, half3(0,1,0));
+		#endif
 		half3 localPos = v.vertex.x * camRight + v.vertex.y * camUp;
-		localPos.xy *= unity_SpriteProps.xy;
+
+		#if UNITY_VERSION >= 60000000
+			localPos.xy *= unity_SpriteProps.xy;
+		#endif
 		o.vertex = TransformObjectToHClip(half4(localPos, 1).xyz);
 	#else
 		half3 localPos = v.vertex.xyz;
-		localPos.xy *= unity_SpriteProps.xy;
+		#if UNITY_VERSION >= 60000000 && !defined(HDRP_PASS)
+			localPos.xy *= unity_SpriteProps.xy;
+		#endif
 		o.vertex = TransformObjectToHClip(localPos);
 	#endif
 		o.uv = /*TRANSFORM_TEX(v.uv, _MainTex)*/v.uv * _MainTex_ScaleAndTiling.xy + _MainTex_ScaleAndTiling.zw;
@@ -61,8 +66,14 @@ v2f vert(appdata v)
 	#endif
 
 	#if FOG_ON
-		UNITY_TRANSFER_FOG(o,o.vertex);
+		o.fogCoord = 0;
+		#if defined(FOG_LINEAR) || defined(FOG_EXP) || defined(FOG_EXP2)
+			o.fogCoord = ComputeFogFactor(o.vertex.z);
+		#endif
 	#endif
+
+	o.positionWS = TransformObjectToWorld(v.vertex.xyz);
+
 
 	return o;
 }
