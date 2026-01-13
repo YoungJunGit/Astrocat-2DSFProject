@@ -12,87 +12,148 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45c337aa6ccd42479a9db58efbc9407, type: 3}
   m_Name: 02_SkillData
   m_EditorClassIdentifier: 
-  json: {fileID: 4900000, guid: d27bcc37c0b34bd48b5510aa5be5e50e, type: 3}
+  json: {fileID: 4900000, guid: 7405936c6f888fb49805b83bc85afd75, type: 3}
   decryptToggle: 0
   data:
-  - Skill_ID: 20010001
-    table: 
-    kind: 
-    index: 
-    Skill_Name: "\uAC10\uC815 \uB864\uB7EC\uCF54\uC2A4\uD130"
-    Skill_Desc: 
+  - Skill_ID: 20001001
+    table: 20
+    kind: 0
+    index: 1001
+    Skill_Name: SKILL_PASSIVE_NAME_3001
+    Skill_Desc: SKILL_PASSIVE_DESC_4001
     Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
+    Skill_Type: 1
+    Skill_Side: 1
     Skill_Target_Type: 0
-    Skill_Cost_SP: 1
+    Skill_Cost_SP: 0
     Skill_ATK_Rate: 0
     Skill_Hit_Count: 0
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
-    Buff_ID: []
-    Buff_Value: []
-    QTE_ID: 
-  - Skill_ID: 20010002
-    table: 
-    kind: 
-    index: 
+    Buff_ID:
+    - '-'
+    QTE_ID: '-'
+    asset_file_path: 
+  - Skill_ID: 20001002
+    table: 20
+    kind: 0
+    index: 1002
+    Skill_Name: SKILL_PASSIVE_NAME_3002
+    Skill_Desc: SKILL_PASSIVE_DESC_4002
+    Element_Type: 0
+    Skill_Type: 1
+    Skill_Side: 1
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID:
+    - '-'
+    QTE_ID: '-'
+    asset_file_path: 
+  - Skill_ID: 20001003
+    table: 20
+    kind: 0
+    index: 1003
+    Skill_Name: SKILL_PASSIVE_NAME_3003
+    Skill_Desc: SKILL_PASSIVE_DESC_4003
+    Element_Type: 0
+    Skill_Type: 1
+    Skill_Side: 1
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID:
+    - '-'
+    QTE_ID: '-'
+    asset_file_path: 
+  - Skill_ID: 20011001
+    table: 20
+    kind: 1
+    index: 1001
     Skill_Name: "\uD2B8\uB9AC\uD50C \uBC84\uC2A4\uD2B8"
-    Skill_Desc: 
-    Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
-    Skill_Hit_Count: 0
+    Skill_Desc: SKILL_ACTIVE_DESC_6001
+    Element_Type: 1
+    Skill_Type: 2
+    Skill_Side: 2
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 3
+    Skill_ATK_Rate: 0.5
+    Skill_Hit_Count: 3
     Skill_Duration_Turn: 0
-    Skill_Element_Rate: 0
-    Buff_ID: []
-    Buff_Value: []
-    QTE_ID: 
-  - Skill_ID: 20020001
-    table: 
-    kind: 
-    index: 
+    Skill_Element_Rate: 2
+    Buff_ID:
+    - '-'
+    QTE_ID: '-'
+    asset_file_path: 
+  - Skill_ID: 20011002
+    table: 20
+    kind: 1
+    index: 1002
     Skill_Name: "\uC5D0\uC5B4\uB9AC\uC5B4 \uBC84\uC2A4\uD2B8"
-    Skill_Desc: 
+    Skill_Desc: SKILL_ACTIVE_DESC_6002
     Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
-    Skill_Hit_Count: 0
+    Skill_Type: 2
+    Skill_Side: 2
+    Skill_Target_Type: 2
+    Skill_Cost_SP: 4
+    Skill_ATK_Rate: 0.6
+    Skill_Hit_Count: 1
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
-    Buff_ID: []
-    Buff_Value: []
-    QTE_ID: 
-  - Skill_ID: 20020002
-    table: 
-    kind: 
-    index: 
-    Skill_Name: "\uC751\uAE09 \uCC98\uCE58"
-    Skill_Desc: 
+    Buff_ID:
+    - '-'
+    QTE_ID: '-'
+    asset_file_path: 
+  - Skill_ID: 20011003
+    table: 20
+    kind: 1
+    index: 1003
+    Skill_Name: "\uC751\uAE09\uCC98\uCE58"
+    Skill_Desc: SKILL_ACTIVE_DESC_6003
     Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
-    Skill_Hit_Count: 0
+    Skill_Type: 3
+    Skill_Side: 1
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 3
+    Skill_ATK_Rate: 0.5
+    Skill_Hit_Count: 1
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
-    Buff_ID: []
-    Buff_Value: []
-    QTE_ID: 
-  - Skill_ID: 20030001
-    table: 
-    kind: 
-    index: 
+    Buff_ID:
+    - '-'
+    QTE_ID: '-'
+    asset_file_path: 
+  - Skill_ID: 20011004
+    table: 20
+    kind: 1
+    index: 1004
     Skill_Name: "\uC5B4\uADF8\uB85C ON"
-    Skill_Desc: 
+    Skill_Desc: SKILL_ACTIVE_DESC_6004
+    Element_Type: 0
+    Skill_Type: 4
+    Skill_Side: 2
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 2
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 2
+    Skill_Element_Rate: 0
+    Buff_ID:
+    - 30001025
+    QTE_ID: '-'
+    asset_file_path: 
+  - Skill_ID: 20011005
+    table: 20
+    kind: 1
+    index: 1005
+    Skill_Name: SKILL_ACTIVE_NAME_5005
+    Skill_Desc: SKILL_ACTIVE_DESC_6005
     Element_Type: 0
     Skill_Type: 0
     Skill_Side: 0
@@ -103,13 +164,139 @@ MonoBehaviour:
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
     Buff_ID: []
-    Buff_Value: []
     QTE_ID: 
-  - Skill_ID: 20030002
-    table: 
-    kind: 
+    asset_file_path: 
+  - Skill_ID: 20011006
+    table: 20
+    kind: 1
+    index: 1006
+    Skill_Name: SKILL_ACTIVE_NAME_5006
+    Skill_Desc: SKILL_ACTIVE_DESC_6006
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    QTE_ID: 
+    asset_file_path: 
+  - Skill_ID: 20011007
+    table: 20
+    kind: 1
+    index: 1007
+    Skill_Name: SKILL_ACTIVE_NAME_5007
+    Skill_Desc: SKILL_ACTIVE_DESC_6007
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    QTE_ID: 
+    asset_file_path: 
+  - Skill_ID: 20011008
+    table: 20
+    kind: 1
+    index: 1008
+    Skill_Name: SKILL_ACTIVE_NAME_5008
+    Skill_Desc: SKILL_ACTIVE_DESC_6008
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    QTE_ID: 
+    asset_file_path: 
+  - Skill_ID: 20011009
+    table: 20
+    kind: 1
+    index: 1009
+    Skill_Name: SKILL_ACTIVE_NAME_5009
+    Skill_Desc: SKILL_ACTIVE_DESC_6009
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    QTE_ID: 
+    asset_file_path: 
+  - Skill_ID: 20011010
+    table: 20
+    kind: 1
+    index: 1010
+    Skill_Name: SKILL_ACTIVE_NAME_5010
+    Skill_Desc: SKILL_ACTIVE_DESC_6010
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    QTE_ID: 
+    asset_file_path: 
+  - Skill_ID: 20011011
+    table: 20
+    kind: 1
+    index: 1011
+    Skill_Name: SKILL_ACTIVE_NAME_5011
+    Skill_Desc: SKILL_ACTIVE_DESC_6011
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    QTE_ID: 
+    asset_file_path: 
+  - Skill_ID: 20011012
+    table: 20
+    kind: 1
+    index: 1012
+    Skill_Name: SKILL_ACTIVE_NAME_5012
+    Skill_Desc: SKILL_ACTIVE_DESC_6012
+    Element_Type: 0
+    Skill_Type: 0
+    Skill_Side: 0
+    Skill_Target_Type: 0
+    Skill_Cost_SP: 0
+    Skill_ATK_Rate: 0
+    Skill_Hit_Count: 0
+    Skill_Duration_Turn: 0
+    Skill_Element_Rate: 0
+    Buff_ID: []
+    QTE_ID: 
+    asset_file_path: 
+  - Skill_ID: 20010000
+    table: 20
+    kind: 1
     index: 
-    Skill_Name: Skill_NAME_2006
+    Skill_Name: 
     Skill_Desc: 
     Element_Type: 0
     Skill_Type: 0
@@ -121,13 +308,13 @@ MonoBehaviour:
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
     Buff_ID: []
-    Buff_Value: []
     QTE_ID: 
-  - Skill_ID: 20040001
-    table: 
-    kind: 
+    asset_file_path: 
+  - Skill_ID: 20010000
+    table: 20
+    kind: 1
     index: 
-    Skill_Name: Skill_NAME_2007
+    Skill_Name: 
     Skill_Desc: 
     Element_Type: 0
     Skill_Type: 0
@@ -139,13 +326,13 @@ MonoBehaviour:
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
     Buff_ID: []
-    Buff_Value: []
     QTE_ID: 
-  - Skill_ID: 20040002
-    table: 
-    kind: 
+    asset_file_path: 
+  - Skill_ID: 20010000
+    table: 20
+    kind: 1
     index: 
-    Skill_Name: Skill_NAME_2008
+    Skill_Name: 
     Skill_Desc: 
     Element_Type: 0
     Skill_Type: 0
@@ -157,41 +344,5 @@ MonoBehaviour:
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
     Buff_ID: []
-    Buff_Value: []
     QTE_ID: 
-  - Skill_ID: 20050001
-    table: 
-    kind: 
-    index: 
-    Skill_Name: Skill_NAME_2009
-    Skill_Desc: 
-    Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
-    Skill_Hit_Count: 0
-    Skill_Duration_Turn: 0
-    Skill_Element_Rate: 0
-    Buff_ID: []
-    Buff_Value: []
-    QTE_ID: 
-  - Skill_ID: 20050002
-    table: 
-    kind: 
-    index: 
-    Skill_Name: Skill_NAME_2010
-    Skill_Desc: 
-    Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
-    Skill_Hit_Count: 0
-    Skill_Duration_Turn: 0
-    Skill_Element_Rate: 0
-    Buff_ID: []
-    Buff_Value: []
-    QTE_ID: 
+    asset_file_path: 

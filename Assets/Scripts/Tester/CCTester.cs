@@ -33,7 +33,7 @@ public class CCTester : MonoBehaviour
     [FoldoutGroup("Debug"), HideIf("printAll"), SerializeField] SIDE debugSide;
     [FoldoutGroup("Debug"), HideIf("printAll"), SerializeField] int debugIndex;
 
-    private void Awake()
+    void Start()
     {
         ServiceLocator.For(this)
             .Get(out unitManager)

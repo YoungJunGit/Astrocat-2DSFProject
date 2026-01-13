@@ -5,11 +5,12 @@ public class TitleManager : ScriptableObject
 {
     [SerializeField] private TitleCanvas titleCanvasPrefab;
 
-    private TitleCanvas titleCanvas;
+    private TitleCanvas _titleCanvas;
 
     public void Init()
     {
-        titleCanvas = Instantiate(titleCanvasPrefab);
+        _titleCanvas = Instantiate(titleCanvasPrefab);
+        _titleCanvas.Init();
     }
 
     public void CreateObejct()

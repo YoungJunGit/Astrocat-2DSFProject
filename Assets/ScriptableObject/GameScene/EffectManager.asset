@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfdaa21d3449df40bce089e6c3c570a, type: 3}
+  m_Name: EffectManager
+  m_EditorClassIdentifier: 
+  effectDic:
+    _serializedList:
+    - Key: RecoveryEffect
+      Value: {fileID: 6452224005166524440, guid: b28432b01d9c81d49b1c64decbae4c11, type: 3}

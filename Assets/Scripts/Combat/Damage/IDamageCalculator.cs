@@ -2,15 +2,15 @@ using Utils;
 
 public interface IDamageCalculator
 {
-    public (float damageValue, bool isCritical) Calculate(BaseUnit caster, BaseUnit target);
+    public (float damageValue, bool isCritical) Calculate(BaseUnit caster, BaseUnit target, float skillRate = 1.0f);
 }
 
-public class NormalDamageCalculator : IDamageCalculator
+public sealed class NormalDamageCalculator : IDamageCalculator
 {
-    public (float, bool) Calculate(BaseUnit caster, BaseUnit target)
+    public (float, bool) Calculate(BaseUnit caster, BaseUnit target, float skillRate)
     {
-        // BaseDmg
-        float damage = caster.GetStat().ModifierStat.Attack;
+        // BaseDmg = ATK * skillRate
+        float damage = caster.GetStat().ModifierStat.Attack * skillRate;
 
         // CriticalRate
         bool isCritical = FunctionUtils.MakeChance(caster.GetStat().ModifierStat.CriticalChance);
@@ -24,9 +24,9 @@ public class NormalDamageCalculator : IDamageCalculator
     }
 }
 
-public class BurnDamageCalculator : IDamageCalculator
+public sealed class BurnDamageCalculator : IDamageCalculator
 {
-    public (float, bool) Calculate(BaseUnit caster, BaseUnit target)
+    public (float, bool) Calculate(BaseUnit caster, BaseUnit target, float skillRate)
     {
         float damage = caster.GetStat().ModifierStat.Attack * target.GetStat().ModifierStat.DamageHealValue(DataEnum.BUFF_TYPE.DAMAGE_EACH_TURN);
 
@@ -34,9 +34,9 @@ public class BurnDamageCalculator : IDamageCalculator
     }
 }
 
-public class StrangeDamageCalculator : IDamageCalculator
+public sealed class StrangeDamageCalculator : IDamageCalculator
 {
-    public (float, bool) Calculate(BaseUnit caster, BaseUnit target)
+    public (float, bool) Calculate(BaseUnit caster, BaseUnit target, float skillRate)
     {
         float damage = caster.GetStat().ModifierStat.Attack;
 
@@ -44,9 +44,9 @@ public class StrangeDamageCalculator : IDamageCalculator
     }
 }
 
-public class TestDamageCalculator : IDamageCalculator
+public sealed class TestDamageCalculator : IDamageCalculator
 {
-    public (float damageValue, bool isCritical) Calculate(BaseUnit caster, BaseUnit target)
+    public (float damageValue, bool isCritical) Calculate(BaseUnit caster, BaseUnit target, float skillRate)
     {
         return (0.0f, false);
     }

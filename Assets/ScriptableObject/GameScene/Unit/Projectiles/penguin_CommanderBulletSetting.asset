@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 3514996205508723247, guid: d2207e0a1cf6a9b48925051697e2bab7, type: 3}
   - {fileID: 3846306349982944660, guid: d2207e0a1cf6a9b48925051697e2bab7, type: 3}
   targetTag: Player
-  speed: 30
+  speed: 75

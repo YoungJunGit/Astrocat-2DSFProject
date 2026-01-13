@@ -40,7 +40,7 @@ public class SupporterUnit : MonoBehaviour
 
         using (var eventDisposer = new EventDisposer(new CombatEvent("SupporterDeathEvent")))
         {
-            await _supporterAnimationHandler.ChangeAnimationAsync(ANIMATION.DEATH, 0.25f);
+            await _supporterAnimationHandler.ChangeAnimationAsync(ANIMATION.DEATH, fadeTime: 0.25f);
             gameObject.SetActive(false);
         }
 

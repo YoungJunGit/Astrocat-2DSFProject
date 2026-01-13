@@ -4,14 +4,31 @@
         "table": "50",
         "kind": "0",
         "index": "1001",
+        "QTE_Duration": 1.0,
+        "QTE_Zone_Success_Start": 0.0,
+        "QTE_Zone_Success_End": 0.7,
+        "QTE_Zone_Perfect_Start": 0.71,
+        "QTE_Zone_Perfect_End": 1.0,
         "QTE_Result_Perfect_Value": 1.5,
         "QTE_Result_Success_Value": 1.3,
-        "QTE_Result_Fail_Value": 1.0
+        "QTE_Result_Fail_Value": 1.0,
+        "Multi_QTE_Spawn_Amount": 0,
+        "Multi_QTE_Spawn_time": 0.0
     },
     {
         "QTE_ID": "50011002",
         "table": "50",
         "kind": "1",
-        "index": "1002"
+        "index": "1002",
+        "QTE_Duration": 1.0,
+        "QTE_Zone_Success_Start": 0.0,
+        "QTE_Zone_Success_End": 0.7,
+        "QTE_Zone_Perfect_Start": 0.71,
+        "QTE_Zone_Perfect_End": 1.0,
+        "QTE_Result_Perfect_Value": 1.5,
+        "QTE_Result_Success_Value": 1.3,
+        "QTE_Result_Fail_Value": 1.0,
+        "Multi_QTE_Spawn_Amount": 3,
+        "Multi_QTE_Spawn_time": 0.7
     }
 ]
