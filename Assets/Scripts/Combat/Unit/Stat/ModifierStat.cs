@@ -151,7 +151,23 @@ public class ModifierStat
 
     #region [Skill Related]
 
-    public (int Count, string ForcedTargetID) TauntInfo { get; set; } = default;
+    public class TauntInfo
+    {
+        public int Count = 0;
+        public string ForcedTargetID = string.Empty;
+    }
+
+    private TauntInfo tauntInfo = new();
+    public string TauntID => tauntInfo.ForcedTargetID;
+    public int TauntCount => tauntInfo.Count;
+
+    public void SetTaunt(int count, string id)
+    {
+        tauntInfo.Count = count;
+        tauntInfo.ForcedTargetID = id;
+    }
+
+    public void DecreaseTauntCount() => tauntInfo.Count--;
 
     #endregion
 }

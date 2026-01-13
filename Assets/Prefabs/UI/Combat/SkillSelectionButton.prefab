@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4541934656657904737}
   - component: {fileID: 1482858461012239215}
+  - component: {fileID: 5617493326366567715}
   - component: {fileID: 7455302937948984335}
   - component: {fileID: 7909346657999351860}
   - component: {fileID: 7079826893322143720}
@@ -53,6 +54,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2902650522520047996}
   m_CullTransparentMesh: 1
+--- !u!225 &5617493326366567715
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902650522520047996}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &7455302937948984335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +121,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0.19607843}
     m_PressedColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0.78431374}
     m_SelectedColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0.19607843}
-    m_DisabledColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0.78431374}
+    m_DisabledColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -139,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9cdea35724d294193ad872f2e6ed5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui: {fileID: 5617493326366567715}
   button: {fileID: 7909346657999351860}
   iconImage: {fileID: 154762494862829176}
   skillName: {fileID: 1034384887408659674}

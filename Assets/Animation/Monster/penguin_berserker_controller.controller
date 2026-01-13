@@ -12,7 +12,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours:
-  - {fileID: -4143741823259833027}
+  - {fileID: -967631684675096778}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -27,7 +27,7 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!114 &-7801037796241499372
+--- !u!114 &-7228521202917628641
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36,10 +36,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 974abef6785e0e34b9d4fd0401b9864b, type: 3}
+  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 2
+  eventType: 2
+  triggerType: 1
+  triggerTime: 0
+  triggerTimeResolved: 0.07142857
+  triggerFrame: 1
 --- !u!1102 &-7178110700501404569
 AnimatorState:
   serializedVersion: 6
@@ -66,19 +70,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!114 &-4143741823259833027
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 974abef6785e0e34b9d4fd0401b9864b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _state: 6
 --- !u!1102 &-3636578436927260837
 AnimatorState:
   serializedVersion: 6
@@ -91,9 +82,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours:
-  - {fileID: -2577706586115563312}
-  - {fileID: 6295465597375639388}
-  - {fileID: 2216655369364847280}
+  - {fileID: -7228521202917628641}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -120,8 +109,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours:
-  - {fileID: -7801037796241499372}
-  - {fileID: -640296859840094779}
+  - {fileID: 8795449505793054175}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -136,7 +124,7 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!114 &-2577706586115563312
+--- !u!114 &-967631684675096778
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,24 +133,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 974abef6785e0e34b9d4fd0401b9864b, type: 3}
+  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 1
---- !u!114 &-640296859840094779
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5b1ace0015e7d4f8a48c7cf2da7fd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRetreat: 0
-  moveCurve: 4
+  eventType: 1
+  triggerType: 1
+  triggerTime: 0
+  triggerTimeResolved: 0.5555555
+  triggerFrame: 5
 --- !u!1107 &-368908261938318310
 AnimatorStateMachine:
   serializedVersion: 6
@@ -219,34 +197,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!114 &2216655369364847280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6482347fe456fcf448d1ecdafa0ed227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventsToCall:
-  - FinishedAction
---- !u!114 &6295465597375639388
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5b1ace0015e7d4f8a48c7cf2da7fd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRetreat: 1
-  moveCurve: 4
 --- !u!1102 &8484787718960421506
 AnimatorState:
   serializedVersion: 6
@@ -273,3 +223,20 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &8795449505793054175
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventType: 2
+  triggerType: 1
+  triggerTime: 0.149
+  triggerTimeResolved: 0.10000001
+  triggerFrame: 1

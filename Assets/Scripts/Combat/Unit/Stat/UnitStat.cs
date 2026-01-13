@@ -51,15 +51,9 @@ public class UnitStat
         OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
     }
 
-    public void OnNormalAttack() 
+    public void OnAction(int value) 
     { 
-        _curSP = Mathf.Clamp(_curSP + 1, 0, ModifierStat.MaxSP);
-        OnSPChanged.Invoke(_curSP, ModifierStat.MaxSP);
-    }
-
-    public void OnSkillAttack(int value) 
-    { 
-        _curSP = Mathf.Clamp(_curSP - value, 0, ModifierStat.MaxSP);
+        _curSP = Mathf.Clamp(_curSP + value, 0, ModifierStat.MaxSP);
         OnSPChanged.Invoke(_curSP, ModifierStat.MaxSP);
     }
 

@@ -1,0 +1,985 @@
+fileFormatVersion: 2
+guid: eafdf2983b0b9364cad7b0115b511bee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6940591169898663433
+    second: rifleman_Skill_TripleBurst_0
+  - first:
+      213: 2931964080007868273
+    second: rifleman_Skill_TripleBurst_1
+  - first:
+      213: 3946552946534256919
+    second: rifleman_Skill_TripleBurst_2
+  - first:
+      213: -1020961233634407358
+    second: rifleman_Skill_TripleBurst_3
+  - first:
+      213: -1882084154002621594
+    second: rifleman_Skill_TripleBurst_4
+  - first:
+      213: 7025987141140598138
+    second: rifleman_Skill_TripleBurst_5
+  - first:
+      213: -8499648708960393232
+    second: rifleman_Skill_TripleBurst_6
+  - first:
+      213: -3040068335046216551
+    second: rifleman_Skill_TripleBurst_7
+  - first:
+      213: -7313385256418478415
+    second: rifleman_Skill_TripleBurst_8
+  - first:
+      213: 4287968086575206192
+    second: rifleman_Skill_TripleBurst_9
+  - first:
+      213: 790386288927039888
+    second: rifleman_Skill_TripleBurst_10
+  - first:
+      213: 987742533929736607
+    second: rifleman_Skill_TripleBurst_11
+  - first:
+      213: 5694582864938368197
+    second: rifleman_Skill_TripleBurst_12
+  - first:
+      213: 1671233677131414808
+    second: rifleman_Skill_TripleBurst_13
+  - first:
+      213: -2501878607125772290
+    second: rifleman_Skill_TripleBurst_14
+  - first:
+      213: -4547966900149791667
+    second: rifleman_Skill_TripleBurst_15
+  - first:
+      213: 2023831871853581816
+    second: rifleman_Skill_TripleBurst_16
+  - first:
+      213: 7227732582522006846
+    second: rifleman_Skill_TripleBurst_17
+  - first:
+      213: 593258171539198760
+    second: rifleman_Skill_TripleBurst_18
+  - first:
+      213: -2637531146645755197
+    second: rifleman_Skill_TripleBurst_19
+  - first:
+      213: -268327223155170496
+    second: rifleman_Skill_TripleBurst_20
+  - first:
+      213: 1016015548240552757
+    second: rifleman_Skill_TripleBurst_21
+  - first:
+      213: -252691257374823352
+    second: rifleman_Skill_TripleBurst_22
+  - first:
+      213: -5537206488790125788
+    second: rifleman_Skill_TripleBurst_23
+  - first:
+      213: -965777539981089306
+    second: rifleman_Skill_TripleBurst_24
+  - first:
+      213: 410874748589432046
+    second: rifleman_Skill_TripleBurst_25
+  - first:
+      213: 6636811176048032486
+    second: rifleman_Skill_TripleBurst_26
+  - first:
+      213: -2054856458582252245
+    second: rifleman_Skill_TripleBurst_27
+  - first:
+      213: -25819788955566294
+    second: rifleman_Skill_TripleBurst_28
+  - first:
+      213: 1620217261847827351
+    second: rifleman_Skill_TripleBurst_29
+  - first:
+      213: -8820460643270308093
+    second: rifleman_Skill_TripleBurst_30
+  - first:
+      213: -8238924703899620705
+    second: rifleman_Skill_TripleBurst_31
+  - first:
+      213: 8527722228902665818
+    second: rifleman_Skill_TripleBurst_32
+  - first:
+      213: -1996585622228292922
+    second: rifleman_Skill_TripleBurst_33
+  - first:
+      213: -5727043531798476743
+    second: rifleman_Skill_TripleBurst_34
+  - first:
+      213: -2122631683999994796
+    second: rifleman_Skill_TripleBurst_35
+  - first:
+      213: 911253007966033368
+    second: rifleman_Skill_TripleBurst_36
+  - first:
+      213: -5075152924951875729
+    second: rifleman_Skill_TripleBurst_37
+  - first:
+      213: 1979876660512092841
+    second: rifleman_Skill_TripleBurst_38
+  - first:
+      213: 5699206467274658133
+    second: rifleman_Skill_TripleBurst_39
+  - first:
+      213: -5771037882712646404
+    second: rifleman_Skill_TripleBurst_40
+  - first:
+      213: 1025526146318391109
+    second: rifleman_Skill_TripleBurst_41
+  - first:
+      213: 9023192635014569384
+    second: rifleman_Skill_TripleBurst_42
+  - first:
+      213: -4023490331301935185
+    second: rifleman_Skill_TripleBurst_43
+  - first:
+      213: 8501556830379945003
+    second: rifleman_Skill_TripleBurst_44
+  - first:
+      213: 7925328645116048218
+    second: rifleman_Skill_TripleBurst_45
+  - first:
+      213: 2019561057409339084
+    second: rifleman_Skill_TripleBurst_46
+  - first:
+      213: 6879392555215398872
+    second: rifleman_Skill_TripleBurst_47
+  - first:
+      213: -8667332721246767772
+    second: rifleman_Skill_TripleBurst_48
+  - first:
+      213: -6202429569781867713
+    second: rifleman_Skill_TripleBurst_49
+  - first:
+      213: -6554607241358908558
+    second: rifleman_Skill_TripleBurst_50
+  - first:
+      213: 1961494622882139619
+    second: rifleman_Skill_TripleBurst_51
+  - first:
+      213: -867122650931373982
+    second: rifleman_Skill_TripleBurst_52
+  - first:
+      213: -5990401640209011849
+    second: rifleman_Skill_TripleBurst_53
+  - first:
+      213: 5382460824369395208
+    second: rifleman_Skill_TripleBurst_54
+  - first:
+      213: 5707055669785341986
+    second: rifleman_Skill_TripleBurst_55
+  - first:
+      213: 887527826732786689
+    second: rifleman_Skill_TripleBurst_56
+  - first:
+      213: 7972393521659390227
+    second: rifleman_Skill_TripleBurst_57
+  - first:
+      213: 8319239211308365692
+    second: rifleman_Skill_TripleBurst_58
+  - first:
+      213: 3063894326534915541
+    second: rifleman_Skill_TripleBurst_59
+  - first:
+      213: 8086706684588370615
+    second: rifleman_Skill_TripleBurst_60
+  - first:
+      213: 5600662754491068278
+    second: rifleman_Skill_TripleBurst_61
+  - first:
+      213: 8767823312839899313
+    second: rifleman_Skill_TripleBurst_62
+  - first:
+      213: -6663361611023247825
+    second: rifleman_Skill_TripleBurst_63
+  - first:
+      213: 6880875170160509224
+    second: rifleman_Skill_TripleBurst_64
+  - first:
+      213: -8129802114487407363
+    second: rifleman_Skill_TripleBurst_65
+  - first:
+      213: -2181741307639054063
+    second: rifleman_Skill_TripleBurst_66
+  - first:
+      213: -7386048948112393956
+    second: rifleman_Skill_TripleBurst_67
+  - first:
+      213: 8089118553545145404
+    second: rifleman_Skill_TripleBurst_68
+  - first:
+      213: -7378740177362671854
+    second: rifleman_Skill_TripleBurst_69
+  - first:
+      213: -5045347282578953333
+    second: rifleman_Skill_TripleBurst_70
+  - first:
+      213: -8764267854931271709
+    second: rifleman_Skill_TripleBurst_71
+  - first:
+      213: -9212044784474466053
+    second: rifleman_Skill_TripleBurst_72
+  - first:
+      213: -2837503649825594056
+    second: rifleman_Skill_TripleBurst_73
+  - first:
+      213: 7516074589660169104
+    second: rifleman_Skill_TripleBurst_74
+  - first:
+      213: 6965968680882035840
+    second: rifleman_Skill_TripleBurst_75
+  - first:
+      213: -536194243197162738
+    second: rifleman_Skill_TripleBurst_76
+  - first:
+      213: 7803499147875881797
+    second: rifleman_Skill_TripleBurst_77
+  - first:
+      213: -3788608639808218414
+    second: rifleman_Skill_TripleBurst_78
+  - first:
+      213: 5809765626202656391
+    second: rifleman_Skill_TripleBurst_79
+  - first:
+      213: 473376929363828269
+    second: rifleman_Skill_TripleBurst_80
+  - first:
+      213: 4472316782247261871
+    second: rifleman_Skill_TripleBurst_81
+  - first:
+      213: 8225105725836423523
+    second: rifleman_Skill_TripleBurst_82
+  - first:
+      213: 5566191560149446810
+    second: rifleman_Skill_TripleBurst_83
+  - first:
+      213: -3098925800327795495
+    second: rifleman_Skill_TripleBurst_84
+  - first:
+      213: -6650884400374850580
+    second: rifleman_Skill_TripleBurst_85
+  - first:
+      213: 5908054820580794119
+    second: rifleman_Skill_TripleBurst_86
+  - first:
+      213: 84517372491472680
+    second: rifleman_Skill_TripleBurst_87
+  - first:
+      213: 6473786426042537318
+    second: rifleman_Skill_TripleBurst_88
+  - first:
+      213: -692767018894685293
+    second: rifleman_Skill_TripleBurst_89
+  - first:
+      213: 7909015234186398433
+    second: rifleman_Skill_TripleBurst_90
+  - first:
+      213: 4133472011731470551
+    second: rifleman_Skill_TripleBurst_91
+  - first:
+      213: -809529846004888439
+    second: rifleman_Skill_TripleBurst_92
+  - first:
+      213: -7737995339719087972
+    second: rifleman_Skill_TripleBurst_93
+  - first:
+      213: 4275309476343255830
+    second: rifleman_Skill_TripleBurst_94
+  - first:
+      213: 4232995053738259388
+    second: rifleman_Skill_TripleBurst_95
+  - first:
+      213: 1910165148541244623
+    second: rifleman_Skill_TripleBurst_96
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1560
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ec50d65eee15060800000000000000
+      internalID: 6940591169898663433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_1
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1560
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17fe21bebcd60b820800000000000000
+      internalID: 2931964080007868273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_2
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1560
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7111271cef8f4c630800000000000000
+      internalID: 3946552946534256919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_3
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1560
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24cc6c3da21d4d1f0800000000000000
+      internalID: -1020961233634407358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_4
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1560
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b38430f6e71e5e0800000000000000
+      internalID: -1882084154002621594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1170
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7dc5206412518160800000000000000
+      internalID: 7025987141140598138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_6
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1170
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f7eec2488e2b0a80800000000000000
+      internalID: -8499648708960393232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_7
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1170
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99438acc4f18fc5d0800000000000000
+      internalID: -3040068335046216551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_8
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1170
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6f8957bd2a18a90800000000000000
+      internalID: -7313385256418478415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_9
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1170
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03fc680914ce18b30800000000000000
+      internalID: 4287968086575206192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 780
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 091e5d2642408fa00800000000000000
+      internalID: 790386288927039888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_11
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 780
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f991d60f99a25bd00800000000000000
+      internalID: 987742533929736607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_12
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 780
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc7da8c1f8370f40800000000000000
+      internalID: 5694582864938368197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_13
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 780
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d761ebc2a613710800000000000000
+      internalID: 1671233677131414808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_14
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 780
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef78e1f89aa874dd0800000000000000
+      internalID: -2501878607125772290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d445652533062e0c0800000000000000
+      internalID: -4547966900149791667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_16
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 390
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f552fe5d58161c10800000000000000
+      internalID: 2023831871853581816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_17
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 390
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3dadb85d701e4460800000000000000
+      internalID: 7227732582522006846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_18
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 390
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82311bee92dab3800800000000000000
+      internalID: 593258171539198760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_19
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 390
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3caa628756b956bd0800000000000000
+      internalID: -2637531146645755197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043e44cefc5b64cf0800000000000000
+      internalID: -268327223155170496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_21
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 533e62f02cc991e00800000000000000
+      internalID: 1016015548240552757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_22
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84ca356e3a24e7cf0800000000000000
+      internalID: -252691257374823352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_23
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 0
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4233dab2904e723b0800000000000000
+      internalID: -5537206488790125788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Skill_TripleBurst_24
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 0
+        width: 390
+        height: 390
+      alignment: 9
+      pivot: {x: 0.8769231, y: 0.2538462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5606db17ed892f0800000000000000
+      internalID: -965777539981089306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 17e93e0df93830448b1dd19ae8cd90d6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":5.0},"gridSpriteSize":{"x":390.0,"y":390.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.8769230842590332,"y":0.2538461983203888},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      rifleman_Skill_TripleBurst_0: 6940591169898663433
+      rifleman_Skill_TripleBurst_1: 2931964080007868273
+      rifleman_Skill_TripleBurst_10: 790386288927039888
+      rifleman_Skill_TripleBurst_11: 987742533929736607
+      rifleman_Skill_TripleBurst_12: 5694582864938368197
+      rifleman_Skill_TripleBurst_13: 1671233677131414808
+      rifleman_Skill_TripleBurst_14: -2501878607125772290
+      rifleman_Skill_TripleBurst_15: -4547966900149791667
+      rifleman_Skill_TripleBurst_16: 2023831871853581816
+      rifleman_Skill_TripleBurst_17: 7227732582522006846
+      rifleman_Skill_TripleBurst_18: 593258171539198760
+      rifleman_Skill_TripleBurst_19: -2637531146645755197
+      rifleman_Skill_TripleBurst_2: 3946552946534256919
+      rifleman_Skill_TripleBurst_20: -268327223155170496
+      rifleman_Skill_TripleBurst_21: 1016015548240552757
+      rifleman_Skill_TripleBurst_22: -252691257374823352
+      rifleman_Skill_TripleBurst_23: -5537206488790125788
+      rifleman_Skill_TripleBurst_24: -965777539981089306
+      rifleman_Skill_TripleBurst_3: -1020961233634407358
+      rifleman_Skill_TripleBurst_4: -1882084154002621594
+      rifleman_Skill_TripleBurst_5: 7025987141140598138
+      rifleman_Skill_TripleBurst_6: -8499648708960393232
+      rifleman_Skill_TripleBurst_7: -3040068335046216551
+      rifleman_Skill_TripleBurst_8: -7313385256418478415
+      rifleman_Skill_TripleBurst_9: 4287968086575206192
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

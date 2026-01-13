@@ -2,10 +2,14 @@ using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using DataEnum;
+using Utils;
+using TMPro.EditorUtilities;
+using System.Collections.Generic;
 
 public interface IUnitActionExecuter
 {
-    public UniTask ExecuteRequest(BaseUnit caster, IUnitAction action, ITarget<BaseUnit> target = null);
+    public UniTask ExecuteRequest(BaseUnit caster, IUnitActionInvoker invoker, IUnitActionProperty property, ITarget<BaseUnit> target);
 }
 
 [CreateAssetMenu(fileName = "UnitActionExecuter", menuName = "GameScene/UnitActionExecuter")]
@@ -13,6 +17,7 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
 {
     ICombatTextManager _textManager;
     ISoundService _soundService;
+    IEffectManager _effectManager;
     IParryingApplier _parryingApplier;
     InputHandler _inputHandler;
 
@@ -21,30 +26,56 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
         ServiceLocator.For(this)
             .Get(out _textManager)
             .Get(out _soundService)
+            .Get(out _effectManager)
             .Get(out _parryingApplier)
             .Get(out _inputHandler);
     }
 
-    public async UniTask ExecuteRequest(BaseUnit caster, IUnitAction action, ITarget<BaseUnit> target)
+    public async UniTask ExecuteRequest(BaseUnit caster, IUnitActionInvoker invoker, IUnitActionProperty property, ITarget<BaseUnit> target)
     {
-        var context = new UnitActionContext(caster, target, _textManager, _soundService, _parryingApplier, _inputHandler);
-        var cts = new CancellationTokenSource();
-        var unitActionEvent = new UnitActionEvent();
+        // Step 1 : Show Text if Attacker is Enemy
+        if (caster is EnemyUnit) await _textManager.ShowCombatText(property, caster);
 
-        try
+        // Step 2 : Create appropriate Context
+        IUnitActionContext context;
+        if (property.Target_Type != SIDE.NONE)
         {
-            if (action != null)
+            if (property.Action_Type == TARGET_TYPE.SINGLE || property.Action_Type == TARGET_TYPE.RANDOM)
             {
-                await action.Execute(context, unitActionEvent, cts);
+                if (!TryGetSingle(target, out var unit)) throw new Exception("Check Single Target, Target Must be Single!");
+
+                context = new SingleTargetActionContext(caster, unit, _soundService, _textManager, _effectManager, _parryingApplier, _inputHandler);
+            }
+            else
+            {
+                if (!TryGetMulti(target, out var units)) throw new Exception("Check Multi Target, Target Must be Multitude!");
+
+                context = new MultiTargetActionContext(caster, units, _soundService, _textManager, _effectManager, _parryingApplier, _inputHandler);
             }
         }
-        catch (OperationCanceledException)
+        else
         {
-            Debug.Log($"{caster.GetStat().CoreStat.Name} : Action was canceled.");
+            context = new SingleTargetActionContext(caster, null, _soundService, _textManager, _effectManager, _parryingApplier, _inputHandler);
         }
-        finally
+
+        // Step 3 : Execute Action
+        if (invoker != null)
         {
-            cts.Dispose();
+            await invoker.Execute(context);
         }
+    }
+
+    private bool TryGetSingle(ITarget<BaseUnit> targetBag, out BaseUnit value)
+    {
+        value = TargetExtensions.SingleOrDefaultFast(targetBag);
+
+        if (value == null)
+            return false;
+        else
+            return true;
+    }
+    private bool TryGetMulti(ITarget<BaseUnit> targetBag, out List<BaseUnit> value)
+    {
+        return TargetExtensions.TryGetMulti(targetBag, out value);
     }
 }

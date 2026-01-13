@@ -34,6 +34,7 @@ public class SceneHandler : ISceneHandler
     public async UniTask FadeScreen()
     {
         _loadingCanvas = UnityEngine.Object.Instantiate(AssetLoader.LoadPrefabAsset("LoadingCanvas")).GetComponent<LoadingCanvas>();
+        _loadingCanvas.Init();
         UnityEngine.Object.DontDestroyOnLoad(_loadingCanvas);
         if (_loadingCanvas != null)
         {

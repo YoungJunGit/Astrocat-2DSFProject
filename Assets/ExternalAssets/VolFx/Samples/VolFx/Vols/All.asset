@@ -245,6 +245,9 @@ MonoBehaviour:
   m_MotionPower:
     m_OverrideState: 0
     m_Value: 0
+  m_MotionMove:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &-1717772295300736383
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -664,7 +667,6 @@ MonoBehaviour:
   - {fileID: 3673405167329718127}
   - {fileID: 2250954961941819537}
   - {fileID: 1588512026391258712}
-  - {fileID: 8189494062718241634}
   - {fileID: 4140438517543770029}
   - {fileID: 524712644238062496}
   - {fileID: 8793074681022049191}
@@ -774,6 +776,9 @@ MonoBehaviour:
   _flickering:
     m_OverrideState: 1
     m_Value: 0
+  _lines:
+    m_OverrideState: 0
+    m_Value: 1
   _color:
     m_OverrideState: 1
     m_Value: {r: 1, g: 0, b: 0, a: 1}
@@ -802,6 +807,9 @@ MonoBehaviour:
   m_Weight:
     m_OverrideState: 1
     m_Value: 1
+  m_WeightOverride:
+    m_OverrideState: 0
+    m_Value: 0
   m_Value:
     m_OverrideState: 1
     m_Value: 0.095
@@ -1757,6 +1765,12 @@ MonoBehaviour:
       - {r: 1, g: 0, b: 0, a: 1}
       - {r: 1, g: 0, b: 0, a: 1}
   m_Offset:
+    m_OverrideState: 0
+    m_Value: 0
+  m_Motion:
+    m_OverrideState: 0
+    m_Value: 0
+  m_Stretch:
     m_OverrideState: 0
     m_Value: 0
   m_Mask:

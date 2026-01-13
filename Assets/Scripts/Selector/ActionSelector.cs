@@ -94,7 +94,7 @@ public class ActionSelector : BaseSelector
                                 skillDataList.Add(existSkill);
                         }
 
-                        selector.EnableSkillSelectionButtons(skillDataList.ToArray());
+                        selector.EnableSkillSelectionButtons(playerUnit.GetStat().SP, skillDataList.ToArray());
 
                         _selectedSkillIndex = 0;
                         await UniTask.WaitUntil(() => _selectedSkillIndex != 0 || _selectedActionType != 2);
@@ -102,7 +102,11 @@ public class ActionSelector : BaseSelector
                         if (_selectedSkillIndex != 0)
                         {
                             selector.OnSelectEnd();
-                            normalUnitAction = unitActionFactory.CreateSkillAttackAction(playerUnit, skillID[_selectedSkillIndex - 1]);
+                            normalUnitAction = (IUnitAction)unitActionFactory.CreateSkillAttackAction(
+                                playerUnit, 
+                                skillID[_selectedSkillIndex - 1], 
+                                skillDataList[_selectedSkillIndex - 1]
+                            );
                         }
 
                         selector.DisableSkillSelectionButtons();

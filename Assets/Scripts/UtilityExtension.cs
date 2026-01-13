@@ -55,6 +55,24 @@ namespace Utils
         {
             return t.TryGetSingle(out var v) ? v : default;
         }
+
+        public static bool TryGetMulti<TUnit>(this ITarget<TUnit> t, out List<TUnit> values)
+        {
+            values = null;
+
+            var col = t?.Targets;
+            if (col == null || col.Count == 0)
+                return false;
+
+            if (col is List<TUnit> list)
+            {
+                values = new List<TUnit>(list);
+                return true;
+            }
+
+            values = new List<TUnit>(col);
+            return true;
+        }
     }
 
     public static class RaycastExtensions

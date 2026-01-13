@@ -2,12 +2,12 @@ using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public interface IDamageValueDisplayInvoker
+public interface IDamageHealValueDisplayInvoker
 {
     void Invoke(IDamageValueDisplayer displayer, float value, Bounds bounds, DamageContainer container);
 }
 
-public class DamageValueDisplayInvoker : IDamageValueDisplayInvoker
+public class DamageHealValueDisplayInvoker : IDamageHealValueDisplayInvoker
 {
     public void Invoke(IDamageValueDisplayer displayer, float value, Bounds bounds, DamageContainer container)
     {

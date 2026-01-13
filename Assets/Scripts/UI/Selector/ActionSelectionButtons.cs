@@ -47,6 +47,7 @@ public class ActionSelectionButtons : MonoBehaviour
 
     public void Init()
     {
+        skillSelectPanel.SetActive(false);
         var values = (ActionSelectType[])Enum.GetValues(typeof(ActionSelectType));
         foreach (var type in values)
         {
@@ -120,17 +121,18 @@ public class ActionSelectionButtons : MonoBehaviour
         }
     }
     
-    public void EnableSkillSelectionButtons(SkillData[] skills)
+    public void EnableSkillSelectionButtons(int SP, SkillData[] skills)
     {
         skillSelectPanel.SetActive(true);
         for (int i = 1; i <= skills.Length; i++)
         {
             int index = i;
-            var go = Instantiate(skillBtnGameObj, skillSelectionBtnPanel.transform);
-            go.SetImage(i - 1);
-            go.Button.onClick.AddListener(() => OnSkillSelection?.Invoke(index));
-            go.SkillName.text = skills[i - 1].Skill_Name;
-            go.SkillCost.text = $"SP {skills[i - 1].Skill_Cost_SP}";
+            var obj = Instantiate(skillBtnGameObj, skillSelectionBtnPanel.transform);
+            obj.SetImage(i - 1);
+            obj.SetInteractable(SP >= skills[i - 1].Skill_Cost_SP);
+            obj.Button.onClick.AddListener(() => OnSkillSelection?.Invoke(index));
+            obj.SkillName.text = skills[i - 1].Skill_Name;
+            obj.SkillCost.text = $"SP {skills[i - 1].Skill_Cost_SP}";
         }
     }
     
