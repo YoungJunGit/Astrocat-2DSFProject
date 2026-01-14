@@ -3380,7 +3380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSONAssets:
-  - {fileID: 4900000, guid: edeab4e86230d9547ab7ea5830478df8, type: 3}
+  - {fileID: 0}
   resetStateOnConversationStart: 1
   actorNamesPrecedeLines: 0
   caseSensitiveActorNames: 0
@@ -4076,6 +4076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05399fb241106df4fbea2cb9b72f8a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unselectedImage: {fileID: 0}
+  selectedImage: {fileID: 0}
   button: {fileID: 7970648472650889303}
   label:
     m_uiText: {fileID: 1762980211424687158}

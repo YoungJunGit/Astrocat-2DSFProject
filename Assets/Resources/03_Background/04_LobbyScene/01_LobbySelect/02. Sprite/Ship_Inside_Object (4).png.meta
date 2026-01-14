@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: 72d7af63d69d8b44f97d1b0a72741ef0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7312806566979716231
+    second: Ship_Inside_Object (4)_0
+  - first:
+      213: 5785738310193926596
+    second: Ship_Inside_Object (4)_1
+  - first:
+      213: 7785344615800572106
+    second: Ship_Inside_Object (4)_2
+  - first:
+      213: -3654633375564776690
+    second: Ship_Inside_Object (4)_3
+  - first:
+      213: 3891247362242358421
+    second: Ship_Inside_Object (4)_4
+  - first:
+      213: 8091332934842340733
+    second: Ship_Inside_Object (4)_5
+  - first:
+      213: 7985225636732315470
+    second: Ship_Inside_Object (4)_6
+  - first:
+      213: -7149867438072395426
+    second: Ship_Inside_Object (4)_7
+  - first:
+      213: -309332630949912252
+    second: Ship_Inside_Object (4)_8
+  - first:
+      213: 1799105851187804074
+    second: Ship_Inside_Object (4)_9
+  - first:
+      213: 4716044526898381952
+    second: Ship_Inside_Object (4)_10
+  - first:
+      213: 2874179812846505975
+    second: Ship_Inside_Object (4)_11
+  - first:
+      213: -599095831012008549
+    second: Ship_Inside_Object (4)_12
+  - first:
+      213: -4528802049456283304
+    second: Ship_Inside_Object (4)_13
+  - first:
+      213: 5228966945215637510
+    second: Ship_Inside_Object (4)_14
+  - first:
+      213: 1199368638394907348
+    second: Ship_Inside_Object (4)_15
+  - first:
+      213: -1272162734092357797
+    second: Ship_Inside_Object (4)_16
+  - first:
+      213: -2124483901699930376
+    second: Ship_Inside_Object (4)_17
+  - first:
+      213: -1159767660659672912
+    second: Ship_Inside_Object (4)_18
+  - first:
+      213: 2771616912811745057
+    second: Ship_Inside_Object (4)_19
+  - first:
+      213: -3185171878248673529
+    second: Ship_Inside_Object (4)_20
+  - first:
+      213: -2644013400963865259
+    second: Ship_Inside_Object (4)_21
+  - first:
+      213: 211202684770777596
+    second: Ship_Inside_Object (4)_22
+  - first:
+      213: -3653884031830459710
+    second: Ship_Inside_Object (4)_23
+  - first:
+      213: -984813067462042529
+    second: Ship_Inside_Object (4)_24
+  - first:
+      213: -1475646523475034733
+    second: Ship_Inside_Object (4)_25
+  - first:
+      213: -8145432359483235046
+    second: Ship_Inside_Object (4)_26
+  - first:
+      213: -4571093186328447605
+    second: Ship_Inside_Object (4)_27
+  - first:
+      213: 8836925811552899212
+    second: Ship_Inside_Object (4)_28
+  - first:
+      213: 7864718552779240180
+    second: Ship_Inside_Object (4)_29
+  - first:
+      213: -1084928287598281578
+    second: Ship_Inside_Object (4)_30
+  - first:
+      213: -6975596658769366570
+    second: Ship_Inside_Object (4)_31
+  - first:
+      213: -8569710505417398720
+    second: Ship_Inside_Object (4)_32
+  - first:
+      213: -3250194903832442963
+    second: Ship_Inside_Object (4)_33
+  - first:
+      213: 2556236494165331122
+    second: Ship_Inside_Object (4)_34
+  - first:
+      213: -8863801245875414894
+    second: Ship_Inside_Object (4)_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ship_Inside_Object (4)_0
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 484
+        width: 785
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97bb7081c21b38a90800000000000000
+      internalID: -7312806566979716231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (4)_1
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 484
+        width: 785
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c15a76c6521b4050800000000000000
+      internalID: 5785738310193926596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (4)_2
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 16
+        width: 785
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac80bc6fda91b0c60800000000000000
+      internalID: 7785344615800572106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (4)_3
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 16
+        width: 785
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0bbc29de42284dc0800000000000000
+      internalID: -3654633375564776690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 47754cba21736314d84713929a53cca1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":966.0,"y":476.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Ship_Inside_Object (4)_0: -7312806566979716231
+      Ship_Inside_Object (4)_1: 5785738310193926596
+      Ship_Inside_Object (4)_2: 7785344615800572106
+      Ship_Inside_Object (4)_3: -3654633375564776690
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
