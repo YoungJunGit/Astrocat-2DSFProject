@@ -127,10 +127,10 @@ TextureImporter:
       name: rifleman-body_2_0
       rect:
         serializedVersion: 2
-        x: 15
+        x: 0
         y: 0
-        width: 202
-        height: 386
+        width: 300
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: rifleman-body_2_1
       rect:
         serializedVersion: 2
-        x: 315
+        x: 300
         y: 0
-        width: 202
-        height: 386
+        width: 300
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +171,10 @@ TextureImporter:
       name: rifleman-body_2_2
       rect:
         serializedVersion: 2
-        x: 615
+        x: 600
         y: 0
-        width: 202
-        height: 386
+        width: 300
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: rifleman-body_2_3
       rect:
         serializedVersion: 2
-        x: 915
+        x: 900
         y: 0
-        width: 202
-        height: 386
+        width: 300
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: rifleman-body_2_4
       rect:
         serializedVersion: 2
-        x: 1215
+        x: 1200
         y: 0
-        width: 202
-        height: 386
+        width: 300
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +237,10 @@ TextureImporter:
       name: rifleman-body_2_5
       rect:
         serializedVersion: 2
-        x: 1515
+        x: 1500
         y: 0
-        width: 202
-        height: 386
+        width: 300
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +259,10 @@ TextureImporter:
       name: rifleman-body_2_6
       rect:
         serializedVersion: 2
-        x: 1815
+        x: 1800
         y: 0
-        width: 202
-        height: 386
+        width: 300
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: rifleman-body_2_7
       rect:
         serializedVersion: 2
-        x: 2115
+        x: 2100
         y: 0
-        width: 202
-        height: 386
+        width: 300
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,10 +303,10 @@ TextureImporter:
       name: rifleman-body_2_8
       rect:
         serializedVersion: 2
-        x: 2415
+        x: 2400
         y: 0
-        width: 202
-        height: 386
+        width: 300
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7a062bbf83a104b42abdc58620fed326
     internalID: 0
     vertices: []
     indices: 
@@ -333,7 +333,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":300.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       rifleman-body_2_0: 7398916580185706487
       rifleman-body_2_1: 7225366397806043784

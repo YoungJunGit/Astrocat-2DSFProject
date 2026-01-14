@@ -38,7 +38,7 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: Riflemen
+      value: Rifleman
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -2269,8 +2269,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 165.3364, y: 0}
-    canvasZoom: 0.8799988
+    canvasScrollPosition: {x: 186.01254, y: 0}
+    canvasZoom: 0.7899989
   - id: 2
     fields:
     - title: Title

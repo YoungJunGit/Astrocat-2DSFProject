@@ -146,6 +146,7 @@ MonoBehaviour:
   startConversationEntryID: -1
   startConversationEntryTitle: 
   overrideDialogueUI: {fileID: 0}
+  additionalActorOverrides: []
   exclusive: 0
   replace: 0
   queue: 0
@@ -197,7 +198,7 @@ MonoBehaviour:
     customMenuPanel: {fileID: 0}
     customMenuPanelOffset: {x: 0, y: 0, z: 0}
     useMenuPanelFor: 0
-    portraitAnimatorController: {fileID: 9100000, guid: 28e2c1ed4fc78fc4ba1249a10a52992b, type: 2}
+    portraitAnimatorController: {fileID: 22100000, guid: 4cb8416363637a64eaa28158c3116a57, type: 2}
     setSubtitleColor: 0
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '

@@ -131,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 4605834967882861955}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.46588, y: 0, z: -0.91728}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -424,18 +424,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Focus Template Standard Dialogue UI
       objectReference: {fileID: 0}
-    - target: {fileID: 626954223300231700, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 626954223300231700, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 626954223300231700, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1833041838148576667, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -652,18 +640,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6928885476354657221, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 161
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928885476354657221, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6928885476354657221, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 8196257669493068165, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -684,18 +660,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9011811699956197196, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9087295252050034203, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
       propertyPath: m_Text
       value: Input Field
       objectReference: {fileID: 0}
-    - target: {fileID: 9185420184854435371, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 0c2ef1c033ece2f4191a4cb7bc680b0f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
