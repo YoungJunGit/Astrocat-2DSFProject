@@ -138,7 +138,8 @@ namespace DataEnum
         HIT,
         DEATH,
         MOVE,
-        RETREAT
+        RETREAT,
+        SKILL
     }
 
     public enum ANIMATION_EVENT
@@ -146,6 +147,7 @@ namespace DataEnum
         NONE = 0,
         ATTACK,
         MOVE,
+        SKILL,
         PARRY
     }
 

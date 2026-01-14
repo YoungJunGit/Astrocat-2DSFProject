@@ -1,14 +1,39 @@
 using DataEnum;
+using Sirenix.OdinInspector;
+using UnityEditor.Animations;
 using UnityEngine;
+using System.Linq;
 
 public class AnimationEventStateBehaviour : StateMachineBehaviour
 {
+    public enum TriggerType
+    {
+        Time,
+        Frame
+    }
+
+    private ISoundService _soundService;
+
     public ANIMATION_EVENT eventType;
 
-    [Range(0f, 1f)]
+    [EnumToggleButtons]
+    public TriggerType triggerType;
+
+    [ShowIf("triggerType", TriggerType.Time), DisableInEditorMode, Range(0.0f, 1.0f)]
     public float triggerTime;
 
+    [ShowIf("triggerType", TriggerType.Frame), DisableInEditorMode, Range(0.0f, 1.0f)]
+    public float triggerTimeResolved = 0f;
+
+    [HideInInspector]
+    public int triggerFrame = 0;
+
     bool hasTriggered;
+
+    private void OnEnable()
+    {
+        ServiceLocator.For(this).Get(out _soundService);
+    }
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -18,7 +43,9 @@ public class AnimationEventStateBehaviour : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         float currentTime = stateInfo.normalizedTime % 1f;
-        if (!hasTriggered && currentTime >= triggerTime)
+        float targetTriggerTime = triggerType == TriggerType.Time ? triggerTime : triggerTimeResolved;
+
+        if (!hasTriggered && currentTime >= targetTriggerTime)
         {
             NotifyReceiver(animator);
             hasTriggered = true;
@@ -27,7 +54,7 @@ public class AnimationEventStateBehaviour : StateMachineBehaviour
 
     private void NotifyReceiver(Animator animator)
     {
-        var handler = animator.GetComponent<AnimationHandler>();
+        var handler = animator.GetComponent<AnimationEventHandler>();
         if (handler != null)
         {
             handler.OnAnimationEventTriggered(eventType);

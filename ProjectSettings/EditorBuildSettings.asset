@@ -20,6 +20,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DebugingUI.unity
     guid: 4fd6a2410c669b54fa3c60eb4675f75f
+  - enabled: 1
+    path: Assets/ExternalAssets/VolFx/Samples/VolFx Transitions/Scene A.unity
+    guid: 07a238c9793de6b4f905e6538aad6120
+  - enabled: 1
+    path: Assets/ExternalAssets/VolFx/Samples/VolFx Transitions/Scene B.unity
+    guid: dbb0931807bec9c4883286d681443fd3
+  - enabled: 1
+    path: Assets/ExternalAssets/VolFx/Samples/VolFx Transitions/Scene C.unity
+    guid: 48c8fa4f83027064f84517dbfce1fc3d
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 8b8b0ebb89545bb41be272c35afa0cd8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}

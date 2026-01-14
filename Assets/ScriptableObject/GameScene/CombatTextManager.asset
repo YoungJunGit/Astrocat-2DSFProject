@@ -12,6 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95057d71c1acf345ad95156f9da6046, type: 3}
   m_Name: CombatTextManager
   m_EditorClassIdentifier: 
-  textCanvasPref: {fileID: 2897497443284133330, guid: 51d998b76e25c334f97ea2947e58fb00, type: 3}
+  textCanvasPref: {fileID: 7857725111260342913, guid: 51d998b76e25c334f97ea2947e58fb00, type: 3}
   normalDamageContainer: {fileID: 11400000, guid: fc847c4fb02d51046973c61d29de6dfe, type: 2}
   criticalDamageContainer: {fileID: 11400000, guid: bbef6033f5280824da21d5f840fa8469, type: 2}
+  nextRoundTextSetting: {fileID: 11400000, guid: 4ab32b9334c4b8d48ab5ac5eba88bddb, type: 2}
+  attackWarningTextSetting: {fileID: 11400000, guid: 0fa67fbddccef2746bc0c3108903cef0, type: 2}
+  selfAttackTextSetting: {fileID: 11400000, guid: a59a3b23de75e8342b00fc4d562cc77e, type: 2}
+  skillWarningTextSetting: {fileID: 11400000, guid: 1ce8174272c4fc24c842555f7d827efe, type: 2}
+  tauntTextSetting: {fileID: 11400000, guid: 56a5c1d26a3c938419335954ea9b4b3b, type: 2}
+  nextRoundText: "{Count}\uBC88\uC9F8 \uB77C\uC6B4\uB4DC"
+  attackWarningText: "{Name}(\uC774)\uAC00 \uACF5\uACA9\uC744 \uC2DC\uB3C4\uD569\uB2C8\uB2E4"
+  selfAttackText: "\uACF5\uD5C8 \uC0C1\uD0DC\uC774\uC0C1 \uBC1C\uD604!\n{Name}(\uC774)\uAC00
+    \uC790\uAE30 \uC790\uC2E0\uC744 \uACF5\uACA9\uD569\uB2C8\uB2E4."
+  skillWarningText: "{Name}(\uC774)\uAC00 {SkillName}\uC744 \uC2DC\uC804\uD569\uB2C8\uB2E4."
+  tauntText: "{Name}(\uC774)\uAC00 \uB3C4\uBC1C\uC5D0 \uAC78\uB838\uC2B5\uB2C8\uB2E4!"

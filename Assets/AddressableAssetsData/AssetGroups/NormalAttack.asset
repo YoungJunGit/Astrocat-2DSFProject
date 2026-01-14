@@ -20,8 +20,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 251b82a49f9c04152996791700a571eb
+    m_Address: player_Rifleman_Skill_TripleBurst
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4b3558415dddc4a1196164e15b6e4d3e
     m_Address: player_Sniper_NormalAttack
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65e083abbd31a48888034db62fc213cc
+    m_Address: player_Rifleman_Skill_AreaBurst
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 829a8a9474ea042e893508bc510f55dc
+    m_Address: player_Rifleman_Skill_RecoveryProtocol
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -14,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Character
-  - 
+  - WarningUI
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Bullet
     uniqueID: 1398011895
+    locked: 0
+  - name: Effect
+    uniqueID: 2842535355
     locked: 0
   - name: UI
     uniqueID: 1226203051

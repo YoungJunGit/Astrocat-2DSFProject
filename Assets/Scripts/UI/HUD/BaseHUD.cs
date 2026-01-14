@@ -116,10 +116,10 @@ public abstract class BaseHUD : MonoBehaviour
                 OnEGFullCharge(elementType);
             });
         }
-
+        
         seq.Append(eg_Content_Image.DOFillAmount(value, value * timePerUnit).SetEase(Ease.Linear));
 
-        seq.SetEase(Ease.OutQuad);
+        seq.SetEase(Ease.OutQuad).SetLink(gameObject);
 
         seq.Play();
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CombatTextCanvas : TextCanvas
+public class CombatTextCanvas : BaseCanvas
 {
-    
+
 }

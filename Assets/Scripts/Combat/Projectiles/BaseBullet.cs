@@ -29,7 +29,7 @@ public class BaseBullet : MonoBehaviour, IDisposable
     {
         if (targetCollider == collision && collision.tag == setting.TargetTag)
         {
-            damage();
+            damage.Invoke();
             Destroy(gameObject);
         }
     }
