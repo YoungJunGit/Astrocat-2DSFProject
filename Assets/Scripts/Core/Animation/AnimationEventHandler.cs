@@ -65,7 +65,7 @@ public class AnimationEventHandler : MonoBehaviour, IAnimationEventHandler
     /// </summary>
     private void EndMovePosition() { }
 
-    private void PlaySound(string str)
+    public void PlaySound(string str)
     {
         soundService.PlayEffectSound(str);
     }

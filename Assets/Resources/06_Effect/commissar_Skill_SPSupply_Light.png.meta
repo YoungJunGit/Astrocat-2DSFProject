@@ -1,0 +1,379 @@
+fileFormatVersion: 2
+guid: 8e2921fe9a09e414cbe8256591e038b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5900997759941063243
+    second: commissar_Skill_SPSupply_Light_0
+  - first:
+      213: -1850512557173837966
+    second: commissar_Skill_SPSupply_Light_1
+  - first:
+      213: 5423225055981549462
+    second: commissar_Skill_SPSupply_Light_2
+  - first:
+      213: 4672926501186465307
+    second: commissar_Skill_SPSupply_Light_3
+  - first:
+      213: 2693443970406480082
+    second: commissar_Skill_SPSupply_Light_4
+  - first:
+      213: -3631439555285846067
+    second: commissar_Skill_SPSupply_Light_5
+  - first:
+      213: 6533562791028980009
+    second: commissar_Skill_SPSupply_Light_6
+  - first:
+      213: 2512495397951109979
+    second: commissar_Skill_SPSupply_Light_7
+  - first:
+      213: -3537697113954458528
+    second: commissar_Skill_SPSupply_Light_8
+  - first:
+      213: 7520112576520725565
+    second: commissar_Skill_SPSupply_Light_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_0
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 2013
+        width: 42
+        height: 846
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0070921984}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b42b9a5a23e84e150800000000000000
+      internalID: 5900997759941063243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_1
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 2007
+        width: 78
+        height: 852
+      alignment: 9
+      pivot: {x: 0.5, y: 0.014084507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27fe04932a8a156e0800000000000000
+      internalID: -1850512557173837966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_2
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 1998
+        width: 90
+        height: 861
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0232288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69737c6747a234b40800000000000000
+      internalID: 5423225055981549462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_3
+      rect:
+        serializedVersion: 2
+        x: 3375
+        y: 1998
+        width: 90
+        height: 861
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0232288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e6ab405e199d040800000000000000
+      internalID: 4672926501186465307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_4
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1008
+        width: 90
+        height: 861
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0232288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d8fe764509016520800000000000000
+      internalID: 2693443970406480082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_5
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 1008
+        width: 90
+        height: 861
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0232288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc772e3f6f88a9dc0800000000000000
+      internalID: -3631439555285846067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_6
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 1008
+        width: 90
+        height: 861
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0232288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 929fdfcfdb0ebaa50800000000000000
+      internalID: 6533562791028980009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_7
+      rect:
+        serializedVersion: 2
+        x: 3375
+        y: 1008
+        width: 90
+        height: 861
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0232288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5bfdaea04d2ed220800000000000000
+      internalID: 2512495397951109979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_8
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 27
+        width: 78
+        height: 852
+      alignment: 9
+      pivot: {x: 0.5, y: 0.014084507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064e1d7e73397eec0800000000000000
+      internalID: -3537697113954458528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_SPSupply_Light_9
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 33
+        width: 42
+        height: 846
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0070921984}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34277a8b8ecc5860800000000000000
+      internalID: 7520112576520725565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: edfada70502a34241a3939180db0eb4d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.023228799924254419},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      commissar_Skill_SPSupply_Light_0: 5900997759941063243
+      commissar_Skill_SPSupply_Light_1: -1850512557173837966
+      commissar_Skill_SPSupply_Light_2: 5423225055981549462
+      commissar_Skill_SPSupply_Light_3: 4672926501186465307
+      commissar_Skill_SPSupply_Light_4: 2693443970406480082
+      commissar_Skill_SPSupply_Light_5: -3631439555285846067
+      commissar_Skill_SPSupply_Light_6: 6533562791028980009
+      commissar_Skill_SPSupply_Light_7: 2512495397951109979
+      commissar_Skill_SPSupply_Light_8: -3537697113954458528
+      commissar_Skill_SPSupply_Light_9: 7520112576520725565
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -30,11 +30,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 67580fec17862a94495e727756630c58
-    m_Address: Die
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 706fe564125064b47a381f5452699e1e
     m_Address: Enemy_Shoot
     m_ReadOnly: 0
@@ -52,21 +47,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a7c1be5dde6b127459ea56630ba00b7a
     m_Address: Scene_Change
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b5039e18ee0d6a64197cb27abf873620
-    m_Address: Target_Position
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bfc5803fa8fa8924bbeaa34f4f689bb1
-    m_Address: Click
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d2116408d42d23246862451183dc30f0
-    m_Address: Start_Menu
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

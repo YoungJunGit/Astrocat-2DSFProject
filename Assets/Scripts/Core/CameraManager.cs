@@ -2,20 +2,13 @@ using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public interface ICameraManager
-{
-    public bool TryGetCamera(string name, out Camera camera);
-}
-
-public class CameraManager : MonoBehaviour, ICameraManager
+public class CameraManager : MonoBehaviour
 {
     [SerializedDictionary("Name", "Camera")]
     public SerializedDictionary<string, Camera> CameraList;
 
     private void Awake()
     {
-        ServiceLocator.Global.Register(this as ICameraManager);
-
         foreach(var camera in CameraList)
         {
             AddOverlayCamera(camera.Value);

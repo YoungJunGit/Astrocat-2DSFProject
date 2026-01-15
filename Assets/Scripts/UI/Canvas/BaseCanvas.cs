@@ -1,3 +1,4 @@
+using FunkyCode.Rendering.Day;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -20,10 +21,9 @@ public abstract class BaseCanvas : MonoBehaviour
 
     public void SetCanvasToCamera(string cameraName, string sortingLayerName)
     {
-        ICameraManager cameraManager;
-        ServiceLocator.For(this).Get(out cameraManager);
+        var cameraManager = Camera.main.GetComponent<CameraManager>();
 
-        if(cameraManager.TryGetCamera(cameraName, out var camera))
+        if (cameraManager.TryGetCamera(cameraName, out var camera))
         {
             var canvas = GetComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceCamera;

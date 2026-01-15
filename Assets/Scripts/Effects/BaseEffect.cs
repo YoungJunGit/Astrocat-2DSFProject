@@ -4,5 +4,5 @@ using Cysharp.Threading.Tasks;
 
 public abstract class BaseEffect : MonoBehaviour
 {
-    public abstract UniTask PlayEffect();
+    public abstract UniTask<BaseEffect> PlayEffect();
 }

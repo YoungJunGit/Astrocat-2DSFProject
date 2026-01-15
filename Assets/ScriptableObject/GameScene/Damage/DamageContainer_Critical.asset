@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbefc4d67eabfe24bae10b5c5d429a0d, type: 3}
   m_Name: DamageContainer_Critical
   m_EditorClassIdentifier: 
-  value_Prefab: {fileID: 6109333512648936273, guid: 68bdf608969ac214f829b5543ccea676, type: 3}
+  value_Prefab: {fileID: 1198526595782950163, guid: 68bdf608969ac214f829b5543ccea676, type: 3}
   digit_Prefab: {fileID: 2846424109453363813, guid: a4c654259040d4e43a7e3f9871aef589, type: 3}
   damage_Sprites:
   - {fileID: -3268234779732683574, guid: 1748901508ac41344bbcf416351b34f3, type: 3}
@@ -91,4 +91,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  scaleValue: {x: 0.01, y: 0.01, z: 0.01}
   jumpValue: 100

@@ -40,6 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 2
+  soundName: 
   triggerType: 1
   triggerTime: 0
   triggerTimeResolved: 0.07142857
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 1
+  soundName: penguin_Berserker_NormalAttack
   triggerType: 1
   triggerTime: 0
   triggerTimeResolved: 0.5555555
@@ -236,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 2
+  soundName: 
   triggerType: 1
   triggerTime: 0.149
   triggerTimeResolved: 0.10000001

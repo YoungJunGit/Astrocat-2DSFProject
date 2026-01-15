@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: 16a02550fc4c4814bbc892350cb31aa7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2498586158542686202
+    second: commissar_Skill_ContaminationShot_0
+  - first:
+      213: -557835977149710267
+    second: commissar_Skill_ContaminationShot_1
+  - first:
+      213: 8030592915107123196
+    second: commissar_Skill_ContaminationShot_2
+  - first:
+      213: -5978448639213598984
+    second: commissar_Skill_ContaminationShot_3
+  - first:
+      213: 3625399729778405251
+    second: commissar_Skill_ContaminationShot_4
+  - first:
+      213: -6582792504382560327
+    second: commissar_Skill_ContaminationShot_5
+  - first:
+      213: 7359424172103659645
+    second: commissar_Skill_ContaminationShot_6
+  - first:
+      213: -2011883058403324868
+    second: commissar_Skill_ContaminationShot_7
+  - first:
+      213: 5089112780296869243
+    second: commissar_Skill_ContaminationShot_8
+  - first:
+      213: -334314037421310941
+    second: commissar_Skill_ContaminationShot_9
+  - first:
+      213: -8839789347341598112
+    second: commissar_Skill_ContaminationShot_10
+  - first:
+      213: 3961760399987098525
+    second: commissar_Skill_ContaminationShot_11
+  - first:
+      213: -3208096908201034427
+    second: commissar_Skill_ContaminationShot_12
+  - first:
+      213: -183015560157203331
+    second: commissar_Skill_ContaminationShot_13
+  - first:
+      213: -8780185331839379126
+    second: commissar_Skill_ContaminationShot_14
+  - first:
+      213: -7935090434496460104
+    second: commissar_Skill_ContaminationShot_15
+  - first:
+      213: -3779985919689995355
+    second: commissar_Skill_ContaminationShot_16
+  - first:
+      213: 7911152647304007243
+    second: commissar_Skill_ContaminationShot_17
+  - first:
+      213: -946132774606809884
+    second: commissar_Skill_ContaminationShot_18
+  - first:
+      213: 6839612346622249514
+    second: commissar_Skill_ContaminationShot_19
+  - first:
+      213: 4811161511682958580
+    second: commissar_Skill_ContaminationShot_20
+  - first:
+      213: -5723476969591525206
+    second: commissar_Skill_ContaminationShot_21
+  - first:
+      213: 1870006099306461909
+    second: commissar_Skill_ContaminationShot_22
+  - first:
+      213: 680704675014127646
+    second: commissar_Skill_ContaminationShot_23
+  - first:
+      213: -5376433153241713307
+    second: commissar_Skill_ContaminationShot_24
+  - first:
+      213: -6414294958434864460
+    second: commissar_Skill_ContaminationShot_25
+  - first:
+      213: 4096486986751112992
+    second: commissar_Skill_ContaminationShot_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 608fa5b702d335dd0800000000000000
+      internalID: -2498586158542686202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5400f03622b2248f0800000000000000
+      internalID: -557835977149710267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff8ab855b5627f60800000000000000
+      internalID: 8030592915107123196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_3
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f681c743a8480da0800000000000000
+      internalID: -5978448639213598984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38f2d3698d1005230800000000000000
+      internalID: 3625399729778405251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_5
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b76c2a281935a4a0800000000000000
+      internalID: -6582792504382560327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_6
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7079a9ea4de12660800000000000000
+      internalID: 7359424172103659645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_7
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c4e3e840b5414e0800000000000000
+      internalID: -2011883058403324868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b75de734c1920a640800000000000000
+      internalID: 5089112780296869243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c731c77274c5bf0800000000000000
+      internalID: -334314037421310941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_10
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0620c6e7c62c25580800000000000000
+      internalID: -8839789347341598112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_11
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d93c07ee7100bf630800000000000000
+      internalID: 3961760399987098525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54df5a5fbdc8a73d0800000000000000
+      internalID: -3208096908201034427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_13
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74f574515cc57df0800000000000000
+      internalID: -183015560157203331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ContaminationShot_14
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.7083334, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a495e99c5f3862680800000000000000
+      internalID: -8780185331839379126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 42d198ed8260bfc408e72ceced55b8cb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":360.0,"y":360.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.7083333730697632,"y":0.19166670739650727},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      commissar_Skill_ContaminationShot_0: -2498586158542686202
+      commissar_Skill_ContaminationShot_1: -557835977149710267
+      commissar_Skill_ContaminationShot_10: -8839789347341598112
+      commissar_Skill_ContaminationShot_11: 3961760399987098525
+      commissar_Skill_ContaminationShot_12: -3208096908201034427
+      commissar_Skill_ContaminationShot_13: -183015560157203331
+      commissar_Skill_ContaminationShot_14: -8780185331839379126
+      commissar_Skill_ContaminationShot_2: 8030592915107123196
+      commissar_Skill_ContaminationShot_3: -5978448639213598984
+      commissar_Skill_ContaminationShot_4: 3625399729778405251
+      commissar_Skill_ContaminationShot_5: -6582792504382560327
+      commissar_Skill_ContaminationShot_6: 7359424172103659645
+      commissar_Skill_ContaminationShot_7: -2011883058403324868
+      commissar_Skill_ContaminationShot_8: 5089112780296869243
+      commissar_Skill_ContaminationShot_9: -334314037421310941
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

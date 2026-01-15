@@ -71,12 +71,11 @@ public class GameScene : AbstractScene
         qteManager.Init();
         selectorManager.Init();
         crowdControlManager.Init();
+        combatEffectManager.Init();
 
         inputHandler.Init();
 
         unitActionExecuter.Init();
-
-        soundService.PlayBackGround("Title_Background", true);
 
         parryingApplier.Init();
 
@@ -137,6 +136,7 @@ public class GameScene : AbstractScene
 
     protected override async UniTask BeginGame()
     {
+        _soundService.PlayBackGround("Title_Background", true);
         await combatManager.StartCombat();
         mapDataFactory.SaveCompletedMapData();
     }

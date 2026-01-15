@@ -39,19 +39,23 @@ public class UnitStat
         OnSPChanged?.Invoke(SP, ModifierStat.MaxSP);
     }
 
-    public void GetDamaged(float value) 
+    public float GetDamaged(float value) 
     {
+        float previous = _curHp;
         _curHp = Mathf.Clamp(_curHp - value, 0f, ModifierStat.MaxHP);
         OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
+        return previous - _curHp;
     }
 
-    public void GetHealed(float value) 
+    public float GetHealed(float value) 
     { 
+        float previous = _curHp;
         _curHp = Mathf.Clamp(_curHp + value, 0f, ModifierStat.MaxHP);
         OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
+        return _curHp - previous;
     }
 
-    public void OnAction(int value) 
+    public void AddSP(int value) 
     { 
         _curSP = Mathf.Clamp(_curSP + value, 0, ModifierStat.MaxSP);
         OnSPChanged.Invoke(_curSP, ModifierStat.MaxSP);

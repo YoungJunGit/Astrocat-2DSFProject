@@ -29,7 +29,7 @@ public abstract class BaseUnitAction<TContext> : IUnitAction where TContext : IU
 
     public async UniTask ExecuteWith(TContext context)
     {
-        context.Caster.OnAction(SPCost);
+        context.Caster.AddSP(SPCost);
         context.Caster.Attachments.GetSpriteRenderer().sortingLayerName = "Actor";
 
         await AsyncOperateAction(context);

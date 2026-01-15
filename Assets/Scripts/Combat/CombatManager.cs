@@ -66,7 +66,7 @@ public class CombatManager : ScriptableObject
             Debug.Log($"{currentTurnUnit.GetStat().CoreStat.Name}'s turn");
             await UniTask.WaitUntil(() => !_textManager.IsTextOn);
 
-            ForDebugControlEffect(currentTurnUnit, ELEMENT_TYPE.PHYSICAL);
+            // ForDebugControlEffect(currentTurnUnit, ELEMENT_TYPE.PHYSICAL);
             _selectorManager.UpdateActionSelector(currentTurnUnit);
 
             if (currentTurnUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.PHYSICAL].CurrentValue <= 0)

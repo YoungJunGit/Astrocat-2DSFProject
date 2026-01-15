@@ -216,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background_type: 2
   background_index: -1
+  PreloadAudioLabelName: Audio_Combat
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
   changeSceneOnEndGame: 1
   changeScene:

@@ -11,8 +11,17 @@ class UnitActionFactory : ScriptableObject
     {
         {"20011001", new Skill_TripleBurst()},
         {"20011002", new Skill_AreaBurst()},
-        {"20011003", new Skill_RecoveryProtocol()},
-        {"20011004", new Skill_Taunt()}, // TODO : ADD Skill here
+        {"20011003", new Skill_FirstAid()},
+        {"20011004", new Skill_Taunt()},
+        {"20011005", new Skill_PrecisionShot()},
+        {"20011006", new Skill_NanoRestore()},
+        {"20011007", new Skill_PowerBooster()},
+        {"20011008", null},
+        {"20011009", new Skill_ContaminationShot()},
+        {"20011010", new Skill_ForceSuppression()},
+        {"20011011", new Skill_SPSupply()},
+        {"20011012", new Skill_RecoveryProtocol()},
+        // TODO : ADD Skill here
     };
 
     public BaseAttackAction CreatePlayerBaseAttackAction(BaseUnit unit)
@@ -30,7 +39,7 @@ class UnitActionFactory : ScriptableObject
     public ISkillAction CreateSkillAttackAction(BaseUnit unit, string skillID, SkillData data)
     {
         ISkillAction skillAction = null;
-        Debug.Log($"Find SkillID : {skillID}" );
+        Debug.Log($"Find SkillID : {skillID}");
         _skillDictionary.TryGetValue(skillID, out skillAction);
 
         if (skillAction == null)
@@ -39,7 +48,7 @@ class UnitActionFactory : ScriptableObject
             return null;
         }
         skillAction.SetData(data);
-        
+
         return skillAction;
     }
 

@@ -39,13 +39,13 @@ public class EGTester : MonoBehaviour
 
         if(targetSide == EGSide.PLAYER_TO_ENEMY)
         {
-            IDamageInfo damageInfo = DamageFactory.CreateDamage<TestDamageCalculator, NormalElementGaugeCalculator>(caster, target, elementType, elementRate, 1.0f);
-            target.GetDamage(damageInfo);
+            // DamageResult damageInfo = DamageFactory.CreateDamage<DamageCalculatorTest, ElementGaugeCalculator>(caster, target, elementType, elementRate, 1.0f);
+            // target.GetDamage(damageInfo);
         }
         else
         {
-            IDamageInfo damageInfo = DamageFactory.CreateDamage<TestDamageCalculator, NormalElementGaugeCalculator>(target, caster, elementType, elementRate, 1.0f);
-            caster.GetDamage(damageInfo);
+            // DamageResult damageInfo = DamageFactory.CreateDamage<DamageCalculatorTest, ElementGaugeCalculator>(target, caster, elementType, elementRate, 1.0f);
+            // caster.GetDamage(damageInfo);
         }
     } 
 }

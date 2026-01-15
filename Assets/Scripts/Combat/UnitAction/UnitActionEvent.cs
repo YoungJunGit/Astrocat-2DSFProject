@@ -4,14 +4,22 @@ using UnityEngine;
 using DG.Tweening;
 using Object = UnityEngine.Object;
 using DataEntity;
+using Sirenix.OdinInspector.Modules.UnityMathematics.Editor;
 
-public abstract class UnitActionEvent
+public class CommonActionEvent
 {
-    public void DamageEvent<TCalculator>(BaseUnit caster, BaseUnit target, float skillRate = 1.0f)
+    public float DamageEvent<TCalculator>(BaseUnit caster, BaseUnit target, float skillRate = 1.0f)
         where TCalculator : IDamageCalculator, new()
     {
-        IDamageInfo damage = DamageFactory.CreateDamage<TCalculator>(caster, target, skillRate);
+        DamageResult damage = DamageFactory.CreateDamage<DamageCalculatorNormal>(
+            new DamageContext(
+                caster, 
+                target, 
+                skillRate
+            )
+        );
         target.GetDamage(damage);
+        return damage.DamageValue;
     }
 
     // Temp
@@ -19,20 +27,62 @@ public abstract class UnitActionEvent
         where TDamageCalculator : IDamageCalculator, new()
         where TElementCalculator : IElementGaugeCalculator, new()
     {
-        IDamageInfo damage = DamageFactory.CreateDamage<TDamageCalculator, TElementCalculator>(caster, target, caster.My_Temp_Type, SKILL_ELEMENT_RATE.STANDARD, 1.0f);
-        target.GetDamage(damage);
+        DamageResult damage = DamageFactory.CreateDamage<TDamageCalculator>(
+            new DamageContext(
+                caster, 
+                target
+            )
+        );
+        ElementGaugeResult elementGauge = ElementGaugeFactory.CreateElementGauge<ElementGaugeCalculator>(
+            new ElementGaugeContext(
+                caster, 
+                target, 
+                caster.My_Temp_Type, 
+                SKILL_ELEMENT_RATE.STANDARD
+            )
+        );
+        target.GetDamage(damage, elementGauge);
     }
 
-    public void SkillDamageEvent<TDamageCalculator, TElementCalculator>(BaseUnit caster, BaseUnit target, ELEMENT_TYPE skillType, SKILL_ELEMENT_RATE rateType, float skillRate)
+    public float SkillDamageEvent<TDamageCalculator, TElementCalculator>(BaseUnit caster, BaseUnit target, ELEMENT_TYPE skillType, SKILL_ELEMENT_RATE rateType, float skillRate)
         where TDamageCalculator : IDamageCalculator, new()
         where TElementCalculator : IElementGaugeCalculator, new()
     {
-        IDamageInfo damage = DamageFactory.CreateDamage<TDamageCalculator, TElementCalculator>(caster, target, skillType, rateType, skillRate);
-        target.GetDamage(damage);
+        DamageResult damage = DamageFactory.CreateDamage<TDamageCalculator>(
+            new DamageContext(
+                caster,
+                target,
+                skillRate
+            )
+        );
+        ElementGaugeResult elementGauge = ElementGaugeFactory.CreateElementGauge<ElementGaugeCalculator>(
+            new ElementGaugeContext(
+                caster,
+                target,
+                skillType,
+                rateType
+            )
+        );
+        target.GetDamage(damage, elementGauge);
+        return damage.DamageValue;
+    }
+
+    public void SkillHealEvent<THealCalculator>(BaseUnit caster, BaseUnit target, float skillRate, float subValue = 0.0f) 
+        where THealCalculator : IHealCalulator, new()
+    {
+        float heal = HealFactory.CreateHeal<THealCalculator>(
+            new HealContext(
+                caster,
+                target,
+                skillRate,
+                subValue
+            )
+        );
+        target.GetHeal(heal);
     }
 }
 
-public sealed class SelfAttackEvent : UnitActionEvent
+public sealed class SelfAttackEvent : CommonActionEvent
 {
     public float CalculateAttackIncreaseRate(ICrowdControl cc)
     {
@@ -50,7 +100,7 @@ public sealed class SelfAttackEvent : UnitActionEvent
 }
 
 
-public sealed class MeleeAttackEvent : UnitActionEvent
+public sealed class MeleeAttackEvent : CommonActionEvent
 {
     private Vector2 startPosition;
     private Vector2 endPosition;
@@ -83,56 +133,128 @@ public sealed class MeleeAttackEvent : UnitActionEvent
     }
 }
 
-public sealed class RangeAttackEvent : UnitActionEvent
+public class RangeAttackEvent : CommonActionEvent
 {
-    public void ShootBullet(ISingleTargetContext context, Action onDamaged)
+    public void ShootBullet(string assetName, BaseUnit Caster, BaseUnit Target, Action onDamaged)
     {
-        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().CoreStat.AssetFileName);
-        BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(assetName);
+        BaseBullet bullet = Object.Instantiate(bulletPrefab, Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+
         if (bullet != null)
         {
-            bullet.Initialize(context.Target.Attachments.GetHitBox(), () =>
+            bullet.Initialize(Target.Attachments.GetHitBox(), () =>
             {
-                DamageEvent_Element<NormalDamageCalculator, NormalElementGaugeCalculator>(context.Caster, context.Target);
-                onDamaged();
-            });
-        }
-    }
-}
-
-public sealed class AreaBurstEvent : UnitActionEvent
-{
-    public void ShootBullets(float skillRate, IMultiTargetContext context, Action onDamaged)
-    {
-        foreach (var target in context.Targets)
-        {
-            GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().CoreStat.AssetFileName);
-            BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
-            if (bullet != null)
-            {
-                bullet.Initialize(target.Attachments.GetHitBox(), () =>
-                {
-                    DamageEvent<NormalDamageCalculator>(context.Caster, target, skillRate);
-                    onDamaged();
-                });
-            }
-        }
-    }
-}
-
-public sealed class TripleBurstEvent : UnitActionEvent
-{
-    public void ShootBullet(SkillData data, ISingleTargetContext context, Action onDamaged)
-    {
-        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(context.Caster.GetStat().CoreStat.AssetFileName);
-        BaseBullet bullet = Object.Instantiate(bulletPrefab, context.Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
-        if (bullet != null)
-        {
-            bullet.Initialize(context.Target.Attachments.GetHitBox(), () =>
-            {
-                SkillDamageEvent<NormalDamageCalculator, NormalElementGaugeCalculator>(context.Caster, context.Target, data.Element_Type, data.Skill_Element_Rate, (float)data.Skill_ATK_Rate);
+                DamageEvent_Element<DamageCalculatorNormal, ElementGaugeCalculator>(Caster, Target);
                 onDamaged?.Invoke();
             });
         }
+    }
+
+    public void ShootBullet(string assetName, BaseUnit Caster, BaseUnit Target, Action onDamaged, SkillData data = null)
+    {
+        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(assetName);
+        BaseBullet bullet = Object.Instantiate(bulletPrefab, Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+
+        Action damageAction;
+        if(data.Element_Type == ELEMENT_TYPE.NONE)
+        {
+            damageAction = () => DamageEvent<DamageCalculatorNormal>(Caster, Target, (float)data.Skill_ATK_Rate);
+        }
+        else
+        {
+            damageAction = () => SkillDamageEvent<DamageCalculatorNormal, ElementGaugeCalculator>(Caster, Target, data.Element_Type, data.Skill_Element_Rate, (float)data.Skill_ATK_Rate);
+        }
+
+        if (bullet != null)
+        {
+            bullet.Initialize(Target.Attachments.GetHitBox(), () =>
+            {
+                damageAction();
+                onDamaged?.Invoke();
+            });
+        }
+    }
+
+    public void ShootBulletReturnDamage(string assetName, BaseUnit Caster, BaseUnit Target, Action<float> onDamaged, SkillData data = null, float overrideSkillRate = -1f)
+    {
+        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(assetName);
+        BaseBullet bullet = Object.Instantiate(bulletPrefab, Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+
+        Func<float> damageAction;
+        if (data.Element_Type == ELEMENT_TYPE.NONE)
+        {
+            damageAction = () => 
+            {
+                float skillRate = overrideSkillRate <= 0f ? (float)data.Skill_ATK_Rate : overrideSkillRate;
+                return DamageEvent<DamageCalculatorNormal>(Caster, Target, skillRate);
+            };
+        }
+        else
+        {
+            damageAction = () => 
+            {
+                float skillRate = overrideSkillRate <= 0f ? (float)data.Skill_ATK_Rate : overrideSkillRate;
+                return SkillDamageEvent<DamageCalculatorNormal, ElementGaugeCalculator>(Caster, Target, data.Element_Type, data.Skill_Element_Rate, skillRate);
+            };
+        }
+
+        if (bullet != null)
+        {
+            bullet.Initialize(Target.Attachments.GetHitBox(), () =>
+            {
+                onDamaged?.Invoke(damageAction());
+            });
+        }
+    }
+}
+
+public sealed class AreaBurstEvent : RangeAttackEvent
+{
+    public void ExecuteShootBullet(SkillData data, IMultiTargetContext context, Action onDamaged)
+    {
+        foreach (var target in context.Targets)
+        {
+            ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, target, onDamaged, data);
+        }
+    }
+}
+
+public sealed class TripleBurstEvent : RangeAttackEvent
+{
+    public void ExecuteShootBullet(SkillData data, ISingleTargetContext context, Action onDamaged)
+    {
+        ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, onDamaged, data);
+    }
+}
+
+public sealed class ForceSuppressionEvent : RangeAttackEvent
+{
+    public void ExecuteShootBullet(SkillData data, ISingleTargetContext context, Action onDamaged)
+    {
+        ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, onDamaged, data);
+    }
+}
+
+public sealed class ContaminationShotEvent : RangeAttackEvent
+{
+    public void ExecuteShootBullet(SkillData data, string skillName, ISingleTargetContext context, Action onDamaged)
+    {
+        ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName + "_" + skillName, context.Caster, context.Target, onDamaged, data);
+    }
+}
+
+public sealed class PrecisionShotEvent : RangeAttackEvent
+{
+    public void ExecuteShootBullet(SkillData data, string skillName, ISingleTargetContext context, Action onDamaged)
+    {
+        ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName + "_" + skillName, context.Caster, context.Target, onDamaged, data);
+    }
+}
+
+public sealed class NanoRestoreEvent : RangeAttackEvent
+{
+    public void ExecuteShootBullet(SkillData data, ISingleTargetContext context, Action<float> onDamaged)
+    {
+        ShootBulletReturnDamage(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, onDamaged, data, 1.0f);
     }
 }

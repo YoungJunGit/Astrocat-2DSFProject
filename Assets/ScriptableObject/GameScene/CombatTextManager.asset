@@ -15,6 +15,8 @@ MonoBehaviour:
   textCanvasPref: {fileID: 7857725111260342913, guid: 51d998b76e25c334f97ea2947e58fb00, type: 3}
   normalDamageContainer: {fileID: 11400000, guid: fc847c4fb02d51046973c61d29de6dfe, type: 2}
   criticalDamageContainer: {fileID: 11400000, guid: bbef6033f5280824da21d5f840fa8469, type: 2}
+  healContainer: {fileID: 11400000, guid: d46b434929e099b42ba96648f8355079, type: 2}
+  buffContinaer: {fileID: 11400000, guid: 561f27a7da22d3545b6d6ec034bb79c8, type: 2}
   nextRoundTextSetting: {fileID: 11400000, guid: 4ab32b9334c4b8d48ab5ac5eba88bddb, type: 2}
   attackWarningTextSetting: {fileID: 11400000, guid: 0fa67fbddccef2746bc0c3108903cef0, type: 2}
   selfAttackTextSetting: {fileID: 11400000, guid: a59a3b23de75e8342b00fc4d562cc77e, type: 2}

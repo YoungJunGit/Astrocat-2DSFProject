@@ -19,7 +19,7 @@ sealed class SelfAttackAction : BaseUnitAction<ISingleTargetContext>
 
         context.Caster.GetStat().ModifierStat.Mediator.AddModifier(modifer);
 
-        selfAttackEvent.DamageEvent<StrangeDamageCalculator>(context.Caster, context.Caster);
+        selfAttackEvent.DamageEvent<DamageCalculatorStrange>(context.Caster, context.Caster);
 
         modifer.Dispose();
     }
@@ -52,7 +52,7 @@ class MeleeAttackAction : BaseAttackAction
 
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.ATTACK, () =>
         {
-            meleeAttackEvent.DamageEvent_Element<NormalDamageCalculator, NormalElementGaugeCalculator>(context.Caster, context.Target);
+            meleeAttackEvent.DamageEvent_Element<DamageCalculatorNormal, ElementGaugeCalculator>(context.Caster, context.Target);
         });
 
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.MOVE, () =>
@@ -83,7 +83,7 @@ class RangeAttackAction : BaseAttackAction
 
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.ATTACK, () =>
         {
-            rangeAttackEvent.ShootBullet(context, () => isDamaged = true);
+            rangeAttackEvent.ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, () => isDamaged = true);
         });
 
         await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.ATTACK);

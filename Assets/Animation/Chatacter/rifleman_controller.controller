@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 3
+  soundName: player_Rifleman_Skill_TripleBurst
   triggerType: 1
   triggerTime: 0
   triggerTimeResolved: 0.56
@@ -30,6 +31,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 3
+  soundName: player_Rifleman_Skill_TripleBurst
   triggerType: 1
   triggerTime: 0
   triggerTimeResolved: 0.4
@@ -47,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 1
+  soundName: player_Rifleman_NormalAttack
   triggerType: 1
   triggerTime: 0
   triggerTimeResolved: 0.42857143
@@ -232,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 3
+  soundName: player_Rifleman_Skill_TripleBurst
   triggerType: 1
   triggerTime: 0
   triggerTimeResolved: 0.24000001
@@ -317,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 3
+  soundName: player_Rifleman_Skill_AreaBurst
   triggerType: 1
   triggerTime: 0
   triggerTimeResolved: 0.4285714

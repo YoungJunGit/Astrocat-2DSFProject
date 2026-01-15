@@ -26,12 +26,8 @@ public class SupporterUnit : MonoBehaviour
 
     public void OnDamaged()
     {
-        var material = supporterAttachments.GetSpriteRenderer().material;
-        DOTween.Kill(unitName + HIT_BLEND_TWEEN_ID);
-        material.SetFloat("_HitEffectBlend", hitBlendAmount);
-        material.DOFloat(0.0f, "_HitEffectBlend", hitBlendDuration)
-            .SetEase(Ease.Linear)
-            .SetId(unitName + HIT_BLEND_TWEEN_ID);
+        ServiceLocator.For(this).Get(out IEffectManager effectManager);
+        effectManager.PlayHitEffect(supporterAttachments.GetSpriteRenderer().material, unitName);
     }
 
     public async UniTask OnDie(UnitCombatInfo combatInfo)
