@@ -19,7 +19,6 @@ public class GameScene : AbstractScene
     private List<EntityData> entityData = null;
 
     [Header("Manager Settings")]
-    [SerializeField] private EffectManager effectManager;
     [SerializeField] private HUDManager hudManager;
     [SerializeField] private TextManager textManager;
     [SerializeField] private CombatManager combatManager;
@@ -48,7 +47,6 @@ public class GameScene : AbstractScene
     {
         ServiceLocator.ForSceneOf(this)
             .Register(dataHandler)
-            .Register(effectManager as IEffectManager)
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(textManager as ICombatTextManager)
             .Register(unitManager as IUnitManager)

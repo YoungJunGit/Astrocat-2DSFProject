@@ -1,5 +1,4 @@
 using DataEnum;
-using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -12,24 +11,13 @@ public class UnitSelectorObject : MonoBehaviour
     public void Init(SIDE side, bool isSelectable)
     {
         Animator animator = GetComponent<Animator>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer   = GetComponent<SpriteRenderer>();
         animator.runtimeAnimatorController = side == SIDE.PLAYER ? player_select_controller : enemy_select_controller;
-        _spriteRenderer.sortingOrder = side == SIDE.PLAYER ? -1 : 1;
+        _spriteRenderer.sortingOrder       = side == SIDE.PLAYER ? -1 : 1;
 
         if (isSelectable)
             _spriteRenderer.color = Color.white;
         else
             _spriteRenderer.color = Color.red;
-
-        if (side == SIDE.ENEMY)
-        {
-            float spd = animator.speed;
-            animator.speed = 0f;
-            transform.localScale = transform.localScale * 1.5f;
-            transform.DOScale(Vector3.one, 0.1f)
-                .SetEase(Ease.Linear)
-                .OnComplete(() => animator.speed = spd)
-                .SetLink(gameObject);
-        }
     }
 }

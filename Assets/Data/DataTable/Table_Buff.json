@@ -4,271 +4,181 @@
         "table": "30",
         "kind": "0",
         "index": "1001",
-        "Buff_Type": 1,
-        "Update_Type": 2
+        "Buff_Type": 1
     },
     {
         "Buff_ID": "30001002",
         "table": "30",
         "kind": "0",
         "index": "1002",
-        "Buff_Type": 2,
-        "Update_Type": 2
+        "Buff_Type": 2
     },
     {
         "Buff_ID": "30001003",
         "table": "30",
         "kind": "0",
         "index": "1003",
-        "Buff_Type": 3,
-        "Update_Type": 2
+        "Buff_Type": 3
     },
     {
         "Buff_ID": "30001004",
         "table": "30",
         "kind": "0",
         "index": "1004",
-        "Buff_Type": 4,
-        "Update_Type": 2
+        "Buff_Type": 4
     },
     {
         "Buff_ID": "30001005",
         "table": "30",
         "kind": "0",
         "index": "1005",
-        "Buff_Type": 5,
-        "Update_Type": 2
+        "Buff_Type": 5
     },
     {
         "Buff_ID": "30001006",
         "table": "30",
         "kind": "0",
         "index": "1006",
-        "Buff_Type": 6,
-        "Update_Type": 2
+        "Buff_Type": 6
     },
     {
         "Buff_ID": "30001007",
         "table": "30",
         "kind": "0",
         "index": "1007",
-        "Buff_Type": 7,
-        "Update_Type": 2
+        "Buff_Type": 7
     },
     {
         "Buff_ID": "30001008",
         "table": "30",
         "kind": "0",
         "index": "1008",
-        "Buff_Type": 8,
-        "Update_Type": 2
+        "Buff_Type": 8
     },
     {
         "Buff_ID": "30001009",
         "table": "30",
         "kind": "0",
         "index": "1009",
-        "Buff_Type": 9,
-        "Update_Type": 2
+        "Buff_Type": 9
     },
     {
         "Buff_ID": "30001010",
         "table": "30",
         "kind": "0",
         "index": "1010",
-        "Buff_Type": 10,
-        "Update_Type": 2
+        "Buff_Type": 10
     },
     {
         "Buff_ID": "30001011",
         "table": "30",
         "kind": "0",
         "index": "1011",
-        "Buff_Type": 11,
-        "Update_Type": 2
+        "Buff_Type": 11
     },
     {
         "Buff_ID": "30001012",
         "table": "30",
         "kind": "0",
         "index": "1012",
-        "Buff_Type": 12,
-        "Update_Type": 2
+        "Buff_Type": 12
     },
     {
         "Buff_ID": "30001013",
         "table": "30",
         "kind": "0",
         "index": "1013",
-        "Buff_Type": 13,
-        "Update_Type": 2
+        "Buff_Type": 13
     },
     {
         "Buff_ID": "30001014",
         "table": "30",
         "kind": "0",
         "index": "1014",
-        "Buff_Type": 14,
-        "Update_Type": 2
+        "Buff_Type": 14
     },
     {
         "Buff_ID": "30001015",
         "table": "30",
         "kind": "0",
         "index": "1015",
-        "Buff_Type": 15,
-        "Update_Type": 2
+        "Buff_Type": 15
     },
     {
         "Buff_ID": "30001016",
         "table": "30",
         "kind": "0",
         "index": "1016",
-        "Buff_Type": 16,
-        "Update_Type": 2
+        "Buff_Type": 16
     },
     {
         "Buff_ID": "30001017",
         "table": "30",
         "kind": "0",
         "index": "1017",
-        "Buff_Type": 17,
-        "Update_Type": 2
+        "Buff_Type": 17
     },
     {
         "Buff_ID": "30001018",
         "table": "30",
         "kind": "0",
         "index": "1018",
-        "Buff_Type": 18,
-        "Update_Type": 2
+        "Buff_Type": 18
     },
     {
         "Buff_ID": "30001019",
         "table": "30",
         "kind": "0",
         "index": "1019",
-        "Buff_Type": 19,
-        "Update_Type": 2
+        "Buff_Type": 19
     },
     {
         "Buff_ID": "30001020",
         "table": "30",
         "kind": "0",
         "index": "1020",
-        "Buff_Type": 20,
-        "Update_Type": 2
+        "Buff_Type": 20
     },
     {
         "Buff_ID": "30001021",
         "table": "30",
         "kind": "0",
         "index": "1021",
-        "Buff_Type": 21,
-        "Update_Type": 2
+        "Buff_Type": 21
     },
     {
         "Buff_ID": "30001022",
         "table": "30",
         "kind": "0",
         "index": "1022",
-        "Buff_Type": 22,
-        "Update_Type": 2
+        "Buff_Type": 22
     },
     {
         "Buff_ID": "30001023",
         "table": "30",
         "kind": "0",
         "index": "1023",
-        "Buff_Type": 23,
-        "Update_Type": 2
+        "Buff_Type": 23
     },
     {
         "Buff_ID": "30001024",
         "table": "30",
         "kind": "0",
         "index": "1024",
-        "Buff_Type": 24,
-        "Update_Type": 2
+        "Buff_Type": 24
     },
     {
         "Buff_ID": "30001025",
         "table": "30",
         "kind": "0",
         "index": "1025",
-        "Buff_Type": 25,
-        "Update_Type": 2
+        "Buff_Type": 25
     },
     {
         "Buff_ID": "30001026",
         "table": "30",
         "kind": "0",
         "index": "1026",
-        "Buff_Type": 26,
-        "Update_Type": 2
-    },
-    {
-        "Buff_ID": "30001027",
-        "table": "30",
-        "kind": "0",
-        "index": "1027",
-        "Buff_Type": 27,
-        "Update_Type": 2
-    },
-    {
-        "Buff_ID": "30001028",
-        "table": "30",
-        "kind": "0",
-        "index": "1028",
-        "Buff_Type": 28,
-        "Update_Type": 2
-    },
-    {
-        "Buff_ID": "30001029",
-        "table": "30",
-        "kind": "0",
-        "index": "1029",
-        "Buff_Type": 29,
-        "Update_Type": 2
-    },
-    {
-        "Buff_ID": "30001030",
-        "table": "30",
-        "kind": "0",
-        "index": "1030",
-        "Buff_Type": 30,
-        "Update_Type": 2
-    },
-    {
-        "Buff_ID": "30001031",
-        "table": "30",
-        "kind": "0",
-        "index": "1031",
-        "Buff_Type": 31,
-        "Update_Type": 2
-    },
-    {
-        "Buff_ID": "30001032",
-        "table": "30",
-        "kind": "0",
-        "index": "1032",
-        "Buff_Type": 32,
-        "Update_Type": 2
-    },
-    {
-        "Buff_ID": "30001033",
-        "table": "30",
-        "kind": "0",
-        "index": "1033",
-        "Buff_Type": 33,
-        "Update_Type": 2
-    },
-    {
-        "Buff_ID": "30001034",
-        "table": "30",
-        "kind": "0",
-        "index": "1034",
-        "Buff_Type": 34,
-        "Update_Type": 2
+        "Buff_Type": 26
     }
 ]

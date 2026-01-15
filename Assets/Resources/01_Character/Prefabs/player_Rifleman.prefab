@@ -251,7 +251,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animHandler: {fileID: 5052415058350787849}
-  _animEventHandler: {fileID: 4380353373182698401}
   _supporterUnit: {fileID: 0}
   _unitType: 2
   hitBlendAmount: 0.75
@@ -353,7 +352,6 @@ GameObject:
   - component: {fileID: 783435933234561218}
   - component: {fileID: 5052415058350787849}
   - component: {fileID: 4641065688941651299}
-  - component: {fileID: 4380353373182698401}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -482,15 +480,3 @@ MonoBehaviour:
   normalStrength: 5
   normalSmoothing: 1
   computingNormal: 0
---- !u!114 &4380353373182698401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8620287506657276731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb0709cc06374b04c8add84a5a59f8ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

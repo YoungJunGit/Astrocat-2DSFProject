@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using System.Linq;
 using Cysharp.Threading.Tasks;
 using DataEntity;
 using DataEnum;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public interface IUnitManager
@@ -79,8 +77,6 @@ public class UnitManager : ScriptableObject , IUnitManager
 
         return null;
     }
-
-    public BaseUnit GetUnitByID(string ID) => currentUnitList.ToList().Find(unit => unit.GetStat().CoreStat.ID == ID);
 
     public List<BaseUnit> GetAllUnits()
     {

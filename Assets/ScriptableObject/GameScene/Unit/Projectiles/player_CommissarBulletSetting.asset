@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 3897220752169775613, guid: 6e1c5946c7eee59439f13494b276ae3e, type: 3}
   - {fileID: 6951103894628511241, guid: 6e1c5946c7eee59439f13494b276ae3e, type: 3}
   targetTag: Enemy
-  speed: 50
+  speed: 30

@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class UI_SelectionButton : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup ui;
     [SerializeField] private Button button;
     [SerializeField] private Image iconImage;
     [SerializeField] private TMP_Text skillName;
@@ -21,19 +20,5 @@ public class UI_SelectionButton : MonoBehaviour
     public void SetImage(int index)
     {
         iconImage.sprite = IconSprites[index];
-    }
-
-    public void SetInteractable(bool bInteractable)
-    {
-        if  (bInteractable)
-        {
-            ui.alpha = 1f;
-            button.interactable = true;
-        }
-        else
-        {
-            ui.alpha = 0.5f;
-            button.interactable = false;
-        }
     }
 }

@@ -102,15 +102,15 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.41666666
-    functionName: SetJustParryOpen
+    functionName: OperateEvent
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 1
     messageOptions: 0
   - time: 0.41666666
-    functionName: PlaySound
-    data: penguin_Berserker_NormalAttack
+    functionName: SetJustParryOpen
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

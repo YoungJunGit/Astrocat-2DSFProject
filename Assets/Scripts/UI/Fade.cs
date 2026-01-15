@@ -29,7 +29,7 @@ public class Fade : MonoBehaviour
             FadeAnimation();
     }
 
-    public Tween FadeAnimation(FadeSetting setting = null, Action OnFinishEvent = null)
+    public Tween FadeAnimation(Action OnFinishEvent = null, FadeSetting setting = null)
     {
         if(OverrideSetting == true)
         {

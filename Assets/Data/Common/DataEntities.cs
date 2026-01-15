@@ -51,8 +51,8 @@ namespace DataEntity
         public int                  Skill_Duration_Turn = 0;
         public SKILL_ELEMENT_RATE   Skill_Element_Rate  = SKILL_ELEMENT_RATE.NONE;
         public string[]             Buff_ID;
+        public double[]             Buff_Value;
         public string               QTE_ID;
-        public string               asset_file_path;
     }
 
     [Serializable]

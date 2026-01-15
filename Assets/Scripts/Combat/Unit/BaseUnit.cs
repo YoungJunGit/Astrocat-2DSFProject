@@ -19,14 +19,8 @@ public interface IUpdatable
 [RequireComponent(typeof(UnitAttachments))]
 public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 {
-    [SerializeField, Required, FoldoutGroup("Animation")]
+    [SerializeField, Required]
     private AnimationHandler _animHandler;
-    public AnimationHandler AnimationHandler => _animHandler;
-
-    [SerializeField, Required, FoldoutGroup("Animation")]
-    private AnimationEventHandler _animEventHandler;
-    public IAnimationEventHandler AnimationEventHandler => _animEventHandler;
-
     [SerializeField, ShowIf("HasSupporter"), Required]
     protected SupporterUnit _supporterUnit;
 
@@ -35,7 +29,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
     [SerializeField] private float hitBlendDuration = 0.25f;
     [SerializeField] private bool HasSupporter = false;
 
-    [SerializeField]
+    [SerializeField] 
     private UnitSoundContainer _soundContainer;
     public UnitSoundContainer SoundContainer => _soundContainer;
     private UnitAttachments _attachments;
@@ -69,8 +63,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         My_Temp_Type = data.Temp_Type;
         Attachments.GetSpriteRenderer().material = new Material(Attachments.GetSpriteRenderer().material);
 
-        _animHandler.Init();
-        _animEventHandler.Init(_soundContainer);
+        _animHandler.Init(_soundContainer);
 
         ServiceLocator.For(this)
             .Get(out _soundService)
@@ -88,8 +81,6 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
     public void GetDamage(IDamageInfo damageInfo)
     {
-        if(_stat.HP <= 0f) return;
-
         _stat.GetDamaged(damageInfo.DamageValue);
         CombatInfo.LastAttacker = damageInfo.Attacker;
 
@@ -118,7 +109,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
             return;
         }
 
-        if (damageInfo.ElementType != ELEMENT_TYPE.NONE)
+        if(damageInfo.ElementType != ELEMENT_TYPE.NONE)
         {
             _stat.IncreaseElementGauge(damageInfo.ElementType, damageInfo.ElementGaugeIncreaseValue);
         }
@@ -131,17 +122,21 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         // TODO : Heal Logic
     }
 
-    public void OnAction(int cost)
+    public void OnAttack(int cost = 0)
     {
-        if (cost != 0)
+        if (cost == 0)
         {
-            _stat.OnAction(cost);
+            _stat.OnNormalAttack();
+        }
+        else
+        {
+            _stat.OnSkillAttack(cost);
         }
     }
 
     public void OnElementGaugeFull(ELEMENT_TYPE elementType)
     {
-        if (elementType != ELEMENT_TYPE.NONE && elementType != ELEMENT_TYPE.ETC)
+        if(elementType != ELEMENT_TYPE.NONE && elementType != ELEMENT_TYPE.ETC)
         {
             _crowdControlManager.AddCrowdControl(elementType, this, CombatInfo.LastAttacker);
         }
@@ -187,6 +182,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         }
     }
 
+    public AnimationHandler GetAnimationHandler() => _animHandler;
     public UnitStat GetStat() => _stat;
     public UNIT_TYPE GetUnitType() => _unitType;
 

@@ -6,6 +6,12 @@ using Cysharp.Threading.Tasks;
 using DataEnum;
 using UnityEngine;
 
+public class CombatSelectionContext
+{
+    public IUnitAction Action;
+    public ITarget<BaseUnit> Target;
+}
+
 [CreateAssetMenu(fileName = "CombatManager", menuName = "GameScene/CombatManager", order = 1)]
 public class CombatManager : ScriptableObject
 {
@@ -71,27 +77,16 @@ public class CombatManager : ScriptableObject
 
             if (currentTurnUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.PHYSICAL].CurrentValue <= 0)
             {
-                // Step 1 : Add Action Selection
-                IUnitActionProperty property = null;
-                IUnitActionInvoker invoker = null;
-                _selectorManager.AddSelectorExecuter(new ActionSelectorExecutor(currentTurnUnit, (action) => 
-                {
-                    invoker = action;
-                    property = action;
-                }));
+                var context = new CombatSelectionContext();
+                // Step 1 : Add Selections
+                _selectorManager.AddSelectorExecuter(new ActionSelectorExecutor(currentTurnUnit, (action) => context.Action = action));
+                _selectorManager.AddSelectorExecuter(new UnitSelectorExecutor(currentTurnUnit, context, (bag) => context.Target = bag));
 
-                // Step 2 : Add Target Selection
-                ITarget<BaseUnit> target = null;
-                _selectorManager.AddSelectorExecuter(new UnitSelectorExecutor(currentTurnUnit, () => property, (bag) => 
-                {
-                    target = bag;
-                }));
-
-                // Step 3 : Execute Selections
+                // Step 2 : Execute Selections
                 await _selectorManager.ExecuteAll();
 
-                // Step 4 : Execute Action to Target
-                await _actionExecuter.ExecuteRequest(currentTurnUnit, invoker, property, target);
+                // Step 3 : Execute Action to Target
+                await _actionExecuter.ExecuteRequest(currentTurnUnit, context.Action, context.Target);
             }
 
             await UniTask.WaitUntil(() => EventHandler.IsEventEmpty());

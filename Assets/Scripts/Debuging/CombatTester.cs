@@ -13,13 +13,13 @@ public class CombatTester : MonoBehaviour
 
     private bool toggleMute = false;
 
-    void Start()
+    private void Awake()
     {
         ServiceLocator.For(this)
             .Get(out unitManager)
             .Get(out soundService);
 
-        foreach (var obj in debuggingObjs)
+        foreach(var obj in debuggingObjs)
         {
             obj.SetActive(false);
         }

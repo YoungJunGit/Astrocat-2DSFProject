@@ -1,112 +1,78 @@
 using Cysharp.Threading.Tasks;
-using R3;
+using NUnit.Framework.Constraints;
+using System.Collections.Generic;
+using System.Threading.Channels;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Utils;
 
 public interface ICombatTextManager
 {
     public bool IsTextOn { get; }
-    public UniTask ShowCombatText(IUnitActionProperty unitAction, BaseUnit unit);
     public UniTask ShowNextRoundText(int round);
-    public UniTask ShowTauntText(BaseUnit unit);
+    public UniTask ShowAttackWarningText(BaseUnit unit);
+    public UniTask ShowSelfAttackText(BaseUnit unit);
     public void OnDamage(BaseUnit target, IDamageInfo damage);
 }
 
 [CreateAssetMenu(fileName = "TextManager", menuName = "Manager/TextManager", order = 1)]
 public class TextManager : ScriptableObject , ICombatTextManager
 {
-    private BaseCanvas _textCanvas;
-    private WarningText _warningText;
-    private InputHandler _inputHandler;
-
-    [SerializeField] private BaseCanvas textCanvasPref;
+    [SerializeField] private TextCanvas textCanvasPref;
     [SerializeField] private DamageContainer normalDamageContainer;
     [SerializeField] private DamageContainer criticalDamageContainer;
 
-    [SerializeField] BaseTextSetting nextRoundTextSetting;
-    [SerializeField] BaseTextSetting attackWarningTextSetting;
-    [SerializeField] BaseTextSetting selfAttackTextSetting;
-    [SerializeField] BaseTextSetting skillWarningTextSetting;
-    [SerializeField] BaseTextSetting tauntTextSetting;
-
-    // Temporary - String DT가 완성되기 전까지 사용
-    [SerializeField, TextArea(4, 10)] string nextRoundText;
-    [SerializeField, TextArea(4, 10)] string attackWarningText;
-    [SerializeField, TextArea(4, 10)] string selfAttackText;
-    [SerializeField, TextArea(4, 10)] string skillWarningText;
-    [SerializeField, TextArea(4, 10)] string tauntText;
+    private TextCanvas textCanvas;
+    private InputHandler inputHandler;
 
     public void Init()
     {
-        _textCanvas = Instantiate(textCanvasPref);
-        _textCanvas.Init();
+        textCanvas = Instantiate(textCanvasPref);
 
-        _warningText = _textCanvas.GetComponentInChildren<WarningText>(true);
-
-        ServiceLocator.For(this).Get(out _inputHandler);
+        ServiceLocator.For(this)
+            .Get(out inputHandler);
     }
 
     #region[Combat Text]
-
-    public async UniTask ShowCombatText(IUnitActionProperty unitAction, BaseUnit unit)
-    {
-        switch(unitAction)
-        {
-            case BaseAttackAction:
-                await ShowAttackWarningText(unit);
-                break;
-            case SelfAttackAction:
-                await ShowSelfAttackText(unit);
-                break;
-            case ISkillAction skill:
-                await ShowSkillWarningText(unit, skill.Data.Skill_Name);
-                break;
-        }
-    }
-
     public bool IsTextOn { get; private set; } = false;
+
     public async UniTask ShowNextRoundText(int round)
     {
-        _warningText.SetText(nextRoundText);
-        _warningText.ReplaceText("{Count}", round.ToString());
+        BaseText nextRoundText = textCanvas.GetComponentInChildren<NextRoundText>(true);
+
+        nextRoundText.textComp.text = nextRoundText.textComp.text.Replace("{Count}", round.ToString());
 
         IsTextOn = true;
-        await _warningText.ShowTextWith(nextRoundTextSetting, _inputHandler);
+        await nextRoundText.ShowText(inputHandler);
         IsTextOn = false;
+
+        nextRoundText.textComp.text = nextRoundText.textComp.text.Replace(round.ToString(), "{Count}");
     }
 
-    public async UniTask ShowTauntText(BaseUnit unit)
+    public async UniTask ShowAttackWarningText(BaseUnit unit)
     {
-        _warningText.SetText(tauntText);
-        _warningText.ReplaceText("{Name}", unit.GetStat().CoreStat.Name);
+        BaseText attackWarningText = textCanvas.GetComponentInChildren<AttackWarningText>(true);
 
-        await _warningText.ShowTextWith(tauntTextSetting, _inputHandler);
+        attackWarningText.textComp.text = attackWarningText.textComp.text.Replace("{Name}", unit.GetStat().CoreStat.Name);
+        string attackType = unit.GetUnitType() == DataEnum.UNIT_TYPE.MELEE ? "[Melee]" : "[Range]";
+        attackWarningText.textComp.text = attackWarningText.textComp.text.Replace("{AttackType}", attackType);
+        
+        await attackWarningText.ShowText(inputHandler);
+
+        attackWarningText.textComp.text = attackWarningText.textComp.text.Replace(unit.GetStat().CoreStat.Name, "{Name}");
+        attackWarningText.textComp.text = attackWarningText.textComp.text.Replace(attackType, "{AttackType}");
     }
 
-    private async UniTask ShowAttackWarningText(BaseUnit unit)
+    public async UniTask ShowSelfAttackText(BaseUnit unit)
     {
-        _warningText.SetText(attackWarningText);
-        _warningText.ReplaceText("{Name}", unit.GetStat().CoreStat.Name);
+        BaseText selfAttackText = textCanvas.GetComponentInChildren<SelfAttackText>(true);
 
-        await _warningText.ShowTextWith(attackWarningTextSetting, _inputHandler);
+        selfAttackText.textComp.text = selfAttackText.textComp.text.Replace("{Name}", unit.GetStat().CoreStat.Name);
+
+        await selfAttackText.ShowText(inputHandler);
+
+        selfAttackText.textComp.text = selfAttackText.textComp.text.Replace(unit.GetStat().CoreStat.Name, "{Name}");
     }
-
-    private async UniTask ShowSelfAttackText(BaseUnit unit)
-    {
-        _warningText.SetText(selfAttackText);
-        _warningText.ReplaceText("{Name}", unit.GetStat().CoreStat.Name);
-
-        await _warningText.ShowTextWith(selfAttackTextSetting, _inputHandler);
-    }
-
-    private async UniTask ShowSkillWarningText(BaseUnit unit, string skillName)
-    {
-        _warningText.SetText(skillWarningText);
-        _warningText.ReplaceText("{Name}", unit.GetStat().CoreStat.Name);
-        _warningText.ReplaceText("{SkillName}", skillName);
-
-        await _warningText.ShowTextWith(skillWarningTextSetting, _inputHandler);
-    }
-    #endregion
 
     public void OnDamage(BaseUnit target, IDamageInfo damage)
     {
@@ -123,7 +89,8 @@ public class TextManager : ScriptableObject , ICombatTextManager
             container = criticalDamageContainer;
         }
 
-        IDamageHealValueDisplayInvoker displayInvoker = new DamageHealValueDisplayInvoker();
+        IDamageValueDisplayInvoker displayInvoker = new DamageValueDisplayInvoker();
         displayInvoker.Invoke(displayer, damage.DamageValue, target.Attachments.GetHitBox().bounds, container);
     }
+    #endregion
 }

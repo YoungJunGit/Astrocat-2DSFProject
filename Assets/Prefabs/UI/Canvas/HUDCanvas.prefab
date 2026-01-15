@@ -202,7 +202,16 @@ MonoBehaviour:
   _cellToChildren:
     _keys:
     - {x: 0, y: 0, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: 1, y: 1, z: 0}
     _values:
+    - Items:
+      - {fileID: 0}
+    - Items:
+      - {fileID: 0}
+    - Items:
+      - {fileID: 0}
     - Items:
       - {fileID: 0}
 --- !u!1 &948073594192052734
@@ -726,9 +735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64fb496ab111c04faeaeccf475ab540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideCamera: 1
-  targetCameraName: HUDCamera
-  sortingLayerName: UI
   _playerStatusPanel: {fileID: 8417022078013290071}
   _enemyStatusPanel: {fileID: 6822086604894163215}
 --- !u!1 &3730405905971042352

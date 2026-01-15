@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TitleCanvas : BaseCanvas
+public class TitleCanvas : MonoBehaviour
 {
-    public override void Init() { }
+
 }

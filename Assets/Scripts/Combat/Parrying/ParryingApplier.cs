@@ -62,7 +62,7 @@ public class ParryingApplier : ScriptableObject, IParryingApplier
                 
         var unitAction = _unitActionFactory.CreateParryingAction(_defender, parryType);
         _executedUnitAction?.Cancel();
-        // _unitActionExecuter.ExecuteRequest(_defender, unitAction, unitAction);
+        _unitActionExecuter.ExecuteRequest(_defender, unitAction);
         
         // TODO : attacker parried animation
         

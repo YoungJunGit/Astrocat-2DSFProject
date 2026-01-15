@@ -1884,23 +1884,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c53165b379c3d94ca34b12cb8eb10f1, type: 3}
-  m_Name: UI
+  m_Name: VolFx
   m_EditorClassIdentifier: 
   m_Active: 1
-  _event: 500
+  _event: 550
   _format:
     enabled: 1
-    value: 9
+    value: 0
   _mask:
-    enabled: 1
+    enabled: 0
     value:
       serializedVersion: 2
-      m_Bits: 128
+      m_Bits: 0
   _source:
-    _source: 1
+    _source: 0
     _globalTex: _inputTex
     _renderTex: {fileID: 0}
-    _pool: {fileID: 3933885310180405072, guid: 29abccf77cd3eb64fbd757643a6d4b4c, type: 2}
+    _pool: {fileID: 0}
   _output:
     _output: 0
     _renderTex: {fileID: 0}

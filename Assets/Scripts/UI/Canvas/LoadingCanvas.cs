@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadingCanvas : BaseCanvas
+public class LoadingCanvas : MonoBehaviour
 {
     [SerializeField] private Image _loadingImage;
     [SerializeField] private GameObject _loading;
@@ -12,8 +12,6 @@ public class LoadingCanvas : BaseCanvas
     [SerializeField] private GameObject _loadingCircle;
     [SerializeField] private GameObject _FinishedLoadingText;
     [SerializeField] private Fade _glowEffect;
-
-    public override void Init() { }
 
     public void Fade(Action onFinishedFade)
     {

@@ -22,7 +22,7 @@ public class EGTester : MonoBehaviour
 
     private IUnitManager unitManager;
 
-    void Start()
+    private void Awake()
     {
         ServiceLocator.For(this).Get(out unitManager);
 
@@ -39,12 +39,12 @@ public class EGTester : MonoBehaviour
 
         if(targetSide == EGSide.PLAYER_TO_ENEMY)
         {
-            IDamageInfo damageInfo = DamageFactory.CreateDamage<TestDamageCalculator, NormalElementGaugeCalculator>(caster, target, elementType, elementRate, 1.0f);
+            IDamageInfo damageInfo = DamageFactory.CreateDamage<TestDamageCalculator, NormalElementGaugeCalculator>(elementRate, elementType, caster, target);
             target.GetDamage(damageInfo);
         }
         else
         {
-            IDamageInfo damageInfo = DamageFactory.CreateDamage<TestDamageCalculator, NormalElementGaugeCalculator>(target, caster, elementType, elementRate, 1.0f);
+            IDamageInfo damageInfo = DamageFactory.CreateDamage<TestDamageCalculator, NormalElementGaugeCalculator>(elementRate, elementType, target, caster);
             caster.GetDamage(damageInfo);
         }
     } 
