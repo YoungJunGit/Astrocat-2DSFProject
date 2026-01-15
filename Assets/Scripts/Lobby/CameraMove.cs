@@ -1,7 +1,7 @@
 using UnityEngine;
-
 public class CameraMove : MonoBehaviour
 {
+    public static CameraMove Instance { get; private set; }
     [Header("References")]
     [SerializeField] private Camera cam;
 
@@ -23,8 +23,12 @@ public class CameraMove : MonoBehaviour
     [SerializeField] private Vector2 clampMax = new Vector2(10f, 6f);
 
     //대화 UI 팝업시 사용 못하게
-    [SerializeField] private bool blockInput = false;
-    public void SetBlockInput(bool value) => blockInput = value;
+    private bool blockInput = false;
+    public void SetBlockInput(bool value)
+    {
+        blockInput = value;
+        _dragging = false; // 대화 시작 시 드래그 끊기
+    }
 
     private bool _dragging;
     private Vector3 _lastMousePos;
@@ -36,13 +40,13 @@ public class CameraMove : MonoBehaviour
     {
         cam = Camera.main;
     }
-
     private void Awake()
     {
+        Instance = this;
+
         if (cam == null) cam = Camera.main;
         cam.orthographic = true;
         _targetOrtho = cam.orthographicSize;
-
     }
 
     private void Update()
