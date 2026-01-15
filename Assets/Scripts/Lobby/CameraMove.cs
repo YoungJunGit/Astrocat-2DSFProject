@@ -58,13 +58,13 @@ public class CameraMove : MonoBehaviour
 
     private void HandlePan()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             _dragging = true;
             _lastMousePos = Input.mousePosition;
         }
 
-        if (_dragging && Input.GetMouseButton(0))
+        if (_dragging && Input.GetMouseButton(1))
         {
             Vector3 mousePos = Input.mousePosition;
             Vector3 mouseDelta = mousePos - _lastMousePos;
@@ -85,7 +85,7 @@ public class CameraMove : MonoBehaviour
             transform.position += move;
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(1))
         {
             _dragging = false;
         }

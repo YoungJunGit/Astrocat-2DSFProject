@@ -157,15 +157,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ship_Inside_Object (6)_0
+      name: Ship_room_5_light_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 795
-        width: 38
-        height: 42
+        x: 39
+        y: 780
+        width: 70
+        height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: Ship_Inside_Object (6)_1
       rect:
         serializedVersion: 2
-        x: 867
-        y: 759
-        width: 78
-        height: 78
+        x: 332
+        y: 432
+        width: 612
+        height: 404
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -201,15 +201,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_Inside_Object (6)_2
+      name: Ship_room_5_light_1
       rect:
         serializedVersion: 2
-        x: 1003
-        y: 795
-        width: 38
-        height: 42
+        x: 987
+        y: 780
+        width: 70
+        height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -223,15 +223,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_Inside_Object (6)_3
+      name: Ship_Inside_Object (6)_2
       rect:
         serializedVersion: 2
-        x: 1815
-        y: 759
-        width: 78
-        height: 78
+        x: 1280
+        y: 432
+        width: 612
+        height: 404
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -245,353 +245,89 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_Inside_Object (6)_4
+      name: Ship_room_5_light_2
       rect:
         serializedVersion: 2
-        x: 31
-        y: 695
-        width: 82
-        height: 26
+        x: 39
+        y: 360
+        width: 70
+        height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e29e4205390f0e4a0800000000000000
-      internalID: -6565983741210728146
+      spriteID: 6e4e840c69a9073488aea7d2883a2812
+      internalID: -1785573992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_Inside_Object (6)_5
+      name: Ship_Inside_Object (6)_3
       rect:
         serializedVersion: 2
-        x: 331
-        y: 431
-        width: 614
-        height: 282
+        x: 332
+        y: 12
+        width: 612
+        height: 404
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 155f4a9e534758960800000000000000
+      spriteID: 65cc97d82d4c36f47bf9bc6cfe59e33c
       internalID: 7603611320786941265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_Inside_Object (6)_6
+      name: Ship_room_5_light_3
       rect:
         serializedVersion: 2
-        x: 979
-        y: 695
-        width: 82
-        height: 26
+        x: 987
+        y: 360
+        width: 70
+        height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0e9a00ecfde769fe0800000000000000
-      internalID: -1182618352439219744
+      spriteID: d611eb9690d905f46b75422fe14d6f43
+      internalID: 1083463200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_Inside_Object (6)_7
+      name: Ship_Inside_Object (6)_4
       rect:
         serializedVersion: 2
-        x: 1279
-        y: 431
-        width: 614
-        height: 282
+        x: 1280
+        y: 12
+        width: 612
+        height: 404
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 08f0652501d6fd820800000000000000
+      spriteID: 55fd7fdb0a234ad43886d269a973359a
       internalID: 2945192598191869824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_8
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 431
-        width: 122
-        height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0f396ddb5aaf90b20800000000000000
-      internalID: 3101285408182801392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_9
-      rect:
-        serializedVersion: 2
-        x: 959
-        y: 431
-        width: 122
-        height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1217c110c9d01a030800000000000000
-      internalID: 3504096948755656993
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_10
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 375
-        width: 38
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 068c90b08a850d190800000000000000
-      internalID: -7939748664291243936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_11
-      rect:
-        serializedVersion: 2
-        x: 867
-        y: 339
-        width: 78
-        height: 78
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1bab475ca6bda26f0800000000000000
-      internalID: -708512739731653967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_12
-      rect:
-        serializedVersion: 2
-        x: 1003
-        y: 375
-        width: 38
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bacf5de1530f86f40800000000000000
-      internalID: 5722087437515488427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_13
-      rect:
-        serializedVersion: 2
-        x: 1815
-        y: 339
-        width: 78
-        height: 78
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee7764b59126c86c0800000000000000
-      internalID: -4139826096415279122
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_14
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 275
-        width: 82
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cfa69da9ab8cda3c0800000000000000
-      internalID: -4346597361555248388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_15
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 11
-        width: 614
-        height: 282
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7b2927c5687f9eb40800000000000000
-      internalID: 5470175378866868919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_16
-      rect:
-        serializedVersion: 2
-        x: 979
-        y: 275
-        width: 82
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f73cebd8a3b09bb00800000000000000
-      internalID: 844718751222776703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_17
-      rect:
-        serializedVersion: 2
-        x: 1279
-        y: 11
-        width: 614
-        height: 282
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8402a49e6bd405f60800000000000000
-      internalID: 8020996384340189256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_18
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 11
-        width: 122
-        height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0cdfbbbe0bfd78ab0800000000000000
-      internalID: -5005786509836812864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ship_Inside_Object (6)_19
-      rect:
-        serializedVersion: 2
-        x: 959
-        y: 11
-        width: 122
-        height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8fa7d7fd6eba8d400800000000000000
-      internalID: 349217979201583864
       vertices: []
       indices: 
       edges: []
@@ -600,7 +336,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 861ab308344d69548a1ff77b5bc11114
     internalID: 0
     vertices: []
     indices: 
@@ -608,28 +344,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":476.0,"y":426.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Ship_Inside_Object (6)_0: -3308312117308783687
       Ship_Inside_Object (6)_1: 9152798239729577938
-      Ship_Inside_Object (6)_10: -7939748664291243936
-      Ship_Inside_Object (6)_11: -708512739731653967
-      Ship_Inside_Object (6)_12: 5722087437515488427
-      Ship_Inside_Object (6)_13: -4139826096415279122
-      Ship_Inside_Object (6)_14: -4346597361555248388
-      Ship_Inside_Object (6)_15: 5470175378866868919
-      Ship_Inside_Object (6)_16: 844718751222776703
-      Ship_Inside_Object (6)_17: 8020996384340189256
-      Ship_Inside_Object (6)_18: -5005786509836812864
-      Ship_Inside_Object (6)_19: 349217979201583864
-      Ship_Inside_Object (6)_2: -5200954206777526711
-      Ship_Inside_Object (6)_3: -1261617402518611114
-      Ship_Inside_Object (6)_4: -6565983741210728146
-      Ship_Inside_Object (6)_5: 7603611320786941265
-      Ship_Inside_Object (6)_6: -1182618352439219744
-      Ship_Inside_Object (6)_7: 2945192598191869824
-      Ship_Inside_Object (6)_8: 3101285408182801392
-      Ship_Inside_Object (6)_9: 3504096948755656993
+      Ship_Inside_Object (6)_2: -1261617402518611114
+      Ship_Inside_Object (6)_3: 7603611320786941265
+      Ship_Inside_Object (6)_4: 2945192598191869824
+      Ship_room_5_light_0: -3308312117308783687
+      Ship_room_5_light_1: -5200954206777526711
+      Ship_room_5_light_2: -1785573992
+      Ship_room_5_light_3: 1083463200
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

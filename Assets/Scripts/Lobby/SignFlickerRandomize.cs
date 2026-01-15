@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SignFlickerRandomize : MonoBehaviour
 {
-    //문 깜빡거리는 애니메이션 속도 랜덤 기능
+    //애니메이션 재생 속도 랜덤 기능
     [SerializeField] private Animator animator;
     [SerializeField] private Vector2 speedRange = new Vector2(0.85f, 1.15f);
     [SerializeField] private bool randomStart = true;
