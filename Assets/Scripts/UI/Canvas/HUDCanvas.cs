@@ -1,18 +1,10 @@
 using System;
 using UnityEngine;
 
-public class HUDCanvas : MonoBehaviour
+public class HUDCanvas : BaseCanvas
 {
     [SerializeField] Transform _playerStatusPanel;
     [SerializeField] Transform _enemyStatusPanel;
-
-    public void Init()
-    {
-        var canvas = GetComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceCamera;
-        canvas.worldCamera = Camera.main;
-        canvas.sortingLayerName = "UI";
-    }
 
     public void SetPlayerHUD(PlayerHUD playerHud, int index)
     {

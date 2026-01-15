@@ -24,25 +24,25 @@ public record DamageInfo(BaseUnit Attacker, float DamageValue, bool IsCritical, 
 [CreateAssetMenu(fileName = "DamageFactory", menuName = "GameScene/DamageFactory")]
 public class DamageFactory : ScriptableObject
 {
-    public static IDamageInfo CreateDamage<T>(BaseUnit caster, BaseUnit target) 
+    public static IDamageInfo CreateDamage<T>(BaseUnit caster, BaseUnit target, float skillRate = 1.0f) 
         where T : IDamageCalculator, new()
     {
         IDamageCalculator calculator = new T();
 
-        var result = calculator.Calculate(caster, target);
+        var result = calculator.Calculate(caster, target, skillRate);
         IDamageInfo damage = new DamageInfo(caster, result.damageValue, result.isCritical);
 
         return damage;
     }
 
-    public static IDamageInfo CreateDamage<T, T2>(SKILL_ELEMENT_RATE rateType, ELEMENT_TYPE elementType, BaseUnit caster, BaseUnit target) 
+    public static IDamageInfo CreateDamage<T, T2>(BaseUnit caster, BaseUnit target, ELEMENT_TYPE elementType, SKILL_ELEMENT_RATE rateType, float skillRate) 
         where T : IDamageCalculator, new() 
         where T2 : IElementGaugeCalculator, new()
     {
         IDamageCalculator damageCalculator = new T();
         IElementGaugeCalculator elementGaugeCalculator = new T2();
 
-        var result1 = damageCalculator.Calculate(caster, target);
+        var result1 = damageCalculator.Calculate(caster, target, skillRate);
 
         float rate = 0.0f;
         switch(rateType)

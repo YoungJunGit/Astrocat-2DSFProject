@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animHandler: {fileID: 7322455768656537500}
+  _animEventHandler: {fileID: 6804794006256513313}
   _supporterUnit: {fileID: 0}
   _unitType: 1
   hitBlendAmount: 0.75
@@ -351,6 +352,7 @@ GameObject:
   - component: {fileID: 1827484332463763094}
   - component: {fileID: 3360358827616062212}
   - component: {fileID: 7322455768656537500}
+  - component: {fileID: 6804794006256513313}
   - component: {fileID: 6436424483058964266}
   - component: {fileID: 4929641963815317489}
   m_Layer: 6
@@ -463,6 +465,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d5815c219eff51458db52c9cd127119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6804794006256513313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473549944143180526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0709cc06374b04c8add84a5a59f8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6436424483058964266
