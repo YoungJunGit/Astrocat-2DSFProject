@@ -336,6 +336,8 @@ public class Node : MonoBehaviour, IUpdateObserver
                 Debug.Log("Fight the Boss 03");
                 break;
         }
+
+        handleEnemy();
     }
 
     void handleRandom()
