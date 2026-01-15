@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7605978491442851766}
   - component: {fileID: 6666657783305541919}
   m_Layer: 0
-  m_Name: riflemen
+  m_Name: Rifleman
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: Riflemen
+  actor: Rifleman
   persistentDataName: 
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
@@ -61,7 +61,7 @@ MonoBehaviour:
     customMenuPanel: {fileID: 0}
     customMenuPanelOffset: {x: 0, y: 0, z: 0}
     useMenuPanelFor: 0
-    portraitAnimatorController: {fileID: 9100000, guid: a1130e24fc6837548a5a1e2f2e29f990, type: 2}
+    portraitAnimatorController: {fileID: 22100000, guid: 0c2ef1c033ece2f4191a4cb7bc680b0f, type: 2}
     setSubtitleColor: 0
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
