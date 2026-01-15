@@ -206,14 +206,8 @@ MonoBehaviour:
       cameraEasing: 0
       keepCameraPositionAtConversationEnd: 0
       showSubtitleOnEmptyContinue: 0
-      defaultSequence: 'AnimatorPlay(Talk,speakerportrait);
-
-        required AnimatorPlay(Idle,
-        speakeraportrait)@{{end}}'
-      defaultPlayerSequence: 'AnimatorPlay(Talk,speakerportrait);
-
-        required
-        AnimatorPlay(Idle, speakeraportrait)@{{end}}'
+      defaultSequence: 
+      defaultPlayerSequence: 
       defaultResponseMenuSequence: 
       entrytagFormat: 0
       treatAllCommandsAsRequired: 0
@@ -659,10 +653,6 @@ PrefabInstance:
     - target: {fileID: 8196257669493068165, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9087295252050034203, guid: 86a70353f4527084bafcf71cba5e4fcd, type: 3}
-      propertyPath: m_Text
-      value: Input Field
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
