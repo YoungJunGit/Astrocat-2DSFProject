@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e032077a4a20bcb40a43996aa978f1cd, type: 3}
   m_Name: Enemy07NodeData
   m_EditorClassIdentifier: 
-  sprite: {fileID: 5381747782631044144, guid: b26f1c8f3cc69c0428495d0d6d2ef79b, type: 3}
+  sprite: {fileID: 257508018, guid: b26f1c8f3cc69c0428495d0d6d2ef79b, type: 3}
   type: 7
   nodeName: Planets7

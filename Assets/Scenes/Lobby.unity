@@ -3261,6 +3261,14 @@ PrefabInstance:
       propertyPath: displaySettings.inputSettings.alwaysForceResponseMenu
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5233435155163328009, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
+      propertyPath: displaySettings.subtitleSettings.showPCSubtitlesDuringLine
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233435155163328009, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
+      propertyPath: displaySettings.subtitleSettings.skipPCSubtitleAfterResponseMenu
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5535521629726613308, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
