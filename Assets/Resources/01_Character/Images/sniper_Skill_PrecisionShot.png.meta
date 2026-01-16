@@ -1,0 +1,600 @@
+fileFormatVersion: 2
+guid: d83fe51c21f31ad4f8fbe0eca70ebaad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1008918354721009918
+    second: sniper_Skill_PrecisionShot_0
+  - first:
+      213: 5184291818622946582
+    second: sniper_Skill_PrecisionShot_1
+  - first:
+      213: -3134469258834053188
+    second: sniper_Skill_PrecisionShot_2
+  - first:
+      213: 2989923866008788182
+    second: sniper_Skill_PrecisionShot_3
+  - first:
+      213: 3146133325550303340
+    second: sniper_Skill_PrecisionShot_4
+  - first:
+      213: 5804500660058965417
+    second: sniper_Skill_PrecisionShot_5
+  - first:
+      213: -314176985380992120
+    second: sniper_Skill_PrecisionShot_6
+  - first:
+      213: 4582904450463364993
+    second: sniper_Skill_PrecisionShot_7
+  - first:
+      213: -7779201676648903346
+    second: sniper_Skill_PrecisionShot_8
+  - first:
+      213: 3963782446690578500
+    second: sniper_Skill_PrecisionShot_9
+  - first:
+      213: 1218093388042463702
+    second: sniper_Skill_PrecisionShot_10
+  - first:
+      213: 3555233308565063722
+    second: sniper_Skill_PrecisionShot_11
+  - first:
+      213: -171480071025227895
+    second: sniper_Skill_PrecisionShot_12
+  - first:
+      213: -3649639030597119043
+    second: sniper_Skill_PrecisionShot_13
+  - first:
+      213: -1794204789327866615
+    second: sniper_Skill_PrecisionShot_14
+  - first:
+      213: -5863284102341111414
+    second: sniper_Skill_PrecisionShot_15
+  - first:
+      213: 4563289938989134390
+    second: sniper_Skill_PrecisionShot_16
+  - first:
+      213: -105585901853346429
+    second: sniper_Skill_PrecisionShot_17
+  - first:
+      213: -8611616983667071490
+    second: sniper_Skill_PrecisionShot_18
+  - first:
+      213: -788316742680719987
+    second: sniper_Skill_PrecisionShot_19
+  - first:
+      213: 918304695218680035
+    second: sniper_Skill_PrecisionShot_20
+  - first:
+      213: 8629816577140903073
+    second: sniper_Skill_PrecisionShot_21
+  - first:
+      213: -1729926172371899612
+    second: sniper_Skill_PrecisionShot_22
+  - first:
+      213: -8919717064047656650
+    second: sniper_Skill_PrecisionShot_23
+  - first:
+      213: -2286346025847125410
+    second: sniper_Skill_PrecisionShot_24
+  - first:
+      213: -6506490020721510215
+    second: sniper_Skill_PrecisionShot_25
+  - first:
+      213: -4229927902419725031
+    second: sniper_Skill_PrecisionShot_26
+  - first:
+      213: 7486249822513794091
+    second: sniper_Skill_PrecisionShot_27
+  - first:
+      213: 5750016512990219053
+    second: sniper_Skill_PrecisionShot_28
+  - first:
+      213: 5545229894300760811
+    second: sniper_Skill_PrecisionShot_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f8b731a1a9ff1f0800000000000000
+      internalID: -1008918354721009918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1440
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d0cf401fd42f740800000000000000
+      internalID: 5184291818622946582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1440
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb770d3f0d02084d0800000000000000
+      internalID: -3134469258834053188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_3
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1440
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc9ae23ae75e7920800000000000000
+      internalID: 2989923866008788182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c68b175379f49ab20800000000000000
+      internalID: 3146133325550303340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_5
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5c555c89abd8050800000000000000
+      internalID: 5804500660058965417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_6
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88b43c542b1d3abf0800000000000000
+      internalID: -314176985380992120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_7
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187fc61015fb99f30800000000000000
+      internalID: 4582904450463364993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d08338a49ba0490800000000000000
+      internalID: -7779201676648903346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440bbed522f220730800000000000000
+      internalID: 3963782446690578500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_10
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9e5819b7987e010800000000000000
+      internalID: 1218093388042463702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_11
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2848a29bd9b65130800000000000000
+      internalID: 3555233308565063722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9878b70b8c7ce9df0800000000000000
+      internalID: -171480071025227895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_13
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db39bd663a0e95dc0800000000000000
+      internalID: -3649639030597119043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_14
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 905decd0044b917e0800000000000000
+      internalID: -1794204789327866615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_15
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8153c68c2e61aea0800000000000000
+      internalID: -5863284102341111414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Skill_PrecisionShot_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.875, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 632bf8ca500145f30800000000000000
+      internalID: 4563289938989134390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8c1bd44bb46781546a6e185b72601ec6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":5.0},"gridSpriteSize":{"x":360.0,"y":360.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.875,"y":0.30000001192092898},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      sniper_Skill_PrecisionShot_0: -1008918354721009918
+      sniper_Skill_PrecisionShot_1: 5184291818622946582
+      sniper_Skill_PrecisionShot_10: 1218093388042463702
+      sniper_Skill_PrecisionShot_11: 3555233308565063722
+      sniper_Skill_PrecisionShot_12: -171480071025227895
+      sniper_Skill_PrecisionShot_13: -3649639030597119043
+      sniper_Skill_PrecisionShot_14: -1794204789327866615
+      sniper_Skill_PrecisionShot_15: -5863284102341111414
+      sniper_Skill_PrecisionShot_16: 4563289938989134390
+      sniper_Skill_PrecisionShot_2: -3134469258834053188
+      sniper_Skill_PrecisionShot_3: 2989923866008788182
+      sniper_Skill_PrecisionShot_4: 3146133325550303340
+      sniper_Skill_PrecisionShot_5: 5804500660058965417
+      sniper_Skill_PrecisionShot_6: -314176985380992120
+      sniper_Skill_PrecisionShot_7: 4582904450463364993
+      sniper_Skill_PrecisionShot_8: -7779201676648903346
+      sniper_Skill_PrecisionShot_9: 3963782446690578500
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

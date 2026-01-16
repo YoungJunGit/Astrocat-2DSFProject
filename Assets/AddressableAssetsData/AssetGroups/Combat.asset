@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Combat
+  m_EditorClassIdentifier: 
+  m_GroupName: Combat
+  m_GUID: acb4bc5d2ecdbc14e8f01dd0fa5d6c7f
+  m_SerializeEntries:
+  - m_GUID: 0985dc3f30ed549eca9bafc94a2feabf
+    m_Address: player_Commissar_Skill_ContaminationShot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c175e523c4464bf0ad8c07099df84a3
+    m_Address: player_Commissar_Skill_SPSupply
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19690c97b7b6c4ba9bb275f3164542df
+    m_Address: penguin_Berserker_NormalAttack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b14e1f96616a404abc5c2e992e01966
+    m_Address: player_Commissar_Skill_ForceSuppression
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 251b82a49f9c04152996791700a571eb
+    m_Address: player_Rifleman_Skill_TripleBurst
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b3558415dddc4a1196164e15b6e4d3e
+    m_Address: player_Sniper_NormalAttack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65e083abbd31a48888034db62fc213cc
+    m_Address: player_Rifleman_Skill_AreaBurst
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67580fec17862a94495e727756630c58
+    m_Address: Die
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 829a8a9474ea042e893508bc510f55dc
+    m_Address: player_Rifleman_Skill_FirstAid/player_Commissar_Skill_RecoveryProtocol/player_Sniper_Skill_NanoRestore
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8caa9b06cf1a84f449df100f560247a7
+    m_Address: player_Rifleman_NormalAttack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8c0c217dd7f84dffa148355e8442d91
+    m_Address: player_Sniper_PowerBooster
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4c9dbe88daa243bfbbaa19b74a2e9d5
+    m_Address: player_Sniper_Skill_PrecisionShot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5039e18ee0d6a64197cb27abf873620
+    m_Address: Target_Position
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba311ca09e73a43c3aa87667c21581fd
+    m_Address: player_Commissar_NormalAttack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bfc5803fa8fa8924bbeaa34f4f689bb1
+    m_Address: Click
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2116408d42d23246862451183dc30f0
+    m_Address: Start_Menu
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f600f670be6b1400cbcf836ffaea5a18
+    m_Address: penguin_Rifleman/penguin_Commander_NormalAttack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio_Combat
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1cdaeee9b9a1e5140b38f22245d612eb, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6b332d45bca047f4c8799d43b662585a, type: 2}
+    - {fileID: 11400000, guid: 080faf2a63684434f94af4990003e3e3, type: 2}

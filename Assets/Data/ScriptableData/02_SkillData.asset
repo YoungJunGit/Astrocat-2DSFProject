@@ -121,7 +121,7 @@ MonoBehaviour:
     Skill_Side: 1
     Skill_Target_Type: 1
     Skill_Cost_SP: 3
-    Skill_ATK_Rate: 0.5
+    Skill_ATK_Rate: 0.2
     Skill_Hit_Count: 1
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
@@ -152,17 +152,17 @@ MonoBehaviour:
     table: 20
     kind: 1
     index: 1005
-    Skill_Name: SKILL_ACTIVE_NAME_5005
+    Skill_Name: "\uC815\uBC00 \uC0AC\uACA9"
     Skill_Desc: SKILL_ACTIVE_DESC_6005
-    Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
+    Element_Type: 2
+    Skill_Type: 2
+    Skill_Side: 2
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 3
+    Skill_ATK_Rate: 2
     Skill_Hit_Count: 0
     Skill_Duration_Turn: 0
-    Skill_Element_Rate: 0
+    Skill_Element_Rate: 2
     Buff_ID: []
     QTE_ID: 
     asset_file_path: 
@@ -170,14 +170,14 @@ MonoBehaviour:
     table: 20
     kind: 1
     index: 1006
-    Skill_Name: SKILL_ACTIVE_NAME_5006
+    Skill_Name: "\uB098\uB178 \uB9AC\uC2A4\uD1A0\uC5B4"
     Skill_Desc: SKILL_ACTIVE_DESC_6006
     Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
+    Skill_Type: 3
+    Skill_Side: 2
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 3
+    Skill_ATK_Rate: 0.7
     Skill_Hit_Count: 0
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
@@ -188,16 +188,16 @@ MonoBehaviour:
     table: 20
     kind: 1
     index: 1007
-    Skill_Name: SKILL_ACTIVE_NAME_5007
+    Skill_Name: "\uD654\uB825 \uC99D\uD3ED"
     Skill_Desc: SKILL_ACTIVE_DESC_6007
     Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
+    Skill_Type: 4
+    Skill_Side: 1
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 2
+    Skill_ATK_Rate: 0.5
     Skill_Hit_Count: 0
-    Skill_Duration_Turn: 0
+    Skill_Duration_Turn: 2
     Skill_Element_Rate: 0
     Buff_ID: []
     QTE_ID: 
@@ -224,17 +224,17 @@ MonoBehaviour:
     table: 20
     kind: 1
     index: 1009
-    Skill_Name: SKILL_ACTIVE_NAME_5009
+    Skill_Name: "\uC624\uC5FC \uC0AC\uACA9"
     Skill_Desc: SKILL_ACTIVE_DESC_6009
-    Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
+    Element_Type: 3
+    Skill_Type: 2
+    Skill_Side: 2
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 3
+    Skill_ATK_Rate: 0.7
     Skill_Hit_Count: 0
     Skill_Duration_Turn: 0
-    Skill_Element_Rate: 0
+    Skill_Element_Rate: 2
     Buff_ID: []
     QTE_ID: 
     asset_file_path: 
@@ -242,17 +242,17 @@ MonoBehaviour:
     table: 20
     kind: 1
     index: 1010
-    Skill_Name: SKILL_ACTIVE_NAME_5010
+    Skill_Name: "\uAC15\uC81C \uC9C4\uC555"
     Skill_Desc: SKILL_ACTIVE_DESC_6010
-    Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
-    Skill_Hit_Count: 0
+    Element_Type: 1
+    Skill_Type: 2
+    Skill_Side: 2
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 3
+    Skill_ATK_Rate: 0.5
+    Skill_Hit_Count: 3
     Skill_Duration_Turn: 0
-    Skill_Element_Rate: 0
+    Skill_Element_Rate: 2
     Buff_ID: []
     QTE_ID: 
     asset_file_path: 
@@ -260,14 +260,14 @@ MonoBehaviour:
     table: 20
     kind: 1
     index: 1011
-    Skill_Name: SKILL_ACTIVE_NAME_5011
+    Skill_Name: "SP \uC11C\uD50C\uB77C\uC774"
     Skill_Desc: SKILL_ACTIVE_DESC_6011
     Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
+    Skill_Type: 4
+    Skill_Side: 1
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 3
+    Skill_ATK_Rate: 5
     Skill_Hit_Count: 0
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0
@@ -278,14 +278,14 @@ MonoBehaviour:
     table: 20
     kind: 1
     index: 1012
-    Skill_Name: SKILL_ACTIVE_NAME_5012
+    Skill_Name: "\uB9AC\uCEE4\uBC84\uB9AC \uD504\uB85C\uD1A0\uCF5C"
     Skill_Desc: SKILL_ACTIVE_DESC_6012
     Element_Type: 0
-    Skill_Type: 0
-    Skill_Side: 0
-    Skill_Target_Type: 0
-    Skill_Cost_SP: 0
-    Skill_ATK_Rate: 0
+    Skill_Type: 3
+    Skill_Side: 1
+    Skill_Target_Type: 1
+    Skill_Cost_SP: 4
+    Skill_ATK_Rate: 1
     Skill_Hit_Count: 0
     Skill_Duration_Turn: 0
     Skill_Element_Rate: 0

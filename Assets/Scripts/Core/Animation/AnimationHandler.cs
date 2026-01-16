@@ -20,17 +20,17 @@ public class AnimationHandler : MonoBehaviour
         _currentAnimation = ANIMATION.IDLE;
     }
 
-    public async UniTask<bool> ChangeAnimationAsync(ANIMATION animation, string skillName = "", float fadeTime = 0.0f, CancellationToken ct = default)
+    public async UniTask<bool> ChangeAnimationAsync(ANIMATION animation, string animationName = "", float fadeTime = 0.0f, CancellationToken ct = default)
     {
         _previousAnimation = _currentAnimation;
         _currentAnimation = animation;
-        int stateHash = ChangeAnimation(animation, skillName, fadeTime);
+        int stateHash = ChangeAnimation(animation, animationName, fadeTime);
         
         var token = ct != default ? ct : this.GetCancellationTokenOnDestroy();
         return await WaitForAnimationFinished(0, stateHash, token);
     }
 
-    public int ChangeAnimation(ANIMATION animation, string skillName = "", float fadeTime = 0f)
+    public int ChangeAnimation(ANIMATION animation, string animationName = "", float fadeTime = 0f)
     {
         int stateHash = 0;
         switch (animation)
@@ -54,7 +54,7 @@ public class AnimationHandler : MonoBehaviour
                 stateHash = AnimHash.Retreat;
                 break;
             case ANIMATION.SKILL:
-                stateHash = Animator.StringToHash($"Base Layer.{skillName}");
+                stateHash = Animator.StringToHash($"Base Layer.{animationName}");
                 break;
         }
 

@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: f4ceeace133409544b716eb1a44ced9c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6722182951367329448
+    second: ControlRoom (10)_0
+  - first:
+      213: -8533888551963861041
+    second: ControlRoom (10)_1
+  - first:
+      213: 4120289223637302129
+    second: ControlRoom (10)_2
+  - first:
+      213: -6203335177526066115
+    second: ControlRoom (10)_3
+  - first:
+      213: -9200908948352278080
+    second: ControlRoom (10)_4
+  - first:
+      213: 581031934137190660
+    second: ControlRoom (10)_5
+  - first:
+      213: -6109199154861954855
+    second: ControlRoom (10)_6
+  - first:
+      213: 5154887953149505246
+    second: ControlRoom (10)_7
+  - first:
+      213: -6834120065821593747
+    second: ControlRoom (10)_8
+  - first:
+      213: 5598532439152949273
+    second: ControlRoom (10)_9
+  - first:
+      213: -5688902171765336036
+    second: ControlRoom (10)_10
+  - first:
+      213: -6433070071723446137
+    second: ControlRoom (10)_11
+  - first:
+      213: 7545915153382115561
+    second: ControlRoom (10)_12
+  - first:
+      213: -6322782984010820140
+    second: ControlRoom (10)_13
+  - first:
+      213: -13255391541948035
+    second: ControlRoom (10)_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ControlRoom (10)_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 19
+        width: 10
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a6cf6357cdf94d50800000000000000
+      internalID: 6722182951367329448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 19
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcfdb639399819980800000000000000
+      internalID: -8533888551963861041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 19
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b75caf7353e2930800000000000000
+      internalID: 4120289223637302129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_3
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 19
+        width: 10
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34cfd0d58359e9a0800000000000000
+      internalID: -6203335177526066115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_4
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 19
+        width: 10
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c1efba5f0ecf4080800000000000000
+      internalID: -9200908948352278080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_5
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 19
+        width: 10
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409c765377d301800800000000000000
+      internalID: 581031934137190660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_6
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 19
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d826509cb3c73ba0800000000000000
+      internalID: -6109199154861954855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_7
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 19
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edeaa681847d98740800000000000000
+      internalID: 5154887953149505246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_8
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 19
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6fa55442045821a0800000000000000
+      internalID: -6834120065821593747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_9
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 19
+        width: 10
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9187633579bf1bd40800000000000000
+      internalID: 5598532439152949273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_10
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 19
+        width: 10
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c189af9ad95fc01b0800000000000000
+      internalID: -5688902171765336036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_11
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 19
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7803ab78ad429b6a0800000000000000
+      internalID: -6433070071723446137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_12
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 19
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e8049e1ad978b860800000000000000
+      internalID: 7545915153382115561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_13
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 19
+        width: 10
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d596262066f048a0800000000000000
+      internalID: -6322782984010820140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlRoom (10)_14
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 19
+        width: 10
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7198c7aa48e0dff0800000000000000
+      internalID: -13255391541948035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ControlRoom (10)_0: 6722182951367329448
+      ControlRoom (10)_1: -8533888551963861041
+      ControlRoom (10)_10: -5688902171765336036
+      ControlRoom (10)_11: -6433070071723446137
+      ControlRoom (10)_12: 7545915153382115561
+      ControlRoom (10)_13: -6322782984010820140
+      ControlRoom (10)_14: -13255391541948035
+      ControlRoom (10)_2: 4120289223637302129
+      ControlRoom (10)_3: -6203335177526066115
+      ControlRoom (10)_4: -9200908948352278080
+      ControlRoom (10)_5: 581031934137190660
+      ControlRoom (10)_6: -6109199154861954855
+      ControlRoom (10)_7: 5154887953149505246
+      ControlRoom (10)_8: -6834120065821593747
+      ControlRoom (10)_9: 5598532439152949273
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

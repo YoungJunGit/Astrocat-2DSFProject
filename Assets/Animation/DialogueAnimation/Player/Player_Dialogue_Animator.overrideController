@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_Dialogue_Animator
+  m_Controller: {fileID: 9100000, guid: 8f58efc1cb8749a4083d069c62de5788, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 8b611e5f084350a45b656558d6b278a9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 876c56dfbe4adfa4187114e38771b267, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b0dbcff359673994c94ef22b58b8538a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 876c56dfbe4adfa4187114e38771b267, type: 2}

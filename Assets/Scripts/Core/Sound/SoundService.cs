@@ -20,6 +20,46 @@ public class SoundService : ISoundService
 
     // BGM 로딩 경쟁 상태 방지용 버전 토큰
     private int _bgmLoadVersion = 0;
+
+    // 오디오 딜레이 방지용 메소드 (필요한 오디오 캐싱)
+    public async UniTask PreloadByLabel(string label)
+    {
+        if (string.IsNullOrWhiteSpace(label))
+            return;
+
+        EnsureInitialized();
+
+        // 1️⃣ Label에 포함된 모든 Location 확보
+        var locationsHandle = Addressables.LoadResourceLocationsAsync(label, typeof(AudioClip));
+        var locations = await locationsHandle.Task;
+
+        // 2️⃣ Addressables Address 기준으로 개별 로드
+        foreach (var location in locations)
+        {
+            string address = location.PrimaryKey; // ⭐ Addressable Name
+
+            if (_clipHandles.ContainsKey(address))
+                continue;
+
+            var clipHandle = Addressables.LoadAssetAsync<AudioClip>(location);
+            var clip = await clipHandle.Task;
+
+            if (clipHandle.Status != AsyncOperationStatus.Succeeded || clip == null)
+            {
+                Debug.LogWarning($"[SoundService] 프리로드 실패: {address}");
+                if (clipHandle.IsValid())
+                    Addressables.Release(clipHandle);
+                continue;
+            }
+
+            // ✅ Addressable Name으로 캐싱
+            _clipHandles[address] = clipHandle;
+        }
+
+        if (locationsHandle.IsValid())
+            Addressables.Release(locationsHandle);
+    }
+
     public void PlayEffectSound(string clipName)
     {
         // 인터페이스 준수: 기존 시그니처는 0초 지연으로 재생
@@ -201,16 +241,18 @@ public class SoundService : ISoundService
         if (string.IsNullOrWhiteSpace(clipName))
             return null;
 
-        if (_clipHandles.TryGetValue(clipName, out var cached))
+        if (TryFindBestMatch(clipName, out var matchedKey, out var cached))
         {
             if (cached.IsValid() && cached.Status == AsyncOperationStatus.Succeeded && cached.Result != null)
+            {
                 return cached.Result;
+            }
 
             // 유효하지 않거나 실패한 핸들은 정리
             if (cached.IsValid())
                 Addressables.Release(cached);
 
-            _clipHandles.Remove(clipName);
+            _clipHandles.Remove(matchedKey);
         }
 
         var handle = Addressables.LoadAssetAsync<AudioClip>(clipName);
@@ -228,5 +270,41 @@ public class SoundService : ISoundService
 
         _clipHandles[clipName] = handle;
         return clip;
+    }
+
+    private bool TryFindBestMatch(string clipName, out string matchedKey, out AsyncOperationHandle<AudioClip> handle)
+    {
+        // 1. 정확 일치
+        if (_clipHandles.TryGetValue(clipName, out handle))
+        {
+            matchedKey = clipName;
+            return true;
+        }
+
+        // 2. EndsWith
+        foreach (var kv in _clipHandles)
+        {
+            if (kv.Key.EndsWith(clipName))
+            {
+                matchedKey = kv.Key;
+                handle = kv.Value;
+                return true;
+            }
+        }
+
+        // 3. Contains
+        foreach (var kv in _clipHandles)
+        {
+            if (kv.Key.Contains(clipName))
+            {
+                matchedKey = kv.Key;
+                handle = kv.Value;
+                return true;
+            }
+        }
+
+        matchedKey = null;
+        handle = default;
+        return false;
     }
 }

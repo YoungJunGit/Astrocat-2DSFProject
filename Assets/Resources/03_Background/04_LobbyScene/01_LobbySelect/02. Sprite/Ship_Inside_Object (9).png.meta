@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: cef431773ccc79547b8ef9752b3bf296
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1295758028989233637
+    second: Ship_Inside_Object (9)_0
+  - first:
+      213: -5767705523902999006
+    second: Ship_Inside_Object (9)_1
+  - first:
+      213: -962806401139767446
+    second: Ship_Inside_Object (9)_2
+  - first:
+      213: -3519137593265456588
+    second: Ship_Inside_Object (9)_3
+  - first:
+      213: -5215970744657715490
+    second: Ship_Inside_Object (9)_4
+  - first:
+      213: -5708976961780737051
+    second: Ship_Inside_Object (9)_5
+  - first:
+      213: 5591821122810610006
+    second: Ship_Inside_Object (9)_6
+  - first:
+      213: 514589470171715484
+    second: Ship_Inside_Object (9)_7
+  - first:
+      213: 8521441912226636864
+    second: Ship_Inside_Object (9)_8
+  - first:
+      213: 552344112817176175
+    second: Ship_Inside_Object (9)_9
+  - first:
+      213: 8729170517901715689
+    second: Ship_Inside_Object (9)_10
+  - first:
+      213: -7037362596877872810
+    second: Ship_Inside_Object (9)_11
+  - first:
+      213: -47806078114207495
+    second: Ship_Inside_Object (9)_12
+  - first:
+      213: -4617676258211330382
+    second: Ship_Inside_Object (9)_13
+  - first:
+      213: -6695977224472026598
+    second: Ship_Inside_Object (9)_14
+  - first:
+      213: -3979922599750210142
+    second: Ship_Inside_Object (9)_15
+  - first:
+      213: -3308928511202435327
+    second: Ship_Inside_Object (9)_16
+  - first:
+      213: -6760697810875876756
+    second: Ship_Inside_Object (9)_17
+  - first:
+      213: -4702280295759018821
+    second: Ship_Inside_Object (9)_18
+  - first:
+      213: -2120199941171583482
+    second: Ship_Inside_Object (9)_19
+  - first:
+      213: 1724789821616623683
+    second: Ship_Inside_Object (9)_20
+  - first:
+      213: -260844279694892630
+    second: Ship_Inside_Object (9)_21
+  - first:
+      213: 1361866811633212614
+    second: Ship_Inside_Object (9)_22
+  - first:
+      213: 1132905940541601565
+    second: Ship_Inside_Object (9)_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ship_room_10_Object_1_0
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 444
+        width: 232
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b168c3710fa840ee0800000000000000
+      internalID: -1295758028989233637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_2_0
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 444
+        width: 232
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22614b6726ef4ffa0800000000000000
+      internalID: -5767705523902999006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_3_0
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 444
+        width: 232
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a678798edac63a2f0800000000000000
+      internalID: -962806401139767446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_4_0
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 444
+        width: 232
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a70bd0103892fc0800000000000000
+      internalID: -3519137593265456588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_1_1
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 444
+        width: 232
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eded8dd3e362d97b0800000000000000
+      internalID: -5215970744657715490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_2_1
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 444
+        width: 232
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb9b2263b3a5c0b0800000000000000
+      internalID: -5708976961780737051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_3_1
+      rect:
+        serializedVersion: 2
+        x: 2168
+        y: 444
+        width: 232
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65107a83fa32a9d40800000000000000
+      internalID: 5591821122810610006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_4_1
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 444
+        width: 232
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c97ddbe8560342700800000000000000
+      internalID: 514589470171715484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_1_2
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 16
+        width: 232
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 044e468454e324670800000000000000
+      internalID: 8521441912226636864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_2_2
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 16
+        width: 232
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6efe3e4b025aa700800000000000000
+      internalID: 552344112817176175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_3_2
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 16
+        width: 232
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e8285f365e342970800000000000000
+      internalID: 8729170517901715689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_4_2
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 16
+        width: 232
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6515971f004465e90800000000000000
+      internalID: -7037362596877872810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_1_3
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 16
+        width: 232
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8e5ef00a8265ff0800000000000000
+      internalID: -47806078114207495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_2_3
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 16
+        width: 232
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b60f8d98e7baefb0800000000000000
+      internalID: -4617676258211330382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_3_3
+      rect:
+        serializedVersion: 2
+        x: 2168
+        y: 16
+        width: 232
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a122d3fe03c1313a0800000000000000
+      internalID: -6695977224472026598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_10_Object_4_3
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 16
+        width: 232
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ade6586b7974c8c0800000000000000
+      internalID: -3979922599750210142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e74a456de7380064ca7d3dbf8582e7f6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":2.0},"gridSpriteSize":{"x":338.0,"y":436.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Ship_room_10_Object_1_0: -1295758028989233637
+      Ship_room_10_Object_1_1: -5215970744657715490
+      Ship_room_10_Object_1_2: 8521441912226636864
+      Ship_room_10_Object_1_3: -47806078114207495
+      Ship_room_10_Object_2_0: -5767705523902999006
+      Ship_room_10_Object_2_1: -5708976961780737051
+      Ship_room_10_Object_2_2: 552344112817176175
+      Ship_room_10_Object_2_3: -4617676258211330382
+      Ship_room_10_Object_3_0: -962806401139767446
+      Ship_room_10_Object_3_1: 5591821122810610006
+      Ship_room_10_Object_3_2: 8729170517901715689
+      Ship_room_10_Object_3_3: -6695977224472026598
+      Ship_room_10_Object_4_0: -3519137593265456588
+      Ship_room_10_Object_4_1: 514589470171715484
+      Ship_room_10_Object_4_2: -7037362596877872810
+      Ship_room_10_Object_4_3: -3979922599750210142
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

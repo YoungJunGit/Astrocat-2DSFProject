@@ -15,13 +15,7 @@ public interface ICrowdControlManager
 [CreateAssetMenu(fileName = "CrowdControlManager", menuName = "Manager/CrowdControlManager", order = 1)]
 public class CrowdControlManager : ScriptableObject, ICrowdControlManager
 {
-    public record CCContext(ElementStatusData Data, ICombatEffectManager effectManager, BaseUnit Target, BaseUnit Caster)
-    {
-        public ElementStatusData Data { get; } = Data;
-        public ICombatEffectManager effectManager { get; } = effectManager;
-        public BaseUnit Target { get; } = Target;
-        public BaseUnit Caster { get; } = Caster;
-    }
+    public record CCContext(ElementStatusData Data, ICombatEffectManager effectManager, BaseUnit Target, BaseUnit Caster);
 
     private DataHandler _dataHandler;
     private ICombatEffectManager _effectManager;

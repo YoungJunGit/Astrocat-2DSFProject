@@ -5,25 +5,41 @@ public class UnitAttachments : MonoBehaviour
 {
     [SerializeField, Required]
     private SpriteRenderer SpriteRenderer;
+
     [SerializeField, ShowIf("IsUnit"), Required]
     private BoxCollider2D HitBox;
+
+    [SerializeField, ShowIf("IsPlayer"), Required]
+    private BoxCollider2D DroneInjectionBox;
+
     [SerializeField, ShowIf("IsUnit"), Required]
     private Transform MeleeHitPos;
+
     [SerializeField, ShowIf("IsUnit"), Required] 
     private Transform UnitSelectArrowPos;
+
     [SerializeField, ShowIf("IsEnemy"), Required] 
     private Transform StatusPos;
+
     [SerializeField, ShowIf("IsEnemy"), Required]
     private Transform BuffBoxPos;
+
     [SerializeField, ShowIf("@this.IsRange || this.IsSupporterUnit"), Required] 
     private Transform BulletSpawnPos;
 
+    [SerializeField, ShowIf("IsPlayer"), Required]
+    private Transform DroneInjectionFiringPos;
+
+
+
     public SpriteRenderer GetSpriteRenderer() => SpriteRenderer;
     public BoxCollider2D GetHitBox() => HitBox;
+    public BoxCollider2D GetDroneInjectionBox() => DroneInjectionBox;
     public Transform GetMeleeHitPos() => MeleeHitPos;
     public Transform GetStatusPosition() => StatusPos;
     public Transform GetBuffBoxPosition() => BuffBoxPos;
     public Transform GetUnitSelectArrowPos() => UnitSelectArrowPos;
+    public Transform GetDroneInjectionFiringPos() => DroneInjectionFiringPos;
     public Transform GetBulletSpawnPos() => BulletSpawnPos;
 
     private bool IsUnit     => GetComponent<BaseUnit>() != null;

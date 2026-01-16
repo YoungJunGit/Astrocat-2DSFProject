@@ -96,7 +96,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -127,10 +127,10 @@ TextureImporter:
       name: commissar-mouth_2_0
       rect:
         serializedVersion: 2
-        x: 175
-        y: 369
-        width: 24
-        height: 10
+        x: 0
+        y: 0
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: commissar-mouth_2_1
       rect:
         serializedVersion: 2
-        x: 575
-        y: 369
-        width: 24
-        height: 10
+        x: 400
+        y: 0
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +171,10 @@ TextureImporter:
       name: commissar-mouth_2_2
       rect:
         serializedVersion: 2
-        x: 975
-        y: 369
-        width: 24
-        height: 10
+        x: 800
+        y: 0
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: commissar-mouth_2_3
       rect:
         serializedVersion: 2
-        x: 1375
-        y: 369
-        width: 24
-        height: 10
+        x: 1200
+        y: 0
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: commissar-mouth_2_4
       rect:
         serializedVersion: 2
-        x: 1775
-        y: 369
-        width: 24
-        height: 10
+        x: 1600
+        y: 0
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +237,10 @@ TextureImporter:
       name: commissar-mouth_2_5
       rect:
         serializedVersion: 2
-        x: 2175
-        y: 369
-        width: 24
-        height: 10
+        x: 2000
+        y: 0
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +259,10 @@ TextureImporter:
       name: commissar-mouth_2_6
       rect:
         serializedVersion: 2
-        x: 2575
-        y: 372
-        width: 24
-        height: 8
+        x: 2400
+        y: 0
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: commissar-mouth_2_7
       rect:
         serializedVersion: 2
-        x: 2975
-        y: 369
-        width: 22
-        height: 10
+        x: 2800
+        y: 0
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,10 +303,10 @@ TextureImporter:
       name: commissar-mouth_2_8
       rect:
         serializedVersion: 2
-        x: 3375
-        y: 369
-        width: 24
-        height: 10
+        x: 3200
+        y: 0
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c1b7e549c8567664ca938f0fedab1eca
     internalID: 0
     vertices: []
     indices: 
@@ -333,7 +333,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       commissar-mouth_2_0: -415114362981877352
       commissar-mouth_2_1: 3223180262745188320

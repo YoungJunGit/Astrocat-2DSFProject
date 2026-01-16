@@ -20,12 +20,10 @@ public class TitleScene : AbstractScene
     protected override void PrepareGame() { }
     protected override async UniTask BeginGame() 
     {
-        soundService.PlayBackGround("Title_Background", true);
+        _soundService.PlayBackGround("Title_Background", true);
         
         await UniTask.WaitUntil(() => Input.anyKeyDown);
         
-        soundService.PlayEffectSound("Click");
-
-        soundService.Clear();
+        _soundService.PlayEffectSound("Click");
     }
 }

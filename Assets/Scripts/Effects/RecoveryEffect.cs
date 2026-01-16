@@ -16,22 +16,20 @@ public class RecoveryEffect : BaseEffect
     [SerializeField] int spawnPointCount = 6;
     [SerializeField] float randomJitter = 0.05f;
 
-    CancellationTokenSource _cts;
-
     List<Vector2> _spawnPoints = new();
     List<int> _spawnIndexBag = new();
 
-    List<UniTask> factorTasks = new();
+    private int _runningFactorCount = 0;
+    private bool _isSpawningFinished = false;
 
-    public override async UniTask PlayEffect()
+    public override async UniTask<BaseEffect> PlayEffect()
     {
-        _cts = new();
         controller.onStart += () => CreateFactor().Forget();
-        controller.onEnd += () => _cts.Cancel();
-        
-        await UniTask.WaitUntil(() => factorTasks.Count != 0);
+        controller.onEnd += () => _isSpawningFinished = true;
 
-        await UniTask.WhenAll(factorTasks);
+        await UniTask.WaitUntil(() => _isSpawningFinished && _runningFactorCount == 0);
+
+        return this;
     }
 
     private async UniTask CreateFactor()
@@ -39,7 +37,7 @@ public class RecoveryEffect : BaseEffect
         BuildSpawnPoints();
         RefillSpawnBag();
 
-        while (!_cts.IsCancellationRequested)
+        while (!_isSpawningFinished)
         {
             if (_spawnIndexBag.Count == 0)
                 RefillSpawnBag();
@@ -52,14 +50,12 @@ public class RecoveryEffect : BaseEffect
 
             var factor = Instantiate(recoveryFactor, parent);
             factor.transform.position = pos;
-            factorTasks.Add(factor.Init());
 
-            await UniTask.WaitForSeconds(delay, cancellationToken: _cts.Token).SuppressCancellationThrow();
+            Interlocked.Increment(ref _runningFactorCount);
+            factor.Init().ContinueWith(() => Interlocked.Decrement(ref _runningFactorCount)).Forget();
+
+            await UniTask.WaitForSeconds(delay);
         }
-
-        await UniTask.WaitForSeconds(5f);
-
-        Destroy(gameObject);
     }
 
     void BuildSpawnPoints()
@@ -91,10 +87,5 @@ public class RecoveryEffect : BaseEffect
             int rand = Random.Range(i, _spawnIndexBag.Count);
             (_spawnIndexBag[i], _spawnIndexBag[rand]) = (_spawnIndexBag[rand], _spawnIndexBag[i]);
         }
-    }
-
-    private void OnDestroy()
-    {
-        _cts.Cancel();
     }
 }

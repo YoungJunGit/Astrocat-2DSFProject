@@ -6,6 +6,7 @@ public static class EffectFactoryData
 {
     private static readonly Dictionary<string, Func<IEffectable>> _effectFactory = new()
     {
+        // CrowdControl //
         { "Burn", () => new BurnEffect(EffectTrait.Stackable) },
         { "Contamination", () => new SPConsumptionRateEffect(EffectTrait.Stackable) },
         { "Suppress", () => new SpeedEffect(EffectTrait.Stackable) },
@@ -16,7 +17,9 @@ public static class EffectFactoryData
         { "RadiationGaugeResistance", () => new GaugeResistance(EffectTrait.Duration, BUFF_TYPE.RADIATION_GAUGE_RESISTANCE) },
         { "GravityGaugeResistance", () => new GaugeResistance(EffectTrait.Duration, BUFF_TYPE.GRAVITY_GAUGE_RESISTANCE) },
         { "VoidGaugeResistance", () => new GaugeResistance(EffectTrait.Duration, BUFF_TYPE.VOID_GAUGE_RESISTANCE) },
-        { "HolyGaugeResistance", () => new GaugeResistance(EffectTrait.Duration, BUFF_TYPE.HOLY_GAUGE_RESISTANCE) }
+        { "HolyGaugeResistance", () => new GaugeResistance(EffectTrait.Duration, BUFF_TYPE.HOLY_GAUGE_RESISTANCE) },
+        // Normal Effect //
+        { "PowerBooster_Attack", () => new AttackEffect(EffectTrait.Duration) },
     };
 
     public static Func<IEffectable> GetEffectFactory(string ID) => _effectFactory.TryGetValue(ID, out var factory) ? factory : null;

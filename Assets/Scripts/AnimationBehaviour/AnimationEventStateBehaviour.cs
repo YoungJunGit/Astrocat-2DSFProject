@@ -12,9 +12,9 @@ public class AnimationEventStateBehaviour : StateMachineBehaviour
         Frame
     }
 
-    private ISoundService _soundService;
-
     public ANIMATION_EVENT eventType;
+
+    public string soundName;
 
     [EnumToggleButtons]
     public TriggerType triggerType;
@@ -29,11 +29,6 @@ public class AnimationEventStateBehaviour : StateMachineBehaviour
     public int triggerFrame = 0;
 
     bool hasTriggered;
-
-    private void OnEnable()
-    {
-        ServiceLocator.For(this).Get(out _soundService);
-    }
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -57,6 +52,7 @@ public class AnimationEventStateBehaviour : StateMachineBehaviour
         var handler = animator.GetComponent<AnimationEventHandler>();
         if (handler != null)
         {
+            if(soundName != string.Empty) handler.PlaySound(soundName);
             handler.OnAnimationEventTriggered(eventType);
         }
     }

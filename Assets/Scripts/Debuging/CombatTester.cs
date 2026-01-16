@@ -35,7 +35,7 @@ public class CombatTester : MonoBehaviour
 
             foreach(var unit in enemyList)
             {
-                IDamageInfo damage = new DamageInfo(playerList[0], 99999f, true);
+                DamageResult damage = new DamageResult(99999f, true);
                 unit.GetDamage(damage);
             }
         }

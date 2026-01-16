@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: 657db6fe0e1f9cd43b218102f4d343c8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2429444299658697967
+    second: Ship_Inside_Object (2)_0
+  - first:
+      213: -8375555169501312261
+    second: Ship_Inside_Object (2)_1
+  - first:
+      213: 6199212250918816518
+    second: Ship_Inside_Object (2)_2
+  - first:
+      213: 8473078515621843890
+    second: Ship_Inside_Object (2)_3
+  - first:
+      213: 4967902471523716331
+    second: Ship_Inside_Object (2)_4
+  - first:
+      213: -547662548924996794
+    second: Ship_Inside_Object (2)_5
+  - first:
+      213: -4005615371303643761
+    second: Ship_Inside_Object (2)_6
+  - first:
+      213: 7420617813158069479
+    second: Ship_Inside_Object (2)_7
+  - first:
+      213: 7929507925838913671
+    second: Ship_Inside_Object (2)_8
+  - first:
+      213: -35470325016323152
+    second: Ship_Inside_Object (2)_9
+  - first:
+      213: 2288587306836834626
+    second: Ship_Inside_Object (2)_10
+  - first:
+      213: -2829709751139068747
+    second: Ship_Inside_Object (2)_11
+  - first:
+      213: 856631601169356196
+    second: Ship_Inside_Object (2)_12
+  - first:
+      213: 1029827338730065006
+    second: Ship_Inside_Object (2)_13
+  - first:
+      213: 8171198380552774847
+    second: Ship_Inside_Object (2)_14
+  - first:
+      213: 5149848346586516530
+    second: Ship_Inside_Object (2)_15
+  - first:
+      213: -4959196743107480345
+    second: Ship_Inside_Object (2)_16
+  - first:
+      213: -7102062954426203079
+    second: Ship_Inside_Object (2)_17
+  - first:
+      213: -2573153521386933408
+    second: Ship_Inside_Object (2)_18
+  - first:
+      213: -8200065098714208556
+    second: Ship_Inside_Object (2)_19
+  - first:
+      213: 5032337577673669656
+    second: Ship_Inside_Object (2)_20
+  - first:
+      213: 5451630789337218960
+    second: Ship_Inside_Object (2)_21
+  - first:
+      213: -6738733786452003236
+    second: Ship_Inside_Object (2)_22
+  - first:
+      213: 53635656272342789
+    second: Ship_Inside_Object (2)_23
+  - first:
+      213: -7658973833881227364
+    second: Ship_Inside_Object (2)_24
+  - first:
+      213: -1511418467615754773
+    second: Ship_Inside_Object (2)_25
+  - first:
+      213: 1873506548403648100
+    second: Ship_Inside_Object (2)_26
+  - first:
+      213: -5217234944312041226
+    second: Ship_Inside_Object (2)_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ship_Inside_Object (2)_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 492
+        width: 889
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fec11c208be17b120800000000000000
+      internalID: 2429444299658697967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (2)_1
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 492
+        width: 889
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa003de2fc04cb80800000000000000
+      internalID: -8375555169501312261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (2)_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 56
+        width: 889
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb023836fb5bac4a9a406dee6b55a9f
+      internalID: 6199212250918816518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (2)_3
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 56
+        width: 889
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb437d05a46f7f4baf2298f62f1e8c4
+      internalID: 8473078515621843890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ec04ed0f798728549a1956ebb390d26f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":962.0,"y":464.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Ship_Inside_Object (2)_0: 2429444299658697967
+      Ship_Inside_Object (2)_1: -8375555169501312261
+      Ship_Inside_Object (2)_2: 6199212250918816518
+      Ship_Inside_Object (2)_3: 8473078515621843890
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

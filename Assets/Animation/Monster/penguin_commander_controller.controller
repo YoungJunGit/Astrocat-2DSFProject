@@ -40,6 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 1
+  soundName: penguin_Rifleman/penguin_Commander_NormalAttack
   triggerType: 1
   triggerTime: 0
   triggerTimeResolved: 0.25

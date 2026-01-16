@@ -17,16 +17,20 @@ public abstract class AbstractScene : MonoBehaviour
     [Tooltip("If this set to -1, apply random background sprite"), MinValue(-1)]
     protected int background_index;
 
+    [SerializeField]
+    [Tooltip("If this set to empty, audio clip will be loaded immediately while playing. (this could occur some delation with playing audio)")]
+    protected string PreloadAudioLabelName;
+
     [Space(20f)]
     [SerializeField] protected BoolVariable debugMode;
     [SerializeField] private bool changeSceneOnEndGame;
     [SerializeField, ShowIf("changeSceneOnEndGame")] SceneReference changeScene;
 
-    protected ISoundService soundService;
-    protected ISceneHandler sceneHandler;
-    protected BackgroundManager backgroundManager;
+    protected ISoundService _soundService;
+    protected ISceneHandler _sceneHandler;
+    protected BackgroundManager _backgroundManager;
 
-    public ISceneHandler SceneHandler { get => sceneHandler; }
+    public ISceneHandler SceneHandler { get => _sceneHandler; }
     protected MapDataFactory mapDataFactory;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -34,35 +38,38 @@ public abstract class AbstractScene : MonoBehaviour
     {
         ServiceLocator.Global.Register(new SoundService() as ISoundService);
         ServiceLocator.Global.Register(new SceneHandler() as ISceneHandler);
-        ServiceLocator.Global.Register<BackgroundManager>(new BackgroundManager());
+        ServiceLocator.Global.Register(new BackgroundManager());
     }
 
     private async void Start()
     {
         ServiceLocator.For(this)
-            .Get(out sceneHandler)
-            .Get(out backgroundManager)
-            .Get(out soundService);
+            .Get(out _sceneHandler)
+            .Get(out _backgroundManager)
+            .Get(out _soundService);
 
         mapDataFactory = new MapDataFactory();
         if (!SceneManager.GetSceneByName("99. Base").isLoaded)
             await SceneManager.LoadSceneAsync("99. Base", LoadSceneMode.Additive);
 
-        backgroundManager.SetBackground(background_type, background_index);
+        _backgroundManager.SetBackground(background_type, background_index);
+        await _soundService.PreloadByLabel(PreloadAudioLabelName);
 
         BindObjects();
         await InitializeObjects();
         await CreateObjects();
         PrepareGame();
 
-        await sceneHandler.OnFinishedLoading();
+        await _sceneHandler.OnFinishedLoading();
 
         await BeginGame();
 
+        _soundService.Clear();
+
         if (changeSceneOnEndGame)
         {
-            await sceneHandler.FadeScreen();
-            sceneHandler.LoadingScreen(changeScene);
+            await _sceneHandler.FadeScreen();
+            _sceneHandler.LoadingScreen(changeScene);
         }
     }
 

@@ -1,0 +1,363 @@
+fileFormatVersion: 2
+guid: f93ca2af833e8ce45a2d08ee41e7011c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3308312117308783687
+    second: Ship_Inside_Object (6)_0
+  - first:
+      213: 9152798239729577938
+    second: Ship_Inside_Object (6)_1
+  - first:
+      213: -5200954206777526711
+    second: Ship_Inside_Object (6)_2
+  - first:
+      213: -1261617402518611114
+    second: Ship_Inside_Object (6)_3
+  - first:
+      213: -6565983741210728146
+    second: Ship_Inside_Object (6)_4
+  - first:
+      213: 7603611320786941265
+    second: Ship_Inside_Object (6)_5
+  - first:
+      213: -1182618352439219744
+    second: Ship_Inside_Object (6)_6
+  - first:
+      213: 2945192598191869824
+    second: Ship_Inside_Object (6)_7
+  - first:
+      213: 3101285408182801392
+    second: Ship_Inside_Object (6)_8
+  - first:
+      213: 3504096948755656993
+    second: Ship_Inside_Object (6)_9
+  - first:
+      213: -7939748664291243936
+    second: Ship_Inside_Object (6)_10
+  - first:
+      213: -708512739731653967
+    second: Ship_Inside_Object (6)_11
+  - first:
+      213: 5722087437515488427
+    second: Ship_Inside_Object (6)_12
+  - first:
+      213: -4139826096415279122
+    second: Ship_Inside_Object (6)_13
+  - first:
+      213: -4346597361555248388
+    second: Ship_Inside_Object (6)_14
+  - first:
+      213: 5470175378866868919
+    second: Ship_Inside_Object (6)_15
+  - first:
+      213: 844718751222776703
+    second: Ship_Inside_Object (6)_16
+  - first:
+      213: 8020996384340189256
+    second: Ship_Inside_Object (6)_17
+  - first:
+      213: -5005786509836812864
+    second: Ship_Inside_Object (6)_18
+  - first:
+      213: 349217979201583864
+    second: Ship_Inside_Object (6)_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ship_room_5_light_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 780
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b380b158a38612d0800000000000000
+      internalID: -3308312117308783687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (6)_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 432
+        width: 612
+        height: 404
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dfe6e36185450f70800000000000000
+      internalID: 9152798239729577938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_5_light_1
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 780
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946b3fb64bf72d7b0800000000000000
+      internalID: -5200954206777526711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (6)_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 432
+        width: 612
+        height: 404
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b5d6028a5dd7ee0800000000000000
+      internalID: -1261617402518611114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_5_light_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 360
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4e840c69a9073488aea7d2883a2812
+      internalID: -1785573992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (6)_3
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 12
+        width: 612
+        height: 404
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cc97d82d4c36f47bf9bc6cfe59e33c
+      internalID: 7603611320786941265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_room_5_light_3
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 360
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d611eb9690d905f46b75422fe14d6f43
+      internalID: 1083463200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Inside_Object (6)_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 12
+        width: 612
+        height: 404
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55fd7fdb0a234ad43886d269a973359a
+      internalID: 2945192598191869824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 861ab308344d69548a1ff77b5bc11114
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":476.0,"y":426.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Ship_Inside_Object (6)_1: 9152798239729577938
+      Ship_Inside_Object (6)_2: -1261617402518611114
+      Ship_Inside_Object (6)_3: 7603611320786941265
+      Ship_Inside_Object (6)_4: 2945192598191869824
+      Ship_room_5_light_0: -3308312117308783687
+      Ship_room_5_light_1: -5200954206777526711
+      Ship_room_5_light_2: -1785573992
+      Ship_room_5_light_3: 1083463200
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -29,6 +29,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
     [SerializeField, ShowIf("HasSupporter"), Required]
     protected SupporterUnit _supporterUnit;
+    public SupporterUnit SupporterUnit => _supporterUnit;
 
     [SerializeField] private UNIT_TYPE _unitType;
     [SerializeField] private float hitBlendAmount = 0.75f;
@@ -43,6 +44,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
     protected UnitStat _stat;
     protected ISoundService _soundService;
+    protected IEffectManager _effectManager;
     protected ICombatTextManager _textManager;
     protected ICrowdControlManager _crowdControlManager;
 
@@ -75,6 +77,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         ServiceLocator.For(this)
             .Get(out _soundService)
             .Get(out _textManager)
+            .Get(out _effectManager)
             .Get(out _crowdControlManager);
 
         TimelinePublisher.SubscribeObserver(this);
@@ -86,19 +89,11 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
             _supporterUnit.Initialize();
     }
 
-    public void GetDamage(IDamageInfo damageInfo)
+    public void GetDamage(DamageResult damageInfo, ElementGaugeResult elementGaugeResult = null)
     {
         if(_stat.HP <= 0f) return;
 
-        _stat.GetDamaged(damageInfo.DamageValue);
-        CombatInfo.LastAttacker = damageInfo.Attacker;
-
-        var material = Attachments.GetSpriteRenderer().material;
-        DOTween.Kill(_stat.CoreStat.Name + HIT_BLEND_TWEEN_ID);
-        material.SetFloat("_HitEffectBlend", hitBlendAmount);
-        material.DOFloat(0.0f, "_HitEffectBlend", hitBlendDuration)
-            .SetEase(Ease.Linear)
-            .SetId(_stat.CoreStat.Name + HIT_BLEND_TWEEN_ID);
+        _effectManager.PlayHitEffect(Attachments.GetSpriteRenderer().material, _stat.CoreStat.ID);
 
         if (this is PlayerUnit)
         {
@@ -110,7 +105,8 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
             _supporterUnit.OnDamaged();
         }
 
-        _textManager.OnDamage(this, damageInfo);
+        _stat.GetDamaged(damageInfo.DamageValue);
+        _textManager.OnDamage(Attachments.GetHitBox().bounds, damageInfo);
 
         if (_stat.HP <= 0f)
         {
@@ -118,24 +114,26 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
             return;
         }
 
-        if (damageInfo.ElementType != ELEMENT_TYPE.NONE)
+        if (elementGaugeResult != null && elementGaugeResult.ElementType != ELEMENT_TYPE.NONE)
         {
-            _stat.IncreaseElementGauge(damageInfo.ElementType, damageInfo.ElementGaugeIncreaseValue);
+            CCUnit.BringLastAttacker = () => elementGaugeResult.Attacker;
+            _stat.IncreaseElementGauge(elementGaugeResult.ElementType, elementGaugeResult.ElementGaugeIncreaseValue);
         }
     }
 
     public void GetHeal(float value)
     {
-        _stat.GetHealed(value);
+        if (_stat.HP <= 0f) return;
 
-        // TODO : Heal Logic
+        float realValue = _stat.GetHealed(value);
+        _textManager.OnHeal(Attachments.GetHitBox().bounds, realValue);
     }
 
-    public void OnAction(int cost)
+    public void AddSP(int cost)
     {
         if (cost != 0)
         {
-            _stat.OnAction(cost);
+            _stat.AddSP(cost);
         }
     }
 
@@ -143,7 +141,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
     {
         if (elementType != ELEMENT_TYPE.NONE && elementType != ELEMENT_TYPE.ETC)
         {
-            _crowdControlManager.AddCrowdControl(elementType, this, CombatInfo.LastAttacker);
+            _crowdControlManager.AddCrowdControl(elementType, this, CCUnit.BringLastAttacker.Invoke());
         }
     }
 
@@ -161,11 +159,10 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
         using (var eventDisposer = new EventDisposer(new CombatEvent("DeathEvent")))
         {
-            Attachments.GetSpriteRenderer().sortingLayerName = "Actor";
-
+            ChangeSortingLayer("Actor");
             await _animHandler.ChangeAnimationAsync(ANIMATION.DEATH);
             await OnFinshedDeathAnim();
-            Attachments.GetSpriteRenderer().sortingLayerName = "Character";
+            ChangeSortingLayer("Character");
         }
 
         TimelinePublisher.DiscribeObserver(this);
@@ -185,6 +182,14 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         {
             updatable.OnTurnUpdate();
         }
+    }
+
+    public void ChangeSortingLayer(string layer)
+    {
+        Attachments.GetSpriteRenderer().sortingLayerName = layer;
+
+        if(HasSupporter && _supporterUnit != null)
+            _supporterUnit.Attachments.GetSpriteRenderer().sortingLayerName = layer;
     }
 
     public UnitStat GetStat() => _stat;
