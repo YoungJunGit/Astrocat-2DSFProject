@@ -21,6 +21,9 @@ public abstract class AbstractScene : MonoBehaviour
     [Tooltip("If this set to empty, audio clip will be loaded immediately while playing. (this could occur some delation with playing audio)")]
     protected string PreloadAudioLabelName;
 
+    [SerializeField]
+    private float cameraSize = 5.4f;
+
     [Space(20f)]
     [SerializeField] protected BoolVariable debugMode;
     [SerializeField] private bool changeSceneOnEndGame;
@@ -47,10 +50,12 @@ public abstract class AbstractScene : MonoBehaviour
             .Get(out _sceneHandler)
             .Get(out _backgroundManager)
             .Get(out _soundService);
-
+            
         mapDataFactory = new MapDataFactory();
         if (!SceneManager.GetSceneByName("99. Base").isLoaded)
             await SceneManager.LoadSceneAsync("99. Base", LoadSceneMode.Additive);
+
+        CameraManager.SetCameraSize(cameraSize);
 
         _backgroundManager.SetBackground(background_type, background_index);
         await _soundService.PreloadByLabel(PreloadAudioLabelName);

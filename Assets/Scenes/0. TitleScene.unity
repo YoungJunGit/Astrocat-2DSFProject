@@ -165,11 +165,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background_type: 1
   background_index: 2
+  PreloadAudioLabelName: 
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
   changeSceneOnEndGame: 1
   changeScene:
-    sceneAsset: {fileID: 102900000, guid: ad119d35a5a22ca499e23481f9051f9c, type: 3}
-    scenePath: Assets/Scenes/2. NodeTree.unity
+    sceneAsset: {fileID: 102900000, guid: 5be8fef75f06efd49ac5b3dad5123721, type: 3}
+    scenePath: Assets/Scenes/Lobby.unity
   titleManager: {fileID: 11400000, guid: 72b31fe6d5dd6d34dae002005c322140, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

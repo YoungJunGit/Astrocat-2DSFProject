@@ -1,8 +1,6 @@
 using DataEnum;
 using Sirenix.OdinInspector;
-using UnityEditor.Animations;
 using UnityEngine;
-using System.Linq;
 
 public class AnimationEventStateBehaviour : StateMachineBehaviour
 {
