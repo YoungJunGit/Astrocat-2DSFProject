@@ -1,16 +1,19 @@
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 public class CameraBlockerOnDialogue : MonoBehaviour
 {
     // Dialogue System이 대화 시작 시 actor/conversant에게 보내는 메시지
-    private void OnConversationStart(Transform actor)
+    public void OnConversationStart(Transform actor)
     {
-        CameraMove.Instance?.SetBlockInput(true);
+        ServiceLocator.For(this).Get(out ICameraMove cameraMove);
+        cameraMove?.SetBlockInput(true);
     }
 
     // Dialogue System이 대화 종료 시 actor/conversant에게 보내는 메시지
-    private void OnConversationEnd(Transform actor)
+    public void OnConversationEnd(Transform actor)
     {
-        CameraMove.Instance?.SetBlockInput(false);
+        ServiceLocator.For(this).Get(out ICameraMove cameraMove);
+        cameraMove?.SetBlockInput(false);
     }
 }

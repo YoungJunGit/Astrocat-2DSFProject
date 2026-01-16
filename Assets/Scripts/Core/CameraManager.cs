@@ -28,5 +28,10 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+    public static void SetCameraSize(float size)
+    {
+        Camera.main.orthographicSize = size;
+    }
+
     public bool TryGetCamera(string name, out Camera camera) => CameraList.TryGetValue(name, out camera);
 }

@@ -1,7 +1,11 @@
 using UnityEngine;
-public class CameraMove : MonoBehaviour
+public interface ICameraMove
 {
-    public static CameraMove Instance { get; private set; }
+    public void SetBlockInput(bool value);
+}
+
+public class CameraMove : MonoBehaviour, ICameraMove, IUpdateObserver
+{
     [Header("References")]
     [SerializeField] private Camera cam;
 
@@ -40,18 +44,23 @@ public class CameraMove : MonoBehaviour
     {
         cam = Camera.main;
     }
-    private void Awake()
+    public void StartCameraMove()
     {
-        Instance = this;
-
-        if (cam == null) cam = Camera.main;
+        if (cam == null)
+        {
+            cam = Camera.main;
+            cam.transform.parent = transform;
+        }
         cam.orthographic = true;
         _targetOrtho = cam.orthographicSize;
     }
 
-    private void Update()
+    public void ObserverUpdate(float dt)
     {
-        if (blockInput) return;
+        if (blockInput)
+        {
+            return;
+        }
 
         HandleZoom();
         HandlePan();

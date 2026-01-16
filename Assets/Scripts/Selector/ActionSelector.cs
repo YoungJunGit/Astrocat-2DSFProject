@@ -19,7 +19,7 @@ public class ActionSelector : BaseSelector
     private ISoundService _soundService;
     private DataHandler _dataHandler;
 
-    List<SkillData> skillDataList;
+    private List<SkillData> skillDataList;
     private int _selectedActionType;
     private int _selectedSkillIndex;
     private bool _selectActionComplete;
@@ -29,6 +29,7 @@ public class ActionSelector : BaseSelector
         selector = GameObject.FindWithTag("ActionPanel").GetComponent<ActionSelectionButtons>();
         selector.Init();
         
+        skillDataList = new();
         selector.OnBasicSelection += (index) => _selectedActionType = index;
         selector.OnSkillSelection += (index) => _selectedSkillIndex = index;
         selector.OnSelectActionStart += () => _selectActionComplete = false;
