@@ -103,7 +103,7 @@ public sealed class Skill_FirstAid : SkillAction<ISingleTargetContext>
 
     public override async UniTask AsyncOperateAction(ISingleTargetContext context)
     {
-        context.SoundService.PlayEffectSound("player_Rifleman_Skill_FirstAid");
+        context.SoundService.PlayEffectSound("HealEffectSound");
         var @event = new CommonActionEvent();
 
         @event.SkillHealEvent<HealCalculatorPercentageHealth>(context.Caster, context.Target, (float)Data.Skill_ATK_Rate);
@@ -202,7 +202,7 @@ public sealed class Skill_RecoveryProtocol : SkillAction<ISingleTargetContext>
 
     public override async UniTask AsyncOperateAction(ISingleTargetContext context)
     {
-        context.SoundService.PlayEffectSound("player_Commissar_Skill_RecoveryProtocol");
+        context.SoundService.PlayEffectSound("HealEffectSound");
         var @event = new CommonActionEvent();
 
         @event.SkillHealEvent<HealCalculatorPercentageHealth>(context.Caster, context.Target, (float)Data.Skill_ATK_Rate);
@@ -265,7 +265,7 @@ public sealed class Skill_NanoRestore : SkillAction<ISingleTargetContext>
         context.Caster.AnimationEventHandler.ClearAnimationEvent();
         await UniTask.WaitUntil(() => isDamaged);
 
-        context.SoundService.PlayEffectSound("player_Sniper_Skill_NanoRestore");
+        context.SoundService.PlayEffectSound("HealEffectSound");
         var healEvent = new CommonActionEvent();
 
         healEvent.SkillHealEvent<HealCalculatorPercentageAttack>(context.Caster, context.Caster, (float)Data.Skill_ATK_Rate, damageValue);

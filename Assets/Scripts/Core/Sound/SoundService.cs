@@ -241,7 +241,7 @@ public class SoundService : ISoundService
         if (string.IsNullOrWhiteSpace(clipName))
             return null;
 
-        if (TryFindBestMatch(clipName, out var matchedKey, out var cached))
+        if (_clipHandles.TryGetValue(clipName, out var cached))
         {
             if (cached.IsValid() && cached.Status == AsyncOperationStatus.Succeeded && cached.Result != null)
             {
@@ -252,7 +252,7 @@ public class SoundService : ISoundService
             if (cached.IsValid())
                 Addressables.Release(cached);
 
-            _clipHandles.Remove(matchedKey);
+            _clipHandles.Remove(clipName);
         }
 
         var handle = Addressables.LoadAssetAsync<AudioClip>(clipName);
@@ -270,41 +270,5 @@ public class SoundService : ISoundService
 
         _clipHandles[clipName] = handle;
         return clip;
-    }
-
-    private bool TryFindBestMatch(string clipName, out string matchedKey, out AsyncOperationHandle<AudioClip> handle)
-    {
-        // 1. 정확 일치
-        if (_clipHandles.TryGetValue(clipName, out handle))
-        {
-            matchedKey = clipName;
-            return true;
-        }
-
-        // 2. EndsWith
-        foreach (var kv in _clipHandles)
-        {
-            if (kv.Key.EndsWith(clipName))
-            {
-                matchedKey = kv.Key;
-                handle = kv.Value;
-                return true;
-            }
-        }
-
-        // 3. Contains
-        foreach (var kv in _clipHandles)
-        {
-            if (kv.Key.Contains(clipName))
-            {
-                matchedKey = kv.Key;
-                handle = kv.Value;
-                return true;
-            }
-        }
-
-        matchedKey = null;
-        handle = default;
-        return false;
     }
 }

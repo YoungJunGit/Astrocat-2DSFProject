@@ -64,7 +64,7 @@ MonoBehaviour:
     - Audio_Combat
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 829a8a9474ea042e893508bc510f55dc
-    m_Address: player_Rifleman_Skill_FirstAid/player_Commissar_Skill_RecoveryProtocol/player_Sniper_Skill_NanoRestore
+    m_Address: HealEffectSound
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio_Combat

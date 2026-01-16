@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fb2e2708318064f86878eb76b8fca3, type: 3}
   m_Name: DataHandler
   m_EditorClassIdentifier: 
-  entityData: {fileID: 11400000, guid: 598428426645dc14ca7150aebbb09b25, type: 2}
+  entityData: {fileID: 11400000, guid: eb2a3ce031ac9fa49859448d449422f9, type: 2}
   skillData: {fileID: 11400000, guid: d65634d78c4e61f43a00fefd3d547573, type: 2}
   buffData: {fileID: 11400000, guid: b5f0d41b5ed79b345af78c991f344039, type: 2}
   elementStatusData: {fileID: 11400000, guid: a8a2e0503e064ff42a512c59241518cc, type: 2}
