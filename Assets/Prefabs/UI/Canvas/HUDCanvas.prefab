@@ -726,9 +726,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64fb496ab111c04faeaeccf475ab540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideCamera: 1
-  targetCameraName: HUDCamera
   sortingLayerName: UI
+  overrideCamera: 0
+  targetCameraName: HUDCamera
   _playerStatusPanel: {fileID: 8417022078013290071}
   _enemyStatusPanel: {fileID: 6822086604894163215}
 --- !u!1 &3730405905971042352
@@ -2031,7 +2031,7 @@ MonoBehaviour:
   ComponentScale: {x: 1, y: 1, z: 1}
   FillSize: {x: 1920, y: 1080, z: 0}
   ShrinkSize: {x: 999999, y: 999999, z: 999999}
-  TargetPosition: {x: 410, y: 110, z: 0}
+  TargetPosition: {x: -550, y: -430, z: 0}
   TargetRotation: {x: -0, y: -0, z: -0, w: 1}
   TargetScale: {x: 1, y: 1, z: 1}
   TargetRectSize: {x: 820, y: 220, z: 0}
