@@ -14,6 +14,7 @@ public class DialogueTriggerOnClick : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("[DialogueTriggerOnClick] Click detected!");
         if (inkTrigger == null)
         {
             Debug.LogWarning("[DialogueTriggerOnClick] DialogueSystemInkTrigger not found!");

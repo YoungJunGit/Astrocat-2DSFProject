@@ -96,7 +96,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -127,10 +127,10 @@ TextureImporter:
       name: sniper-body_0
       rect:
         serializedVersion: 2
-        x: 25
+        x: 0
         y: 0
-        width: 165
-        height: 416
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: sniper-body_1
       rect:
         serializedVersion: 2
-        x: 425
+        x: 400
         y: 0
-        width: 165
-        height: 416
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +171,10 @@ TextureImporter:
       name: sniper-body_2
       rect:
         serializedVersion: 2
-        x: 825
+        x: 800
         y: 0
-        width: 165
-        height: 416
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: sniper-body_3
       rect:
         serializedVersion: 2
-        x: 1225
+        x: 1200
         y: 0
-        width: 165
-        height: 416
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: sniper-body_4
       rect:
         serializedVersion: 2
-        x: 1625
+        x: 1600
         y: 0
-        width: 165
-        height: 416
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +237,10 @@ TextureImporter:
       name: sniper-body_5
       rect:
         serializedVersion: 2
-        x: 2025
+        x: 2000
         y: 0
-        width: 165
-        height: 416
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +259,10 @@ TextureImporter:
       name: sniper-body_6
       rect:
         serializedVersion: 2
-        x: 2425
+        x: 2400
         y: 0
-        width: 165
-        height: 416
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: sniper-body_7
       rect:
         serializedVersion: 2
-        x: 2825
+        x: 2800
         y: 0
-        width: 165
-        height: 416
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,10 +303,10 @@ TextureImporter:
       name: sniper-body_8
       rect:
         serializedVersion: 2
-        x: 3225
+        x: 3200
         y: 0
-        width: 165
-        height: 416
+        width: 400
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 20e0602f0afbc704c8e5e14af5cc16d8
     internalID: 0
     vertices: []
     indices: 
@@ -333,7 +333,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       sniper-body_0: 6680405885367768351
       sniper-body_1: 1192470078226078418
