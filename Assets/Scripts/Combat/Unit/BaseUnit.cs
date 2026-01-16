@@ -29,6 +29,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
     [SerializeField, ShowIf("HasSupporter"), Required]
     protected SupporterUnit _supporterUnit;
+    public SupporterUnit SupporterUnit => _supporterUnit;
 
     [SerializeField] private UNIT_TYPE _unitType;
     [SerializeField] private float hitBlendAmount = 0.75f;
@@ -158,11 +159,10 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
         using (var eventDisposer = new EventDisposer(new CombatEvent("DeathEvent")))
         {
-            Attachments.GetSpriteRenderer().sortingLayerName = "Actor";
-
+            ChangeSortingLayer("Actor");
             await _animHandler.ChangeAnimationAsync(ANIMATION.DEATH);
             await OnFinshedDeathAnim();
-            Attachments.GetSpriteRenderer().sortingLayerName = "Character";
+            ChangeSortingLayer("Character");
         }
 
         TimelinePublisher.DiscribeObserver(this);
@@ -182,6 +182,14 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         {
             updatable.OnTurnUpdate();
         }
+    }
+
+    public void ChangeSortingLayer(string layer)
+    {
+        Attachments.GetSpriteRenderer().sortingLayerName = layer;
+
+        if(HasSupporter && _supporterUnit != null)
+            _supporterUnit.Attachments.GetSpriteRenderer().sortingLayerName = layer;
     }
 
     public UnitStat GetStat() => _stat;

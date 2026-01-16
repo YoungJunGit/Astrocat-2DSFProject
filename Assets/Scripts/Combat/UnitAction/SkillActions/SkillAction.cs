@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using DataEntity;
 using DataEnum;
+using DG.Tweening;
 using Language.Lua;
 using System;
 using System.Threading;
@@ -282,13 +283,36 @@ public sealed class Skill_PowerBooster : SkillAction<ISingleTargetContext>
     public override Func<BaseUnit, bool> Target_Filter { get; } = null;
     public override string SkillName => "PowerBooster";
 
+    private float moveDuration = 5.0f;
+
     public override async UniTask AsyncOperateAction(ISingleTargetContext context)
     {
-        context.SoundService.PlayEffectSound("player_Sniper_PowerBooster");
-
+        var buffEvent = new CommonActionEvent();
         var effectInfo = new EffectInfo($"{SkillName}_Attack", (float)Data.Skill_ATK_Rate, Data.Skill_Duration_Turn);
-        context.CombatEffectManager.AddCombatEffect(effectInfo.Name, effectInfo, new EffectContext(Target: context.Target, Caster: context.Caster));
+        var effectContext = new EffectContext(Target: context.Target, Caster: context.Caster);
+        var @event = new PowerBoosterEvent();
 
-        await UniTask.WaitForSeconds(1f);
+        bool isInjected = false;
+        context.Caster.SupporterUnit.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.SKILL, () =>
+        {
+            @event.FireInjection
+            (
+                context.ProjectileManager,
+                context,
+                SkillName,
+                () => buffEvent.SkillBuffEvent(context, effectInfo, effectContext, "player_Sniper_PowerBooster"),
+                () => isInjected = true
+            );
+        });
+
+        @event.CalculateMovePositions(context.Caster.SupporterUnit.transform, context.Target.Attachments.GetDroneInjectionFiringPos().transform);
+        await context.Caster.SupporterUnit.AnimationHandler.ChangeAnimationAsync(ANIMATION.MOVE, fadeTime: 0.1f);
+        await @event.Move(context.Caster.SupporterUnit.transform, moveDuration, false);
+        await context.Caster.SupporterUnit.AnimationHandler.ChangeAnimationAsync(ANIMATION.SKILL, SkillName, fadeTime: 0.25f);
+        await context.Caster.SupporterUnit.AnimationHandler.ChangeAnimationAsync(ANIMATION.MOVE, fadeTime: 0.1f);
+        await @event.Move(context.Caster.SupporterUnit.transform, moveDuration, true);
+        await context.Caster.SupporterUnit.AnimationHandler.ChangeAnimationAsync(ANIMATION.IDLE);
+
+        await UniTask.WaitUntil(() => isInjected);
     }
 }

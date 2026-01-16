@@ -83,7 +83,7 @@ class RangeAttackAction : BaseAttackAction
 
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.ATTACK, () =>
         {
-            rangeAttackEvent.ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, () => isDamaged = true);
+            rangeAttackEvent.ShootBullet(context.ProjectileManager, context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, () => isDamaged = true);
         });
 
         await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.ATTACK);

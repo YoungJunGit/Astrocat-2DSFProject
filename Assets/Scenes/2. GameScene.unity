@@ -232,6 +232,7 @@ MonoBehaviour:
   - 10012002
   - 10012003
   effectManager: {fileID: 11400000, guid: 9b7f445e7fb5133468585ab36b761267, type: 2}
+  projectileManager: {fileID: 11400000, guid: 4ba9e93c62c93974f8a58ab1548fc8a1, type: 2}
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}
   textManager: {fileID: 11400000, guid: 6ba557ebca91ea6489f20feb5e5ed850, type: 2}
   combatManager: {fileID: 11400000, guid: 27f2394bf411c2347ac42bea911d4466, type: 2}

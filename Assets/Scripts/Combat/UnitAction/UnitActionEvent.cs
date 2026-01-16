@@ -5,6 +5,8 @@ using DG.Tweening;
 using Object = UnityEngine.Object;
 using DataEntity;
 using Sirenix.OdinInspector.Modules.UnityMathematics.Editor;
+using NUnit.Framework;
+using Cysharp.Threading.Tasks;
 
 public class CommonActionEvent
 {
@@ -80,6 +82,12 @@ public class CommonActionEvent
         );
         target.GetHeal(heal);
     }
+
+    public void SkillBuffEvent(IUnitActionContext context, EffectInfo Info, EffectContext Context, string audioName)
+    {
+        context.SoundService.PlayEffectSound(audioName);
+        context.CombatEffectManager.AddCombatEffect(Info.Name, Info, new EffectContext(Target: Context.Target, Caster: Context.Caster));
+    }
 }
 
 public sealed class SelfAttackEvent : CommonActionEvent
@@ -135,10 +143,9 @@ public sealed class MeleeAttackEvent : CommonActionEvent
 
 public class RangeAttackEvent : CommonActionEvent
 {
-    public void ShootBullet(string assetName, BaseUnit Caster, BaseUnit Target, Action onDamaged)
+    public void ShootBullet(IProjectileManager manager, string assetName, BaseUnit Caster, BaseUnit Target, Action onDamaged)
     {
-        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(assetName);
-        BaseBullet bullet = Object.Instantiate(bulletPrefab, Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+        BaseBullet bullet = manager.CreateProjectile<BaseBullet>(assetName, Caster.Attachments.GetBulletSpawnPos().transform.position);
 
         if (bullet != null)
         {
@@ -150,10 +157,9 @@ public class RangeAttackEvent : CommonActionEvent
         }
     }
 
-    public void ShootBullet(string assetName, BaseUnit Caster, BaseUnit Target, Action onDamaged, SkillData data = null)
+    public void ShootBullet(IProjectileManager manager, string assetName, BaseUnit Caster, BaseUnit Target, Action onDamaged, SkillData data = null)
     {
-        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(assetName);
-        BaseBullet bullet = Object.Instantiate(bulletPrefab, Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+        BaseBullet bullet = manager.CreateProjectile<BaseBullet>(assetName, Caster.Attachments.GetBulletSpawnPos().transform.position);
 
         Action damageAction;
         if(data.Element_Type == ELEMENT_TYPE.NONE)
@@ -175,10 +181,9 @@ public class RangeAttackEvent : CommonActionEvent
         }
     }
 
-    public void ShootBulletReturnDamage(string assetName, BaseUnit Caster, BaseUnit Target, Action<float> onDamaged, SkillData data = null, float overrideSkillRate = -1f)
+    public void ShootBulletReturnDamage(IProjectileManager manager, string assetName, BaseUnit Caster, BaseUnit Target, Action<float> onDamaged, SkillData data = null, float overrideSkillRate = -1f)
     {
-        GameObject bulletPrefab = AssetLoader.LoadBulletPrefabAsset(assetName);
-        BaseBullet bullet = Object.Instantiate(bulletPrefab, Caster.Attachments.GetBulletSpawnPos().transform.position, Quaternion.identity).GetComponent<BaseBullet>();
+        BaseBullet bullet = manager.CreateProjectile<BaseBullet>(assetName, Caster.Attachments.GetBulletSpawnPos().transform.position);
 
         Func<float> damageAction;
         if (data.Element_Type == ELEMENT_TYPE.NONE)
@@ -214,7 +219,7 @@ public sealed class AreaBurstEvent : RangeAttackEvent
     {
         foreach (var target in context.Targets)
         {
-            ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, target, onDamaged, data);
+            ShootBullet(context.ProjectileManager, context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, target, onDamaged, data);
         }
     }
 }
@@ -223,7 +228,7 @@ public sealed class TripleBurstEvent : RangeAttackEvent
 {
     public void ExecuteShootBullet(SkillData data, ISingleTargetContext context, Action onDamaged)
     {
-        ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, onDamaged, data);
+        ShootBullet(context.ProjectileManager, context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, onDamaged, data);
     }
 }
 
@@ -231,7 +236,7 @@ public sealed class ForceSuppressionEvent : RangeAttackEvent
 {
     public void ExecuteShootBullet(SkillData data, ISingleTargetContext context, Action onDamaged)
     {
-        ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, onDamaged, data);
+        ShootBullet(context.ProjectileManager, context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, onDamaged, data);
     }
 }
 
@@ -239,7 +244,7 @@ public sealed class ContaminationShotEvent : RangeAttackEvent
 {
     public void ExecuteShootBullet(SkillData data, string skillName, ISingleTargetContext context, Action onDamaged)
     {
-        ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName + "_" + skillName, context.Caster, context.Target, onDamaged, data);
+        ShootBullet(context.ProjectileManager, context.Caster.GetStat().CoreStat.AssetFileName + "_" + skillName, context.Caster, context.Target, onDamaged, data);
     }
 }
 
@@ -247,7 +252,7 @@ public sealed class PrecisionShotEvent : RangeAttackEvent
 {
     public void ExecuteShootBullet(SkillData data, string skillName, ISingleTargetContext context, Action onDamaged)
     {
-        ShootBullet(context.Caster.GetStat().CoreStat.AssetFileName + "_" + skillName, context.Caster, context.Target, onDamaged, data);
+        ShootBullet(context.ProjectileManager, context.Caster.GetStat().CoreStat.AssetFileName + "_" + skillName, context.Caster, context.Target, onDamaged, data);
     }
 }
 
@@ -255,6 +260,69 @@ public sealed class NanoRestoreEvent : RangeAttackEvent
 {
     public void ExecuteShootBullet(SkillData data, ISingleTargetContext context, Action<float> onDamaged)
     {
-        ShootBulletReturnDamage(context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, onDamaged, data, 1.0f);
+        ShootBulletReturnDamage(context.ProjectileManager, context.Caster.GetStat().CoreStat.AssetFileName, context.Caster, context.Target, onDamaged, data, 1.0f);
+    }
+}
+
+public sealed class PowerBoosterEvent : CommonActionEvent
+{
+    private Vector2 startPosition;
+    private Vector2 endPosition;
+
+    private bool isRight = false;
+
+    public void CalculateMovePositions(Transform start, Transform end)
+    {
+        // Save Position
+        startPosition = start.position;
+        endPosition = end.position;
+
+        // Determine Rotation
+        Transform basis = start.root;
+        Vector3 localStart = basis.InverseTransformPoint(start.position);
+        Vector3 localEnd = basis.InverseTransformPoint(end.position);
+        isRight = localEnd.x >= localStart.x;
+    }
+
+    public async UniTask Move(Transform unit, float moveSpeed, bool isRetreat)
+    {
+        var scale = unit.localScale;
+        scale.x = Mathf.Abs(scale.x) * (isRight ? 1 : -1);
+        unit.localScale = scale;
+
+        if (!isRetreat)
+        {
+            await unit.transform.DOMove(endPosition, moveSpeed)
+                .SetSpeedBased()
+                .SetEase(Ease.InOutSine);
+        }
+        else
+        {
+            await unit.transform.DOMove(startPosition, moveSpeed)
+                .SetSpeedBased()
+                .SetEase(Ease.InOutSine);
+        }
+
+        if(!isRight)
+        {
+            scale.x = 1;
+            unit.localScale = scale;
+        }
+        
+        isRight = !isRight;
+    }
+
+    public void FireInjection(IProjectileManager projectileManager, ISingleTargetContext context, string skillName, Action buffEvent, Action onFinished)
+    {
+        BaseInjection bullet = projectileManager.CreateProjectile<BaseInjection>
+        (
+            skillName,
+            context.Caster.SupporterUnit.Attachments.GetBulletSpawnPos().transform.position
+        );
+
+        if (bullet != null)
+        {
+            bullet.Initialize(context.Target.Attachments.GetDroneInjectionBox(), buffEvent, onFinished);
+        }
     }
 }

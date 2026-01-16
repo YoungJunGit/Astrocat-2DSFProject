@@ -30,11 +30,11 @@ public abstract class BaseUnitAction<TContext> : IUnitAction where TContext : IU
     public async UniTask ExecuteWith(TContext context)
     {
         context.Caster.AddSP(SPCost);
-        context.Caster.Attachments.GetSpriteRenderer().sortingLayerName = "Actor";
+        context.Caster.ChangeSortingLayer("Actor");
 
         await AsyncOperateAction(context);
 
-        context.Caster.Attachments.GetSpriteRenderer().sortingLayerName = "Character";
+        context.Caster.ChangeSortingLayer("Character");
     }
 
     public abstract UniTask AsyncOperateAction(TContext context);

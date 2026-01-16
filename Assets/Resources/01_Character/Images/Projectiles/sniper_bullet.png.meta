@@ -128,10 +128,10 @@ TextureImporter:
       name: sniper_bullet_4
       rect:
         serializedVersion: 2
-        x: 11
-        y: 173
-        width: 103
-        height: 40
+        x: 12
+        y: 0
+        width: 102
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: sniper_bullet_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 137
-        width: 107
-        height: 29
+        x: 3
+        y: 48
+        width: 105
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,11 +173,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 98
-        width: 109
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 99
+        width: 108
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,10 +194,10 @@ TextureImporter:
       name: sniper_bullet_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 47
-        width: 107
-        height: 29
+        x: 3
+        y: 138
+        width: 105
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: sniper_bullet_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 0
-        width: 103
-        height: 40
+        x: 12
+        y: 174
+        width: 102
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,7 +246,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       sniper_bullet_0: -3501066498535033731
       sniper_bullet_1: -7329793525582471868

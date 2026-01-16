@@ -9,6 +9,7 @@ public interface IUnitActionContext
     ISoundService SoundService { get; }
     ICombatTextManager TextManager { get; }
     IEffectManager EffectManager { get; }
+    IProjectileManager ProjectileManager { get; }
     ICombatEffectManager CombatEffectManager { get; }
     IParryingApplier ParryingApplier { get; }
     InputHandler InputHandler { get; }
@@ -31,6 +32,7 @@ public record SingleTargetActionContext
     ISoundService SoundService, 
     ICombatTextManager TextManager, 
     IEffectManager EffectManager,
+    IProjectileManager ProjectileManager,
     ICombatEffectManager CombatEffectManager,
     IParryingApplier ParryingApplier, 
     InputHandler InputHandler
@@ -44,6 +46,7 @@ public record MultiTargetActionContext
     ISoundService SoundService, 
     ICombatTextManager TextManager, 
     IEffectManager EffectManager,
+    IProjectileManager ProjectileManager,
     ICombatEffectManager CombatEffectManager,
     IParryingApplier ParryingApplier, 
     InputHandler InputHandler

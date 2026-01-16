@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: player_SniperBulletSetting
   m_EditorClassIdentifier: 
   targetTag: Enemy
-  speed: 150
+  speed: 120
