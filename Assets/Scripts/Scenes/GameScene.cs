@@ -20,6 +20,7 @@ public class GameScene : AbstractScene
 
     [Header("Manager Settings")]
     [SerializeField] private EffectManager effectManager;
+    [SerializeField] private ProjectileManager projectileManager;
     [SerializeField] private HUDManager hudManager;
     [SerializeField] private TextManager textManager;
     [SerializeField] private CombatManager combatManager;
@@ -49,6 +50,7 @@ public class GameScene : AbstractScene
         ServiceLocator.ForSceneOf(this)
             .Register(dataHandler)
             .Register(effectManager as IEffectManager)
+            .Register(projectileManager as IProjectileManager)
             .Register(unitActionExecuter as IUnitActionExecuter)
             .Register(textManager as ICombatTextManager)
             .Register(unitManager as IUnitManager)
@@ -71,12 +73,11 @@ public class GameScene : AbstractScene
         qteManager.Init();
         selectorManager.Init();
         crowdControlManager.Init();
+        combatEffectManager.Init();
 
         inputHandler.Init();
 
         unitActionExecuter.Init();
-
-        soundService.PlayBackGround("Title_Background", true);
 
         parryingApplier.Init();
 
@@ -137,6 +138,7 @@ public class GameScene : AbstractScene
 
     protected override async UniTask BeginGame()
     {
+        _soundService.PlayBackGround("Title_Background", true);
         await combatManager.StartCombat();
         mapDataFactory.SaveCompletedMapData();
     }

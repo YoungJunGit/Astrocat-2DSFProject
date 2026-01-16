@@ -8,7 +8,9 @@ public interface ICombatTextManager
     public UniTask ShowCombatText(IUnitActionProperty unitAction, BaseUnit unit);
     public UniTask ShowNextRoundText(int round);
     public UniTask ShowTauntText(BaseUnit unit);
-    public void OnDamage(BaseUnit target, IDamageInfo damage);
+    public void OnDamage(Bounds bounds, DamageResult damage);
+    public void OnHeal(Bounds bounds, float heal);
+    public void OnBuff(Bounds bounds, float buffValue);
 }
 
 [CreateAssetMenu(fileName = "TextManager", menuName = "Manager/TextManager", order = 1)]
@@ -19,8 +21,10 @@ public class TextManager : ScriptableObject , ICombatTextManager
     private InputHandler _inputHandler;
 
     [SerializeField] private BaseCanvas textCanvasPref;
-    [SerializeField] private DamageContainer normalDamageContainer;
-    [SerializeField] private DamageContainer criticalDamageContainer;
+    [SerializeField] private ValueContainer normalDamageContainer;
+    [SerializeField] private ValueContainer criticalDamageContainer;
+    [SerializeField] private ValueContainer healContainer;
+    [SerializeField] private ValueContainer buffContinaer;
 
     [SerializeField] BaseTextSetting nextRoundTextSetting;
     [SerializeField] BaseTextSetting attackWarningTextSetting;
@@ -108,10 +112,10 @@ public class TextManager : ScriptableObject , ICombatTextManager
     }
     #endregion
 
-    public void OnDamage(BaseUnit target, IDamageInfo damage)
+    public void OnDamage(Bounds bounds, DamageResult damage)
     {
-        IDamageValueDisplayer displayer;
-        DamageContainer container;
+        IValueDisplayer displayer;
+        ValueContainer container;
         if (!damage.IsCritical)
         {
             displayer = new DamageValueDisplayer_BounceVer1();
@@ -123,7 +127,21 @@ public class TextManager : ScriptableObject , ICombatTextManager
             container = criticalDamageContainer;
         }
 
-        IDamageHealValueDisplayInvoker displayInvoker = new DamageHealValueDisplayInvoker();
-        displayInvoker.Invoke(displayer, damage.DamageValue, target.Attachments.GetHitBox().bounds, container);
+        IValueDisplayInvoker displayInvoker = new ValueDisplayInvoker();
+        displayInvoker.Invoke(displayer, damage.DamageValue, bounds, container);
+    }
+
+    public void OnHeal(Bounds bounds, float heal)
+    {
+        IValueDisplayer displayer = new HealValueDisplayer();
+        IValueDisplayInvoker displayInvoker = new ValueDisplayInvoker();
+        displayInvoker.Invoke(displayer, heal, bounds, healContainer);
+    }
+
+    public void OnBuff(Bounds bounds, float buffValue)
+    {
+        IValueDisplayer displayer = new BuffValueDisplayer();
+        IValueDisplayInvoker displayInvoker = new ValueDisplayInvoker();
+        displayInvoker.Invoke(displayer, buffValue * 100f, bounds, buffContinaer);
     }
 }

@@ -8,6 +8,8 @@ using Unity.Collections;
 using Unity.VisualScripting;
 using DataEnum;
 
+public record EffectContainer(string EffectName, IEffectable Effect);
+
 public class CombatEffectUnit
 {
     public enum COMBAT_EFFECT_TYPE
@@ -16,8 +18,8 @@ public class CombatEffectUnit
         CC
     }
 
-    private readonly ObservableList<(string Name, IEffectable Value)> _normalEffectList = new();
-    public IReadOnlyObservableList<(string Name, IEffectable Value)> NormalEffectList => _normalEffectList;
+    private readonly ObservableList<EffectContainer> _normalEffectList = new();
+    public IReadOnlyObservableList<EffectContainer> NormalEffectList => _normalEffectList;
 
     private readonly Dictionary<string, Action> onEachTurnList = new();
 
@@ -34,25 +36,25 @@ public class CombatEffectUnit
         onEachTurnList[name] = action;
     }
 
-    public void Add(string name, IEffectable combatEffect)
+    public void Add(EffectContainer effectContainer)
     {
-        _normalEffectList.Add((name, combatEffect));
-        combatEffect.OnDispose += () =>
+        _normalEffectList.Add(effectContainer);
+        effectContainer.Effect.OnDispose += () =>
         {
-            Remove(name, combatEffect);
+            Remove(effectContainer);
         };
     }
 
-    public void Remove(string name, IEffectable combatEffect)
+    public void Remove(EffectContainer effectContainer)
     {
-        _normalEffectList.Remove((name, combatEffect));
+        _normalEffectList.Remove(effectContainer);
 
-        if (combatEffect is IStartTurnEffectProvider provider)
+        if (effectContainer.Effect is IStartTurnEffectProvider provider)
         {
             string key = provider.StartTurnKey;
 
             // 아직 같은 StartTurnKey를 가진 이펙트가 남아있는지 체크
-            bool stillExists = _normalEffectList.ToList().Any(e => e.Value is IStartTurnEffectProvider p && p.StartTurnKey == key);
+            bool stillExists = _normalEffectList.ToList().Any(e => e.Effect is IStartTurnEffectProvider p && p.StartTurnKey == key);
 
             // 하나도 남아있지 않다면 해당 키의 턴 시작 효과 제거
             if (!stillExists)

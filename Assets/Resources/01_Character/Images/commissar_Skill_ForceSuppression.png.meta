@@ -1,0 +1,575 @@
+fileFormatVersion: 2
+guid: 3416b80bd086a3c49a3716da52b53239
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2910042683703001313
+    second: commissar_Skill_ForceSuppression_0
+  - first:
+      213: 6638886716772984723
+    second: commissar_Skill_ForceSuppression_1
+  - first:
+      213: -956304785534574398
+    second: commissar_Skill_ForceSuppression_2
+  - first:
+      213: -1440648243155418478
+    second: commissar_Skill_ForceSuppression_3
+  - first:
+      213: 8154690429454211732
+    second: commissar_Skill_ForceSuppression_4
+  - first:
+      213: -5695397266514563559
+    second: commissar_Skill_ForceSuppression_5
+  - first:
+      213: 7455894078161080074
+    second: commissar_Skill_ForceSuppression_6
+  - first:
+      213: 6324133120577763284
+    second: commissar_Skill_ForceSuppression_7
+  - first:
+      213: -6012889449557318595
+    second: commissar_Skill_ForceSuppression_8
+  - first:
+      213: 7069547873687319107
+    second: commissar_Skill_ForceSuppression_9
+  - first:
+      213: 4995624867098418831
+    second: commissar_Skill_ForceSuppression_10
+  - first:
+      213: -4246827879781619282
+    second: commissar_Skill_ForceSuppression_11
+  - first:
+      213: -232101638209904359
+    second: commissar_Skill_ForceSuppression_12
+  - first:
+      213: 5051739968433511567
+    second: commissar_Skill_ForceSuppression_13
+  - first:
+      213: -7842046538429780991
+    second: commissar_Skill_ForceSuppression_14
+  - first:
+      213: -602573215600125771
+    second: commissar_Skill_ForceSuppression_15
+  - first:
+      213: -6554234902977027214
+    second: commissar_Skill_ForceSuppression_16
+  - first:
+      213: 6009630763694903398
+    second: commissar_Skill_ForceSuppression_17
+  - first:
+      213: -1189009161817026595
+    second: commissar_Skill_ForceSuppression_18
+  - first:
+      213: -7790347548045462413
+    second: commissar_Skill_ForceSuppression_19
+  - first:
+      213: -1053651059013047717
+    second: commissar_Skill_ForceSuppression_20
+  - first:
+      213: 982596087538987943
+    second: commissar_Skill_ForceSuppression_21
+  - first:
+      213: -4743429935162773214
+    second: commissar_Skill_ForceSuppression_22
+  - first:
+      213: -4815969266295250869
+    second: commissar_Skill_ForceSuppression_23
+  - first:
+      213: -6851108508263420975
+    second: commissar_Skill_ForceSuppression_24
+  - first:
+      213: 5182358020987429314
+    second: commissar_Skill_ForceSuppression_25
+  - first:
+      213: 3245786975182382742
+    second: commissar_Skill_ForceSuppression_26
+  - first:
+      213: 5661464987968643848
+    second: commissar_Skill_ForceSuppression_27
+  - first:
+      213: -982892087201095721
+    second: commissar_Skill_ForceSuppression_28
+  - first:
+      213: -814740540927790614
+    second: commissar_Skill_ForceSuppression_29
+  - first:
+      213: 8288882790799650209
+    second: commissar_Skill_ForceSuppression_30
+  - first:
+      213: 2720162994177767909
+    second: commissar_Skill_ForceSuppression_31
+  - first:
+      213: -4670729323517402727
+    second: commissar_Skill_ForceSuppression_32
+  - first:
+      213: 5226905990851376549
+    second: commissar_Skill_ForceSuppression_33
+  - first:
+      213: 4782389820073469577
+    second: commissar_Skill_ForceSuppression_34
+  - first:
+      213: -692874756418918196
+    second: commissar_Skill_ForceSuppression_35
+  - first:
+      213: 8433068462466143096
+    second: commissar_Skill_ForceSuppression_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e0875b176c826820800000000000000
+      internalID: 2910042683703001313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39720596b40122c50800000000000000
+      internalID: 6638886716772984723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0a4314dd58ab2f0800000000000000
+      internalID: -956304785534574398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_3
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1080
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2924e644e0ac10ce0800000000000000
+      internalID: -1440648243155418478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a55ec7db74b2170800000000000000
+      internalID: 8154690429454211732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_5
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e2ba29c52e5f0b0800000000000000
+      internalID: -5695397266514563559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_6
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0fcabb3928a87760800000000000000
+      internalID: 7455894078161080074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_7
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 720
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d7f1540195d3c750800000000000000
+      internalID: 6324133120577763284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34217d37eced8ca0800000000000000
+      internalID: -6012889449557318595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34230c5c5541c1260800000000000000
+      internalID: 7069547873687319107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_10
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8e52824956045540800000000000000
+      internalID: 4995624867098418831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_11
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 360
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea924634b8c3015c0800000000000000
+      internalID: -4246827879781619282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91166be2ac867ccf0800000000000000
+      internalID: -232101638209904359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_13
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c5f1c6cb26b1640800000000000000
+      internalID: 5051739968433511567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Skill_ForceSuppression_14
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 360
+        height: 360
+      alignment: 9
+      pivot: {x: 0.8166667, y: 0.1916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10cafc4e8347b2390800000000000000
+      internalID: -7842046538429780991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ba45163ed1ef803478411279fe99de33
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":360.0,"y":360.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.8166667222976685,"y":0.19166670739650727},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      commissar_Skill_ForceSuppression_0: 2910042683703001313
+      commissar_Skill_ForceSuppression_1: 6638886716772984723
+      commissar_Skill_ForceSuppression_10: 4995624867098418831
+      commissar_Skill_ForceSuppression_11: -4246827879781619282
+      commissar_Skill_ForceSuppression_12: -232101638209904359
+      commissar_Skill_ForceSuppression_13: 5051739968433511567
+      commissar_Skill_ForceSuppression_14: -7842046538429780991
+      commissar_Skill_ForceSuppression_2: -956304785534574398
+      commissar_Skill_ForceSuppression_3: -1440648243155418478
+      commissar_Skill_ForceSuppression_4: 8154690429454211732
+      commissar_Skill_ForceSuppression_5: -5695397266514563559
+      commissar_Skill_ForceSuppression_6: 7455894078161080074
+      commissar_Skill_ForceSuppression_7: 6324133120577763284
+      commissar_Skill_ForceSuppression_8: -6012889449557318595
+      commissar_Skill_ForceSuppression_9: 7069547873687319107
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

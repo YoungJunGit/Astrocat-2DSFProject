@@ -7,43 +7,39 @@ using UnityEngine;
 [RequireComponent(typeof(UnitAttachments))]
 public class SupporterUnit : MonoBehaviour
 {
+    [SerializeField] private AnimationHandler _animationHandler;
+    public AnimationHandler AnimationHandler => _animationHandler;
+    [SerializeField] private AnimationEventHandler _animatinEventHandler;
+    public AnimationEventHandler AnimationEventHandler => _animatinEventHandler;
+    [SerializeField] private UnitAttachments _attachments;
+    public UnitAttachments Attachments => _attachments;
+
     [SerializeField] private string unitName = "Drone";
-    [SerializeField] private AnimationHandler _supporterAnimationHandler;
     [SerializeField] private float hitBlendAmount = 0.75f;
     [SerializeField] private float hitBlendDuration = 0.25f;
 
-    [HideInInspector]
-    public UnitAttachments supporterAttachments;
-
-    private const string HIT_BLEND_TWEEN_ID = "HIT_BLEND";
+    IEffectManager _effectManager;
 
     public void Initialize()
     {
-        _supporterAnimationHandler.Init();
-        supporterAttachments = GetComponent<UnitAttachments>();
-        supporterAttachments.GetSpriteRenderer().material = new Material(supporterAttachments.GetSpriteRenderer().material);
+        ServiceLocator.For(this)
+            .Get(out _effectManager);
+
+        _animationHandler.Init();
+        _attachments.GetSpriteRenderer().material = new Material(_attachments.GetSpriteRenderer().material);
     }
 
     public void OnDamaged()
     {
-        var material = supporterAttachments.GetSpriteRenderer().material;
-        DOTween.Kill(unitName + HIT_BLEND_TWEEN_ID);
-        material.SetFloat("_HitEffectBlend", hitBlendAmount);
-        material.DOFloat(0.0f, "_HitEffectBlend", hitBlendDuration)
-            .SetEase(Ease.Linear)
-            .SetId(unitName + HIT_BLEND_TWEEN_ID);
+        _effectManager.PlayHitEffect(_attachments.GetSpriteRenderer().material, unitName);
     }
 
     public async UniTask OnDie(UnitCombatInfo combatInfo)
     {
-        supporterAttachments.GetSpriteRenderer().sortingLayerName = "Actor";
-
         using (var eventDisposer = new EventDisposer(new CombatEvent("SupporterDeathEvent")))
         {
-            await _supporterAnimationHandler.ChangeAnimationAsync(ANIMATION.DEATH, fadeTime: 0.25f);
+            await _animationHandler.ChangeAnimationAsync(ANIMATION.DEATH, fadeTime: 0.25f);
             gameObject.SetActive(false);
         }
-
-        supporterAttachments.GetSpriteRenderer().sortingLayerName = "Character";
     }
 }

@@ -16,3 +16,7 @@ MonoBehaviour:
     _serializedList:
     - Key: RecoveryEffect
       Value: {fileID: 6452224005166524440, guid: b28432b01d9c81d49b1c64decbae4c11, type: 3}
+    - Key: SPSupplyEffect
+      Value: {fileID: 4350325105121501539, guid: 12805f8bc1f3db84e9e57de705fa6c88, type: 3}
+  hitEffectBlendAmount: 0.75
+  hitEffectBlendDuration: 0.25

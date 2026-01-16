@@ -1,53 +1,50 @@
 using Utils;
 
-public interface IDamageCalculator
-{
-    public (float damageValue, bool isCritical) Calculate(BaseUnit caster, BaseUnit target, float skillRate = 1.0f);
-}
+public interface IDamageCalculator : ICalculator<DamageContext, DamageResult> { }
 
-public sealed class NormalDamageCalculator : IDamageCalculator
+public sealed class DamageCalculatorNormal : IDamageCalculator
 {
-    public (float, bool) Calculate(BaseUnit caster, BaseUnit target, float skillRate)
+    public DamageResult Calculate(DamageContext context)
     {
         // BaseDmg = ATK * skillRate
-        float damage = caster.GetStat().ModifierStat.Attack * skillRate;
+        float damage = context.Caster.GetStat().ModifierStat.Attack * context.SkillRate;
 
         // CriticalRate
-        bool isCritical = FunctionUtils.MakeChance(caster.GetStat().ModifierStat.CriticalChance);
-        float criticalDmgRate = isCritical ? caster.GetStat().ModifierStat.CriticalDamageRate : 1.0f;
+        bool isCritical = FunctionUtils.MakeChance(context.Caster.GetStat().ModifierStat.CriticalChance);
+        float criticalDmgRate = isCritical ? context.Caster.GetStat().ModifierStat.CriticalDamageRate : 1.0f;
 
         // TODO : calculate value using specific formula
         // Final_Damage = BaseDmg * CriticalRate * DamageBuff(Caster) * DamageTakenBuff(Target) * Balance * QTE
-        damage = damage * criticalDmgRate * target.GetStat().ModifierStat.DamageTakenMultiplier;
+        var result = damage * criticalDmgRate * context.Target.GetStat().ModifierStat.DamageTakenMultiplier;
 
-        return (damage, isCritical);
+        return new DamageResult(result, isCritical);
     }
 }
 
-public sealed class BurnDamageCalculator : IDamageCalculator
+public sealed class DamageCalculatorBurn : IDamageCalculator
 {
-    public (float, bool) Calculate(BaseUnit caster, BaseUnit target, float skillRate)
+    public DamageResult Calculate(DamageContext context)
     {
-        float damage = caster.GetStat().ModifierStat.Attack * target.GetStat().ModifierStat.DamageHealValue(DataEnum.BUFF_TYPE.DAMAGE_EACH_TURN);
+        float damage = context.Caster.GetStat().ModifierStat.Attack * context.Target.GetStat().ModifierStat.DamageHealValue(DataEnum.BUFF_TYPE.DAMAGE_EACH_TURN);
 
-        return (damage, false);
+        return new DamageResult(damage, false);
     }
 }
 
-public sealed class StrangeDamageCalculator : IDamageCalculator
+public sealed class DamageCalculatorStrange : IDamageCalculator
 {
-    public (float, bool) Calculate(BaseUnit caster, BaseUnit target, float skillRate)
+    public DamageResult Calculate(DamageContext context)
     {
-        float damage = caster.GetStat().ModifierStat.Attack;
+        float damage = context.Caster.GetStat().ModifierStat.Attack;
 
-        return (damage, false);
+        return new DamageResult(damage, false);
     }
 }
 
-public sealed class TestDamageCalculator : IDamageCalculator
+public sealed class DamageCalculatorTest : IDamageCalculator
 {
-    public (float damageValue, bool isCritical) Calculate(BaseUnit caster, BaseUnit target, float skillRate)
+    public DamageResult Calculate(DamageContext context)
     {
-        return (0.0f, false);
+        return new DamageResult(0.0f, false);
     }
 }

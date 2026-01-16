@@ -26,6 +26,24 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &-8025352616182356172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventType: 3
+  soundName: player_Commissar_Skill_ForceSuppression
+  triggerType: 1
+  triggerTime: 0.019
+  triggerTimeResolved: 0.13333334
+  triggerFrame: 2
 --- !u!114 &-6938134250985145430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -39,10 +57,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 1
+  soundName: player_Commissar_NormalAttack
   triggerType: 1
   triggerTime: 0
   triggerTimeResolved: 0.25
   triggerFrame: 3
+--- !u!114 &-4275968123753929735
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventType: 3
+  soundName: player_Commissar_Skill_ForceSuppression
+  triggerType: 1
+  triggerTime: 0
+  triggerTimeResolved: 0.26666668
+  triggerFrame: 4
 --- !u!114 &-2416722129064489378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,6 +141,24 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &2044189669809192700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventType: 3
+  soundName: player_Commissar_Skill_ContaminationShot
+  triggerType: 1
+  triggerTime: 0
+  triggerTimeResolved: 0.6
+  triggerFrame: 9
 --- !u!1107 &2582367903777939832
 AnimatorStateMachine:
   serializedVersion: 6
@@ -121,10 +176,19 @@ AnimatorStateMachine:
     m_Position: {x: 250, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7848046697308107836}
-    m_Position: {x: 470, y: 180, z: 0}
+    m_Position: {x: 250, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4323945582789425528}
     m_Position: {x: 250, y: 240, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 4006912834318178302}
+    m_Position: {x: 510, y: 100, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7868114359959146710}
+    m_Position: {x: 510, y: 160, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 8808782360688050007}
+    m_Position: {x: 510, y: 220, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -132,9 +196,54 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 700, y: 30, z: 0}
+  m_ExitPosition: {x: 760, y: 140, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -8879577808572141549}
+--- !u!114 &3290575241283454901
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventType: 3
+  soundName: player_Commissar_Skill_ForceSuppression
+  triggerType: 1
+  triggerTime: 0
+  triggerTimeResolved: 0.4
+  triggerFrame: 6
+--- !u!1102 &4006912834318178302
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ContaminationShot
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 2044189669809192700}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: f05910f4c610ba648a136389286de37b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &4323945582789425528
 AnimatorState:
   serializedVersion: 6
@@ -162,6 +271,24 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &6501295447192778088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventType: 3
+  soundName: player_Commissar_Skill_SPSupply
+  triggerType: 1
+  triggerTime: 0
+  triggerTimeResolved: 0.14285713
+  triggerFrame: 2
 --- !u!1102 &7848046697308107836
 AnimatorState:
   serializedVersion: 6
@@ -183,6 +310,62 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 082eae65d0dad35439007abac46bce85, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &7868114359959146710
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ForceSuppression
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: -8025352616182356172}
+  - {fileID: -4275968123753929735}
+  - {fileID: 3290575241283454901}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: c7fecdd2e3ff08b48bdb7a29fa78a4ed, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &8808782360688050007
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SPSupply
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours:
+  - {fileID: 6501295447192778088}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: ab38426993ac4944b8b82ee1b9e6453b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

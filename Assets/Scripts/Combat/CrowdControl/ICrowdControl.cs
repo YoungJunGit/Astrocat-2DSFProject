@@ -3,11 +3,7 @@ using DataEntity;
 using DataEnum;
 using UnityEngine;
 using static CrowdControlManager;
-using static CombatEffectManager;
-using static CombatEffectUnit;
-using System.Linq;
 using System;
-using R3;
 
 public interface ICrowdControl
 {
@@ -49,7 +45,7 @@ public abstract class AttributeCrowdControlBase : CrowdControlBase, AttributeCon
         base.ApplyCrowdControl(context);
 
         Info = CreateEffectInfoList(context.Data);
-        Effect = context.effectManager.AddCombatEffect(EffectID, Info, new EffectContext(context.Target, context.Caster));
+        Effect = context.effectManager.AddCrowdControlEffect(EffectID, Info, new EffectContext(context.Target, context.Caster));
     }
 
     public override void Dispose()
@@ -263,7 +259,7 @@ public class Chaos : CrowdControlBase, IChaos
 
         EffectCreator = () =>
         {
-            return context.effectManager.AddCombatEffect(
+            return context.effectManager.AddCrowdControlEffect(
                 chaosIDs[elementType],
                 effectInfo,
                 new EffectContext(context.Target, context.Caster));

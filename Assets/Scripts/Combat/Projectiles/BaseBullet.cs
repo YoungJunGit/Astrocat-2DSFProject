@@ -2,11 +2,8 @@ using NaughtyAttributes;
 using UnityEngine;
 using System;
 
-public class BaseBullet : MonoBehaviour, IDisposable
+public class BaseBullet : BaseProjectile, IDisposable
 {
-    [SerializeField, Expandable] 
-    private BulletSetting setting;
-
     private Collider2D targetCollider;
     private Action damage = delegate { };
 
@@ -15,26 +12,19 @@ public class BaseBullet : MonoBehaviour, IDisposable
         targetCollider = collider;
         this.damage = damage;
 
-        // Look at target
-        Vector2 pos = (Vector2)collider.transform.position - (Vector2)transform.position;
-        float rotZ = Mathf.Atan2(pos.y, pos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rotZ);
-
-        // Set Velocity
-        Vector2 normalizePos = pos.normalized;
-        GetComponent<Rigidbody2D>().linearVelocity = normalizePos * setting.Speed;
+        SetVelocity(collider.transform);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (targetCollider == collision && collision.tag == setting.TargetTag)
+        if (targetCollider == collision && collision.tag == Setting.TargetTag)
         {
             damage.Invoke();
-            Destroy(gameObject);
+            Dispose();
         }
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
         Destroy(gameObject);
     }

@@ -46,6 +46,8 @@ public class CrowdControlUnit : IUpdatable
     public ICrowdControl GetNonStackCC(ELEMENT_TYPE type) => _nonStackableCC.TryGetValue(type, out var cc) ? cc : null;
     public ELEMENT_TYPE Previous_CC_Type { get; private set; } = ELEMENT_TYPE.NONE;
 
+    public Func<BaseUnit> BringLastAttacker = delegate { return default; };
+
     public void Add(ELEMENT_TYPE elementType, ELEMENT_STATUS_CATEGORY category)
     {
         if (elementType != ELEMENT_TYPE.ETC)

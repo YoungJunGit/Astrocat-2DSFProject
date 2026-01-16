@@ -128,10 +128,10 @@ TextureImporter:
       name: penguin_rifleman_bullet_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 185
-        width: 106
-        height: 40
+        x: 21
+        y: 186
+        width: 105
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: penguin_rifleman_bullet_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 143
-        width: 113
-        height: 29
+        x: 9
+        y: 144
+        width: 111
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,11 +173,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 107
-        width: 112
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 108
+        width: 111
+        height: 9
+      alignment: 9
+      pivot: {x: 0.972973, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,10 +194,10 @@ TextureImporter:
       name: penguin_rifleman_bullet_3
       rect:
         serializedVersion: 2
-        x: 8
-        y: 53
-        width: 113
-        height: 29
+        x: 9
+        y: 54
+        width: 111
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: penguin_rifleman_bullet_4
       rect:
         serializedVersion: 2
-        x: 20
+        x: 21
         y: 0
-        width: 106
-        height: 40
+        width: 105
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,7 +246,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":180.0,"y":180.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       penguin_rifleman_bullet_0: -5016171527809822917
       penguin_rifleman_bullet_1: -6681776376280909386

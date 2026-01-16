@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public interface IDamageValueDisplayer
+public interface IValueDisplayer
 {
-    void Display(float value, Bounds bounds, DamageContainer container);
+    void Display(float value, Bounds bounds, ValueContainer container);
 }
-public abstract class DamageValueDisplayer : IDamageValueDisplayer
-{
-    protected GameObject valueObject;
-    protected List<GameObject> valueList = new();
 
-    public void Display(float value, Bounds bounds, DamageContainer container)
+public abstract class ValueDisplayer : IValueDisplayer
+{
+    protected DamageHealBuffValue value;
+    protected List<GameObject> digitList = new();
+
+    public void Display(float value, Bounds bounds, ValueContainer container)
     {
         Vector2 spawnBounds = new Vector2(
             Random.Range(bounds.min.x, bounds.max.x),
             Random.Range((bounds.center.y + bounds.max.y) / 2, bounds.max.y)
             );
-        valueObject = Object.Instantiate(container.Value_Prefab, spawnBounds, Quaternion.identity);
+        this.value = Object.Instantiate(container.Value_Prefab, spawnBounds, Quaternion.identity);
+        this.value.transform.localScale = container.ScaleValue;
 
         string stringValue = ((int)value).ToString();
         foreach (char c in stringValue)
@@ -28,8 +30,8 @@ public abstract class DamageValueDisplayer : IDamageValueDisplayer
 
             int digit = c - '0';
 
-            GameObject digit_object = Object.Instantiate(container.Digit_Prefab, valueObject.transform);
-            valueList.Add(digit_object);
+            GameObject digit_object = Object.Instantiate(container.Digit_Prefab, this.value.transform);
+            digitList.Add(digit_object);
             Image value_image = digit_object.GetComponent<Image>();
             value_image.sprite = container.Damage_Sprites[digit];
             value_image.SetNativeSize();
@@ -38,44 +40,76 @@ public abstract class DamageValueDisplayer : IDamageValueDisplayer
         StartAnimation(container);
     }
 
-    public abstract void StartAnimation(DamageContainer container);
+    public abstract void StartAnimation(ValueContainer container);
 }
 
-public class DamageValueDisplayer_BounceVer1 : DamageValueDisplayer
+public class DamageValueDisplayer_BounceVer1 : ValueDisplayer
 {
-    public override void StartAnimation(DamageContainer container)
+    public override void StartAnimation(ValueContainer container)
     {
-        float posY = valueObject.GetComponent<RectTransform>().anchoredPosition.y;
+        float posY = value.rectTransform.anchoredPosition.y;
 
-        valueObject.GetComponent<RectTransform>()
-            .DOAnchorPosY(posY + container.JumpValue, 0.5f)
+        value.rectTransform.DOAnchorPosY(posY + container.JumpValue, 0.5f)
             .SetEase(container.JumpEase);
 
-        valueObject.GetComponent<CanvasGroup>()
+        value.canvasGroup
             .DOFade(0f, 1f)
             .SetEase(container.FadeEase)
-            .OnComplete(() => { Object.Destroy(valueObject); });
+            .OnComplete(() => { Object.Destroy(value.gameObject); });
     }
 }
 
-public class DamageValueDisplayer_BounceVer2 : DamageValueDisplayer
+public class DamageValueDisplayer_BounceVer2 : ValueDisplayer
 {
-    public override void StartAnimation(DamageContainer container)
+    public override void StartAnimation(ValueContainer container)
     {
-        int Max = valueList.Count - 1;
+        int Max = digitList.Count - 1;
         for(int i = Max; i >= 0; i--)
         {
-            float posY = valueList[Max - i].GetComponent<RectTransform>().anchoredPosition.y;
+            var rt = digitList[Max - i].GetComponent<RectTransform>();
+            float posY = rt.anchoredPosition.y;
 
-            valueList[Max - i].GetComponent<RectTransform>()
-                .DOAnchorPosY(posY + container.JumpValue, 0.5f)
+            rt.DOAnchorPosY(posY + container.JumpValue, 0.5f)
                 .SetEase(container.JumpEase)
-                .Goto((0.5f / valueList.Count / 5) * i, true);
+                .Goto(0.5f / digitList.Count / 5 * i, true);
         }
 
-        valueObject.GetComponent<CanvasGroup>()
+        value.canvasGroup
             .DOFade(0f, 1f)
             .SetEase(container.FadeEase)
-            .OnComplete(() => { Object.Destroy(valueObject); });
+            .OnComplete(() => { Object.Destroy(value.gameObject); });
+    }
+}
+
+public class HealValueDisplayer : ValueDisplayer
+{
+    public override void StartAnimation(ValueContainer container)
+    {
+        float posY = value.rectTransform.anchoredPosition.y;
+
+        value.rectTransform.DOAnchorPosY(posY + 1f, 1f)
+            .SetEase(Ease.Linear);
+
+        value.canvasGroup
+            .DOFade(0f, 1f)
+            .SetEase(container.FadeEase)
+            .OnComplete(() => { Object.Destroy(value.gameObject); });
+    }
+}
+
+public class BuffValueDisplayer : ValueDisplayer
+{
+    public override void StartAnimation(ValueContainer container)
+    {
+        value.additive.SetActive(true);
+        float posY = value.rectTransform.anchoredPosition.y;
+
+        value.rectTransform.DOAnchorPosY(posY + 0.5f, 1f)
+            .SetEase(Ease.Linear);
+
+        value.canvasGroup
+            .DOFade(0f, 1f)
+            .SetEase(container.FadeEase)
+            .OnComplete(() => { Object.Destroy(value.gameObject); });
     }
 }

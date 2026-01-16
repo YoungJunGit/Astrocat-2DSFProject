@@ -1,29 +1,38 @@
 using DataEnum;
 
-public interface IElementGaugeCalculator
-{
-    public float Calculate(BaseUnit caster, float rate, ELEMENT_TYPE elementType, BaseUnit target);
-}
+public interface IElementGaugeCalculator : ICalculator<ElementGaugeContext, ElementGaugeResult> { }
 
-public class NormalElementGaugeCalculator : IElementGaugeCalculator
+public sealed class ElementGaugeCalculator : IElementGaugeCalculator
 {
-    public float Calculate(BaseUnit caster, float rate, ELEMENT_TYPE elementType, BaseUnit target)
+    public ElementGaugeResult Calculate(ElementGaugeContext context)
     {
         // ATK
-        var atk = caster.GetStat().ModifierStat.Attack;
+        var atk = context.Caster.GetStat().ModifierStat.Attack;
 
         // SkillElementRate
-        var skillElementRate = rate;
+        float skillElementRate = 0.0f;
+        switch (context.RateType)
+        {
+            case SKILL_ELEMENT_RATE.MINOR:
+                skillElementRate = 1.0f;
+                break;
+            case SKILL_ELEMENT_RATE.STANDARD:
+                skillElementRate = 1.3f;
+                break;
+            case SKILL_ELEMENT_RATE.GRAND:
+                skillElementRate = 1.5f;
+                break;
+        }
 
         // ElementChargeRate
-        var elementChargeRate = caster.GetStat().ModifierStat.ElementChargeRate(elementType);
+        var elementChargeRate = context.Caster.GetStat().ModifierStat.ElementChargeRate(context.ElementType);
 
         // ElementChargeResist
-        var elementChargeResist = target.GetStat().ModifierStat.ElementChargeResist(elementType);
+        var elementChargeResist = context.Target.GetStat().ModifierStat.ElementChargeResist(context.ElementType);
 
-        // EGIV = ATK * SkillElementRate(Caster) * ElementChargeRate(Caster) * (1 - ElementChargeResist(Target))
+        // EGIV = ATK * SkillElementRate(Skill) * ElementChargeRate(Caster) * (1 - ElementChargeResist(Target))
         float result = atk * skillElementRate * elementChargeRate * (1 - elementChargeResist);
 
-        return result;
+        return new ElementGaugeResult(context.Caster, context.ElementType, result);
     }
 }
