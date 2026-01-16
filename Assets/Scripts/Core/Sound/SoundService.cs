@@ -123,6 +123,10 @@ public class SoundService : ISoundService
 
             _bgmSource.Stop();
             _bgmSource.clip = clip;
+
+            // 🔥 반드시 한 프레임 대기
+            await UniTask.NextFrame(PlayerLoopTiming.Update);
+
             _bgmSource.loop = loop;
             _bgmSource.Play();
         });

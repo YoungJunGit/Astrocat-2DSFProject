@@ -9,6 +9,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameScene : AbstractScene
 {
@@ -138,7 +139,7 @@ public class GameScene : AbstractScene
 
     protected override async UniTask BeginGame()
     {
-        _soundService.PlayBackGround("Title_Background", true);
+        _soundService.PlayBackGround("Title_Background");
         await combatManager.StartCombat();
         mapDataFactory.SaveCompletedMapData();
     }
@@ -147,5 +148,23 @@ public class GameScene : AbstractScene
     {
         if (!SceneManager.GetSceneByName("DebugingUI").isLoaded)
             SceneManager.LoadSceneAsync("DebugingUI", LoadSceneMode.Additive);
+    }
+    
+    private void StartPlayBackground()
+    {
+        int num = Random.Range(1, 4);
+
+        switch(num)
+        {
+            case 1:
+                _soundService.PlayBackGround("CombatBGM_1");
+                break;
+            case 2:
+                _soundService.PlayBackGround("CombatBGM_2");
+                break;
+            case 3:
+                _soundService.PlayBackGround("CombatBGM_3");
+                break;
+        }
     }
 }
