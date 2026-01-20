@@ -143,6 +143,7 @@ namespace AssetInventory
 
             ActionSteps.Add(new HTMLExportStep());
             ActionSteps.Add(new FTPUploadStep());
+            ActionSteps.Add(new FTPDeleteStep());
 
             ActionSteps.Add(new SetProjectPropertyStep());
             ActionSteps.Add(new AddDefineSymbolStep());
@@ -152,6 +153,7 @@ namespace AssetInventory
 
             ActionSteps.Add(new RunActionStep());
             ActionSteps.Add(new RunProcessStep());
+            ActionSteps.Add(new SetTextVariableStep());
             ActionSteps.Add(new DebugLogStep());
             ActionSteps.Add(new MessageDialogStep());
             ActionSteps.Add(new RestartEditorStep());
@@ -172,9 +174,9 @@ namespace AssetInventory
                 if (startup.Count > 0)
                 {
                     if (EditorUtility.DisplayDialog("Project Setup",
-                        "Asset Inventory was just installed into the project and is about to run the following custom actions which were marked to be run at installation:\n\n"
-                        + string.Join("\n\n", startup.Select(a => "*" + a.Name + "*\n" + a.Description)),
-                        "Run", "Skip"))
+                            "Asset Inventory was just installed into the project and is about to run the following custom actions which were marked to be run at installation:\n\n"
+                            + string.Join("\n\n", startup.Select(a => "*" + a.Name + "*\n" + a.Description)),
+                            "Run", "Skip"))
                     {
                         foreach (CustomAction action in startup)
                         {

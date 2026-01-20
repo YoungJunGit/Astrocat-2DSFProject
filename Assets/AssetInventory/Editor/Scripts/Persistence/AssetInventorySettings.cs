@@ -56,6 +56,7 @@ namespace AssetInventory
         public float searchTileAspectRatio = 1f;
         public float searchDelay = 0.5f;
         public float inMemorySearchDelay = 0.1f;
+        public float variableDetectionDelay = 0.3f;
         public float hueRange = 10f;
         public int animationGrid = 4;
         public float animationSpeed = 0.1f;
@@ -109,6 +110,7 @@ namespace AssetInventory
         public bool showAdvancedSettings;
         public bool showHints = true;
         public int packageViewMode; // 0 = list, 1 = grid
+        public bool searchPackageGroupNames = true;
         public bool searchPackageDescriptions;
         public bool showPackageStatsDetails;
         public bool onlyInProject;

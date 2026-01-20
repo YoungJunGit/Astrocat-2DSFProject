@@ -14,6 +14,7 @@ namespace AssetInventory
         {
             // Inputs originating from UI/state
             public string SearchPhrase = string.Empty;
+            public Dictionary<string, string> SearchVariables = null; // variable name → current value
             public int SelectedPackageSRPs = 0;
             public string SearchWidth = string.Empty;
             public bool CheckMaxWidth = false;
@@ -76,7 +77,101 @@ namespace AssetInventory
             string lastWhere = null;
             string phrase = opt.SearchPhrase ?? string.Empty;
 
+            // Substitute search variables before processing
+            if (opt.SearchVariables != null && opt.SearchVariables.Count > 0)
+            {
+                try
+                {
+                    phrase = VariableResolver.ReplaceVariables(phrase, opt.SearchVariables);
+                }
+                catch (Exception ex)
+                {
+                    result.Error = $"Variable substitution error: {ex.Message}";
+                    return result;
+                }
+            }
+
             wheres.Add("Asset.Exclude=0");
+
+            List<string> withAllPT = new List<string>();
+            phrase = StringUtils.ExtractTokens(phrase, "withallpt", withAllPT);
+            List<string> withAnyPT = new List<string>();
+            phrase = StringUtils.ExtractTokens(phrase, new[] {"withanypt", "pt"}, withAnyPT);
+            List<string> withNonePT = new List<string>();
+            phrase = StringUtils.ExtractTokens(phrase, new[] {"withnonept", "withnopt"}, withNonePT);
+
+            List<string> withAllFT = new List<string>();
+            phrase = StringUtils.ExtractTokens(phrase, "withallft", withAllFT);
+            List<string> withAnyFT = new List<string>();
+            phrase = StringUtils.ExtractTokens(phrase, new[] {"withanyft", "ft"}, withAnyFT);
+            List<string> withNoneFT = new List<string>();
+            phrase = StringUtils.ExtractTokens(phrase, new[] {"withnoneft", "withnoft"}, withNoneFT);
+
+            List<string> withAllPTTags = StringUtils.FlattenCommaSeparated(withAllPT);
+            if (withAllPTTags.Count > 0)
+            {
+                foreach (string tag in withAllPTTags)
+                {
+                    wheres.Add("exists (select tap2.Id from TagAssignment as tap2 where Asset.Id = tap2.TargetId and tap2.TagTarget = 0 and tap2.TagId = ?)");
+                    args.Add(opt.Tags.FirstOrDefault(t => t.Name.ToLowerInvariant() == tag.ToLowerInvariant())?.Id);
+                }
+            }
+            List<string> withAnyPTTags = StringUtils.FlattenCommaSeparated(withAnyPT);
+            if (withAnyPTTags.Count > 0)
+            {
+                List<string> conditions = new List<string>();
+                foreach (string tag in withAnyPTTags)
+                {
+                    conditions.Add("tap.TagId = ?");
+                    args.Add(opt.Tags.FirstOrDefault(t => t.Name.ToLowerInvariant() == tag.ToLowerInvariant())?.Id);
+                }
+                wheres.Add("(" + string.Join(" OR ", conditions) + ")");
+                packageTagJoin = PACKAGE_TAG_JOIN_CLAUSE;
+            }
+            List<string> withNonePTTags = StringUtils.FlattenCommaSeparated(withNonePT);
+            if (withNonePTTags.Count > 0)
+            {
+                List<string> paramCount = new List<string>();
+                foreach (string tag in withNonePTTags)
+                {
+                    paramCount.Add("?");
+                    args.Add(opt.Tags.FirstOrDefault(t => t.Name.ToLowerInvariant() == tag.ToLowerInvariant())?.Id);
+                }
+                wheres.Add("not exists (select tap2.Id from TagAssignment as tap2 where Asset.Id = tap2.TargetId and tap2.TagTarget = 0 and tap2.TagId in (" + string.Join(",", paramCount) + "))");
+            }
+
+            List<string> withAllFTTags = StringUtils.FlattenCommaSeparated(withAllFT);
+            if (withAllFTTags.Count > 0)
+            {
+                foreach (string tag in withAllFTTags)
+                {
+                    wheres.Add("exists (select taf2.Id from TagAssignment as taf2 where AssetFile.Id = taf2.TargetId and taf2.TagTarget = 1 and taf2.TagId = ?)");
+                    args.Add(opt.Tags.FirstOrDefault(t => t.Name.ToLowerInvariant() == tag.ToLowerInvariant())?.Id);
+                }
+            }
+            List<string> withAnyFTTags = StringUtils.FlattenCommaSeparated(withAnyFT);
+            if (withAnyFTTags.Count > 0)
+            {
+                List<string> conditions = new List<string>();
+                foreach (string tag in withAnyFTTags)
+                {
+                    conditions.Add("taf.TagId = ?");
+                    args.Add(opt.Tags.FirstOrDefault(t => t.Name.ToLowerInvariant() == tag.ToLowerInvariant())?.Id);
+                }
+                wheres.Add("(" + string.Join(" OR ", conditions) + ")");
+                fileTagJoin = FILE_TAG_JOIN_CLAUSE;
+            }
+            List<string> withNoneFTTags = StringUtils.FlattenCommaSeparated(withNoneFT);
+            if (withNoneFTTags.Count > 0)
+            {
+                List<string> paramCount = new List<string>();
+                foreach (string tag in withNoneFTTags)
+                {
+                    paramCount.Add("?");
+                    args.Add(opt.Tags.FirstOrDefault(t => t.Name.ToLowerInvariant() == tag.ToLowerInvariant())?.Id);
+                }
+                wheres.Add("not exists (select taf2.Id from TagAssignment as taf2 where AssetFile.Id = taf2.TargetId and taf2.TagTarget = 1 and taf2.TagId in (" + string.Join(",", paramCount) + "))");
+            }
 
             // inline tags: packages
             List<string> parsedPackageTags = new List<string>();
@@ -111,7 +206,10 @@ namespace AssetInventory
             // SRP filters
             switch (opt.SelectedPackageSRPs)
             {
-                case 0: // auto-detect
+                case 0:
+                    break;
+                
+                case 1: // auto-detect
                     if (AI.Config.excludeIncompatibleSRPs)
                     {
                         bool isURP = AssetUtils.IsOnURP();
@@ -133,15 +231,15 @@ namespace AssetInventory
                     }
                     break;
 
-                case 2:
+                case 3:
                     wheres.Add("Asset.BIRPCompatible=1");
                     break;
 
-                case 3:
+                case 4:
                     wheres.Add("Asset.URPCompatible=1");
                     break;
 
-                case 4:
+                case 5:
                     wheres.Add("Asset.HDRPCompatible=1");
                     break;
             }
@@ -173,7 +271,8 @@ namespace AssetInventory
             }
 
             // dropdown tags (ignored if inline tags are present)
-            if (parsedPackageTags.Count == 0)
+            bool anyInlinePT = parsedPackageTags.Count > 0 || withAllPTTags.Count > 0 || withAnyPTTags.Count > 0 || withNonePTTags.Count > 0;
+            if (!anyInlinePT)
             {
                 if (opt.SelectedPackageTag == 1)
                 {
@@ -188,7 +287,8 @@ namespace AssetInventory
                     packageTagJoin = PACKAGE_TAG_JOIN_CLAUSE;
                 }
             }
-            if (parsedFileTags.Count == 0)
+            bool anyInlineFT = parsedFileTags.Count > 0 || withAllFTTags.Count > 0 || withAnyFTTags.Count > 0 || withNoneFTTags.Count > 0;
+            if (!anyInlineFT)
             {
                 if (opt.SelectedFileTag == 1)
                 {

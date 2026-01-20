@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace AssetInventory
 {
-    public sealed class FTPAdminUI : EditorWindow
+    public sealed class FTPAdminUI : BasicEditorUI
     {
         private Vector2 _scrollPos;
         private List<FTPConnection> _connections;
@@ -19,8 +19,8 @@ namespace AssetInventory
 
         public static FTPAdminUI ShowWindow()
         {
-            FTPAdminUI window = GetWindow<FTPAdminUI>("FTP Administration");
-            window.minSize = new Vector2(600, 400);
+            FTPAdminUI window = GetWindow<FTPAdminUI>("FTP/SFTP Administration");
+            window.minSize = new Vector2(600, 500);
             return window;
         }
 
@@ -55,10 +55,10 @@ namespace AssetInventory
             AI.Actions.Init(true); // FIXME: remove when actions support data init callback
         }
 
-        private void OnGUI()
+        public override void OnGUI()
         {
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField("Manage your FTP connections for file upload actions.", EditorStyles.wordWrappedLabel);
+            EditorGUILayout.LabelField("Manage your FTP and SFTP connections for file upload actions.", EditorStyles.wordWrappedLabel);
             EditorGUILayout.Space();
 
             // Toolbar
@@ -98,7 +98,8 @@ namespace AssetInventory
             {
                 FTPConnection conn = _connections[i];
 
-                string label = string.IsNullOrEmpty(conn.name) ? "<Unnamed>" : conn.name;
+                string protocolBadge = conn.protocol == FTPConnection.FTPProtocol.SFTP ? "(SFTP)" : "(FTP)";
+                string label = string.IsNullOrEmpty(conn.name) ? $"<Unnamed> {protocolBadge}" : $"{conn.name} {protocolBadge}";
 
                 bool isSelected = i == _selectedIndex;
                 if (GUILayout.Toggle(isSelected, label, GUI.skin.button))
@@ -132,12 +133,22 @@ namespace AssetInventory
 
             EditorGUILayout.Space();
 
+            // Protocol Selection
+            FTPConnection.FTPProtocol oldProtocol = _selectedConnection.protocol;
+            _selectedConnection.protocol = (FTPConnection.FTPProtocol)EditorGUILayout.EnumPopup("Protocol", _selectedConnection.protocol);
+
+            // Update default port if protocol changed
+            if (oldProtocol != _selectedConnection.protocol)
+            {
+                _selectedConnection.port = _selectedConnection.GetDefaultPort();
+            }
+
             // Host
             _selectedConnection.host = EditorGUILayout.TextField("Host/Server", _selectedConnection.host);
 
             // Port
             _selectedConnection.port = EditorGUILayout.IntField("Port", _selectedConnection.port);
-            if (_selectedConnection.port <= 0) _selectedConnection.port = 21;
+            if (_selectedConnection.port <= 0) _selectedConnection.port = _selectedConnection.GetDefaultPort();
 
             EditorGUILayout.Space();
 
@@ -165,9 +176,15 @@ namespace AssetInventory
 
             EditorGUILayout.Space();
 
-            // SSL/TLS options
-            _selectedConnection.useSsl = EditorGUILayout.Toggle("Use SSL/TLS (FTPS)", _selectedConnection.useSsl);
-            _selectedConnection.validateCertificate = EditorGUILayout.Toggle("Validate Certificate", _selectedConnection.validateCertificate);
+            if (ShowAdvanced())
+            {
+                // SSL/TLS options (only for FTP, not SFTP)
+                if (_selectedConnection.protocol == FTPConnection.FTPProtocol.FTP)
+                {
+                    _selectedConnection.useSsl = EditorGUILayout.Toggle("Use SSL/TLS (FTPS)", _selectedConnection.useSsl);
+                    _selectedConnection.validateCertificate = EditorGUILayout.Toggle("Validate Certificate", _selectedConnection.validateCertificate);
+                }
+            }
 
             if (EditorGUI.EndChangeCheck())
             {
@@ -283,7 +300,6 @@ namespace AssetInventory
 
             SaveConnections();
             _isEditing = false;
-            Repaint();
         }
 
         private void DeleteConnection()
@@ -304,7 +320,6 @@ namespace AssetInventory
                 _showPassword = false;
 
                 SaveConnections();
-                Repaint();
             }
         }
 
@@ -318,92 +333,114 @@ namespace AssetInventory
                 return;
             }
 
-            bool hasCredentials = !string.IsNullOrEmpty(_selectedConnection.username) && !string.IsNullOrEmpty(_tempPassword);
-
-            if (!hasCredentials)
+            if (string.IsNullOrEmpty(_selectedConnection.username))
             {
-                EditorUtility.DisplayDialog("Test Connection", "Cannot test connection without username and password.", "OK");
+                EditorUtility.DisplayDialog("Error", "Username cannot be empty.", "OK");
+                return;
+            }
+
+            // Validate password
+            if (string.IsNullOrEmpty(_tempPassword))
+            {
+                EditorUtility.DisplayDialog("Error", "Password cannot be empty.", "OK");
                 return;
             }
 
             // Show progress
-            EditorUtility.DisplayProgressBar("Testing Connection", $"Connecting to {_selectedConnection.host}...", 0.5f);
+            string protocolName = _selectedConnection.protocol == FTPConnection.FTPProtocol.SFTP ? "SFTP" : "FTP";
+            EditorUtility.DisplayProgressBar("Testing Connection", $"Connecting to {protocolName} server at {_selectedConnection.host}...", 0.5f);
 
             try
             {
                 bool success = false;
                 string errorMessage = "";
 
-                // Test FTP connection
-                await Task.Run(() =>
+                if (_selectedConnection.protocol == FTPConnection.FTPProtocol.SFTP)
                 {
-                    try
+#if UNITY_2021_2_OR_NEWER
+                    // Test SFTP connection
+                    await Task.Run(() =>
                     {
-                        string ftpScheme = _selectedConnection.useSsl ? "ftps" : "ftp";
-                        string uri = $"{ftpScheme}://{_selectedConnection.host}:{_selectedConnection.port}/";
-
-                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create(uri);
-                        request.Method = WebRequestMethods.Ftp.ListDirectory;
-                        request.Credentials = new NetworkCredential(_selectedConnection.username, _tempPassword);
-                        request.UsePassive = true;
-                        request.KeepAlive = false;
-                        request.Timeout = 10000;
-
-                        if (_selectedConnection.useSsl)
-                        {
-                            request.EnableSsl = true;
-                            if (!_selectedConnection.validateCertificate)
-                            {
-                                ServicePointManager.ServerCertificateValidationCallback = (s, cert, chain, sslPolicyErrors) => true;
-                            }
-                        }
-
-                        using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
-                        {
-                            if (response.StatusCode == FtpStatusCode.OpeningData ||
-                                response.StatusCode == FtpStatusCode.DataAlreadyOpen ||
-                                response.StatusCode == FtpStatusCode.PathnameCreated)
-                            {
-                                success = true;
-                            }
-                            response.Close();
-                        }
-
-                        ServicePointManager.ServerCertificateValidationCallback = null;
-                    }
-                    catch (Exception ex)
+                        success = SFTPUtil.TestConnection(_selectedConnection, _tempPassword, out errorMessage);
+                    });
+#endif
+                }
+                else
+                {
+                    // Test FTP connection
+                    await Task.Run(() =>
                     {
-                        errorMessage = ex.Message;
-                        ServicePointManager.ServerCertificateValidationCallback = null;
-                    }
-                });
+                        try
+                        {
+                            // Always use ftp:// scheme; SSL is controlled by EnableSsl property
+                            string uri = $"ftp://{_selectedConnection.host}:{_selectedConnection.port}/";
+
+                            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(uri);
+                            request.Method = WebRequestMethods.Ftp.ListDirectory;
+                            request.Credentials = new NetworkCredential(_selectedConnection.username, _tempPassword);
+                            request.UsePassive = true;
+                            request.KeepAlive = false;
+                            request.Timeout = 10000;
+
+                            if (_selectedConnection.useSsl)
+                            {
+                                request.EnableSsl = true;
+                                if (!_selectedConnection.validateCertificate)
+                                {
+                                    ServicePointManager.ServerCertificateValidationCallback = (s, cert, chain, sslPolicyErrors) => true;
+                                }
+                            }
+
+                            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                            {
+                                if (response.StatusCode == FtpStatusCode.OpeningData ||
+                                    response.StatusCode == FtpStatusCode.DataAlreadyOpen ||
+                                    response.StatusCode == FtpStatusCode.PathnameCreated)
+                                {
+                                    success = true;
+                                }
+                                response.Close();
+                            }
+
+                            ServicePointManager.ServerCertificateValidationCallback = null;
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.LogException(e);
+
+                            errorMessage = e.Message;
+                            ServicePointManager.ServerCertificateValidationCallback = null;
+                        }
+                    });
+                }
 
                 EditorUtility.ClearProgressBar();
 
                 if (success)
                 {
                     EditorUtility.DisplayDialog("Connection Successful",
-                        $"Successfully connected to FTP server!\n\n" +
-                        $"Host: {_selectedConnection.host}\n" +
-                        $"Port: {_selectedConnection.port}\n" +
-                        $"Username: {_selectedConnection.username}\n\n" +
-                        "The connection is ready to use.",
+                        $"Successfully connected to {protocolName} server. The connection is ready to use.",
                         "OK");
                 }
                 else
                 {
                     EditorUtility.DisplayDialog("Connection Failed",
-                        $"Could not connect to FTP server.\n\n" +
+                        $"Could not connect to {protocolName} server.\n\n" +
                         $"Error: {errorMessage}\n\n" +
-                        "Please check your connection settings and credentials.",
+                        "Please check your connection and certificate validation settings and credentials.",
                         "OK");
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 EditorUtility.ClearProgressBar();
-                EditorUtility.DisplayDialog("Connection Test Error", $"An error occurred while testing the connection:\n\n{ex.Message}", "OK");
+                EditorUtility.DisplayDialog("Connection Test Error", $"An error occurred while testing the connection:\n\n{e.Message}", "OK");
             }
+        }
+
+        private void OnInspectorUpdate()
+        {
+            Repaint();
         }
     }
 }

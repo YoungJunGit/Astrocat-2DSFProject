@@ -149,6 +149,10 @@ namespace AssetInventory
                 UIStyles.entryStyle);
 
             int offset = 150;
+
+            // Build dictionary of variables defined in previous steps for validation
+            Dictionary<string, string> availableVariables = BuildAvailableVariables(index);
+
             for (int i = 0; i < step.StepDef.Parameters.Count; i++)
             {
                 if (step.Values.Count <= i) step.Values.Add(new ParameterValue());
@@ -215,10 +219,62 @@ namespace AssetInventory
                     }
                 }
 
+                // Display warning icon for undefined variables in string parameters
+                if (finalType == StepParameter.ParamType.String || finalType == StepParameter.ParamType.MultilineString)
+                {
+                    string paramValue = step.Values[i].stringValue;
+                    if (!string.IsNullOrEmpty(paramValue))
+                    {
+                        List<string> undefinedVars = VariableResolver.ValidateVariables(paramValue, availableVariables);
+                        if (undefinedVars.Count > 0)
+                        {
+                            // Display warning icon with tooltip
+                            Rect iconRect = new Rect(rect.x + offset + 240, rect.y + 2, 20, EditorGUIUtility.singleLineHeight);
+                            string tooltip = "Undefined variables: " + string.Join(", ", undefinedVars);
+                            GUIContent warningContent = new GUIContent(EditorGUIUtility.IconContent("console.warnicon").image, tooltip);
+
+                            // Draw the icon with orange/yellow tint
+                            Color originalColor = GUI.color;
+                            GUI.color = new Color(1f, 0.7f, 0f, 1f); // Orange color
+                            GUI.Label(iconRect, warningContent);
+                            GUI.color = originalColor;
+                        }
+                    }
+                }
+
                 if (isFocused && GUI.Button(new Rect(rect.x + rect.width - 24, rect.y + 1, 24, 20), EditorGUIUtility.IconContent("d_PlayButton@2x", "|Run Step Now")))
                 {
-                    step.StepDef.Run(step.Values);
-                    AssetDatabase.Refresh();
+                    try
+                    {
+                        // Build variables dictionary from all previous steps
+                        Dictionary<string, string> variables = BuildAvailableVariables(index);
+
+                        // If this step is a SetTextVariableStep, resolve and add its variable to the dictionary
+                        if (step.StepDef is SetTextVariableStep)
+                        {
+                            if (SetTextVariableStep.TryExtractVariable(step.Values, out string varName, out string varValue))
+                            {
+                                // Resolve any variables in the value itself
+                                varValue = VariableResolver.ReplaceVariables(varValue ?? "", variables);
+                                variables[varName] = varValue;
+                            }
+                        }
+
+                        // Resolve variables in the step parameters
+                        List<ParameterValue> resolvedValues = UserActionRunner.ResolveParameterVariables(
+                            step.Values,
+                            step.StepDef.Parameters,
+                            step.StepDef,
+                            variables);
+
+                        // Run the step with resolved values
+                        step.StepDef.Run(resolvedValues);
+                        AssetDatabase.Refresh();
+                    }
+                    catch (Exception e)
+                    {
+                        EditorUtility.DisplayDialog("Error Running Step", $"Failed to run step: {e.Message}", "OK");
+                    }
                 }
                 offset += 250;
             }
@@ -230,6 +286,7 @@ namespace AssetInventory
 
             _action.Name = EditorGUILayout.TextField("Name", _action.Name);
             _action.Description = EditorGUILayout.TextField("Description", _action.Description);
+            _action.StopOnFailure = EditorGUILayout.Toggle(UIStyles.Content("Stop on Failure", "If enabled, the action will stop executing remaining steps when a step fails. If disabled, failed steps are logged but execution continues."), _action.StopOnFailure);
             _action.RunMode = (CustomAction.Mode)EditorGUILayout.EnumPopup("Run Mode", _action.RunMode, GUILayout.Width(300));
 
             EditorGUILayout.Space(15);
@@ -306,6 +363,35 @@ namespace AssetInventory
             {
                 _steps.Add(newStep);
             }
+        }
+
+        /// <summary>
+        /// Builds a dictionary of variables defined in previous steps (steps 0 to stepIndex-1).
+        /// Used for validation to check if variable references are defined and for resolving variables during test runs.
+        /// </summary>
+        private Dictionary<string, string> BuildAvailableVariables(int stepIndex)
+        {
+            Dictionary<string, string> variables = new Dictionary<string, string>();
+
+            // Scan all steps before the current one
+            for (int i = 0; i < stepIndex && i < _steps.Count; i++)
+            {
+                CustomActionStep step = _steps[i];
+                if (step.StepDef == null || step.Values == null) continue;
+
+                // Check if this step defines a variable
+                if (step.StepDef is SetTextVariableStep)
+                {
+                    if (SetTextVariableStep.TryExtractVariable(step.Values, out string varName, out string varValue))
+                    {
+                        // Resolve any variables in the value itself (in case it references other variables)
+                        varValue = VariableResolver.ReplaceVariables(varValue ?? "", variables);
+                        variables[varName] = varValue;
+                    }
+                }
+            }
+
+            return variables;
         }
     }
 }

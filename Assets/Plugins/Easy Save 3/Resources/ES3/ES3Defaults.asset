@@ -38,13 +38,15 @@ MonoBehaviour:
     - AllIn1SpriteShaderAssembly
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
-    - AssetInventory.Examples
     - AYellowpaper.SerializedCollections
     - DOTween.Modules
     - DOTweenPro.Scripts
     - Flexalon
     - Flexalon.Samples
     - Ink-Libraries
+    - Lofelt.NiceVibrations
+    - Lofelt.NiceVibrations.Demo
+    - MoreMountains.Tools
     - NaughtyAttributes.Core
     - NaughtyAttributes.Test
     - Obious.Soap.Example

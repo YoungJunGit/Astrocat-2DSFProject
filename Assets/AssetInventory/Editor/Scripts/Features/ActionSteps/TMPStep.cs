@@ -34,8 +34,7 @@ namespace AssetInventory
             string packageFullPath = GetPackageFullPath();
             if (string.IsNullOrEmpty(packageFullPath))
             {
-                Debug.LogError("TextMeshPro package not found.");
-                return;
+                throw new Exception("TextMeshPro package not found. Please install TextMeshPro before running this action.");
             }
 
             List<AssetInfo> infos = new List<AssetInfo>();

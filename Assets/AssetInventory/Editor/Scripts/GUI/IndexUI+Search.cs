@@ -159,6 +159,7 @@ namespace AssetInventory
 
         private InMemoryModeState _inMemoryMode = InMemoryModeState.None;
         private string _searchPhrase;
+        private string _previousSearchPhrase;
         private string _searchPhraseInMemory;
         private string _searchWidth;
         private string _searchHeight;
@@ -173,7 +174,7 @@ namespace AssetInventory
         private int _selectedExpertSearchField;
         private int _selectedAsset;
         private int _selectedPackageTypes = 1;
-        private int _selectedPackageSRPs;
+        private int _selectedPackageSRPs = 1;
         private int _selectedImageType;
         private int _selectedPackageTag;
         private int _selectedFileTag;
@@ -201,6 +202,7 @@ namespace AssetInventory
 
         private int _searchInspectorTab;
         private float _nextSearchTime;
+        private float _nextVariableDetectionTime;
         private Rect _pageButtonRect;
         private Rect _querySamplesButtonRect;
         private Rect _wsButtonRect;
@@ -224,7 +226,25 @@ namespace AssetInventory
         private int _assetFileAMCollectionCount;
 
         // Track the currently active saved search
-        private int _activeSavedSearchId = -1;
+        private int _activeSavedSearchIdBacking = -1;
+        private int _activeSavedSearchId
+        {
+            get => _activeSavedSearchIdBacking;
+            set
+            {
+                if (_activeSavedSearchIdBacking != value)
+                {
+                    _activeSavedSearchIdBacking = value;
+                    // Reset restoration flag when active search changes
+                    _variablesRestoredFromDb = false;
+                }
+            }
+        }
+
+        // Search query variables
+        private Dictionary<string, SearchVariable> _searchVariables = new Dictionary<string, SearchVariable>();
+        [NonSerialized] private bool _hasSearchVariables = false;
+        [NonSerialized] private bool _variablesRestoredFromDb = false;
 
         private List<SavedSearch> Searches
         {
@@ -275,6 +295,7 @@ namespace AssetInventory
                 // deactivate current in-memory mode if no searches are available
                 _inMemoryMode = InMemoryModeState.None;
                 _searchPhrase = "";
+                _previousSearchPhrase = "";
                 _requireSearchUpdate = true;
             }
 
@@ -286,7 +307,10 @@ namespace AssetInventory
         public void SetInitialSearch(string searchPhrase)
         {
             _searchPhrase = searchPhrase;
+            _previousSearchPhrase = searchPhrase;
             AI.Config.tab = 0;
+            _activeSavedSearchId = -1;
+            DetectVariablesInSearchPhrase();
         }
 
         private void OnSearchDoubleClick(AssetInfo obj)
@@ -362,6 +386,25 @@ namespace AssetInventory
             else
             {
                 bool dirty = false;
+
+                // Restore variables from database after recompile if we have an active saved search
+                if (!_variablesRestoredFromDb && _activeSavedSearchId > 0 && _searchVariables.Count == 0 && !string.IsNullOrEmpty(_searchPhrase))
+                {
+                    SavedSearch search = Searches.FirstOrDefault(s => s.Id == _activeSavedSearchId);
+                    if (search != null && !string.IsNullOrEmpty(search.VariableDefinitions))
+                    {
+                        _searchVariables = DeserializeSearchVariables(search.VariableDefinitions);
+                        _hasSearchVariables = _searchVariables.Count > 0;
+                    }
+                    _variablesRestoredFromDb = true;
+                }
+
+                // Ensure variables are detected if search phrase has content but variables haven't been detected yet
+                if (!string.IsNullOrEmpty(_searchPhrase) && !_hasSearchVariables && VariableResolver.ContainsVariables(_searchPhrase))
+                {
+                    DetectVariablesInSearchPhrase();
+                    dirty = true;
+                }
 
                 // saved searches bar
                 if (Searches.Count > 0)
@@ -463,7 +506,10 @@ namespace AssetInventory
                                 SavedSearchUI savedSearchUI = SavedSearchUI.ShowWindow();
                                 savedSearchUI.Init(search);
                             });
-                            // menu.AddItem(new GUIContent("Override with current search"), false, () => { });
+                            menu.AddItem(new GUIContent("Override with Current Search"), false, () =>
+                            {
+                                OverrideSavedSearch(search);
+                            });
                             menu.AddSeparator("");
                             menu.AddItem(new GUIContent("Delete"), false, () =>
                             {
@@ -576,23 +622,43 @@ namespace AssetInventory
                     _searchPhrase = SearchField.OnGUI(_searchPhrase, GUILayout.ExpandWidth(true));
                     if (EditorGUI.EndChangeCheck())
                     {
-                        // delay search to allow fast typing
-                        _nextSearchTime = Time.realtimeSinceStartup + AI.Config.searchDelay;
-                        // Clear active saved search when manually changing search phrase
-                        _activeSavedSearchId = -1;
+                        // Only trigger if actual text changed, not just cursor movement
+                        if (_searchPhrase != _previousSearchPhrase)
+                        {
+                            _previousSearchPhrase = _searchPhrase;
+
+                            // delay search to allow fast typing
+                            _nextSearchTime = Time.realtimeSinceStartup + AI.Config.searchDelay;
+                            // Delay variable detection to avoid lag while typing
+                            _nextVariableDetectionTime = Time.realtimeSinceStartup + AI.Config.variableDetectionDelay;
+                            // Clear active saved search when manually changing search phrase
+                            _activeSavedSearchId = -1;
+                        }
                     }
                     else if (_nextSearchTime > 0 && Time.realtimeSinceStartup > _nextSearchTime)
                     {
                         _nextSearchTime = 0;
                         if (AI.Config.searchAutomatically && !_searchPhrase.StartsWith("=")) dirty = true;
                     }
+
+                    // Check if variable detection should run
+                    // Only run in OnGUI if searchAutomatically is off, otherwise let PerformSearch handle it
+                    if (!AI.Config.searchAutomatically && _nextVariableDetectionTime > 0 && Time.realtimeSinceStartup > _nextVariableDetectionTime)
+                    {
+                        _nextVariableDetectionTime = 0;
+                        DetectVariablesInSearchPhrase();
+                    }
+
                     if (_allowLogic && (Event.current.keyCode == KeyCode.Return || Event.current.keyCode == KeyCode.KeypadEnter))
                     {
                         PerformSearch();
                     }
                     if (!AI.Config.searchAutomatically)
                     {
-                        if (GUILayout.Button("Go", GUILayout.Width(30))) PerformSearch();
+                        if (GUILayout.Button("Go", GUILayout.Width(30)))
+                        {
+                            PerformSearch();
+                        }
                     }
 
                     if (_searchPhrase != null && _searchPhrase.StartsWith("="))
@@ -619,6 +685,7 @@ namespace AssetInventory
                             searchUI.Init((searchPhrase, searchType) =>
                             {
                                 _searchPhrase = searchPhrase;
+                                _previousSearchPhrase = searchPhrase;
                                 if (searchType == null)
                                 {
                                     AI.Config.searchType = 0;
@@ -694,6 +761,42 @@ namespace AssetInventory
                     GUILayout.EndHorizontal();
                 }
 
+                // variable input UI
+                if (_hasSearchVariables)
+                {
+                    GUILayout.BeginHorizontal();
+                    GUILayout.Space(53);
+
+                    foreach (KeyValuePair<string, SearchVariable> kvp in _searchVariables.OrderBy(v => v.Key))
+                    {
+                        EditorGUILayout.LabelField(kvp.Key + ":", GUILayout.Width(40));
+
+                        // Text field
+                        EditorGUI.BeginChangeCheck();
+                        string newValue = EditorGUILayout.TextField(kvp.Value.currentValue ?? "", GUILayout.ExpandWidth(true));
+                        if (EditorGUI.EndChangeCheck())
+                        {
+                            kvp.Value.currentValue = newValue;
+                            _requireSearchUpdate = true;
+                        }
+
+                        // Only show dropdown for saved searches (where options/defaults are useful)
+                        if (_activeSavedSearchId > 0)
+                        {
+                            // Dropdown button
+                            if (EditorGUILayout.DropdownButton(UIStyles.Content(string.Empty, "Select value"), FocusType.Keyboard))
+                            {
+                                ShowVariableDropdown(kvp.Value);
+                            }
+                        }
+
+                        EditorGUILayout.Space();
+                    }
+                    GUILayout.FlexibleSpace();
+
+                    GUILayout.EndHorizontal();
+                }
+
                 // error display
                 if (!string.IsNullOrEmpty(_searchError))
                 {
@@ -731,6 +834,7 @@ namespace AssetInventory
                         if (!_searchDone) SGrid.HandleMouseClicks();
                         OnSearchKeyboardSelection(SGrid.selectionTile);
                     }
+                    GUILayout.FlexibleSpace();
                     GUILayout.EndScrollView();
 
                     // Only auto-scroll after keyboard navigation occurred (allows free manual scrolling)
@@ -1157,7 +1261,7 @@ namespace AssetInventory
                                                         {
                                                             GUILabelWithText("Dependencies", $"{_selectedEntry.Dependencies?.Count}");
                                                         }
-                                                        if (_selectedEntry.Dependencies.Count > 0 && GUILayout.Button("Show..."))
+                                                        if (_selectedEntry.Dependencies.Count > 0 && GUILayout.Button(EditorGUIUtility.IconContent("d_animationvisibilitytoggleon", "|Show...")))
                                                         {
                                                             DependenciesUI depUI = DependenciesUI.ShowWindow();
                                                             depUI.Init(_selectedEntry);
@@ -1913,7 +2017,7 @@ namespace AssetInventory
                 || _selectedImageType > 0
                 || _selectedColorOption > 0
                 || _selectedPackageTypes != 1
-                || _selectedPackageSRPs > 0
+                || _selectedPackageSRPs != 1
                 || !string.IsNullOrEmpty(_searchWidth)
                 || !string.IsNullOrEmpty(_searchHeight)
                 || !string.IsNullOrEmpty(_searchLength)
@@ -2100,6 +2204,7 @@ namespace AssetInventory
         private void LoadSearch(SavedSearch search)
         {
             _searchPhrase = search.SearchPhrase;
+            _previousSearchPhrase = search.SearchPhrase;
             _selectedPackageTypes = search.PackageTypes;
             _selectedPackageSRPs = search.PackageSrPs;
             _selectedImageType = search.ImageType;
@@ -2121,15 +2226,24 @@ namespace AssetInventory
             _selectedPackageTag = string.IsNullOrWhiteSpace(search.PackageTag) ? 0 : Mathf.Max(0, Array.FindIndex(_tagNames, s => s == search.PackageTag || s.EndsWith($"/{search.PackageTag}")));
             _selectedFileTag = string.IsNullOrWhiteSpace(search.FileTag) ? 0 : Mathf.Max(0, Array.FindIndex(_tagNames, s => s == search.FileTag || s.EndsWith($"/{search.FileTag}")));
 
+            // Load variable definitions
+            if (!string.IsNullOrEmpty(search.VariableDefinitions))
+            {
+                _searchVariables = DeserializeSearchVariables(search.VariableDefinitions);
+            }
+
+            // Always detect variables from the search phrase to ensure UI renders correctly
+            // This also handles the case where the phrase has variables but no stored definitions
+            DetectVariablesInSearchPhrase();
+
             _activeSavedSearchId = search.Id;
+            _variablesRestoredFromDb = true;
             _requireSearchUpdate = true;
             RefreshSearchField();
         }
 
-        private void SaveSearch(string value)
+        private void PopulateSavedSearchFromCurrentState(SavedSearch search)
         {
-            SavedSearch search = new SavedSearch();
-            search.Name = value;
             search.SearchPhrase = _searchPhrase;
             search.PackageTypes = _selectedPackageTypes;
             search.PackageSrPs = _selectedPackageSRPs;
@@ -2144,37 +2258,72 @@ namespace AssetInventory
             search.CheckMaxHeight = _checkMaxHeight;
             search.CheckMaxLength = _checkMaxLength;
             search.CheckMaxSize = _checkMaxSize;
-            search.Color = ColorUtility.ToHtmlStringRGB(Random.ColorHSV());
 
             if (AI.Config.searchType > 0 && _types.Length > AI.Config.searchType)
             {
                 search.Type = _types[AI.Config.searchType].Split('/').LastOrDefault();
+            }
+            else
+            {
+                search.Type = null;
             }
 
             if (_selectedPublisher > 0 && _publisherNames.Length > _selectedPublisher)
             {
                 search.Publisher = _publisherNames[_selectedPublisher].Split('/').LastOrDefault();
             }
+            else
+            {
+                search.Publisher = null;
+            }
 
             if (_selectedAsset > 0 && _assetNames.Length > _selectedAsset)
             {
                 search.Package = _assetNames[_selectedAsset].Split('/').LastOrDefault();
+            }
+            else
+            {
+                search.Package = null;
             }
 
             if (_selectedCategory > 0 && _categoryNames.Length > _selectedCategory)
             {
                 search.Category = _categoryNames[_selectedCategory].Split('/').LastOrDefault();
             }
+            else
+            {
+                search.Category = null;
+            }
 
             if (_selectedPackageTag > 0 && _tagNames.Length > _selectedPackageTag)
             {
                 search.PackageTag = _tagNames[_selectedPackageTag].Split('/').LastOrDefault();
+            }
+            else
+            {
+                search.PackageTag = null;
             }
 
             if (_selectedFileTag > 0 && _tagNames.Length > _selectedFileTag)
             {
                 search.FileTag = _tagNames[_selectedFileTag].Split('/').LastOrDefault();
             }
+            else
+            {
+                search.FileTag = null;
+            }
+
+            // Serialize variable metadata
+            search.VariableDefinitions = SerializeSearchVariables(_searchVariables);
+        }
+
+        private void SaveSearch(string value)
+        {
+            SavedSearch search = new SavedSearch();
+            search.Name = value;
+            search.Color = ColorUtility.ToHtmlStringRGB(Random.ColorHSV());
+
+            PopulateSavedSearchFromCurrentState(search);
 
             DBAdapter.DB.Insert(search);
             Searches.Add(search);
@@ -2192,6 +2341,16 @@ namespace AssetInventory
                 DBAdapter.DB.Insert(wsSearch);
                 _selectedWorkspace.Searches.Add(wsSearch);
             }
+        }
+
+        private void OverrideSavedSearch(SavedSearch search)
+        {
+            PopulateSavedSearchFromCurrentState(search);
+            DBAdapter.DB.Update(search);
+
+            // Set as active search
+            _activeSavedSearchId = search.Id;
+            _variablesRestoredFromDb = true;
         }
 
         private void SaveWorkspace(string value)
@@ -2486,6 +2645,13 @@ namespace AssetInventory
         {
             if (AI.DEBUG_MODE) Debug.LogWarning("Perform Search");
 
+            // Detect variables immediately before search if detection is pending
+            if (_nextVariableDetectionTime > 0)
+            {
+                _nextVariableDetectionTime = 0;
+                DetectVariablesInSearchPhrase();
+            }
+
             _requireSearchUpdate = false;
             _searchHandlerAdded = false;
             _keepSearchResultPage = true;
@@ -2508,9 +2674,22 @@ namespace AssetInventory
             // use shared AssetSearch to execute search logic once
             int lastCount = _resultCount;
             int maxResults = GetMaxResults();
+
+            // Build variables dictionary for search execution
+            Dictionary<string, string> searchVariables = null;
+            if (_hasSearchVariables && _searchVariables.Count > 0)
+            {
+                searchVariables = new Dictionary<string, string>();
+                foreach (var kvp in _searchVariables)
+                {
+                    searchVariables[kvp.Key] = kvp.Value.currentValue ?? kvp.Value.defaultValue ?? "";
+                }
+            }
+
             AssetSearch.Options opt = new AssetSearch.Options
             {
                 SearchPhrase = _searchPhrase,
+                SearchVariables = searchVariables,
                 SelectedPackageSRPs = _selectedPackageSRPs,
                 SearchWidth = _searchWidth,
                 CheckMaxWidth = _checkMaxWidth,
@@ -2777,6 +2956,7 @@ namespace AssetInventory
             if (!string.IsNullOrEmpty(searchPhrase))
             {
                 _searchPhrase = searchPhrase;
+                _previousSearchPhrase = searchPhrase;
             }
 
             _curPage = 1;
@@ -2789,13 +2969,14 @@ namespace AssetInventory
             if (!filterBarOnly)
             {
                 _searchPhrase = "";
+                _previousSearchPhrase = "";
                 if (!keepAssetType) AI.Config.searchType = 0;
             }
 
             _selectedEntry = null;
             _selectedAsset = 0;
             _selectedPackageTypes = 1;
-            _selectedPackageSRPs = 0;
+            _selectedPackageSRPs = 1;
             _selectedImageType = 0;
             _selectedColorOption = 0;
             _selectedColor = Color.clear;
@@ -3082,6 +3263,157 @@ namespace AssetInventory
                 DestroyImmediate(_animTexture);
                 _animTexture = null;
             }
+        }
+
+        private void DetectVariablesInSearchPhrase()
+        {
+            if (string.IsNullOrEmpty(_searchPhrase))
+            {
+                _searchVariables.Clear();
+                _hasSearchVariables = false;
+                return;
+            }
+
+            // Find all variable references
+            List<string> varNames = VariableResolver.FindVariableReferences(_searchPhrase);
+
+            // Update existing variables or add new ones
+            HashSet<string> currentVars = new HashSet<string>(varNames);
+
+            // Remove variables that are no longer referenced
+            List<string> toRemove = new List<string>();
+            foreach (string key in _searchVariables.Keys)
+            {
+                if (!currentVars.Contains(key))
+                {
+                    toRemove.Add(key);
+                }
+            }
+            foreach (string key in toRemove)
+            {
+                _searchVariables.Remove(key);
+            }
+
+            // Add new variables (keep existing ones unchanged to preserve user values)
+            foreach (string varName in varNames)
+            {
+                if (!_searchVariables.ContainsKey(varName))
+                {
+                    _searchVariables[varName] = new SearchVariable
+                    {
+                        name = varName,
+                        defaultValue = "",
+                        currentValue = ""
+                    };
+                }
+            }
+
+            bool hadVariables = _hasSearchVariables;
+            _hasSearchVariables = _searchVariables.Count > 0;
+
+            // Trigger search update if variables were newly detected
+            if (!hadVariables && _hasSearchVariables)
+            {
+                _requireSearchUpdate = true;
+            }
+        }
+
+        private void ShowVariableDropdown(SearchVariable variable)
+        {
+            GenericMenu menu = new GenericMenu();
+
+            // Capture mouse position now, before any lambdas
+            Vector2 mousePosition = Event.current != null ? Event.current.mousePosition : Vector2.zero;
+
+            // Predefined options
+            if (variable.options != null && variable.options.Count > 0)
+            {
+                menu.AddDisabledItem(new GUIContent("Predefined Options"));
+                foreach (string option in variable.options)
+                {
+                    string capturedOption = option;
+                    menu.AddItem(new GUIContent("  " + option), false, () =>
+                    {
+                        variable.currentValue = capturedOption;
+                        _requireSearchUpdate = true;
+                    });
+                }
+                menu.AddSeparator("");
+            }
+
+            // Actions
+            if (variable.currentValue != variable.defaultValue)
+            {
+                menu.AddItem(new GUIContent("Set Current as Default"), false, () =>
+                {
+                    variable.defaultValue = variable.currentValue;
+                    // Update saved search if currently viewing one
+                    if (_activeSavedSearchId > 0)
+                    {
+                        SavedSearch savedSearch = Searches.FirstOrDefault(s => s.Id == _activeSavedSearchId);
+                        if (savedSearch != null)
+                        {
+                            savedSearch.VariableDefinitions = SerializeSearchVariables(_searchVariables);
+                            DBAdapter.DB.Update(savedSearch);
+                        }
+                    }
+                });
+            }
+
+            menu.AddItem(new GUIContent("Edit Options..."), false, () =>
+            {
+                string currentOptions = variable.options != null && variable.options.Count > 0
+                    ? string.Join(", ", variable.options)
+                    : "";
+
+                NameUI nameUI = new NameUI();
+                nameUI.Init(currentOptions, (optionsText) =>
+                {
+                    // Parse comma-separated options
+                    List<string> updatedOptions = new List<string>();
+                    if (!string.IsNullOrWhiteSpace(optionsText))
+                    {
+                        updatedOptions = optionsText
+                            .Split(',')
+                            .Select(s => s.Trim())
+                            .Where(s => !string.IsNullOrWhiteSpace(s))
+                            .Distinct()
+                            .ToList();
+                    }
+
+                    variable.options = updatedOptions;
+
+                    // Update saved search if currently viewing one
+                    if (_activeSavedSearchId > 0)
+                    {
+                        SavedSearch savedSearch = Searches.FirstOrDefault(s => s.Id == _activeSavedSearchId);
+                        if (savedSearch != null)
+                        {
+                            savedSearch.VariableDefinitions = SerializeSearchVariables(_searchVariables);
+                            DBAdapter.DB.Update(savedSearch);
+                        }
+                    }
+                }, allowEmpty: true, title: "Comma-separated options");
+                PopupWindow.Show(new Rect(mousePosition.x, mousePosition.y, 0, 0), nameUI);
+            });
+
+            menu.ShowAsContext();
+        }
+
+        private string SerializeSearchVariables(Dictionary<string, SearchVariable> variables)
+        {
+            if (variables == null || variables.Count == 0) return null;
+
+            SearchVariableCollection collection = SearchVariableCollection.FromDictionary(variables);
+            return collection.ToJson();
+        }
+
+        private Dictionary<string, SearchVariable> DeserializeSearchVariables(string json)
+        {
+            if (string.IsNullOrEmpty(json)) return new Dictionary<string, SearchVariable>();
+
+            SearchVariableCollection collection = SearchVariableCollection.FromJson(json);
+            return collection.Variables ?? new Dictionary<string, SearchVariable>();
         }
     }
 }

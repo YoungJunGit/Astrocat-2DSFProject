@@ -24,25 +24,26 @@ namespace AssetInventory
 
             // Template parameter
             List<Tuple<string, ParameterValue>> templateOptions = new List<Tuple<string, ParameterValue>>();
-            for (int i = 0; i < templates.Count; i++)
+            foreach (TemplateInfo template in templates)
             {
-                if (!string.IsNullOrWhiteSpace(templates[i].name))
+                if (!string.IsNullOrWhiteSpace(template.name))
                 {
-                    templateOptions.Add(new Tuple<string, ParameterValue>(templates[i].name, new ParameterValue(i)));
+                    string templateId = template.GetNameFromFile();
+                    templateOptions.Add(new Tuple<string, ParameterValue>(template.name, new ParameterValue(templateId)));
                 }
             }
 
             // Add a default option if no templates are available
             if (templateOptions.Count == 0)
             {
-                templateOptions.Add(new Tuple<string, ParameterValue>("No templates available", new ParameterValue(-1)));
+                templateOptions.Add(new Tuple<string, ParameterValue>("No templates available", new ParameterValue("")));
             }
 
             Parameters.Add(new StepParameter
             {
                 Name = "Template",
                 Description = "Template to use for the HTML export.",
-                Type = StepParameter.ParamType.Int,
+                Type = StepParameter.ParamType.String,
                 ValueList = StepParameter.ValueType.Custom,
                 Options = templateOptions,
                 DefaultValue = templateOptions[0].Item2
@@ -63,31 +64,30 @@ namespace AssetInventory
         {
 #if UNITY_2021_2_OR_NEWER
             // Get parameters
-            int templateIndex = parameters[0].intValue;
+            string templateId = parameters[0].stringValue;
             string targetFolder = parameters[1].stringValue;
 
             // Load templates fresh for the run (don't rely on constructor field)
             List<TemplateInfo> templates = TemplateUtils.LoadTemplates();
 
             // Check if templates are available
-            if (templateIndex < 0)
+            if (string.IsNullOrEmpty(templateId))
             {
-                Debug.LogError("No templates available for HTML export. Please ensure templates are present in the Templates folder.");
-                return;
+                throw new Exception("No templates available for HTML export. Please ensure templates are present in the Templates folder.");
             }
 
-            // Validate template index
-            if (templateIndex >= templates.Count)
+            // Find template by filename
+            TemplateInfo selectedTemplate = templates.FirstOrDefault(t => t.GetNameFromFile() == templateId);
+            
+            if (selectedTemplate == null)
             {
-                Debug.LogError($"Invalid template index: {templateIndex}");
-                return;
+                throw new Exception($"Template with ID '{templateId}' not found. Please reconfigure this action step.");
             }
 
             // Skip empty separator entries
-            if (string.IsNullOrWhiteSpace(templates[templateIndex].name))
+            if (string.IsNullOrWhiteSpace(selectedTemplate.name))
             {
-                Debug.LogError("Cannot export with an empty template name.");
-                return;
+                throw new Exception("Cannot export with an empty template name.");
             }
 
             // Create target folder if it doesn't exist
@@ -96,6 +96,7 @@ namespace AssetInventory
             // Load all assets from the database
             List<AssetInfo> assets = AI.LoadAssets()
                 .Where(info => !info.Exclude)
+                .Where(info => info.ParentId <= 0)
                 .Where(info => info.AssetSource != Asset.Source.RegistryPackage)
                 .ToList();
 
@@ -124,7 +125,7 @@ namespace AssetInventory
             TemplateExport exporter = new TemplateExport();
             await exporter.Run(
                 assets,
-                templates[templateIndex],
+                selectedTemplate,
                 templates,
                 AI.Config.templateExportSettings,
                 env

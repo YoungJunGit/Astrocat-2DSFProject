@@ -31,5 +31,6 @@ namespace AssetInventory
         public bool CheckMaxSize { get; set; }
         public int ColorOption { get; set; }
         public string SearchColor { get; set; }
+        public string VariableDefinitions { get; set; }
     }
 }

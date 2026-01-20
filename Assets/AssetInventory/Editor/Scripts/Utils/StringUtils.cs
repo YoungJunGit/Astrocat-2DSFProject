@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -37,7 +37,7 @@ namespace AssetInventory
             // 3. Empty tokens (just the token name followed by colon) - should be removed but not added to values
             string pattern = $@"\b{Regex.Escape(tokenName)}:((?:'[^']*'|""[^""]*""|\S+)?)";
 
-            // Use a MatchEvaluator to both capture the token and remove it in one go.
+            // Use a MatchEvaluator to both capture the token and remove it in one go. Make token name matching case-insensitive.
             string result = Regex.Replace(input, pattern, match =>
             {
                 string value = match.Groups[1].Value;
@@ -59,11 +59,40 @@ namespace AssetInventory
 
                 // Return an empty string to remove this token from the original text.
                 return string.Empty;
-            });
+            }, RegexOptions.IgnoreCase);
 
             // remove any excess whitespace created by token removal
             result = MULTIPLE_WHITESPACE_PATTERN.Replace(result, " ").Trim();
 
+            return result;
+        }
+
+        public static string ExtractTokens(string input, IEnumerable<string> tokenNames, List<string> tokenValues)
+        {
+            if (string.IsNullOrEmpty(input) || tokenNames == null) return input;
+
+            List<string> names = new List<string>();
+            foreach (string n in tokenNames)
+            {
+                if (!string.IsNullOrEmpty(n)) names.Add(Regex.Escape(n));
+            }
+            if (names.Count == 0) return input;
+
+            string pattern = $@"\b(?:{string.Join("|", names)}):((?:'[^']*'|""[^""]*""|\S+)?)";
+
+            string result = Regex.Replace(input, pattern, match =>
+            {
+                string value = match.Groups[1].Value;
+                if (string.IsNullOrEmpty(value)) return string.Empty;
+                if ((value.StartsWith("'") && value.EndsWith("'")) || (value.StartsWith("\"") && value.EndsWith("\"")))
+                {
+                    value = value.Substring(1, value.Length - 2);
+                }
+                tokenValues.Add(value);
+                return string.Empty;
+            }, RegexOptions.IgnoreCase);
+
+            result = MULTIPLE_WHITESPACE_PATTERN.Replace(result, " ").Trim();
             return result;
         }
 
@@ -207,6 +236,23 @@ namespace AssetInventory
             }
 
             return parts;
+        }
+
+        public static List<string> FlattenCommaSeparated(IEnumerable<string> inputs)
+        {
+            List<string> result = new List<string>();
+            if (inputs == null) return result;
+
+            foreach (string v in inputs)
+            {
+                if (string.IsNullOrWhiteSpace(v)) continue;
+                foreach (string part in Split(v, new[] {','}))
+                {
+                    if (!string.IsNullOrEmpty(part)) result.Add(part);
+                }
+            }
+
+            return result;
         }
 
         public static string CamelCaseToWords(string input)
@@ -367,17 +413,17 @@ namespace AssetInventory
         public static string FormatBytes(long bytes)
         {
             if (bytes < 0) return "0 B";
-            
-            string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+
+            string[] sizes = {"B", "KB", "MB", "GB", "TB"};
             double len = bytes;
             int order = 0;
-            
+
             while (len >= 1024 && order < sizes.Length - 1)
             {
                 order++;
                 len /= 1024;
             }
-            
+
             // Format with up to 1 decimal place, but drop .0
             string formatted = len.ToString(len % 1 == 0 ? "0" : "0.0", CultureInfo.InvariantCulture);
             return $"{formatted} {sizes[order]}";

@@ -4,6 +4,36 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.6.1] - 2025-12-21
+
+- Remove accidentally added test package dependency
+- Fix tool not handling broken URP converter gracefully
+- Fix metadata for deprecated packages sometimes cannot be fetched
+- Fix "all" in SRP filter not working * Add "current" to SRP filter to auto-detect current render pipeline in use
+
+## [3.6.0] - 2025-12-09
+
+- Custom Actions
+  - New action step: Set Text Variable and allow referencing variables via $varname later
+  - Support predefined variables in custom actions: Application, SystemInfo, Environment, Config, DateTime, PlayerSettings, EditorApplication, BuildTarget, QualitySettings, Screen
+  - SFTP support for FTP Upload Action
+  - New action step: FTP Delete Folder
+  - Support aborting custom actions upon errors
+- HTML Export
+  - Do not export sub packages via HTML template
+  - Add third party dependency: SSH.Net
+  - Allow cancelling FTP uploads
+  - Fix HTML export action not working if first template is selected
+- Searching
+  - Allow searching also in group names in package search
+  - Support variables inside asset search to reuse and easily parameterize saved searches
+  - Support overriding saved searches with current search setup
+  - Support combining tag tokens in search via and/or/not
+- Minor UI fixes
+- Fix media size not stable while loading
+- Fix sort by asset rating and review count
+- Fix new method for fetching asset details failing in newest Unity 6.3
+
 ## [3.5.0] - 2025-10-21
 
 - New asset details update method, greatly reducing time needed to fetch updates

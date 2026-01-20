@@ -1634,7 +1634,16 @@ namespace AssetInventory
                 Task _ = AI.LoadFullMediaOnDemand(info, selectedMedia);
             }
 
-            GUILayout.Box(selectedMedia.Texture, UIStyles.centerLabel, GUILayout.MaxWidth(GetInspectorWidth() - 20), GUILayout.MaxHeight(AI.Config.mediaHeight / (AI.Config.expandPackageDetails ? 1f : 2f)));
+            // Show placeholder while loading to prevent flickering
+            float maxHeight = AI.Config.mediaHeight / (AI.Config.expandPackageDetails ? 1f : 2f);
+            if (selectedMedia.Texture == null)
+            {
+                GUILayout.Box("Loading...", UIStyles.centerLabel, GUILayout.MaxWidth(GetInspectorWidth() - 20), GUILayout.Height(maxHeight));
+            }
+            else
+            {
+                GUILayout.Box(selectedMedia.Texture, UIStyles.centerLabel, GUILayout.MaxWidth(GetInspectorWidth() - 20), GUILayout.MaxHeight(maxHeight));
+            }
             if (Event.current.type == EventType.Repaint) _mediaRect = GUILayoutUtility.GetLastRect();
             if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
             {
@@ -1972,6 +1981,12 @@ namespace AssetInventory
                     GUILayout.EndHorizontal();
 
                     EditorGUI.BeginChangeCheck();
+
+                    GUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField(UIStyles.Content("Search In Group Names", "Will also search for the entered search text in group names (category, publisher, tags, etc.) when packages are grouped."), EditorStyles.boldLabel, GUILayout.Width(width));
+                    AI.Config.searchPackageGroupNames = EditorGUILayout.Toggle(AI.Config.searchPackageGroupNames);
+                    GUILayout.EndHorizontal();
+
                     GUILayout.BeginHorizontal();
                     EditorGUILayout.LabelField(UIStyles.Content("Search In Description", "Will also search for the entered search text in package descriptions in addition to the name."), EditorStyles.boldLabel, GUILayout.Width(width));
                     AI.Config.searchPackageDescriptions = EditorGUILayout.Toggle(AI.Config.searchPackageDescriptions);
@@ -2799,12 +2814,15 @@ namespace AssetInventory
             if (!string.IsNullOrWhiteSpace(_assetSearchPhrase))
             {
                 bool searchDescription = AI.Config.searchPackageDescriptions;
+                bool searchGroupNames = AI.Config.searchPackageGroupNames;
+                int currentGrouping = AI.Config.packageViewMode == 0 ? AI.Config.assetGrouping : 0;
 
                 if (_assetSearchPhrase.StartsWith("~")) // exact mode
                 {
                     string term = _assetSearchPhrase.Substring(1);
                     filteredAssets = filteredAssets.Where(a => a.GetDisplayName().Contains(term, StringComparison.OrdinalIgnoreCase)
-                        || (searchDescription && a.Description != null && a.Description.Contains(term, StringComparison.OrdinalIgnoreCase)));
+                        || (searchDescription && a.Description != null && a.Description.Contains(term, StringComparison.OrdinalIgnoreCase))
+                        || (searchGroupNames && MatchesGroupName(a, term, currentGrouping)));
                 }
                 else
                 {
@@ -2817,7 +2835,8 @@ namespace AssetInventory
                             {
                                 string phrase = fuzzyWord.Substring(1);
                                 return a.GetDisplayName().Contains(phrase, StringComparison.OrdinalIgnoreCase)
-                                    || (searchDescription && a.Description != null && a.Description.Contains(phrase, StringComparison.OrdinalIgnoreCase));
+                                    || (searchDescription && a.Description != null && a.Description.Contains(phrase, StringComparison.OrdinalIgnoreCase))
+                                    || (searchGroupNames && MatchesGroupName(a, phrase, currentGrouping));
                             });
                         }
                         else if (fuzzyWord.StartsWith("-"))
@@ -2826,13 +2845,15 @@ namespace AssetInventory
                             {
                                 string phrase = fuzzyWord.Substring(1);
                                 return !a.GetDisplayName().Contains(phrase, StringComparison.OrdinalIgnoreCase)
-                                    && (!searchDescription || a.Description == null || !a.Description.Contains(phrase, StringComparison.OrdinalIgnoreCase));
+                                    && (!searchDescription || a.Description == null || !a.Description.Contains(phrase, StringComparison.OrdinalIgnoreCase))
+                                    && (!searchGroupNames || !MatchesGroupName(a, phrase, currentGrouping));
                             });
                         }
                         else
                         {
                             filteredAssets = filteredAssets.Where(a => a.GetDisplayName().Contains(fuzzyWord, StringComparison.OrdinalIgnoreCase)
-                                || (searchDescription && a.Description != null && a.Description.Contains(fuzzyWord, StringComparison.OrdinalIgnoreCase)));
+                                || (searchDescription && a.Description != null && a.Description.Contains(fuzzyWord, StringComparison.OrdinalIgnoreCase))
+                                || (searchGroupNames && MatchesGroupName(a, fuzzyWord, currentGrouping)));
                         }
                     }
                 }
@@ -3102,6 +3123,33 @@ namespace AssetInventory
             }
         }
 
+        private bool MatchesGroupName(AssetInfo asset, string searchTerm, int groupingMode)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm)) return false;
+
+            switch (groupingMode)
+            {
+                case 2: // category
+                    return !string.IsNullOrEmpty(asset.GetDisplayCategory()) && asset.GetDisplayCategory().Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
+
+                case 3: // publisher
+                    return !string.IsNullOrEmpty(asset.GetDisplayPublisher()) && asset.GetDisplayPublisher().Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
+
+                case 4: // tags
+                    return asset.PackageTags != null && asset.PackageTags.Any(t => t.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+
+                case 5: // state
+                    return !string.IsNullOrEmpty(asset.OfficialState) && asset.OfficialState.Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
+
+                case 6: // location
+                    string locationDir = GetLocationDirectory(asset.Location);
+                    return !string.IsNullOrEmpty(locationDir) && locationDir.Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
+
+                default:
+                    return false;
+            }
+        }
+
         private IOrderedEnumerable<AssetInfo> AddPackageOrdering(IEnumerable<AssetInfo> list)
         {
             IOrderedEnumerable<AssetInfo> result = null;
@@ -3195,11 +3243,11 @@ namespace AssetInventory
                     break;
 
                 case (int)Columns.Rating:
-                    result = list.SortBy(a => a.RatingCount, asc).ThenSortBy(a => a.AssetRating, asc);
+                    result = list.SortBy(a => a.AssetRating, asc).ThenSortBy(a => a.RatingCount, asc);
                     break;
 
                 case (int)Columns.RatingCount:
-                    result = list.SortBy(a => a.AssetRating, asc).ThenSortBy(a => a.RatingCount, asc);
+                    result = list.SortBy(a => a.RatingCount, asc).ThenSortBy(a => a.AssetRating, asc);
                     break;
 
                 case (int)Columns.ReleaseDate:

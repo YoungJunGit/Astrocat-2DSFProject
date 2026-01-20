@@ -7,7 +7,8 @@ namespace AssetInventory
     {
         public enum FTPProtocol
         {
-            FTP
+            FTP,
+            SFTP
         }
 
         public string key;
@@ -39,6 +40,11 @@ namespace AssetInventory
                 useSsl = useSsl,
                 validateCertificate = validateCertificate
             };
+        }
+        
+        public int GetDefaultPort()
+        {
+            return protocol == FTPProtocol.SFTP ? 22 : 21;
         }
     }
 }

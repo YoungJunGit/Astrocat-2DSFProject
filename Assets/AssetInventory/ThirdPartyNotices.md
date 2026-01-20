@@ -43,3 +43,7 @@ The AI extensions from https://learn.microsoft.com/en-us/dotnet/ai/microsoft-ext
 **j. ImageSharp**
 
 The ImageSharp library from https://github.com/SixLabors/ImageSharp provides an alternative to System.Drawing which works on Mac and Linux as well. It is licensed under the Apache 2 license since we are using v2 and not v3 and it is also used as a transitive dependency for any consumer.
+
+**k. SSH.Net**
+
+The SSH.Net library from https://github.com/sshnet/SSH.NET provides the means to use secure FTP connections. It is licensed under the MIT license.
