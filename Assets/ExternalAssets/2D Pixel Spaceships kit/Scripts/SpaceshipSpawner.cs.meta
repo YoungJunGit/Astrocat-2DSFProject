@@ -14,5 +14,5 @@ AssetOrigin:
   productId: 120194
   packageName: 2D Pixel Spaceships kit
   packageVersion: 1.1
-  assetPath: Assets/2D Pixel Spaceships kit/Scripts/SpaceshipSpawner.cs
+  assetPath: Assets/ExternalAssets/2D Pixel Spaceships kit/Scripts/SpaceshipSpawner.cs
   uploadId: 401923

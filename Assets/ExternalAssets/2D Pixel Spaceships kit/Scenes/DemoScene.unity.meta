@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e0adf05f825e4b64e893ae85283ba625
+guid: 4c0a5b6498a87f34e842d114e1ac0814
 DefaultImporter:
   externalObjects: {}
   userData: 
@@ -10,5 +10,5 @@ AssetOrigin:
   productId: 120194
   packageName: 2D Pixel Spaceships kit
   packageVersion: 1.1
-  assetPath: Assets/2D Pixel Spaceships kit/Scenes/DemoScene.unity
+  assetPath: Assets/ExternalAssets/2D Pixel Spaceships kit/Scenes/DemoScene.unity
   uploadId: 401923

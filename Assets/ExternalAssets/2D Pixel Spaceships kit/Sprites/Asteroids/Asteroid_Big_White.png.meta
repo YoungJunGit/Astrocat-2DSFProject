@@ -5,7 +5,7 @@ AssetOrigin:
   productId: 120194
   packageName: 2D Pixel Spaceships kit
   packageVersion: 1.1
-  assetPath: Assets/2D Pixel Spaceships kit/Sprites/Asteroids/Asteroid_Big_White.png
+  assetPath: Assets/ExternalAssets/2D Pixel Spaceships kit/Sprites/Asteroids/Asteroid_Big_White.png
   uploadId: 401923
 TextureImporter:
   internalIDToNameTable:

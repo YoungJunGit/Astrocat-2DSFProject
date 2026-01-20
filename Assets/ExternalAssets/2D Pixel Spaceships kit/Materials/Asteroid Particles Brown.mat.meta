@@ -11,5 +11,6 @@ AssetOrigin:
   productId: 120194
   packageName: 2D Pixel Spaceships kit
   packageVersion: 1.1
-  assetPath: Assets/2D Pixel Spaceships kit/Materials/Asteroid Particles Brown.mat
+  assetPath: Assets/ExternalAssets/2D Pixel Spaceships kit/Materials/Asteroid Particles
+    Brown.mat
   uploadId: 401923
