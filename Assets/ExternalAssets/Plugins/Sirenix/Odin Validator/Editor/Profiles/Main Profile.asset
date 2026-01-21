@@ -38,21 +38,9 @@ MonoBehaviour:
     AssetBundle: 
     AddressableGroup: 
   - Enabled: 1
-    Type: 2
-    Asset:
-      Path: 
-      Filter: 
-    Object: {fileID: 0}
-    Scene:
-      Type: 0
-      Value: Assets
-      IncludeAssetDependencies: 0
-    AssetBundle: 
-    AddressableGroup: 
-  - Enabled: 1
     Type: 0
     Asset:
-      Path: Assets/Animation
+      Path: Assets/Editor
       Filter: 
     Object: {fileID: 0}
     Scene:
@@ -76,7 +64,7 @@ MonoBehaviour:
   - Enabled: 1
     Type: 0
     Asset:
-      Path: Assets/Images
+      Path: Assets/GameAssets
       Filter: 
     Object: {fileID: 0}
     Scene:
@@ -86,75 +74,15 @@ MonoBehaviour:
     AssetBundle: 
     AddressableGroup: 
   - Enabled: 1
-    Type: 0
+    Type: 2
     Asset:
-      Path: Assets/Materials
+      Path: 
       Filter: 
     Object: {fileID: 0}
     Scene:
       Type: 0
-      Value: 
-      IncludeAssetDependencies: 0
-    AssetBundle: 
-    AddressableGroup: 
-  - Enabled: 1
-    Type: 0
-    Asset:
-      Path: Assets/Prefabs
-      Filter: 
-    Object: {fileID: 0}
-    Scene:
-      Type: 0
-      Value: 
-      IncludeAssetDependencies: 0
-    AssetBundle: 
-    AddressableGroup: 
-  - Enabled: 1
-    Type: 0
-    Asset:
-      Path: Assets/Resources
-      Filter: 
-    Object: {fileID: 0}
-    Scene:
-      Type: 0
-      Value: 
-      IncludeAssetDependencies: 0
-    AssetBundle: 
-    AddressableGroup: 
-  - Enabled: 1
-    Type: 0
-    Asset:
-      Path: Assets/Scenes
-      Filter: 
-    Object: {fileID: 0}
-    Scene:
-      Type: 0
-      Value: 
-      IncludeAssetDependencies: 0
-    AssetBundle: 
-    AddressableGroup: 
-  - Enabled: 1
-    Type: 0
-    Asset:
-      Path: Assets/ScriptableObject
-      Filter: 
-    Object: {fileID: 0}
-    Scene:
-      Type: 0
-      Value: 
-      IncludeAssetDependencies: 0
-    AssetBundle: 
-    AddressableGroup: 
-  - Enabled: 1
-    Type: 0
-    Asset:
-      Path: Assets/Scripts
-      Filter: 
-    Object: {fileID: 0}
-    Scene:
-      Type: 0
-      Value: 
-      IncludeAssetDependencies: 0
+      Value: Assets/GameAssets/Scenes/BuildScenes
+      IncludeAssetDependencies: 1
     AssetBundle: 
     AddressableGroup: 
   Exclude: []
