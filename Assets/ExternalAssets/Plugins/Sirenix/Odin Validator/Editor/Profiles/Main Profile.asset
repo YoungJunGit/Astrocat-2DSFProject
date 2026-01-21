@@ -81,7 +81,7 @@ MonoBehaviour:
     Object: {fileID: 0}
     Scene:
       Type: 0
-      Value: Assets/GameAssets/Scenes/BuildScenes
+      Value: Assets/GameAssets/01_Scenes/01_BuildScenes
       IncludeAssetDependencies: 1
     AssetBundle: 
     AddressableGroup: 

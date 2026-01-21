@@ -5,10 +5,10 @@
   <Project Path="Assembly-CSharp-Editor-firstpass.csproj" />
   <Project Path="Lofelt.NiceVibrations.csproj" />
   <Project Path="Obvious.Soap.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Obvious.Soap.Editor.csproj" />
   <Project Path="VolFx.csproj" />
   <Project Path="AssetInventory.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Ink-Libraries.csproj" />
   <Project Path="NaughtyAttributes.Core.csproj" />
   <Project Path="AYellowpaper.SerializedCollections.csproj" />

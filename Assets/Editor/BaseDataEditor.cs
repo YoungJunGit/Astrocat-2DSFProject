@@ -41,7 +41,7 @@ public class BaseDataEditor<T> : Editor
         string decryptedData = data;
 
         if (_target.DecryptToggle)
-            decryptedData = Security.AESDecrypt256(data);
+            decryptedData = DataSecurity.AESDecrypt256(data);
 
         _target.data.Clear();
 
