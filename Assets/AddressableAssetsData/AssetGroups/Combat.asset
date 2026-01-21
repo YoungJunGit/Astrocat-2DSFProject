@@ -64,8 +64,7 @@ MonoBehaviour:
     - Audio_Combat
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 829a8a9474ea042e893508bc510f55dc
-    m_Address: Assets/ThirdParty/Aeon Sci-Fi Sound Bundle/Future UI Sound Library/Audio/Holographic
-      Chimes/Holographic Chime Positive-8.wav
+    m_Address: HealEffectSound
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio_Combat

@@ -49,16 +49,6 @@ public class AssetLoader
         return gameObject;
     }
 
-    public static GameObject LoadBulletPrefabAsset(string assetName)
-    {
-        GameObject gameObject = Resources.Load<GameObject>(PrefabAssetPath + assetName + "_Bullet");
-
-        if (gameObject == null)
-            Debug.LogWarning($"AssetLoader: No path: {PrefabAssetPath + assetName}_Bullet!");
-
-        return gameObject;
-    }
-
     public static GameObject LoadPrefabAsset(string assetName)
     {
         GameObject gameObject = Resources.Load<GameObject>(PrefabAssetPath + assetName);
