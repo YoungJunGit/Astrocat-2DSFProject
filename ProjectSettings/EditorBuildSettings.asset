@@ -6,8 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/GameAssets/01_Scenes/01_BuildScenes/0. TitleScene.unity
+    guid: 31d6bc0c08b0fef4cb231ef94f2e8e05
+  - enabled: 1
+    path: Assets/GameAssets/01_Scenes/01_BuildScenes/1. Lobby.unity
+    guid: 5be8fef75f06efd49ac5b3dad5123721
+  - enabled: 1
+    path: Assets/GameAssets/01_Scenes/01_BuildScenes/2. NodeTree.unity
+    guid: ad119d35a5a22ca499e23481f9051f9c
+  - enabled: 1
+    path: Assets/GameAssets/01_Scenes/01_BuildScenes/3. GameScene.unity
+    guid: e2e863c22e659a44cbd68b8e8f3f164b
+  - enabled: 1
+    path: Assets/GameAssets/01_Scenes/01_BuildScenes/99. Base.unity
+    guid: 4d86b614eb53d7b438c1982fc309fc24
+  - enabled: 1
+    path: Assets/GameAssets/01_Scenes/02_ForDebugging/DebugingUI.unity
+    guid: 4fd6a2410c669b54fa3c60eb4675f75f
+  - enabled: 0
+    path: Assets/ExternalAssets/VolFx/Samples/VolFx Transitions/Scene A.unity
+    guid: 07a238c9793de6b4f905e6538aad6120
+  - enabled: 0
+    path: Assets/ExternalAssets/VolFx/Samples/VolFx Transitions/Scene B.unity
+    guid: dbb0931807bec9c4883286d681443fd3
+  - enabled: 0
+    path: Assets/ExternalAssets/VolFx/Samples/VolFx Transitions/Scene C.unity
+    guid: 48c8fa4f83027064f84517dbfce1fc3d
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.addressableassets: {fileID: 11400000, guid: 8b8b0ebb89545bb41be272c35afa0cd8, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d96ae2171e972984887c61f81c70a9bf, type: 3}
   m_UseUCBPForAssetBundles: 0
