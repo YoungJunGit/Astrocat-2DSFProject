@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8464ba61e8850489bb6813f4c94a07, type: 3}
+  m_Name: EnemyRandomSetting
+  m_EditorClassIdentifier: 
+  fixedEnemiesID:
+  - 10012001
+  - 10012002
+  - 10012003
+  randomEnemiesID:
+  - 10012001
+  - 10012002
+  - 10012003

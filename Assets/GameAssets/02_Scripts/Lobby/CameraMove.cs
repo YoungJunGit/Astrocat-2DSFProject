@@ -27,9 +27,10 @@ public class CameraMove : MonoBehaviour, ICameraMove, IUpdateObserver
     [SerializeField] private Vector2 clampMax = new Vector2(10f, 6f);
 
     //대화 UI 팝업시 사용 못하게
-    private bool blockInput = false;
+    private bool blockInput = true;
     public void SetBlockInput(bool value)
     {
+        Debug.Log($"카메라 이동 제한 상태: {value}");
         blockInput = value;
         _dragging = false; // 대화 시작 시 드래그 끊기
     }
