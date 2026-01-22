@@ -2,7 +2,7 @@ using NaughtyAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ValueContainer", menuName = "SO/Combat/Container/ValueContainer")]
+[CreateAssetMenu(fileName = "ValueContainer", menuName = "SO/UI/Container/ValueContainer")]
 public class ValueContainer : ScriptableObject
 {
     [SerializeField] 

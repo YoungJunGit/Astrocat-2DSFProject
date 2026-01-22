@@ -9,7 +9,7 @@ public enum BACKGROUND
     IcePlanet,
 }
 
-[CreateAssetMenu(fileName = "BackgroundContainer", menuName = "SO/Background/BackgroundContainer", order = 1)]
+[CreateAssetMenu(fileName = "BackgroundContainer", menuName = "SO/UI/Background/BackgroundContainer", order = 1)]
 public class BackgroundContainer : ScriptableObject
 {
     [SerializedDictionary("Background Type", "Setting")]

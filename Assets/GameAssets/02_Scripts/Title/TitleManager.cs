@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TitleManager", menuName = "SO/Title/Manaer/TitleManager")]
+[CreateAssetMenu(fileName = "TitleManager", menuName = "SO/Title/Manager/TitleManager")]
 public class TitleManager : ScriptableObject
 {
     [SerializeField] private TitleCanvas titleCanvasPrefab;

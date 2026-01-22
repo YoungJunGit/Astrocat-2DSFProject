@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NodeState", menuName = "SO/NodeState", order = 5)]
+[CreateAssetMenu(fileName = "NodeState", menuName = "SO/Node/NodeState", order = 5)]
 
 public class NodeState : ScriptableObject
 {

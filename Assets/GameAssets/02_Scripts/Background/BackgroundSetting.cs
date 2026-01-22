@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using System.Linq;
 
-[CreateAssetMenu(fileName = "Setting", menuName = "SO/Background/Setting", order = 2)]
+[CreateAssetMenu(fileName = "Setting", menuName = "SO/UI/Background/Setting", order = 2)]
 public class BackgroundSetting : ScriptableObject
 {
     [SerializeField]
