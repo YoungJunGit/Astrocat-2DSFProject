@@ -28,7 +28,11 @@ namespace AssetInventory
 
         public override async Task Run(List<ParameterValue> parameters)
         {
-            IOUtils.ExecuteCommand(parameters[0].stringValue, parameters[1].stringValue);
+            string result = IOUtils.ExecuteCommand(parameters[0].stringValue, parameters[1].stringValue);
+            if (result == null)
+            {
+                throw new Exception($"Failed to execute command: {parameters[0].stringValue}");
+            }
             await Task.Yield();
         }
     }

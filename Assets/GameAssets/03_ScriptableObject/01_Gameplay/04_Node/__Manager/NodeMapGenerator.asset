@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df15faeed5021ea43bdde538ae03d67d, type: 3}
+  m_Name: NodeMapGenerator
+  m_EditorClassIdentifier: 
+  skipNodeProcessing: 0
+  playOnAwake: 1
+  makeStart: 1
+  isOffset: 1
+  showText: 0
+  crossable: 0
+  allRandom: 0
+  randomizeSeed: 1
+  seed: 879613568
+  floorNum: 7
+  routeNum: 4
+  normalNodeSize: 1
+  startNodeSize: 1.5
+  finalNodeSize: 10
+  floorDistance: 15
+  routeDistance: 15
+  activeRouteNum: 4
+  nodePref: {fileID: 4277126375888947395, guid: 2faf1f81fd3ed7f45a7113c1123ce3b6, type: 3}
+  pathImagePref: {fileID: 6119643253783005637, guid: 4b11199aa7ee2a847a0acaa0af34d065, type: 3}
+  pathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  passedPathColor: {r: 0, g: 0, b: 0, a: 1}
+  cameraPref: {fileID: 7454520194946596864, guid: 3ccc1905d13358d4d85bf95ebc534d3f, type: 3}
+  planetSelectorPref: {fileID: 3407096067947001916, guid: 6b5c31b56b6b4b349af6ffca3d5efc96, type: 3}
+  cameraPositionYOffset: 4.5
+  cameraPositionZOffset: 6.77
+  camSpeed: 10
+  camAngleX: 25.2
+  camAngleY: 0
+  camAngleZ: 0
+  limitMinY: -2
+  limitMaxY: 25
+  smoothTime: 1.2
+  startNodeData: {fileID: 11400000, guid: a5dd8b8215095554389f88a22f71c641, type: 2}
+  finalNodeData:
+  - {fileID: 11400000, guid: a4deefdba6121ec43ba0d2508d9264d6, type: 2}
+  fixedNodeData:
+  - nodeData: {fileID: 11400000, guid: bd99df6ed73e951419a8f7c0b17b0725, type: 2}
+    appearedOn: 1
+  - nodeData: {fileID: 11400000, guid: 7b820e668358c864ba2207d645d9636b, type: 2}
+    appearedOn: 2
+  - nodeData: {fileID: 11400000, guid: 549cfca8180a68a498300a7e915aad13, type: 2}
+    appearedOn: 3
+  - nodeData: {fileID: 11400000, guid: fe4b802f146f8a848af8268cfc156471, type: 2}
+    appearedOn: 4
+  - nodeData: {fileID: 11400000, guid: ab08df6943a7ce640b02f483aaf67ce5, type: 2}
+    appearedOn: 5
+  - nodeData: {fileID: 11400000, guid: 202bb7210f15c3242b4446d6344aa29d, type: 2}
+    appearedOn: 6
+  - nodeData: {fileID: 11400000, guid: 41e49283036ed2a48b302a865d369054, type: 2}
+    appearedOn: 7
+  mapNodeData:
+  - nodeData: {fileID: 11400000, guid: e9b6002ed4bcd454993e0c31d3781c46, type: 2}
+    serializable: 1
+    chance: 0
+    appearedAfter: 1
+    reverseAppearedAfter: 0
+  - nodeData: {fileID: 11400000, guid: 159dd5fd5ef5e3c4682342bc74b01392, type: 2}
+    serializable: 1
+    chance: 0
+    appearedAfter: 1
+    reverseAppearedAfter: 0
+  - nodeData: {fileID: 11400000, guid: 37cf0a421104e2742a937a32713a81fa, type: 2}
+    serializable: 1
+    chance: 0
+    appearedAfter: 1
+    reverseAppearedAfter: 0

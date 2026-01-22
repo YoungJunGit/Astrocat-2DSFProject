@@ -34,6 +34,12 @@ namespace AssetInventory
             {
                 await Task.Yield();
             }
+            
+            // Check if the request failed
+            if (_request.Status == StatusCode.Failure)
+            {
+                throw new Exception($"Failed to uninstall package '{parameters[0].stringValue}': {_request.Error?.message}");
+            }
         }
     }
 }

@@ -46,7 +46,7 @@ MonoBehaviour:
     - Audio_Combat
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4b3558415dddc4a1196164e15b6e4d3e
-    m_Address: player_Sniper_NormalAttack
+    m_Address: player_Sniper_normalAttack
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio_Combat
@@ -64,7 +64,7 @@ MonoBehaviour:
     - Audio_Combat
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 829a8a9474ea042e893508bc510f55dc
-    m_Address: player_Rifleman_Skill_FirstAid/player_Commissar_Skill_RecoveryProtocol/player_Sniper_Skill_NanoRestore
+    m_Address: HealEffectSound
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio_Combat
@@ -106,13 +106,14 @@ MonoBehaviour:
     - Audio_Combat
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d2116408d42d23246862451183dc30f0
-    m_Address: Start_Menu
+    m_Address: Assets/ThirdParty/CelerisLab/CompleteUISFX/shop_and_economy/shop_category_select_01.wav
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio_Combat
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f600f670be6b1400cbcf836ffaea5a18
-    m_Address: penguin_Rifleman/penguin_Commander_NormalAttack
+    m_Address: Assets/ThirdParty/Aeon Sci-Fi Sound Bundle/Sci Fi Weapons/Weapons/Trebuchet/SCIWeap_Trebuchet
+      Fire_03.wav
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio_Combat

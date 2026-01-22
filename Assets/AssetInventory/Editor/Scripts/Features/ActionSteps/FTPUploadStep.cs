@@ -9,42 +9,17 @@ using UnityEngine;
 namespace AssetInventory
 {
     [Serializable]
-    public sealed class FTPUploadStep : ActionStep
+    public sealed class FTPUploadStep : FTPActionStep
     {
         public FTPUploadStep()
         {
             Key = "FTPUpload";
             Name = "FTP Upload";
-            Description = "Upload a folder to an FTP server.";
+            Description = "Upload a folder to an FTP or SFTP server.";
             Category = ActionCategory.FilesAndFolders;
 
-            // Load available FTP connections
-            List<Tuple<string, ParameterValue>> connectionOptions = new List<Tuple<string, ParameterValue>>();
-
-            if (AI.Config.ftpConnections != null && AI.Config.ftpConnections.Count > 0)
-            {
-                foreach (FTPConnection conn in AI.Config.ftpConnections)
-                {
-                    string displayName = string.IsNullOrEmpty(conn.name) ? conn.host : conn.name;
-                    connectionOptions.Add(new Tuple<string, ParameterValue>(displayName, new ParameterValue(conn.key)));
-                }
-            }
-
-            if (connectionOptions.Count == 0)
-            {
-                connectionOptions.Add(new Tuple<string, ParameterValue>("No FTP connections configured", new ParameterValue("")));
-            }
-
-            // FTP Connection parameter
-            Parameters.Add(new StepParameter
-            {
-                Name = "Server",
-                Description = "FTP connection to use (configure in Settings > Maintenance > FTP Administration).",
-                Type = StepParameter.ParamType.String,
-                ValueList = StepParameter.ValueType.Custom,
-                Options = connectionOptions,
-                DefaultValue = connectionOptions[0].Item2
-            });
+            // Add FTP/SFTP server connection parameter
+            AddServerParameter();
 
             // Source folder parameter
             Parameters.Add(new StepParameter
@@ -60,7 +35,7 @@ namespace AssetInventory
             Parameters.Add(new StepParameter
             {
                 Name = "Target",
-                Description = "Remote directory path on the FTP server (e.g., /public_html/files or /uploads).",
+                Description = "Remote directory path on the FTP/SFTP server (e.g., /public_html/files or /uploads).",
                 Type = StepParameter.ParamType.String,
                 ValueList = StepParameter.ValueType.None,
                 DefaultValue = new ParameterValue("/")
@@ -69,64 +44,37 @@ namespace AssetInventory
 
         public override async Task Run(List<ParameterValue> parameters)
         {
-            try
+            // Get parameters
+            string connectionId = parameters[0].stringValue;
+            string sourceFolder = parameters[1].stringValue;
+            string targetDirectory = parameters[2].stringValue;
+
+            // Get and validate connection
+            if (!TryGetConnection(connectionId, out FTPConnection connection, out string password))
             {
-                // Get parameters
-                string connectionId = parameters[0].stringValue;
-                string sourceFolder = parameters[1].stringValue;
-                string targetDirectory = parameters[2].stringValue;
+                throw new Exception("Failed to get FTP connection. Check that the connection is properly configured.");
+            }
 
-                // Find connection by ID
-                if (AI.Config.ftpConnections == null || string.IsNullOrEmpty(connectionId))
-                {
-                    Debug.LogError("No valid FTP connection selected. Please configure FTP connections in Settings > Locations.");
-                    return;
-                }
+            // Validate source folder
+            if (string.IsNullOrEmpty(sourceFolder) || !Directory.Exists(sourceFolder))
+            {
+                throw new DirectoryNotFoundException($"Source folder does not exist: {sourceFolder}");
+            }
 
-                FTPConnection connection = AI.Config.ftpConnections.FirstOrDefault(c => c.key == connectionId);
-                if (connection == null)
-                {
-                    Debug.LogError($"FTP connection with ID '{connectionId}' not found. Please reconfigure this action step.");
-                    return;
-                }
+            string protocolName = GetProtocolName(connection);
+            Debug.Log($"Starting upload from '{sourceFolder}' to '{protocolName}://{connection.host}:{connection.port}{targetDirectory}'");
 
-                // Validate source folder
-                if (string.IsNullOrEmpty(sourceFolder) || !Directory.Exists(sourceFolder))
-                {
-                    Debug.LogError($"Source folder does not exist: {sourceFolder}");
-                    return;
-                }
-
-                // Validate connection details
-                if (string.IsNullOrEmpty(connection.host))
-                {
-                    Debug.LogError($"FTP connection '{connection.name}' has no host configured.");
-                    return;
-                }
-
-                // Decrypt password
-                string password = "";
-                if (!string.IsNullOrEmpty(connection.encryptedPassword))
-                {
-                    password = EncryptionUtil.Decrypt(connection.encryptedPassword);
-                    if (password == null)
-                    {
-                        Debug.LogError($"Failed to decrypt password for connection '{connection.name}'.");
-                        return;
-                    }
-                }
-
-                Debug.Log($"Starting upload from '{sourceFolder}' to 'ftp://{connection.host}:{connection.port}{targetDirectory}'");
-
-                // Perform FTP upload (always recursive)
+            // Perform upload based on protocol
+            if (connection.protocol == FTPConnection.FTPProtocol.SFTP)
+            {
+                await UploadViaSFTP(connection, sourceFolder, targetDirectory, true, password);
+            }
+            else
+            {
                 await UploadViaFTP(connection, sourceFolder, targetDirectory, true, password);
+            }
 
-                Debug.Log("FTP upload completed successfully.");
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError($"FTP Upload failed: {ex.Message}\n{ex.StackTrace}");
-            }
+            Debug.Log($"{protocolName.ToUpper()} upload completed successfully.");
         }
 
         private async Task UploadViaFTP(FTPConnection connection, string sourceFolder, string targetDirectory, bool includeSubdirectories, string password)
@@ -143,6 +91,7 @@ namespace AssetInventory
 
                     foreach (string filePath in files)
                     {
+                        if (AI.Actions.CancellationRequested) break;
                         try
                         {
                             // Calculate relative path
@@ -161,10 +110,6 @@ namespace AssetInventory
 
                             string remotePath = remoteDirectory.TrimEnd('/') + "/" + remoteFileName;
 
-                            // Build FTP URI
-                            string ftpScheme = connection.useSsl ? "ftps" : "ftp";
-                            string uri = $"{ftpScheme}://{connection.host}:{connection.port}{remotePath}";
-
                             // Create directories if needed
                             if (includeSubdirectories && remoteDirectory != targetDirectory)
                             {
@@ -172,21 +117,9 @@ namespace AssetInventory
                             }
 
                             // Create FTP request
-                            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(uri);
+                            FtpWebRequest request = CreateFtpRequest(connection, remotePath, password);
                             request.Method = WebRequestMethods.Ftp.UploadFile;
-                            request.Credentials = new NetworkCredential(connection.username, password);
                             request.UseBinary = true;
-                            request.UsePassive = true;
-                            request.KeepAlive = false;
-
-                            if (connection.useSsl)
-                            {
-                                request.EnableSsl = true;
-                                if (!connection.validateCertificate)
-                                {
-                                    ServicePointManager.ServerCertificateValidationCallback = (s, cert, chain, sslPolicyErrors) => true;
-                                }
-                            }
 
                             // Upload file
                             byte[] fileContents = File.ReadAllBytes(filePath);
@@ -213,8 +146,7 @@ namespace AssetInventory
                 }
                 finally
                 {
-                    // Reset certificate validation callback
-                    ServicePointManager.ServerCertificateValidationCallback = null;
+                    ResetSslValidation();
                 }
             });
         }
@@ -223,23 +155,8 @@ namespace AssetInventory
         {
             try
             {
-                string ftpScheme = connection.useSsl ? "ftps" : "ftp";
-                string uri = $"{ftpScheme}://{connection.host}:{connection.port}{remotePath}";
-
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(uri);
+                FtpWebRequest request = CreateFtpRequest(connection, remotePath, password);
                 request.Method = WebRequestMethods.Ftp.MakeDirectory;
-                request.Credentials = new NetworkCredential(connection.username, password);
-                request.UsePassive = true;
-                request.KeepAlive = false;
-
-                if (connection.useSsl)
-                {
-                    request.EnableSsl = true;
-                    if (!connection.validateCertificate)
-                    {
-                        ServicePointManager.ServerCertificateValidationCallback = (s, cert, chain, sslPolicyErrors) => true;
-                    }
-                }
 
                 using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
                 {
@@ -258,6 +175,66 @@ namespace AssetInventory
                     }
                 }
             }
+        }
+
+        private async Task UploadViaSFTP(FTPConnection connection, string sourceFolder, string targetDirectory, bool includeSubdirectories, string password)
+        {
+#if UNITY_2021_2_OR_NEWER            
+            await Task.Run(() =>
+            {
+                Renci.SshNet.SftpClient client = null;
+
+                try
+                {
+                    // Connect to SFTP server
+                    client = SFTPUtil.ConnectSFTP(connection, password);
+
+                    if (!client.IsConnected)
+                    {
+                        Debug.LogError("Failed to connect to SFTP server");
+                        return;
+                    }
+
+                    Debug.Log($"Connected to SFTP server: {connection.host}:{connection.port}");
+
+                    // Get all files to upload
+                    string[] files = Directory.GetFiles(sourceFolder, "*.*", includeSubdirectories ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
+
+                    int uploadedCount = 0;
+                    int totalFiles = files.Length;
+
+                    // Upload files
+                    SFTPUtil.UploadDirectory(client, sourceFolder, targetDirectory, includeSubdirectories, (localFile, remoteFile) =>
+                    {
+                        uploadedCount++;
+                        string relativePath = IOUtils.GetRelativePath(sourceFolder, localFile);
+                        Debug.Log($"Uploaded ({uploadedCount}/{totalFiles}): {relativePath} -> {remoteFile}");
+                    }, () => AI.Actions.CancellationRequested);
+
+                    Debug.Log($"SFTP upload completed: {uploadedCount}/{totalFiles} files uploaded.");
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"SFTP upload error: {e.Message}\n{e.StackTrace}");
+                    throw;
+                }
+                finally
+                {
+                    // Disconnect and cleanup
+                    if (client != null)
+                    {
+                        if (client.IsConnected)
+                        {
+                            client.Disconnect();
+                        }
+                        client.Dispose();
+                    }
+                }
+            });
+#else
+            Debug.LogError("SFTP is only supported in Unity 2021.2 and higher.");
+            await Task.Yield();
+#endif
         }
     }
 }

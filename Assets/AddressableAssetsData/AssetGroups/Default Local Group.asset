@@ -30,18 +30,33 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 640ddecbba1ecc544b04323fa1b23fec
+    m_Address: CombatBGM_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 706fe564125064b47a381f5452699e1e
     m_Address: Enemy_Shoot
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7252279f5e584b54fbea1ee26f538be9
-    m_Address: Item_Select
+    m_Address: item_Select
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75cb9cddb847d2c4f932c84523e15034
+    m_Address: CombatBGM_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7ac1670904bb1624b87dc52bc71f00bc
     m_Address: Title_Background
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a179b64c0c331cb489731fe3bb94229d
+    m_Address: CombatBGM_3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

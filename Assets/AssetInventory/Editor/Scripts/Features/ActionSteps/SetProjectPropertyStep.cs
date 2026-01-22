@@ -188,8 +188,7 @@ namespace AssetInventory
             AssetDatabase.SaveAssets(); // flush all changes to disk
             if (!File.Exists(PROJECT_SETTINGS_PATH))
             {
-                Debug.LogError("ProjectSettings.asset not found!");
-                return;
+                throw new FileNotFoundException("ProjectSettings.asset not found!");
             }
 
             string[] lines = File.ReadAllLines(PROJECT_SETTINGS_PATH);

@@ -45,6 +45,9 @@ MonoBehaviour:
     - Flexalon
     - Flexalon.Samples
     - Ink-Libraries
+    - Lofelt.NiceVibrations
+    - Lofelt.NiceVibrations.Demo
+    - MoreMountains.Tools
     - NaughtyAttributes.Core
     - NaughtyAttributes.Test
     - Obious.Soap.Example

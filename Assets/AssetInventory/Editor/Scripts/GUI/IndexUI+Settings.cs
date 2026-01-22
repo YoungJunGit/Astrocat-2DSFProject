@@ -1232,7 +1232,7 @@ namespace AssetInventory
 
                 EditorGUILayout.Space();
                 GUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("FTP Connections", EditorStyles.boldLabel, GUILayout.Width(labelWidth));
+                EditorGUILayout.LabelField("FTP/SFTP Connections", EditorStyles.boldLabel, GUILayout.Width(labelWidth));
                 if (GUILayout.Button("Configure...", GUILayout.ExpandWidth(false)))
                 {
                     FTPAdminUI.ShowWindow();

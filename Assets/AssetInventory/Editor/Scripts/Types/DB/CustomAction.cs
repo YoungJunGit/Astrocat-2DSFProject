@@ -15,6 +15,7 @@ namespace AssetInventory
         [PrimaryKey, AutoIncrement] public int Id { get; set; }
         [Indexed] [Collation("NOCASE")] public string Name { get; set; }
         public string Description { get; set; }
+        public bool StopOnFailure { get; set; } = true;
         public Mode RunMode { get; set; }
 
         public CustomAction()
