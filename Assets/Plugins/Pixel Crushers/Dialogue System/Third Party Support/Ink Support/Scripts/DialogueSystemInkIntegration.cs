@@ -98,6 +98,7 @@ namespace PixelCrushers.DialogueSystem.InkSupport
         /// </summary>
         protected string lastPlayerChoice;
 
+
         #endregion
 
         #region Initialization

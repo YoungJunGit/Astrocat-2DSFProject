@@ -1,15 +1,18 @@
 VAR go_next_scene = false
 
 지금부터 전투 조작 방법에 대해서 설명할게요!
+# SHOW_UI: PopupImagePanel
 
 + [좋아. 잘 부탁해.]
-    넵 함장님 이제 시작합니다.
+    넵! 함장님 이제 시작합니다.
     -> combat_tutorial
 + [아직 준비가 필요해.]
+    알겠습니다. 기다리고 있을게요!
     ->END
 
 === combat_tutorial ===
 화면 좌측하단에 있는 역삼각형 모양의 패널로 캐릭터의 행동을 선택할 수 있어요.
+# SHOW_UI: PopupImagePanel
 
 왼쪽위에 있는 칼 모양의 아이콘은 일반 공격 버튼이에요.<br>일반 공격을 하면 캐릭터가 SP를 획득해요.
 
