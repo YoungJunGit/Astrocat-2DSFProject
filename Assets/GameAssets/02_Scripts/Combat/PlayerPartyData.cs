@@ -15,20 +15,21 @@ public class PlayerSaveData
 [CreateAssetMenu(fileName = "PlayerPartyData", menuName = "SO/Combat/SaveData/PlayerPartyData", order = 1)]
 public class PlayerPartyData : ScriptableObject
 {
+    private const string PLAYER_DATA_KEY = "Player_Data_Key_";
+
     // 추후 SerializeFiled에서 제외
     [SerializeField]
     private string[] selectedPlayerUnitID = new string[3];
     public string[] SelectedPlayerUnitID => selectedPlayerUnitID;
-    private const string PLAYER_DATA_KEY = "Player_Data_Key_";
 
     public void EnsureInitialized()
     {
         foreach (var ID in selectedPlayerUnitID)
         {
-            if (ID == String.Empty || ES3.KeyExists(PLAYER_DATA_KEY + ID))
+            if (ID == String.Empty || ES3.KeyExists(PLAYER_DATA_KEY + ID, Easy3MetaData.ProgressFile))
                 continue;
 
-            ES3.Save(PLAYER_DATA_KEY + ID, new PlayerSaveData(1.0f, 1.0f), Easy3MetaData.PlayerFile);
+            ES3.Save(PLAYER_DATA_KEY + ID, new PlayerSaveData(1.0f, 1.0f), Easy3MetaData.ProgressFile);
         }
     }
 
@@ -38,11 +39,11 @@ public class PlayerPartyData : ScriptableObject
         float HP = unit.GetStat().HP / unit.GetStat().ModifierStat.MaxHP;
         float SP = (float)unit.GetStat().SP / unit.GetStat().ModifierStat.MaxSP;
         
-        ES3.Save(PLAYER_DATA_KEY + ID, new PlayerSaveData(HP, SP), Easy3MetaData.PlayerFile);
+        ES3.Save(PLAYER_DATA_KEY + ID, new PlayerSaveData(HP, SP), Easy3MetaData.ProgressFile);
     }
 
     public PlayerSaveData LoadPlayerData(string ID)
     {
-        return ES3.Load<PlayerSaveData>(PLAYER_DATA_KEY + ID, Easy3MetaData.PlayerFile);
+        return ES3.Load<PlayerSaveData>(PLAYER_DATA_KEY + ID, Easy3MetaData.ProgressFile);
     }
 }

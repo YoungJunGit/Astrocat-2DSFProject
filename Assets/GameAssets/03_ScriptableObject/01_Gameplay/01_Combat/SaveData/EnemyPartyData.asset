@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fc10a15201976645af2acfe4f1a0120, type: 3}
-  m_Name: PlayerPartyData
+  m_Script: {fileID: 11500000, guid: ffd4ef04d9fd6504ab54712c0889ed1a, type: 3}
+  m_Name: EnemyPartyData
   m_EditorClassIdentifier: 
-  selectedPlayerUnitID:
-  - 10001001
-  - 10001002
-  - 10001003
+  enemySpawnSetting: {fileID: 11400000, guid: dc4f66c519047584e8af0125a11cf18e, type: 2}

@@ -19,7 +19,10 @@ public interface IUnitManager
 public class UnitManager : ScriptableObject, IUnitManager
 {
     [SerializeField] private BoolVariable saveDataMode;
+
     [SerializeField] private PlayerPartyData playerPartyData;
+    [SerializeField] private EnemyPartyData enemyPartyData;
+
     [SerializeField] private ScriptableListBaseUnit currentUnitList = null;
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
@@ -27,14 +30,16 @@ public class UnitManager : ScriptableObject, IUnitManager
     private readonly List<BaseUnit> unitList = new List<BaseUnit>();
 
     public string[] PlayerPartyID => playerPartyData.SelectedPlayerUnitID;
+    public string[] EnemyPartyID => enemyPartyData.FinalSpawnEnemyID;
 
     public void Init()
     {
         spawner.Init();
         unitList.Clear();
 
-        if (saveDataMode)
-            playerPartyData.EnsureInitialized();
+        enemyPartyData.MakeEnemyIDWithSetting();
+        if (!saveDataMode) return;
+        playerPartyData.EnsureInitialized();
     }
 
     public void CreatePlayerUnit(EntityData entityData, int index)

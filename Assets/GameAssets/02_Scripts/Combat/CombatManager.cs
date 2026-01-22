@@ -22,12 +22,14 @@ public class CombatManager : ScriptableObject
     private ISoundService _soundService;
 
     private bool finishedCombat;
+    public bool IsPlayerLoose { get; private set; }
 
     public void Init()
     {
         _timelineManager = Instantiate(timelineManagerPrefab);
         DequeueCurrentUnit = new();
         finishedCombat = false;
+        IsPlayerLoose = false;
 
         ServiceLocator.For(this)
                       .Get(out _unitManager)
@@ -130,21 +132,15 @@ public class CombatManager : ScriptableObject
 
         if (_unitManager.GetEnemyUnits().Count == 0 || _unitManager.GetPlayerUnits().Count == 0)
         {
+            if(_unitManager.GetPlayerUnits().Count == 0)
+            {
+                IsPlayerLoose = true;
+            }
             finishedCombat = true;
             return;
         }
 
         if (currentTurnUnit == unit)
             currentTurnUnit = DequeueCurrentUnit.Call(_unitManager.GetAllUnits());
-    }
-
-    public void OnFainting()
-    {
-        //_timeline.Actions.FaintingButton();
-    }
-
-    public void OnExtraTurn()
-    {
-        //_timeline.Actions.ExtraButton();
     }
 }

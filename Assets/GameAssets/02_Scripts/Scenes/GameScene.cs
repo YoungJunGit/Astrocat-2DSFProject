@@ -8,15 +8,22 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
+using Tymski;
+using Sirenix.OdinInspector;
 
 public class GameScene : AbstractScene
 {
+    [Header("Scene Settings")]
+    [SerializeField]
+    [LabelText("Change Scene Reference when Player Loose")]
+    private SceneReference alternateScene;
+
     [Header("Data Settings")]
     [SerializeField] private BoolVariable saveDataMode;
     [SerializeField] private DataHandler dataHandler;
     // Temporary
     [SerializeField, Expandable] private PlayerPartyData playerPartyData;
-    [SerializeField] private string[] enemyUnitID;
+    [SerializeField, Expandable] private EnemyPartyData enemyPartyData;
     private List<EntityData> entityData = null;
 
     [Header("Manager Settings")]
@@ -38,7 +45,7 @@ public class GameScene : AbstractScene
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private UnitActionFactory unitActionFactory;
     [SerializeField] private ParryingApplier parryingApplier;
-    
+
     [Header("Tester")]
     [SerializeField] private InputTester inputTester;
     [SerializeField] private QTETester qteTester;
@@ -91,18 +98,18 @@ public class GameScene : AbstractScene
     protected override async UniTask CreateObjects()
     {
         // Create EntityData
-        entityData = new EntityDataCreator().CreateEntityData(dataHandler, unitManager.PlayerPartyID.ToList(), enemyUnitID.ToList());
+        entityData = new EntityDataCreator().CreateEntityData(dataHandler, unitManager.PlayerPartyID.ToList(), unitManager.EnemyPartyID.ToList());
 
         // Create Units
         List<EntityData> entityDataList = null;
         entityDataList = entityData.FindAll(element => element.Side == SIDE.PLAYER);
-        foreach (var playerData in entityDataList.Select((value, index)=>(value, index)))
+        foreach (var playerData in entityDataList.Select((value, index) => (value, index)))
         {
             unitManager.CreatePlayerUnit(playerData.value, playerData.index);
         }
 
         entityDataList = entityData.FindAll(element => element.Side == SIDE.ENEMY);
-        foreach (var enemyData in entityDataList.Select((value, index)=>(value, index)))
+        foreach (var enemyData in entityDataList.Select((value, index) => (value, index)))
         {
             unitManager.CreateEnemyUnit(enemyData.value, enemyData.index);
         }
@@ -130,7 +137,7 @@ public class GameScene : AbstractScene
 
         // Prepare CombatManager
         combatManager.Prepare();
-        
+
         if (debugMode)
         {
             ForDebugging();
@@ -141,8 +148,16 @@ public class GameScene : AbstractScene
     {
         _soundService.PlayBackGround("Title_Background");
         await combatManager.StartCombat();
-        mapDataFactory.SaveCompletedMapData();
-        unitManager.SavePlayerPartyData();
+        if (!combatManager.IsPlayerLoose)
+        {
+            mapDataFactory.SaveCompletedMapData();
+            unitManager.SavePlayerPartyData();
+        }
+        else
+        {
+            ES3.DeleteFile(Easy3MetaData.ProgressFile);
+            changeScene = alternateScene;
+        }
     }
 
     private void ForDebugging()
@@ -150,12 +165,12 @@ public class GameScene : AbstractScene
         if (!SceneManager.GetSceneByName("DebugingUI").isLoaded)
             SceneManager.LoadSceneAsync("DebugingUI", LoadSceneMode.Additive);
     }
-    
+
     private void StartPlayBackground()
     {
         int num = Random.Range(1, 4);
 
-        switch(num)
+        switch (num)
         {
             case 1:
                 _soundService.PlayBackGround("CombatBGM_1");

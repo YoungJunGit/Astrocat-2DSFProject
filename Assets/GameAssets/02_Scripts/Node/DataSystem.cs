@@ -49,17 +49,17 @@ public class MapDataFactory : ISaveMapData, ILoadMapData
             saveMapData.saveNodeDatas.Add(n);
         }
 
-        ES3.Save(LAST_MAP_KEY, saveMapData);
+        ES3.Save(LAST_MAP_KEY, saveMapData, Easy3MetaData.ProgressFile);
         Debug.Log("맵 데이터 저장 완료");
     }
 
 
     public void SaveCompletedMapData()
     {
-        if(ES3.KeyExists(LAST_MAP_KEY))
+        if(ES3.KeyExists(LAST_MAP_KEY, Easy3MetaData.ProgressFile))
         {
-            SaveMapData SaveMapData = ES3.Load<SaveMapData>(LAST_MAP_KEY);
-            ES3.Save(CURRENT_MAP_KEY, SaveMapData);
+            SaveMapData SaveMapData = ES3.Load<SaveMapData>(LAST_MAP_KEY, Easy3MetaData.ProgressFile);
+            ES3.Save(CURRENT_MAP_KEY, SaveMapData, Easy3MetaData.ProgressFile);
         }
     }
 
@@ -69,7 +69,7 @@ public class MapDataFactory : ISaveMapData, ILoadMapData
         {
             int floorNum = mapGenerator.floorNum;
             int routeNum = mapGenerator.routeNum;
-            SaveMapData mapData = ES3.Load<SaveMapData>(CURRENT_MAP_KEY);
+            SaveMapData mapData = ES3.Load<SaveMapData>(CURRENT_MAP_KEY, Easy3MetaData.ProgressFile);
             List<SaveNodeData> nodes = mapData.saveNodeDatas;
             int index = 0;
 
@@ -108,7 +108,7 @@ public class MapDataFactory : ISaveMapData, ILoadMapData
 
     public bool IsKeyExist()
     {
-        if (ES3.KeyExists(CURRENT_MAP_KEY))
+        if (ES3.KeyExists(CURRENT_MAP_KEY, Easy3MetaData.ProgressFile))
             return true;
         else
             return false;
