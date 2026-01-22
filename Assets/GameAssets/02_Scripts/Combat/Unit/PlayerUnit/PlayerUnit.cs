@@ -13,4 +13,9 @@ public class PlayerUnit : BaseUnit
     {
         _soundService.PlayEffectSound("Die");
     }
+
+    public void ApplySaveData(PlayerSaveData data)
+    {
+        _stat.ApplySaveData(data.HP, data.SP);
+    }
 }

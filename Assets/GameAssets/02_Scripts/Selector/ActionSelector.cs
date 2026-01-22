@@ -54,8 +54,6 @@ public class ActionSelector : BaseSelector
 
     public async UniTask SelectAction(PlayerUnit playerUnit, Action<IUnitAction> onSelected)
     {
-        Debug.Log($"{playerUnit.GetStat().CoreStat.Name} : Select Action");
-
         if(playerUnit.CCUnit.EffectsCountDic[ELEMENT_TYPE.VOID].CurrentValue > 0)
         {
             float chance = (float)playerUnit.CCUnit.GetNonStackCC(ELEMENT_TYPE.VOID).CCData.Element_Status_Value[0];

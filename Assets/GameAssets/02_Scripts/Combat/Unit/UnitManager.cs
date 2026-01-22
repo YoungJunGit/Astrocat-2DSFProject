@@ -5,6 +5,7 @@ using DataEntity;
 using DataEnum;
 using Unity.VisualScripting;
 using UnityEngine;
+using Obvious.Soap;
 
 public interface IUnitManager
 {
@@ -15,17 +16,52 @@ public interface IUnitManager
 }
 
 [CreateAssetMenu(fileName = "UnitManager", menuName = "SO/Combat/Manager/UnitManager", order = 0)]
-public class UnitManager : ScriptableObject , IUnitManager
+public class UnitManager : ScriptableObject, IUnitManager
 {
+    [SerializeField] private BoolVariable saveDataMode;
+    [SerializeField] private PlayerPartyData playerPartyData;
     [SerializeField] private ScriptableListBaseUnit currentUnitList = null;
     [SerializeField] private EntitySpawner spawner;
     [SerializeField] private UnitPositioner positioner;
 
-    private List<BaseUnit> unitList = new List<BaseUnit>();
+    private readonly List<BaseUnit> unitList = new List<BaseUnit>();
+
+    public string[] PlayerPartyID => playerPartyData.SelectedPlayerUnitID;
 
     public void Init()
     {
         spawner.Init();
+        unitList.Clear();
+
+        if (saveDataMode)
+            playerPartyData.EnsureInitialized();
+    }
+
+    public void CreatePlayerUnit(EntityData entityData, int index)
+    {
+        PlayerSaveData saveData = null;
+        if (saveDataMode)
+        {
+            saveData = playerPartyData.LoadPlayerData(entityData.code);
+            if (saveData == null || saveData.HP <= 0) return;
+        }
+
+        var playerUnit = spawner.CreatePlayerUnit(entityData, index, saveData);
+
+        currentUnitList.Add(playerUnit);
+        unitList.Add(playerUnit);
+
+        SetUnitPosition();
+    }
+
+    public void CreateEnemyUnit(EntityData entityData, int index)
+    {
+        var enemyUnit = spawner.CreateEnemyUnit(entityData, index);
+
+        currentUnitList.Add(enemyUnit);
+        unitList.Add(enemyUnit);
+
+        SetUnitPosition();
     }
 
     public void Prepare()
@@ -35,29 +71,17 @@ public class UnitManager : ScriptableObject , IUnitManager
             unit.m_FinishedDying += (deadUnit) => { currentUnitList.Remove(deadUnit); SetUnitPosition(); };
         }
     }
-    
-    public PlayerUnit CreatePlayerUnit(EntityData entityData, int index)
+
+    public void SavePlayerPartyData()
     {
-        var playerUnit = spawner.CreatePlayerUnit(entityData, index);
-        
-        currentUnitList.Add(playerUnit);
-        unitList.Add(playerUnit);
-
-        SetUnitPosition();
-        
-        return playerUnit;
-    }
-
-    public EnemyUnit CreateEnemyUnit(EntityData entityData, int index)
-    {
-        var enemyUnit = spawner.CreateEnemyUnit(entityData, index);
-        
-        currentUnitList.Add(enemyUnit);
-        unitList.Add(enemyUnit);
-
-        SetUnitPosition();
-        
-        return enemyUnit;
+        if (saveDataMode)
+        {
+            List<BaseUnit> units = unitList.FindAll(element => element.GetStat().CoreStat.Side == SIDE.PLAYER);
+            foreach (var unit in units)
+            {
+                playerPartyData.SavePlayerData(unit);
+            }
+        }
     }
 
     public List<BaseUnit> GetEnemyUnits()
@@ -89,6 +113,6 @@ public class UnitManager : ScriptableObject , IUnitManager
 
     private void SetUnitPosition()
     {
-        positioner.SetPositionForUnits(currentUnitList.GetPlayerUnits(), currentUnitList.GetEnemyUnits());
+        positioner.SetPositionForUnits(GetPlayerUnits(), GetEnemyUnits());
     }
 }

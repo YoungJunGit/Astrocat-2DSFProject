@@ -27,7 +27,9 @@ public abstract class AbstractScene : MonoBehaviour
     [Space(20f)]
     [SerializeField] protected BoolVariable debugMode;
     [SerializeField] private bool changeSceneOnEndGame;
-    [SerializeField, ShowIf("changeSceneOnEndGame")] SceneReference changeScene;
+    
+    [SerializeField, ShowIf("changeSceneOnEndGame")] 
+    protected SceneReference changeScene;
 
     protected ISoundService _soundService;
     protected ISceneHandler _sceneHandler;

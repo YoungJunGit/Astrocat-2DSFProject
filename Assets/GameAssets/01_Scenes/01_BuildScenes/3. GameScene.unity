@@ -301,16 +301,14 @@ MonoBehaviour:
   changeSceneOnEndGame: 1
   changeScene:
     sceneAsset: {fileID: 102900000, guid: ad119d35a5a22ca499e23481f9051f9c, type: 3}
-    scenePath: Assets/Scenes/1. NodeTree.unity
+    scenePath: Assets/GameAssets/01_Scenes/01_BuildScenes/2. NodeTree.unity
+  saveDataMode: {fileID: 11400000, guid: 7cae5861c6da68542abeb475c5518050, type: 2}
   dataHandler: {fileID: 11400000, guid: 9d14d65fcd79e1348bc607487b911110, type: 2}
-  playerUnitID:
-  - 10001001
-  - 10001002
-  - 10001003
+  playerPartyData: {fileID: 11400000, guid: eb116c80dd68bee4ba46e70f4dadcd28, type: 2}
   enemyUnitID:
   - 10012001
-  - 10012002
-  - 10012003
+  - 
+  - 
   effectManager: {fileID: 11400000, guid: 9b7f445e7fb5133468585ab36b761267, type: 2}
   projectileManager: {fileID: 11400000, guid: 4ba9e93c62c93974f8a58ab1548fc8a1, type: 2}
   hudManager: {fileID: 11400000, guid: b70c14319da67ac43bf9933368e475ea, type: 2}

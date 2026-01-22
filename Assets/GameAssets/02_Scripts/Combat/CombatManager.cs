@@ -13,10 +13,7 @@ public class CombatManager : ScriptableObject
 
     private TimelineManager _timelineManager;
     private BaseUnit currentTurnUnit;
-
-    private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit = new();
-
-    public bool executed;
+    private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
 
     private IUnitManager _unitManager;
     private IUnitActionExecuter _actionExecuter;
@@ -24,9 +21,13 @@ public class CombatManager : ScriptableObject
     private ISelectorManager _selectorManager;
     private ISoundService _soundService;
 
+    private bool finishedCombat;
+
     public void Init()
     {
         _timelineManager = Instantiate(timelineManagerPrefab);
+        DequeueCurrentUnit = new();
+        finishedCombat = false;
 
         ServiceLocator.For(this)
                       .Get(out _unitManager)
@@ -63,6 +64,9 @@ public class CombatManager : ScriptableObject
             currentTurnUnit.CEUnit.OnStartTurn();
             await UniTask.WaitUntil(() => EventHandler.IsEventEmpty());
 
+            if (finishedCombat)
+                continue;
+
             Debug.Log($"{currentTurnUnit.GetStat().CoreStat.Name}'s turn");
             await UniTask.WaitUntil(() => !_textManager.IsTextOn);
 
@@ -74,7 +78,7 @@ public class CombatManager : ScriptableObject
                 // Step 1 : Add Action Selection
                 IUnitActionProperty property = null;
                 IUnitActionInvoker invoker = null;
-                _selectorManager.AddSelectorExecuter(new ActionSelectorExecutor(currentTurnUnit, (action) => 
+                _selectorManager.AddSelectorExecuter(new ActionSelectorExecutor(currentTurnUnit, (action) =>
                 {
                     invoker = action;
                     property = action;
@@ -82,7 +86,7 @@ public class CombatManager : ScriptableObject
 
                 // Step 2 : Add Target Selection
                 ITarget<BaseUnit> target = null;
-                _selectorManager.AddSelectorExecuter(new UnitSelectorExecutor(currentTurnUnit, () => property, (bag) => 
+                _selectorManager.AddSelectorExecuter(new UnitSelectorExecutor(currentTurnUnit, () => property, (bag) =>
                 {
                     target = bag;
                 }));
@@ -123,6 +127,13 @@ public class CombatManager : ScriptableObject
     public void OnCharacterDie(BaseUnit unit)
     {
         _timelineManager.DeleteBanners(unit);
+
+        if (_unitManager.GetEnemyUnits().Count == 0 || _unitManager.GetPlayerUnits().Count == 0)
+        {
+            finishedCombat = true;
+            return;
+        }
+
         if (currentTurnUnit == unit)
             currentTurnUnit = DequeueCurrentUnit.Call(_unitManager.GetAllUnits());
     }

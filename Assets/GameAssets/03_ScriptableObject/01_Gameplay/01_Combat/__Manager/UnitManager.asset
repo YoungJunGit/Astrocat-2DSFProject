@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b7571fdaf146ec9495d47dd10b367c, type: 3}
   m_Name: UnitManager
   m_EditorClassIdentifier: 
+  saveDataMode: {fileID: 11400000, guid: 7cae5861c6da68542abeb475c5518050, type: 2}
+  playerPartyData: {fileID: 11400000, guid: eb116c80dd68bee4ba46e70f4dadcd28, type: 2}
   currentUnitList: {fileID: 11400000, guid: f0defa1f97698a54dbcf03fa157a9ef7, type: 2}
-  unitSelector: {fileID: 11400000, guid: d4696c4828b72dc4aa29a30bd0cb7d1e, type: 2}
   spawner: {fileID: 11400000, guid: e95eafb3c3986ef4791b17b0f999fb9b, type: 2}
   positioner: {fileID: 11400000, guid: c4b92e3d7b3b8034fb2eb759f5fbdacd, type: 2}

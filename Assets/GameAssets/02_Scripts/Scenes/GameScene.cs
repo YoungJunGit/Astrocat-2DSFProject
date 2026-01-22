@@ -3,19 +3,19 @@ using DataEntity;
 using DataEnum;
 using NaughtyAttributes;
 using Obvious.Soap;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class GameScene : AbstractScene
 {
     [Header("Data Settings")]
+    [SerializeField] private BoolVariable saveDataMode;
     [SerializeField] private DataHandler dataHandler;
-    [SerializeField] private string[] playerUnitID;
+    // Temporary
+    [SerializeField, Expandable] private PlayerPartyData playerPartyData;
     [SerializeField] private string[] enemyUnitID;
     private List<EntityData> entityData = null;
 
@@ -65,8 +65,6 @@ public class GameScene : AbstractScene
 
     protected override async UniTask InitializeObjects()
     {
-        entityData = new EntityDataCreator().CreateEntityData(dataHandler, playerUnitID.ToList(), enemyUnitID.ToList());
-
         hudManager.Init();
         textManager.Init();
         combatManager.Init();
@@ -92,9 +90,11 @@ public class GameScene : AbstractScene
 
     protected override async UniTask CreateObjects()
     {
+        // Create EntityData
+        entityData = new EntityDataCreator().CreateEntityData(dataHandler, unitManager.PlayerPartyID.ToList(), enemyUnitID.ToList());
+
         // Create Units
         List<EntityData> entityDataList = null;
-
         entityDataList = entityData.FindAll(element => element.Side == SIDE.PLAYER);
         foreach (var playerData in entityDataList.Select((value, index)=>(value, index)))
         {
@@ -142,6 +142,7 @@ public class GameScene : AbstractScene
         _soundService.PlayBackGround("Title_Background");
         await combatManager.StartCombat();
         mapDataFactory.SaveCompletedMapData();
+        unitManager.SavePlayerPartyData();
     }
 
     private void ForDebugging()
