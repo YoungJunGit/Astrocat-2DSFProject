@@ -16,25 +16,28 @@ public class EntitySpawner : ScriptableObject
         _entityRoot.SetParent(null);
     }
 
-    public PlayerUnit CreatePlayerUnit(EntityData entityData, int index)
+    public PlayerUnit CreatePlayerUnit(EntityData entityData, int index, PlayerSaveData saveData)
     {
         GameObject obj = AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File);
-        BaseUnit unit = Instantiate(obj).GetComponent<BaseUnit>();
+        PlayerUnit unit = Instantiate(obj).GetComponent<PlayerUnit>();
         unit.Initialize(entityData, index);
+        
+        if(saveData != null)
+            unit.ApplySaveData(saveData);
         
         unit.transform.SetParent(_entityRoot);
 
-        return unit as PlayerUnit;
+        return unit;
     }
 
     public EnemyUnit CreateEnemyUnit(EntityData entityData, int index)
     {
         GameObject obj = AssetLoader.LoadMonsterPrefabAsset(entityData.Asset_File);
-        BaseUnit unit = Instantiate(obj).GetComponent<BaseUnit>();
+        EnemyUnit unit = Instantiate(obj).GetComponent<EnemyUnit>();
         unit.Initialize(entityData, index);
 
         unit.transform.SetParent(_entityRoot);
         
-        return unit as EnemyUnit;
+        return unit;
     }
 }

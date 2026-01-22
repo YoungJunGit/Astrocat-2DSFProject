@@ -33,6 +33,13 @@ public class UnitStat
         _priority = priority;
     }
 
+    // temp
+    public void ApplySaveData(float normalizedHp, float normalizedSp)
+    {
+        _curHp = normalizedHp * ModifierStat.MaxHP;
+        _curSP = (int)(normalizedSp * ModifierStat.MaxSP);
+    }
+
     public void OnPrepareCombat()
     {
         OnHPChanged.Invoke(_curHp, ModifierStat.MaxHP);
