@@ -2,7 +2,6 @@
  * SSSMapGenerator : Ver. 1.0.2
  * Written by Takashi Sowa @ loloop
 */
-
 using UnityEngine;
 
 namespace S3MG{
