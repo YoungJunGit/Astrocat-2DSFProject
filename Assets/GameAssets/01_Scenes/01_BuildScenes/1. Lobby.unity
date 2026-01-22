@@ -1322,7 +1322,6 @@ GameObject:
   - component: {fileID: 699969395}
   - component: {fileID: 699969397}
   - component: {fileID: 699969396}
-  - component: {fileID: 699969399}
   - component: {fileID: 699969398}
   m_Layer: 0
   m_Name: Room_11_battleTutoTrigger
@@ -1360,7 +1359,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699969394}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7609dc33386d147bf502d134632bc7, type: 3}
   m_Name: 
@@ -1495,86 +1494,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.330963, y: 5.3966217}
   m_EdgeRadius: 0
---- !u!114 &699969399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 699969394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 32
-  delayOneFrame: 0
-  condition:
-    luaConditions: []
-    questConditions: []
-    acceptedTags: []
-    acceptedGameObjects: []
-    luaWizardIndex: -1
-    lastEvaluationValue: 0
-  setQuestState: 1
-  questName: 
-  questState: 0
-  setQuestEntryState: 0
-  questEntryNumber: 1
-  questEntryState: 0
-  setAnotherQuestEntryState: 0
-  anotherQuestEntryNumber: 1
-  anotherQuestEntryState: 0
-  luaCode: 
-  sequence: 
-  sequenceSpeaker: {fileID: 0}
-  sequenceListener: {fileID: 0}
-  waitOneFrameOnStartOrEnable: 1
-  alertMessage: 
-  textTable: {fileID: 0}
-  alertDuration: 0
-  sendMessages: []
-  barkSource: 0
-  barkConversation: 
-  barkEntryID: -1
-  barkEntryTitle: 
-  barkText: 
-  barkTextSequence: 
-  barker: {fileID: 0}
-  barkTarget: {fileID: 0}
-  barkOrder: 0
-  allowBarksDuringConversations: 0
-  skipBarkIfNoValidEntries: 0
-  cacheBarkLines: 0
-  conversation: Conversation_Combat_tuto
-  conversationConversant: {fileID: 925668938}
-  conversationActor: {fileID: 961497975}
-  startConversationEntryID: -1
-  startConversationEntryTitle: 
-  overrideDialogueUI: {fileID: 0}
-  additionalActorOverrides: []
-  exclusive: 0
-  replace: 0
-  queue: 0
-  skipIfNoValidEntries: 0
-  preventRestartOnSameFrameEnded: 0
-  stopConversationOnTriggerExit: 0
-  marginToAllowTriggerExit: 0.2
-  stopConversationIfTooFar: 0
-  maxConversationDistance: 5
-  monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
-  pauseGameDuringConversation: 0
-  setActiveActions: []
-  setEnabledActions: []
-  setAnimatorStateActions: []
-  onExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  useConversationTitlePicker: 1
-  useBarkTitlePicker: 1
-  useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: af388044e5853b641ac75c8b852c9612, type: 2}
 --- !u!1 &721581178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,34 +2478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a28b3bd2bc56945b7b9729949ff4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1123374784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123374769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbda0e7463fc9c848a88f78f5ef15508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1123374785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123374769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 799c4943b2ee338429eafe496d3ef88c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mappings:
-  - key: PopupImagePanel
-    target: {fileID: 745419626}
-  exclusiveShow: 0
 --- !u!1 &1189463727
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,12 +3998,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4605834967882861955, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1123374780}
-    - targetCorrespondingSourceObject: {fileID: 4605834967882861955, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1123374784}
-    - targetCorrespondingSourceObject: {fileID: 4605834967882861955, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1123374785}
   m_SourcePrefab: {fileID: 100100000, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
 --- !u!4 &1716037727 stripped
 Transform:
