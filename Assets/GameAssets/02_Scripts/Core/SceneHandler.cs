@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public interface ISceneHandler
 {
     UniTask FadeScreen();
-    void LoadingScreen(int levleIndex);
+    void LoadingScreen(int levelIndex);
     void LoadingScreen(string sceneName);
     UniTask OnFinishedLoading();
     void PauseGame(bool bPause);

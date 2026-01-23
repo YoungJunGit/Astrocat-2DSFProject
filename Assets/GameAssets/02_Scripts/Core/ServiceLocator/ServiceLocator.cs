@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,7 +27,7 @@ public class ServiceLocator : MonoBehaviour
         else
         {
             global = this;
-            if (dontDestroyOnLoad) 
+            if (dontDestroyOnLoad)
                 DontDestroyOnLoad(gameObject);
         }
     }
@@ -68,7 +69,7 @@ public class ServiceLocator : MonoBehaviour
 
     private static List<GameObject> tempGO;
 
-    
+
     public static ServiceLocator For(MonoBehaviour mono)
     {
         var locator = mono.GetComponentInParent<ServiceLocator>();
@@ -90,7 +91,7 @@ public class ServiceLocator : MonoBehaviour
         return ForSceneOf(scriptableObject);
     }
 
-    
+
     public static ServiceLocator ForSceneOf(UnityEngine.Object obj)
     {
         Scene scene;
@@ -140,13 +141,25 @@ public class ServiceLocator : MonoBehaviour
 
     public ServiceLocator Get<T>(out T service) where T : class
     {
-        if (TryGetService(out service)) return this;
+        if (TryGetService(out service))
+        {
+            return this;
+        }
         
+        if (this == Global)
+        {
+            return null;
+        }
+
         if (TryGetGetNextInHierarchy(out var locator))
         {
             locator.Get(out service);
             return this;
         }
+        
+        Debug.LogWarning($"ServiceLocater.Get : {typeof(T).Name} is not registered in active scene\n" + "Try out to Global...");
+
+        if (Global.Get(out service) != null) return this;
 
         Debug.LogError($"ServiceLocater.Get : {typeof(T).Name} is not registered");
         return null;
@@ -160,13 +173,13 @@ public class ServiceLocator : MonoBehaviour
     private bool TryGetGetNextInHierarchy(out ServiceLocator locator)
     {
         locator = null;
-        
+
         if (this == global)
         {
             locator = null;
             return false;
         }
-        
+
         var parent = transform.parent;
         if (parent != null)
         {
@@ -203,13 +216,23 @@ public class ServiceLocator : MonoBehaviour
     {
         var go = new GameObject("ServiceLocator [Global]");
         go.AddComponent<ServiceLocatorGlobalBootstrapper>();
+
+        Undo.RegisterCreatedObjectUndo(go, "Create Global ServiceLocator");
+        EditorSceneManager.MarkSceneDirty(go.scene);
+
+        Selection.activeObject = go;
     }
-    
+
     [MenuItem("GameObject/ServiceLocator/Add Scene")]
     static void AddScene()
     {
         var go = new GameObject("ServiceLocator [Scene]");
         go.AddComponent<ServiceLocatorSceneBootstrapper>();
+
+        Undo.RegisterCreatedObjectUndo(go, "Create Scene ServiceLocator");
+        EditorSceneManager.MarkSceneDirty(go.scene);
+
+        Selection.activeObject = go;
     }
 #endif
 }

@@ -165,11 +165,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background_type: 0
   background_index: 0
+  PreloadAudioLabelName: 
+  cameraSize: 5.4
   debugMode: {fileID: 11400000, guid: c8808d7de2361294fa09f3b5d598dad6, type: 2}
   changeSceneOnEndGame: 1
   changeScene:
     sceneAsset: {fileID: 102900000, guid: ad119d35a5a22ca499e23481f9051f9c, type: 3}
-    scenePath: Assets/Scenes/1. NodeTree.unity
+    scenePath: Assets/GameAssets/01_Scenes/01_BuildScenes/2. NodeTree.unity
   dialogueSetting: {fileID: 11400000, guid: 998c8635cbf1e344da0f951741400197, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

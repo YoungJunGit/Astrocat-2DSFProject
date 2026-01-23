@@ -301,7 +301,7 @@ MonoBehaviour:
   changeSceneOnEndGame: 1
   changeScene:
     sceneAsset: {fileID: 102900000, guid: ad119d35a5a22ca499e23481f9051f9c, type: 3}
-    scenePath: Assets/GameAssets/01_Scenes/01_BuildScenes/2. NodeTree.unity
+    scenePath: Assets/GameAssets/01_Scenes/01_BuildScenes/3. NodeTree.unity
   alternateScene:
     sceneAsset: {fileID: 102900000, guid: 31d6bc0c08b0fef4cb231ef94f2e8e05, type: 3}
     scenePath: Assets/GameAssets/01_Scenes/01_BuildScenes/0. TitleScene.unity
@@ -366,10 +366,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f011d62f0aface4f81962ac148bcf62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2030879259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030879262}
+  - component: {fileID: 2030879261}
+  - component: {fileID: 2030879260}
+  m_Layer: 0
+  m_Name: 'ServiceLocator [Scene]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2030879260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030879259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74cdd11e7f58cf429d11359600d445b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2030879261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030879259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe4ea5ca65a8304698641b19600e494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2030879262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030879259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1732112612}
+  - {fileID: 2030879262}
   - {fileID: 1036158492}
   - {fileID: 1675087712}

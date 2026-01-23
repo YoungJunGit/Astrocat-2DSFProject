@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c43536f6196f5e4b98ca162b250e2d9, type: 3}
-  m_Name: EntityDataTestManyHP
+  m_Name: EntityDataTest_Debug
   m_EditorClassIdentifier: 
   json: {fileID: 4900000, guid: 6f088fda71f1b9a48a4be73769a115fd, type: 3}
   decryptToggle: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
     index: 1001
     Side: 1
     Name: "\uB77C\uC774\uD50C\uB9E8"
-    Max_HP: 1000
+    Max_HP: 1
     Max_SP: 9
     Default_Attack: 70
     Default_Defense: 10
@@ -64,9 +64,9 @@ MonoBehaviour:
     index: 1002
     Side: 1
     Name: "\uC2A4\uB098\uC774\uD37C\uB9E8"
-    Max_HP: 1000
+    Max_HP: 1
     Max_SP: 9
-    Default_Attack: 120
+    Default_Attack: 150
     Default_Defense: 10
     Default_SP: 9
     Default_Speed: 16
@@ -106,7 +106,7 @@ MonoBehaviour:
     index: 1003
     Side: 1
     Name: "\uCEE4\uBBF8\uC0AC\uB974"
-    Max_HP: 1000
+    Max_HP: 1
     Max_SP: 9
     Default_Attack: 75
     Default_Defense: 10

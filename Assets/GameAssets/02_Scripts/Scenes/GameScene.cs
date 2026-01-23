@@ -51,7 +51,7 @@ public class GameScene : AbstractScene
     [SerializeField] private QTETester qteTester;
     [SerializeField] private BackgroundChanger backgroundChanger;
 
-    protected override int SceneIdx { get; } = 3;
+    protected override int SceneIdx => 4;
 
     protected override void BindObjects()
     {

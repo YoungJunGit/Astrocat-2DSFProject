@@ -12,14 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cdb8ad39a5bdd4f8ed3d18fae14a63, type: 3}
   m_Name: MaxShowBannerIndex
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: RepaintRequest
+      Entry: 6
+      Data: 
   TagIndex: 0
   Description: 
   _guid: e470a0d88c8ef934b8d09b63a050e2ee
   _saveGuid: 0
   _value: 7
   _debugLogEnabled: 0
-  _saved: 0
-  _defaultValue: 0
+  _saved: 1
+  _defaultValue: 7
   _resetOn: 0
   _runtimeValue: 0
   _isClamped: 0

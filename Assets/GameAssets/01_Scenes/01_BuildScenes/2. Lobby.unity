@@ -593,6 +593,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5985351601829260400, guid: 5af164ad28ee8684eaeb082994bea449, type: 3}
   m_PrefabInstance: {fileID: 248125606}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &252015308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 252015311}
+  - component: {fileID: 252015310}
+  - component: {fileID: 252015309}
+  m_Layer: 0
+  m_Name: 'ServiceLocator [Scene]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &252015309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252015308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74cdd11e7f58cf429d11359600d445b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &252015310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252015308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe4ea5ca65a8304698641b19600e494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &252015311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252015308}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &254986609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2466,18 +2523,6 @@ MonoBehaviour:
   startConversationFullPath: 
   barkKnot: 
   barkFilePath: 
---- !u!114 &1123374780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123374769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a28b3bd2bc56945b7b9729949ff4b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1189463727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,7 +3647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4214791946476741427, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
       propertyPath: m_Text
-      value: Input Field
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4258249030139038467, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
       propertyPath: m_Controller
@@ -3712,6 +3757,10 @@ PrefabInstance:
       propertyPath: initialDatabase
       value: 
       objectReference: {fileID: 11400000, guid: af388044e5853b641ac75c8b852c9612, type: 2}
+    - target: {fileID: 5233435155163328009, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
+      propertyPath: dontDestroyOnLoad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5233435155163328009, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
       propertyPath: displaySettings.cameraSettings.defaultSequence
       value: 'AnimatorPlay(Talk,speakerportrait);
@@ -3995,9 +4044,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4605834967882861955, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1123374776}
-    - targetCorrespondingSourceObject: {fileID: 4605834967882861955, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1123374780}
   m_SourcePrefab: {fileID: 100100000, guid: 6a9c5d9bd6685ff49bc19cbb672c86d3, type: 3}
 --- !u!4 &1716037727 stripped
 Transform:
@@ -4539,7 +4585,7 @@ MonoBehaviour:
   changeSceneOnEndGame: 1
   changeScene:
     sceneAsset: {fileID: 102900000, guid: ad119d35a5a22ca499e23481f9051f9c, type: 3}
-    scenePath: Assets/GameAssets/01_Scenes/01_BuildScenes/2. NodeTree.unity
+    scenePath: Assets/GameAssets/01_Scenes/01_BuildScenes/3. NodeTree.unity
   cameraMove: {fileID: 1189463728}
 --- !u!1 &1912239763
 GameObject:
@@ -10507,6 +10553,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1906355746}
+  - {fileID: 252015311}
   - {fileID: 1189463729}
   - {fileID: 1899504260}
   - {fileID: 1898368839}

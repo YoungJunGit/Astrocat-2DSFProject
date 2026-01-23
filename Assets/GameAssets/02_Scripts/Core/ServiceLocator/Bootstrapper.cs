@@ -31,23 +31,3 @@ public abstract class Bootstrapper : MonoBehaviour
     
     protected abstract void Bootstrap();
 }
-
-[AddComponentMenu("Service Locator/Bootstrapper Global")]
-public class ServiceLocatorGlobalBootstrapper : Bootstrapper
-{
-    [SerializeField] bool dontDestroyOnLoad = true;
-    
-    protected override void Bootstrap()
-    {
-        Locator.ConfigureAsGlobal(dontDestroyOnLoad);
-    }
-}
-
-[AddComponentMenu("Service Locator/Bootstrapper Scene")]
-public class ServiceLocatorSceneBootstrapper : Bootstrapper
-{
-    protected override void Bootstrap()
-    {
-        Locator.ConfigureAsScene();       
-    }
-}

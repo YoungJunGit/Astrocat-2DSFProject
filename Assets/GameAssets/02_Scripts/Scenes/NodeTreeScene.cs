@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NodeTreeScene : AbstractScene
 {
-    protected override int SceneIdx { get; } = 2;
+    protected override int SceneIdx => 3;
     
     [SerializeField]
     NodeMapGenerator nodeMapGenerator;

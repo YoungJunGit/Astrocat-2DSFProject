@@ -7,7 +7,7 @@ public class DialogueScene : AbstractScene
     [SerializeField]
     private DialogueSetting dialogueSetting;
 
-    protected override int SceneIdx { get; } = 4;
+    protected override int SceneIdx => 5;
 
     protected override void BindObjects()
     {

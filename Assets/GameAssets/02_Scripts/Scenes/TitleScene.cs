@@ -7,7 +7,7 @@ public class TitleScene : AbstractScene
     [Header("Manager Setting")]
     [SerializeField] private TitleManager titleManager;
 
-    protected override int SceneIdx { get; } = 1;
+    protected override int SceneIdx => 0;
     protected override void BindObjects() { }
     protected override async UniTask InitializeObjects() 
     {

@@ -13,7 +13,6 @@ public class CombatManager : ScriptableObject
 
     private TimelineManager _timelineManager;
     private BaseUnit currentTurnUnit;
-    private EventRegistry<List<BaseUnit>, BaseUnit> DequeueCurrentUnit;
 
     private IUnitManager _unitManager;
     private IUnitActionExecuter _actionExecuter;
@@ -27,7 +26,6 @@ public class CombatManager : ScriptableObject
     public void Init()
     {
         _timelineManager = Instantiate(timelineManagerPrefab);
-        DequeueCurrentUnit = new();
         finishedCombat = false;
         IsPlayerLoose = false;
 
@@ -49,7 +47,6 @@ public class CombatManager : ScriptableObject
     public void Prepare()
     {
         _timelineManager.Prepare(_unitManager.GetAllUnits());
-        DequeueCurrentUnit.Register(_timelineManager.Pop);
 
         foreach (BaseUnit unit in _unitManager.GetAllUnits())
         {
@@ -61,7 +58,7 @@ public class CombatManager : ScriptableObject
     {
         while (_unitManager.GetEnemyUnits().Count != 0 && _unitManager.GetPlayerUnits().Count != 0)
         {
-            currentTurnUnit = DequeueCurrentUnit.Call(_unitManager.GetAllUnits());
+            currentTurnUnit = _timelineManager.Pop(_unitManager.GetAllUnits());
 
             currentTurnUnit.CEUnit.OnStartTurn();
             await UniTask.WaitUntil(() => EventHandler.IsEventEmpty());
@@ -105,8 +102,6 @@ public class CombatManager : ScriptableObject
 
             currentTurnUnit.TurnUpdate();
         }
-
-        DequeueCurrentUnit.UnregisterAll();
         // TODO: Check whether the enemy or the player wins
         // if()
     }
@@ -141,6 +136,6 @@ public class CombatManager : ScriptableObject
         }
 
         if (currentTurnUnit == unit)
-            currentTurnUnit = DequeueCurrentUnit.Call(_unitManager.GetAllUnits());
+            currentTurnUnit = _timelineManager.Pop(_unitManager.GetAllUnits());
     }
 }
