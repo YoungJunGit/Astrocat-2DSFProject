@@ -15,30 +15,28 @@ public class CombatTester : MonoBehaviour
 
     void Start()
     {
-        ServiceLocator.For(this)
-            .Get(out unitManager)
-            .Get(out soundService);
-
         foreach (var obj in debuggingObjs)
         {
             obj.SetActive(false);
         }
+
+        ServiceLocator.Global.Get(out soundService);
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F1) && !btnOn)
-        {
-            btnOn = true;
-            var enemyList = unitManager.GetEnemyUnits();
-            var playerList = unitManager.GetPlayerUnits();
+        // if(Input.GetKeyDown(KeyCode.F1) && !btnOn)
+        // {
+        //     btnOn = true;
+        //     var enemyList = unitManager.GetEnemyUnits();
+        //     var playerList = unitManager.GetPlayerUnits();
 
-            foreach(var unit in enemyList)
-            {
-                DamageResult damage = new DamageResult(99999f, true);
-                unit.GetDamage(damage);
-            }
-        }
+        //     foreach(var unit in enemyList)
+        //     {
+        //         DamageResult damage = new DamageResult(99999f, true);
+        //         unit.GetDamage(damage);
+        //     }
+        // }
         
         if(Input.GetKeyDown(KeyCode.Minus))
         {
