@@ -24,7 +24,7 @@ MonoBehaviour:
   floorNum: 7
   routeNum: 4
   normalNodeSize: 1
-  startNodeSize: 1.5
+  startNodeSize: 3
   finalNodeSize: 10
   floorDistance: 15
   routeDistance: 15
