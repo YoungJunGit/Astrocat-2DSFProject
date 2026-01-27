@@ -1,0 +1,3887 @@
+fileFormatVersion: 2
+guid: ccfad0405d77d6545ad900c975964616
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1585325500907895289
+    second: Penguin_Commander_Skill_Grenade_Explosion_0
+  - first:
+      213: 1072216655946210227
+    second: Penguin_Commander_Skill_Grenade_Explosion_1
+  - first:
+      213: 9076406017935280009
+    second: Penguin_Commander_Skill_Grenade_Explosion_2
+  - first:
+      213: 4499759461984031920
+    second: Penguin_Commander_Skill_Grenade_Explosion_3
+  - first:
+      213: -3785230155938047788
+    second: Penguin_Commander_Skill_Grenade_Explosion_4
+  - first:
+      213: 4727604793081722141
+    second: Penguin_Commander_Skill_Grenade_Explosion_5
+  - first:
+      213: 85678293321612079
+    second: Penguin_Commander_Skill_Grenade_Explosion_6
+  - first:
+      213: -8799061683468647978
+    second: Penguin_Commander_Skill_Grenade_Explosion_7
+  - first:
+      213: -2398233852179494669
+    second: Penguin_Commander_Skill_Grenade_Explosion_8
+  - first:
+      213: 4623375132986962236
+    second: Penguin_Commander_Skill_Grenade_Explosion_9
+  - first:
+      213: 6904993901166670675
+    second: Penguin_Commander_Skill_Grenade_Explosion_10
+  - first:
+      213: -4218676639940085822
+    second: Penguin_Commander_Skill_Grenade_Explosion_11
+  - first:
+      213: -7369005038208289497
+    second: Penguin_Commander_Skill_Grenade_Explosion_12
+  - first:
+      213: -8821949537991272395
+    second: Penguin_Commander_Skill_Grenade_Explosion_13
+  - first:
+      213: -8032527601569370426
+    second: Penguin_Commander_Skill_Grenade_Explosion_14
+  - first:
+      213: -7756466296014626583
+    second: Penguin_Commander_Skill_Grenade_Explosion_15
+  - first:
+      213: 8292855525711876219
+    second: Penguin_Commander_Skill_Grenade_Explosion_16
+  - first:
+      213: -5620687913232957782
+    second: Penguin_Commander_Skill_Grenade_Explosion_17
+  - first:
+      213: -7401937124897512133
+    second: Penguin_Commander_Skill_Grenade_Explosion_18
+  - first:
+      213: -3050890506405339405
+    second: Penguin_Commander_Skill_Grenade_Explosion_19
+  - first:
+      213: 3651881199542958962
+    second: Penguin_Commander_Skill_Grenade_Explosion_20
+  - first:
+      213: -7052294943767989519
+    second: Penguin_Commander_Skill_Grenade_Explosion_21
+  - first:
+      213: -4370162817542636759
+    second: Penguin_Commander_Skill_Grenade_Explosion_22
+  - first:
+      213: 6250306978598231896
+    second: Penguin_Commander_Skill_Grenade_Explosion_23
+  - first:
+      213: 3292731674908862093
+    second: Penguin_Commander_Skill_Grenade_Explosion_24
+  - first:
+      213: -7559507142507462331
+    second: Penguin_Commander_Skill_Grenade_Explosion_25
+  - first:
+      213: 6908552211035530063
+    second: Penguin_Commander_Skill_Grenade_Explosion_26
+  - first:
+      213: -6285963275766091682
+    second: Penguin_Commander_Skill_Grenade_Explosion_27
+  - first:
+      213: 5843833220144631502
+    second: Penguin_Commander_Skill_Grenade_Explosion_28
+  - first:
+      213: -2064114192894146223
+    second: Penguin_Commander_Skill_Grenade_Explosion_29
+  - first:
+      213: -4793753624326429567
+    second: Penguin_Commander_Skill_Grenade_Explosion_30
+  - first:
+      213: 9124317645671921462
+    second: Penguin_Commander_Skill_Grenade_Explosion_31
+  - first:
+      213: 3638332604056870297
+    second: Penguin_Commander_Skill_Grenade_Explosion_32
+  - first:
+      213: 8860509151114384096
+    second: Penguin_Commander_Skill_Grenade_Explosion_33
+  - first:
+      213: 4190329474997884395
+    second: Penguin_Commander_Skill_Grenade_Explosion_34
+  - first:
+      213: 3788255192825185397
+    second: Penguin_Commander_Skill_Grenade_Explosion_35
+  - first:
+      213: 3554848461339090454
+    second: Penguin_Commander_Skill_Grenade_Explosion_36
+  - first:
+      213: 1025324713755454640
+    second: Penguin_Commander_Skill_Grenade_Explosion_37
+  - first:
+      213: -5085953801793973983
+    second: Penguin_Commander_Skill_Grenade_Explosion_38
+  - first:
+      213: 7154754939318620005
+    second: Penguin_Commander_Skill_Grenade_Explosion_39
+  - first:
+      213: -5185645349710151502
+    second: Penguin_Commander_Skill_Grenade_Explosion_40
+  - first:
+      213: 1046697995277462551
+    second: Penguin_Commander_Skill_Grenade_Explosion_41
+  - first:
+      213: 1466905607093143775
+    second: Penguin_Commander_Skill_Grenade_Explosion_42
+  - first:
+      213: -8403690142724740729
+    second: Penguin_Commander_Skill_Grenade_Explosion_43
+  - first:
+      213: 935649482543023042
+    second: Penguin_Commander_Skill_Grenade_Explosion_44
+  - first:
+      213: 7760039538245409750
+    second: Penguin_Commander_Skill_Grenade_Explosion_45
+  - first:
+      213: -7918944409580531663
+    second: Penguin_Commander_Skill_Grenade_Explosion_46
+  - first:
+      213: -6232252241966904703
+    second: Penguin_Commander_Skill_Grenade_Explosion_47
+  - first:
+      213: 7871774914005517286
+    second: Penguin_Commander_Skill_Grenade_Explosion_48
+  - first:
+      213: -526383053001621356
+    second: Penguin_Commander_Skill_Grenade_Explosion_49
+  - first:
+      213: 5827095766124735748
+    second: Penguin_Commander_Skill_Grenade_Explosion_50
+  - first:
+      213: -9215107822914444259
+    second: Penguin_Commander_Skill_Grenade_Explosion_51
+  - first:
+      213: -9217580497680611024
+    second: Penguin_Commander_Skill_Grenade_Explosion_52
+  - first:
+      213: -6406002247022300570
+    second: Penguin_Commander_Skill_Grenade_Explosion_53
+  - first:
+      213: -6819939609346102675
+    second: Penguin_Commander_Skill_Grenade_Explosion_54
+  - first:
+      213: -7538180838437800929
+    second: Penguin_Commander_Skill_Grenade_Explosion_55
+  - first:
+      213: 2516471919607766064
+    second: Penguin_Commander_Skill_Grenade_Explosion_56
+  - first:
+      213: 6714751896288664524
+    second: Penguin_Commander_Skill_Grenade_Explosion_57
+  - first:
+      213: -742372740078540403
+    second: Penguin_Commander_Skill_Grenade_Explosion_58
+  - first:
+      213: -3348101976576998450
+    second: Penguin_Commander_Skill_Grenade_Explosion_59
+  - first:
+      213: 6216613112716769952
+    second: Penguin_Commander_Skill_Grenade_Explosion_60
+  - first:
+      213: 5343219324866454030
+    second: Penguin_Commander_Skill_Grenade_Explosion_61
+  - first:
+      213: -3886459360758814592
+    second: Penguin_Commander_Skill_Grenade_Explosion_62
+  - first:
+      213: 277110423827579814
+    second: Penguin_Commander_Skill_Grenade_Explosion_63
+  - first:
+      213: -3136064324127321360
+    second: Penguin_Commander_Skill_Grenade_Explosion_64
+  - first:
+      213: 5550504193881622016
+    second: Penguin_Commander_Skill_Grenade_Explosion_65
+  - first:
+      213: -1603752517726489058
+    second: Penguin_Commander_Skill_Grenade_Explosion_66
+  - first:
+      213: 2089851540763021378
+    second: Penguin_Commander_Skill_Grenade_Explosion_67
+  - first:
+      213: 3962944528939422596
+    second: Penguin_Commander_Skill_Grenade_Explosion_68
+  - first:
+      213: -8229061636688389637
+    second: Penguin_Commander_Skill_Grenade_Explosion_69
+  - first:
+      213: -2929809163743618850
+    second: Penguin_Commander_Skill_Grenade_Explosion_70
+  - first:
+      213: 8118406272973837190
+    second: Penguin_Commander_Skill_Grenade_Explosion_71
+  - first:
+      213: 6418527560755485776
+    second: Penguin_Commander_Skill_Grenade_Explosion_72
+  - first:
+      213: 2611613667800101978
+    second: Penguin_Commander_Skill_Grenade_Explosion_73
+  - first:
+      213: 8005837214305882809
+    second: Penguin_Commander_Skill_Grenade_Explosion_74
+  - first:
+      213: -1647082241719360383
+    second: Penguin_Commander_Skill_Grenade_Explosion_75
+  - first:
+      213: -4465139470400963945
+    second: Penguin_Commander_Skill_Grenade_Explosion_76
+  - first:
+      213: -3476140909780405512
+    second: Penguin_Commander_Skill_Grenade_Explosion_77
+  - first:
+      213: 7691599024555660124
+    second: Penguin_Commander_Skill_Grenade_Explosion_78
+  - first:
+      213: -4564771351805927007
+    second: Penguin_Commander_Skill_Grenade_Explosion_79
+  - first:
+      213: 5872965371072649856
+    second: Penguin_Commander_Skill_Grenade_Explosion_80
+  - first:
+      213: 5768645572884399205
+    second: Penguin_Commander_Skill_Grenade_Explosion_81
+  - first:
+      213: 4110440548419836422
+    second: Penguin_Commander_Skill_Grenade_Explosion_82
+  - first:
+      213: -178465795160763427
+    second: Penguin_Commander_Skill_Grenade_Explosion_83
+  - first:
+      213: 3163433330456304602
+    second: Penguin_Commander_Skill_Grenade_Explosion_84
+  - first:
+      213: 8711695865166538683
+    second: Penguin_Commander_Skill_Grenade_Explosion_85
+  - first:
+      213: 6520001490496002539
+    second: Penguin_Commander_Skill_Grenade_Explosion_86
+  - first:
+      213: 2236375069539299241
+    second: Penguin_Commander_Skill_Grenade_Explosion_87
+  - first:
+      213: 7369986232057410277
+    second: Penguin_Commander_Skill_Grenade_Explosion_88
+  - first:
+      213: -6932334567089119940
+    second: Penguin_Commander_Skill_Grenade_Explosion_89
+  - first:
+      213: 6160236841834685884
+    second: Penguin_Commander_Skill_Grenade_Explosion_90
+  - first:
+      213: 1088343000413479762
+    second: Penguin_Commander_Skill_Grenade_Explosion_91
+  - first:
+      213: 7369833184757350478
+    second: Penguin_Commander_Skill_Grenade_Explosion_92
+  - first:
+      213: -3942136734151298542
+    second: Penguin_Commander_Skill_Grenade_Explosion_93
+  - first:
+      213: -3119509520311927449
+    second: Penguin_Commander_Skill_Grenade_Explosion_94
+  - first:
+      213: 2270339034702792656
+    second: Penguin_Commander_Skill_Grenade_Explosion_95
+  - first:
+      213: -1132137398207354424
+    second: Penguin_Commander_Skill_Grenade_Explosion_96
+  - first:
+      213: -1419682097248539159
+    second: Penguin_Commander_Skill_Grenade_Explosion_97
+  - first:
+      213: 8711786986584307813
+    second: Penguin_Commander_Skill_Grenade_Explosion_98
+  - first:
+      213: 2440412120669721490
+    second: Penguin_Commander_Skill_Grenade_Explosion_99
+  - first:
+      213: 7630165381111092782
+    second: Penguin_Commander_Skill_Grenade_Explosion_100
+  - first:
+      213: -7030440371957252456
+    second: Penguin_Commander_Skill_Grenade_Explosion_101
+  - first:
+      213: 6157588478415700792
+    second: Penguin_Commander_Skill_Grenade_Explosion_102
+  - first:
+      213: -2268895916618477424
+    second: Penguin_Commander_Skill_Grenade_Explosion_103
+  - first:
+      213: -5117727427424396620
+    second: Penguin_Commander_Skill_Grenade_Explosion_104
+  - first:
+      213: -2429593956030538104
+    second: Penguin_Commander_Skill_Grenade_Explosion_105
+  - first:
+      213: -8147893192730971181
+    second: Penguin_Commander_Skill_Grenade_Explosion_106
+  - first:
+      213: 7743879389642006244
+    second: Penguin_Commander_Skill_Grenade_Explosion_107
+  - first:
+      213: -303024906958330707
+    second: Penguin_Commander_Skill_Grenade_Explosion_108
+  - first:
+      213: 6458916655831969710
+    second: Penguin_Commander_Skill_Grenade_Explosion_109
+  - first:
+      213: -4884299126482256251
+    second: Penguin_Commander_Skill_Grenade_Explosion_110
+  - first:
+      213: -1458419876090665861
+    second: Penguin_Commander_Skill_Grenade_Explosion_111
+  - first:
+      213: 2210119212628344102
+    second: Penguin_Commander_Skill_Grenade_Explosion_112
+  - first:
+      213: -4226448005761161244
+    second: Penguin_Commander_Skill_Grenade_Explosion_113
+  - first:
+      213: 6500610635711256445
+    second: Penguin_Commander_Skill_Grenade_Explosion_114
+  - first:
+      213: -1338878066259144654
+    second: Penguin_Commander_Skill_Grenade_Explosion_115
+  - first:
+      213: 4422576846425020387
+    second: Penguin_Commander_Skill_Grenade_Explosion_116
+  - first:
+      213: 3209226310886738100
+    second: Penguin_Commander_Skill_Grenade_Explosion_117
+  - first:
+      213: 2769821796316142950
+    second: Penguin_Commander_Skill_Grenade_Explosion_118
+  - first:
+      213: -4694763841024517546
+    second: Penguin_Commander_Skill_Grenade_Explosion_119
+  - first:
+      213: -2457640263179058990
+    second: Penguin_Commander_Skill_Grenade_Explosion_120
+  - first:
+      213: -244799527928220008
+    second: Penguin_Commander_Skill_Grenade_Explosion_121
+  - first:
+      213: -7336311349935155689
+    second: Penguin_Commander_Skill_Grenade_Explosion_122
+  - first:
+      213: -2815029970182939729
+    second: Penguin_Commander_Skill_Grenade_Explosion_123
+  - first:
+      213: -3142098005789916099
+    second: Penguin_Commander_Skill_Grenade_Explosion_124
+  - first:
+      213: 5168485211812922158
+    second: Penguin_Commander_Skill_Grenade_Explosion_125
+  - first:
+      213: 8328722563725438350
+    second: Penguin_Commander_Skill_Grenade_Explosion_126
+  - first:
+      213: -4955745866999215252
+    second: Penguin_Commander_Skill_Grenade_Explosion_127
+  - first:
+      213: 8871643640440820178
+    second: Penguin_Commander_Skill_Grenade_Explosion_128
+  - first:
+      213: -6145628297910295239
+    second: Penguin_Commander_Skill_Grenade_Explosion_129
+  - first:
+      213: -6105885129994404195
+    second: Penguin_Commander_Skill_Grenade_Explosion_130
+  - first:
+      213: -4530429994567787612
+    second: Penguin_Commander_Skill_Grenade_Explosion_131
+  - first:
+      213: 8322860974290371345
+    second: Penguin_Commander_Skill_Grenade_Explosion_132
+  - first:
+      213: 1148874069051395793
+    second: Penguin_Commander_Skill_Grenade_Explosion_133
+  - first:
+      213: -6431828881398505310
+    second: Penguin_Commander_Skill_Grenade_Explosion_134
+  - first:
+      213: -7258721330324341088
+    second: Penguin_Commander_Skill_Grenade_Explosion_135
+  - first:
+      213: 5550414671081446631
+    second: Penguin_Commander_Skill_Grenade_Explosion_136
+  - first:
+      213: 4795181323468156483
+    second: Penguin_Commander_Skill_Grenade_Explosion_137
+  - first:
+      213: 5952188136136420552
+    second: Penguin_Commander_Skill_Grenade_Explosion_138
+  - first:
+      213: -8969781947638496263
+    second: Penguin_Commander_Skill_Grenade_Explosion_139
+  - first:
+      213: 2855117987798216772
+    second: Penguin_Commander_Skill_Grenade_Explosion_140
+  - first:
+      213: -6886852834889360808
+    second: Penguin_Commander_Skill_Grenade_Explosion_141
+  - first:
+      213: -8678892723287091995
+    second: Penguin_Commander_Skill_Grenade_Explosion_142
+  - first:
+      213: 3653278437386554463
+    second: Penguin_Commander_Skill_Grenade_Explosion_143
+  - first:
+      213: 2521698780008390674
+    second: Penguin_Commander_Skill_Grenade_Explosion_144
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 3476
+        width: 65
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9bbf6c425300610800000000000000
+      internalID: 1585325500907895289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 3527
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb5ee32e5741ee00800000000000000
+      internalID: 1072216655946210227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 3509
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98700483f2fd5fd70800000000000000
+      internalID: 9076406017935280009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 3527
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4d242d36b527e30800000000000000
+      internalID: 4499759461984031920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 3527
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d8573a6a39287bc0800000000000000
+      internalID: -3785230155938047788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 3542
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d15f11ae283db9140800000000000000
+      internalID: 4727604793081722141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 3524
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b756e24f3603100800000000000000
+      internalID: 85678293321612079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 3539
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1c910b40473e580800000000000000
+      internalID: -8799061683468647978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 3512
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f846809403c7bed0800000000000000
+      internalID: -2398233852179494669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_9
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 3512
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31ff011037892040800000000000000
+      internalID: 4623375132986962236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_10
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 3488
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 353374f6e5773df50800000000000000
+      internalID: 6904993901166670675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_11
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 3476
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c7f12e82ff3475c0800000000000000
+      internalID: -4218676639940085822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_12
+      rect:
+        serializedVersion: 2
+        x: 2435
+        y: 3470
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 725f78dd5f80cb990800000000000000
+      internalID: -7369005038208289497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_13
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 3446
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538db99c2a3229580800000000000000
+      internalID: -8821949537991272395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_14
+      rect:
+        serializedVersion: 2
+        x: 2474
+        y: 3398
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ceefeb54bab68090800000000000000
+      internalID: -8032527601569370426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_15
+      rect:
+        serializedVersion: 2
+        x: 2510
+        y: 3392
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e022c1dffe7b5490800000000000000
+      internalID: -7756466296014626583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_16
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 3398
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7011b7c924261370800000000000000
+      internalID: 8292855525711876219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_17
+      rect:
+        serializedVersion: 2
+        x: 3317
+        y: 3350
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaefa626f1e4ff1b0800000000000000
+      internalID: -5620687913232957782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_18
+      rect:
+        serializedVersion: 2
+        x: 4007
+        y: 3356
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3525bce669074990800000000000000
+      internalID: -7401937124897512133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_19
+      rect:
+        serializedVersion: 2
+        x: 2471
+        y: 3332
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe191daf3f09a5d0800000000000000
+      internalID: -3050890506405339405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_20
+      rect:
+        serializedVersion: 2
+        x: 3239
+        y: 3329
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b7fac3a961ea230800000000000000
+      internalID: 3651881199542958962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_21
+      rect:
+        serializedVersion: 2
+        x: 4004
+        y: 3332
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2fc610d17312e90800000000000000
+      internalID: -7052294943767989519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_22
+      rect:
+        serializedVersion: 2
+        x: 4139
+        y: 3338
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b30c152101a53c0800000000000000
+      internalID: -4370162817542636759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_23
+      rect:
+        serializedVersion: 2
+        x: 4115
+        y: 3296
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f1e7cd41d8db650800000000000000
+      internalID: 6250306978598231896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_24
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 3230
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86ae9f330222bd20800000000000000
+      internalID: 3292731674908862093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_25
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 2579
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54180dd4e4c371790800000000000000
+      internalID: -7559507142507462331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_26
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 2579
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43230302ab10ef50800000000000000
+      internalID: 6908552211035530063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_27
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 2585
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e50bfc484b5c3c8a0800000000000000
+      internalID: -6285963275766091682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_28
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 2585
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ece095d0a57791150800000000000000
+      internalID: 5843833220144631502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_29
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 2585
+        width: 59
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 159c3b4e31bca53e0800000000000000
+      internalID: -2064114192894146223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_30
+      rect:
+        serializedVersion: 2
+        x: 4049
+        y: 2585
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18428412a7a297db0800000000000000
+      internalID: -4793753624326429567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_31
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 2519
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6377a185e8610ae70800000000000000
+      internalID: 9124317645671921462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_32
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 2504
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d18870a34fd7230800000000000000
+      internalID: 3638332604056870297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_33
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 2477
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e25541c02ad6fa70800000000000000
+      internalID: 8860509151114384096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_34
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 2480
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be51919c47a072a30800000000000000
+      internalID: 4190329474997884395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_35
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 2477
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 574cfded606929430800000000000000
+      internalID: 3788255192825185397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_36
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 2477
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ed57857db555130800000000000000
+      internalID: 3554848461339090454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_37
+      rect:
+        serializedVersion: 2
+        x: 3458
+        y: 2483
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bca2de056faa3e00800000000000000
+      internalID: 1025324713755454640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_38
+      rect:
+        serializedVersion: 2
+        x: 4205
+        y: 2483
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121d50cb6ff0b69b0800000000000000
+      internalID: -5085953801793973983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_39
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 2453
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56fce05b5bbca4360800000000000000
+      internalID: 7154754939318620005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_40
+      rect:
+        serializedVersion: 2
+        x: 2819
+        y: 2411
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0ce577703e808b0800000000000000
+      internalID: -5185645349710151502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_41
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 2387
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71c60a3f74e968e00800000000000000
+      internalID: 1046697995277462551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_42
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 2384
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8c0dda0ee7b5410800000000000000
+      internalID: 1466905607093143775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_43
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 2387
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789a0700758106b80800000000000000
+      internalID: -8403690142724740729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_44
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2384
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c341414f381cfc00800000000000000
+      internalID: 935649482543023042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_45
+      rect:
+        serializedVersion: 2
+        x: 4364
+        y: 2384
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db9a1878d231bb60800000000000000
+      internalID: 7760039538245409750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_46
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1838
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13013ee04024a1290800000000000000
+      internalID: -7918944409580531663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_47
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 1838
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a4ee61b979289a0800000000000000
+      internalID: -6232252241966904703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_48
+      rect:
+        serializedVersion: 2
+        x: 1814
+        y: 1841
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e3412de3992e3d60800000000000000
+      internalID: 7871774914005517286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_49
+      rect:
+        serializedVersion: 2
+        x: 2537
+        y: 1838
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4908d06f669e1b8f0800000000000000
+      internalID: -526383053001621356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_50
+      rect:
+        serializedVersion: 2
+        x: 3281
+        y: 1841
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d2c0cd9b00ed050800000000000000
+      internalID: 5827095766124735748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_51
+      rect:
+        serializedVersion: 2
+        x: 4031
+        y: 1847
+        width: 65
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d14e240424c5d1080800000000000000
+      internalID: -9215107822914444259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_52
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1733
+        width: 59
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039cd2bcf53941080800000000000000
+      internalID: -9217580497680611024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_53
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1733
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662b1e395ee4917a0800000000000000
+      internalID: -6406002247022300570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_54
+      rect:
+        serializedVersion: 2
+        x: 1961
+        y: 1736
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a2f431f05ba51a0800000000000000
+      internalID: -6819939609346102675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_55
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 1736
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1432486770036790800000000000000
+      internalID: -7538180838437800929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_56
+      rect:
+        serializedVersion: 2
+        x: 3473
+        y: 1739
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c5777c0ed4ce220800000000000000
+      internalID: 2516471919607766064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_57
+      rect:
+        serializedVersion: 2
+        x: 4196
+        y: 1736
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb9a2df5479f2d50800000000000000
+      internalID: 6714751896288664524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_58
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1640
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d896fa81def82b5f0800000000000000
+      internalID: -742372740078540403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_59
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 1640
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec34856cdf62981d0800000000000000
+      internalID: -3348101976576998450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_60
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 1640
+        width: 59
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aab48160b8d54650800000000000000
+      internalID: 6216613112716769952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_61
+      rect:
+        serializedVersion: 2
+        x: 2861
+        y: 1640
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e02eaa79aade62a40800000000000000
+      internalID: 5343219324866454030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_62
+      rect:
+        serializedVersion: 2
+        x: 3614
+        y: 1643
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088aaff7dc5801ac0800000000000000
+      internalID: -3886459360758814592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_63
+      rect:
+        serializedVersion: 2
+        x: 4364
+        y: 1643
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a30dc7567e78d300800000000000000
+      internalID: 277110423827579814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_64
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1100
+        width: 71
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f29d9fdc167a74d0800000000000000
+      internalID: -3136064324127321360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_65
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 1106
+        width: 89
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00641a0182a570d40800000000000000
+      internalID: 5550504193881622016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_66
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 1142
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16364905935eb9e0800000000000000
+      internalID: -1603752517726489058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_67
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1151
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2409b7067e4a00d10800000000000000
+      internalID: 2089851540763021378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_68
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 1151
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48313007d053ff630800000000000000
+      internalID: 3962944528939422596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_69
+      rect:
+        serializedVersion: 2
+        x: 2543
+        y: 1157
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9d4667a008ccd80800000000000000
+      internalID: -8229061636688389637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_70
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 1139
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8906f961a3757d0800000000000000
+      internalID: -2929809163743618850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_71
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 1118
+        width: 65
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68398eafd7f5aa070800000000000000
+      internalID: 8118406272973837190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_72
+      rect:
+        serializedVersion: 2
+        x: 1772
+        y: 1133
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c92e74fc0331950800000000000000
+      internalID: 6418527560755485776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_73
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 1133
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a54b7cf3bc05e3420800000000000000
+      internalID: 2611613667800101978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_74
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 1130
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b21e4897827a1f60800000000000000
+      internalID: 8005837214305882809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_75
+      rect:
+        serializedVersion: 2
+        x: 2525
+        y: 1136
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 184a6728d636429e0800000000000000
+      internalID: -1647082241719360383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_76
+      rect:
+        serializedVersion: 2
+        x: 2591
+        y: 1136
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79abc2a1f43a802c0800000000000000
+      internalID: -4465139470400963945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_77
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 1130
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2f55b824442cfc0800000000000000
+      internalID: -3476140909780405512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_78
+      rect:
+        serializedVersion: 2
+        x: 3428
+        y: 1049
+        width: 35
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c53916d9f8c0eba60800000000000000
+      internalID: 7691599024555660124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_79
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 1121
+        width: 47
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a16ab604aca6a0c0800000000000000
+      internalID: -4564771351805927007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_80
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 1118
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a94f083e6f08150800000000000000
+      internalID: 5872965371072649856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_81
+      rect:
+        serializedVersion: 2
+        x: 2438
+        y: 1121
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56487eeb5985e0050800000000000000
+      internalID: 5768645572884399205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_82
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 1019
+        width: 215
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60a1de696e73b0930800000000000000
+      internalID: 4110440548419836422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_83
+      rect:
+        serializedVersion: 2
+        x: 3932
+        y: 1097
+        width: 101
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd392ea0e46f58df0800000000000000
+      internalID: -178465795160763427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_84
+      rect:
+        serializedVersion: 2
+        x: 4190
+        y: 1055
+        width: 23
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb9a7c7ad5c6eb20800000000000000
+      internalID: 3163433330456304602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_85
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 1103
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7ad7a9b3926e870800000000000000
+      internalID: 8711695865166538683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_86
+      rect:
+        serializedVersion: 2
+        x: 1781
+        y: 1106
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be91808afc2bb7a50800000000000000
+      internalID: 6520001490496002539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_87
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1106
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9afed64e643390f10800000000000000
+      internalID: 2236375069539299241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_88
+      rect:
+        serializedVersion: 2
+        x: 1841
+        y: 1103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e23d412e63774660800000000000000
+      internalID: 7369986232057410277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_89
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 1103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ddd78b0766bcf90800000000000000
+      internalID: -6932334567089119940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_90
+      rect:
+        serializedVersion: 2
+        x: 2594
+        y: 1100
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5a4d1f4ce8d7550800000000000000
+      internalID: 6160236841834685884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_91
+      rect:
+        serializedVersion: 2
+        x: 4097
+        y: 1094
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 253ad6d41329a1f00800000000000000
+      internalID: 1088343000413479762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_92
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 998
+        width: 71
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4009570c38e64660800000000000000
+      internalID: 7369833184757350478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_93
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 1004
+        width: 89
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212b4e0d687ba49c0800000000000000
+      internalID: -3942136734151298542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_94
+      rect:
+        serializedVersion: 2
+        x: 2726
+        y: 1040
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76dbb508e9645b4d0800000000000000
+      internalID: -3119509520311927449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_95
+      rect:
+        serializedVersion: 2
+        x: 3476
+        y: 1049
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d7c923c25dd18f10800000000000000
+      internalID: 2270339034702792656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_96
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 989
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c96aeed807d940f0800000000000000
+      internalID: -1132137398207354424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_97
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 995
+        width: 65
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ede48387a64c4ce0800000000000000
+      internalID: -1419682097248539159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_98
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 1037
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5687a367b1c76e870800000000000000
+      internalID: 8711786986584307813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_99
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 1016
+        width: 65
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2939316d4e51ed120800000000000000
+      internalID: 2440412120669721490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_100
+      rect:
+        serializedVersion: 2
+        x: 3431
+        y: 1031
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e261c9edcfac3e960800000000000000
+      internalID: 7630165381111092782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_101
+      rect:
+        serializedVersion: 2
+        x: 3497
+        y: 1031
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e3ce60bbbde6e90800000000000000
+      internalID: -7030440371957252456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_102
+      rect:
+        serializedVersion: 2
+        x: 3551
+        y: 1028
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8338109c816247550800000000000000
+      internalID: 6157588478415700792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_103
+      rect:
+        serializedVersion: 2
+        x: 4184
+        y: 1034
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0901f995f234380e0800000000000000
+      internalID: -2268895916618477424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_104
+      rect:
+        serializedVersion: 2
+        x: 4250
+        y: 1034
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ba5817050e2af8b0800000000000000
+      internalID: -5117727427424396620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_105
+      rect:
+        serializedVersion: 2
+        x: 4328
+        y: 1028
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88e1d566b29584ed0800000000000000
+      internalID: -2429593956030538104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_106
+      rect:
+        serializedVersion: 2
+        x: 3434
+        y: 1016
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d372738f4edcee80800000000000000
+      internalID: -8147893192730971181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_107
+      rect:
+        serializedVersion: 2
+        x: 4097
+        y: 1019
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee941ba649c77b60800000000000000
+      internalID: 7743879389642006244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_108
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 1001
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da427aed3707bcbf0800000000000000
+      internalID: -303024906958330707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_109
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 1004
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eafe7b84a7ea2a950800000000000000
+      internalID: 6458916655831969710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_110
+      rect:
+        serializedVersion: 2
+        x: 3485
+        y: 1004
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e364592db773cb0800000000000000
+      internalID: -4884299126482256251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_111
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 1001
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b742f3889d6a2cbe0800000000000000
+      internalID: -1458419876090665861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_112
+      rect:
+        serializedVersion: 2
+        x: 4187
+        y: 1001
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d7af3d6bbebae10800000000000000
+      internalID: 2210119212628344102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_113
+      rect:
+        serializedVersion: 2
+        x: 4253
+        y: 998
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e7a2f27ee3a855c0800000000000000
+      internalID: -4226448005761161244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_114
+      rect:
+        serializedVersion: 2
+        x: 2093
+        y: 896
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7712b47eeec63a50800000000000000
+      internalID: 6500610635711256445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_115
+      rect:
+        serializedVersion: 2
+        x: 2843
+        y: 902
+        width: 65
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230df0f0e795b6de0800000000000000
+      internalID: -1338878066259144654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_116
+      rect:
+        serializedVersion: 2
+        x: 3587
+        y: 905
+        width: 71
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e7d703c536206d30800000000000000
+      internalID: 4422576846425020387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_117
+      rect:
+        serializedVersion: 2
+        x: 4283
+        y: 911
+        width: 89
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b8cd389356798c20800000000000000
+      internalID: 3209226310886738100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_118
+      rect:
+        serializedVersion: 2
+        x: 4364
+        y: 944
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66dde84af32607620800000000000000
+      internalID: 2769821796316142950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_119
+      rect:
+        serializedVersion: 2
+        x: 4379
+        y: 947
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65a92671929d8deb0800000000000000
+      internalID: -4694763841024517546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_120
+      rect:
+        serializedVersion: 2
+        x: 4397
+        y: 923
+        width: 65
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d0c387a335b4edd0800000000000000
+      internalID: -2457640263179058990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_121
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 893
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896b7a8502c4a9cf0800000000000000
+      internalID: -244799527928220008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_122
+      rect:
+        serializedVersion: 2
+        x: 4388
+        y: 908
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 716d27952bf203a90800000000000000
+      internalID: -7336311349935155689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_123
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 896
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fabda2328210fe8d0800000000000000
+      internalID: -2815029970182939729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_124
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 176
+        width: 320
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34cd63e2860564d0800000000000000
+      internalID: -3142098005789916099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_125
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 245
+        width: 101
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2308f49ae52ab740800000000000000
+      internalID: 5168485211812922158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_126
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 242
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8da2a35b01959370800000000000000
+      internalID: 8328722563725438350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_127
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 212
+        width: 17
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6bc6600467a93bb0800000000000000
+      internalID: -4955745866999215252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_128
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 152
+        width: 767
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d1145213e86e1b70800000000000000
+      internalID: 8871643640440820178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_129
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 206
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935e77dbf9756baa0800000000000000
+      internalID: -6145628297910295239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_130
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 206
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9ef75b13d9834ba0800000000000000
+      internalID: -6105885129994404195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_131
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 188
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab13065ceda021c0800000000000000
+      internalID: -4530429994567787612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_132
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 188
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1130a8fa5fdb08370800000000000000
+      internalID: 8322860974290371345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_133
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 185
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de4779f0ee91ff00800000000000000
+      internalID: 1148874069051395793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_134
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 191
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a0e42ca5bd8db6a0800000000000000
+      internalID: -6431828881398505310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_135
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 191
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ae777e8867d34b90800000000000000
+      internalID: -7258721330324341088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_136
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 173
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec1de96cb8070d40800000000000000
+      internalID: 5550414671081446631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_137
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 176
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e28eaf108eb8240800000000000000
+      internalID: 4795181323468156483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_138
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 152
+        width: 101
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cca4b2e29b6a9250800000000000000
+      internalID: 5952188136136420552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_139
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 161
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f3cb42b7dee48380800000000000000
+      internalID: -8969781947638496263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_140
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 161
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4407a8eceaa6f9720800000000000000
+      internalID: 2855117987798216772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_141
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 158
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85a1704b5dbfc60a0800000000000000
+      internalID: -6886852834889360808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_142
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 158
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e410c80d016e8780800000000000000
+      internalID: -8678892723287091995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_143
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 155
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c0506026d03b230800000000000000
+      internalID: 3653278437386554463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_Explosion_144
+      rect:
+        serializedVersion: 2
+        x: 2909
+        y: 149
+        width: 758
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210afec0eafdef220800000000000000
+      internalID: 2521698780008390674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Penguin_Commander_Skill_Grenade_Explosion_0: 1585325500907895289
+      Penguin_Commander_Skill_Grenade_Explosion_1: 1072216655946210227
+      Penguin_Commander_Skill_Grenade_Explosion_10: 6904993901166670675
+      Penguin_Commander_Skill_Grenade_Explosion_100: 7630165381111092782
+      Penguin_Commander_Skill_Grenade_Explosion_101: -7030440371957252456
+      Penguin_Commander_Skill_Grenade_Explosion_102: 6157588478415700792
+      Penguin_Commander_Skill_Grenade_Explosion_103: -2268895916618477424
+      Penguin_Commander_Skill_Grenade_Explosion_104: -5117727427424396620
+      Penguin_Commander_Skill_Grenade_Explosion_105: -2429593956030538104
+      Penguin_Commander_Skill_Grenade_Explosion_106: -8147893192730971181
+      Penguin_Commander_Skill_Grenade_Explosion_107: 7743879389642006244
+      Penguin_Commander_Skill_Grenade_Explosion_108: -303024906958330707
+      Penguin_Commander_Skill_Grenade_Explosion_109: 6458916655831969710
+      Penguin_Commander_Skill_Grenade_Explosion_11: -4218676639940085822
+      Penguin_Commander_Skill_Grenade_Explosion_110: -4884299126482256251
+      Penguin_Commander_Skill_Grenade_Explosion_111: -1458419876090665861
+      Penguin_Commander_Skill_Grenade_Explosion_112: 2210119212628344102
+      Penguin_Commander_Skill_Grenade_Explosion_113: -4226448005761161244
+      Penguin_Commander_Skill_Grenade_Explosion_114: 6500610635711256445
+      Penguin_Commander_Skill_Grenade_Explosion_115: -1338878066259144654
+      Penguin_Commander_Skill_Grenade_Explosion_116: 4422576846425020387
+      Penguin_Commander_Skill_Grenade_Explosion_117: 3209226310886738100
+      Penguin_Commander_Skill_Grenade_Explosion_118: 2769821796316142950
+      Penguin_Commander_Skill_Grenade_Explosion_119: -4694763841024517546
+      Penguin_Commander_Skill_Grenade_Explosion_12: -7369005038208289497
+      Penguin_Commander_Skill_Grenade_Explosion_120: -2457640263179058990
+      Penguin_Commander_Skill_Grenade_Explosion_121: -244799527928220008
+      Penguin_Commander_Skill_Grenade_Explosion_122: -7336311349935155689
+      Penguin_Commander_Skill_Grenade_Explosion_123: -2815029970182939729
+      Penguin_Commander_Skill_Grenade_Explosion_124: -3142098005789916099
+      Penguin_Commander_Skill_Grenade_Explosion_125: 5168485211812922158
+      Penguin_Commander_Skill_Grenade_Explosion_126: 8328722563725438350
+      Penguin_Commander_Skill_Grenade_Explosion_127: -4955745866999215252
+      Penguin_Commander_Skill_Grenade_Explosion_128: 8871643640440820178
+      Penguin_Commander_Skill_Grenade_Explosion_129: -6145628297910295239
+      Penguin_Commander_Skill_Grenade_Explosion_13: -8821949537991272395
+      Penguin_Commander_Skill_Grenade_Explosion_130: -6105885129994404195
+      Penguin_Commander_Skill_Grenade_Explosion_131: -4530429994567787612
+      Penguin_Commander_Skill_Grenade_Explosion_132: 8322860974290371345
+      Penguin_Commander_Skill_Grenade_Explosion_133: 1148874069051395793
+      Penguin_Commander_Skill_Grenade_Explosion_134: -6431828881398505310
+      Penguin_Commander_Skill_Grenade_Explosion_135: -7258721330324341088
+      Penguin_Commander_Skill_Grenade_Explosion_136: 5550414671081446631
+      Penguin_Commander_Skill_Grenade_Explosion_137: 4795181323468156483
+      Penguin_Commander_Skill_Grenade_Explosion_138: 5952188136136420552
+      Penguin_Commander_Skill_Grenade_Explosion_139: -8969781947638496263
+      Penguin_Commander_Skill_Grenade_Explosion_14: -8032527601569370426
+      Penguin_Commander_Skill_Grenade_Explosion_140: 2855117987798216772
+      Penguin_Commander_Skill_Grenade_Explosion_141: -6886852834889360808
+      Penguin_Commander_Skill_Grenade_Explosion_142: -8678892723287091995
+      Penguin_Commander_Skill_Grenade_Explosion_143: 3653278437386554463
+      Penguin_Commander_Skill_Grenade_Explosion_144: 2521698780008390674
+      Penguin_Commander_Skill_Grenade_Explosion_15: -7756466296014626583
+      Penguin_Commander_Skill_Grenade_Explosion_16: 8292855525711876219
+      Penguin_Commander_Skill_Grenade_Explosion_17: -5620687913232957782
+      Penguin_Commander_Skill_Grenade_Explosion_18: -7401937124897512133
+      Penguin_Commander_Skill_Grenade_Explosion_19: -3050890506405339405
+      Penguin_Commander_Skill_Grenade_Explosion_2: 9076406017935280009
+      Penguin_Commander_Skill_Grenade_Explosion_20: 3651881199542958962
+      Penguin_Commander_Skill_Grenade_Explosion_21: -7052294943767989519
+      Penguin_Commander_Skill_Grenade_Explosion_22: -4370162817542636759
+      Penguin_Commander_Skill_Grenade_Explosion_23: 6250306978598231896
+      Penguin_Commander_Skill_Grenade_Explosion_24: 3292731674908862093
+      Penguin_Commander_Skill_Grenade_Explosion_25: -7559507142507462331
+      Penguin_Commander_Skill_Grenade_Explosion_26: 6908552211035530063
+      Penguin_Commander_Skill_Grenade_Explosion_27: -6285963275766091682
+      Penguin_Commander_Skill_Grenade_Explosion_28: 5843833220144631502
+      Penguin_Commander_Skill_Grenade_Explosion_29: -2064114192894146223
+      Penguin_Commander_Skill_Grenade_Explosion_3: 4499759461984031920
+      Penguin_Commander_Skill_Grenade_Explosion_30: -4793753624326429567
+      Penguin_Commander_Skill_Grenade_Explosion_31: 9124317645671921462
+      Penguin_Commander_Skill_Grenade_Explosion_32: 3638332604056870297
+      Penguin_Commander_Skill_Grenade_Explosion_33: 8860509151114384096
+      Penguin_Commander_Skill_Grenade_Explosion_34: 4190329474997884395
+      Penguin_Commander_Skill_Grenade_Explosion_35: 3788255192825185397
+      Penguin_Commander_Skill_Grenade_Explosion_36: 3554848461339090454
+      Penguin_Commander_Skill_Grenade_Explosion_37: 1025324713755454640
+      Penguin_Commander_Skill_Grenade_Explosion_38: -5085953801793973983
+      Penguin_Commander_Skill_Grenade_Explosion_39: 7154754939318620005
+      Penguin_Commander_Skill_Grenade_Explosion_4: -3785230155938047788
+      Penguin_Commander_Skill_Grenade_Explosion_40: -5185645349710151502
+      Penguin_Commander_Skill_Grenade_Explosion_41: 1046697995277462551
+      Penguin_Commander_Skill_Grenade_Explosion_42: 1466905607093143775
+      Penguin_Commander_Skill_Grenade_Explosion_43: -8403690142724740729
+      Penguin_Commander_Skill_Grenade_Explosion_44: 935649482543023042
+      Penguin_Commander_Skill_Grenade_Explosion_45: 7760039538245409750
+      Penguin_Commander_Skill_Grenade_Explosion_46: -7918944409580531663
+      Penguin_Commander_Skill_Grenade_Explosion_47: -6232252241966904703
+      Penguin_Commander_Skill_Grenade_Explosion_48: 7871774914005517286
+      Penguin_Commander_Skill_Grenade_Explosion_49: -526383053001621356
+      Penguin_Commander_Skill_Grenade_Explosion_5: 4727604793081722141
+      Penguin_Commander_Skill_Grenade_Explosion_50: 5827095766124735748
+      Penguin_Commander_Skill_Grenade_Explosion_51: -9215107822914444259
+      Penguin_Commander_Skill_Grenade_Explosion_52: -9217580497680611024
+      Penguin_Commander_Skill_Grenade_Explosion_53: -6406002247022300570
+      Penguin_Commander_Skill_Grenade_Explosion_54: -6819939609346102675
+      Penguin_Commander_Skill_Grenade_Explosion_55: -7538180838437800929
+      Penguin_Commander_Skill_Grenade_Explosion_56: 2516471919607766064
+      Penguin_Commander_Skill_Grenade_Explosion_57: 6714751896288664524
+      Penguin_Commander_Skill_Grenade_Explosion_58: -742372740078540403
+      Penguin_Commander_Skill_Grenade_Explosion_59: -3348101976576998450
+      Penguin_Commander_Skill_Grenade_Explosion_6: 85678293321612079
+      Penguin_Commander_Skill_Grenade_Explosion_60: 6216613112716769952
+      Penguin_Commander_Skill_Grenade_Explosion_61: 5343219324866454030
+      Penguin_Commander_Skill_Grenade_Explosion_62: -3886459360758814592
+      Penguin_Commander_Skill_Grenade_Explosion_63: 277110423827579814
+      Penguin_Commander_Skill_Grenade_Explosion_64: -3136064324127321360
+      Penguin_Commander_Skill_Grenade_Explosion_65: 5550504193881622016
+      Penguin_Commander_Skill_Grenade_Explosion_66: -1603752517726489058
+      Penguin_Commander_Skill_Grenade_Explosion_67: 2089851540763021378
+      Penguin_Commander_Skill_Grenade_Explosion_68: 3962944528939422596
+      Penguin_Commander_Skill_Grenade_Explosion_69: -8229061636688389637
+      Penguin_Commander_Skill_Grenade_Explosion_7: -8799061683468647978
+      Penguin_Commander_Skill_Grenade_Explosion_70: -2929809163743618850
+      Penguin_Commander_Skill_Grenade_Explosion_71: 8118406272973837190
+      Penguin_Commander_Skill_Grenade_Explosion_72: 6418527560755485776
+      Penguin_Commander_Skill_Grenade_Explosion_73: 2611613667800101978
+      Penguin_Commander_Skill_Grenade_Explosion_74: 8005837214305882809
+      Penguin_Commander_Skill_Grenade_Explosion_75: -1647082241719360383
+      Penguin_Commander_Skill_Grenade_Explosion_76: -4465139470400963945
+      Penguin_Commander_Skill_Grenade_Explosion_77: -3476140909780405512
+      Penguin_Commander_Skill_Grenade_Explosion_78: 7691599024555660124
+      Penguin_Commander_Skill_Grenade_Explosion_79: -4564771351805927007
+      Penguin_Commander_Skill_Grenade_Explosion_8: -2398233852179494669
+      Penguin_Commander_Skill_Grenade_Explosion_80: 5872965371072649856
+      Penguin_Commander_Skill_Grenade_Explosion_81: 5768645572884399205
+      Penguin_Commander_Skill_Grenade_Explosion_82: 4110440548419836422
+      Penguin_Commander_Skill_Grenade_Explosion_83: -178465795160763427
+      Penguin_Commander_Skill_Grenade_Explosion_84: 3163433330456304602
+      Penguin_Commander_Skill_Grenade_Explosion_85: 8711695865166538683
+      Penguin_Commander_Skill_Grenade_Explosion_86: 6520001490496002539
+      Penguin_Commander_Skill_Grenade_Explosion_87: 2236375069539299241
+      Penguin_Commander_Skill_Grenade_Explosion_88: 7369986232057410277
+      Penguin_Commander_Skill_Grenade_Explosion_89: -6932334567089119940
+      Penguin_Commander_Skill_Grenade_Explosion_9: 4623375132986962236
+      Penguin_Commander_Skill_Grenade_Explosion_90: 6160236841834685884
+      Penguin_Commander_Skill_Grenade_Explosion_91: 1088343000413479762
+      Penguin_Commander_Skill_Grenade_Explosion_92: 7369833184757350478
+      Penguin_Commander_Skill_Grenade_Explosion_93: -3942136734151298542
+      Penguin_Commander_Skill_Grenade_Explosion_94: -3119509520311927449
+      Penguin_Commander_Skill_Grenade_Explosion_95: 2270339034702792656
+      Penguin_Commander_Skill_Grenade_Explosion_96: -1132137398207354424
+      Penguin_Commander_Skill_Grenade_Explosion_97: -1419682097248539159
+      Penguin_Commander_Skill_Grenade_Explosion_98: 8711786986584307813
+      Penguin_Commander_Skill_Grenade_Explosion_99: 2440412120669721490
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1079 @@
+fileFormatVersion: 2
+guid: 49f9f5ce2b601a74781ba02e46750147
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6831715883918203780
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_0
+  - first:
+      213: -3441118724604349087
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_1
+  - first:
+      213: -3279574308552154688
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_2
+  - first:
+      213: 9102074552743530528
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_3
+  - first:
+      213: 2968134710186215836
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_4
+  - first:
+      213: 7643918089687253865
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_5
+  - first:
+      213: 2976977677547730062
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_6
+  - first:
+      213: 3245059995363791927
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_7
+  - first:
+      213: 6899811426064678426
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_8
+  - first:
+      213: 5406071756303903169
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_9
+  - first:
+      213: -2073906376459888363
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_10
+  - first:
+      213: 3919114150654628445
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_11
+  - first:
+      213: 502127439508670370
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_12
+  - first:
+      213: -4923093765857488496
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_13
+  - first:
+      213: 3967774265387855719
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_14
+  - first:
+      213: -5061167930233403375
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_15
+  - first:
+      213: 2273468015167960769
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_16
+  - first:
+      213: 5807946483492359786
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_17
+  - first:
+      213: 947859697898647946
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_18
+  - first:
+      213: -2774913417464692115
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_19
+  - first:
+      213: 5705600696974692912
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_20
+  - first:
+      213: -6157631861606535704
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_21
+  - first:
+      213: 2243615394721014902
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_22
+  - first:
+      213: -3645873892879379637
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_23
+  - first:
+      213: -4935974078756031325
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_24
+  - first:
+      213: 3821386069451615986
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_25
+  - first:
+      213: -2455073708377686209
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_26
+  - first:
+      213: -952307882963721391
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_27
+  - first:
+      213: -2328958275688840879
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_28
+  - first:
+      213: 8247877967656711315
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_29
+  - first:
+      213: 6466261457129707969
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_30
+  - first:
+      213: 5211974911622162628
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_31
+  - first:
+      213: -8254932373633100766
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_32
+  - first:
+      213: 3739179178750365978
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_33
+  - first:
+      213: 8625292227892646172
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_34
+  - first:
+      213: 8570820271229958604
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_35
+  - first:
+      213: 2153834945427390906
+    second: Penguin_Commander_Skill_ChargeShot_Explosion_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 191
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7469ac799ed031a0800000000000000
+      internalID: -6831715883918203780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 56
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 165330670c0be30d0800000000000000
+      internalID: -3441118724604349087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 143
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c16044da8c9c72d0800000000000000
+      internalID: -3279574308552154688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 143
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0209663b490115e70800000000000000
+      internalID: 9102074552743530528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 137
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9908260bcee03920800000000000000
+      internalID: 2968134710186215836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 131
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 963cdfbd007a41a60800000000000000
+      internalID: 7643918089687253865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 149
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e84ff7ecc69505920800000000000000
+      internalID: 2976977677547730062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 134
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7345d7a6fd4c80d20800000000000000
+      internalID: 3245059995363791927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 101
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e34cb6fed01cf50800000000000000
+      internalID: 6899811426064678426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_9
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 143
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c924c8ae99360b40800000000000000
+      internalID: 5406071756303903169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_10
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 68
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519d0bd73210833e0800000000000000
+      internalID: -2073906376459888363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_11
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 134
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52d9ff3e8d736630800000000000000
+      internalID: 3919114150654628445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_12
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 119
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a704efee3ae7f600800000000000000
+      internalID: 502127439508670370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_13
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 131
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 091df1abd48adabb0800000000000000
+      internalID: -4923093765857488496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_14
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 128
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f21651cad501730800000000000000
+      internalID: 3967774265387855719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_15
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 104
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 118c6d9259e13c9b0800000000000000
+      internalID: -5061167930233403375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_16
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 125
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c67c4c4d1bfc8f10800000000000000
+      internalID: 2273468015167960769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_17
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 101
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e8a0f0e88f99050800000000000000
+      internalID: 5807946483492359786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_18
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 110
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a81782e8f59772d00800000000000000
+      internalID: 947859697898647946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_19
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 92
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d624d8de2f68d79d0800000000000000
+      internalID: -2774913417464692115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_20
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 89
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032d565ba9d5e2f40800000000000000
+      internalID: 5705600696974692912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_21
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 80
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eda0574272bb8aa0800000000000000
+      internalID: -6157631861606535704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_22
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 83
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 674a1f6705ce22f10800000000000000
+      internalID: 2243615394721014902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_23
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 86
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43dd07d201476dc0800000000000000
+      internalID: -3645873892879379637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_24
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 80
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4f53f2ab5ef7bb0800000000000000
+      internalID: -4935974078756031325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_25
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 74
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fe2a43326a480530800000000000000
+      internalID: 3821386069451615986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_26
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 56
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f3fb24873ddedd0800000000000000
+      internalID: -2455073708377686209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_27
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 74
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 153a427a609b8c2f0800000000000000
+      internalID: -952307882963721391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_28
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 71
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1514cd0a9c0edafd0800000000000000
+      internalID: -2328958275688840879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_29
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 68
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 394f2fcff49567270800000000000000
+      internalID: 8247877967656711315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_30
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 50
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c914091986ccb950800000000000000
+      internalID: 6466261457129707969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_31
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 59
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8ac716197a45840800000000000000
+      internalID: 5211974911622162628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_32
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 65
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2241ab02eb6907d80800000000000000
+      internalID: -8254932373633100766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_33
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 53
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a11d3fce6ab34e330800000000000000
+      internalID: 3739179178750365978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_34
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 62
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c119a7f159133b770800000000000000
+      internalID: 8625292227892646172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_35
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 53
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9f06460aba1f670800000000000000
+      internalID: 8570820271229958604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_ChargeShot_Explosion_36
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 53
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab1c50ba875f3ed10800000000000000
+      internalID: 2153834945427390906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Penguin_Commander_Skill_ChargeShot_Explosion_0: -6831715883918203780
+      Penguin_Commander_Skill_ChargeShot_Explosion_1: -3441118724604349087
+      Penguin_Commander_Skill_ChargeShot_Explosion_10: -2073906376459888363
+      Penguin_Commander_Skill_ChargeShot_Explosion_11: 3919114150654628445
+      Penguin_Commander_Skill_ChargeShot_Explosion_12: 502127439508670370
+      Penguin_Commander_Skill_ChargeShot_Explosion_13: -4923093765857488496
+      Penguin_Commander_Skill_ChargeShot_Explosion_14: 3967774265387855719
+      Penguin_Commander_Skill_ChargeShot_Explosion_15: -5061167930233403375
+      Penguin_Commander_Skill_ChargeShot_Explosion_16: 2273468015167960769
+      Penguin_Commander_Skill_ChargeShot_Explosion_17: 5807946483492359786
+      Penguin_Commander_Skill_ChargeShot_Explosion_18: 947859697898647946
+      Penguin_Commander_Skill_ChargeShot_Explosion_19: -2774913417464692115
+      Penguin_Commander_Skill_ChargeShot_Explosion_2: -3279574308552154688
+      Penguin_Commander_Skill_ChargeShot_Explosion_20: 5705600696974692912
+      Penguin_Commander_Skill_ChargeShot_Explosion_21: -6157631861606535704
+      Penguin_Commander_Skill_ChargeShot_Explosion_22: 2243615394721014902
+      Penguin_Commander_Skill_ChargeShot_Explosion_23: -3645873892879379637
+      Penguin_Commander_Skill_ChargeShot_Explosion_24: -4935974078756031325
+      Penguin_Commander_Skill_ChargeShot_Explosion_25: 3821386069451615986
+      Penguin_Commander_Skill_ChargeShot_Explosion_26: -2455073708377686209
+      Penguin_Commander_Skill_ChargeShot_Explosion_27: -952307882963721391
+      Penguin_Commander_Skill_ChargeShot_Explosion_28: -2328958275688840879
+      Penguin_Commander_Skill_ChargeShot_Explosion_29: 8247877967656711315
+      Penguin_Commander_Skill_ChargeShot_Explosion_3: 9102074552743530528
+      Penguin_Commander_Skill_ChargeShot_Explosion_30: 6466261457129707969
+      Penguin_Commander_Skill_ChargeShot_Explosion_31: 5211974911622162628
+      Penguin_Commander_Skill_ChargeShot_Explosion_32: -8254932373633100766
+      Penguin_Commander_Skill_ChargeShot_Explosion_33: 3739179178750365978
+      Penguin_Commander_Skill_ChargeShot_Explosion_34: 8625292227892646172
+      Penguin_Commander_Skill_ChargeShot_Explosion_35: 8570820271229958604
+      Penguin_Commander_Skill_ChargeShot_Explosion_36: 2153834945427390906
+      Penguin_Commander_Skill_ChargeShot_Explosion_4: 2968134710186215836
+      Penguin_Commander_Skill_ChargeShot_Explosion_5: 7643918089687253865
+      Penguin_Commander_Skill_ChargeShot_Explosion_6: 2976977677547730062
+      Penguin_Commander_Skill_ChargeShot_Explosion_7: 3245059995363791927
+      Penguin_Commander_Skill_ChargeShot_Explosion_8: 6899811426064678426
+      Penguin_Commander_Skill_ChargeShot_Explosion_9: 5406071756303903169
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

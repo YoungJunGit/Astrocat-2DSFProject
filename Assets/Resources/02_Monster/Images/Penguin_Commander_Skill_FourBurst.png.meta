@@ -1,94 +1,88 @@
 fileFormatVersion: 2
-guid: 65e9fc631a434484bbf53256b221b66e
+guid: f545ca6add46bb7409c5fcee002295dd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4848222620636221413
-    second: recovery_effect_0
+      213: -6421875901189680691
+    second: Penguin_Commander_Skill_FourBurst_0
   - first:
-      213: 2648452897975274386
-    second: recovery_effect_1
+      213: -6648875083345480998
+    second: Penguin_Commander_Skill_FourBurst_1
   - first:
-      213: -2472528801676048645
-    second: recovery_effect_2
+      213: 6898427274238308487
+    second: Penguin_Commander_Skill_FourBurst_2
   - first:
-      213: 1594750156777926181
-    second: recovery_effect_3
+      213: -8909001951809100044
+    second: Penguin_Commander_Skill_FourBurst_3
   - first:
-      213: -8818435352138196294
-    second: recovery_effect_4
+      213: -4983508713714373274
+    second: Penguin_Commander_Skill_FourBurst_4
   - first:
-      213: 249560376844079614
-    second: recovery_effect_5
+      213: 2187214308239383111
+    second: Penguin_Commander_Skill_FourBurst_5
   - first:
-      213: 348428020059544211
-    second: recovery_effect_6
+      213: 4787817490011662708
+    second: Penguin_Commander_Skill_FourBurst_6
   - first:
-      213: -5036965138370316552
-    second: recovery_effect_7
+      213: -8676480986251421032
+    second: Penguin_Commander_Skill_FourBurst_7
   - first:
-      213: -1830367166942874883
-    second: recovery_effect_8
+      213: -1450454278108760541
+    second: Penguin_Commander_Skill_FourBurst_8
   - first:
-      213: -4643923538617268552
-    second: recovery_effect_9
+      213: -5134260412173444316
+    second: Penguin_Commander_Skill_FourBurst_9
   - first:
-      213: -2197586695929355331
-    second: recovery_effect_10
+      213: -5774268551315929677
+    second: Penguin_Commander_Skill_FourBurst_10
   - first:
-      213: -7120840339050192034
-    second: recovery_effect_11
+      213: -909630002046556912
+    second: Penguin_Commander_Skill_FourBurst_11
   - first:
-      213: -8196078993170968254
-    second: recovery_effect_12
+      213: 6820635180266104755
+    second: Penguin_Commander_Skill_FourBurst_12
   - first:
-      213: 9179435457625614873
-    second: recovery_effect_13
+      213: -7312581978667689947
+    second: Penguin_Commander_Skill_FourBurst_13
   - first:
-      213: 5591077809234354134
-    second: recovery_effect_14
+      213: 628789376238349833
+    second: Penguin_Commander_Skill_FourBurst_14
   - first:
-      213: -1987906765394200543
-    second: recovery_effect_15
+      213: 2393422415443627240
+    second: Penguin_Commander_Skill_FourBurst_15
   - first:
-      213: 4238916278206180421
-    second: recovery_effect_16
+      213: -8338061165907315971
+    second: Penguin_Commander_Skill_FourBurst_16
   - first:
-      213: -5229844086006198368
-    second: recovery_effect_17
+      213: -1343002668933732572
+    second: Penguin_Commander_Skill_FourBurst_17
   - first:
-      213: 6246973641665898487
-    second: recovery_effect_18
+      213: 997616379924545527
+    second: Penguin_Commander_Skill_FourBurst_18
   - first:
-      213: -4544764762663725108
-    second: recovery_effect_19
+      213: -1599147186721032826
+    second: Penguin_Commander_Skill_FourBurst_19
   - first:
-      213: 4814436674238679407
-    second: recovery_effect_20
+      213: -3643300319325565121
+    second: Penguin_Commander_Skill_FourBurst_20
   - first:
-      213: 4229409409019700805
-    second: recovery_effect_21
+      213: 6379714756093550734
+    second: Penguin_Commander_Skill_FourBurst_21
   - first:
-      213: -8042347307670153279
-    second: recovery_effect_22
+      213: 6417522578472083565
+    second: Penguin_Commander_Skill_FourBurst_22
   - first:
-      213: 4847976689931371186
-    second: recovery_effect_23
+      213: -8996183501838257966
+    second: Penguin_Commander_Skill_FourBurst_23
   - first:
-      213: -3160814808847091821
-    second: recovery_effect_24
+      213: -4800183655857151006
+    second: Penguin_Commander_Skill_FourBurst_24
   - first:
-      213: 5566911654885991453
-    second: recovery_effect_25
+      213: 5343932608589011750
+    second: Penguin_Commander_Skill_FourBurst_25
   - first:
-      213: -5353643191956252324
-    second: recovery_effect_26
-  - first:
-      213: -4407040884560808621
-    second: recovery_effect_27
-  - first:
-      213: 2506586205756043658
-    second: recovery_effect_28
+      213: 1402258969886642546
+    second: Penguin_Commander_Skill_FourBurst_26
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,7 +115,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -159,7 +153,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -184,639 +178,595 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: recovery_effect_single_0
+      name: Penguin_Commander_Skill_FourBurst_0
       rect:
         serializedVersion: 2
-        x: 504
-        y: 72
-        width: 33
-        height: 39
+        x: 38
+        y: 974
+        width: 125
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1c9891826fcd0024384547cdb7668130
-      internalID: 965493559
+      spriteID: dc192f574e9e0e6a0800000000000000
+      internalID: -6421875901189680691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_1
+      name: Penguin_Commander_Skill_FourBurst_1
       rect:
         serializedVersion: 2
-        x: 576
-        y: 75
-        width: 45
-        height: 57
+        x: 338
+        y: 974
+        width: 125
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f1d6d3b8ad679d74d84cfdb98003dcd6
-      internalID: 1665764560
+      spriteID: ad23f35c6537ab3a0800000000000000
+      internalID: -6648875083345480998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_2
+      name: Penguin_Commander_Skill_FourBurst_2
       rect:
         serializedVersion: 2
-        x: 639
-        y: 99
-        width: 45
-        height: 57
+        x: 638
+        y: 974
+        width: 131
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b8ead55d4cc0e46449b8a2ecdf598706
-      internalID: -1896783774
+      spriteID: 78037d57e032cbf50800000000000000
+      internalID: 6898427274238308487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_3
+      name: Penguin_Commander_Skill_FourBurst_3
       rect:
         serializedVersion: 2
-        x: 675
-        y: 60
-        width: 45
-        height: 57
+        x: 938
+        y: 974
+        width: 149
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5c0fd5b05d2b8534cac4be5965b005c6
-      internalID: 1954763678
+      spriteID: 4f6282f3deddc5480800000000000000
+      internalID: -8909001951809100044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_4
+      name: Penguin_Commander_Skill_FourBurst_4
       rect:
         serializedVersion: 2
-        x: 756
-        y: 63
-        width: 45
-        height: 57
+        x: 32
+        y: 674
+        width: 125
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 529a7f258e5bc72439cb7610d904e2ab
-      internalID: 100042547
+      spriteID: 66dadf78a3507dab0800000000000000
+      internalID: -4983508713714373274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_5
+      name: Penguin_Commander_Skill_FourBurst_5
       rect:
         serializedVersion: 2
-        x: 888
-        y: 66
-        width: 33
-        height: 39
+        x: 161
+        y: 704
+        width: 80
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7e4c393441a72214b8507a9c76a2934b
-      internalID: -380829649
+      spriteID: 74a924233db8a5e10800000000000000
+      internalID: 2187214308239383111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_6
+      name: Penguin_Commander_Skill_FourBurst_6
       rect:
         serializedVersion: 2
-        x: 948
-        y: 99
-        width: 45
-        height: 57
+        x: 335
+        y: 674
+        width: 149
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7950c905426cd6c4f96acfcb1a43511b
-      internalID: 1336809357
+      spriteID: 4792c85e3aeb17240800000000000000
+      internalID: 4787817490011662708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_7
+      name: Penguin_Commander_Skill_FourBurst_7
       rect:
         serializedVersion: 2
-        x: 1023
-        y: 105
-        width: 45
-        height: 57
+        x: 479
+        y: 767
+        width: 11
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 52ad312061bda2b4eb47c8bfb5774f43
-      internalID: -1235490454
+      spriteID: 89a9d025382f69780800000000000000
+      internalID: -8676480986251421032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_8
+      name: Penguin_Commander_Skill_FourBurst_8
       rect:
         serializedVersion: 2
-        x: 1077
-        y: 84
-        width: 45
-        height: 57
+        x: 632
+        y: 674
+        width: 128
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ab2a0be2063493342b846e8ae0e06dfa
-      internalID: -1338761610
+      spriteID: 326b166d483fedbe0800000000000000
+      internalID: -1450454278108760541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_9
+      name: Penguin_Commander_Skill_FourBurst_9
       rect:
         serializedVersion: 2
-        x: 366
-        y: 51
-        width: 18
-        height: 21
+        x: 761
+        y: 698
+        width: 107
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3d811a77da690cb4695abe5d9279f12f
-      internalID: -2030534563
+      spriteID: 42b1d0c8b517fb8b0800000000000000
+      internalID: -5134260412173444316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_10
+      name: Penguin_Commander_Skill_FourBurst_10
       rect:
         serializedVersion: 2
-        x: 441
-        y: 45
-        width: 33
-        height: 39
+        x: 935
+        y: 674
+        width: 149
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 49419d1cd6bc3a64c942f217da374d85
-      internalID: -1478074088
+      spriteID: 3b5ca11985daddfa0800000000000000
+      internalID: -5774268551315929677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_11
+      name: Penguin_Commander_Skill_FourBurst_11
       rect:
         serializedVersion: 2
-        x: 537
-        y: 36
-        width: 33
-        height: 39
+        x: 1079
+        y: 767
+        width: 11
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e5ea64b653785994dbd957c8d8082d66
-      internalID: 317531631
+      spriteID: 0152af225585063f0800000000000000
+      internalID: -909630002046556912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_12
+      name: Penguin_Commander_Skill_FourBurst_12
       rect:
         serializedVersion: 2
-        x: 615
-        y: 42
-        width: 33
-        height: 39
+        x: 482
+        y: 698
+        width: 53
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 23f16b2c7870e96468eefd68605d5a3f
-      internalID: 1117907301
+      spriteID: 3b72b462f83c7ae50800000000000000
+      internalID: 6820635180266104755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_13
+      name: Penguin_Commander_Skill_FourBurst_13
       rect:
         serializedVersion: 2
-        x: 672
-        y: 30
-        width: 18
-        height: 21
+        x: 1082
+        y: 698
+        width: 53
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3b725a287fa7f1445ae60e1bfe4b58f8
-      internalID: -975693842
+      spriteID: 528d6922f6d748a90800000000000000
+      internalID: -7312581978667689947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_14
+      name: Penguin_Commander_Skill_FourBurst_14
       rect:
         serializedVersion: 2
-        x: 807
-        y: 51
-        width: 33
-        height: 39
+        x: 32
+        y: 374
+        width: 128
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f51720bbf69527d498eba5d0ccb52344
-      internalID: 422515085
+      spriteID: 90ee9313b98e9b800800000000000000
+      internalID: 628789376238349833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_15
+      name: Penguin_Commander_Skill_FourBurst_15
       rect:
         serializedVersion: 2
-        x: 936
-        y: 48
-        width: 33
-        height: 39
+        x: 161
+        y: 398
+        width: 107
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 50890b50290ad7b4e9f5b7a9423e9ee7
-      internalID: -290162511
+      spriteID: 8ec89f58105273120800000000000000
+      internalID: 2393422415443627240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_16
+      name: Penguin_Commander_Skill_FourBurst_16
       rect:
         serializedVersion: 2
-        x: 222
-        y: 27
-        width: 18
-        height: 21
+        x: 335
+        y: 374
+        width: 149
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 313666d80c39597458bea454e7add4ee
-      internalID: -1034880120
+      spriteID: df27d9aeb81494c80800000000000000
+      internalID: -8338061165907315971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_17
+      name: Penguin_Commander_Skill_FourBurst_17
       rect:
         serializedVersion: 2
-        x: 306
-        y: 24
-        width: 18
-        height: 21
+        x: 479
+        y: 467
+        width: 11
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fe10626a8646c75488a7fde3df664b20
-      internalID: -2101472282
+      spriteID: 427adc92032bc5de0800000000000000
+      internalID: -1343002668933732572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_18
+      name: Penguin_Commander_Skill_FourBurst_18
       rect:
         serializedVersion: 2
-        x: 399
-        y: 24
-        width: 18
-        height: 21
+        x: 632
+        y: 374
+        width: 128
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7b62cac6d92815c489eb578a765082d1
-      internalID: 1374212201
+      spriteID: 7ff738bdfce38dd00800000000000000
+      internalID: 997616379924545527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_19
+      name: Penguin_Commander_Skill_FourBurst_19
       rect:
         serializedVersion: 2
-        x: 480
-        y: 21
-        width: 18
-        height: 21
+        x: 761
+        y: 398
+        width: 107
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 63ea664ec68474f4d9fae1bc5655bd66
-      internalID: 1225661230
+      spriteID: 6857de73b10bec9e0800000000000000
+      internalID: -1599147186721032826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_20
+      name: Penguin_Commander_Skill_FourBurst_20
       rect:
         serializedVersion: 2
-        x: 609
-        y: 9
-        width: 18
-        height: 21
+        x: 935
+        y: 374
+        width: 131
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0c48452b1569efa4cae5ab6bed7716bb
-      internalID: -393700381
+      spriteID: f3f4880a9a5607dc0800000000000000
+      internalID: -3643300319325565121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_21
+      name: Penguin_Commander_Skill_FourBurst_21
       rect:
         serializedVersion: 2
-        x: 753
-        y: 24
-        width: 18
-        height: 21
+        x: 1079
+        y: 467
+        width: 11
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9f0a474e562ae444babd857a20d5b0f6
-      internalID: 1737136493
+      spriteID: e80264df4cc498850800000000000000
+      internalID: 6379714756093550734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_22
+      name: Penguin_Commander_Skill_FourBurst_22
       rect:
         serializedVersion: 2
-        x: 798
-        y: 9
-        width: 18
-        height: 21
+        x: 482
+        y: 398
+        width: 53
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0079500eea07a844d97ff274a0fdcf3e
-      internalID: 220515397
+      spriteID: d60a0eb98ce9f0950800000000000000
+      internalID: 6417522578472083565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_23
+      name: Penguin_Commander_Skill_FourBurst_23
       rect:
         serializedVersion: 2
-        x: 78
-        y: 0
-        width: 18
-        height: 15
+        x: 1082
+        y: 398
+        width: 53
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0785235f3b90e974888b3ce2dca13e8f
-      internalID: -1942619602
+      spriteID: 2d073b6d4c2272380800000000000000
+      internalID: -8996183501838257966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_24
+      name: Penguin_Commander_Skill_FourBurst_24
       rect:
         serializedVersion: 2
-        x: 162
-        y: 9
-        width: 18
-        height: 12
+        x: 38
+        y: 74
+        width: 152
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1156a34e6ddbd2e488b262011771d221
-      internalID: 151902122
+      spriteID: 2e3afffb562526db0800000000000000
+      internalID: -4800183655857151006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_25
+      name: Penguin_Commander_Skill_FourBurst_25
       rect:
         serializedVersion: 2
-        x: 255
-        y: 9
-        width: 18
-        height: 12
+        x: 221
+        y: 74
+        width: 242
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4fc811c09e6426747a9c7001ee5685ec
-      internalID: 824949080
+      spriteID: 62b1396e466792a40800000000000000
+      internalID: 5343932608589011750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: recovery_effect_single_26
+      name: Penguin_Commander_Skill_FourBurst_26
       rect:
         serializedVersion: 2
-        x: 336
-        y: 3
-        width: 18
-        height: 15
+        x: 638
+        y: 74
+        width: 125
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ed40b9c1446682f4e996718a105bdac5
-      internalID: -490119755
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: recovery_effect_single_27
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 0
-        width: 18
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7f75f103351591478b2b1d522a2db57
-      internalID: 1465203769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: recovery_effect_single_28
-      rect:
-        serializedVersion: 2
-        x: 654
-        y: 0
-        width: 18
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7068bef403b33344ca7e6a22c7a48193
-      internalID: 490403867
+      spriteID: 271d2378a13d57310800000000000000
+      internalID: 1402258969886642546
       vertices: []
       indices: 
       edges: []
@@ -825,7 +775,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cdbe8ee033174d24bb6a72bc2e95601a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -833,39 +783,35 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":78.0,"y":24.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      recovery_effect_single_0: 965493559
-      recovery_effect_single_1: 1665764560
-      recovery_effect_single_10: -1478074088
-      recovery_effect_single_11: 317531631
-      recovery_effect_single_12: 1117907301
-      recovery_effect_single_13: -975693842
-      recovery_effect_single_14: 422515085
-      recovery_effect_single_15: -290162511
-      recovery_effect_single_16: -1034880120
-      recovery_effect_single_17: -2101472282
-      recovery_effect_single_18: 1374212201
-      recovery_effect_single_19: 1225661230
-      recovery_effect_single_2: -1896783774
-      recovery_effect_single_20: -393700381
-      recovery_effect_single_21: 1737136493
-      recovery_effect_single_22: 220515397
-      recovery_effect_single_23: -1942619602
-      recovery_effect_single_24: 151902122
-      recovery_effect_single_25: 824949080
-      recovery_effect_single_26: -490119755
-      recovery_effect_single_27: 1465203769
-      recovery_effect_single_28: 490403867
-      recovery_effect_single_3: 1954763678
-      recovery_effect_single_4: 100042547
-      recovery_effect_single_5: -380829649
-      recovery_effect_single_6: 1336809357
-      recovery_effect_single_7: -1235490454
-      recovery_effect_single_8: -1338761610
-      recovery_effect_single_9: -2030534563
+      Penguin_Commander_Skill_FourBurst_0: -6421875901189680691
+      Penguin_Commander_Skill_FourBurst_1: -6648875083345480998
+      Penguin_Commander_Skill_FourBurst_10: -5774268551315929677
+      Penguin_Commander_Skill_FourBurst_11: -909630002046556912
+      Penguin_Commander_Skill_FourBurst_12: 6820635180266104755
+      Penguin_Commander_Skill_FourBurst_13: -7312581978667689947
+      Penguin_Commander_Skill_FourBurst_14: 628789376238349833
+      Penguin_Commander_Skill_FourBurst_15: 2393422415443627240
+      Penguin_Commander_Skill_FourBurst_16: -8338061165907315971
+      Penguin_Commander_Skill_FourBurst_17: -1343002668933732572
+      Penguin_Commander_Skill_FourBurst_18: 997616379924545527
+      Penguin_Commander_Skill_FourBurst_19: -1599147186721032826
+      Penguin_Commander_Skill_FourBurst_2: 6898427274238308487
+      Penguin_Commander_Skill_FourBurst_20: -3643300319325565121
+      Penguin_Commander_Skill_FourBurst_21: 6379714756093550734
+      Penguin_Commander_Skill_FourBurst_22: 6417522578472083565
+      Penguin_Commander_Skill_FourBurst_23: -8996183501838257966
+      Penguin_Commander_Skill_FourBurst_24: -4800183655857151006
+      Penguin_Commander_Skill_FourBurst_25: 5343932608589011750
+      Penguin_Commander_Skill_FourBurst_26: 1402258969886642546
+      Penguin_Commander_Skill_FourBurst_3: -8909001951809100044
+      Penguin_Commander_Skill_FourBurst_4: -4983508713714373274
+      Penguin_Commander_Skill_FourBurst_5: 2187214308239383111
+      Penguin_Commander_Skill_FourBurst_6: 4787817490011662708
+      Penguin_Commander_Skill_FourBurst_7: -8676480986251421032
+      Penguin_Commander_Skill_FourBurst_8: -1450454278108760541
+      Penguin_Commander_Skill_FourBurst_9: -5134260412173444316
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

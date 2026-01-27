@@ -1,0 +1,1391 @@
+fileFormatVersion: 2
+guid: 152fc55159759ed47954ec11b5d63e1b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4864359863355675748
+    second: sniper_Common_Attack_Explosion_0
+  - first:
+      213: 4109016856923370648
+    second: sniper_Common_Attack_Explosion_1
+  - first:
+      213: 1125395258585097799
+    second: sniper_Common_Attack_Explosion_2
+  - first:
+      213: -3153387511116912569
+    second: sniper_Common_Attack_Explosion_3
+  - first:
+      213: 4751081542094270431
+    second: sniper_Common_Attack_Explosion_4
+  - first:
+      213: -6627866682965988412
+    second: sniper_Common_Attack_Explosion_5
+  - first:
+      213: -1279531193264466220
+    second: sniper_Common_Attack_Explosion_6
+  - first:
+      213: 9163965991438843054
+    second: sniper_Common_Attack_Explosion_7
+  - first:
+      213: 1901402190916300122
+    second: sniper_Common_Attack_Explosion_8
+  - first:
+      213: 4151869697485847213
+    second: sniper_Common_Attack_Explosion_9
+  - first:
+      213: 3984849712670473798
+    second: sniper_Common_Attack_Explosion_10
+  - first:
+      213: 2119604898291378171
+    second: sniper_Common_Attack_Explosion_11
+  - first:
+      213: 400444740552486686
+    second: sniper_Common_Attack_Explosion_12
+  - first:
+      213: 5956519470974425280
+    second: sniper_Common_Attack_Explosion_13
+  - first:
+      213: 12443556152900658
+    second: sniper_Common_Attack_Explosion_14
+  - first:
+      213: 2179299102857800039
+    second: sniper_Common_Attack_Explosion_15
+  - first:
+      213: -7497563073535852185
+    second: sniper_Common_Attack_Explosion_16
+  - first:
+      213: -6745943495267748837
+    second: sniper_Common_Attack_Explosion_17
+  - first:
+      213: -4781474954253092193
+    second: sniper_Common_Attack_Explosion_18
+  - first:
+      213: 8468499080440748823
+    second: sniper_Common_Attack_Explosion_19
+  - first:
+      213: 2415351186309351293
+    second: sniper_Common_Attack_Explosion_20
+  - first:
+      213: 743420993174409905
+    second: sniper_Common_Attack_Explosion_21
+  - first:
+      213: 6043139323640517801
+    second: sniper_Common_Attack_Explosion_22
+  - first:
+      213: 1297373499463123173
+    second: sniper_Common_Attack_Explosion_23
+  - first:
+      213: 546402356180083627
+    second: sniper_Common_Attack_Explosion_24
+  - first:
+      213: 1266152647191096126
+    second: sniper_Common_Attack_Explosion_25
+  - first:
+      213: -1987855254703298138
+    second: sniper_Common_Attack_Explosion_26
+  - first:
+      213: 6767467926567095123
+    second: sniper_Common_Attack_Explosion_27
+  - first:
+      213: -1040104402317766024
+    second: sniper_Common_Attack_Explosion_28
+  - first:
+      213: 4298626567424760524
+    second: sniper_Common_Attack_Explosion_29
+  - first:
+      213: 7479501341862063031
+    second: sniper_Common_Attack_Explosion_30
+  - first:
+      213: -1595533586288134306
+    second: sniper_Common_Attack_Explosion_31
+  - first:
+      213: 5161677370171338700
+    second: sniper_Common_Attack_Explosion_32
+  - first:
+      213: -4015107361585740828
+    second: sniper_Common_Attack_Explosion_33
+  - first:
+      213: 6976693811865187765
+    second: sniper_Common_Attack_Explosion_34
+  - first:
+      213: -6815011262041133372
+    second: sniper_Common_Attack_Explosion_35
+  - first:
+      213: -6412956136817715628
+    second: sniper_Common_Attack_Explosion_36
+  - first:
+      213: 1167913955168185829
+    second: sniper_Common_Attack_Explosion_37
+  - first:
+      213: -7885602575873991515
+    second: sniper_Common_Attack_Explosion_38
+  - first:
+      213: 5210704937027459181
+    second: sniper_Common_Attack_Explosion_39
+  - first:
+      213: -7260753957386352650
+    second: sniper_Common_Attack_Explosion_40
+  - first:
+      213: -7801589028650371272
+    second: sniper_Common_Attack_Explosion_41
+  - first:
+      213: 8112371604778301847
+    second: sniper_Common_Attack_Explosion_42
+  - first:
+      213: -6768527106458832933
+    second: sniper_Common_Attack_Explosion_43
+  - first:
+      213: 5488389980890232951
+    second: sniper_Common_Attack_Explosion_44
+  - first:
+      213: 1770357211289479631
+    second: sniper_Common_Attack_Explosion_45
+  - first:
+      213: -488190806061805319
+    second: sniper_Common_Attack_Explosion_46
+  - first:
+      213: 4798329623443446864
+    second: sniper_Common_Attack_Explosion_47
+  - first:
+      213: 7929998270521771934
+    second: sniper_Common_Attack_Explosion_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 50
+        width: 251
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4649bf2f58da18340800000000000000
+      internalID: 4864359863355675748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 221
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89472059f09260930800000000000000
+      internalID: 4109016856923370648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 221
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746afdb66053e9f00800000000000000
+      internalID: 1125395258585097799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 194
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74829b814caec34d0800000000000000
+      internalID: -3153387511116912569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 194
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdfa17f7d7b3fe140800000000000000
+      internalID: 4751081542094270431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 188
+        width: 62
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cb6a272e561504a0800000000000000
+      internalID: -6627866682965988412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 137
+        width: 50
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d69072b8213e3ee0800000000000000
+      internalID: -1279531193264466220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 200
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eacf8753482fc2f70800000000000000
+      internalID: 9163965991438843054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 197
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d27b4f733236a10800000000000000
+      internalID: 1901402190916300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_9
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 200
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa3a580e776e9930800000000000000
+      internalID: 4151869697485847213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_10
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 164
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e7a0773b70d4730800000000000000
+      internalID: 3984849712670473798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_11
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 146
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7e5d2cc695a6d10800000000000000
+      internalID: 2119604898291378171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_12
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 185
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1fedc0be5aae8500800000000000000
+      internalID: 400444740552486686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_13
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 182
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8d02d56eec9a250800000000000000
+      internalID: 5956519470974425280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_14
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 185
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c7c3039553c2000800000000000000
+      internalID: 12443556152900658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_15
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 122
+        width: 116
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769aa25dcfc6e3e10800000000000000
+      internalID: 2179299102857800039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_16
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 170
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7614fc0cb1e43f790800000000000000
+      internalID: -7497563073535852185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_17
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 149
+        width: 8
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1475b1f1289162a0800000000000000
+      internalID: -6745943495267748837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_18
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 164
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a3159ccd9c4adb0800000000000000
+      internalID: -4781474954253092193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_19
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 152
+        width: 32
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71b946eab07268570800000000000000
+      internalID: 8468499080440748823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_20
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 98
+        width: 116
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7789cb5b1d058120800000000000000
+      internalID: 2415351186309351293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_21
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 137
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b29ab85479215a00800000000000000
+      internalID: 743420993174409905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_22
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 152
+        width: 26
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a499c9623b8dd350800000000000000
+      internalID: 6043139323640517801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_23
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 146
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e04180f252310210800000000000000
+      internalID: 1297373499463123173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_24
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 143
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3ec884c06359700800000000000000
+      internalID: 546402356180083627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_25
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 149
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3bee3fcf17429110800000000000000
+      internalID: 1266152647191096126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_26
+      rect:
+        serializedVersion: 2
+        x: 1529
+        y: 149
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9248e8d28b964e0800000000000000
+      internalID: -1987855254703298138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_27
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 155
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35b81ef3930eaed50800000000000000
+      internalID: 6767467926567095123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_28
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 113
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 872978a8e8ec091f0800000000000000
+      internalID: -1040104402317766024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_29
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 110
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccad865861ac7ab30800000000000000
+      internalID: 4298626567424760524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_30
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 86
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bbeeb2a7d68cc760800000000000000
+      internalID: 7479501341862063031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_31
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 122
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57371228a68bd9e0800000000000000
+      internalID: -1595533586288134306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_32
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 116
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf2c3e6836f1a740800000000000000
+      internalID: 5161677370171338700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_33
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 125
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e340a9a0297748c0800000000000000
+      internalID: -4015107361585740828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_34
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 113
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b5f3eace0232d060800000000000000
+      internalID: 6976693811865187765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_35
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 104
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce60c95d573c61a0800000000000000
+      internalID: -6815011262041133372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_36
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 104
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45691d0fe5a9007a0800000000000000
+      internalID: -6412956136817715628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_37
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 104
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed650aed83453010800000000000000
+      internalID: 1167913955168185829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_38
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 98
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac1029ac36b09290800000000000000
+      internalID: -7885602575873991515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_39
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 98
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6855e06884205840800000000000000
+      internalID: 5210704937027459181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_40
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 95
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f78970bebe9c3b90800000000000000
+      internalID: -7260753957386352650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_41
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 98
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837b5bfec103bb390800000000000000
+      internalID: -7801589028650371272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_42
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 80
+        width: 47
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799b6cc4efee49070800000000000000
+      internalID: 8112371604778301847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_43
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 80
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf2be6357c5112a0800000000000000
+      internalID: -6768527106458832933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_44
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 80
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77876cfdb9daa2c40800000000000000
+      internalID: 5488389980890232951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_45
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 89
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9e5700182919810800000000000000
+      internalID: 1770357211289479631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_46
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 56
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f013166c099939f0800000000000000
+      internalID: -488190806061805319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_47
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 68
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c9490be57179240800000000000000
+      internalID: 4798329623443446864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniper_Common_Attack_Explosion_48
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 71
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9789ef79630d0e60800000000000000
+      internalID: 7929998270521771934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sniper_Common_Attack_Explosion_0: 4864359863355675748
+      sniper_Common_Attack_Explosion_1: 4109016856923370648
+      sniper_Common_Attack_Explosion_10: 3984849712670473798
+      sniper_Common_Attack_Explosion_11: 2119604898291378171
+      sniper_Common_Attack_Explosion_12: 400444740552486686
+      sniper_Common_Attack_Explosion_13: 5956519470974425280
+      sniper_Common_Attack_Explosion_14: 12443556152900658
+      sniper_Common_Attack_Explosion_15: 2179299102857800039
+      sniper_Common_Attack_Explosion_16: -7497563073535852185
+      sniper_Common_Attack_Explosion_17: -6745943495267748837
+      sniper_Common_Attack_Explosion_18: -4781474954253092193
+      sniper_Common_Attack_Explosion_19: 8468499080440748823
+      sniper_Common_Attack_Explosion_2: 1125395258585097799
+      sniper_Common_Attack_Explosion_20: 2415351186309351293
+      sniper_Common_Attack_Explosion_21: 743420993174409905
+      sniper_Common_Attack_Explosion_22: 6043139323640517801
+      sniper_Common_Attack_Explosion_23: 1297373499463123173
+      sniper_Common_Attack_Explosion_24: 546402356180083627
+      sniper_Common_Attack_Explosion_25: 1266152647191096126
+      sniper_Common_Attack_Explosion_26: -1987855254703298138
+      sniper_Common_Attack_Explosion_27: 6767467926567095123
+      sniper_Common_Attack_Explosion_28: -1040104402317766024
+      sniper_Common_Attack_Explosion_29: 4298626567424760524
+      sniper_Common_Attack_Explosion_3: -3153387511116912569
+      sniper_Common_Attack_Explosion_30: 7479501341862063031
+      sniper_Common_Attack_Explosion_31: -1595533586288134306
+      sniper_Common_Attack_Explosion_32: 5161677370171338700
+      sniper_Common_Attack_Explosion_33: -4015107361585740828
+      sniper_Common_Attack_Explosion_34: 6976693811865187765
+      sniper_Common_Attack_Explosion_35: -6815011262041133372
+      sniper_Common_Attack_Explosion_36: -6412956136817715628
+      sniper_Common_Attack_Explosion_37: 1167913955168185829
+      sniper_Common_Attack_Explosion_38: -7885602575873991515
+      sniper_Common_Attack_Explosion_39: 5210704937027459181
+      sniper_Common_Attack_Explosion_4: 4751081542094270431
+      sniper_Common_Attack_Explosion_40: -7260753957386352650
+      sniper_Common_Attack_Explosion_41: -7801589028650371272
+      sniper_Common_Attack_Explosion_42: 8112371604778301847
+      sniper_Common_Attack_Explosion_43: -6768527106458832933
+      sniper_Common_Attack_Explosion_44: 5488389980890232951
+      sniper_Common_Attack_Explosion_45: 1770357211289479631
+      sniper_Common_Attack_Explosion_46: -488190806061805319
+      sniper_Common_Attack_Explosion_47: 4798329623443446864
+      sniper_Common_Attack_Explosion_48: 7929998270521771934
+      sniper_Common_Attack_Explosion_5: -6627866682965988412
+      sniper_Common_Attack_Explosion_6: -1279531193264466220
+      sniper_Common_Attack_Explosion_7: 9163965991438843054
+      sniper_Common_Attack_Explosion_8: 1901402190916300122
+      sniper_Common_Attack_Explosion_9: 4151869697485847213
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

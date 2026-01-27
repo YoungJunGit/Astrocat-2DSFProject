@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: a2b5458f0495e904d81760b6160d1226
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8224368840917482941
+    second: Penguin_Sniper_Skill_Chargeattack_0
+  - first:
+      213: 5125074967725472698
+    second: Penguin_Sniper_Skill_Chargeattack_1
+  - first:
+      213: 3809894036743014866
+    second: Penguin_Sniper_Skill_Chargeattack_2
+  - first:
+      213: 6631823001165617217
+    second: Penguin_Sniper_Skill_Chargeattack_3
+  - first:
+      213: 6469970336307217300
+    second: Penguin_Sniper_Skill_Chargeattack_4
+  - first:
+      213: -7388135683195511821
+    second: Penguin_Sniper_Skill_Chargeattack_5
+  - first:
+      213: 6929734587798558588
+    second: Penguin_Sniper_Skill_Chargeattack_6
+  - first:
+      213: -3427072378980879859
+    second: Penguin_Sniper_Skill_Chargeattack_7
+  - first:
+      213: -6360676263801834061
+    second: Penguin_Sniper_Skill_Chargeattack_8
+  - first:
+      213: 2701041671792837364
+    second: Penguin_Sniper_Skill_Chargeattack_9
+  - first:
+      213: 1459113418411837136
+    second: Penguin_Sniper_Skill_Chargeattack_10
+  - first:
+      213: -6383180419757678935
+    second: Penguin_Sniper_Skill_Chargeattack_11
+  - first:
+      213: -2002116358093625317
+    second: Penguin_Sniper_Skill_Chargeattack_12
+  - first:
+      213: 8963657462965661686
+    second: Penguin_Sniper_Skill_Chargeattack_13
+  - first:
+      213: -8157213610425514489
+    second: Penguin_Sniper_Skill_Chargeattack_14
+  - first:
+      213: -4167714174433550100
+    second: Penguin_Sniper_Skill_Chargeattack_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 41
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd7da0e2e3d22270800000000000000
+      internalID: 8224368840917482941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_1
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 71
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abbf582878cef1740800000000000000
+      internalID: 5125074967725472698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_2
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 62
+        width: 95
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d942f3d0767fd430800000000000000
+      internalID: 3809894036743014866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 134
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148ddb5f1e7f80c50800000000000000
+      internalID: 6631823001165617217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_4
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 128
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49308e2ddb3f9c950800000000000000
+      internalID: 6469970336307217300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_5
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 59
+        width: 77
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb5eba7db1187990800000000000000
+      internalID: -7388135683195511821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_6
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 128
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c77987d64ec5b2060800000000000000
+      internalID: 6929734587798558588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 71
+        width: 26
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02ba4724d79070d0800000000000000
+      internalID: -3427072378980879859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_8
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 131
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b535dc63a65ab7a0800000000000000
+      internalID: -6360676263801834061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_9
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 107
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f24dbaf6170c7520800000000000000
+      internalID: 2701041671792837364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_10
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 62
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d6817f5cefcf3410800000000000000
+      internalID: 1459113418411837136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_11
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 71
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae5d1f4a336a67a0800000000000000
+      internalID: -6383180419757678935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_12
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 77
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18a4dca7cd0734e0800000000000000
+      internalID: -2002116358093625317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_13
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 65
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ffe85898fe456c70800000000000000
+      internalID: 8963657462965661686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_14
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 89
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7060b99a071cbce80800000000000000
+      internalID: -8157213610425514489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Skill_Chargeattack_15
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 56
+        width: 44
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce027833a0e4926c0800000000000000
+      internalID: -4167714174433550100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Penguin_Sniper_Skill_Chargeattack_0: 8224368840917482941
+      Penguin_Sniper_Skill_Chargeattack_1: 5125074967725472698
+      Penguin_Sniper_Skill_Chargeattack_10: 1459113418411837136
+      Penguin_Sniper_Skill_Chargeattack_11: -6383180419757678935
+      Penguin_Sniper_Skill_Chargeattack_12: -2002116358093625317
+      Penguin_Sniper_Skill_Chargeattack_13: 8963657462965661686
+      Penguin_Sniper_Skill_Chargeattack_14: -8157213610425514489
+      Penguin_Sniper_Skill_Chargeattack_15: -4167714174433550100
+      Penguin_Sniper_Skill_Chargeattack_2: 3809894036743014866
+      Penguin_Sniper_Skill_Chargeattack_3: 6631823001165617217
+      Penguin_Sniper_Skill_Chargeattack_4: 6469970336307217300
+      Penguin_Sniper_Skill_Chargeattack_5: -7388135683195511821
+      Penguin_Sniper_Skill_Chargeattack_6: 6929734587798558588
+      Penguin_Sniper_Skill_Chargeattack_7: -3427072378980879859
+      Penguin_Sniper_Skill_Chargeattack_8: -6360676263801834061
+      Penguin_Sniper_Skill_Chargeattack_9: 2701041671792837364
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

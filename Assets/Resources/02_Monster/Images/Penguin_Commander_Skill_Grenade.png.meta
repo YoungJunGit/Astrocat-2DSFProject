@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 19909d7d93eeb3a4bb07931b563777c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7008864247859099669
+    second: Penguin_Commander_Skill_Grenade_0
+  - first:
+      213: -2401034547406138550
+    second: Penguin_Commander_Skill_Grenade_1
+  - first:
+      213: -5515068938496260143
+    second: Penguin_Commander_Skill_Grenade_2
+  - first:
+      213: -4463701715458179247
+    second: Penguin_Commander_Skill_Grenade_3
+  - first:
+      213: -2245543133007607032
+    second: Penguin_Commander_Skill_Grenade_4
+  - first:
+      213: -2234647687959016792
+    second: Penguin_Commander_Skill_Grenade_5
+  - first:
+      213: 1474062082923005613
+    second: Penguin_Commander_Skill_Grenade_6
+  - first:
+      213: 3230250115539614800
+    second: Penguin_Commander_Skill_Grenade_7
+  - first:
+      213: -2018324841583476201
+    second: Penguin_Commander_Skill_Grenade_8
+  - first:
+      213: -5227190905693780939
+    second: Penguin_Commander_Skill_Grenade_9
+  - first:
+      213: 7115449703286740619
+    second: Penguin_Commander_Skill_Grenade_10
+  - first:
+      213: -4066338650105042469
+    second: Penguin_Commander_Skill_Grenade_11
+  - first:
+      213: 7803320807447823764
+    second: Penguin_Commander_Skill_Grenade_12
+  - first:
+      213: -864157095648974909
+    second: Penguin_Commander_Skill_Grenade_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 962
+        width: 125
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be74c63e9138bbe90800000000000000
+      internalID: -7008864247859099669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_1
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 962
+        width: 128
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a439a64eccfcdaed0800000000000000
+      internalID: -2401034547406138550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_2
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 962
+        width: 110
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7c321450a8673b0800000000000000
+      internalID: -5515068938496260143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_3
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 962
+        width: 80
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f30d280febd02c0800000000000000
+      internalID: -4463701715458179247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_4
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 662
+        width: 80
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b834dfa6a36d0e0800000000000000
+      internalID: -2245543133007607032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_5
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 662
+        width: 101
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa0e0974cfecf0e0800000000000000
+      internalID: -2234647687959016792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_6
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 662
+        width: 101
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da68f7d87abe47410800000000000000
+      internalID: 1474062082923005613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_7
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 662
+        width: 86
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c37609d5724dc20800000000000000
+      internalID: 3230250115539614800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_8
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 362
+        width: 86
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 712021800487df3e0800000000000000
+      internalID: -2018324841583476201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_9
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 362
+        width: 89
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53448fce0994577b0800000000000000
+      internalID: -5227190905693780939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_10
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 362
+        width: 110
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b86909d4ec72fb260800000000000000
+      internalID: 7115449703286740619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_11
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 362
+        width: 128
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd92c08ca867197c0800000000000000
+      internalID: -4066338650105042469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_12
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 62
+        width: 125
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 495875c3ee6fa4c60800000000000000
+      internalID: 7803320807447823764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Commander_Skill_Grenade_13
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 62
+        width: 125
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c7a5b333b5e104f0800000000000000
+      internalID: -864157095648974909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Penguin_Commander_Skill_Grenade_0: -7008864247859099669
+      Penguin_Commander_Skill_Grenade_1: -2401034547406138550
+      Penguin_Commander_Skill_Grenade_10: 7115449703286740619
+      Penguin_Commander_Skill_Grenade_11: -4066338650105042469
+      Penguin_Commander_Skill_Grenade_12: 7803320807447823764
+      Penguin_Commander_Skill_Grenade_13: -864157095648974909
+      Penguin_Commander_Skill_Grenade_2: -5515068938496260143
+      Penguin_Commander_Skill_Grenade_3: -4463701715458179247
+      Penguin_Commander_Skill_Grenade_4: -2245543133007607032
+      Penguin_Commander_Skill_Grenade_5: -2234647687959016792
+      Penguin_Commander_Skill_Grenade_6: 1474062082923005613
+      Penguin_Commander_Skill_Grenade_7: 3230250115539614800
+      Penguin_Commander_Skill_Grenade_8: -2018324841583476201
+      Penguin_Commander_Skill_Grenade_9: -5227190905693780939
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

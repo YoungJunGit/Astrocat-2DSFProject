@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 304f72fd09cc4ca448ec406b3a158ce4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8596481590977880674
+    second: Penguin_Berserker_Skill_Throw_0
+  - first:
+      213: -3306642194190387565
+    second: Penguin_Berserker_Skill_Throw_1
+  - first:
+      213: -1215894383217262694
+    second: Penguin_Berserker_Skill_Throw_2
+  - first:
+      213: 9216202060030162378
+    second: Penguin_Berserker_Skill_Throw_3
+  - first:
+      213: 1786384234984001901
+    second: Penguin_Berserker_Skill_Throw_4
+  - first:
+      213: 6064865757968344464
+    second: Penguin_Berserker_Skill_Throw_5
+  - first:
+      213: -6749212135191696983
+    second: Penguin_Berserker_Skill_Throw_6
+  - first:
+      213: 6925831248970274381
+    second: Penguin_Berserker_Skill_Throw_7
+  - first:
+      213: -5884111409553658067
+    second: Penguin_Berserker_Skill_Throw_8
+  - first:
+      213: 7011607022953794812
+    second: Penguin_Berserker_Skill_Throw_9
+  - first:
+      213: 7549817198765193300
+    second: Penguin_Berserker_Skill_Throw_10
+  - first:
+      213: -2477356099211721765
+    second: Penguin_Berserker_Skill_Throw_11
+  - first:
+      213: -7195859131455943714
+    second: Penguin_Berserker_Skill_Throw_12
+  - first:
+      213: -6411443442821599276
+    second: Penguin_Berserker_Skill_Throw_13
+  - first:
+      213: -3311135263125782679
+    second: Penguin_Berserker_Skill_Throw_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 662
+        width: 119
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d14930a8923b880800000000000000
+      internalID: -8596481590977880674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 662
+        width: 119
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396b6f791727c12d0800000000000000
+      internalID: -3306642194190387565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_2
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 662
+        width: 119
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f31f32086402fe0800000000000000
+      internalID: -1215894383217262694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_3
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 662
+        width: 164
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac5325ea1f686ef70800000000000000
+      internalID: 9216202060030162378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_4
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 362
+        width: 122
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61549e3ff28ac810800000000000000
+      internalID: 1786384234984001901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_5
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 362
+        width: 119
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095222a164bba2450800000000000000
+      internalID: 6064865757968344464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_6
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 362
+        width: 101
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9a428625bf552a0800000000000000
+      internalID: -6749212135191696983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_7
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 383
+        width: 104
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d465c2983de7d1060800000000000000
+      internalID: 6925831248970274381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_8
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 362
+        width: 212
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f2bbe29df675ea0800000000000000
+      internalID: -5884111409553658067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_9
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 407
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc8bc3307b3e4160800000000000000
+      internalID: 7011607022953794812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_10
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 377
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 458b88bddb656c860800000000000000
+      internalID: 7549817198765193300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_11
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 62
+        width: 98
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd3865cd0c9ae9dd0800000000000000
+      internalID: -2477356099211721765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_12
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 77
+        width: 59
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edb41d7ce3c232c90800000000000000
+      internalID: -7195859131455943714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_13
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 62
+        width: 98
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df6c15782af507a0800000000000000
+      internalID: -6411443442821599276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_Throw_14
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 62
+        width: 98
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f3e16750c7c02d0800000000000000
+      internalID: -3311135263125782679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Penguin_Berserker_Skill_Throw_0: -8596481590977880674
+      Penguin_Berserker_Skill_Throw_1: -3306642194190387565
+      Penguin_Berserker_Skill_Throw_10: 7549817198765193300
+      Penguin_Berserker_Skill_Throw_11: -2477356099211721765
+      Penguin_Berserker_Skill_Throw_12: -7195859131455943714
+      Penguin_Berserker_Skill_Throw_13: -6411443442821599276
+      Penguin_Berserker_Skill_Throw_14: -3311135263125782679
+      Penguin_Berserker_Skill_Throw_2: -1215894383217262694
+      Penguin_Berserker_Skill_Throw_3: 9216202060030162378
+      Penguin_Berserker_Skill_Throw_4: 1786384234984001901
+      Penguin_Berserker_Skill_Throw_5: 6064865757968344464
+      Penguin_Berserker_Skill_Throw_6: -6749212135191696983
+      Penguin_Berserker_Skill_Throw_7: 6925831248970274381
+      Penguin_Berserker_Skill_Throw_8: -5884111409553658067
+      Penguin_Berserker_Skill_Throw_9: 7011607022953794812
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

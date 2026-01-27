@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 41fa327cadd7f0346b7b2f0cb212ca06
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6072229173589005499
+    second: Penguin_Berserker_Common_Attack_Fail_0
+  - first:
+      213: 101034491467883657
+    second: Penguin_Berserker_Common_Attack_Fail_1
+  - first:
+      213: 4901966464167420853
+    second: Penguin_Berserker_Common_Attack_Fail_2
+  - first:
+      213: -8227583528791109360
+    second: Penguin_Berserker_Common_Attack_Fail_3
+  - first:
+      213: 2908005423463407170
+    second: Penguin_Berserker_Common_Attack_Fail_4
+  - first:
+      213: -3177037406931713898
+    second: Penguin_Berserker_Common_Attack_Fail_5
+  - first:
+      213: 7603088229035538342
+    second: Penguin_Berserker_Common_Attack_Fail_6
+  - first:
+      213: 7716065574532848438
+    second: Penguin_Berserker_Common_Attack_Fail_7
+  - first:
+      213: 2637305439404862432
+    second: Penguin_Berserker_Common_Attack_Fail_8
+  - first:
+      213: -5600122823201650907
+    second: Penguin_Berserker_Common_Attack_Fail_9
+  - first:
+      213: 2441655993462302868
+    second: Penguin_Berserker_Common_Attack_Fail_10
+  - first:
+      213: -3757354524829588092
+    second: Penguin_Berserker_Common_Attack_Fail_11
+  - first:
+      213: -1741570876606941374
+    second: Penguin_Berserker_Common_Attack_Fail_12
+  - first:
+      213: -1429348398052035435
+    second: Penguin_Berserker_Common_Attack_Fail_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 500
+        width: 119
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb45986e244e44450800000000000000
+      internalID: 6072229173589005499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 500
+        width: 164
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 984610ea552f66100800000000000000
+      internalID: 101034491467883657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_2
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 500
+        width: 122
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b3a3950788470440800000000000000
+      internalID: 4901966464167420853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_3
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 638
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0111d864f50c1dd80800000000000000
+      internalID: -8227583528791109360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_4
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 500
+        width: 164
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e127e768f4b5820800000000000000
+      internalID: 2908005423463407170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_5
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 614
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69005b1af45e8e3d0800000000000000
+      internalID: -3177037406931713898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_6
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 260
+        width: 119
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7fd9f1678938960800000000000000
+      internalID: 7603088229035538342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_7
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 260
+        width: 119
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63b96a132c8f41b60800000000000000
+      internalID: 7716065574532848438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_8
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 260
+        width: 179
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ebaee7f257999420800000000000000
+      internalID: 2637305439404862432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_9
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 260
+        width: 134
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527028886fd5842b0800000000000000
+      internalID: -5600122823201650907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_10
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 20
+        width: 134
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498260a803182e120800000000000000
+      internalID: 2441655993462302868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_11
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 20
+        width: 167
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 485635c87f13bdbc0800000000000000
+      internalID: -3757354524829588092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 20
+        width: 161
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2477da4d382b4d7e0800000000000000
+      internalID: -1741570876606941374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Common_Attack_Fail_13
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 20
+        width: 119
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 594b5d9743fe92ce0800000000000000
+      internalID: -1429348398052035435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Penguin_Berserker_Common_Attack_Fail_0: 6072229173589005499
+      Penguin_Berserker_Common_Attack_Fail_1: 101034491467883657
+      Penguin_Berserker_Common_Attack_Fail_10: 2441655993462302868
+      Penguin_Berserker_Common_Attack_Fail_11: -3757354524829588092
+      Penguin_Berserker_Common_Attack_Fail_12: -1741570876606941374
+      Penguin_Berserker_Common_Attack_Fail_13: -1429348398052035435
+      Penguin_Berserker_Common_Attack_Fail_2: 4901966464167420853
+      Penguin_Berserker_Common_Attack_Fail_3: -8227583528791109360
+      Penguin_Berserker_Common_Attack_Fail_4: 2908005423463407170
+      Penguin_Berserker_Common_Attack_Fail_5: -3177037406931713898
+      Penguin_Berserker_Common_Attack_Fail_6: 7603088229035538342
+      Penguin_Berserker_Common_Attack_Fail_7: 7716065574532848438
+      Penguin_Berserker_Common_Attack_Fail_8: 2637305439404862432
+      Penguin_Berserker_Common_Attack_Fail_9: -5600122823201650907
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

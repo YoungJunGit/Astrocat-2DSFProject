@@ -1,0 +1,1079 @@
+fileFormatVersion: 2
+guid: f798b2e02aaa89a449e734a1c76bca27
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1740197691611043694
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_0
+  - first:
+      213: 8806334452457053089
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_1
+  - first:
+      213: 7864203774251634444
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_2
+  - first:
+      213: -7997185699795946676
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_3
+  - first:
+      213: 5824168353432779433
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_4
+  - first:
+      213: 8468488072014960217
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_5
+  - first:
+      213: 1955748073246304108
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_6
+  - first:
+      213: -5454658276159213428
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_7
+  - first:
+      213: -5785627265884803488
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_8
+  - first:
+      213: -598703119232028179
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_9
+  - first:
+      213: -5003167810169450391
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_10
+  - first:
+      213: -8594706019567079791
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_11
+  - first:
+      213: 8329939423728086504
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_12
+  - first:
+      213: -1919357826714983640
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_13
+  - first:
+      213: -618014832879496025
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_14
+  - first:
+      213: -4933686126164951425
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_15
+  - first:
+      213: 6384397484150378333
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_16
+  - first:
+      213: 565152005971293078
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_17
+  - first:
+      213: -2619263690781369245
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_18
+  - first:
+      213: -8235981542249344470
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_19
+  - first:
+      213: -2386704717619162641
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_20
+  - first:
+      213: -3762576241576335187
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_21
+  - first:
+      213: -7485849492145782240
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_22
+  - first:
+      213: -4647360372108394534
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_23
+  - first:
+      213: -7608334846991134757
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_24
+  - first:
+      213: 2013704965079005776
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_25
+  - first:
+      213: 465306516544426788
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_26
+  - first:
+      213: -1982767929842826898
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_27
+  - first:
+      213: -7915748602827299961
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_28
+  - first:
+      213: -365332073221903690
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_29
+  - first:
+      213: -4331129216322482155
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_30
+  - first:
+      213: 5447258064520647039
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_31
+  - first:
+      213: -2330078872392794346
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_32
+  - first:
+      213: 1164439590360918488
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_33
+  - first:
+      213: 2110557330817201672
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_34
+  - first:
+      213: 5097791403788250120
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_35
+  - first:
+      213: 2985213361669352850
+    second: Penguin_Rifleman_Skill_TripleBurst_Explosion_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 11
+        width: 191
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e675e6f949c662810800000000000000
+      internalID: 1740197691611043694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 59
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab9cfbc682663a70800000000000000
+      internalID: 8806334452457053089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 146
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f0e859aa3432d60800000000000000
+      internalID: 7864203774251634444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 146
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4334d81af9440190800000000000000
+      internalID: -7997185699795946676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 140
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aabe6a724a93d050800000000000000
+      internalID: 5824168353432779433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 134
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9569515980d168570800000000000000
+      internalID: 8468488072014960217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 152
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c672008b286342b10800000000000000
+      internalID: 1955748073246304108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 137
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c80b266a2392d44b0800000000000000
+      internalID: -5454658276159213428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 104
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e2f1eb7a255bfa0800000000000000
+      internalID: -5785627265884803488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_9
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 146
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1b1446faaf0b7f0800000000000000
+      internalID: -598703119232028179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_10
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 71
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9605e23726d219ab0800000000000000
+      internalID: -5003167810169450391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_11
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 137
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19eeac2796879b880800000000000000
+      internalID: -8594706019567079791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_12
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 122
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eda5df95c3e99370800000000000000
+      internalID: 8329939423728086504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_13
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 134
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 823a9cdc9321d55e0800000000000000
+      internalID: -1919357826714983640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_14
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 131
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a49b4ca8ce5c67f0800000000000000
+      internalID: -618014832879496025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_15
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 107
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e3aa8ab96088bb0800000000000000
+      internalID: -4933686126164951425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_16
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 128
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f4ea39fafe99850800000000000000
+      internalID: 6384397484150378333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_17
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 104
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693b40051c2d7d700800000000000000
+      internalID: 565152005971293078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_18
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 113
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36cd5e9fc8186abd0800000000000000
+      internalID: -2619263690781369245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_19
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 95
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22dd856c6ae3bd80800000000000000
+      internalID: -8235981542249344470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_20
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 92
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe19f8264b8b0eed0800000000000000
+      internalID: -2386704717619162641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_21
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 83
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da8a480e7d4a8cbc0800000000000000
+      internalID: -3762576241576335187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_22
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 86
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 022cc927c8bec1890800000000000000
+      internalID: -7485849492145782240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_23
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 89
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf70454d52418fb0800000000000000
+      internalID: -4647360372108394534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_24
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 83
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf0ed074c3c96690800000000000000
+      internalID: -7608334846991134757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_25
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 77
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a79f52ffd12fb10800000000000000
+      internalID: 2013704965079005776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_26
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 59
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4231e4ebfc9157600800000000000000
+      internalID: 465306516544426788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_27
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 77
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e618eada21bcb74e0800000000000000
+      internalID: -1982767929842826898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_28
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 74
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7832f2dc59c952290800000000000000
+      internalID: -7915748602827299961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_29
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 71
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ba2d8e3a641eeaf0800000000000000
+      internalID: -365332073221903690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_30
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 53
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51058c0dcecb4e3c0800000000000000
+      internalID: -4331129216322482155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_31
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 62
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7192af495c889b40800000000000000
+      internalID: 5447258064520647039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_32
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 68
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61f72606c95e9afd0800000000000000
+      internalID: -2330078872392794346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_33
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 56
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d92dd153abe82010800000000000000
+      internalID: 1164439590360918488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_34
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 65
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806b47dc5b43a4d10800000000000000
+      internalID: 2110557330817201672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_35
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 56
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ca6d1c54efeb640800000000000000
+      internalID: 5097791403788250120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Rifleman_Skill_TripleBurst_Explosion_36
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 56
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d2d017cbb9d6920800000000000000
+      internalID: 2985213361669352850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_0: 1740197691611043694
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_1: 8806334452457053089
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_10: -5003167810169450391
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_11: -8594706019567079791
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_12: 8329939423728086504
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_13: -1919357826714983640
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_14: -618014832879496025
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_15: -4933686126164951425
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_16: 6384397484150378333
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_17: 565152005971293078
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_18: -2619263690781369245
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_19: -8235981542249344470
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_2: 7864203774251634444
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_20: -2386704717619162641
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_21: -3762576241576335187
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_22: -7485849492145782240
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_23: -4647360372108394534
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_24: -7608334846991134757
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_25: 2013704965079005776
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_26: 465306516544426788
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_27: -1982767929842826898
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_28: -7915748602827299961
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_29: -365332073221903690
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_3: -7997185699795946676
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_30: -4331129216322482155
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_31: 5447258064520647039
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_32: -2330078872392794346
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_33: 1164439590360918488
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_34: 2110557330817201672
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_35: 5097791403788250120
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_36: 2985213361669352850
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_4: 5824168353432779433
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_5: 8468488072014960217
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_6: 1955748073246304108
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_7: -5454658276159213428
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_8: -5785627265884803488
+      Penguin_Rifleman_Skill_TripleBurst_Explosion_9: -598703119232028179
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 832c5241b2ef1e646a4803ab1945d1a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2563476868239237781
+    second: Penguin_Berserker_Skill_TwoBurst_0
+  - first:
+      213: 2964541244605460619
+    second: Penguin_Berserker_Skill_TwoBurst_1
+  - first:
+      213: 4666155628880393052
+    second: Penguin_Berserker_Skill_TwoBurst_2
+  - first:
+      213: -4746986249366871720
+    second: Penguin_Berserker_Skill_TwoBurst_3
+  - first:
+      213: -2576593505998860213
+    second: Penguin_Berserker_Skill_TwoBurst_4
+  - first:
+      213: -4094750412065943299
+    second: Penguin_Berserker_Skill_TwoBurst_5
+  - first:
+      213: -1426644080277568616
+    second: Penguin_Berserker_Skill_TwoBurst_6
+  - first:
+      213: 6130235688674373527
+    second: Penguin_Berserker_Skill_TwoBurst_7
+  - first:
+      213: 8446281029125086349
+    second: Penguin_Berserker_Skill_TwoBurst_8
+  - first:
+      213: 4356981703133243642
+    second: Penguin_Berserker_Skill_TwoBurst_9
+  - first:
+      213: 3220965955878227727
+    second: Penguin_Berserker_Skill_TwoBurst_10
+  - first:
+      213: 1348584949079562835
+    second: Penguin_Berserker_Skill_TwoBurst_11
+  - first:
+      213: 4453624549175312709
+    second: Penguin_Berserker_Skill_TwoBurst_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1031
+        width: 119
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6d5ba6ce53bc6cd0800000000000000
+      internalID: -2563476868239237781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_1
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 1031
+        width: 188
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80f3be1e8a242920800000000000000
+      internalID: 2964541244605460619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_2
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1031
+        width: 293
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c53fa1672d381c040800000000000000
+      internalID: 4666155628880393052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 581
+        width: 188
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851e2d428215f1eb0800000000000000
+      internalID: -4746986249366871720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_4
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 599
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b401c509bd91e3cd0800000000000000
+      internalID: -2576593505998860213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_5
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 548
+        width: 299
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df0dce4f1368c27c0800000000000000
+      internalID: -4094750412065943299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_6
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 578
+        width: 356
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893442684ca833ce0800000000000000
+      internalID: -1426644080277568616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_7
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 569
+        width: 89
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fabd421e8f21550800000000000000
+      internalID: 6130235688674373527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_8
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 578
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8c1f1e78d7373570800000000000000
+      internalID: 8446281029125086349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_9
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 563
+        width: 113
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af8222456cb177c30800000000000000
+      internalID: 4356981703133243642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_10
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 560
+        width: 74
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f8fb1b87b23bc20800000000000000
+      internalID: 3220965955878227727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_11
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 119
+        width: 239
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a5357bdd227b210800000000000000
+      internalID: 1348584949079562835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Berserker_Skill_TwoBurst_12
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 131
+        width: 119
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541cd806ee37ecd30800000000000000
+      internalID: 4453624549175312709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Penguin_Berserker_Skill_TwoBurst_0: -2563476868239237781
+      Penguin_Berserker_Skill_TwoBurst_1: 2964541244605460619
+      Penguin_Berserker_Skill_TwoBurst_10: 3220965955878227727
+      Penguin_Berserker_Skill_TwoBurst_11: 1348584949079562835
+      Penguin_Berserker_Skill_TwoBurst_12: 4453624549175312709
+      Penguin_Berserker_Skill_TwoBurst_2: 4666155628880393052
+      Penguin_Berserker_Skill_TwoBurst_3: -4746986249366871720
+      Penguin_Berserker_Skill_TwoBurst_4: -2576593505998860213
+      Penguin_Berserker_Skill_TwoBurst_5: -4094750412065943299
+      Penguin_Berserker_Skill_TwoBurst_6: -1426644080277568616
+      Penguin_Berserker_Skill_TwoBurst_7: 6130235688674373527
+      Penguin_Berserker_Skill_TwoBurst_8: 8446281029125086349
+      Penguin_Berserker_Skill_TwoBurst_9: 4356981703133243642
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

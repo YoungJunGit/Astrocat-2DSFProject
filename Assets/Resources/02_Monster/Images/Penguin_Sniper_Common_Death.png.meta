@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 3265df782b7c1c349b37ff5176ce14ac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3422749348798839881
+    second: Penguin_Sniper_Common_Death_0
+  - first:
+      213: 1250581456747842064
+    second: Penguin_Sniper_Common_Death_1
+  - first:
+      213: 2092260916674523057
+    second: Penguin_Sniper_Common_Death_2
+  - first:
+      213: 5449288776215481504
+    second: Penguin_Sniper_Common_Death_3
+  - first:
+      213: 1361306636991216334
+    second: Penguin_Sniper_Common_Death_4
+  - first:
+      213: -4458228156927070590
+    second: Penguin_Sniper_Common_Death_5
+  - first:
+      213: -5318594407126054250
+    second: Penguin_Sniper_Common_Death_6
+  - first:
+      213: 8118983395470741701
+    second: Penguin_Sniper_Common_Death_7
+  - first:
+      213: -155758330674138148
+    second: Penguin_Sniper_Common_Death_8
+  - first:
+      213: 8977912180274464750
+    second: Penguin_Sniper_Common_Death_9
+  - first:
+      213: -1000173813220024678
+    second: Penguin_Sniper_Common_Death_10
+  - first:
+      213: 8339345857596251613
+    second: Penguin_Sniper_Common_Death_11
+  - first:
+      213: 7743340736944009086
+    second: Penguin_Sniper_Common_Death_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 980
+        width: 167
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94cba52f56c008f20800000000000000
+      internalID: 3422749348798839881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_1
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 980
+        width: 167
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a45248535fa5110800000000000000
+      internalID: 1250581456747842064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_2
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 980
+        width: 167
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf61dbe734390d10800000000000000
+      internalID: 2092260916674523057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_3
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 980
+        width: 164
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0acc8d83543cf9b40800000000000000
+      internalID: 5449288776215481504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 680
+        width: 164
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca3e308c2554e210800000000000000
+      internalID: 1361306636991216334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_5
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 680
+        width: 164
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ea7baac113122c0800000000000000
+      internalID: -4458228156927070590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_6
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 680
+        width: 167
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a4fdad09e8036b0800000000000000
+      internalID: -5318594407126054250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_7
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 680
+        width: 167
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c01458c16c6ca070800000000000000
+      internalID: 8118983395470741701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_8
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 380
+        width: 161
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd33c5d9f92a6ddf0800000000000000
+      internalID: -155758330674138148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_9
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 380
+        width: 161
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee789e99f83f79c70800000000000000
+      internalID: 8977912180274464750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_10
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 374
+        width: 173
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e5f5d473bae12f0800000000000000
+      internalID: -1000173813220024678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_11
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 374
+        width: 173
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd562dafde4bb370800000000000000
+      internalID: 8339345857596251613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Penguin_Sniper_Common_Death_12
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 74
+        width: 173
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7feb50df5fd57b60800000000000000
+      internalID: 7743340736944009086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Penguin_Sniper_Common_Death_0: 3422749348798839881
+      Penguin_Sniper_Common_Death_1: 1250581456747842064
+      Penguin_Sniper_Common_Death_10: -1000173813220024678
+      Penguin_Sniper_Common_Death_11: 8339345857596251613
+      Penguin_Sniper_Common_Death_12: 7743340736944009086
+      Penguin_Sniper_Common_Death_2: 2092260916674523057
+      Penguin_Sniper_Common_Death_3: 5449288776215481504
+      Penguin_Sniper_Common_Death_4: 1361306636991216334
+      Penguin_Sniper_Common_Death_5: -4458228156927070590
+      Penguin_Sniper_Common_Death_6: -5318594407126054250
+      Penguin_Sniper_Common_Death_7: 8118983395470741701
+      Penguin_Sniper_Common_Death_8: -155758330674138148
+      Penguin_Sniper_Common_Death_9: 8977912180274464750
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

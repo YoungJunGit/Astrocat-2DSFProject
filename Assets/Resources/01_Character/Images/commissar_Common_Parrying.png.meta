@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: 23d0a1bf409448b40b68dc440e46097f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4970070283279932895
+    second: commissar_Common_Parrying_0
+  - first:
+      213: -6807945103265357039
+    second: commissar_Common_Parrying_1
+  - first:
+      213: 5813105224715824983
+    second: commissar_Common_Parrying_2
+  - first:
+      213: 7854108759225166605
+    second: commissar_Common_Parrying_3
+  - first:
+      213: 6620891844832839789
+    second: commissar_Common_Parrying_4
+  - first:
+      213: -2989781073935386808
+    second: commissar_Common_Parrying_5
+  - first:
+      213: 4396798605609891672
+    second: commissar_Common_Parrying_6
+  - first:
+      213: 6314822441413099811
+    second: commissar_Common_Parrying_7
+  - first:
+      213: -3466878817159079533
+    second: commissar_Common_Parrying_8
+  - first:
+      213: -7101756476703699716
+    second: commissar_Common_Parrying_9
+  - first:
+      213: 4114035883627208324
+    second: commissar_Common_Parrying_10
+  - first:
+      213: -3107524399738089830
+    second: commissar_Common_Parrying_11
+  - first:
+      213: 1351153488995140324
+    second: commissar_Common_Parrying_12
+  - first:
+      213: 8332106989996217045
+    second: commissar_Common_Parrying_13
+  - first:
+      213: 5879892364024869615
+    second: commissar_Common_Parrying_14
+  - first:
+      213: 8435752040039634900
+    second: commissar_Common_Parrying_15
+  - first:
+      213: 5791030696303830620
+    second: commissar_Common_Parrying_16
+  - first:
+      213: 3912823589804966389
+    second: commissar_Common_Parrying_17
+  - first:
+      213: 8869779509284552471
+    second: commissar_Common_Parrying_18
+  - first:
+      213: 4174639034833909465
+    second: commissar_Common_Parrying_19
+  - first:
+      213: -8667912851886009998
+    second: commissar_Common_Parrying_20
+  - first:
+      213: -1180690091481814919
+    second: commissar_Common_Parrying_21
+  - first:
+      213: 5801251300120494007
+    second: commissar_Common_Parrying_22
+  - first:
+      213: -1080688967726145161
+    second: commissar_Common_Parrying_23
+  - first:
+      213: -1507870815820958659
+    second: commissar_Common_Parrying_24
+  - first:
+      213: -3432184610510031304
+    second: commissar_Common_Parrying_25
+  - first:
+      213: 7163941679804271528
+    second: commissar_Common_Parrying_26
+  - first:
+      213: 1743226286008797477
+    second: commissar_Common_Parrying_27
+  - first:
+      213: -1514821903141491123
+    second: commissar_Common_Parrying_28
+  - first:
+      213: 7924656496328101651
+    second: commissar_Common_Parrying_29
+  - first:
+      213: 8251702047609525754
+    second: commissar_Common_Parrying_30
+  - first:
+      213: -7538364361035973576
+    second: commissar_Common_Parrying_31
+  - first:
+      213: 8302787346004859306
+    second: commissar_Common_Parrying_32
+  - first:
+      213: 6742797653843131767
+    second: commissar_Common_Parrying_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_0
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1508
+        width: 131
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122ef50f863c60bb0800000000000000
+      internalID: -4970070283279932895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_1
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 1508
+        width: 122
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1132285aff15581a0800000000000000
+      internalID: -6807945103265357039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_2
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 1508
+        width: 122
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f6729176c4ca050800000000000000
+      internalID: 5813105224715824983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_3
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 1508
+        width: 149
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b66ecbd466ffc60800000000000000
+      internalID: 7854108759225166605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_4
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 1508
+        width: 149
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68ca8bcd0222eb50800000000000000
+      internalID: 6620891844832839789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_5
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 1148
+        width: 149
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84735eb24f92286d0800000000000000
+      internalID: -2989781073935386808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_6
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1148
+        width: 131
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8577f4c5901940d30800000000000000
+      internalID: 4396798605609891672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_7
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 1148
+        width: 122
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321c7189d81c2a750800000000000000
+      internalID: 6314822441413099811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_8
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 1148
+        width: 122
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39918e7851c23efc0800000000000000
+      internalID: -3466878817159079533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_9
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 1148
+        width: 122
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc0fb47c1e717d90800000000000000
+      internalID: -7101756476703699716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_10
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 788
+        width: 122
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e5fccc6ddf71930800000000000000
+      internalID: 4114035883627208324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_11
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 788
+        width: 128
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e80c6d50bdfd4d0800000000000000
+      internalID: -3107524399738089830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_12
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 788
+        width: 131
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e2c59480f240c210800000000000000
+      internalID: 1351153488995140324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_13
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 863
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d21649792791a370800000000000000
+      internalID: 8332106989996217045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_14
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 785
+        width: 152
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2fb3bb3f2999150800000000000000
+      internalID: 5879892364024869615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_15
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 848
+        width: 68
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d7d6df29cfc11570800000000000000
+      internalID: 8435752040039634900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_16
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 875
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c56a2907cbfdd5050800000000000000
+      internalID: 5791030696303830620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_17
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 785
+        width: 140
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1081be2542d4630800000000000000
+      internalID: 3912823589804966389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_18
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 857
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71fb1f63879c71b70800000000000000
+      internalID: 8869779509284552471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_19
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 830
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d631c0851c4fe930800000000000000
+      internalID: 4174639034833909465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_20
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 527
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2719a4f8f2365b780800000000000000
+      internalID: -8667912851886009998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_21
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 425
+        width: 149
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 978276b0e985d9fe0800000000000000
+      internalID: -1180690091481814919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_22
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 527
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bf7474325f228050800000000000000
+      internalID: 5801251300120494007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_23
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 425
+        width: 149
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771effd0c1f9001f0800000000000000
+      internalID: -1080688967726145161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_24
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 425
+        width: 224
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3430d76b77f21be0800000000000000
+      internalID: -1507870815820958659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_25
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 425
+        width: 128
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 836bcfef74e6e50d0800000000000000
+      internalID: -3432184610510031304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_26
+      rect:
+        serializedVersion: 2
+        x: 1622
+        y: 428
+        width: 131
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ab4958600f6b6360800000000000000
+      internalID: 7163941679804271528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_27
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 500
+        width: 77
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5298da4321f213810800000000000000
+      internalID: 1743226286008797477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_28
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 503
+        width: 47
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e254541854afae0800000000000000
+      internalID: -1514821903141491123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_29
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 476
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31fc0a6c8190afd60800000000000000
+      internalID: 7924656496328101651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_30
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 476
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5112cfa4fe38270800000000000000
+      internalID: 8251702047609525754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_31
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 68
+        width: 131
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c7cf8bd89526790800000000000000
+      internalID: -7538364361035973576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_32
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 68
+        width: 131
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa95a34e91d693370800000000000000
+      internalID: 8302787346004859306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: commissar_Common_Parrying_33
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 68
+        width: 131
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77d38a5cdba339d50800000000000000
+      internalID: 6742797653843131767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      commissar_Common_Parrying_0: -4970070283279932895
+      commissar_Common_Parrying_1: -6807945103265357039
+      commissar_Common_Parrying_10: 4114035883627208324
+      commissar_Common_Parrying_11: -3107524399738089830
+      commissar_Common_Parrying_12: 1351153488995140324
+      commissar_Common_Parrying_13: 8332106989996217045
+      commissar_Common_Parrying_14: 5879892364024869615
+      commissar_Common_Parrying_15: 8435752040039634900
+      commissar_Common_Parrying_16: 5791030696303830620
+      commissar_Common_Parrying_17: 3912823589804966389
+      commissar_Common_Parrying_18: 8869779509284552471
+      commissar_Common_Parrying_19: 4174639034833909465
+      commissar_Common_Parrying_2: 5813105224715824983
+      commissar_Common_Parrying_20: -8667912851886009998
+      commissar_Common_Parrying_21: -1180690091481814919
+      commissar_Common_Parrying_22: 5801251300120494007
+      commissar_Common_Parrying_23: -1080688967726145161
+      commissar_Common_Parrying_24: -1507870815820958659
+      commissar_Common_Parrying_25: -3432184610510031304
+      commissar_Common_Parrying_26: 7163941679804271528
+      commissar_Common_Parrying_27: 1743226286008797477
+      commissar_Common_Parrying_28: -1514821903141491123
+      commissar_Common_Parrying_29: 7924656496328101651
+      commissar_Common_Parrying_3: 7854108759225166605
+      commissar_Common_Parrying_30: 8251702047609525754
+      commissar_Common_Parrying_31: -7538364361035973576
+      commissar_Common_Parrying_32: 8302787346004859306
+      commissar_Common_Parrying_33: 6742797653843131767
+      commissar_Common_Parrying_4: 6620891844832839789
+      commissar_Common_Parrying_5: -2989781073935386808
+      commissar_Common_Parrying_6: 4396798605609891672
+      commissar_Common_Parrying_7: 6314822441413099811
+      commissar_Common_Parrying_8: -3466878817159079533
+      commissar_Common_Parrying_9: -7101756476703699716
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
