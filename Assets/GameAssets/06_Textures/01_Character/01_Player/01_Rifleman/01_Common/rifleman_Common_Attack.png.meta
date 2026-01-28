@@ -203,10 +203,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rifleman_attack_0
+      name: rifleman_Common_Attack_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 279
         y: 0
         width: 279
         height: 153
@@ -225,10 +225,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rifleman_attack_1
+      name: rifleman_Common_Attack_0
       rect:
         serializedVersion: 2
-        x: 279
+        x: 0
         y: 0
         width: 279
         height: 153
@@ -238,16 +238,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7b5a0ed86f53dbb80800000000000000
-      internalID: -8377480398780717641
+      spriteID: 140e53e29a9245543996c8940e8e93a0
+      internalID: 691393211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rifleman_attack_2
+      name: rifleman_Common_Attack_2
       rect:
         serializedVersion: 2
         x: 558
@@ -260,16 +260,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 06af3a5fa0e0723d0800000000000000
-      internalID: -3231598767381415328
+      spriteID: ebff4cd0754c1304ca25b5b941287d98
+      internalID: -494902199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rifleman_attack_3
+      name: rifleman_Common_Attack_3
       rect:
         serializedVersion: 2
         x: 837
@@ -282,16 +282,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 17213ee6cf9ba53d0800000000000000
-      internalID: -3217054489959525775
+      spriteID: a185b2d6e48a2eb4683a233ea37b3ac2
+      internalID: -1764921896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rifleman_attack_4
+      name: rifleman_Common_Attack_4
       rect:
         serializedVersion: 2
         x: 1116
@@ -304,16 +304,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0003f9fb8fbb3ff30800000000000000
-      internalID: 4608233520771313664
+      spriteID: c4827eb4061ffad4b90e9a86df34bfed
+      internalID: -380783274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rifleman_attack_5
+      name: rifleman_Common_Attack_5
       rect:
         serializedVersion: 2
         x: 1395
@@ -326,16 +326,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e8998c89253dd4140800000000000000
-      internalID: 4705649537376098702
+      spriteID: 019fc51147df6fb4c993120a24f24fc2
+      internalID: -1483882902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rifleman_attack_6
+      name: rifleman_Common_Attack_6
       rect:
         serializedVersion: 2
         x: 1674
@@ -348,10 +348,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5642e5651e1a9a770800000000000000
-      internalID: 8622600950766249061
+      spriteID: 08cfd0c17bca17c429b13408dbb36530
+      internalID: -151385288
       vertices: []
       indices: 
       edges: []
@@ -370,15 +370,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":279.0,"y":153.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":1.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":8,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":279.0,"y":153.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.9139785170555115,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      rifleman_attack_0: 2127307086198774155
-      rifleman_attack_1: -8377480398780717641
-      rifleman_attack_2: -3231598767381415328
-      rifleman_attack_3: -3217054489959525775
-      rifleman_attack_4: 4608233520771313664
-      rifleman_attack_5: 4705649537376098702
-      rifleman_attack_6: 8622600950766249061
+      rifleman_Common_Attack_0: 691393211
+      rifleman_Common_Attack_1: 2127307086198774155
+      rifleman_Common_Attack_2: -494902199
+      rifleman_Common_Attack_3: -1764921896
+      rifleman_Common_Attack_4: -380783274
+      rifleman_Common_Attack_5: -1483882902
+      rifleman_Common_Attack_6: -151385288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
