@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 5573408595002535380}
   - component: {fileID: 8303580816812213284}
   m_Layer: 6
-  m_Name: penguin_Commander
+  m_Name: Penguin_Commander
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

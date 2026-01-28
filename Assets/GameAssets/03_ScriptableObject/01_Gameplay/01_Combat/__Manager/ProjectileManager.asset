@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileDic:
     _serializedList:
-    - Key: player_Rifleman_Bullet
+    - Key: Rifleman_Bullet
       Value: {fileID: 3492795204672111868, guid: dcdb7dc441d5df144b229d73eb0072c5, type: 3}
-    - Key: player_Sniper_Bullet
+    - Key: Sniper_Bullet
       Value: {fileID: 3492795204672111868, guid: d4f38be34b1e55541b9d110e7330ef3b, type: 3}
-    - Key: player_Sniper_PrecisionShot_Bullet
+    - Key: Sniper_PrecisionShot_Bullet
       Value: {fileID: 3492795204672111868, guid: 33e584a25f84fb94f88465dcfc413193, type: 3}
-    - Key: player_Commissar_Bullet
+    - Key: Commissar_Bullet
       Value: {fileID: 3492795204672111868, guid: 25bd272999cf03343a7bf58410ce299f, type: 3}
-    - Key: player_Commissar_ContaminationShot_Bullet
+    - Key: Commissar_ContaminationShot_Bullet
       Value: {fileID: 3492795204672111868, guid: 1324ea0aaf348af40b8320adf2da3a39, type: 3}
-    - Key: penguin_Commander_Bullet
+    - Key: Penguin_Commander_Bullet
       Value: {fileID: 3492795204672111868, guid: 3105efe49b970b0428b69325e8aa62da, type: 3}
-    - Key: penguin_Rifleman_Bullet
+    - Key: Penguin_Rifleman_Bullet
       Value: {fileID: 3492795204672111868, guid: 86889252255bb074099087276da1ae9f, type: 3}
     - Key: PowerBooster_Injection
       Value: {fileID: 4952889678727614989, guid: ec66076d9bb317f4d8d4b9baab85712f, type: 3}

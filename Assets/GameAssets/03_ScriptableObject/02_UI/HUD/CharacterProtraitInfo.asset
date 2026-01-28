@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterProtraitDic:
     _serializedList:
-    - Key: player_Rifleman
+    - Key: Rifleman
       Value: {fileID: -6261905058262851531, guid: 2236661a2a3d06c4c84fd416a1e4616b, type: 3}
-    - Key: player_Sniper
+    - Key: Sniper
       Value: {fileID: 5428032994798316057, guid: 2236661a2a3d06c4c84fd416a1e4616b, type: 3}
-    - Key: player_Commissar
+    - Key: Commissar
       Value: {fileID: -3324331537212625687, guid: 2236661a2a3d06c4c84fd416a1e4616b, type: 3}

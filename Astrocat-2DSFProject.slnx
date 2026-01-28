@@ -1,4 +1,5 @@
 ﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="VolFx.Samples.csproj" />
   <Project Path="MoreMountains.Tools.csproj" />
@@ -8,7 +9,6 @@
   <Project Path="Obvious.Soap.Editor.csproj" />
   <Project Path="VolFx.csproj" />
   <Project Path="AssetInventory.Editor.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Ink-Libraries.csproj" />
   <Project Path="NaughtyAttributes.Core.csproj" />
   <Project Path="AYellowpaper.SerializedCollections.csproj" />

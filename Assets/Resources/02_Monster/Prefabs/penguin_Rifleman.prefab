@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1289523405529749408}
   - component: {fileID: 1367300697281601970}
   m_Layer: 6
-  m_Name: penguin_Rifleman
+  m_Name: Penguin_Rifleman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

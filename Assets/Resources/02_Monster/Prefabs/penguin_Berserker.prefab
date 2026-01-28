@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 7991503147485256288}
   - component: {fileID: 508295957208057898}
   m_Layer: 6
-  m_Name: penguin_Berserker
+  m_Name: Penguin_Berserker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

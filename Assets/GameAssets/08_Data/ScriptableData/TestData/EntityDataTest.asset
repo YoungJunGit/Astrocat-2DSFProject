@@ -56,7 +56,7 @@ MonoBehaviour:
     - 1
     - 1
     - 1
-    Asset_File: player_Rifleman
+    Asset_File: Rifleman
     Temp_Type: 1
   - code: 10001002
     table: 10
@@ -95,7 +95,7 @@ MonoBehaviour:
     - 1
     - 1
     - 1
-    Asset_File: player_Sniper
+    Asset_File: Sniper
     Temp_Type: 2
   - code: 10001003
     table: 10
@@ -134,7 +134,7 @@ MonoBehaviour:
     - 1
     - 1
     - 1
-    Asset_File: player_Commissar
+    Asset_File: Commissar
     Temp_Type: 4
   - code: 10012001
     table: 10
@@ -173,7 +173,7 @@ MonoBehaviour:
     - 1
     - 1
     - 1
-    Asset_File: penguin_Rifleman
+    Asset_File: Penguin_Rifleman
     Temp_Type: 5
   - code: 10012002
     table: 10
@@ -212,7 +212,7 @@ MonoBehaviour:
     - 1
     - 1
     - 1
-    Asset_File: penguin_Commander
+    Asset_File: Penguin_Commander
     Temp_Type: 6
   - code: 10012003
     table: 10
@@ -251,5 +251,5 @@ MonoBehaviour:
     - 1
     - 1
     - 1
-    Asset_File: penguin_Berserker
+    Asset_File: Penguin_Berserker
     Temp_Type: 1
