@@ -18,7 +18,7 @@ public class EntitySpawner : ScriptableObject
 
     public PlayerUnit CreatePlayerUnit(EntityData entityData, int index, PlayerSaveData saveData)
     {
-        GameObject obj = AssetLoader.LoadCharacterPrefabAsset(entityData.Asset_File);
+        GameObject obj = AssetLoader.LoadCharacterPrefabAsset("player_" + entityData.Asset_File);
         PlayerUnit unit = Instantiate(obj).GetComponent<PlayerUnit>();
         unit.Initialize(entityData, index);
         
@@ -32,7 +32,7 @@ public class EntitySpawner : ScriptableObject
 
     public EnemyUnit CreateEnemyUnit(EntityData entityData, int index)
     {
-        GameObject obj = AssetLoader.LoadMonsterPrefabAsset(entityData.Asset_File);
+        GameObject obj = AssetLoader.LoadCharacterPrefabAsset("enemy_" + entityData.Asset_File);
         EnemyUnit unit = Instantiate(obj).GetComponent<EnemyUnit>();
         unit.Initialize(entityData, index);
 

@@ -3,7 +3,7 @@ using DataEnum;
 using DG.Tweening;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ElementGaugeContainer", menuName = "SO/UI/HUD/ElementGaugeContainer", order = 2)]
+[CreateAssetMenu(fileName = "ElementGaugeContainer", menuName = "SO/UI/Container/ElementGaugeContainer", order = 2)]
 public class ElementGaugeContainer : ScriptableObject
 {
     [SerializedDictionary("Element Type", "Gauge Sprite")]

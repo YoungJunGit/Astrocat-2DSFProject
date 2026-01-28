@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 76c98b03a33226b499c0ece4fe9da2b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2321016978629411421
+    second: Gauge_0
+  - first:
+      213: 5857238478133875356
+    second: Gauge_1
+  - first:
+      213: -5951827745148474279
+    second: Gauge_2
+  - first:
+      213: 2159143232615655906
+    second: Gauge_3
+  - first:
+      213: -1803624575939963770
+    second: Gauge_4
+  - first:
+      213: 8730675496157185792
+    second: Gauge_5
+  - first:
+      213: -2962309907026862999
+    second: Gauge_6
+  - first:
+      213: 116946297310839300
+    second: Gauge_7
+  - first:
+      213: 4100311325625491772
+    second: Gauge_8
+  - first:
+      213: -7744821287124966135
+    second: Gauge_9
+  - first:
+      213: -6738903134219227475
+    second: Gauge_10
+  - first:
+      213: -2331369587342807275
+    second: Gauge_11
+  - first:
+      213: -4620132590422853440
+    second: Gauge_12
+  - first:
+      213: 3193117443315887052
+    second: Gauge_13
+  - first:
+      213: 2573404783154467184
+    second: Gauge_14
+  - first:
+      213: -7480002272220166300
+    second: Gauge_15
+  - first:
+      213: -2171660016612825709
+    second: Gauge_16
+  - first:
+      213: 2413435180016180106
+    second: Gauge_17
+  - first:
+      213: -5813609790808439861
+    second: Gauge_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gauge_0
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 759
+        width: 154
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3adb42fea571acfd0800000000000000
+      internalID: -2321016978629411421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 539
+        width: 186
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c925be5ec57194150800000000000000
+      internalID: 5857238478133875356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_2
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 539
+        width: 186
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c6c1e233cd66da0800000000000000
+      internalID: -5951827745148474279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_3
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 539
+        width: 186
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9ae379451d6fd10800000000000000
+      internalID: 2159143232615655906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_4
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 539
+        width: 186
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6841fe2110d38f6e0800000000000000
+      internalID: -1803624575939963770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_5
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 539
+        width: 186
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00708ad4b17992970800000000000000
+      internalID: 8730675496157185792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_6
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 539
+        width: 186
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c1b05a5d2c3e6d0800000000000000
+      internalID: -2962309907026862999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 307
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402820da90a7f9100800000000000000
+      internalID: 116946297310839300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_8
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 307
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c312b602d6b37e830800000000000000
+      internalID: 4100311325625491772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_9
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 307
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 905680cb21ed48490800000000000000
+      internalID: -7744821287124966135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_10
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 307
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daea81dbd4b9a72a0800000000000000
+      internalID: -6738903134219227475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_11
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 307
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f684266bf45afd0800000000000000
+      internalID: -2331369587342807275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_12
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 307
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8f3a433edf1efb0800000000000000
+      internalID: -4620132590422853440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_13
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 75
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb62f6956b305c20800000000000000
+      internalID: 3193117443315887052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_14
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 75
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 071963b040296b320800000000000000
+      internalID: 2573404783154467184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_15
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 75
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 467c33d6091b13890800000000000000
+      internalID: -7480002272220166300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_16
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 75
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395afd888b6bcd1e0800000000000000
+      internalID: -2171660016612825709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_17
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 75
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b9b41628e3e7120800000000000000
+      internalID: 2413435180016180106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gauge_18
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 75
+        width: 194
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc3412472b8e15fa0800000000000000
+      internalID: -5813609790808439861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Gauge_0: -2321016978629411421
+      Gauge_1: 5857238478133875356
+      Gauge_10: -6738903134219227475
+      Gauge_11: -2331369587342807275
+      Gauge_12: -4620132590422853440
+      Gauge_13: 3193117443315887052
+      Gauge_14: 2573404783154467184
+      Gauge_15: -7480002272220166300
+      Gauge_16: -2171660016612825709
+      Gauge_17: 2413435180016180106
+      Gauge_18: -5813609790808439861
+      Gauge_2: -5951827745148474279
+      Gauge_3: 2159143232615655906
+      Gauge_4: -1803624575939963770
+      Gauge_5: 8730675496157185792
+      Gauge_6: -2962309907026862999
+      Gauge_7: 116946297310839300
+      Gauge_8: 4100311325625491772
+      Gauge_9: -7744821287124966135
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

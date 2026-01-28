@@ -11,7 +11,7 @@ public class PlayerHUD : BaseHUD
 {
     [Header("Image")]
     [SerializeField] private Image characterImg;
-    [SerializeField] private CharacterPortraitInfo portraitInfo;
+    [SerializeField] private CharacterPortraitContainer portraitInfo;
 
     [Header("AP")]
     [SerializeField] private TMP_Text ap_Text;
