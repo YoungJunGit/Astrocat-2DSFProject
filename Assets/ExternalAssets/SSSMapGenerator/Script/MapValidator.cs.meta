@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 38b53870c2adfba469e77b8425930561
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292505
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: Assets/ExternalAssets/SSSMapGenerator/Script/MapValidator.cs
+  uploadId: 848298

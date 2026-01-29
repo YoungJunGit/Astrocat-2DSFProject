@@ -144,7 +144,7 @@ public class ES3Postprocessor : UnityEditor.AssetModificationProcessor
             {
                 try
                 {
-                    var obj = EditorUtility.InstanceIDToObject(id);
+                    var obj = EditorUtility.EntityIdToObject(id);
 
                     if (obj == null)
                         continue;

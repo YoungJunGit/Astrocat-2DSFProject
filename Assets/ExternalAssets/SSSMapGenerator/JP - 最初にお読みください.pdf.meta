@@ -8,7 +8,7 @@ DefaultImporter:
 AssetOrigin:
   serializedVersion: 1
   productId: 292505
-  packageName: SSSMapGenerator
-  packageVersion: 1.0.2
-  assetPath: "Assets/SSSMapGenerator/JP - \u6700\u521D\u306B\u304A\u8AAD\u307F\u304F\u3060\u3055\u3044.pdf"
-  uploadId: 706674
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: "Assets/ExternalAssets/SSSMapGenerator/JP - \u6700\u521D\u306B\u304A\u8AAD\u307F\u304F\u3060\u3055\u3044.pdf"
+  uploadId: 848298

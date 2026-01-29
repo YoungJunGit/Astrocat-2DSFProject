@@ -11,7 +11,7 @@ public class SaveNodeData
     public List<int> nextNodeIdx = new List<int>();
     public List<int> prevNodeIdx = new List<int>();
 
-    public NodeType nodeType;
+    public NodeData.Type nodeType;
     public string nodeName;
 
     public bool isVisited;

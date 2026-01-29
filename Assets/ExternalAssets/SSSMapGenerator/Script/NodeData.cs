@@ -1,31 +1,38 @@
 /*
- * SSSMapGenerator : Ver. 1.0.2
+ * SSSMapGenerator : Ver. 1.2.0
  * Written by Takashi Sowa @ loloop
 */
+
 using UnityEngine;
 
+//名前空間｜Namespace
 namespace S3MG{
 
-    public enum NodeType
-    {
-        Empty,
-        Start,
-        Camp,
-        Shop,
-        Event,
-        Treasure,
-        Trap,
-        Enemy,
-        Middle,
-        Final,
-        Random,
-    }
-
-    [CreateAssetMenu(menuName = "S3MG/createNodeData", fileName = "NodeData")]
+	/*------------------------------------------------------------
+	ノードデータ用クラス：ノードデータを管理｜Node data class: Manages node data
+	------------------------------------------------------------*/
+	[CreateAssetMenu(menuName = "S3MG/createNodeData", fileName = "NodeData")]
 	public class NodeData : ScriptableObject{
 
-		public Sprite sprite;
-		public NodeType type;
-		public string nodeName;
+		//ノードタイプ｜Node type
+		public enum Type{
+			Empty,
+			Start,
+			Camp,
+			Shop,
+			Event,
+			Treasure,
+			Trap,
+			Enemy,
+			Middle,
+			Final,
+			Random,
+		}
+
+		public Sprite sprite;//自分の画像｜Node image
+		public Type type;//自分のノードタイプ｜Node type
+		public string nodeName;//自分のノード名｜Node name
+
 	}
+
 }

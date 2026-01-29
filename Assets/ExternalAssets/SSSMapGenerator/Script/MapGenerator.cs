@@ -1,506 +1,453 @@
 /*
- * SSSMapGenerator : Ver. 1.0.2
+ * SSSMapGenerator : Ver. 1.2.0
  * Written by Takashi Sowa @ loloop
 */
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;//インプットシステムを使う為に必要｜Required to use the InputSystem
+using UnityEngine.EventSystems;//EventSystemを使う為に必要｜Required to use the EventSystem
 
+//名前空間｜Namespace
 namespace S3MG{
 
+	//マップ配置モード｜Map placement mode
+	public enum MapPlacementMode{
+		ScrollView,//ScrollViewのContent内に配置｜Place inside ScrollView Content
+		Standalone//Canvas直下に配置｜Place under Canvas
+	}
+
+	//マップ生成クラス｜Map generator class
 	public class MapGenerator : MonoBehaviour{
-		//Instance for Singleton
+
+		//シングルトン用インスタンス｜Singleton instance
 		public static MapGenerator instance;
 
-		//Switch from outside when you want to disable operations during each node event execution or other operations
-		[SerializeField] public bool noMapOperation {get;set;} = false;
+		[Header("▼マップ配置モード｜Map Placement Mode")]
+		[SerializeField] MapPlacementMode placementMode = MapPlacementMode.ScrollView;
 
-		[Header("▼Skip Node Processing : If true, node processing is skipped, and only the stage advances")]
-		[SerializeField] public bool skipNodeProcessing = false;
+		[Header("▼ScrollViewモード用：ContentのRectTransform｜For ScrollView Mode: Content RectTransform")]
+		[SerializeField] RectTransform scrollViewContent;
 
-		[Header("▼Generate on Execution")]
-		[SerializeField] public bool playOnAwake = true;
+		[Header("▼ノードの処理をスキップするかどうか：trueならノードの処理はスキップされ、ステージのみが移動｜Skip Node Processing : If true, node processing is skipped, and only the stage advances")]
+		public bool skipNodeProcessing = false;
 
-		[Header("▼Make Start Node")]
-		[SerializeField] public bool makeStart = true;
+		[Header("▼実行と同時にマップ生成するかどうか｜Generate on Execution")]
+		[SerializeField] bool playOnAwake = true;
 
-		[Header("▼Offset Nodes in Placement")]
-		[SerializeField] public bool isOffset = true;
+		[Header("▼スタートノードを作るかどうか｜Make Start Node")]
+		[SerializeField] bool makeStart = true;
 
-		[Header("▼Show Text on Nodes")]
-		[SerializeField] public bool showText = true;
+		[Header("▼ノードをずらして配置するかどうか｜Offset Nodes in Placement")]
+		[SerializeField] bool isOffset = true;
 
-		[Header("▼Allow Path Intersection")]
-		[SerializeField] public bool crossable = false;
+		[Header("▼パスを交差可能にするかどうか｜Allow Path Intersection")]
+		[SerializeField] bool crossable = false;
 
-		[Header("▼Completely Random Placement : Except for fixed nodes, do not apply the default map placement rules")]
-		[SerializeField] public bool allRandom = false;
+		[Header("▼マップ生成にランダムseedを使うか固定seedを使うか：trueの場合は変数seedの値無効｜Whether to randomize the seed : If true, the value of the variable seed is invalid")]
+		[SerializeField] bool randomizeSeed = true;
+		[SerializeField] int seed = 0;
 
-		[Header("▼Whether to randomize the seed : If true, the value of the variable seed is invalid")]
-		[SerializeField] public bool randomizeSeed = true;
-		[SerializeField] public int seed = 0;
+		[Header("▼マップ基本設定｜Map Basic Settings")]
+		[SerializeField, Range(1,128)] int floorNum = 15;//フロア数｜Number of floors
+		[SerializeField, Range(1,32)] int routeNum = 7;//ルート数｜Number of routes
+		[SerializeField, Range(32,256)] float normalNodeSize = 80;//通常ノードの大きさ｜Normal node size
+		[SerializeField, Range(32,256)] float startNodeSize = 160;//スタートノードの大きさ｜Start node size
+		[SerializeField, Range(32,256)] float finalNodeSize = 160;//ファイナルノードの大きさ｜Final node size
+		[SerializeField] float floorDistance = 80;//フロア間の距離｜Distance between floors
+		[SerializeField] float routeDistance = 80;//ルート間の距離｜Distance between routes
 
-		[Header("▼Map Basic Settings")]
-		[SerializeField, Range(1,128)] public int floorNum = 15;
-		[SerializeField, Range(1,32)] public int routeNum = 7;
-		[SerializeField, Range(32,256)] public float normalNodeSize = 80;
-		[SerializeField, Range(32,256)] public float startNodeSize = 160;
-		[SerializeField, Range(32,256)] public float finalNodeSize = 160;
-		[SerializeField] public float floorDistance = 80;
-		[SerializeField] public float routeDistance = 80;
+		[Header("▼アクティブルート数：RouteNumより多い場合はRouteNumに制限｜Active Route Count : Limited to RouteNum if exceeded")]
+		[SerializeField, Range(1,20)] int activeRouteNum = 4;
+		Node[] activeRouteNodes;//アクティブルートnode格納配列｜Array for active route nodes
 
-		[Header("▼Active Route Count : Limited to RouteNum if exceeded")]
-		[SerializeField, Range(1,20)] public int activeRouteNum = 4;
-		Node[] activeRouteNodeArray;
+		[Header("▼マップを表示するCanvas｜Canvas to Display Map")]
+		[SerializeField] GameObject mapCanvas;
+		RectTransform mapParent;//マップを入れる親オブジェクト｜Parent object for the map
 
-		[Header("▼Canvas to Display Map")]
-		[SerializeField] public GameObject mapCanvas;
-		RectTransform mapParent;
+		[Header("▼ノード用Prefab：Nodeクラスを持つButtonPrefab｜Node Prefab: ButtonPrefab with Node class")]
+		[SerializeField] Node nodePref;
 
-		[Header("▼Node Prefab: ButtonPrefab with Node class")]
-		[SerializeField] public Node nodePref;
+		[Header("▼背景Prefab：9スライスが設定されたImageのPrefab、なくても可｜Background Prefab : Prefab is not required, Image Prefab with 9-slice scaling")]
+		[SerializeField] GameObject backgroundPref;
 
-		[Header("▼Path Settings : Prefab is not required, Custom Prefab with settings like shaders is also acceptable")]
-		[SerializeField] public Image pathImagePref;
-		[SerializeField] public Color pathColor = Color.gray;
-		[SerializeField] public Color passedPathColor = Color.white;
-		[SerializeField, Range(0,16)] public float pathWidth = 4f;
-		[SerializeField, Range(0,256)] public float paddingBetweenNodes = 0;
+		[Header("▼背景とマップの余白｜Padding Between Background and Map")]
+		[SerializeField, Range(0,160)] float backgroundPadding = 80;
 
-		[Header("▼Background Prefab : Prefab is not required, Image Prefab with 9-slice scaling")]
-		[SerializeField] public GameObject backgroundPref;
+		[Header("▼コンポーネント参照｜Component References")]
+		[SerializeField] MapNodePlacer nodePlacer;//ノード配置コンポーネント｜Node placer component
+		[SerializeField] MapPathRenderer pathRenderer;//パス描画コンポーネント｜Path renderer component
+		[SerializeField] MapDragController dragController;//マップドラッグ操作コンポーネント｜Map drag controller component
+		[SerializeField] MapValidator validator;//バリデーションコンポーネント｜Validation component
 
-		[Header("▼Padding Between Background and Map")]
-		[SerializeField, Range(0,160)] public float backgroundPadding = 80;
+		Node startNode;//スタートnode格納用｜Start node
+		Node finalNode;//ファイナルnode格納用｜Final node
+		Node[,] map;//各エリアnode格納用二次元配列｜2D array for area nodes
+		float mapWidth;//マップ全体の幅｜Total map width
+		float mapHeight;//マップ全体の高さ｜Total map height
 
-		[Header("▼Mouse Drag Sensitivity and Gamepad Movement Sensitivity")]
-		[SerializeField, Range(1,3)] public float mouseSensitive = 1.0f;
-		[SerializeField, Range(1,6)] public float gamepadSensitive = 2.0f;
+		float canvasWidth;//Canvasの幅｜Canvas width
+		float canvasHeight;//Canvasの高さ｜Canvas height
+		float OffsetMultiplier = 0.9f;//隣同士が近くなりすぎないようにするオフセット係数｜Offset multiplier to prevent nodes from being too close to each other
+		public bool IsCompleted {get; private set;} = false;//マップの生成が完了したかどうか｜Whether map generation is completed
 
-		[Header("▼Data for Each Node : Set ScriptableObject Data")]
-		[SerializeField] public NodeData startNodeData;
-		[SerializeField] public NodeData[] finalNodeData;
-		[SerializeField] public FixedNodeData[] fixedNodeData;
-		[SerializeField] public MapNodeData[] mapNodeData;
+		//現在選択中のノード｜Currently selected node
+		public Node nowNode {get;set;}
 
-		[SerializeField] public Node nowNode {get;set;}
+		//各ノードのイベント実行時や別操作の時に操作無効にしたいタイミングで外部から切り替え｜Switch from outside when you want to disable operations during node event execution or other operations
+		public bool noMapOperation {get;set;} = false;
 
-		Node startNode;
-		Node finalNode;
-		Node[,] map;
-		List<RectTransform> pathsRectTransform = new List<RectTransform>();
-		float mapWidth;
-		float mapHeight;
-		bool isCompleted = false;
+		//セーブ/ロード用ゲッター｜Getters for save/load
+		public int GetSeed() => seed;
+		public Node[,] GetMap() => map;
+		public Node GetStartNode() => startNode;
+		public Node GetFinalNode() => finalNode;
+		public RectTransform GetMapParent() => mapParent;
+		public ScrollRect GetScrollRect() => scrollViewContent != null ? scrollViewContent.GetComponentInParent<ScrollRect>() : null;
 
-		Vector2 oldMousePos;
-		Vector2 newMousePos;
+		//ノード進入イベント：外部からノードタイプに応じた処理を登録可能｜Node entered event: External scripts can register handlers for node types
+		public static event System.Action<NodeData.Type, Node> OnNodeEntered;
 
 		/*------------------------------------------------------------
-		Executed when the value in the inspector is changed:Implemented to initialize when added because serializable classes like FixedNodeData and MapNodeData cannot use constructors
+		ノードイベント発火：Node.csから呼び出される｜Fire node event: Called from Node.cs
 		------------------------------------------------------------*/
-		void OnValidate(){
-			if(!Application.isPlaying && fixedNodeData != null){
-				foreach(FixedNodeData node in fixedNodeData){
-					if(node.nodeData == null) node.init();
-				}
-			}
-			if(!Application.isPlaying && mapNodeData != null){
-				foreach(MapNodeData node in mapNodeData){
-					if(node.nodeData == null) node.init();
-				}
-			}
+		public static void InvokeNodeEntered(NodeData.Type type, Node node){
+			OnNodeEntered?.Invoke(type, node);
 		}
 
 		/*------------------------------------------------------------
-		Executed only once when MonoBehaviour is created, Will work if the GameObject is active even if the component is disabled
+		MonoBehaviourが作られた時に1度だけ実行｜Executed only once when MonoBehaviour is created
 		------------------------------------------------------------*/
 		void Awake(){
+			//シングルトン化｜Singleton pattern
 			if(instance == null){
 				instance = this;
-				DontDestroyOnLoad(this.gameObject);
-				DontDestroyOnLoad(mapCanvas);
+				//StandaloneモードのみDontDestroyOnLoadを適用｜Apply DontDestroyOnLoad only in Standalone mode
+				if(placementMode == MapPlacementMode.Standalone){
+					DontDestroyOnLoad(gameObject);
+					DontDestroyOnLoad(mapCanvas);
+				}
+
+				//コンポーネント参照のnullチェックと自動取得｜Null check and auto-get component references
+				if(validator == null) validator = GetComponent<MapValidator>();
+				if(dragController == null) dragController = GetComponent<MapDragController>();
+				if(pathRenderer == null) pathRenderer = GetComponent<MapPathRenderer>();
+				if(nodePlacer == null) nodePlacer = GetComponent<MapNodePlacer>();
 			}else{
-				Destroy(this.gameObject);
-				Destroy(mapCanvas);
+				Destroy(gameObject);
+				if(placementMode == MapPlacementMode.Standalone) Destroy(mapCanvas);
 			}
 		}
 
 		/*------------------------------------------------------------
-		Executed one frame after Awake, Executed when the GameObject is active and the component is enabled
+		Awakeの1フレーム後に実行｜Executed one frame after Awake
 		------------------------------------------------------------*/
 		void Start(){
-			if(playOnAwake) init();
+			//実行と同時に生成するなら処理開始｜Start processing if generating on execution
+			if(playOnAwake) Init();
 		}
 
 		/*------------------------------------------------------------
-		Called once per frame, Executed when the GameObject and component are enabled
+		初期化｜Initialize
 		------------------------------------------------------------*/
-		void Update(){
-			if(!isCompleted) return;
-			if(noMapOperation) return;
+		public void Init(){
+			//生成前データチェックして問題があればログを表示して早期リターン｜Check data before generation, show log and return early if there is a problem
+			if(validator.DataCheckBeforeGeneration(
+				placementMode,
+				mapCanvas,
+				scrollViewContent,
+				nodePref,
+				makeStart,
+				nodePlacer.GetStartNodeData(),
+				nodePlacer.GetFinalNodeData(),
+				nodePlacer.GetFixedNodeData(),
+				nodePlacer.GetMapNodeData()
+			)) return;
 
-			if(Mouse.current.leftButton.wasPressedThisFrame){
-				oldMousePos = Mouse.current.position.ReadValue() - ((oldMousePos == Vector2.zero) ? mapParent.anchoredPosition : Vector2.zero);
-			}
-			else if(Mouse.current.leftButton.isPressed){
-				newMousePos.x -= (oldMousePos.x - Mouse.current.position.ReadValue().x) * mouseSensitive;
-				newMousePos.y -= (oldMousePos.y - Mouse.current.position.ReadValue().y) * mouseSensitive;
-				if(newMousePos.x > mapWidth / 2) newMousePos.x = mapWidth / 2;
-				if(newMousePos.x < -mapWidth / 2) newMousePos.x = -mapWidth / 2;
-				if(newMousePos.y > Screen.height / 2) newMousePos.y = Screen.height / 2;
-				if(newMousePos.y < -(mapHeight + backgroundPadding * 2) - Screen.height / 4) newMousePos.y = -(mapHeight + backgroundPadding * 2) - Screen.height / 4;
-				mapParent.anchoredPosition = newMousePos;
-				oldMousePos = Mouse.current.position.ReadValue();
-			}
-
-			if(Gamepad.current != null){
-				if(Gamepad.current.leftStick.ReadValue().y > 0.3f) movementUpDown(true);
-				if(Gamepad.current.leftStick.ReadValue().y < -0.3f) movementUpDown(false);
-				if(Gamepad.current.leftStick.ReadValue().x < -0.3f) movementLeftRight(true);
-				if(Gamepad.current.leftStick.ReadValue().x > 0.3f) movementLeftRight(false);
-			}
-		}
-
-		/*------------------------------------------------------------
-		Gamepad left-right movement
-		------------------------------------------------------------*/
-		void movementLeftRight(bool vector){
-			if(vector){
-				newMousePos.x += gamepadSensitive;
-				if(newMousePos.x > mapWidth / 2) newMousePos.x = mapWidth / 2;
-			}else{
-				newMousePos.x -= gamepadSensitive;
-				if(newMousePos.x < -mapWidth / 2) newMousePos.x = -mapWidth / 2;
-			}
-			mapParent.anchoredPosition = newMousePos;
-		}
-
-		/*------------------------------------------------------------
-		Gamepad up-down movement
-		------------------------------------------------------------*/
-		void movementUpDown(bool vector){
-			if(vector){
-				newMousePos.y -= gamepadSensitive;
-				if(newMousePos.y > Screen.height / 2) newMousePos.y = Screen.height / 2;
-			}else{
-				newMousePos.y += gamepadSensitive;
-				if(newMousePos.y < -(mapHeight + backgroundPadding * 2) - Screen.height / 4) newMousePos.y = -(mapHeight + backgroundPadding * 2) - Screen.height / 4;
-			}
-			mapParent.anchoredPosition = newMousePos;
-		}
-
-		/*------------------------------------------------------------
-		Initialization
-		------------------------------------------------------------*/
-		public void init(){
-			if(dataCheckBeforeGeneration()) return;
-
+			//シードのランダム化が有効なら0からint.MaxValueの範囲内でランダムな整数を生成｜Generate random integer if seed randomization is enabled
 			if(randomizeSeed) seed = Mathf.FloorToInt(Random.value * int.MaxValue);
+			//変数seedを引数にしてRandom.InitStateで各random関数の元になる値を設定｜Set seed value for random functions
 			Random.InitState(seed);
 
-			preGenerated();
-			createMap();
-			selectFirstNode();
-			for(int i = 0; i < activeRouteNodeArray.Length; i++){
-				connectingNodes(activeRouteNodeArray[i]);
+			//事前に必要なものを生成｜Pre-generate required objects
+			PreGenerated();
+			//マップを作成｜Create map
+			CreateMap();
+			//アクティブルートnodeを選択して配列を生成｜Select active route nodes and create array
+			SelectFirstNode();
+			//アクティブルートnode数分のルートをマップに反映｜Apply routes to map for each active route node
+			for(int i = 0; i < activeRouteNodes.Length; i++){
+				ConnectingNodes(activeRouteNodes[i]);
 			}
-			if(backgroundPref != null) generateBackground();
-			hideEmpty();
-			setNode();
-			activeNodeSelect();
-			isCompleted = true;
+			//背景プレファブがnullでなければ背景を生成｜Generate background if background prefab is not null
+			if(backgroundPref != null) GenerateBackground();
+			//未通過nodeを非表示｜Hide unconnected nodes
+			HideEmpty();
+			//各nodeを設定｜Set each node
+			nodePlacer.SetNode(startNode, finalNode, map, floorNum, routeNum, makeStart);
+			//開始する為のノード選択｜Select node to start
+			ActiveNodeSelect();
+			//生成完了フラグを立てる｜Set generation completed flag
+			IsCompleted = true;
 		}
 
 		/*------------------------------------------------------------
-		Pre-generation data check
+		事前生成｜Pre-generate
 		------------------------------------------------------------*/
-		bool dataCheckBeforeGeneration(){
-			bool check = false;
+		void PreGenerated(){
+			//Standaloneモード：Canvas Scalerを画面サイズに合わせる｜Standalone mode: Adjust Canvas Scaler to screen size
+			if(placementMode == MapPlacementMode.Standalone){
+				CanvasScaler scaler = mapCanvas.GetComponent<CanvasScaler>();
+				scaler.referenceResolution = new Vector2(Screen.width, Screen.height);
+				Canvas.ForceUpdateCanvases();//レイアウトを強制更新してregenerate時にも即座に反映｜Force layout update for immediate reflection on regenerate
+				canvasWidth = Screen.width;
+				canvasHeight = Screen.height;
 
-			if(mapCanvas == null){
-				Debug.Log($"Please register the Canvas to display the map.");
-				check = true;
-			}
-			if(mapCanvas.transform.parent != null){
-				Debug.Log($"Please place the Canvas to display the map in the Root.");
-				check = true;
-			}
-			if(nodePref == null){
-				Debug.Log($"Please register the Node Prefab.");
-				check = true;
-			}
-			if(makeStart && startNodeData == null){
-				Debug.Log($"Please register the Start Node data.");
-				check = true;
-			}
-			if(finalNodeData.Length == 0 || mapNodeData.Length == 0){
-				Debug.Log($"Please register all map node data except for fixedNodeData.");
-				check = true;
-			}
-
-			for(int i = 0; i < finalNodeData.Length; i++){
-				if(finalNodeData[i] == null){
-					Debug.Log($"One or more finalNodeData is null.");
-					check = true;
-					break;
+				//scrollViewContentが設定されていればScrollViewを非表示にする｜Hide ScrollView if scrollViewContent is set
+				if(scrollViewContent != null){
+					ScrollRect scrollRect = scrollViewContent.GetComponentInParent<ScrollRect>();
+					if(scrollRect != null) scrollRect.gameObject.SetActive(false);
 				}
 			}
-
-			for(int i = 0; i < mapNodeData.Length; i++){
-				if(mapNodeData[i].nodeData == null){
-					Debug.Log($"One or more mapNodeData is null.");
-					check = true;
-					break;
+			//ScrollViewモード：ScrollViewが属するCanvasのCanvas Scalerも調整｜ScrollView mode: Also adjust Canvas Scaler of Canvas containing ScrollView
+			else{
+				//ScrollViewが属するCanvasを取得してCanvas Scalerを調整｜Get Canvas containing ScrollView and adjust Canvas Scaler
+				Canvas scrollViewCanvas = scrollViewContent.GetComponentInParent<Canvas>();
+				if(scrollViewCanvas != null){
+					CanvasScaler scaler = scrollViewCanvas.GetComponent<CanvasScaler>();
+					if(scaler != null){
+						scaler.referenceResolution = new Vector2(Screen.width, Screen.height);
+					}
 				}
+				Canvas.ForceUpdateCanvases();//ScrollViewのレイアウト更新｜Update ScrollView layout
+				canvasWidth = scrollViewContent.rect.width;
+				canvasHeight = scrollViewContent.rect.height;
 			}
 
-			for(int i = 0; i < fixedNodeData.Length; i++){
-				if(fixedNodeData[i].nodeData == null){
-					Debug.Log($"One or more fixedNodeData is null.");
-					check = true;
-					break;
-				}
-			}
-
-			bool anySerializable = false;
-			for(int i = 0; i < mapNodeData.Length; i++){
-				if(mapNodeData[i].serializable){
-					anySerializable = true;
-					break;
-				}
-			}
-			if(!anySerializable){
-				Debug.Log($"Please register at least one continuous node in mapNodeData.");
-				check = true;
-			}
-
-			bool appearedAfter1 = false;
-			for(int i = 0; i < mapNodeData.Length; i++){
-				if(!mapNodeData[i].reverseAppearedAfter && mapNodeData[i].appearedAfter == 1){
-					appearedAfter1 = true;
-					break;
-				}
-			}
-			if(!appearedAfter1){
-				Debug.Log($"Please register at least one node that can start from the first floor in mapNodeData.");
-				check = true;
-			}
-
-			return check;
-		}
-
-		/*------------------------------------------------------------
-		Pre-generation
-		------------------------------------------------------------*/
-		void preGenerated(){
+			//Mapを入れる親オブジェクトを作る｜Create parent object for the map
 			GameObject parentObject = new GameObject("Parent");
 			parentObject.layer = LayerMask.NameToLayer("UI");
 			mapParent = parentObject.AddComponent<RectTransform>();
-			mapParent.SetParent(mapCanvas.transform);
+
+			//配置先を切り替え｜Switch placement target
+			if(placementMode == MapPlacementMode.Standalone){
+				mapParent.SetParent(mapCanvas.transform);
+			}else{
+				mapParent.SetParent(scrollViewContent);
+			}
+
 			mapParent.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
 			mapParent.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
 			mapParent.anchorMin = new Vector2(0.5f, 0.5f);
 			mapParent.anchorMax = new Vector2(0.5f, 0.5f);
 			mapParent.pivot = new Vector2(0.5f, 0.5f);
-			Vector2 pos = mapParent.anchoredPosition;
-			pos.x = 0;
-			pos.y = -Screen.height / 2 + ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) + backgroundPadding;
-			mapParent.anchoredPosition = pos;
+			//初期位置は(0,0)に設定：実際の中央揃えはCreateMap()でマップサイズ確定後に行う｜Initial position is (0,0): Actual centering is done in CreateMap() after map size is determined
+			mapParent.anchoredPosition = Vector2.zero;
 			mapParent.SetAsFirstSibling();
 
-			oldMousePos = newMousePos = mapParent.anchoredPosition;
-
-			if(pathImagePref == null){
-				GameObject pathObject = new GameObject("Path");
-				pathObject.AddComponent<RectTransform>();
-				Image image = pathObject.AddComponent<Image>();
-				image.raycastTarget = false;
-				pathObject.layer = LayerMask.NameToLayer("UI");
-				pathImagePref = pathObject.GetComponent<Image>();
-			}
+			//パスレンダラーを初期化｜Initialize path renderer
+			pathRenderer.Initialize(mapParent);
 		}
 
 		/*------------------------------------------------------------
-		Create map
+		マップを作成｜Create map
 		------------------------------------------------------------*/
-		void createMap(){
-			map = new Node[floorNum,routeNum];
+		void CreateMap(){
+			map = new Node[floorNum,routeNum];//フロア数とルート数を元に二次元配列作成｜Create 2D array based on floor and route count
 
+			//スタートnodeを作るならスタートnodeを作成｜Create start node if makeStart is true
 			if(makeStart){
 				startNode = Instantiate(nodePref, mapParent);
-				setNodeSize(startNode, startNodeSize);
-				startNode.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-				startNode.gameObject.name = $"Start Node";
+				SetNodeSize(startNode, startNodeSize);
+				startNode.CachedRectTransform.anchoredPosition = Vector2.zero;
+				startNode.gameObject.name = "Start Node";
 				startNode.connected = true;
 			}
 
-			for(int i = 0; i < floorNum; i++){
-				for(int j = 0; j < routeNum; j++){
+			//格子状にnodeを作成｜Create nodes in a grid
+			for(int floorIndex = 0; floorIndex < floorNum; floorIndex++){
+				for(int routeIndex = 0; routeIndex < routeNum; routeIndex++){
+					//nodeを生成｜Generate node
 					Node node = Instantiate(nodePref, mapParent);
-					setNodeSize(node, normalNodeSize);
-					node.floor = i;
-					node.route = j;
-					node.xPos = (routeDistance * j) + (normalNodeSize * j) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2));
-					node.yPos = (floorDistance * i) + (normalNodeSize * i) + ((makeStart) ? floorDistance + (startNodeSize / 2) + (normalNodeSize / 2) : 0);
-					if(isOffset){
-						node.xPos += Random.Range(-routeDistance * 0.9f / 2, routeDistance * 0.9f / 2 + 1);
-						node.yPos += Random.Range(-floorDistance * 0.9f / 2, floorDistance * 0.9f / 2 + 1);
+					SetNodeSize(node, normalNodeSize);
+					//nodeに自分のフロアとルートを保持｜Store floor and route in node
+					node.floor = floorIndex;
+					node.route = routeIndex;
+					//nodeに自分の座標を保持｜Store position in node
+					node.xPos = (routeDistance * routeIndex) + (normalNodeSize * routeIndex) - (routeDistance * (routeNum - 1) / 2 + (normalNodeSize * (routeNum - 1) / 2));
+					//Y位置：スタートノードの上端からfloorDistanceの距離に配置｜Y position: place at floorDistance from start node top
+					if(makeStart){
+						//スタートノード上端(startNodeSize/2) + floorDistance + 通常ノード下側までの距離(normalNodeSize/2) + フロア間距離｜Start node top + floorDistance + distance to normal node bottom + floor spacing
+						node.yPos = (startNodeSize / 2) + floorDistance + (normalNodeSize / 2) + (floorDistance + normalNodeSize) * floorIndex;
+					}else{
+						node.yPos = (floorDistance + normalNodeSize) * floorIndex;
 					}
-					node.GetComponent<RectTransform>().anchoredPosition = new Vector2(node.xPos, node.yPos);
-					map[i,j] = node;
-					map[i,j].gameObject.name = $"{i},{j}";
+					//少しずらして配置するなら｜If offset is enabled
+					if(isOffset){
+						node.xPos += Random.Range(-routeDistance * OffsetMultiplier / 2, routeDistance * OffsetMultiplier / 2 + 1);
+						node.yPos += Random.Range(-floorDistance * OffsetMultiplier / 2, floorDistance * OffsetMultiplier / 2 + 1);
+					}
+					//自分の座標を元に配置｜Place node based on position
+					node.CachedRectTransform.anchoredPosition = new Vector2(node.xPos, node.yPos);
+					//二次元配列にnodeを格納｜Store node in 2D array
+					map[floorIndex,routeIndex] = node;
+					//ゲームオブジェクト名を座標にする｜Set game object name to coordinates
+					node.gameObject.name = $"{floorIndex},{routeIndex}";
 				}
 			}
 
+			//ファイナルnodeを作成｜Create final node
 			finalNode = Instantiate(nodePref, mapParent);
-			setNodeSize(finalNode, finalNodeSize);
-			finalNode.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, (floorDistance * floorNum) + (normalNodeSize * floorNum) + (finalNodeSize / 2) + (normalNodeSize / 2) + ((makeStart) ? (startNodeSize / 2) + (normalNodeSize / 2) : 0));
-			finalNode.gameObject.name = $"Final Node";
+			SetNodeSize(finalNode, finalNodeSize);
+			//ファイナルノードY位置：最終フロアの上端からfloorDistanceの距離に配置｜Final node Y position: place at floorDistance from last floor top
+			float lastFloorY;
+			if(makeStart){
+				lastFloorY = (startNodeSize / 2) + floorDistance + (normalNodeSize / 2) + (floorDistance + normalNodeSize) * (floorNum - 1);
+			}else{
+				lastFloorY = (floorDistance + normalNodeSize) * (floorNum - 1);
+			}
+			//最終フロア上端(lastFloorY + normalNodeSize/2) + floorDistance + ファイナルノード下側(finalNodeSize/2)｜Last floor top + floorDistance + final node bottom
+			float finalNodeY = lastFloorY + (normalNodeSize / 2) + floorDistance + (finalNodeSize / 2);
+			finalNode.CachedRectTransform.anchoredPosition = new Vector2(0, finalNodeY);
+			finalNode.gameObject.name = "Final Node";
 			finalNode.connected = true;
 
+			//マップ全体の幅と高さを保持｜Store total map width and height
 			mapWidth = (routeNum * normalNodeSize) + (routeNum * routeDistance);
-			mapHeight = finalNode.GetComponent<RectTransform>().anchoredPosition.y + ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) + finalNodeSize / 2;
 
-			if(mapHeight + backgroundPadding * 2 < Screen.height){
-				Vector2 pos = mapParent.anchoredPosition;
-				pos.y = -(mapHeight + backgroundPadding * 2) / 2 + ((makeStart) ? startNodeSize / 2 : normalNodeSize / 2) + backgroundPadding;
-				mapParent.anchoredPosition = pos;
-				oldMousePos = newMousePos = mapParent.anchoredPosition;
+			//背景パディングを含むマップの上下端座標（mapParent座標系）｜Map top/bottom Y including background padding (in mapParent coordinate)
+			float bottomNodeHalf = ((makeStart) ? startNodeSize : normalNodeSize) / 2;
+			float mapBottomY = -bottomNodeHalf - backgroundPadding;
+			float mapTopY = finalNodeY + (finalNodeSize / 2) + backgroundPadding;
+
+			//マップの高さ（背景パディング含まず）｜Map height (without background padding)
+			mapHeight = (mapTopY - backgroundPadding) - (mapBottomY + backgroundPadding);
+
+			//マップ下端を画面下端に配置：Standaloneモードのみ｜Align map bottom to screen bottom: Standalone mode only
+			if(placementMode == MapPlacementMode.Standalone){
+				mapParent.anchoredPosition = new Vector2(0, -canvasHeight / 2 - mapBottomY);
+			}
+
+			//Standaloneモード：ドラッグコントローラーを初期化｜Standalone mode: Initialize drag controller
+			if(placementMode == MapPlacementMode.Standalone){
+				dragController.Initialize(mapParent, mapWidth, mapHeight, backgroundPadding, canvasWidth, canvasHeight, mapTopY, mapBottomY);
+			}
+			//ScrollViewモード：Contentサイズを調整、ScrollRect操作モードで初期化｜ScrollView mode: Adjust Content size, initialize in ScrollRect control mode
+			else{
+				AdjustScrollViewContent(mapTopY, mapBottomY);
 			}
 		}
 
 		/*------------------------------------------------------------
-		Set node size
+		ノードのサイズを設定する｜Set node size
 		------------------------------------------------------------*/
-		void setNodeSize(Node target, float size){
-			RectTransform rectTransform = target.gameObject.GetComponent<RectTransform>();
+		void SetNodeSize(Node target, float size){
+			RectTransform rectTransform = target.CachedRectTransform;
 			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size);
 			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size);
 		}
 
 		/*------------------------------------------------------------
-		Randomly select active route nodes and store them in an array : To prevent random selection from messing up the order, ensure the randomly selected active route nodes are stored in ascending order
+		アクティブルートnodeをランダムで選んで配列に格納｜Randomly select active route nodes and store in array
 		------------------------------------------------------------*/
-		void selectFirstNode(){
-			List<Node> tmp = new List<Node>();
+		void SelectFirstNode(){
+			//ルート数分で初期化された一時リストを作成｜Create temporary list initialized with route count
+			List<Node> firstFloorNodes = new List<Node>(routeNum);
+			//一時リストに第一フロアの全nodeを格納｜Store all first floor nodes in temporary list
 			for(int i = 0; i < routeNum; i++){
-				tmp.Add(map[0,i]);
+				firstFloorNodes.Add(map[0,i]);
 			}
 
-			if(activeRouteNum < 1) activeRouteNum = 1;
-			if(activeRouteNum > routeNum) activeRouteNum = routeNum;
+			//アクティブルート数をルート数の範囲内にクランプ｜Clamp active route count within route count range
+			activeRouteNum = Mathf.Clamp(activeRouteNum, 1, routeNum);
 
-			for(int i = 0; i < routeNum - activeRouteNum; i++){
-				tmp.RemoveAt(Random.Range(0, tmp.Count));
+			//一時リストから不要な要素を削除｜Remove unnecessary elements from temporary list
+			int removeCount = routeNum - activeRouteNum;
+			for(int i = 0; i < removeCount; i++){
+				firstFloorNodes.RemoveAt(Random.Range(0, firstFloorNodes.Count));
 			}
 
-			activeRouteNodeArray = tmp.ToArray();
+			//残った要素を配列に格納｜Store remaining elements in array
+			activeRouteNodes = firstFloorNodes.ToArray();
 		}
 
 		/*------------------------------------------------------------
-		Connect nodes
+		ノードを接続｜Connect nodes
 		------------------------------------------------------------*/
-		void connectingNodes(Node node){
+		void ConnectingNodes(Node node){
 			if(!node.connected) node.connected = true;
+			//最終フロアでなければ処理｜Process if not final floor
 			if(node.floor < floorNum - 1){
-				int connectDirection = Random.Range(-1,2);
+				int connectDirection = Random.Range(-1,2);//-1が左上、0が真上、1が右上｜-1: upper left, 0: directly above, 1: upper right
 				if(node.route == 0 && connectDirection == -1) connectDirection++;
 				if(node.route == routeNum - 1 && connectDirection == 1) connectDirection--;
 
+				//交差不可の場合｜If crossing is not allowed
 				if(!crossable){
-					if(node.route != 0 && connectDirection == -1 && map[node.floor, node.route - 1].nextNodes != null){
-						for(int i = 0; i < map[node.floor, node.route - 1].nextNodes.Count; i++){
-							if(map[node.floor, node.route - 1].nextNodes[i] == map[node.floor + 1, node.route]){
-								connectDirection++;
-								break;
-							}
+					//自分のrouteが左端ではない、かつ接続先が左上の時｜When not leftmost and connecting to upper left
+					if(node.route != 0 && connectDirection == -1){
+						Node leftNeighbor = map[node.floor, node.route - 1];
+						//自分の左隣りのnodeの接続先に自分の真上のnodeがあったら｜If left neighbor's next nodes contain the node directly above
+						if(leftNeighbor.nextNodes.Contains(map[node.floor + 1, node.route])){
+							connectDirection++;
 						}
 					}
-					if(node.route != routeNum - 1 && connectDirection == 1 && map[node.floor, node.route + 1].nextNodes != null){
-						for(int i = 0; i < map[node.floor, node.route + 1].nextNodes.Count; i++){
-							if(map[node.floor, node.route + 1].nextNodes[i] == map[node.floor + 1, node.route]){
-								connectDirection--;
-								break;
-							}
+					//自分のrouteが右端ではない、かつ接続先が右上の時｜When not rightmost and connecting to upper right
+					if(node.route != routeNum - 1 && connectDirection == 1){
+						Node rightNeighbor = map[node.floor, node.route + 1];
+						//自分の右隣りのnodeの接続先に自分の真上のnodeがあったら｜If right neighbor's next nodes contain the node directly above
+						if(rightNeighbor.nextNodes.Contains(map[node.floor + 1, node.route])){
+							connectDirection--;
 						}
 					}
 				}
 
-				if(makeStart){
-					if(node.floor == 0){
-						startNode.nextNodes.Add(node);
-						node.prevNodes.Add(startNode);
-						drawPath(startNode.GetComponent<RectTransform>(), node.GetComponent<RectTransform>());
-					}
+				//スタートノードを作る設定で第一フロアの時｜When making start node and on first floor
+				if(makeStart && node.floor == 0){
+					startNode.nextNodes.Add(node);
+					node.prevNodes.Add(startNode);
+					pathRenderer.DrawPath(startNode, node);
 				}
 
+				//接続先のnodeを取得｜Get next node
 				Node nextNode = map[node.floor + 1, node.route + connectDirection];
 
-				bool haveNode = false;
-				for(int i = 0; i < node.nextNodes.Count; i++){
-					if(node.nextNodes[i] == nextNode) haveNode = true;
+				//自分の接続先nodeリストにすでに同じnodeがなければパス描画｜Draw path if not already in next nodes list
+				if(!node.nextNodes.Contains(nextNode)){
+					pathRenderer.DrawPath(node, nextNode);
 				}
-				if(!haveNode) drawPath(node.GetComponent<RectTransform>(), nextNode.GetComponent<RectTransform>());
 
 				node.nextNodes.Add(nextNode);
 				nextNode.prevNodes.Add(node);
 
-				connectingNodes(nextNode);
+				ConnectingNodes(nextNode);//再帰呼び出し｜Recursive call
 			}
+			//最終フロアなら｜If final floor
 			else{
-				bool haveFinalNode = false;
-				for(int i = 0; i < node.nextNodes.Count; i++){
-					if(node.nextNodes[i] == finalNode) haveFinalNode = true;
+				//自分の接続先nodeリストにfinalNodeがなければパス描画｜Draw path if finalNode not in next nodes list
+				if(!node.nextNodes.Contains(finalNode)){
+					pathRenderer.DrawPath(node, finalNode);
 				}
-				if(!haveFinalNode) drawPath(node.GetComponent<RectTransform>(), finalNode.GetComponent<RectTransform>());
 
 				node.nextNodes.Add(finalNode);
 				finalNode.prevNodes.Add(node);
 
+				//最終フロアが唯一のフロアで、かつスタートノードを作る設定なら｜If only one floor and making start node
 				if(floorNum == 1 && makeStart){
 					startNode.nextNodes.Add(node);
 					node.prevNodes.Add(startNode);
-					drawPath(startNode.GetComponent<RectTransform>(), node.GetComponent<RectTransform>());
+					pathRenderer.DrawPath(startNode, node);
 				}
 			}
 		}
 
 		/*------------------------------------------------------------
-		Draw paths
+		背景を生成｜Generate background
 		------------------------------------------------------------*/
-		void drawPath(RectTransform start, RectTransform end){
-			Image path = Instantiate(pathImagePref, mapParent);
-			path.color = pathColor;
-
-			float distance = Vector2.Distance(start.anchoredPosition, end.anchoredPosition);
-			distance -= (distance > paddingBetweenNodes * 2) ? paddingBetweenNodes * 2 : distance;
-			path.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, pathWidth);
-			path.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, distance);
-
-			path.rectTransform.pivot = new Vector2(0.5f, 0.5f);
-
-			path.rectTransform.position = (start.position + end.position) / 2;
-
-			float angle = Mathf.Atan2(end.anchoredPosition.y - start.anchoredPosition.y, end.anchoredPosition.x - start.anchoredPosition.x) * Mathf.Rad2Deg - 90;
-			path.rectTransform.rotation = Quaternion.Euler(0, 0, angle);
-
-			path.transform.SetAsFirstSibling();
-
-			pathsRectTransform.Add(path.rectTransform);
-		}
-
-		/*------------------------------------------------------------
-		Generate background
-		------------------------------------------------------------*/
-		void generateBackground(){
+		void GenerateBackground(){
 			GameObject bg = Instantiate(backgroundPref, mapParent);
-			RectTransform rectTransform = bg.gameObject.GetComponent<RectTransform>();
+			RectTransform rectTransform = bg.GetComponent<RectTransform>();
 			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, mapWidth + (backgroundPadding * 2));
 			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, mapHeight + (backgroundPadding * 2));
 			Vector2 pos = rectTransform.anchoredPosition;
@@ -509,9 +456,9 @@ namespace S3MG{
 		}
 
 		/*------------------------------------------------------------
-		Hide unvisited nodes
+		未通過ノードを非表示｜Hide unconnected nodes
 		------------------------------------------------------------*/
-		void hideEmpty(){
+		void HideEmpty(){
 			for(int i = 0; i < floorNum; i++){
 				for(int j = 0; j < routeNum; j++){
 					if(!map[i,j].connected) map[i,j].gameObject.SetActive(false);
@@ -520,295 +467,331 @@ namespace S3MG{
 		}
 
 		/*------------------------------------------------------------
-		Set each node
+		開始する為のノード選択｜Select node to start
 		------------------------------------------------------------*/
-		void setNode(){
-			if(makeStart) startNode.setNodeData(startNodeData.sprite, startNodeData.type, (showText) ? startNodeData.nodeName : "");
-
-			int finalNodeNum = Random.Range(0, finalNodeData.Length);
-			finalNode.setNodeData(finalNodeData[finalNodeNum].sprite, finalNodeData[finalNodeNum].type, (showText) ? finalNodeData[finalNodeNum].nodeName : "");
-
-			List<Node> tmp = new List<Node>();
-			tmp = getUnassignedConnectedNodes(tmp);
-			float totalChance = 0;
-			for(int i = 0; i < mapNodeData.Length; i++){
-				totalChance += mapNodeData[i].chance;
-			}
-
-			if(allRandom){
-				randomlyAssignNode(tmp, totalChance);
-			}
-			else{
-				int loopCount = 0;
-				while(true){
-					loopCount++;
-					applyRulesAndAssignNode(tmp, totalChance);
-					duplicateBranchBackToNull();
-					tmp.Clear();
-					tmp = getUnassignedConnectedNodes(tmp);
-					if(tmp.Count > 0 && loopCount > 100){
-						randomlyAssignNode(tmp, totalChance);
-						Debug.Log($"The outer loop exceeded 100 iterations, so assigning a random node.");
-					}
-					if(tmp.Count == 0 || loopCount > 100) break;
-				}
-				// Debug.Log($"Outer loop：{loopCount}");
-			}
-
-			for(int i = 0; i < fixedNodeData.Length; i++){
-				if(fixedNodeData[i].appearedOn >= floorNum + 1) continue;
-				for(int j = 0; j < routeNum; j++){
-					if(map[fixedNodeData[i].appearedOn - 1, j].connected) map[fixedNodeData[i].appearedOn - 1, j].setNodeData(fixedNodeData[i].nodeData.sprite, fixedNodeData[i].nodeData.type, (showText) ? fixedNodeData[i].nodeData.nodeName : "");
-				}
-			}
-		}
-
-		/*------------------------------------------------------------
-		Place nodes applying rules
-		------------------------------------------------------------*/
-		void applyRulesAndAssignNode(List<Node> tmp, float totalChance){
-			int loopCount = 0;
-			while(true){
-				loopCount++;
-				for(int i = 0; i < tmp.Count; i++){
-					MapNodeData selectedNodeData = selectRandomNodeData(mapNodeData, totalChance);
-					if(selectedNodeData != null){
-						if(meetsCondition(tmp[i], selectedNodeData)){
-							tmp[i].setNodeData(selectedNodeData.nodeData.sprite, selectedNodeData.nodeData.type, (showText) ? selectedNodeData.nodeData.nodeName : "");
-						}
-					}
-				}
-				tmp.Clear();
-				tmp = getUnassignedConnectedNodes(tmp);
-				if(tmp.Count > 0 && loopCount > 100){
-					randomlyAssignNode(tmp, totalChance);
-					Debug.Log($"The inner loop exceeded 100 iterations, so assigning a random node.");
-				}
-				if(tmp.Count == 0 || loopCount > 100) break;
-			}
-			// Debug.Log($"Inner Loop：{loopCount}");
-		}
-
-		/*------------------------------------------------------------
-		Return a list of unset nodes
-		------------------------------------------------------------*/
-		List<Node> getUnassignedConnectedNodes(List<Node> tmp){
+		void ActiveNodeSelect(){
+			//ファイナルノードと全ノードを押せないようButtonコンポーネント無効化｜Disable button component for final node and all nodes
+			finalNode.DisableButton();
 			for(int i = 0; i < floorNum; i++){
 				for(int j = 0; j < routeNum; j++){
-					if(map[i,j].connected && map[i,j].nodeType == NodeType.Empty) tmp.Add(map[i,j]);
-				}
-			}
-			return tmp;
-		}
-
-		/*------------------------------------------------------------
-		Return nodes based on spawn probability
-		------------------------------------------------------------*/
-		MapNodeData selectRandomNodeData(MapNodeData[] mapNodeData, float totalChance){
-			float randNum = Random.Range(0f, totalChance);
-			float cumulativeChance = 0f;
-
-			for(int j = 0; j < mapNodeData.Length; j++){
-				cumulativeChance += mapNodeData[j].chance;
-				if(randNum < cumulativeChance){
-					return mapNodeData[j];
-				}
-			}
-			return null;
-		}
-
-		/*------------------------------------------------------------
-		Check map placement rules and return true if rules are met
-		------------------------------------------------------------*/
-		bool meetsCondition(Node node, MapNodeData selectedNodeData) {
-			bool flag = false;
-
-			if(!selectedNodeData.reverseAppearedAfter){
-				if(node.floor >= selectedNodeData.appearedAfter - 1) flag = true;
-			}
-
-			if(selectedNodeData.reverseAppearedAfter){
-				if(node.floor < selectedNodeData.appearedAfter - 1) flag = true;
-			}
-
-			if(!selectedNodeData.serializable){
-				for(int i = 0; i < node.nextNodes.Count; i++){
-					if(node.nextNodes[i].nodeType == selectedNodeData.nodeData.type){
-						flag = false;
-						break;
-					}
-				}
-				for(int i = 0; i < node.prevNodes.Count; i++){
-					if(node.prevNodes[i].nodeType == selectedNodeData.nodeData.type){
-						flag = false;
-						break;
-					}
+					if(map[i,j].connected && map[i,j].nodeType != null) map[i,j].DisableButton();
 				}
 			}
 
-			return flag;
-		}
-
-		/*------------------------------------------------------------
-		Set duplicate nodes of overlapping branches to null
-		------------------------------------------------------------*/
-		void duplicateBranchBackToNull(){
-			List<Node> tmp = new List<Node>();
-			for(int i = 0; i < floorNum; i++){
-				for(int j = 0; j < routeNum; j++){
-					if(map[i,j].nodeType != NodeType.Empty) tmp.Add(map[i,j]);
-				}
-			}
-			for(int i = 0; i < tmp.Count; i++){
-				if(tmp[i].nextNodes.Count == 2 && tmp[i].nextNodes[0].nodeType == tmp[i].nextNodes[1].nodeType && tmp[i].nextNodes[0].xPos != tmp[i].nextNodes[1].xPos){
-					tmp[i].nextNodes[0].setNodeData(null,NodeType.Empty);
-				}
-				if(tmp[i].nextNodes.Count == 3){
-					Node first = tmp[i].nextNodes[0];
-					Node second = tmp[i].nextNodes[1];
-					Node third = tmp[i].nextNodes[2];
-					if(first.nodeType == second.nodeType && second.nodeType == third.nodeType && first.xPos != second.xPos && second.xPos != third.xPos){
-						first.setNodeData(null, NodeType.Empty);
-						second.setNodeData(null,NodeType.Empty);
-					}
-					if(first.nodeType == second.nodeType && first.xPos != second.xPos){
-						first.setNodeData(null,NodeType.Empty);
-					}
-					if(first.nodeType == third.nodeType && first.xPos != third.xPos){
-						first.setNodeData(null,NodeType.Empty);
-					}
-					if(second.nodeType == third.nodeType && second.xPos != third.xPos){
-						second.setNodeData(null,NodeType.Empty);
-					}
-				}
-			}
-		}
-
-		/*------------------------------------------------------------
-		Freely place all nodes according to spawn probability except fixed nodes
-		------------------------------------------------------------*/
-		void randomlyAssignNode(List<Node> tmp, float totalChance){
-			for(int i = 0; i < tmp.Count; i++){
-				MapNodeData selectedNodeData = selectRandomNodeData(mapNodeData, totalChance);
-				if(selectedNodeData != null){
-					tmp[i].setNodeData(selectedNodeData.nodeData.sprite, selectedNodeData.nodeData.type, (showText) ? selectedNodeData.nodeData.nodeName : "");
-				}
-			}
-			Debug.Log($"Placing nodes randomly.");
-		}
-
-		/*------------------------------------------------------------
-		Select the node to start
-		------------------------------------------------------------*/
-		void activeNodeSelect(){
-			finalNode.disableButton();
-			for(int i = 0; i < floorNum; i++){
-				for(int j = 0; j < routeNum; j++){
-					if(map[i,j].connected && map[i,j].nodeType != NodeType.Empty) map[i,j].disableButton();
-				}
-			}
-
+			//スタートノードを作っているなら｜If making start node
 			if(makeStart){
 				if(Gamepad.current != null) EventSystem.current.SetSelectedGameObject(startNode.gameObject);
 			}
+			//スタートノードを作っていないなら｜If not making start node
 			else{
-				for(int i = 0; i < activeRouteNodeArray.Length; i++){
-					activeRouteNodeArray[i].enableButton();
+				for(int i = 0; i < activeRouteNodes.Length; i++){
+					activeRouteNodes[i].EnableButton();
 				}
-				if(Gamepad.current != null) EventSystem.current.SetSelectedGameObject(activeRouteNodeArray[0].gameObject);
+				if(Gamepad.current != null) EventSystem.current.SetSelectedGameObject(activeRouteNodes[0].gameObject);
 			}
 		}
 
 		/*------------------------------------------------------------
-		Paint the paths that have been passed
+		通過パスを塗る｜Paint passed path
 		------------------------------------------------------------*/
-		public void paintPath(Node node){
-			if(!makeStart && node.floor == 0) return;
-
-			foreach(RectTransform path in pathsRectTransform){
-				float distance = Vector2.Distance(path.position, (nowNode.GetComponent<RectTransform>().position + node.GetComponent<RectTransform>().position) / 2);
-				if(Mathf.Approximately(distance, 0) || distance < 0.01f){
-					path.GetComponent<Image>().color = passedPathColor;
-					break;
-				}
-			}
+		public void PaintPath(Node node){
+			pathRenderer.PaintPath(nowNode, node, makeStart);
 		}
 
 		/*------------------------------------------------------------
-		Set nodes on the same floor as the argument to passed state, making them unclickable
+		引数と同一フロアのノードを押せないように通過済にする｜Mark nodes on the same floor as passed
 		------------------------------------------------------------*/
-		public void passedSameFloor(Node node){
-			for(int i = 0; i < floorNum; i++){
-				for(int j = 0; j < routeNum; j++){
-					if(map[i,j].floor == node.floor){
-						map[i,j].passedNode();
-					}
+		public void PassedSameFloor(Node node){
+			for(int j = 0; j < routeNum; j++){
+				if(map[node.floor, j].connected){
+					map[node.floor, j].PassedNode();
 				}
 			}
 		}
 
 		/*------------------------------------------------------------
-		Move to the next node: for operations from external classes
+		次のノードに進む：外部クラスからの操作用｜Move to next node: For external class operation
 		------------------------------------------------------------*/
-		public void toNextNode(){
+		public void ToNextNode(){
 			if(nowNode == finalNode) return;
 			for(int i = 0; i < nowNode.nextNodes.Count; i++){
-				nowNode.nextNodes[i].enableButton();
+				nowNode.nextNodes[i].EnableButton();
 			}
 			if(Gamepad.current != null) EventSystem.current.SetSelectedGameObject(nowNode.nextNodes[0].gameObject);
 		}
 
 		/*------------------------------------------------------------
-		Activate map : for operations from external classes
+		マップアクティブ化：外部クラスからの操作用｜Activate map: For external class operation
 		------------------------------------------------------------*/
-		public void activeMap(){
+		public void ActiveMap(){
 			noMapOperation = false;
 			mapCanvas.SetActive(true);
 		}
 
 		/*------------------------------------------------------------
-		Deactivate map : for operations from external classes
+		マップ非アクティブ化：外部クラスからの操作用｜Deactivate map: For external class operation
 		------------------------------------------------------------*/
-		public void inactiveMap(){
+		public void InactiveMap(){
 			noMapOperation = true;
 			mapCanvas.SetActive(false);
 		}
 
 		/*------------------------------------------------------------
-		ReGenarate : for operations from external classes
+		再構築：外部クラスからの操作用｜Regenerate: For external class operation
 		------------------------------------------------------------*/
-		public void reGenarate(){
+		public void ReGenerate(){
+			//既存マップの破棄｜Destroy existing map
 			if(mapParent != null){
 				Destroy(mapParent.gameObject);
 			}
-			if(activeRouteNodeArray != null){
-				for(int i = 0; i < activeRouteNodeArray.Length; i++){
-					activeRouteNodeArray[i] = null;
-				}
-			}
-			if(map != null){
-				for(int i = 0; i < map.GetLength(0); i++){
-					for(int j = 0; j < map.GetLength(1); j++){
-						map[i,j] = null;
-					}
-				}
-			}
-			if(pathsRectTransform != null){
-				for(int i = 0; i < pathsRectTransform.Count; i++){
-					pathsRectTransform[i] = null;
-				}
-			}
+			//各コンポーネントをリセット｜Reset each component
+			pathRenderer.Reset();
+			dragController.Reset();
+			//全て初期化｜Initialize all
 			mapParent = null;
-			activeRouteNodeArray = null;
+			activeRouteNodes = null;
 			startNode = null;
 			finalNode = null;
 			map = null;
-			pathsRectTransform = new List<RectTransform>();
 			nowNode = null;
-			isCompleted = false;
+			IsCompleted = false;
 			noMapOperation = false;
-			init();
+
+			//1フレーム待ってから初期化を実行：Destroyは現在のフレーム終了時に実行されるため｜Wait 1 frame before initialization: Destroy is executed at the end of the current frame
+			StartCoroutine(DelayedInit());
 		}
+
+		/*------------------------------------------------------------
+		遅延初期化：ReGenerateから呼び出される｜Delayed initialization: Called from ReGenerate
+		------------------------------------------------------------*/
+		System.Collections.IEnumerator DelayedInit(){
+			yield return null;//1フレーム待機｜Wait 1 frame
+			Init();
+		}
+
+		/*------------------------------------------------------------
+		ScrollViewのContentサイズを調整｜Adjust ScrollView Content size
+		------------------------------------------------------------*/
+		void AdjustScrollViewContent(float mapTopY, float mapBottomY){
+			float totalHeight = mapTopY - mapBottomY;
+			float totalWidth = mapWidth + backgroundPadding * 2;
+
+			//ContentのRectTransformサイズを設定：外側マージン分を追加｜Set Content RectTransform size: Add outer margin
+			float outerMargin = dragController.DragMargin;//外側マージン｜Outer margin
+			float contentWidth = totalWidth + outerMargin * 2;
+			float contentHeight = totalHeight + outerMargin * 2;
+
+			//Viewportサイズを取得してContentサイズを保証：マップが小さくても中央に配置｜Get viewport size and ensure Content size: Center map even if small
+			ScrollRect scrollRect = scrollViewContent.GetComponentInParent<ScrollRect>();
+			if(scrollRect != null){
+				RectTransform viewport = scrollRect.viewport != null ? scrollRect.viewport : scrollRect.GetComponent<RectTransform>();
+				float viewportWidth = viewport.rect.width;
+				float viewportHeight = viewport.rect.height;
+
+				//ContentサイズがViewportより小さい場合はViewportサイズに合わせる｜Match viewport size if Content is smaller
+				contentWidth = Mathf.Max(contentWidth, viewportWidth);
+				contentHeight = Mathf.Max(contentHeight, viewportHeight);
+			}
+
+			scrollViewContent.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, contentWidth);
+			scrollViewContent.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, contentHeight);
+
+			//mapParentのアンカーとピボットを中央に配置｜Position mapParent anchors and pivot to center
+			mapParent.anchorMin = new Vector2(0.5f, 0.5f);//中央｜Center
+			mapParent.anchorMax = new Vector2(0.5f, 0.5f);
+			mapParent.pivot = new Vector2(0.5f, 0.5f);
+
+			//mapParentの位置を設定：Content内でマップを下寄せ｜Set mapParent position: Align map to bottom within Content
+			mapParent.anchoredPosition = new Vector2(0, -totalHeight / 2 + backgroundPadding + startNodeSize / 2);
+
+			//ScrollViewのスクロール位置を設定：左右中央、下端はマージンを除いたマップ下端｜Set ScrollView scroll position: center horizontally, bottom excluding margin
+			if(scrollRect != null){
+				Canvas.ForceUpdateCanvases();//レイアウト更新を強制｜Force layout update
+
+				//左右中央に設定｜Set to horizontal center
+				scrollRect.horizontalNormalizedPosition = 0.5f;
+
+				//下端はマージン分だけ上にオフセット：マップ自体の下端が見える位置｜Offset bottom by margin: position where map bottom (not including margin) is visible
+				float actualViewportHeight = scrollRect.viewport != null ? scrollRect.viewport.rect.height : scrollRect.GetComponent<RectTransform>().rect.height;
+				float actualContentHeight = scrollViewContent.rect.height;
+				if(actualContentHeight > actualViewportHeight){
+					//外側マージン分のオフセットを正規化座標で計算｜Calculate outer margin offset in normalized coordinates
+					float scrollableRange = actualContentHeight - actualViewportHeight;
+					float offsetFromBottom = outerMargin / scrollableRange;
+					scrollRect.verticalNormalizedPosition = Mathf.Clamp01(offsetFromBottom);
+				}else{
+					scrollRect.verticalNormalizedPosition = 0f;
+				}
+			}
+
+			//ScrollbarのNavigationを無効化：ゲームパッドでの誤選択を防止｜Disable Scrollbar navigation: Prevent accidental selection with gamepad
+			DisableScrollbarNavigation(scrollRect);
+
+			//ドラッグコントローラーをScrollViewモードで初期化：左スティックでScrollRect操作｜Initialize drag controller for ScrollView mode: Left stick controls ScrollRect
+			dragController.InitializeForScrollView(scrollRect);
+		}
+
+		/*------------------------------------------------------------
+		ScrollbarのNavigationを無効化｜Disable Scrollbar Navigation
+		------------------------------------------------------------*/
+		void DisableScrollbarNavigation(ScrollRect scrollRect){
+			if(scrollRect == null) return;
+
+			//水平スクロールバー｜Horizontal scrollbar
+			if(scrollRect.horizontalScrollbar != null){
+				Navigation nav = scrollRect.horizontalScrollbar.navigation;
+				nav.mode = Navigation.Mode.None;
+				scrollRect.horizontalScrollbar.navigation = nav;
+			}
+
+			//垂直スクロールバー｜Vertical scrollbar
+			if(scrollRect.verticalScrollbar != null){
+				Navigation nav = scrollRect.verticalScrollbar.navigation;
+				nav.mode = Navigation.Mode.None;
+				scrollRect.verticalScrollbar.navigation = nav;
+			}
+		}
+
+		/*------------------------------------------------------------
+		セーブデータからマップを復元｜Load map from save data
+		------------------------------------------------------------*/
+		public void LoadFromSaveData(MapSaveData saveData){
+			//シードを設定してマップを再生成｜Set seed and regenerate map
+			randomizeSeed = false;
+			seed = saveData.seed;
+
+			//既存マップの破棄｜Destroy existing map
+			if(mapParent != null){
+				Destroy(mapParent.gameObject);
+			}
+			//各コンポーネントをリセット｜Reset each component
+			pathRenderer.Reset();
+			dragController.Reset();
+			//全て初期化｜Initialize all
+			mapParent = null;
+			activeRouteNodes = null;
+			startNode = null;
+			finalNode = null;
+			map = null;
+			nowNode = null;
+			IsCompleted = false;
+			noMapOperation = false;
+
+			//1フレーム待ってからロード処理を実行｜Wait 1 frame before load processing
+			StartCoroutine(DelayedLoadFromSaveData(saveData));
+		}
+
+		/*------------------------------------------------------------
+		遅延ロード処理：LoadFromSaveDataから呼び出される｜Delayed load processing: Called from LoadFromSaveData
+		------------------------------------------------------------*/
+		System.Collections.IEnumerator DelayedLoadFromSaveData(MapSaveData saveData){
+			yield return null;//1フレーム待機｜Wait 1 frame
+
+			//マップを生成｜Generate map
+			Init();
+
+			//訪問済みノードを復元｜Restore visited nodes
+			Node previousNode = null;//パス描画用の前ノード｜Previous node for path drawing
+			foreach(VisitedNodeData visited in saveData.visitedNodes){
+				//-1,-1はスタートノード｜-1,-1 is start node
+				if(visited.floor == -1 && visited.route == -1){
+					if(startNode != null){
+						startNode.visited = true;
+						startNode.PassedNode();
+						startNode.FillComplete();
+						previousNode = startNode;
+					}
+				}
+				//-2,-2はファイナルノード｜-2,-2 is final node
+				else if(visited.floor == -2 && visited.route == -2){
+					if(finalNode != null){
+						finalNode.visited = true;
+						finalNode.PassedNode();
+						finalNode.FillComplete();
+
+						//通過パスを塗る｜Paint passed path
+						if(previousNode != null){
+							pathRenderer.PaintPath(previousNode, finalNode, makeStart);
+						}
+
+						previousNode = finalNode;
+					}
+				}
+				else if(map != null && visited.floor >= 0 && visited.floor < map.GetLength(0) && visited.route >= 0 && visited.route < map.GetLength(1)){
+					Node node = map[visited.floor, visited.route];
+					if(node != null){
+						node.visited = true;
+						node.PassedNode();
+						node.FillComplete();
+
+						//通過パスを塗る｜Paint passed path
+						if(previousNode != null){
+							pathRenderer.PaintPath(previousNode, node, makeStart);
+						}
+
+						//同一フロアの他のノードを通過済みに｜Mark other nodes on same floor as passed
+						for(int r = 0; r < routeNum; r++){
+							if(map[visited.floor, r] != null && map[visited.floor, r].connected && !map[visited.floor, r].visited){
+								map[visited.floor, r].PassedNode();
+							}
+						}
+
+						previousNode = node;
+					}
+				}
+			}
+
+			//現在選択中のノードを復元｜Restore current selected node
+			if(saveData.nowNodeFloor >= 0 && saveData.nowNodeRoute >= 0){
+				if(map != null && saveData.nowNodeFloor < map.GetLength(0) && saveData.nowNodeRoute < map.GetLength(1)){
+					nowNode = map[saveData.nowNodeFloor, saveData.nowNodeRoute];
+				}
+			}
+			else if(saveData.nowNodeFloor == -1 && saveData.nowNodeRoute == -1){
+				nowNode = startNode;
+			}
+			else if(saveData.nowNodeFloor == -2 && saveData.nowNodeRoute == -2){
+				nowNode = finalNode;
+			}
+
+			//スクロール/マップ位置を復元｜Restore scroll/map position
+			yield return null;//レイアウト更新を待つ｜Wait for layout update
+
+			if(placementMode == MapPlacementMode.ScrollView){
+				ScrollRect scrollRect = GetScrollRect();
+				if(scrollRect != null){
+					scrollRect.horizontalNormalizedPosition = saveData.scrollPositionX;
+					scrollRect.verticalNormalizedPosition = saveData.scrollPositionY;
+				}
+			}
+			else{
+				if(mapParent != null){
+					mapParent.anchoredPosition = new Vector2(saveData.mapPositionX, saveData.mapPositionY);
+					dragController.SyncPosition(mapParent.anchoredPosition);
+				}
+			}
+
+			//次のノードに進める状態にする or 初期状態を復元｜Prepare to advance to next node or restore initial state
+			if(saveData.visitedNodes.Count == 0){
+				//訪問済みノードがない場合は初期状態（スタートノード選択可能）｜If no visited nodes, restore initial state (start node selectable)
+				ActiveNodeSelect();
+			}
+			else if(nowNode != null){
+				//訪問済みノードがある場合は次のノードに進める状態に｜If visited nodes exist, prepare to advance to next node
+				ToNextNode();
+			}
+		}
+
+		/*------------------------------------------------------------
+		Inspectorで値が変更された時に実行：設定チェック｜Executed when value is changed in Inspector: Settings check
+		------------------------------------------------------------*/
+		#if UNITY_EDITOR
+		void OnValidate(){
+			if(placementMode == MapPlacementMode.ScrollView && scrollViewContent == null){
+				Debug.LogWarning($"ScrollViewモードではscrollViewContentを設定してください｜Set scrollViewContent for ScrollView mode");
+			}
+		}
+		#endif
 
 	}
 

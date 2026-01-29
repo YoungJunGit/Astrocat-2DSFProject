@@ -11,24 +11,24 @@ using UnityEngine.UI;
 public class Node : MonoBehaviour, IUpdateObserver
 {
 
-    [SerializeField] public int floor { get; set; }
-    [SerializeField] public int route { get; set; }
+    public int floor { get; set; }
+    public int route { get; set; }
 
-    [SerializeField] public List<Node> prevNodes { get; set; } = new List<Node>();
-    [SerializeField] public List<int> prevNodesIdx { get; set; } = new List<int>();
-    [SerializeField] public List<Node> nextNodes { get; set; } = new List<Node>();
-    [SerializeField] public List<int> nextNodesIdx { get; set; } = new List<int>();
+    public List<Node> prevNodes { get; set; } = new List<Node>();
+    public List<int> prevNodesIdx { get; set; } = new List<int>();
+    public List<Node> nextNodes { get; set; } = new List<Node>();
+    public List<int> nextNodesIdx { get; set; } = new List<int>();
 
-    [SerializeField] public bool connected { get; set; } = false;
-    [SerializeField] public bool visited { get; set; } = false;
-    [SerializeField] public bool isActive { get; set; } = false;
-    [SerializeField] public int idx { get; set; } = 0;
-    [SerializeField] public float xPos { get; set; }
-    [SerializeField] public float yPos { get; set; }
-    [SerializeField] public float zPos { get; set; }
+    public bool connected { get; set; } = false;
+    public bool visited { get; set; } = false;
+    public bool isActive { get; set; } = false;
+    public int idx { get; set; } = 0;
+    public float xPos { get; set; }
+    public float yPos { get; set; }
+    public float zPos { get; set; }
 
-    [SerializeField] public NodeType nodeType { get; set; }
-    [SerializeField] public string nodeName { get; set; }
+    public NodeData.Type nodeType { get; set; }
+    public string nodeName { get; set; }
 
     [SerializeField] SpriteRenderer nodeImage;
     [SerializeField] SpriteRenderer visitImage;
@@ -44,7 +44,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     bool isForward = true;
     float lerpStartTime;
 
-    [SerializeField] public bool onButton { get; set; } = false;
+    public bool onButton { get; set; } = false;
     float fillTime = 0.4f;
     float elapsedTime = 0f;
 
@@ -117,7 +117,7 @@ public class Node : MonoBehaviour, IUpdateObserver
     /*------------------------------------------------------------
     Set image, type, and text on a node
     ------------------------------------------------------------*/
-    public void setNodeData(Sprite sprite, NodeType type, string text = "")
+    public void setNodeData(Sprite sprite, NodeData.Type type, string text = "")
     {
         nodeImage.sprite = sprite;
         nodeType = type;
@@ -201,9 +201,9 @@ public class Node : MonoBehaviour, IUpdateObserver
     {
         visited = true;
 
-        if (nodeType != NodeType.Start) _mapGenerator.paintPath(this);
+        if (nodeType != NodeData.Type.Start) _mapGenerator.paintPath(this);
 
-        if (nodeType != NodeType.Start && nodeType != NodeType.Final)
+        if (nodeType != NodeData.Type.Start && nodeType != NodeData.Type.Final)
         {
             _mapGenerator.passedSameFloor(this);
         }
@@ -226,34 +226,34 @@ public class Node : MonoBehaviour, IUpdateObserver
         {
             switch (nodeType)
             {
-                case NodeType.Start:
+                case NodeData.Type.Start:
                     handleStart();
                     break;
-                case NodeType.Camp:
+                case NodeData.Type.Camp:
                     handleCamp();
                     break;
-                case NodeType.Shop:
+                case NodeData.Type.Shop:
                     handleShop();
                     break;
-                case NodeType.Event:
+                case NodeData.Type.Event:
                     handleEvent();
                     break;
-                case NodeType.Treasure:
+                case NodeData.Type.Treasure:
                     handleTreasure();
                     break;
-                case NodeType.Trap:
+                case NodeData.Type.Trap:
                     handleTrap();
                     break;
-                case NodeType.Enemy:
+                case NodeData.Type.Enemy:
                     handleEnemy();
                     break;
-                case NodeType.Middle:
+                case NodeData.Type.Middle:
                     handleMiddle();
                     break;
-                case NodeType.Final:
+                case NodeData.Type.Final:
                     handleFinal();
                     break;
-                case NodeType.Random:
+                case NodeData.Type.Random:
                     handleRandom();
                     break;
                 default:

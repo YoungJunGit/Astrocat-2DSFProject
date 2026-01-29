@@ -13,7 +13,7 @@ namespace PixelCrushers.DialogueSystem.InkSupport
             var filesProcessed = new List<string>();
             var entrypoints = new List<InkEntrypoint>();
             var paths = new List<string>();
-            var dialogueSystemInkIntegration = GameObject.FindObjectOfType<DialogueSystemInkIntegration>();
+            var dialogueSystemInkIntegration = GameObject.FindFirstObjectByType<DialogueSystemInkIntegration>();
             if (dialogueSystemInkIntegration != null && dialogueSystemInkIntegration.inkJSONAssets.Count > 0)
             {
                 dialogueSystemInkIntegration.inkJSONAssets.ForEach(asset => AddInkJsonAssetToEntrypoints(asset, entrypoints, paths, filesProcessed));

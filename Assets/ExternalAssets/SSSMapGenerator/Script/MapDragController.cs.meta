@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 24f4868b34e49274a931498d8c3d88d2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292505
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: Assets/ExternalAssets/SSSMapGenerator/Script/MapDragController.cs
+  uploadId: 848298

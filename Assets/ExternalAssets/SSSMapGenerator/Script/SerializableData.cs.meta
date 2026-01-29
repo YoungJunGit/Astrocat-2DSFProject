@@ -12,7 +12,7 @@ MonoImporter:
 AssetOrigin:
   serializedVersion: 1
   productId: 292505
-  packageName: SSSMapGenerator
-  packageVersion: 1.0.2
-  assetPath: Assets/SSSMapGenerator/Script/SerializableData.cs
-  uploadId: 706674
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: Assets/ExternalAssets/SSSMapGenerator/Script/SerializableData.cs
+  uploadId: 848298

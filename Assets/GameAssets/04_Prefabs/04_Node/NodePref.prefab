@@ -152,7 +152,7 @@ MonoBehaviour:
   nodeButton: {fileID: 2543554635997660809}
   visitImage: {fileID: 4008366631800759096}
   nodeText: {fileID: 3272093817805346778}
-  AS: {fileID: 1161325834848848075}
+  audioSource: {fileID: 1161325834848848075}
   lerpDuration: 0.8
   lerpColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!82 &1161325834848848075
@@ -401,8 +401,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -430,6 +430,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

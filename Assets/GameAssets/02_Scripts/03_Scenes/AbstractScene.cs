@@ -8,7 +8,7 @@ using Tymski;
 
 public abstract class AbstractScene : MonoBehaviour
 {
-    [SerializeField] protected abstract int SceneIdx { get; }
+    protected abstract int SceneIdx { get; }
 
     [SerializeField]
     protected BACKGROUND background_type;

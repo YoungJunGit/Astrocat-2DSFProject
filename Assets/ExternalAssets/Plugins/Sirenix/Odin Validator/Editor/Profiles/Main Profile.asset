@@ -37,31 +37,7 @@ MonoBehaviour:
       IncludeAssetDependencies: 1
     AssetBundle: 
     AddressableGroup: 
-  - Enabled: 0
-    Type: 0
-    Asset:
-      Path: Assets/Editor
-      Filter: 
-    Object: {fileID: 0}
-    Scene:
-      Type: 0
-      Value: 
-      IncludeAssetDependencies: 0
-    AssetBundle: 
-    AddressableGroup: 
-  - Enabled: 0
-    Type: 0
-    Asset:
-      Path: Assets/Data
-      Filter: 
-    Object: {fileID: 0}
-    Scene:
-      Type: 0
-      Value: 
-      IncludeAssetDependencies: 0
-    AssetBundle: 
-    AddressableGroup: 
-  - Enabled: 0
+  - Enabled: 1
     Type: 0
     Asset:
       Path: Assets/GameAssets
@@ -73,7 +49,7 @@ MonoBehaviour:
       IncludeAssetDependencies: 0
     AssetBundle: 
     AddressableGroup: 
-  - Enabled: 0
+  - Enabled: 1
     Type: 2
     Asset:
       Path: 
@@ -83,6 +59,18 @@ MonoBehaviour:
       Type: 0
       Value: Assets/GameAssets/01_Scenes/01_BuildScenes
       IncludeAssetDependencies: 1
+    AssetBundle: 
+    AddressableGroup: 
+  - Enabled: 1
+    Type: 0
+    Asset:
+      Path: Assets/Resources
+      Filter: 
+    Object: {fileID: 0}
+    Scene:
+      Type: 0
+      Value: 
+      IncludeAssetDependencies: 0
     AssetBundle: 
     AddressableGroup: 
   Exclude: []

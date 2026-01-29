@@ -8,7 +8,7 @@ PrefabImporter:
 AssetOrigin:
   serializedVersion: 1
   productId: 292505
-  packageName: SSSMapGenerator
-  packageVersion: 1.0.2
-  assetPath: Assets/SSSMapGenerator/Prefab/NodePref.prefab
-  uploadId: 706674
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: Assets/GameAssets/04_Prefabs/04_Node/NodePref.prefab
+  uploadId: 848298

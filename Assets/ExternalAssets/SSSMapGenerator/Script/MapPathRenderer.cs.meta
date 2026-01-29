@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 63e13960f61c33846a061863fb384cd0
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292505
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: Assets/ExternalAssets/SSSMapGenerator/Script/MapPathRenderer.cs
+  uploadId: 848298

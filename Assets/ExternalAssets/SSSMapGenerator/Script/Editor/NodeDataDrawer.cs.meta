@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 046e4afd30e070e45868479ffa9e1a2f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292505
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: Assets/ExternalAssets/SSSMapGenerator/Script/Editor/NodeDataDrawer.cs
+  uploadId: 848298

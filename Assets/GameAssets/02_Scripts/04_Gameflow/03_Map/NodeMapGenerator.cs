@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "NodeMapGenerator", menuName = "NodeTree/NodeMapGenerator", order = 1)]
 public class NodeMapGenerator : ScriptableObject, IUpdateObserver
 {
-    [SerializeField] public bool noMapOperation { get; set; } = false;
+    public bool noMapOperation { get; set; } = false;
 
     [Header("▼Skip Node Processing : If true, node processing is skipped, and only the stage advances")]
     [SerializeField] public bool skipNodeProcessing = false;
@@ -92,7 +92,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     [SerializeField] public FixedNodeData[] fixedNodeData;
     [SerializeField] public MapNodeData[] mapNodeData;
 
-    [SerializeField] public Node nowNode { get; set; }
+    public Node nowNode { get; set; }
     public int nowNodeIdx { get; set; }
 
     Node startNode;
@@ -451,7 +451,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                         {
                             if(index == nextNode.idx)
                             {
-                                if (nextNode.nodeType != NodeType.Empty)
+                                if (nextNode.nodeType != NodeData.Type.Empty)
                                 {
                                     nodes.Enqueue(nextNode);
                                 }
@@ -730,7 +730,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         {
             for (int j = 0; j < routeNum; j++)
             {
-                if (map[i, j].connected && map[i, j].nodeType == NodeType.Empty) tmp.Add(map[i, j]);
+                if (map[i, j].connected && map[i, j].nodeType == NodeData.Type.Empty) tmp.Add(map[i, j]);
             }
         }
         return tmp;
@@ -805,14 +805,14 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         {
             for (int j = 0; j < routeNum; j++)
             {
-                if (map[i, j].nodeType != NodeType.Empty) tmp.Add(map[i, j]);
+                if (map[i, j].nodeType != NodeData.Type.Empty) tmp.Add(map[i, j]);
             }
         }
         for (int i = 0; i < tmp.Count; i++)
         {
             if (tmp[i].nextNodes.Count == 2 && tmp[i].nextNodes[0].nodeType == tmp[i].nextNodes[1].nodeType && tmp[i].nextNodes[0].xPos != tmp[i].nextNodes[1].xPos)
             {
-                tmp[i].nextNodes[0].setNodeData(null, NodeType.Empty);
+                tmp[i].nextNodes[0].setNodeData(null, NodeData.Type.Empty);
             }
             if (tmp[i].nextNodes.Count == 3)
             {
@@ -821,20 +821,20 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
                 Node third = tmp[i].nextNodes[2];
                 if (first.nodeType == second.nodeType && second.nodeType == third.nodeType && first.xPos != second.xPos && second.xPos != third.xPos)
                 {
-                    first.setNodeData(null, NodeType.Empty);
-                    second.setNodeData(null, NodeType.Empty);
+                    first.setNodeData(null, NodeData.Type.Empty);
+                    second.setNodeData(null, NodeData.Type.Empty);
                 }
                 if (first.nodeType == second.nodeType && first.xPos != second.xPos)
                 {
-                    first.setNodeData(null, NodeType.Empty);
+                    first.setNodeData(null, NodeData.Type.Empty);
                 }
                 if (first.nodeType == third.nodeType && first.xPos != third.xPos)
                 {
-                    first.setNodeData(null, NodeType.Empty);
+                    first.setNodeData(null, NodeData.Type.Empty);
                 }
                 if (second.nodeType == third.nodeType && second.xPos != third.xPos)
                 {
-                    second.setNodeData(null, NodeType.Empty);
+                    second.setNodeData(null, NodeData.Type.Empty);
                 }
             }
         }
@@ -866,7 +866,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         {
             for (int j = 0; j < routeNum; j++)
             {
-                if (map[i, j].connected && map[i, j].nodeType != NodeType.Empty) map[i, j].disableButton();
+                if (map[i, j].connected && map[i, j].nodeType != NodeData.Type.Empty) map[i, j].disableButton();
             }
         }
 

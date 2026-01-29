@@ -9,7 +9,7 @@ NativeFormatImporter:
 AssetOrigin:
   serializedVersion: 1
   productId: 292505
-  packageName: SSSMapGenerator
-  packageVersion: 1.0.2
-  assetPath: Assets/SSSMapGenerator/NodeData/NodeDataTrap.asset
-  uploadId: 706674
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: Assets/GameAssets/03_ScriptableObject/01_Gameplay/04_Node/_Data/NodeDataTrap.asset
+  uploadId: 848298

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8f118eeda20d1c5419dc950d30766920
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292505
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: Assets/ExternalAssets/SSSMapGenerator/Shader/DashPathScroll.shader
+  uploadId: 848298

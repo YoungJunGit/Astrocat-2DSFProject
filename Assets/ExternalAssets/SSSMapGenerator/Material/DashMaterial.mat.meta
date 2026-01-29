@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a5be1aaca99d9cd438e6db89cc8d881c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292505
+  packageName: SSS Map Generator
+  packageVersion: 1.2.0
+  assetPath: Assets/ExternalAssets/SSSMapGenerator/Material/DashMaterial.mat
+  uploadId: 848298

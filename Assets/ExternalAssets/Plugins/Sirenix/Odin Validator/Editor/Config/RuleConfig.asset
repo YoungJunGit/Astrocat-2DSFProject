@@ -15,75 +15,9 @@ MonoBehaviour:
   projectRules:
   - Enabled: 0
     EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.UnityObjectScriptMatchValidator,
-      Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.UICanvasChildElementValidator,
-      Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.ShaderCompilerErrorsValidator,
-      Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.SerializeReferenceValidator, Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.MissingUnityObjectReferenceValidator,
-      Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.MissingScriptValidator, Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
     Type: Sirenix.OdinValidator.Editor.Validators.MeshRendererValidator, Sirenix.OdinValidator.Editor
     Override: 
   - Enabled: 0
     EnabledOverridden: 1
     Type: Sirenix.OdinValidator.Editor.Validators.MaterialValidator, Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.InvalidLayerValidator, Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.HugeTransformPositionsValidator,
-      Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.DuplicateComponentsValidator, Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinInspector.Modules.Addressables.Editor.CheckResourcesToAddressableDuplicateDependenciesValidator,
-      Sirenix.OdinInspector.Modules.Unity.Addressables
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinInspector.Modules.Addressables.Editor.CheckDuplicateBundleDependenciesValidator,
-      Sirenix.OdinInspector.Modules.Unity.Addressables
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.BrokenPrefabConnectionValidator,
-      Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinInspector.Modules.Addressables.Editor.AssetReferenceValidator,
-      Sirenix.OdinInspector.Modules.Unity.Addressables
-    Override: 
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinInspector.Modules.Addressables.Editor.AssetLabelReferenceValidator,
-      Sirenix.OdinInspector.Modules.Unity.Addressables
     Override: 
