@@ -20,7 +20,7 @@ MonoBehaviour:
   crossable: 0
   allRandom: 0
   randomizeSeed: 1
-  seed: 879613568
+  seed: 991039872
   floorNum: 7
   routeNum: 4
   normalNodeSize: 1
@@ -37,7 +37,7 @@ MonoBehaviour:
   planetSelectorPref: {fileID: 3407096067947001916, guid: 6b5c31b56b6b4b349af6ffca3d5efc96, type: 3}
   cameraPositionYOffset: 4.5
   cameraPositionZOffset: 6.77
-  camSpeed: 10
+  camSpeed: 3
   camAngleX: 25.2
   camAngleY: 0
   camAngleZ: 0
