@@ -305,7 +305,7 @@ public sealed class Skill_PowerBooster : SkillAction<ISingleTargetContext>
             );
         });
 
-        @event.CalculateMovePositions(context.Caster.SupporterUnit.transform, context.Target.Attachments.GetDroneInjectionFiringPos().transform);
+        @event.CalculateMovePositions(context.Caster.SupporterUnit.transform, context.Target.Attachments.Get<Transform>(AttachType.DroneInjectionFiringPos).transform);
         await context.Caster.SupporterUnit.AnimationHandler.ChangeAnimationAsync(ANIMATION.MOVE, fadeTime: 0.1f);
         await @event.Move(context.Caster.SupporterUnit.transform, moveDuration, false);
         await context.Caster.SupporterUnit.AnimationHandler.ChangeAnimationAsync(ANIMATION.SKILL, SkillName, fadeTime: 0.25f);

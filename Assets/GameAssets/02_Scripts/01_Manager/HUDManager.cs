@@ -49,7 +49,7 @@ public class HUDManager : ScriptableObject
         EnemyHUD hud = Instantiate(enemyHUDPrefab).GetComponent<EnemyHUD>();
         hud.Initialize(unit);
         unit_HUD_Dic.Add(unit, hud);
-        statusCanvas.SetEnemyHUD(hud, unit.Attachments.GetStatusPosition(), unit.Attachments.GetBuffBoxPosition(), unit.GetStat().Priority);
+        statusCanvas.SetEnemyHUD(hud, unit.Attachments.Get<Transform>(AttachType.StatusBoxPos), unit.Attachments.Get<Transform>(AttachType.BuffBoxPos), unit.GetStat().Priority);
 
         return hud;
     }

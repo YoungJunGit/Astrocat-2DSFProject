@@ -100,7 +100,7 @@ public class UnitSelector : BaseSelector
     {
         foreach (var target in bag.Targets)
         {
-            UnitSelectorObject arrow = Instantiate(unitSelectArrowPrefab, target.Attachments.GetUnitSelectArrowPos(), false);
+            UnitSelectorObject arrow = Instantiate(unitSelectArrowPrefab, target.Attachments.Get<Transform>(AttachType.UnitSelectArrowPos), false);
             bool IsSelectable = !TargetFilterUtility.IsFiltered(strategy.Filters, target);
             arrow.Init(_side, IsSelectable);
             arrowList.Add(arrow);

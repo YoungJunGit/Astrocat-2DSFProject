@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 511848371929146522}
+  - component: {fileID: 4876559179025943807}
   m_Layer: 6
   m_Name: StatusBoxPos
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3262748191238570947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4876559179025943807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669029971691950977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 5
 --- !u!1 &2193092652978649423
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,6 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1473579274158048426}
+  - component: {fileID: 8053901692672824467}
   m_Layer: 6
   m_Name: UnitSelectArrowPos
   m_TagString: Untagged
@@ -97,6 +112,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3262748191238570947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8053901692672824467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066675435808147092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 4
 --- !u!1 &4307186274372039960
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5566413440607134883}
+  - component: {fileID: 3240002643034729482}
   m_Layer: 6
   m_Name: BuffBoxPos
   m_TagString: Untagged
@@ -128,6 +157,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3262748191238570947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3240002643034729482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307186274372039960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 6
 --- !u!1 &4682676976198410225
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6417438151265459889}
   - component: {fileID: 9170951259808354522}
+  - component: {fileID: 7535477090934672831}
   m_Layer: 6
   m_Name: HitBox
   m_TagString: Enemy
@@ -206,6 +249,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.85, y: 1.4}
   m_EdgeRadius: 0
+--- !u!114 &7535477090934672831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682676976198410225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 1
 --- !u!1 &5013509792153842953
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7244932199024356073}
+  - component: {fileID: 977578439642895155}
   m_Layer: 6
   m_Name: MeleeHitPos
   m_TagString: Untagged
@@ -237,6 +294,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3262748191238570947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &977578439642895155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5013509792153842953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 3
 --- !u!1 &6202003589671799302
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +341,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5563290265497989471
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -289,6 +360,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -310,9 +383,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 1295724445987930280, guid: ba334844346b7ea44b507395864ce928, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -322,7 +397,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6943272826485005408
 GameObject:
@@ -438,7 +512,6 @@ MonoBehaviour:
   hitBlendAmount: 0.75
   hitBlendDuration: 0.25
   HasSupporter: 0
-  _soundContainer: {fileID: 11400000, guid: d17f021bc2b30b5428d2f50d5e91a39f, type: 2}
   My_Temp_Type: 0
 --- !u!114 &508295957208057898
 MonoBehaviour:
@@ -452,15 +525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11ea222de4f79c41851a2e961274a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpriteRenderer: {fileID: 1827484332463763094}
-  HitBox: {fileID: 9170951259808354522}
-  DroneInjectionBox: {fileID: 0}
-  MeleeHitPos: {fileID: 7244932199024356073}
-  UnitSelectArrowPos: {fileID: 1473579274158048426}
-  StatusPos: {fileID: 511848371929146522}
-  BuffBoxPos: {fileID: 5566413440607134883}
-  BulletSpawnPos: {fileID: 0}
-  DroneInjectionFiringPos: {fileID: 0}
+  spriteRenderer: {fileID: 1827484332463763094}
+  collidersRoot: {fileID: 7891516241908751854}
+  positionsRoot: {fileID: 3262748191238570947}
 --- !u!1 &8473549944143180526
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +569,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1827484332463763094
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -520,6 +588,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -541,9 +611,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 879355233
   m_SortingLayer: 1
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -835485020, guid: 3c39eaffa7f00754f9ff66dc6187c6dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -553,7 +625,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &3360358827616062212
 Animator:

@@ -66,10 +66,13 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         _stat = new UnitStat(data, priority);
 
         My_Temp_Type = data.Temp_Type;
-        Attachments.GetSpriteRenderer().material = new Material(Attachments.GetSpriteRenderer().material);
 
+        _attachments.Init();
         _animHandler.Init();
         _animEventHandler.Init();
+
+        Attachments.Get<SpriteRenderer>(AttachType.SpriteRenderer).material =
+            new Material(Attachments.Get<SpriteRenderer>(AttachType.SpriteRenderer).material);
 
         ServiceLocator.For(this)
             .Get(out _soundService)
@@ -90,7 +93,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
     {
         if(_stat.HP <= 0f) return;
 
-        _effectManager.PlayHitEffect(Attachments.GetSpriteRenderer().material, gameObject.GetHashCode().ToString());
+        _effectManager.PlayHitEffect(Attachments.Get<SpriteRenderer>(AttachType.SpriteRenderer).material, gameObject.GetHashCode().ToString());
 
         if (this is PlayerUnit)
         {
@@ -103,7 +106,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         }
 
         _stat.GetDamaged(damageInfo.DamageValue);
-        _textManager.OnDamage(Attachments.GetHitBox().bounds, damageInfo);
+        _textManager.OnDamage(Attachments.Get<BoxCollider2D>(AttachType.HitBox).bounds, damageInfo);
 
         if (_stat.HP <= 0f)
         {
@@ -123,7 +126,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         if (_stat.HP <= 0f) return;
 
         float realValue = _stat.GetHealed(value);
-        _textManager.OnHeal(Attachments.GetHitBox().bounds, realValue);
+        _textManager.OnHeal(Attachments.Get<BoxCollider2D>(AttachType.HitBox).bounds, realValue);
     }
 
     public void AddSP(int cost)
@@ -183,10 +186,10 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
     public void ChangeSortingLayer(string layer)
     {
-        Attachments.GetSpriteRenderer().sortingLayerName = layer;
+        Attachments.Get<SpriteRenderer>(AttachType.SpriteRenderer).sortingLayerName = layer;
 
         if(HasSupporter && _supporterUnit != null)
-            _supporterUnit.Attachments.GetSpriteRenderer().sortingLayerName = layer;
+            _supporterUnit.Attachments.Get<SpriteRenderer>(AttachType.SpriteRenderer).sortingLayerName = layer;
     }
 
     public UnitStat GetStat() => _stat;
