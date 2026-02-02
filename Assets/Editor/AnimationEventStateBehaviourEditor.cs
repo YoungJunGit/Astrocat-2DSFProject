@@ -18,6 +18,8 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
     private Animator previewAnimator;
     private float prevAnimSpeed;
 
+    private int selectedEventIndex;
+
     protected override void OnEnable()
     {
         _activeEditor = this;
@@ -41,14 +43,15 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
             return;
         }
 
+        if (stateBehaviour.events == null || stateBehaviour.events.Count == 0)
+            EditorGUILayout.HelpBox("Add at least one Event Entry to use preview.", MessageType.Info);
+
         GUILayout.Space(10f);
 
         if (!isPreviewing)
         {
             if (GUILayout.Button("Preview"))
-            {
-                StartPreview(stateBehaviour);
-            }
+                StartPreview();
         }
         else
         {
@@ -58,7 +61,7 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
             }
             else
             {
-                // 프리뷰 중에는 계속 샘플링해서 씬에 “유지”되게 함
+                // Preview 중 SceneView 포즈 유지용으로 계속 Sample
                 Sample(stateBehaviour);
             }
         }
@@ -67,12 +70,10 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
             GUILayout.Label($"{previewClip.name}: Previewing at {previewTime:F2}s", EditorStyles.helpBox);
     }
 
-    private void StartPreview(AnimationEventStateBehaviour stateBehaviour)
+    private void StartPreview()
     {
-        // 프리뷰 대상 Animator 확정 + Animator 덮어쓰기 방지
         previewAnimator = FindPreviewAnimator();
         if (previewAnimator == null) return;
-
 
         prevAnimSpeed = previewAnimator.speed;
         previewAnimator.speed = 0f;
@@ -81,31 +82,45 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
 
         if (!AnimationMode.InAnimationMode())
             AnimationMode.StartAnimationMode();
-
-        Sample(stateBehaviour);
     }
 
     private void Sample(AnimationEventStateBehaviour stateBehaviour)
     {
         if (previewClip == null) return;
         if (previewAnimator == null) return;
+        if (stateBehaviour.events == null || stateBehaviour.events.Count == 0) return;
 
-        if(stateBehaviour.triggerType == TriggerType.Frame)
+        selectedEventIndex = Mathf.Clamp(selectedEventIndex, 0, stateBehaviour.events.Count - 1);
+        selectedEventIndex = DrawEventSelector(stateBehaviour, selectedEventIndex);
+
+        var entry = stateBehaviour.events[selectedEventIndex];
+
+        if (entry.triggerType == TriggerType.Frame)
         {
-            previewTime = GetTimeFromFrame(previewClip, stateBehaviour);
-            stateBehaviour.triggerTimeResolved = previewTime / previewClip.length;
+            previewTime = GetTimeFromFrame(previewClip, entry);
+            entry.triggerTimeResolved = previewClip.length <= 0f ? 0f : previewTime / previewClip.length;
         }
         else
         {
-            previewTime = stateBehaviour.triggerTime * previewClip.length;
-            stateBehaviour.triggerTime = EditorGUILayout.Slider("Trigger Time", stateBehaviour.triggerTime, 0f, 1f);
+            entry.triggerTime = EditorGUILayout.Slider("Trigger Time", entry.triggerTime, 0f, 1f);
+            previewTime = entry.triggerTime * previewClip.length;
         }
 
         AnimationMode.SampleAnimationClip(previewAnimator.gameObject, previewClip, previewTime);
 
-        // 씬에 반영 강제
+        EditorUtility.SetDirty(stateBehaviour);
+
         EditorApplication.QueuePlayerLoopUpdate();
         SceneView.RepaintAll();
+    }
+
+    private int DrawEventSelector(AnimationEventStateBehaviour stateBehaviour, int current)
+    {
+        string[] labels = stateBehaviour.events
+            .Select((e, i) => $"{i}: {e.eventType} ({e.triggerType})")
+            .ToArray();
+
+        return EditorGUILayout.Popup("Preview Event", current, labels);
     }
 
     private void StopPreviewIfNeeded()
@@ -115,9 +130,7 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
         isPreviewing = false;
 
         if (previewAnimator != null)
-        {
             previewAnimator.speed = prevAnimSpeed;
-        }
 
         if (AnimationMode.InAnimationMode())
             AnimationMode.StopAnimationMode();
@@ -131,7 +144,6 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
         var go = Selection.activeGameObject;
         if (go == null) return null;
 
-        // 선택이 루트/자식 어느 쪽이든 Animator를 찾는다
         var anim = go.GetComponent<Animator>();
         if (anim != null) return anim;
 
@@ -145,7 +157,7 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
         var animatorController = GetValidAnimatorController(out errorMessage);
         if (animatorController == null) return false;
 
-        // 루트 stateMachine만 찾고 있어서, 서브스테이트머신이면 못 찾음(필요하면 재귀로 바꿔야 함)
+        // Root stateMachine only (기존과 동일한 제한)
         var matchingState = animatorController.layers
             .SelectMany(layer => layer.stateMachine.states)
             .FirstOrDefault(state => state.state.behaviours.Contains(stateBehaviour));
@@ -154,7 +166,7 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
 
         if (previewClip == null)
         {
-            errorMessage = "No valid AnimationClip found for the current state. (BlendTree/ SubStateMachine이면 재귀 탐색 필요)";
+            errorMessage = "No valid AnimationClip found for the current state. (BlendTree/SubStateMachine requires extra search logic.)";
             return false;
         }
 
@@ -182,24 +194,27 @@ public class AnimationEventStateBehaviourEditor : OdinEditor
         return controller;
     }
 
-    private float GetTimeFromFrame(AnimationClip clip, AnimationEventStateBehaviour stateBehaviour)
+    private float GetTimeFromFrame(AnimationClip clip, EventEntry entry)
     {
         var frames = SpriteAnimationUtil.GetSpriteKeyframes(clip);
         if (frames == null || frames.Length == 0)
+        {
+            EditorGUILayout.HelpBox("No sprite keyframes found in this clip.", MessageType.Info);
+            entry.triggerFrame = 0;
             return 0f;
+        }
 
-        stateBehaviour.triggerFrame = EditorGUILayout.IntSlider("Trigger Frame", stateBehaviour.triggerFrame, 0, frames.Length);
+        entry.triggerFrame = EditorGUILayout.IntSlider("Trigger Frame", entry.triggerFrame, 0, frames.Length);
 
-        if(stateBehaviour.triggerFrame == frames.Length)
+        if (entry.triggerFrame == frames.Length)
             return clip.length;
 
-        int frameIndex = Mathf.Clamp(stateBehaviour.triggerFrame, 0, frames.Length - 1);
+        int frameIndex = Mathf.Clamp(entry.triggerFrame, 0, frames.Length - 1);
         return frames[frameIndex].time;
     }
 
     public static void ForceStopPreview()
     {
-        if (_activeEditor != null)
-            _activeEditor.StopPreviewIfNeeded();
+        _activeEditor?.StopPreviewIfNeeded();
     }
 }

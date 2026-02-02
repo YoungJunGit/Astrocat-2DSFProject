@@ -38,12 +38,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Commissar_Skill_ForceSuppression
-  triggerType: 1
-  triggerTime: 0.019
-  triggerTimeResolved: 0.13333334
-  triggerFrame: 2
+  events:
+  - eventType: 3
+    soundName: player_Commissar_Skill_ForceSuppression
+    triggerType: 1
+    triggerTime: 0.019
+    triggerTimeResolved: 0.13333334
+    triggerFrame: 2
+  - eventType: 3
+    soundName: player_Commissar_Skill_ForceSuppression
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.26666668
+    triggerFrame: 4
+  - eventType: 3
+    soundName: player_Commissar_Skill_ForceSuppression
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.4
+    triggerFrame: 6
+  legacyEventType: 3
+  legacySoundName: player_Commissar_Skill_ForceSuppression
+  legacyTriggerType: 1
+  legacyTriggerTime: 0.019
+  legacyTriggerTimeResolved: 0.13333334
+  legacyTriggerFrame: 2
+  legacyMigrated: 1
 --- !u!114 &-6938134250985145430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -56,30 +76,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 1
-  soundName: player_Commissar_NormalAttack
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.25
-  triggerFrame: 3
---- !u!114 &-4275968123753929735
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Commissar_Skill_ForceSuppression
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.26666668
-  triggerFrame: 4
+  events:
+  - eventType: 1
+    soundName: player_Commissar_NormalAttack
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.25
+    triggerFrame: 3
+  legacyEventType: 1
+  legacySoundName: player_Commissar_NormalAttack
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.25
+  legacyTriggerFrame: 3
+  legacyMigrated: 1
 --- !u!114 &-2416722129064489378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,12 +163,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Commissar_Skill_ContaminationShot
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.6
-  triggerFrame: 9
+  events:
+  - eventType: 3
+    soundName: player_Commissar_Skill_ContaminationShot
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.6
+    triggerFrame: 9
+  legacyEventType: 3
+  legacySoundName: player_Commissar_Skill_ContaminationShot
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.6
+  legacyTriggerFrame: 9
+  legacyMigrated: 1
 --- !u!1107 &2582367903777939832
 AnimatorStateMachine:
   serializedVersion: 6
@@ -199,24 +217,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 760, y: 140, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -8879577808572141549}
---- !u!114 &3290575241283454901
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Commissar_Skill_ForceSuppression
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.4
-  triggerFrame: 6
 --- !u!1102 &4006912834318178302
 AnimatorState:
   serializedVersion: 6
@@ -283,12 +283,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Commissar_Skill_SPSupply
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.14285713
-  triggerFrame: 2
+  events:
+  - eventType: 3
+    soundName: player_Commissar_Skill_SPSupply
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.14285713
+    triggerFrame: 2
+  legacyEventType: 3
+  legacySoundName: player_Commissar_Skill_SPSupply
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.14285713
+  legacyTriggerFrame: 2
+  legacyMigrated: 1
 --- !u!1102 &7848046697308107836
 AnimatorState:
   serializedVersion: 6
@@ -328,8 +336,6 @@ AnimatorState:
   m_Transitions: []
   m_StateMachineBehaviours:
   - {fileID: -8025352616182356172}
-  - {fileID: -4275968123753929735}
-  - {fileID: 3290575241283454901}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
