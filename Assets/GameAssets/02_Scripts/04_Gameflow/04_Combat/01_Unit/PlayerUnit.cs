@@ -9,11 +9,6 @@ public class PlayerUnit : BaseUnit
         m_FinishedDying.Invoke(this);
     }
 
-    protected override void PlayDeathSound()
-    {
-        _soundService.PlayEffectSound("Die");
-    }
-
     public void ApplySaveData(PlayerSaveData data)
     {
         _stat.ApplySaveData(data.HP, data.SP);

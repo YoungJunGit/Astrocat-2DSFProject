@@ -21,15 +21,12 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 {
     [SerializeField, Required, FoldoutGroup("Animation")]
     private AnimationHandler _animHandler;
-    public AnimationHandler AnimationHandler => _animHandler;
 
     [SerializeField, Required, FoldoutGroup("Animation")]
     private AnimationEventHandler _animEventHandler;
-    public IAnimationEventHandler AnimationEventHandler => _animEventHandler;
 
     [SerializeField, ShowIf("HasSupporter"), Required]
     protected SupporterUnit _supporterUnit;
-    public SupporterUnit SupporterUnit => _supporterUnit;
 
     [SerializeField] private UNIT_TYPE _unitType;
     [SerializeField] private float hitBlendAmount = 0.75f;
@@ -38,6 +35,9 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
     private UnitAttachments _attachments;
     public UnitAttachments Attachments => _attachments;
+    public AnimationHandler AnimationHandler => _animHandler;
+    public IAnimationEventHandler AnimationEventHandler => _animEventHandler;
+    public SupporterUnit SupporterUnit => _supporterUnit;
 
     protected UnitStat _stat;
     protected ISoundService _soundService;
@@ -54,8 +54,6 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
     // temp
     public ELEMENT_TYPE My_Temp_Type;
-
-    private const string HIT_BLEND_TWEEN_ID = "HIT_BLEND";
 
     public void Initialize(EntityData data, int priority)
     {
@@ -155,7 +153,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
         if (HasSupporter)
             _supporterUnit.OnDie(CombatInfo).Forget();
 
-        PlayDeathSound();
+        _soundService.PlayEffectSound("Die");
 
         using (var eventDisposer = new EventDisposer(new CombatEvent("DeathEvent")))
         {
@@ -196,5 +194,4 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
     public UNIT_TYPE GetUnitType() => _unitType;
 
     protected abstract UniTask OnFinshedDeathAnim();
-    protected abstract void PlayDeathSound();
 }
