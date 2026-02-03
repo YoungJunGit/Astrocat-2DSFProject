@@ -116,9 +116,9 @@ public sealed class MeleeAttackEvent : CommonActionEvent
         startPosition = (Vector2)Caster.transform.position;
 
         // Identify target's postition
-        float xOffset = Caster.Attachments.GetHitBox().size.x / 2;
+        float xOffset = Caster.Attachments.Get<BoxCollider2D>(AttachType.HitBox).size.x / 2;
         Vector2 offset = Caster is PlayerUnit ? new Vector2(-xOffset, 0f) : new Vector2(xOffset, 0f);
-        endPosition = (Vector2)Target.Attachments.GetMeleeHitPos().position + offset;
+        endPosition = (Vector2)Target.Attachments.Get<Transform>(AttachType.MeleeHitPos).position + offset;
     }
 
     public void Move(BaseUnit unit, bool isRetreat)
@@ -142,11 +142,11 @@ public class RangeAttackEvent : CommonActionEvent
 {
     public void ShootBullet(IProjectileManager manager, string assetName, BaseUnit Caster, BaseUnit Target, Action onDamaged)
     {
-        BaseBullet bullet = manager.CreateProjectile<BaseBullet>(assetName, Caster.Attachments.GetBulletSpawnPos().transform.position);
+        BaseBullet bullet = manager.CreateProjectile<BaseBullet>(assetName, Caster.Attachments.Get<Transform>(AttachType.BulletSpawnPos).transform.position);
 
         if (bullet != null)
         {
-            bullet.Initialize(Target.Attachments.GetHitBox(), () =>
+            bullet.Initialize(Target.Attachments.Get<BoxCollider2D>(AttachType.HitBox), () =>
             {
                 DamageEvent_Element<DamageCalculatorNormal, ElementGaugeCalculator>(Caster, Target);
                 onDamaged?.Invoke();
@@ -156,7 +156,7 @@ public class RangeAttackEvent : CommonActionEvent
 
     public void ShootBullet(IProjectileManager manager, string assetName, BaseUnit Caster, BaseUnit Target, Action onDamaged, SkillData data = null)
     {
-        BaseBullet bullet = manager.CreateProjectile<BaseBullet>(assetName, Caster.Attachments.GetBulletSpawnPos().transform.position);
+        BaseBullet bullet = manager.CreateProjectile<BaseBullet>(assetName, Caster.Attachments.Get<Transform>(AttachType.BulletSpawnPos).transform.position);
 
         Action damageAction;
         if(data.Element_Type == ELEMENT_TYPE.NONE)
@@ -170,7 +170,7 @@ public class RangeAttackEvent : CommonActionEvent
 
         if (bullet != null)
         {
-            bullet.Initialize(Target.Attachments.GetHitBox(), () =>
+            bullet.Initialize(Target.Attachments.Get<BoxCollider2D>(AttachType.HitBox), () =>
             {
                 damageAction();
                 onDamaged?.Invoke();
@@ -180,7 +180,7 @@ public class RangeAttackEvent : CommonActionEvent
 
     public void ShootBulletReturnDamage(IProjectileManager manager, string assetName, BaseUnit Caster, BaseUnit Target, Action<float> onDamaged, SkillData data = null, float overrideSkillRate = -1f)
     {
-        BaseBullet bullet = manager.CreateProjectile<BaseBullet>(assetName, Caster.Attachments.GetBulletSpawnPos().transform.position);
+        BaseBullet bullet = manager.CreateProjectile<BaseBullet>(assetName, Caster.Attachments.Get<Transform>(AttachType.BulletSpawnPos).transform.position);
 
         Func<float> damageAction;
         if (data.Element_Type == ELEMENT_TYPE.NONE)
@@ -202,7 +202,7 @@ public class RangeAttackEvent : CommonActionEvent
 
         if (bullet != null)
         {
-            bullet.Initialize(Target.Attachments.GetHitBox(), () =>
+            bullet.Initialize(Target.Attachments.Get<BoxCollider2D>(AttachType.HitBox), () =>
             {
                 onDamaged?.Invoke(damageAction());
             });
@@ -314,12 +314,12 @@ public sealed class PowerBoosterEvent : CommonActionEvent
         BaseInjection bullet = projectileManager.CreateProjectile<BaseInjection>
         (
             skillName,
-            context.Caster.SupporterUnit.Attachments.GetBulletSpawnPos().transform.position
+            context.Caster.SupporterUnit.Attachments.Get<Transform>(AttachType.BulletSpawnPos).transform.position
         );
 
         if (bullet != null)
         {
-            bullet.Initialize(context.Target.Attachments.GetDroneInjectionBox(), buffEvent, onFinished);
+            bullet.Initialize(context.Target.Attachments.Get<BoxCollider2D>(AttachType.InjectionBox), buffEvent, onFinished);
         }
     }
 }

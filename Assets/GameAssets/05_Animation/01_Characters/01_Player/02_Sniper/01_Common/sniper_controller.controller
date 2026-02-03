@@ -168,12 +168,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Sniper_NormalAttack
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.3636364
-  triggerFrame: 4
+  events:
+  - eventType: 3
+    soundName: player_Sniper_NormalAttack
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.3636364
+    triggerFrame: 4
+  legacyEventType: 3
+  legacySoundName: player_Sniper_NormalAttack
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.3636364
+  legacyTriggerFrame: 4
+  legacyMigrated: 1
 --- !u!1102 &-3177008753648329695
 AnimatorState:
   serializedVersion: 6
@@ -234,12 +242,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 1
-  soundName: player_Sniper_NormalAttack
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.3636364
-  triggerFrame: 4
+  events:
+  - eventType: 1
+    soundName: player_Sniper_NormalAttack
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.3636364
+    triggerFrame: 4
+  legacyEventType: 1
+  legacySoundName: player_Sniper_NormalAttack
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.3636364
+  legacyTriggerFrame: 4
+  legacyMigrated: 1
 --- !u!114 &5469093430055066950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,12 +268,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Sniper_Skill_PrecisionShot
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.47058824
-  triggerFrame: 8
+  events:
+  - eventType: 3
+    soundName: player_Sniper_Skill_PrecisionShot
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.47058824
+    triggerFrame: 8
+  legacyEventType: 3
+  legacySoundName: player_Sniper_Skill_PrecisionShot
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.47058824
+  legacyTriggerFrame: 8
+  legacyMigrated: 1
 --- !u!1102 &6702393058320125264
 AnimatorState:
   serializedVersion: 6

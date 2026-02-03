@@ -1,50 +1,46 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 
 public class UnitAttachments : MonoBehaviour
 {
     [SerializeField, Required]
-    private SpriteRenderer SpriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
-    [SerializeField, ShowIf("IsUnit"), Required]
-    private BoxCollider2D HitBox;
+    [SerializeField, Required, HideIf("IsSupporterUnit")]
+    private Transform collidersRoot;
 
-    [SerializeField, ShowIf("IsPlayer"), Required]
-    private BoxCollider2D DroneInjectionBox;
+    [SerializeField, Required]
+    private Transform positionsRoot;
 
-    [SerializeField, ShowIf("IsUnit"), Required]
-    private Transform MeleeHitPos;
+    private Dictionary<AttachType, Component> _cache;
 
-    [SerializeField, ShowIf("IsUnit"), Required] 
-    private Transform UnitSelectArrowPos;
+    public void Init()
+    {
+        _cache = new();
 
-    [SerializeField, ShowIf("IsEnemy"), Required] 
-    private Transform StatusPos;
+        if (spriteRenderer != null)
+            _cache[AttachType.SpriteRenderer] = spriteRenderer;
 
-    [SerializeField, ShowIf("IsEnemy"), Required]
-    private Transform BuffBoxPos;
+        if (collidersRoot != null)
+            CacheFromRoot<Collider2D>(collidersRoot);
 
-    [SerializeField, ShowIf("@this.IsRange || this.IsSupporterUnit"), Required] 
-    private Transform BulletSpawnPos;
+        if (positionsRoot != null)
+            CacheFromRoot<Transform>(positionsRoot);
+    }
 
-    [SerializeField, ShowIf("IsPlayer"), Required]
-    private Transform DroneInjectionFiringPos;
+    private void CacheFromRoot<T>(Transform root) where T : Component
+    {
+        foreach (var attachment in root.GetComponentsInChildren<UnitAttachment>(true))
+        {
+            if (attachment.TryGetComponent<T>(out var comp))
+            {
+                _cache[attachment.Type] = comp;
+            }
+        }
+    }
 
+    public T Get<T>(AttachType type) where T : Component => _cache.TryGetValue(type, out var comp) ? comp as T : null;
 
-
-    public SpriteRenderer GetSpriteRenderer() => SpriteRenderer;
-    public BoxCollider2D GetHitBox() => HitBox;
-    public BoxCollider2D GetDroneInjectionBox() => DroneInjectionBox;
-    public Transform GetMeleeHitPos() => MeleeHitPos;
-    public Transform GetStatusPosition() => StatusPos;
-    public Transform GetBuffBoxPosition() => BuffBoxPos;
-    public Transform GetUnitSelectArrowPos() => UnitSelectArrowPos;
-    public Transform GetDroneInjectionFiringPos() => DroneInjectionFiringPos;
-    public Transform GetBulletSpawnPos() => BulletSpawnPos;
-
-    private bool IsUnit     => GetComponent<BaseUnit>() != null;
     private bool IsSupporterUnit => GetComponent<SupporterUnit>() != null;
-    private bool IsEnemy    => IsUnit && GetComponent<BaseUnit>() is EnemyUnit;
-    private bool IsPlayer   => IsUnit && GetComponent<BaseUnit>() is PlayerUnit;
-    private bool IsRange    => IsUnit && GetComponent<BaseUnit>().GetUnitType() == DataEnum.UNIT_TYPE.RANGE;
 }

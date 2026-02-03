@@ -7,12 +7,13 @@ using UnityEngine;
 [RequireComponent(typeof(UnitAttachments))]
 public class SupporterUnit : MonoBehaviour
 {
-    [SerializeField] private AnimationHandler _animationHandler;
-    public AnimationHandler AnimationHandler => _animationHandler;
-    [SerializeField] private AnimationEventHandler _animatinEventHandler;
-    public AnimationEventHandler AnimationEventHandler => _animatinEventHandler;
     [SerializeField] private UnitAttachments _attachments;
+    [SerializeField] private AnimationHandler _animationHandler;
+    [SerializeField] private AnimationEventHandler _animatinEventHandler;
+
     public UnitAttachments Attachments => _attachments;
+    public AnimationHandler AnimationHandler => _animationHandler;
+    public AnimationEventHandler AnimationEventHandler => _animatinEventHandler;
 
     [SerializeField] private string unitName = "Drone";
     [SerializeField] private float hitBlendAmount = 0.75f;
@@ -25,14 +26,17 @@ public class SupporterUnit : MonoBehaviour
         ServiceLocator.For(this)
             .Get(out _effectManager);
 
+        _attachments.Init();
         _animationHandler.Init();
         _animatinEventHandler.Init();
-        _attachments.GetSpriteRenderer().material = new Material(_attachments.GetSpriteRenderer().material);
+
+        _attachments.Get<SpriteRenderer>(AttachType.SpriteRenderer).material = 
+            new Material(_attachments.Get<SpriteRenderer>(AttachType.SpriteRenderer).material);
     }
 
     public void OnDamaged()
     {
-        _effectManager.PlayHitEffect(_attachments.GetSpriteRenderer().material, gameObject.GetHashCode().ToString());
+        _effectManager.PlayHitEffect(_attachments.Get<SpriteRenderer>(AttachType.SpriteRenderer).material, gameObject.GetHashCode().ToString());
     }
 
     public async UniTask OnDie(UnitCombatInfo combatInfo)
