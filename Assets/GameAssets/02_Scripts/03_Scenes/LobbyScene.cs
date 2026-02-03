@@ -4,7 +4,7 @@ using UnityEngine;
 public class LobbyScene : AbstractScene
 {
     [SerializeField]
-    CameraMove cameraMove;
+    private LobbyGenerator lobbyGenerator;
 
     protected override int SceneIdx => 2;
 
@@ -12,15 +12,13 @@ public class LobbyScene : AbstractScene
 
     protected override async UniTask BeginGame()
     {
-        cameraMove.StartCameraMove();
-        UpdatePublisher.SubscribeObserver(cameraMove);
+        lobbyGenerator.Init();
         await UniTask.WaitUntil(() => isFinishedDialogue);
     }
 
     protected override void BindObjects()
     {
-        ServiceLocator.ForSceneOf(this)
-            .Register(cameraMove as ICameraMove);
+
     }
 
     protected override async UniTask CreateObjects()
@@ -40,7 +38,7 @@ public class LobbyScene : AbstractScene
 
     public void LoadScene()
     {
-        UpdatePublisher.DiscribeObserver(cameraMove);
+        lobbyGenerator.DisableCamera();
         isFinishedDialogue = true;
     }
 }

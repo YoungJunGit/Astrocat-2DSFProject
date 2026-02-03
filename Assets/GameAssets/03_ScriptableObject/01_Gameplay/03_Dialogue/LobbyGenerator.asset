@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733b030760d6b9d4b962b1db6fbbe8d4, type: 3}
+  m_Name: LobbyGenerator
+  m_EditorClassIdentifier: Assembly-CSharp::LobbyGenerator
+  cameraRigPref: {fileID: 229894210772045952, guid: 8b3d480c5fa893d4b97b668894b3ee65, type: 3}
+  spaceshipRootPref: {fileID: 3490076064014946868, guid: 7cefcc28d93ee7441a93dd7bec922b9e, type: 3}
+  starParticle: {fileID: 3938466834458271030, guid: 8bd9783864d4a7f4d97631835328f277, type: 3}
