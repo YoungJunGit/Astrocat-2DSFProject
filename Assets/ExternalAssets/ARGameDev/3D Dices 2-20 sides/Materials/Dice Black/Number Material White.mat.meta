@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 76d6ce8a003e5c549967bcf22a3c3688
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 327359
+  packageName: 3D Dices 2-20 sides
+  packageVersion: 1.0
+  assetPath: Assets/ARGameDev/3D Dices 2-20 sides/Materials/Dice Black/Number Material
+    White.mat
+  uploadId: 777094

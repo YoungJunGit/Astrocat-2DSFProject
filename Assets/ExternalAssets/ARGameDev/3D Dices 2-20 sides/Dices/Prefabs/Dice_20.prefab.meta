@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: beba902069a8bcf4f9bd93759c6f3543
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 327359
+  packageName: 3D Dices 2-20 sides
+  packageVersion: 1.0
+  assetPath: Assets/ARGameDev/3D Dices 2-20 sides/Dices/Prefabs/Dice_20.prefab
+  uploadId: 777094
