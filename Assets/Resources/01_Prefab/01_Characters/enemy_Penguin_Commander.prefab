@@ -34,6 +34,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &892971545590906538
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -52,6 +53,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -73,9 +76,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 1295724445987930280, guid: ba334844346b7ea44b507395864ce928, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -85,7 +90,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1530477584471826420
 GameObject:
@@ -162,6 +166,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &197994515436291843
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -180,6 +185,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -201,9 +208,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 879355233
   m_SortingLayer: 1
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -1781648886, guid: 2cc83b8e0c3e5c44f88fc84c15d07896, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -213,7 +222,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8266767524952552518
 Animator:
@@ -270,6 +278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7590652976416351343}
+  - component: {fileID: 180856209839863892}
   m_Layer: 6
   m_Name: BulletSpawnPos
   m_TagString: Untagged
@@ -292,6 +301,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4055738903042692552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &180856209839863892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610253963334682360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 7
 --- !u!1 &3935929378213677170
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9136855789934232106}
+  - component: {fileID: 8029605113430225294}
   m_Layer: 6
   m_Name: StatusBoxPos
   m_TagString: Untagged
@@ -323,6 +346,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4055738903042692552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8029605113430225294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935929378213677170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 5
 --- !u!1 &4330526445696016388
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085095853709932365}
   - component: {fileID: 9167674234745550215}
+  - component: {fileID: 4565865526948127780}
   m_Layer: 6
   m_Name: HitBox
   m_TagString: Enemy
@@ -401,6 +438,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.75, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &4565865526948127780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330526445696016388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 1
 --- !u!1 &4827367263262564598
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8960175206361412108}
+  - component: {fileID: 9059264960908276930}
   m_Layer: 6
   m_Name: BuffBoxPos
   m_TagString: Untagged
@@ -432,6 +483,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4055738903042692552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9059264960908276930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827367263262564598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 6
 --- !u!1 &4902011835557642720
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4968746072884941724}
+  - component: {fileID: 201458841884370790}
   m_Layer: 6
   m_Name: UnitSelectArrowPos
   m_TagString: Untagged
@@ -463,6 +528,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4055738903042692552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &201458841884370790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902011835557642720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 4
 --- !u!1 &6050766040892702663
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3660917172093270443}
+  - component: {fileID: 7117017168381669743}
   m_Layer: 6
   m_Name: MeleeHitPos
   m_TagString: Untagged
@@ -494,6 +573,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4055738903042692552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7117017168381669743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050766040892702663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ae32a03d3f81445b8268f7eca024ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAttachment
+  Type: 3
 --- !u!1 &6828229883078454044
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +668,6 @@ MonoBehaviour:
   hitBlendAmount: 0.75
   hitBlendDuration: 0.25
   HasSupporter: 0
-  _soundContainer: {fileID: 11400000, guid: 9c6283887159aa24b8afb37cfa9f0762, type: 2}
   My_Temp_Type: 0
 --- !u!114 &8303580816812213284
 MonoBehaviour:
@@ -590,15 +681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11ea222de4f79c41851a2e961274a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpriteRenderer: {fileID: 197994515436291843}
-  HitBox: {fileID: 9167674234745550215}
-  DroneInjectionBox: {fileID: 0}
-  MeleeHitPos: {fileID: 3660917172093270443}
-  UnitSelectArrowPos: {fileID: 4968746072884941724}
-  StatusPos: {fileID: 9136855789934232106}
-  BuffBoxPos: {fileID: 8960175206361412108}
-  BulletSpawnPos: {fileID: 7590652976416351343}
-  DroneInjectionFiringPos: {fileID: 0}
+  spriteRenderer: {fileID: 197994515436291843}
+  collidersRoot: {fileID: 7778853050515948506}
+  positionsRoot: {fileID: 4055738903042692552}
 --- !u!1 &9108151544373116365
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class ModifierStat
         _mediator = new StatsMediator();
     }
 
-    private readonly StatsMediator _mediator;
+    private StatsMediator _mediator;
     public StatsMediator Mediator => _mediator;
 
     private float PercentageValue(BUFF_TYPE type, float defaultValue = 1.0f)
@@ -28,6 +28,11 @@ public class ModifierStat
         var q = new Query<float>(type, 0.0f);
         _mediator.PerformQuery(this, q);
         return Mathf.Max(0.0f, q.Value);
+    }
+
+    public void ResetStatMediator()
+    {
+        _mediator = new StatsMediator();
     }
 
     public float MaxEG => 100.0f;

@@ -33,7 +33,7 @@ public class CombatEffectManager : ScriptableObject, ICombatEffectManager
         if (combatEffect == null) return null;
 
         context.Target.CEUnit.Add(new EffectContainer(info.Name, combatEffect));
-        _textManager.OnBuff(context.Target.Attachments.GetHitBox().bounds, info.Value);
+        _textManager.OnBuff(context.Target.Attachments.Get<BoxCollider2D>(AttachType.HitBox).bounds, info.Value);
         combatEffect?.Apply(info, context);
 
         return combatEffect;

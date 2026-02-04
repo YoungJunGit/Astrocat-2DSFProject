@@ -29,8 +29,7 @@ public static class SpriteAnimationUtil
 
         var bindings = AnimationUtility.GetObjectReferenceCurveBindings(clip);
 
-        var spriteBinding = bindings.FirstOrDefault(b =>
-            b.propertyName.Contains("m_Sprite"));
+        var spriteBinding = bindings.FirstOrDefault(b => b.propertyName.Contains("m_Sprite"));
 
         if (string.IsNullOrEmpty(spriteBinding.propertyName))
             return null;

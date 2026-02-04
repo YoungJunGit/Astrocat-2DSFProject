@@ -1,41 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5527793528016181885
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Rifleman_Skill_TripleBurst
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.56
-  triggerFrame: 14
---- !u!114 &-4492915641699364130
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Rifleman_Skill_TripleBurst
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.4
-  triggerFrame: 10
 --- !u!114 &-4108930785904756391
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -48,12 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 1
-  soundName: player_Rifleman_NormalAttack
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.42857143
-  triggerFrame: 3
+  events:
+  - eventType: 1
+    soundName: player_Rifleman_NormalAttack
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.42857143
+    triggerFrame: 3
+  legacyEventType: 1
+  legacySoundName: player_Rifleman_NormalAttack
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.42857143
+  legacyTriggerFrame: 3
+  legacyMigrated: 1
 --- !u!1107 &-3910616340470074030
 AnimatorStateMachine:
   serializedVersion: 6
@@ -234,12 +206,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Rifleman_Skill_TripleBurst
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.24000001
-  triggerFrame: 6
+  events:
+  - eventType: 3
+    soundName: player_Rifleman_Skill_TripleBurst
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.24000001
+    triggerFrame: 6
+  - eventType: 3
+    soundName: player_Rifleman_Skill_TripleBurst
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.4
+    triggerFrame: 10
+  - eventType: 3
+    soundName: player_Rifleman_Skill_TripleBurst
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.56
+    triggerFrame: 14
+  legacyEventType: 3
+  legacySoundName: player_Rifleman_Skill_TripleBurst
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.24000001
+  legacyTriggerFrame: 6
+  legacyMigrated: 1
 --- !u!114 &3830304906505076123
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,8 +284,6 @@ AnimatorState:
   m_Transitions: []
   m_StateMachineBehaviours:
   - {fileID: 3673356454618791825}
-  - {fileID: -4492915641699364130}
-  - {fileID: -5527793528016181885}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -320,12 +310,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 3
-  soundName: player_Rifleman_Skill_AreaBurst
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.4285714
-  triggerFrame: 6
+  events:
+  - eventType: 3
+    soundName: player_Rifleman_Skill_AreaBurst
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.4285714
+    triggerFrame: 6
+  legacyEventType: 3
+  legacySoundName: player_Rifleman_Skill_AreaBurst
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.4285714
+  legacyTriggerFrame: 6
+  legacyMigrated: 1
 --- !u!1102 &8981258399899682410
 AnimatorState:
   serializedVersion: 6
