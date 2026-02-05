@@ -158,6 +158,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         hideEmpty();
         setNode();
         activeNodeSelect();
+        ShowLastNode();
         isCompleted = true;
     }
 
@@ -390,17 +391,11 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         {
             Node currentNode = temp.Dequeue();
 
-            foreach(var nextNodeIdx in currentNode.nextNodesIdx)
+            foreach(var nextNode in currentNode.nextNodes)
             {
-                foreach(var nextNode in map)
-                {
-                    if(nextNode.idx == nextNodeIdx)
-                    {
-                        Debug.Log("길 생성");
-                        drawPath(currentNode.transform, nextNode.transform);
-                        temp.Enqueue(nextNode);
-                    }
-                }
+                Debug.Log("길 생성");
+                drawPath(currentNode.transform, nextNode.transform);
+                temp.Enqueue(nextNode);
             }
 
             // 마지막 층 노드라면
@@ -428,46 +423,15 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         List<Node> tmp = new List<Node>();
         if (_mapDataFactory.IsKeyExist())
         {
-            Queue<Node> nodes = new Queue<Node>();
-
-            for(int i = 0; i<routeNum;i++)
+            if (nowNode.floor >= floorNum - 1)
             {
-                nodes.Enqueue(map[0, i]);
+                tmp.Add(finalNode);
             }
-
-            while(nodes.Count > 0)
+            else
             {
-                Node node = nodes.Dequeue();
-                // 노드를 방문한 적이 있다면
-                if(node.visited)
+                foreach(var nextNode in nowNode.nextNodes)
                 {
-                    // 큐와 리스트 초기화
-                    nodes.Clear();
-                    tmp.Clear();
-                    // 큐에 방문한 노드와 연결된 다음 노드 인큐
-                    foreach (var index in node.nextNodesIdx)
-                    {
-                        foreach(var nextNode in map)
-                        {
-                            if(index == nextNode.idx)
-                            {
-                                if (nextNode.nodeType != NodeData.Type.Empty)
-                                {
-                                    nodes.Enqueue(nextNode);
-                                }
-                            }
-                        }
-                    }
-
-                    // 마지막 층 노드라면
-                    if(node.floor >= floorNum - 1)
-                    {
-                        tmp.Add(finalNode);
-                    }
-                }
-                else
-                {
-                    tmp.Add(node);
+                    tmp.Add(nextNode);
                 }
             }
         }
@@ -898,7 +862,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
             }
         }
 
-        ShowActiveNode(0);
+        //ShowActiveNode(0);
     }
 
     /*------------------------------------------------------------
@@ -907,13 +871,6 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     public void paintPath(Node node)
     {
         if (!makeStart && node.floor == 0) return;
-        foreach(var prevNode in map)
-        {
-            if(nowNodeIdx == 0)
-                nowNode = startNode;
-            else if(nowNodeIdx == prevNode.idx)
-                nowNode = prevNode;
-        }
 
         foreach (Transform path in pathsTransform)
         {
@@ -950,20 +907,15 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     {
         if (nowNode == finalNode) return;
         showNodes.Clear();
-        for (int i = 0; i < nowNode.nextNodesIdx.Count; i++)
+        for (int i = 0; i < nowNode.nextNodes.Count; i++)
         {
-            foreach(var node in map)
-            {
-                if(node.idx == nowNode.nextNodesIdx[i])
-                {
-                    showNodes.Add(node);
-                    break;
-                }
-            }
-
             if(nowNode.floor >= floorNum - 1)
             {
                 showNodes.Add(finalNode);
+            }
+            else
+            {
+                showNodes.Add(nowNode.nextNodes[i]);
             }
         }
         ShowActiveNode(0);
@@ -1062,6 +1014,26 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         cam.transform.DOMove(targetPos, 1.0f).SetEase(Ease.OutCirc);
         planetSelector.transform.position = new Vector3(node.transform.position.x, node.transform.position.y + 3, node.transform.position.z);
         targetPosition = targetPos;
+    }
+
+    private void ShowLastNode()
+    {
+        Vector3 targetPos = Vector3.zero;
+        Node node = new Node();
+
+        // 맵 데이터 존재 시, 마지막으로 방문했던 노드 보여주기
+        if(_mapDataFactory.IsKeyExist())
+        {
+            node = nowNode;
+        }
+        // 맵 데이터 존재하지 않으면 시작 노드 보여주기
+        else
+        {
+            node = startNode;
+        }
+
+        targetPos = new Vector3(node.transform.position.x, cameraPositionYOffset, node.transform.position.z - cameraPositionZOffset);
+        cam.transform.position = targetPos;
     }
 
     private void OnDestroy()

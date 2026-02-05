@@ -43,11 +43,11 @@ public class MapDataFactory : ISaveMapData, ILoadMapData
             n.isVisited = node.visited;
             n.isActive = node.isActive;
             n.isConnected = node.connected;
-            saveMapData.nowNodeIdx = mapGenerator.nowNodeIdx;
             n.position = node.transform.position;
 
             saveMapData.saveNodeDatas.Add(n);
         }
+        saveMapData.nowNodeIdx = mapGenerator.nowNodeIdx;
 
         ES3.Save(LAST_MAP_KEY, saveMapData, Easy3MetaData.ProgressFile);
         Debug.Log("맵 데이터 저장 완료");
@@ -94,13 +94,67 @@ public class MapDataFactory : ISaveMapData, ILoadMapData
                     node.visited = nodes[index].isVisited;
                     node.isActive = nodes[index].isActive;
                     node.connected = nodes[index].isConnected;
-                    mapGenerator.nowNodeIdx = mapData.nowNodeIdx;
                     node.transform.position = nodes[index].position;
 
                     mapGenerator.Map[i, j] = node;
                     mapGenerator.Map[i, j].gameObject.name = $"{i},{j}";
 
                     index++;
+                }
+            }
+            mapGenerator.nowNodeIdx = mapData.nowNodeIdx;
+
+            // 인덱스를 통해 현재 노드 설정
+            foreach(var node in mapGenerator.Map)
+            {
+                if(node.idx == mapGenerator.nowNodeIdx)
+                {
+                    mapGenerator.nowNode = node;
+                }
+            }
+
+            // 모든 노드의 다음 노드 연결
+            ConnectAllNextNodes(mapGenerator);
+            // 모든 노드의 이전 노드 연결
+            ConnectAllPrevNodes(mapGenerator);
+        }
+    }
+
+    public void ConnectAllNextNodes(NodeMapGenerator mapGenerator)
+    {
+        // 맵에 있는 모든 노드
+        foreach(var node in mapGenerator.Map)
+        {
+            // 노드의 다음 노드 인덱스
+            foreach(var nextNodeIdx in node.nextNodesIdx)
+            {
+                // 맵에 배치되어있는 노드들 중 인덱스에 해당하는 노드 다음 노드에 추가
+                foreach(var anotherNode in mapGenerator.Map)
+                {
+                    if(nextNodeIdx == anotherNode.idx)
+                    {
+                        node.nextNodes.Add(anotherNode);
+                    }
+                }
+            }
+        }
+    }
+
+    public void ConnectAllPrevNodes(NodeMapGenerator mapGenerator)
+    {
+        // 맵에 있는 모든 노드
+        foreach (var node in mapGenerator.Map)
+        {
+            // 노드의 이전 노드 인덱스
+            foreach (var prevNodeIdx in node.prevNodesIdx)
+            {
+                // 맵에 배치되어있는 노드들 중 인덱스에 해당하는 노드 다음 노드에 추가
+                foreach (var anotherNode in mapGenerator.Map)
+                {
+                    if (prevNodeIdx == anotherNode.idx)
+                    {
+                        node.prevNodes.Add(anotherNode);
+                    }
                 }
             }
         }
