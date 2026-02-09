@@ -25,14 +25,7 @@ public class ModifierStat
 
     public float DamageHealValue(BUFF_TYPE type)
     {
-        var q = new Query<float>(type, 0.0f);
-        _mediator.PerformQuery(this, q);
-        return Mathf.Max(0.0f, q.Value);
-    }
-
-    public void ResetStatMediator()
-    {
-        _mediator = new StatsMediator();
+        return PercentageValue(type, 0.0f);
     }
 
     public float MaxEG => 100.0f;

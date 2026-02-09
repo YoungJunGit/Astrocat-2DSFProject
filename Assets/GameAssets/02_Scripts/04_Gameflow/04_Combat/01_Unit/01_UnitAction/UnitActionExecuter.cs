@@ -4,6 +4,7 @@ using UnityEngine;
 using DataEnum;
 using Utils;
 using System.Collections.Generic;
+using Unity.Mathematics;
 
 public interface IUnitActionExecuter
 {
@@ -46,25 +47,57 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
             {
                 if (!TryGetSingle(target, out var unit)) throw new Exception("Check Single Target, Target Must be Single!");
 
-                context = new SingleTargetActionContext(caster, unit, _soundService, _textManager, _effectManager, _projectileManager, _combatEffectManager, _parryingApplier, _inputHandler);
+                context = CreateSingleContext(caster, unit);
             }
             else
             {
                 if (!TryGetMulti(target, out var units)) throw new Exception("Check Multi Target, Target Must be Multitude!");
 
-                context = new MultiTargetActionContext(caster, units, _soundService, _textManager, _effectManager, _projectileManager, _combatEffectManager, _parryingApplier, _inputHandler);
+                context = CreateMultiContext(caster, units);
             }
         }
         else
         {
-            context = new SingleTargetActionContext(caster, null, _soundService, _textManager, _effectManager, _projectileManager, _combatEffectManager, _parryingApplier, _inputHandler);
+            context = CreateSingleContext(caster, null);
         }
 
         // Step 3 : Execute Action
         if (invoker != null)
         {
             await invoker.Execute(context);
+
+            // try - catch
         }
+    }
+
+    private IUnitActionContext CreateSingleContext(BaseUnit caster, BaseUnit target)
+    {
+        return new SingleTargetActionContext(
+                    caster,
+                    target,
+                    _soundService,
+                    _textManager,
+                    _effectManager,
+                    _projectileManager,
+                    _combatEffectManager,
+                    _parryingApplier,
+                    _inputHandler
+                    );
+    }
+
+    private IUnitActionContext CreateMultiContext(BaseUnit caster, IReadOnlyList<BaseUnit> units)
+    {
+        return new MultiTargetActionContext(
+                    caster,
+                    units,
+                    _soundService,
+                    _textManager,
+                    _effectManager,
+                    _projectileManager,
+                    _combatEffectManager,
+                    _parryingApplier,
+                    _inputHandler
+                    );
     }
 
     private bool TryGetSingle(ITarget<BaseUnit> targetBag, out BaseUnit value)

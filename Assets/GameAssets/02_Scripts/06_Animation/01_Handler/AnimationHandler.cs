@@ -70,7 +70,7 @@ public class AnimationHandler : MonoBehaviour
         ChangeAnimation(_previousAnimation);
     }
 
-    private async UniTask<bool> WaitForAnimationFinished(int layerIndex, int stateHash, CancellationToken ct = default)
+    private async UniTask<bool> WaitForAnimationFinished(int layerIndex, int stateHash, CancellationToken ct)
     {
         // 1) Wait until the animator actually enters the target state
         //    (handles transition delay / cross-fade)
