@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Pixel Crushers. All rights reserved.
 
+using System;
 using UnityEngine;
 
 namespace PixelCrushers.DialogueSystem.Wrappers
@@ -13,6 +14,12 @@ namespace PixelCrushers.DialogueSystem.Wrappers
     [AddComponentMenu("Pixel Crushers/Dialogue System/Misc/Dialogue System Controller")]
     public class DialogueSystemController : PixelCrushers.DialogueSystem.DialogueSystemController
     {
+        public static Action OnDialogueEnd;
+
+        public void EndDialogue()
+        {
+            OnDialogueEnd.Invoke();
+        }
     }
 
 }

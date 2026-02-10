@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using PixelCrushers.DialogueSystem.Wrappers;
 using UnityEngine;
 
 public class LobbyScene : AbstractScene
@@ -13,6 +14,7 @@ public class LobbyScene : AbstractScene
     protected override async UniTask BeginGame()
     {
         lobbyGenerator.Init();
+        DialogueSystemController.OnDialogueEnd += LoadScene;
         await UniTask.WaitUntil(() => isFinishedDialogue);
     }
 
@@ -40,5 +42,6 @@ public class LobbyScene : AbstractScene
     {
         lobbyGenerator.DisableCamera();
         isFinishedDialogue = true;
+        DialogueSystemController.OnDialogueEnd -= LoadScene;
     }
 }

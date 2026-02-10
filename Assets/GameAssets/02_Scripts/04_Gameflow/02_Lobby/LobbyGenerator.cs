@@ -9,6 +9,8 @@ public class LobbyGenerator : ScriptableObject
     [SerializeField]
     private GameObject spaceshipRootPref;
     [SerializeField]
+    private GameObject dialogueSystemPref;
+    [SerializeField]
     private ParticleSystem starParticle;
 
     private CameraMove camMove;
@@ -17,6 +19,7 @@ public class LobbyGenerator : ScriptableObject
     {
         camMove = Instantiate(cameraRigPref).GetComponent<CameraMove>();
         Instantiate(spaceshipRootPref);
+        Instantiate(dialogueSystemPref);
         Instantiate(starParticle);
 
         if(camMove != null)

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LobbyGenerator
   cameraRigPref: {fileID: 229894210772045952, guid: 8b3d480c5fa893d4b97b668894b3ee65, type: 3}
   spaceshipRootPref: {fileID: 3490076064014946868, guid: 7cefcc28d93ee7441a93dd7bec922b9e, type: 3}
+  dialogueSystemPref: {fileID: 2426055135436519916, guid: b86faa13b782a274ba90aed3b1c60238, type: 3}
   starParticle: {fileID: 3938466834458271030, guid: 8bd9783864d4a7f4d97631835328f277, type: 3}
