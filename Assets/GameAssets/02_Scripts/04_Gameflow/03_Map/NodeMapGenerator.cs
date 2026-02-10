@@ -142,17 +142,20 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
         planetSelector = Instantiate(planetSelectorPref);
         pathsTransform = new List<Transform>();
         showNodes = new List<Node>();
+
         ServiceLocator.ForSceneOf(this).Get(out inputHandler);
+
         inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.SelectPlanet);
         inputHandler.OnMoveToPlanetAction += ShowActiveNode;
         inputHandler.OnControlSpaceshipAction += (_direction) => direction = _direction;
+
         _mapDataFactory = new MapDataFactory();
 
         if (randomizeSeed) seed = Mathf.FloorToInt(Random.value * int.MaxValue);
         Random.InitState(seed);
 
-        preGenerated();
-        createMap();
+        PreGenerated();
+        CreateMap();
         selectFirstNode();
         SetPaths();
         hideEmpty();
@@ -266,7 +269,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     /*------------------------------------------------------------
     Pre-generation
     ------------------------------------------------------------*/
-    void preGenerated()
+    void PreGenerated()
     {
         mapField = new GameObject("Map Field");
         mapField.transform.position = new Vector3(0, 0, 0);
@@ -289,7 +292,7 @@ public class NodeMapGenerator : ScriptableObject, IUpdateObserver
     /*------------------------------------------------------------
     Create map
     ------------------------------------------------------------*/
-    void createMap()
+    void CreateMap()
     {
         map = new Node[floorNum, routeNum];
 
