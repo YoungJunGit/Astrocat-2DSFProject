@@ -77,18 +77,29 @@ public class CombatManager : ScriptableObject
                 // Step 1 : Add Action Selection
                 IUnitActionProperty property = null;
                 IUnitActionInvoker invoker = null;
-                _selectorManager.AddSelectorExecuter(new ActionSelectorExecutor(currentTurnUnit, (action) =>
-                {
-                    invoker = action;
-                    property = action;
-                }));
+                _selectorManager.AddSelectorExecuter(
+                    new ActionSelectorExecutor(
+                        currentTurnUnit, 
+                        (action) =>
+                        {
+                            invoker = action;
+                            property = action;
+                        }
+                    )
+                );
 
                 // Step 2 : Add Target Selection
                 ITarget<BaseUnit> target = null;
-                _selectorManager.AddSelectorExecuter(new UnitSelectorExecutor(currentTurnUnit, () => property, (bag) =>
-                {
-                    target = bag;
-                }));
+                _selectorManager.AddSelectorExecuter(
+                    new UnitSelectorExecutor(
+                        currentTurnUnit, 
+                        () => property, 
+                        (bag) =>
+                        {
+                        target = bag;
+                        }
+                    )
+                );
 
                 // Step 3 : Execute Selections
                 await _selectorManager.ExecuteAll();
@@ -104,21 +115,6 @@ public class CombatManager : ScriptableObject
         }
         // TODO: Check whether the enemy or the player wins
         // if()
-    }
-
-    private void ForDebugControlEffect(BaseUnit unit, ELEMENT_TYPE type)
-    {
-        var controlCount = unit.CCUnit.EffectsCountDic[type].CurrentValue;
-        if (controlCount > 0)
-        {
-            string str = $"[{type}]\nStun : {unit.CCUnit.EffectsCountDic[type].CurrentValue}";
-            var cc = unit.CCUnit.GetNonStackCC(type);
-            if (cc != null && cc is AttributeControl ca)
-            {
-                str += $"\nWeakness : {ca.Effect.TimerTmp.Remain}";
-            }
-            Debug.Log(str);
-        }
     }
 
     public void OnCharacterDie(BaseUnit unit)

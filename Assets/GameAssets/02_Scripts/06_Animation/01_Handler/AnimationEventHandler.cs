@@ -12,7 +12,6 @@ public interface IAnimationEventHandler
 public class AnimationEventHandler : MonoBehaviour, IAnimationEventHandler
 {
     private ISoundService soundService;
-
     private List<AnimationEventCombat> animationEvents = new();
 
     public void Init()
