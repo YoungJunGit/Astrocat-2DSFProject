@@ -1,5 +1,6 @@
 using DataEnum;
 using System;
+using System.Threading;
 using UnityEngine;
 using DG.Tweening;
 using DataEntity;
@@ -172,7 +173,7 @@ public class RangeAttackEvent : CommonActionEvent
         {
             bullet.Initialize(Target.Attachments.Get<BoxCollider2D>(AttachType.HitBox), () =>
             {
-                damageAction();
+                damageAction.Invoke();
                 onDamaged?.Invoke();
             });
         }

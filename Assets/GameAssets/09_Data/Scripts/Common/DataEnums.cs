@@ -1,6 +1,6 @@
 namespace DataEnum
 {
-    #region[DT °ü·Ã]
+    #region[DT ï¿½ï¿½ï¿½ï¿½]
 
     public enum SIDE
     {
@@ -104,10 +104,10 @@ namespace DataEnum
         SILENCE
     }
 
-    /*Ãß°¡*/
+    /*ï¿½ß°ï¿½*/
     #endregion
 
-    #region[±âº»]
+    #region[ï¿½âº»]
 
     public enum UNIT_TYPE
     {
@@ -139,7 +139,8 @@ namespace DataEnum
         DEATH,
         MOVE,
         RETREAT,
-        SKILL
+        SKILL,
+        PARRY
     }
 
     public enum ANIMATION_EVENT
@@ -151,6 +152,6 @@ namespace DataEnum
         PARRY
     }
 
-    /*Ãß°¡*/
+    /*ï¿½ß°ï¿½*/
     #endregion
 }

@@ -56,6 +56,9 @@ public class AnimationHandler : MonoBehaviour
             case ANIMATION.SKILL:
                 stateHash = Animator.StringToHash($"Base Layer.{animationName}");
                 break;
+            case ANIMATION.PARRY:
+                // TODO
+                break;
         }
 
         _previousAnimation = _currentAnimation;

@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedEnemyID: []
   nominateEnemyID:
-  - 10012001
-  - 10012002
   - 10012003
-  spawnCount: 2
+  spawnCount: 3

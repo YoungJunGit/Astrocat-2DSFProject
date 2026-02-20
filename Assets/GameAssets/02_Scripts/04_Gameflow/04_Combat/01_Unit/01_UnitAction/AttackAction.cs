@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using DataEnum;
 using System;
+using System.Threading;
 using UnityEngine;
 
 sealed class SelfAttackAction : BaseUnitAction<ISingleTargetContext>
@@ -37,36 +38,58 @@ abstract class BaseAttackAction : BaseUnitAction<ISingleTargetContext>
 class MeleeAttackAction : BaseAttackAction
 {
     public MeleeAttackAction(SIDE side) : base(side) { }
-
+    
     public override async UniTask AsyncOperateAction(ISingleTargetContext context)
     {
-        var inputDisposer = new InputDisposer(context.InputHandler, InputHandler.InputState.Parry);
+        var input = context.InputHandler;
+        var inputDisposer = new InputDisposer(input, InputHandler.InputState.Parry);
         var meleeAttackEvent = new MeleeAttackEvent();
-
+        
+        CancellationTokenSource cts = new ();
+        
+        Action onParry = () => cts.Cancel();
+        input.OnParry += onParry;
+        
+        var ct = cts.Token;
+        
         meleeAttackEvent.CalculateMovePositions(context.Caster, context.Target);
 
-        context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.MOVE, () =>
+        context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.MOVE,
+            () => { meleeAttackEvent.Move(context.Caster, isRetreat: false); });
+
+        context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.ATTACK,
+            () =>
+            {
+                meleeAttackEvent.DamageEvent_Element<DamageCalculatorNormal, ElementGaugeCalculator>(context.Caster,
+                    context.Target);
+            });
+        
+        context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.MOVE,
+            () => { meleeAttackEvent.Move(context.Caster, isRetreat: true); });
+        
+        try
         {
-            meleeAttackEvent.Move(context.Caster, isRetreat: false);
-        });
+            await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.MOVE);
+            ct.ThrowIfCancellationRequested();
 
-        context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.ATTACK, () =>
+            await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.ATTACK);
+            ct.ThrowIfCancellationRequested();
+        }
+        catch (OperationCanceledException)
         {
-            meleeAttackEvent.DamageEvent_Element<DamageCalculatorNormal, ElementGaugeCalculator>(context.Caster, context.Target);
-        });
-
-        context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.MOVE, () =>
+            Debug.Log(context.Caster.name + "'s Attack is Parried!");
+            
+            //await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.PARRY);
+        }
+        finally
         {
-            meleeAttackEvent.Move(context.Caster, isRetreat: true);
-        });
-
-        await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.MOVE);
-        await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.ATTACK);
-        await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.RETREAT);
-        context.Caster.AnimationHandler.ChangeAnimation(ANIMATION.IDLE);
-        context.Caster.AnimationEventHandler.ClearAnimationEvent();
-
-        inputDisposer.Dispose();
+            await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.RETREAT);
+            context.Caster.AnimationHandler.ChangeAnimation(ANIMATION.IDLE);
+            context.Caster.AnimationEventHandler.ClearAnimationEvent();
+            
+            input.OnParry -= onParry;
+            inputDisposer.Dispose();
+        }
     }
 }
 
@@ -76,9 +99,15 @@ class RangeAttackAction : BaseAttackAction
 
     public override async UniTask AsyncOperateAction(ISingleTargetContext context)
     {
-        var inputDisposer = new InputDisposer(context.InputHandler, InputHandler.InputState.Parry);
+        var input = context.InputHandler;
+        var inputDisposer = new InputDisposer(input, InputHandler.InputState.Parry);
         var rangeAttackEvent = new RangeAttackEvent();
-
+        
+        CancellationTokenSource cts = new ();
+        
+        Action onParry = () => cts.Cancel();
+        input.OnParry += onParry;
+        
         bool isDamaged = false;
 
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.ATTACK, () =>
