@@ -6,18 +6,34 @@
   <component name="ChangeListManager">
     <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/Plugins/Obvious/Soap/Core/Editor/Resources/SoapSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/Plugins/Obvious/Soap/Core/Editor/Resources/SoapSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/Plugins/Obvious/Soap/Core/Editor/Resources/SoapSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/Plugins/Obvious/Soap/Core/Editor/Resources/SoapSettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/01_Scenes/01_BuildScenes/4. GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/01_Scenes/01_BuildScenes/4. GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/03_Scenes/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/03_Scenes/GameScene.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionExecuter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionExecuter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/AnimationParryingHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/AnimationParryingHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/IParryingApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/IParryingApplier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/ParryingApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/ParryingApplier.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/06_Animation/01_Handler/AnimationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/06_Animation/01_Handler/AnimationHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/SaveData/EnemyPartyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/SaveData/EnemyPartyData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/Spawn/EnemySpawnSetting_Alternate2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/Spawn/EnemySpawnSetting_Alternate2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/06_Textures/03_Background/03_MapScene/MapGeneratorSprite/uiNode.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/06_Textures/03_Background/03_MapScene/MapGeneratorSprite/uiNode.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/Unit/ParryingApplier.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/Unit/ParryingApplier.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/01_Player/01_Rifleman/01_Common/rifleman_controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/01_Player/01_Rifleman/01_Common/rifleman_controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/01_Player/02_Sniper/01_Common/sniper_controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/01_Player/02_Sniper/01_Common/sniper_controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/02_Enemy/004_Penguin_Berserker/01_Common/penguin_berserker_controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/02_Enemy/004_Penguin_Berserker/01_Common/penguin_berserker_controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/06_Textures/01_Character/01_Player/01_Rifleman/01_Common/rifleman_Common_Parrying.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/06_Textures/01_Character/01_Player/01_Rifleman/01_Common/rifleman_Common_Parrying.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/09_Data/Scripts/Common/DataAnim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/09_Data/Scripts/Common/DataAnim.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameAssets/09_Data/Scripts/Common/DataEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/09_Data/Scripts/Common/DataEnums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Materials/SkillSelectBtn.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Materials/SkillSelectBtn.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Shaders/AllIn1SpriteShaderLit.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Shaders/AllIn1SpriteShaderLit.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Shaders/AllIn1SpriteShaderLitTransparent.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Shaders/AllIn1SpriteShaderLitTransparent.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/01_Prefab/01_Characters/enemy_Penguin_Berserker.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/01_Prefab/01_Characters/enemy_Penguin_Berserker.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/01_Prefab/01_Characters/player_Rifleman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/01_Prefab/01_Characters/player_Rifleman.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/Renderer2D.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Renderer2D.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
@@ -49,12 +65,21 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1eb9db207454431c84a47bcd81e79c3746ae00/e0/a1edf610/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/26/cb522a47/IDisposable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dfe5ebb180ed45a8a45a41aa8e736b59255400/61/41626d02/IMGUIContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e3a3b5d33b164c3fba4211220b2073133609c8/7d/874e62aa/LinkedList`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/01_Manager/SelectorManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/01_Manager/CombatManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/01_Manager/SelectorManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/00_Common/02_Selector/SelectorExecuter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/IUnitAction.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/SkillAction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionExecuter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/06_Animation/01_Handler/AnimationHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/09_Data/Scripts/Common/DataEnums.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -75,7 +100,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Unity 에디터에 연결.Unity 에디터에 연결.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;NJM-Parrying&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;NJM-Parrying__ver1(AnimBase)&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -131,10 +156,10 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="41756">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9392">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="41756" />
+      <option name="pid" value="9392" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -199,6 +224,9 @@
       <workItem from="1759224994714" duration="6744000" />
       <workItem from="1759450620642" duration="7222000" />
       <workItem from="1771545677079" duration="4755000" />
+      <workItem from="1771645961817" duration="596000" />
+      <workItem from="1771650516842" duration="7338000" />
+      <workItem from="1771725104992" duration="1125000" />
     </task>
     <servers />
   </component>
@@ -245,14 +273,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Combat/UnitAction/SkillActions/AttackAction.cs</url>
           <line>45</line>
-          <properties documentPath="C:\Workspace\Git\Astrocat-2DSFProject\Assets\Scripts\Combat\UnitAction\SkillActions\AttackAction.cs" containingFunctionPresentation="메서드 'Execute'">
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Workspace\Git\Astrocat-2DSFProject\Assets\Scripts\Combat\UnitAction\SkillActions\AttackAction.cs" containingFunctionPresentation="메서드 'Execute'" />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>

@@ -39,12 +39,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 2
-  soundName: 
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.07142857
-  triggerFrame: 1
+  events:
+  - eventType: 2
+    soundName: 
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.07142857
+    triggerFrame: 1
+  legacyEventType: 2
+  legacySoundName: 
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.07142857
+  legacyTriggerFrame: 1
+  legacyMigrated: 1
 --- !u!1102 &-7178110700501404569
 AnimatorState:
   serializedVersion: 6
@@ -137,12 +145,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 1
-  soundName: penguin_Berserker_NormalAttack
-  triggerType: 1
-  triggerTime: 0
-  triggerTimeResolved: 0.5555555
-  triggerFrame: 5
+  events:
+  - eventType: 1
+    soundName: penguin_Berserker_NormalAttack
+    triggerType: 1
+    triggerTime: 0
+    triggerTimeResolved: 0.5555555
+    triggerFrame: 5
+  legacyEventType: 1
+  legacySoundName: penguin_Berserker_NormalAttack
+  legacyTriggerType: 1
+  legacyTriggerTime: 0
+  legacyTriggerTimeResolved: 0.5555555
+  legacyTriggerFrame: 5
+  legacyMigrated: 1
 --- !u!1107 &-368908261938318310
 AnimatorStateMachine:
   serializedVersion: 6
@@ -237,9 +253,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb568b0ec7153b34c903ebfc03a5e222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 2
-  soundName: 
-  triggerType: 1
-  triggerTime: 0.149
-  triggerTimeResolved: 0.10000001
-  triggerFrame: 1
+  events:
+  - eventType: 2
+    soundName: 
+    triggerType: 1
+    triggerTime: 0.149
+    triggerTimeResolved: 0.10000001
+    triggerFrame: 1
+  legacyEventType: 2
+  legacySoundName: 
+  legacyTriggerType: 1
+  legacyTriggerTime: 0.149
+  legacyTriggerTimeResolved: 0.10000001
+  legacyTriggerFrame: 1
+  legacyMigrated: 1

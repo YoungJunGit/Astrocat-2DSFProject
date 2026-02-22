@@ -11,7 +11,6 @@ public interface IUnitActionContext
     IEffectManager EffectManager { get; }
     IProjectileManager ProjectileManager { get; }
     ICombatEffectManager CombatEffectManager { get; }
-    IParryingApplier ParryingApplier { get; }
     InputHandler InputHandler { get; }
 }
 
@@ -34,7 +33,6 @@ public record SingleTargetActionContext
     IEffectManager EffectManager,
     IProjectileManager ProjectileManager,
     ICombatEffectManager CombatEffectManager,
-    IParryingApplier ParryingApplier, 
     InputHandler InputHandler
 ) : ISingleTargetContext;
 
@@ -48,6 +46,5 @@ public record MultiTargetActionContext
     IEffectManager EffectManager,
     IProjectileManager ProjectileManager,
     ICombatEffectManager CombatEffectManager,
-    IParryingApplier ParryingApplier, 
     InputHandler InputHandler
 ) : IMultiTargetContext;

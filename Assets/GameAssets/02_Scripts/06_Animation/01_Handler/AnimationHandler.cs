@@ -57,7 +57,7 @@ public class AnimationHandler : MonoBehaviour
                 stateHash = Animator.StringToHash($"Base Layer.{animationName}");
                 break;
             case ANIMATION.PARRY:
-                // TODO
+                stateHash = AnimHash.ParryMelee;
                 break;
         }
 

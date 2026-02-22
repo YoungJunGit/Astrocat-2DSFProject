@@ -41,16 +41,8 @@ class MeleeAttackAction : BaseAttackAction
     
     public override async UniTask AsyncOperateAction(ISingleTargetContext context)
     {
-        var input = context.InputHandler;
-        var inputDisposer = new InputDisposer(input, InputHandler.InputState.Parry);
         var meleeAttackEvent = new MeleeAttackEvent();
-        
-        CancellationTokenSource cts = new ();
-        
-        Action onParry = () => cts.Cancel();
-        input.OnParry += onParry;
-        
-        var ct = cts.Token;
+        var parryingApplier = new ParryingApplier(context);
         
         meleeAttackEvent.CalculateMovePositions(context.Caster, context.Target);
 
@@ -58,38 +50,32 @@ class MeleeAttackAction : BaseAttackAction
             () => { meleeAttackEvent.Move(context.Caster, isRetreat: false); });
 
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.ATTACK,
-            () =>
+            async () =>
             {
-                meleeAttackEvent.DamageEvent_Element<DamageCalculatorNormal, ElementGaugeCalculator>(context.Caster,
-                    context.Target);
+                if (parryingApplier.JudgeParrying())
+                {
+                    Debug.Log(context.Caster.name + "'s attack parried by " + context.Target.name);
+                    
+                    // await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.PARRY);
+                    await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.IDLE);
+                }
+                else
+                {
+                    meleeAttackEvent.DamageEvent_Element<DamageCalculatorNormal, ElementGaugeCalculator>(context.Caster,context.Target);
+                }
             });
         
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.MOVE,
             () => { meleeAttackEvent.Move(context.Caster, isRetreat: true); });
         
-        try
-        {
-            await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.MOVE);
-            ct.ThrowIfCancellationRequested();
+        await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.MOVE);
 
-            await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.ATTACK);
-            ct.ThrowIfCancellationRequested();
-        }
-        catch (OperationCanceledException)
-        {
-            Debug.Log(context.Caster.name + "'s Attack is Parried!");
-            
-            //await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.PARRY);
-        }
-        finally
-        {
-            await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.RETREAT);
-            context.Caster.AnimationHandler.ChangeAnimation(ANIMATION.IDLE);
-            context.Caster.AnimationEventHandler.ClearAnimationEvent();
-            
-            input.OnParry -= onParry;
-            inputDisposer.Dispose();
-        }
+        await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.ATTACK);
+        
+        await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.RETREAT);
+        
+        context.Caster.AnimationHandler.ChangeAnimation(ANIMATION.IDLE);
+        context.Caster.AnimationEventHandler.ClearAnimationEvent();
     }
 }
 
@@ -102,11 +88,6 @@ class RangeAttackAction : BaseAttackAction
         var input = context.InputHandler;
         var inputDisposer = new InputDisposer(input, InputHandler.InputState.Parry);
         var rangeAttackEvent = new RangeAttackEvent();
-        
-        CancellationTokenSource cts = new ();
-        
-        Action onParry = () => cts.Cancel();
-        input.OnParry += onParry;
         
         bool isDamaged = false;
 

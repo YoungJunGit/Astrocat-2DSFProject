@@ -8,4 +8,5 @@ public static class AnimHash
     public static readonly int Death = Animator.StringToHash("Base Layer.Death");
     public static readonly int Move = Animator.StringToHash("Base Layer.Move");
     public static readonly int Retreat = Animator.StringToHash("Base Layer.Retreat");
+    public static readonly int ParryMelee = Animator.StringToHash("Base Layer.ParryMelee");
 }

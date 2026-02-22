@@ -1,0 +1,1391 @@
+fileFormatVersion: 2
+guid: 88ab36c9bca498a41ae9887f29a0f9ae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5174819783460690752
+    second: rifleman_Common_Parrying_0
+  - first:
+      213: -2927364455356193952
+    second: rifleman_Common_Parrying_1
+  - first:
+      213: 5559742257104578548
+    second: rifleman_Common_Parrying_2
+  - first:
+      213: -3552816960585067254
+    second: rifleman_Common_Parrying_3
+  - first:
+      213: -2211176550622608663
+    second: rifleman_Common_Parrying_4
+  - first:
+      213: 8172126093544748418
+    second: rifleman_Common_Parrying_5
+  - first:
+      213: 8209071799001882950
+    second: rifleman_Common_Parrying_6
+  - first:
+      213: -7632747001561358988
+    second: rifleman_Common_Parrying_7
+  - first:
+      213: -4977939559553150293
+    second: rifleman_Common_Parrying_8
+  - first:
+      213: 3576548097280514856
+    second: rifleman_Common_Parrying_9
+  - first:
+      213: -3118414950964666335
+    second: rifleman_Common_Parrying_10
+  - first:
+      213: 3301184430226460426
+    second: rifleman_Common_Parrying_11
+  - first:
+      213: -4623111004576931853
+    second: rifleman_Common_Parrying_12
+  - first:
+      213: -8992221689800076860
+    second: rifleman_Common_Parrying_13
+  - first:
+      213: 8600998444598805551
+    second: rifleman_Common_Parrying_14
+  - first:
+      213: 829691971116854457
+    second: rifleman_Common_Parrying_15
+  - first:
+      213: -7760629624235204827
+    second: rifleman_Common_Parrying_16
+  - first:
+      213: -1657377971368984381
+    second: rifleman_Common_Parrying_17
+  - first:
+      213: -5714077648268402692
+    second: rifleman_Common_Parrying_18
+  - first:
+      213: -3465281261660072111
+    second: rifleman_Common_Parrying_19
+  - first:
+      213: -3588906817484865997
+    second: rifleman_Common_Parrying_20
+  - first:
+      213: 7130921902487113066
+    second: rifleman_Common_Parrying_21
+  - first:
+      213: -6676010265737343405
+    second: rifleman_Common_Parrying_22
+  - first:
+      213: -1775851946689528521
+    second: rifleman_Common_Parrying_23
+  - first:
+      213: 1069730849633842109
+    second: rifleman_Common_Parrying_24
+  - first:
+      213: -5223703359119619109
+    second: rifleman_Common_Parrying_25
+  - first:
+      213: 6651171590681205078
+    second: rifleman_Common_Parrying_26
+  - first:
+      213: -800227278478037862
+    second: rifleman_Common_Parrying_27
+  - first:
+      213: 1234430638635511155
+    second: rifleman_Common_Parrying_28
+  - first:
+      213: 321283334055559504
+    second: rifleman_Common_Parrying_29
+  - first:
+      213: 4069408458077150575
+    second: rifleman_Common_Parrying_30
+  - first:
+      213: -6918443116841032371
+    second: rifleman_Common_Parrying_31
+  - first:
+      213: -4511896405444387663
+    second: rifleman_Common_Parrying_32
+  - first:
+      213: 2579286637127200681
+    second: rifleman_Common_Parrying_33
+  - first:
+      213: 1314916025044454820
+    second: rifleman_Common_Parrying_34
+  - first:
+      213: 2021520342388041907
+    second: rifleman_Common_Parrying_35
+  - first:
+      213: -5035188891212975551
+    second: rifleman_Common_Parrying_36
+  - first:
+      213: -2126804766723314153
+    second: rifleman_Common_Parrying_37
+  - first:
+      213: -187744218228923758
+    second: rifleman_Common_Parrying_38
+  - first:
+      213: 8022471285214855227
+    second: rifleman_Common_Parrying_39
+  - first:
+      213: -5257929896713621355
+    second: rifleman_Common_Parrying_40
+  - first:
+      213: 2531809625359384957
+    second: rifleman_Common_Parrying_41
+  - first:
+      213: -8208329787826743792
+    second: rifleman_Common_Parrying_42
+  - first:
+      213: -9195671290412469448
+    second: rifleman_Common_Parrying_43
+  - first:
+      213: -3513014551673107893
+    second: rifleman_Common_Parrying_44
+  - first:
+      213: 6711464321980386420
+    second: rifleman_Common_Parrying_45
+  - first:
+      213: 3171616812614210523
+    second: rifleman_Common_Parrying_46
+  - first:
+      213: -2650653444480785485
+    second: rifleman_Common_Parrying_47
+  - first:
+      213: -6266194278469628664
+    second: rifleman_Common_Parrying_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1181
+        width: 158
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b96d9fc27a0d740800000000000000
+      internalID: 5174819783460690752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_1
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 1181
+        width: 161
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 063a366a989ef57d0800000000000000
+      internalID: -2927364455356193952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_2
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 1181
+        width: 176
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f76275402c282d40800000000000000
+      internalID: 5559742257104578548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_3
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 1181
+        width: 176
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0518584ccbd1bec0800000000000000
+      internalID: -3552816960585067254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_4
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 1181
+        width: 176
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2477c74a25051e0800000000000000
+      internalID: -2211176550622608663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_5
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 821
+        width: 176
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2857f616269396170800000000000000
+      internalID: 8172126093544748418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_6
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 821
+        width: 176
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6412f23ce4b7ce170800000000000000
+      internalID: 8209071799001882950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_7
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 821
+        width: 176
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47dd187ca09031690800000000000000
+      internalID: -7632747001561358988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_8
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 821
+        width: 176
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba25877485ecaeab0800000000000000
+      internalID: -4977939559553150293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_9
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 821
+        width: 176
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b118c8b8372a130800000000000000
+      internalID: 3576548097280514856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_10
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 461
+        width: 176
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120eb79cf1a29b4d0800000000000000
+      internalID: -3118414950964666335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_11
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 461
+        width: 161
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0fc2b5bfb920dd20800000000000000
+      internalID: 3301184430226460426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_12
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 461
+        width: 161
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff1efe190967dfb0800000000000000
+      internalID: -4623111004576931853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_13
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 461
+        width: 191
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c157e51406353380800000000000000
+      internalID: -8992221689800076860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_14
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 530
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f24cffbe382ec5770800000000000000
+      internalID: 8600998444598805551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_15
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 476
+        width: 80
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bce96ba378a38b00800000000000000
+      internalID: 829691971116854457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_16
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 515
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f561e6974bc4490800000000000000
+      internalID: -7760629624235204827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_17
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 461
+        width: 152
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c08ef5248fcff8e0800000000000000
+      internalID: -1657377971368984381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_18
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 227
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff56f347a483b0b0800000000000000
+      internalID: -5714077648268402692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_19
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 185
+        width: 11
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1571fe76d09d8efc0800000000000000
+      internalID: -3465281261660072111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_20
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 221
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e36dba344a13ec0800000000000000
+      internalID: -3588906817484865997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_21
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 101
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d0cc660bf16f260800000000000000
+      internalID: 7130921902487113066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_22
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 203
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e4dd9c80c0a53a0800000000000000
+      internalID: -6676010265737343405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_23
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 101
+        width: 158
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73d72e73018ea57e0800000000000000
+      internalID: -1775851946689528521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_24
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 200
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db3b3b14a8278de00800000000000000
+      internalID: 1069730849633842109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_25
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 101
+        width: 167
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb09a3a87da187b0800000000000000
+      internalID: -5223703359119619109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_26
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 101
+        width: 158
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65919b28255bd4c50800000000000000
+      internalID: 6651171590681205078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_27
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 101
+        width: 158
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c2dbea78505e4f0800000000000000
+      internalID: -800227278478037862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_28
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 149
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37d6ab32024912110800000000000000
+      internalID: 1234430638635511155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_29
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 143
+        width: 14
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05182a67d7d657400800000000000000
+      internalID: 321283334055559504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_30
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 194
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d98a59e61797830800000000000000
+      internalID: 4069408458077150575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_31
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 188
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45a1f504a0ccff90800000000000000
+      internalID: -6918443116841032371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_32
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 182
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bc1022df168261c0800000000000000
+      internalID: -4511896405444387663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_33
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 197
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9afe0e3e7877bc320800000000000000
+      internalID: 2579286637127200681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_34
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 185
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ad4e3678258f3210800000000000000
+      internalID: 1314916025044454820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_35
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 179
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b8e34a7a02ed0c10800000000000000
+      internalID: 2021520342388041907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_36
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 170
+        width: 44
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142f14a816a6f1ab0800000000000000
+      internalID: -5035188891212975551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_37
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 152
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e69dc35521c72e0800000000000000
+      internalID: -2126804766723314153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_38
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 173
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 292e4d3d0aff46df0800000000000000
+      internalID: -187744218228923758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_39
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 170
+        width: 38
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30c008012b855f60800000000000000
+      internalID: 8022471285214855227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_40
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 167
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5907a7cdd941807b0800000000000000
+      internalID: -5257929896713621355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_41
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 107
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71067ea07bc22320800000000000000
+      internalID: 2531809625359384957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_42
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 143
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016545d2c87261e80800000000000000
+      internalID: -8208329787826743792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_43
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 140
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 833f4bf9ea9626080800000000000000
+      internalID: -9195671290412469448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_44
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 134
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a0fb4c0e34f3fc0800000000000000
+      internalID: -3513014551673107893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_45
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 140
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c4952fd39e32d50800000000000000
+      internalID: 6711464321980386420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_46
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 134
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd3d687efa8d30c20800000000000000
+      internalID: 3171616812614210523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_47
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 119
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b3ae0b6cbcf63bd0800000000000000
+      internalID: -2650653444480785485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rifleman_Common_Parrying_48
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 116
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d8b32e0810a09a0800000000000000
+      internalID: -6266194278469628664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      rifleman_Common_Parrying_0: 5174819783460690752
+      rifleman_Common_Parrying_1: -2927364455356193952
+      rifleman_Common_Parrying_10: -3118414950964666335
+      rifleman_Common_Parrying_11: 3301184430226460426
+      rifleman_Common_Parrying_12: -4623111004576931853
+      rifleman_Common_Parrying_13: -8992221689800076860
+      rifleman_Common_Parrying_14: 8600998444598805551
+      rifleman_Common_Parrying_15: 829691971116854457
+      rifleman_Common_Parrying_16: -7760629624235204827
+      rifleman_Common_Parrying_17: -1657377971368984381
+      rifleman_Common_Parrying_18: -5714077648268402692
+      rifleman_Common_Parrying_19: -3465281261660072111
+      rifleman_Common_Parrying_2: 5559742257104578548
+      rifleman_Common_Parrying_20: -3588906817484865997
+      rifleman_Common_Parrying_21: 7130921902487113066
+      rifleman_Common_Parrying_22: -6676010265737343405
+      rifleman_Common_Parrying_23: -1775851946689528521
+      rifleman_Common_Parrying_24: 1069730849633842109
+      rifleman_Common_Parrying_25: -5223703359119619109
+      rifleman_Common_Parrying_26: 6651171590681205078
+      rifleman_Common_Parrying_27: -800227278478037862
+      rifleman_Common_Parrying_28: 1234430638635511155
+      rifleman_Common_Parrying_29: 321283334055559504
+      rifleman_Common_Parrying_3: -3552816960585067254
+      rifleman_Common_Parrying_30: 4069408458077150575
+      rifleman_Common_Parrying_31: -6918443116841032371
+      rifleman_Common_Parrying_32: -4511896405444387663
+      rifleman_Common_Parrying_33: 2579286637127200681
+      rifleman_Common_Parrying_34: 1314916025044454820
+      rifleman_Common_Parrying_35: 2021520342388041907
+      rifleman_Common_Parrying_36: -5035188891212975551
+      rifleman_Common_Parrying_37: -2126804766723314153
+      rifleman_Common_Parrying_38: -187744218228923758
+      rifleman_Common_Parrying_39: 8022471285214855227
+      rifleman_Common_Parrying_4: -2211176550622608663
+      rifleman_Common_Parrying_40: -5257929896713621355
+      rifleman_Common_Parrying_41: 2531809625359384957
+      rifleman_Common_Parrying_42: -8208329787826743792
+      rifleman_Common_Parrying_43: -9195671290412469448
+      rifleman_Common_Parrying_44: -3513014551673107893
+      rifleman_Common_Parrying_45: 6711464321980386420
+      rifleman_Common_Parrying_46: 3171616812614210523
+      rifleman_Common_Parrying_47: -2650653444480785485
+      rifleman_Common_Parrying_48: -6266194278469628664
+      rifleman_Common_Parrying_5: 8172126093544748418
+      rifleman_Common_Parrying_6: 8209071799001882950
+      rifleman_Common_Parrying_7: -7632747001561358988
+      rifleman_Common_Parrying_8: -4977939559553150293
+      rifleman_Common_Parrying_9: 3576548097280514856
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

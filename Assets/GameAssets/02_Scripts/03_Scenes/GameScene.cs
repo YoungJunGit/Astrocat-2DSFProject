@@ -44,7 +44,6 @@ public class GameScene : AbstractScene
     [Header("etc")]
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private UnitActionFactory unitActionFactory;
-    [SerializeField] private ParryingApplier parryingApplier;
 
     [Header("Tester")]
     [SerializeField] private InputTester inputTester;
@@ -65,7 +64,6 @@ public class GameScene : AbstractScene
             .Register(selectorManager as ISelectorManager)
             .Register(inputHandler)
             .Register(unitActionFactory)
-            .Register(parryingApplier as IParryingApplier)
             .Register(crowdControlManager as ICrowdControlManager)
             .Register(combatEffectManager as ICombatEffectManager);
     }
@@ -84,8 +82,6 @@ public class GameScene : AbstractScene
         inputHandler.Init();
 
         unitActionExecuter.Init();
-
-        parryingApplier.Init();
 
         if (debugMode)
         {

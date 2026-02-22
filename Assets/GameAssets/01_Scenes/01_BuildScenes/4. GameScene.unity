@@ -322,7 +322,6 @@ MonoBehaviour:
   unitActionExecuter: {fileID: 11400000, guid: ef3fa3b1869ee0245a386f002e7ebdcb, type: 2}
   inputHandler: {fileID: 11400000, guid: a11b3325f5479c84c8208d76b92aa6e5, type: 2}
   unitActionFactory: {fileID: 11400000, guid: 40274e07c72dafa4f8916905710eb3f4, type: 2}
-  parryingApplier: {fileID: 11400000, guid: 5b3c094ceb8a6934cb198ef20c7ed20c, type: 2}
   inputTester: {fileID: 1732112614}
   qteTester: {fileID: 1732112615}
   backgroundChanger: {fileID: 1732112617}

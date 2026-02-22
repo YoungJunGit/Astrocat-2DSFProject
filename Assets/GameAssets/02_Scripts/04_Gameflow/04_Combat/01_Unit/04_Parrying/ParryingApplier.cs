@@ -1,93 +1,50 @@
 
 using System;
 using System.Threading;
+using DataEnum;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ParryingApplier", menuName = "SO/Combat/Unit/ParryingApplier", order = 5)]
-public class ParryingApplier : ScriptableObject, IParryingApplier
+public class ParryingApplier : IParryingApplier
 {
-    private bool _isParryOpen;
-    private bool _isJustParryOpen;
-    
+    private ISingleTargetContext _context;
+    private InputDisposer _inputDisposer;
     private InputHandler _inputHandler;
-    private UnitActionFactory _unitActionFactory;
-    private IUnitActionExecuter _unitActionExecuter;
     
-    private bool _isParryed;
+    private bool _isParrySuccess;
     
-    private BaseUnit _attacker;
-    private BaseUnit _defender;
-    private CancellationTokenSource _executedUnitAction;
-    
-    public enum ParryType
+    public ParryingApplier(ISingleTargetContext context) 
     {
-        Failed,
-        Parry,
-        JustParry
+        _context = context;
+
+        var inputHandler = context.InputHandler;
+        _inputDisposer = new InputDisposer(inputHandler, InputHandler.InputState.Parry);
+
+        _inputHandler = inputHandler;
+        _inputHandler.OnParry += StartParry;
+        
+        context.Target.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.PARRY_START, () => { _isParrySuccess = true; });
+        context.Target.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.PARRY_END, () => { _isParrySuccess = false; });
     }
     
-    public Action<ParryType> OnParry { get; }
-
-    public void Init()
+    private async void StartParry()
     {
-        ServiceLocator.For(this).Get(out _inputHandler);
-        ServiceLocator.For(this).Get(out _unitActionFactory);
-        ServiceLocator.For(this).Get(out _unitActionExecuter);
-
-        _inputHandler.OnParry += () =>
-        {
-            if (_isParryed) return;
-            
-            _isParryed = true;
-            
-            
-            if (_isJustParryOpen)
-            {
-                PerformParry(ParryType.JustParry);
-            }
-            else if (_isParryOpen)
-            {
-                PerformParry(ParryType.Parry);
-            }
-            else
-            {
-                Debug.Log($"ParryFailed : Attacker - {_attacker}, Defender - {_defender}");
-            }
-        };
+        await _context.Target.AnimationHandler.ChangeAnimationAsync(ANIMATION.PARRY);
+        await _context.Target.AnimationHandler.ChangeAnimationAsync(ANIMATION.IDLE);
     }
 
-    private void PerformParry(ParryType parryType)
+    public bool JudgeParrying()
     {
-        Debug.Log($"{parryType} : Attacker - {_attacker}, Defender - {_defender}");
-                
-        var unitAction = _unitActionFactory.CreateParryingAction(_defender, parryType);
-        _executedUnitAction?.Cancel();
-        // _unitActionExecuter.ExecuteRequest(_defender, unitAction, unitAction);
-        
-        // TODO : attacker parried animation
-        
-        OnParry?.Invoke(parryType);
-    }
-    
-    public void SetCurTernParryInfo(BaseUnit attacker, BaseUnit defender, CancellationTokenSource executedUnitAction)
-    {
-        _isParryed = false;
-        
-        _attacker = attacker;
-        _defender = defender;
-        _executedUnitAction = executedUnitAction;
+        // TODO : Judge parrying
+        // TODO : Cancle Action
+        // TODO : Start Counter Attack
+
+        return _isParrySuccess;
     }
 
-    public void SetParryOpen()     => _isParryOpen = true;
-    public void SetJustParryOpen() => _isJustParryOpen = true;
-
-    public void SetParryClose()
+    public void Dispose()
     {
-        _isJustParryOpen = false;
-        _isParryOpen = false;
-        
-        _attacker = null;
-        _defender = null;
-        _executedUnitAction = default;
+        _inputHandler.OnParry -= StartParry;
+        _inputDisposer?.Dispose();
     }
 }

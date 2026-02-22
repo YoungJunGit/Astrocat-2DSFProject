@@ -57,7 +57,7 @@ class UnitActionFactory : ScriptableObject
         return new SelfAttackAction();
     }
 
-    public IUnitAction CreateParryingAction(BaseUnit defender, ParryingApplier.ParryType parryType)
+    public IUnitAction CreateParryingAction(BaseUnit defender)
     {
         // TODO
         return default;

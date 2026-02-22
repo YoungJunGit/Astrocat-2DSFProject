@@ -149,7 +149,8 @@ namespace DataEnum
         ATTACK,
         MOVE,
         SKILL,
-        PARRY
+        PARRY_START,
+        PARRY_END
     }
 
     /*�߰�*/
