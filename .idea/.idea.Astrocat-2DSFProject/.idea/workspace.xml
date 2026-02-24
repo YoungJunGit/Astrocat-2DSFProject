@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/SaveData/PlayerPartyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/SaveData/PlayerPartyData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/02_Enemy/004_Penguin_Berserker/01_Common/penguin_berserker_attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/02_Enemy/004_Penguin_Berserker/01_Common/penguin_berserker_attack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/01_Manager/QTEManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/01_Manager/QTEManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/03_Scenes/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/03_Scenes/GameScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionExecuter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionExecuter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/ParryingApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/ParryingApplier.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +45,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/01_Manager/SelectorManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/00_Common/02_Selector/SelectorExecuter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/IUnitAction.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/IUnitAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/SkillAction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionEvent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -193,6 +197,7 @@
       <workItem from="1771645961817" duration="596000" />
       <workItem from="1771650516842" duration="7338000" />
       <workItem from="1771725104992" duration="2275000" />
+      <workItem from="1771898802415" duration="1994000" />
     </task>
     <servers />
   </component>

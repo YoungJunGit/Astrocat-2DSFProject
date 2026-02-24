@@ -65,7 +65,8 @@ public class GameScene : AbstractScene
             .Register(inputHandler)
             .Register(unitActionFactory)
             .Register(crowdControlManager as ICrowdControlManager)
-            .Register(combatEffectManager as ICombatEffectManager);
+            .Register(combatEffectManager as ICombatEffectManager)
+            .Register(qteManager as IQTEManager);
     }
 
     protected override async UniTask InitializeObjects()

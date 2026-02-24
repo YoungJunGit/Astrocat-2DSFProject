@@ -1,8 +1,20 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
+public enum QTEResult
+{
+    Normal,
+    Perfect,
+    Failure
+}
+
+public interface IQTEManager
+{
+    public UniTask<QTEResult> StartSingleQTE(float time = 1f, Vector2 position = new Vector2());
+}
+
 [CreateAssetMenu(fileName = "QTEManager", menuName = "SO/Combat/Manager/QTEManager")]
-public class QTEManager : ScriptableObject, IUpdateObserver
+public class QTEManager : ScriptableObject, IUpdateObserver, IQTEManager
 {
     [SerializeField] private QTEUI qteUIPrefab;
     [SerializeField] private InputHandler inputHandler;
@@ -11,13 +23,6 @@ public class QTEManager : ScriptableObject, IUpdateObserver
     private bool _onQTEInteracted = false;
     private float _time = 0;
     
-    public enum QTEResult
-    {
-        Normal,
-        Perfect,
-        Failure
-    }
-
     public void Init()
     {
         _qteUI = Instantiate(qteUIPrefab);

@@ -1,6 +1,7 @@
 
 using System;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using DataEnum;
 using UnityEngine;
 
@@ -39,10 +40,18 @@ public class ParryingApplier : IParryingApplier
 
     public bool JudgeParrying()
     {
-        // TODO : Judge parrying
-        // TODO : Cancle Action
-        // TODO : Start Counter Attack
-
+        if (_isParryActive)
+        {
+            UniTask.Void(async () =>
+            {
+                var result = await _context.QTEManager.StartSingleQTE();
+                
+                if (result != QTEResult.Failure)
+                    Debug.Log(_context.Target.name + "has do counter attack");
+                // TODO : execute counter action
+            });
+        }
+        
         return _isParryActive;
     }
 

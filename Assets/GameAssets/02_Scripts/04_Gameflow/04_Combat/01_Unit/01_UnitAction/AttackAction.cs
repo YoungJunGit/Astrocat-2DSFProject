@@ -50,14 +50,14 @@ class MeleeAttackAction : BaseAttackAction
             () => { meleeAttackEvent.Move(context.Caster, isRetreat: false); });
 
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.ATTACK,
-            async () =>
+            () =>
             {
                 if (parryingApplier.JudgeParrying())
                 {
                     Debug.Log(context.Caster.name + "'s attack parried by " + context.Target.name);
                     
                     // await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.PARRY);
-                    await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.IDLE);
+                    context.Caster.AnimationHandler.ChangeAnimation(ANIMATION.IDLE);
                 }
                 else
                 {
@@ -71,6 +71,8 @@ class MeleeAttackAction : BaseAttackAction
         await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.MOVE);
 
         await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.ATTACK);
+        
+        // TODO : wait until get counter
         
         await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.RETREAT);
         

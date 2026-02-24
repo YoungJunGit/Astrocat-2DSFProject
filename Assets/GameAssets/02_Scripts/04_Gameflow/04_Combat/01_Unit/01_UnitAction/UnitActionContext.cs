@@ -12,6 +12,7 @@ public interface IUnitActionContext
     IProjectileManager ProjectileManager { get; }
     ICombatEffectManager CombatEffectManager { get; }
     InputHandler InputHandler { get; }
+    IQTEManager QTEManager { get; }
 }
 
 public interface ISingleTargetContext : IUnitActionContext
@@ -33,7 +34,8 @@ public record SingleTargetActionContext
     IEffectManager EffectManager,
     IProjectileManager ProjectileManager,
     ICombatEffectManager CombatEffectManager,
-    InputHandler InputHandler
+    InputHandler InputHandler,
+    IQTEManager QTEManager
 ) : ISingleTargetContext;
 
 
@@ -46,5 +48,6 @@ public record MultiTargetActionContext
     IEffectManager EffectManager,
     IProjectileManager ProjectileManager,
     ICombatEffectManager CombatEffectManager,
-    InputHandler InputHandler
+    InputHandler InputHandler,
+    IQTEManager QTEManager
 ) : IMultiTargetContext;

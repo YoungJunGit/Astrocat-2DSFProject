@@ -19,6 +19,7 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
     IProjectileManager _projectileManager;
     ICombatEffectManager _combatEffectManager;
     InputHandler _inputHandler;
+    IQTEManager _qteManager;
 
     public void Init()
     {
@@ -28,7 +29,8 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
             .Get(out _effectManager)
             .Get(out _projectileManager)
             .Get(out _combatEffectManager)
-            .Get(out _inputHandler);
+            .Get(out _inputHandler)
+            .Get(out _qteManager);
     }
 
     public async UniTask ExecuteRequest(BaseUnit caster, IUnitActionInvoker invoker, IUnitActionProperty property, ITarget<BaseUnit> target)
@@ -44,18 +46,18 @@ public class UnitActionExecuter : ScriptableObject, IUnitActionExecuter
             {
                 if (!TryGetSingle(target, out var unit)) throw new Exception("Check Single Target, Target Must be Single!");
 
-                context = new SingleTargetActionContext(caster, unit, _soundService, _textManager, _effectManager, _projectileManager, _combatEffectManager, _inputHandler);
+                context = new SingleTargetActionContext(caster, unit, _soundService, _textManager, _effectManager, _projectileManager, _combatEffectManager, _inputHandler, _qteManager);
             }
             else
             {
                 if (!TryGetMulti(target, out var units)) throw new Exception("Check Multi Target, Target Must be Multitude!");
 
-                context = new MultiTargetActionContext(caster, units, _soundService, _textManager, _effectManager, _projectileManager, _combatEffectManager, _inputHandler);
+                context = new MultiTargetActionContext(caster, units, _soundService, _textManager, _effectManager, _projectileManager, _combatEffectManager, _inputHandler, _qteManager);
             }
         }
         else
         {
-            context = new SingleTargetActionContext(caster, null, _soundService, _textManager, _effectManager, _projectileManager, _combatEffectManager, _inputHandler);
+            context = new SingleTargetActionContext(caster, null, _soundService, _textManager, _effectManager, _projectileManager, _combatEffectManager, _inputHandler, _qteManager);
         }
 
         // Step 3 : Execute Action
