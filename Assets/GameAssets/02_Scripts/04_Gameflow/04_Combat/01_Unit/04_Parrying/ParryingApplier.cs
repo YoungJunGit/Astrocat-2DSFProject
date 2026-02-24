@@ -10,8 +10,9 @@ public class ParryingApplier : IParryingApplier
     private ISingleTargetContext _context;
     private InputDisposer _inputDisposer;
     private InputHandler _inputHandler;
-    
-    private bool _isParrySuccess;
+
+    private bool _hasParried;
+    private bool _isParryActive;
     
     public ParryingApplier(ISingleTargetContext context) 
     {
@@ -23,12 +24,15 @@ public class ParryingApplier : IParryingApplier
         _inputHandler = inputHandler;
         _inputHandler.OnParry += StartParry;
         
-        context.Target.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.PARRY_START, () => { _isParrySuccess = true; });
-        context.Target.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.PARRY_END, () => { _isParrySuccess = false; });
+        context.Target.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.PARRY_START, () => { _isParryActive = true; });
+        context.Target.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.PARRY_END, () => { _isParryActive = false; });
     }
     
     private async void StartParry()
     {
+        if (_hasParried) return;
+        
+        _hasParried = true;
         await _context.Target.AnimationHandler.ChangeAnimationAsync(ANIMATION.PARRY);
         await _context.Target.AnimationHandler.ChangeAnimationAsync(ANIMATION.IDLE);
     }
@@ -39,7 +43,7 @@ public class ParryingApplier : IParryingApplier
         // TODO : Cancle Action
         // TODO : Start Counter Attack
 
-        return _isParrySuccess;
+        return _isParryActive;
     }
 
     public void Dispose()

@@ -6,40 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/Plugins/Obvious/Soap/Core/Editor/Resources/SoapSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/Plugins/Obvious/Soap/Core/Editor/Resources/SoapSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExternalAssets/Plugins/Obvious/Soap/Core/Editor/Resources/SoapSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ExternalAssets/Plugins/Obvious/Soap/Core/Editor/Resources/SoapSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/01_Scenes/01_BuildScenes/4. GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/01_Scenes/01_BuildScenes/4. GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/03_Scenes/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/03_Scenes/GameScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionExecuter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionExecuter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/AnimationParryingHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/AnimationParryingHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/IParryingApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/IParryingApplier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/ParryingApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/ParryingApplier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/06_Animation/01_Handler/AnimationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/06_Animation/01_Handler/AnimationHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/Unit/ParryingApplier.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/Unit/ParryingApplier.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/01_Player/01_Rifleman/01_Common/rifleman_controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/01_Player/01_Rifleman/01_Common/rifleman_controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/01_Player/02_Sniper/01_Common/sniper_controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/01_Player/02_Sniper/01_Common/sniper_controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/02_Enemy/004_Penguin_Berserker/01_Common/penguin_berserker_controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/02_Enemy/004_Penguin_Berserker/01_Common/penguin_berserker_controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/06_Textures/01_Character/01_Player/01_Rifleman/01_Common/rifleman_Common_Parrying.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/06_Textures/01_Character/01_Player/01_Rifleman/01_Common/rifleman_Common_Parrying.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/09_Data/Scripts/Common/DataAnim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/09_Data/Scripts/Common/DataAnim.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/09_Data/Scripts/Common/DataEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/09_Data/Scripts/Common/DataEnums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Shaders/AllIn1SpriteShaderLit.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Shaders/AllIn1SpriteShaderLit.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Shaders/AllIn1SpriteShaderLitTransparent.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/AllIn1SpriteShader/Shaders/AllIn1SpriteShaderLitTransparent.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/01_Prefab/01_Characters/enemy_Penguin_Berserker.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/01_Prefab/01_Characters/enemy_Penguin_Berserker.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/01_Prefab/01_Characters/player_Rifleman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/01_Prefab/01_Characters/player_Rifleman.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Renderer2D.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Renderer2D.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InkSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InkSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/SaveData/PlayerPartyData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/03_ScriptableObject/01_Gameplay/01_Combat/SaveData/PlayerPartyData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/02_Enemy/004_Penguin_Berserker/01_Common/penguin_berserker_attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/05_Animation/01_Characters/02_Enemy/004_Penguin_Berserker/01_Common/penguin_berserker_attack.anim" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,15 +124,13 @@
       <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9392">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9392" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -226,7 +192,7 @@
       <workItem from="1771545677079" duration="4755000" />
       <workItem from="1771645961817" duration="596000" />
       <workItem from="1771650516842" duration="7338000" />
-      <workItem from="1771725104992" duration="1125000" />
+      <workItem from="1771725104992" duration="2275000" />
     </task>
     <servers />
   </component>
