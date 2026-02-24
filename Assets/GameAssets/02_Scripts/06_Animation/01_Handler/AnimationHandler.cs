@@ -5,8 +5,19 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
+public interface IAnimationHandler
+{
+    public Animator Anim { get; }
+
+    public UniTask<bool> ChangeAnimationAsync(ANIMATION animation, string animationName = "",
+        float fadeTime = 0.0f, CancellationToken ct = default);
+    public int ChangeAnimation(ANIMATION animation, string animationName = "", float fadeTime = 0f);
+    public void ResetAnimation();
+    public void SetAnimationPause(bool pause = false);
+}
+
 [RequireComponent(typeof(AnimationEventHandler))]
-public class AnimationHandler : MonoBehaviour
+public class AnimationHandler : MonoBehaviour, IAnimationHandler
 {    
     private Animator anim;
     public Animator Anim => anim;
@@ -68,6 +79,18 @@ public class AnimationHandler : MonoBehaviour
     public void ResetAnimation()
     {
         ChangeAnimation(_previousAnimation);
+    }
+
+    public void SetAnimationPause(bool pause = false)
+    {
+        if (pause)
+        {
+            anim.speed = 0f;
+        }
+        else
+        {
+            anim.speed = 1f;
+        }
     }
 
     private async UniTask<bool> WaitForAnimationFinished(int layerIndex, int stateHash, CancellationToken ct = default)

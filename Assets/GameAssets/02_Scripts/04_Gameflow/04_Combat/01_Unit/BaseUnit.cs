@@ -2,11 +2,7 @@ using DataEntity;
 using DataEnum;
 using UnityEngine;
 using System;
-using System.Linq;
-using ObservableCollections;
-using R3;
 using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 
@@ -35,7 +31,7 @@ public abstract class BaseUnit : MonoBehaviour, IUpdateTimeline
 
     private UnitAttachments _attachments;
     public UnitAttachments Attachments => _attachments;
-    public AnimationHandler AnimationHandler => _animHandler;
+    public IAnimationHandler AnimationHandler => _animHandler;
     public IAnimationEventHandler AnimationEventHandler => _animEventHandler;
     public SupporterUnit SupporterUnit => _supporterUnit;
 
