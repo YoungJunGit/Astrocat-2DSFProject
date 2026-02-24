@@ -12,7 +12,7 @@ public class SupporterUnit : MonoBehaviour
     [SerializeField] private AnimationEventHandler _animatinEventHandler;
 
     public UnitAttachments Attachments => _attachments;
-    public AnimationHandler AnimationHandler => _animationHandler;
+    public IAnimationHandler AnimationHandler => _animationHandler;
     public AnimationEventHandler AnimationEventHandler => _animatinEventHandler;
 
     [SerializeField] private string unitName = "Drone";
