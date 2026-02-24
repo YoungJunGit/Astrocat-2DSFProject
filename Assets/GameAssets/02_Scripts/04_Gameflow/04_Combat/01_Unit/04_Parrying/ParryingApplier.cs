@@ -38,21 +38,32 @@ public class ParryingApplier : IParryingApplier
         await _context.Target.AnimationHandler.ChangeAnimationAsync(ANIMATION.IDLE);
     }
 
-    public bool JudgeParrying()
+    public void JudgeParryingAndApplyAction(Action onParryFail)
     {
         if (_isParryActive)
         {
+            Debug.Log(_context.Target.name + "parried " + _context.Caster.name + "'s attack!");
+            
             UniTask.Void(async () =>
             {
-                var result = await _context.QTEManager.StartSingleQTE();
+                _context.Caster.AnimationHandler.SetAnimationPause(true);
                 
+                var result = await _context.QTEManager.StartSingleQTE();
+
                 if (result != QTEResult.Failure)
-                    Debug.Log(_context.Target.name + "has do counter attack");
-                // TODO : execute counter action
+                {
+                    Debug.Log(_context.Target.name + "is doing counter attack to " + _context.Caster.name + "!");
+                    // TODO : execute counter action
+                }
+                
+                _context.Caster.AnimationHandler.SetAnimationPause(false);
+                _context.Caster.AnimationHandler.ChangeAnimation(ANIMATION.IDLE); // TODO : TEMP, change to parried anim
             });
         }
-        
-        return _isParryActive;
+        else
+        {
+            onParryFail?.Invoke();
+        }
     }
 
     public void Dispose()

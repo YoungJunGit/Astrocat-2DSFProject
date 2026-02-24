@@ -51,19 +51,7 @@ class MeleeAttackAction : BaseAttackAction
 
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.ATTACK,
             () =>
-            {
-                if (parryingApplier.JudgeParrying())
-                {
-                    Debug.Log(context.Caster.name + "'s attack parried by " + context.Target.name);
-                    
-                    // await context.Caster.AnimationHandler.ChangeAnimationAsync(ANIMATION.PARRY);
-                    context.Caster.AnimationHandler.ChangeAnimation(ANIMATION.IDLE);
-                }
-                else
-                {
-                    meleeAttackEvent.DamageEvent_Element<DamageCalculatorNormal, ElementGaugeCalculator>(context.Caster,context.Target);
-                }
-            });
+            { parryingApplier.JudgeParryingAndApplyAction(() => meleeAttackEvent.DamageEvent_Element<DamageCalculatorNormal, ElementGaugeCalculator>(context.Caster, context.Target)); });
         
         context.Caster.AnimationEventHandler.AddAnimationEvent(ANIMATION_EVENT.MOVE,
             () => { meleeAttackEvent.Move(context.Caster, isRetreat: true); });

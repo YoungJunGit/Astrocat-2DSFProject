@@ -13,7 +13,7 @@ public interface IAnimationHandler
         float fadeTime = 0.0f, CancellationToken ct = default);
     public int ChangeAnimation(ANIMATION animation, string animationName = "", float fadeTime = 0f);
     public void ResetAnimation();
-    public void SetAnimationPause(bool pause = false);
+    public void SetAnimationPause(bool pause);
 }
 
 [RequireComponent(typeof(AnimationEventHandler))]

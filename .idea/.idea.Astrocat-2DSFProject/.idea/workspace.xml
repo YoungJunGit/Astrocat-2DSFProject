@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4e491e1d-33bc-4563-8af9-0725fc846e9a" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Astrocat-2DSFProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/01_Manager/QTEManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/01_Manager/QTEManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/03_Scenes/GameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/03_Scenes/GameScene.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/AttackAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionExecuter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/01_UnitAction/UnitActionExecuter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/ParryingApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/04_Gameflow/04_Combat/01_Unit/04_Parrying/ParryingApplier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/06_Animation/01_Handler/AnimationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameAssets/02_Scripts/06_Animation/01_Handler/AnimationHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
